@@ -75,9 +75,9 @@ header{
     background-color: rgba(0, 0, 0, 0.501);
 }
 .caixa_texto_pages_all{
-    width: 1000px;
+    width: 900px;
     height: 140px;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 30%;
     margin-left: -520px;
@@ -96,6 +96,7 @@ header{
     font-size: 28px;
     text-align: center;
     font-family: "Roboto-regular";
+/*    margin-left: 110px;*/
     /* font-weight: bold; */
 }
 .texto_primario{

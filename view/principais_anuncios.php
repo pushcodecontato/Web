@@ -36,7 +36,7 @@
                     </nav>
                     <div class="caixa_texto_pages_all">
                         <h1 class="texto_primario_h1">Principais Anúncios</h1>
-                        <p class="texto_secundario_p"> Os Principais Anúncios  Principais Anúncios Principais Anúncios Principais Anúncios</p>
+                        <p class="texto_secundario_p"> Os principais anúncios de veículos aqui da Mob'Share</p>
                     </div>
                 </div>
             </header>

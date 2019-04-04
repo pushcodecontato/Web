@@ -36,8 +36,8 @@
                     </div>    
                 </nav>
                 <div class="caixa_texto_pages_all">
-                    <h1 class="texto_primario_h1">Principais Anúncios</h1>
-                    <p class="texto_secundario_p"> Os Principais Anúncios  Principais Anúncios Principais Anúncios Principais Anúncios</p>
+                    <h1 class="texto_primario_h1">Seja um Parceiro</h1>
+                    <p class="texto_secundario_p"> Os benefícios de ser um parceiro da Mob'share</p>
                 </div>
             </div>
         </header>
