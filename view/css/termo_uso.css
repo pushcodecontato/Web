@@ -1,0 +1,49 @@
+@import "style.css";
+@import "estrutura.css";
+
+.section_termos_uso{
+    width: 100%;
+    height: auto;
+    min-height: 1500px;
+    padding-top: 50px;
+    border:1px solid black;
+}
+.section_termos_uso h2{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+.conteudo{
+    width:1300px;
+    height: auto;
+    min-height: 1500px;
+    border:1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.texto_termos{
+    width:700px;
+    height: auto;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.termos{
+    width:1200px;
+    height: auto;
+    min-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border:1px solid black;
+}
