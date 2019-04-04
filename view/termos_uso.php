@@ -93,7 +93,7 @@
                         <p>Sobre a empresa</p>
                         <p>F.A.Q</p>
                         <p>Seja um parceio</p>
-                        <p>Área administrativa</p>                        
+                     
                     </div>
                 </div>
             </div>

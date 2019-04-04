@@ -206,8 +206,7 @@
                             <p>Detalhe dos valores</p>
                             <p>Sobre a empresa</p>
                             <p>F.A.Q</p>
-                            <p>Seja um parceio</p>
-                            <p>Área administrativa</p>                        
+                            <p>Seja um parceio</p>                      
                         </div>
                     </div>
                 </div>

@@ -386,7 +386,7 @@
                         <p>Sobre a empresa</p>
                         <p>F.A.Q</p>
                         <p>Seja um parceio</p>
-                        <p>Área administrativa</p>                        
+                        <p><a href="?cms/home_cms">Área administrativa</a></p>                        
                     </div>
                 </div>
             </div>
