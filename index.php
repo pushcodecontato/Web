@@ -26,13 +26,13 @@
 			
 		// Verificando se não é um arquivo html 
 		}else if(file_exists( 'view/' . $nome_pagina . '.html')){
-			
+
 			require_once( 'view/'. $nome_pagina .'.html');
 		
 		// Verificando se não e um html passado com . /?home.html
-		}else if(file_exists( 'view/' . substr($nome_pagina, 0 , -4).'.html' )){
+		}else if(file_exists( 'view/' . substr($nome_pagina, 0 , -5).'.html' )){
 			
-			require_once('view/' . substr($nome_pagina, 0 , -4).'.html');
+			require_once('view/' . substr($nome_pagina, 0 , -5).'.html');
 		
 		//Seria bom se eu  implementase pelo menos mais 1 
 		}else{
