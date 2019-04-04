@@ -23,11 +23,11 @@
 <div class="segura_form">  
     <h3 class="titulo_pagina">Cadastrar Usuarios</h3>
     <form method="POST" id="formUsuario" onsubmit="<?=@$submit?>" data-id="<?=@$id_usuario_cms?>"
-     action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=$id_usuario_cms?>">
+     action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=@$id_usuario_cms?>">
         <input  name="txtNome" class="nome_nivel" placeholder="Nome "  value="<?=@$nome?>" required>
         <input  name="txtEmail" class="nome_nivel" placeholder="email" value="<?=@$email?>" required>
         <input  name="txtSenha" type="password" class="nome_nivel"     value="<?=@$senha?>" placeholder="Senha" required>
-        <select name="slcNivel" class="nome_nivel_slc" id="slcNivel" requied>
+        <select name="slcNivel" class="usuario_slc" id="slcNivel" requied>
                 
         </select>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
@@ -59,3 +59,4 @@ $.ajax({url:'router.php?controller=niveis&modo=selectall&json'}).then(function(r
     
 });
 </script>
+<link rel="stylesheet" type="text/css" href="view/cms/css/usuario.css">
