@@ -33,7 +33,7 @@
                         </div>    
                     </nav>
                     <div class="caixa_texto_pages_all">
-                        <h1 class="texto_primario_h1">Melhores Anúncios</h1>
+                        <h1 class="texto_primario_h1">Veículos em Destaques</h1>
                         <p class="texto_secundario_p"> Os Melhores Anúncios Melhores Anúncios Melhores Anúncios</p>
                     </div>
                 </div>

@@ -36,8 +36,8 @@
                     </div>    
                 </nav>
                 <div class="caixa_texto_pages_all">
-                    <h1 class="texto_primario_h1">Melhores Anúncios</h1>
-                    <p class="texto_secundario_p"> Os Melhores Anúncios Melhores Anúncios Melhores Anúncios</p>
+                    <h1 class="texto_primario_h1">Ganhe Dinheiro</h1>
+                    <p class="texto_secundario_p"> Como ganhar dinheiro locando seu veículo na Mob'Share</p>
                 </div>
             </div>
         </header>

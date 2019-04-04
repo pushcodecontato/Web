@@ -34,7 +34,7 @@
                     </div>    
                 </nav>
                 <div class="texto_chamativo">
-                    <p class="texto_primario">Ganhar dinheiro <span style="color:#306b2c;">compartilhando</span> seu veículo nunca foi tão fácil</p>
+                    <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil</p>
                     <p class="texto_secundario">O que acha de anúnciar ele AGORA!</p>
                     <div class="btn_anunciar">
                         <a href="#">Anuncie-já!</a>
