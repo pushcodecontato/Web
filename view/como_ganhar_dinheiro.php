@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Como ganhar dinheiro</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/como_ganhar_dinheiro.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/como_ganhar_dinheiro.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/header.css">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- <script src="main.js"></script> -->
 </head>
@@ -15,17 +15,17 @@
                 <nav class="cor_site_padrao">
                     <div id="segura_nav">
                         <div id="logo">
-                            <img src="imagem/mob.png" alt="logo" title="logo">
+                            <img src="view/imagem/mob.png" alt="logo" title="logo">
                         </div>
 
                         <div class="segura_menu">
                             <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
+                                <li><a href="?home">Início</a></li>
+                                <li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+                                <li><a href="?principais_anuncios">Veículos à Venda</a></li>
+                                <li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+                                <li><a href="?parceiros">Seja um Parceiro</a></li>
+                                <li><a href="?sobre">Sobre Nós</a></li>
                             </ul>
                         </div>
 
@@ -48,10 +48,10 @@
                 <h2>Como cadastrar seu veículo?</h2>
             </div>
             <div class="lista_cadastrar_veiculo">
-                <img src="imagem/de_tempo.png" alt="lista_cadastrar">
+                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
             </div>
             <div class="lista_cadastrar_veiculo">
-                <img src="imagem/de_tempo.png" alt="lista_cadastrar">
+                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
             </div>
             <div id="botao">
                 <button class="link_pagina">Saiba mais</button>
@@ -63,10 +63,10 @@
                 <h2>Como cadastrar um anuncio?</h2>
             </div>
             <div class="lista_cadastrar_anuncio">
-                <img src="imagem/lista_cadastrar.png" alt="lista_cadastrar">
+                <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
             </div>
             <div class="lista_cadastrar_anuncio">
-                <img src="imagem/lista_cadastrar.png" alt="lista_cadastrar">
+                <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
             </div>
             <div id="botao_anuncio">
                 <button class="link_pagina">Saiba mais</button>
@@ -78,10 +78,10 @@
                 <h2>Como cadastrar um anuncio?</h2>
             </div>
             <div class="lista_cadastrar_pagamento">
-                <img src="imagem/de_tempo.png" alt="lista_cadastrar">
+                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
             </div>
             <div class="lista_cadastrar_pagamento">
-                <img src="imagem/de_tempo.png" alt="lista_cadastrar">
+                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
             </div>
             <div id="botao_pagamento">
                 <button class="link_pagina">Saiba mais</button>
@@ -94,10 +94,10 @@
             <h2>Como cadastrar um anuncio?</h2>
         </div>
         <div class="lista_cadastrar_avaliacao">
-            <img src="imagem/lista_cadastrar.png" alt="lista_cadastrar">
+            <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
         </div>
         <div class="lista_cadastrar_avaliacao">
-            <img src="imagem/lista_cadastrar.png" alt="lista_cadastrar">
+            <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
         </div>
         <div id="botao_avaliacao">
             <button class="link_pagina">Saiba mais</button>
@@ -241,7 +241,7 @@
         <!--  Caixas que contem o contato e o navegar pelo site -->
         <div class="newsletter">
             <div class="logo_mob">
-                <img src="imagem/mob.png" alt="logo">
+                <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
                 <form id="frmEmail">
@@ -284,13 +284,13 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="imagem/f.png">
-                    <img src="imagem/i.png">
-                    <img src="imagem/t.png">
+                    <img src="view/imagem/f.png">
+                    <img src="view/imagem/i.png">
+                    <img src="view/imagem/t.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="imagem/googleplay.png" width="128">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" width="128">
                 </div>
             </div>
         </div>

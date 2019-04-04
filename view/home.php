@@ -19,12 +19,12 @@
                         </div>
                         <div class="segura_menu">
                             <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
+                                <li><a href="?home">Início</a></li>
+                                <li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+                                <li><a href="?principais_anuncios">Veículos à Venda</a></li>
+                                <li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+                                <li><a href="?parceiros">Seja um Parceiro</a></li>
+                                <li><a href="?sobre">Sobre Nós</a></li>
                             </ul>
                         </div>
                         <div class="segura_login">

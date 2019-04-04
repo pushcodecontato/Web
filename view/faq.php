@@ -15,18 +15,18 @@
                     <nav class="cor_site_padrao">
                         <div id="segura_nav">
                             <div id="logo">
-                                <img src="imagem/mob.png" alt="logo" title="logo">
+                                <img src="view/imagem/mob.png" alt="logo" title="logo">
                             </div>
 
                             <div class="segura_menu">
                                 <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
-                            </ul>
+									<li><a href="?home">Início</a></li>
+									<li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+									<li><a href="?principais_anuncios">Veículos à Venda</a></li>
+									<li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+									<li><a href="?parceiros">Seja um Parceiro</a></li>
+									<li><a href="?sobre">Sobre Nós</a></li>
+								</ul>
                             </div>
 
                             <div class="segura_login">
@@ -99,7 +99,7 @@
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="imagem/icones/arrow_down.png" alt="seta" onclick="mostrar_mais()">
+                            <img src="view/imagem/icones/arrow_down.png" alt="seta" onclick="mostrar_mais()">
                         </div>
                         <div class="linha_perguntas">
                             <div class="segura_perguntas">
@@ -111,7 +111,7 @@
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="imagem/icones/arrow_down.png" alt="seta">
+                            <img src="view/imagem/icones/arrow_down.png" alt="seta">
                         </div>
                         <div class="linha_perguntas">
                             <div class="segura_perguntas">
@@ -123,7 +123,7 @@
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="imagem/icones/arrow_down.png" alt="seta">
+                            <img src="view/imagem/icones/arrow_down.png" alt="seta">
                         </div>
                         <div class="linha_perguntas">
                             <div class="segura_perguntas">
@@ -135,7 +135,7 @@
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="imagem/icones/arrow_down.png" alt="seta">
+                            <img src="view/imagem/icones/arrow_down.png" alt="seta">
                         </div>
                         <div class="linha_perguntas ">
                             <div class="segura_perguntas">
@@ -147,7 +147,7 @@
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="imagem/icones/arrow_down.png" alt="seta">
+                            <img src="view/imagem/icones/arrow_down.png" alt="seta">
                         </div>
                         
                     </div>

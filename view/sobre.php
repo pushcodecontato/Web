@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Sobre</title>
-        <link rel="stylesheet" type="text/css" href="css/sobre.css">
+        <link rel="stylesheet" type="text/css" href="view/css/sobre.css">
     </head>
     <body>
         <div id="main">
@@ -12,17 +12,17 @@
                     <nav class="cor_site_padrao">
                         <div id="segura_nav">
                             <div id="logo">
-                                <img src="imagem/mob.png" alt="logo" title="logo">
+                                <img src="view/imagem/mob.png" alt="logo" title="logo">
                             </div>
 
                             <div class="segura_menu">
                                 <ul>
-                                    <li><a href="home.php">Início</a></li>
-                                    <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                    <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                    <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                    <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                    <li><a href="view/sobre.php">Sobre Nós</a></li>
+                                    <li><a href="?home">Início</a></li>
+									<li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+									<li><a href="?principais_anuncios">Veículos à Venda</a></li>
+									<li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+									<li><a href="?parceiros">Seja um Parceiro</a></li>
+									<li><a href="?sobre">Sobre Nós</a></li>
                                 </ul>
                             </div>
 
@@ -70,7 +70,7 @@
                         <h2> MISSÃO</h2>
                         <br>
                         <figure>
-                          <img src="imagem/missao.jpg" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/imagem/missao.jpg" alt="The Pulpit Rock" width="200px" height="200px">
                         </figure>
                         <p>
                             Ser a maior empresa em soluções tecnológicas para mobilidade no Brasil e no mundo, com excelência e eficiência em seus produtos e serviços.
@@ -80,7 +80,7 @@
                         <h2> VISÃO</h2>
                         <br>
                         <figure>
-                          <img src="imagem/visao.jpg" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/imagem/visao.jpg" alt="The Pulpit Rock" width="200px" height="200px">
                         </figure>
                         <p>
                             Viabilizar o sucesso dos nossos clientes não só oferecendo produtos e serviços, mas soluções inovadoras em Tecnologia e Mobilidade.
@@ -90,7 +90,7 @@
                         <h2> VALORES</h2>
                         <br>
                         <figure>
-                          <img src="imagem/valores.jpg" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/imagem/valores.jpg" alt="The Pulpit Rock" width="200px" height="200px">
                         </figure>
                         <p>
                             Modernidade, eficiência, excelência e respeito não só para toda equipe que engloba a Empresa, mas para todos os nossos clientes.
@@ -102,7 +102,7 @@
         <!--  Caixas que contem o contato e o navegar pelo site -->
         <div class="newsletter">
             <div class="logo_mob">
-                <img src="imagem/mob.png" alt="logo">
+                <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
                 <form id="frmEmail">
@@ -145,13 +145,13 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="imagem/f.png">
-                    <img src="imagem/i.png">
-                    <img src="imagem/t.png">
+                    <img src="view/imagem/f.png">
+                    <img src="view/imagem/i.png">
+                    <img src="view/imagem/t.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="imagem/googleplay.png" width="128">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" width="128">
                 </div>
             </div>
         </div>

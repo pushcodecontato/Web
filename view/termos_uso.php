@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mob'Share-Home</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/termo_uso.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/termo_uso.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
@@ -14,18 +14,18 @@
                     <nav class="cor_site_padrao">
                         <div id="segura_nav">
                             <div id="logo">
-                                <img src="imagem/mob.png" alt="logo" title="logo">
+                                <img src="view/imagem/mob.png" alt="logo" title="logo">
                             </div>
 
                             <div class="segura_menu">
                                 <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
-                            </ul>
+									<li><a href="?home">Início</a></li>
+									<li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+									<li><a href="?principais_anuncios">Veículos à Venda</a></li>
+									<li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+									<li><a href="?parceiros">Seja um Parceiro</a></li>
+									<li><a href="?sobre">Sobre Nós</a></li>
+								</ul>
                             </div>
 
                             <div class="segura_login">

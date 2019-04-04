@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mob'Share-Home</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="css/melhores_anuncios.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="view/css/melhores_anuncios.css"/>
     </head>
     <body>
         <div id="principal">
@@ -13,17 +13,17 @@
                     <nav class="cor_site_padrao">
                         <div id="segura_nav">
                             <div id="logo">
-                                <img src="imagem/mob.png" alt="logo" title="logo">
+                                <img src="view/imagem/mob.png" alt="logo" title="logo">
                             </div>
                             <div class="segura_menu">
                                 <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
-                            </ul>
+									<li><a href="?home">Início</a></li>
+									<li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+									<li><a href="?principais_anuncios">Veículos à Venda</a></li>
+									<li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+									<li><a href="?parceiros">Seja um Parceiro</a></li>
+									<li><a href="?sobre">Sobre Nós</a></li>
+								</ul>
                             </div>
 
                             <div class="segura_login">
@@ -72,7 +72,7 @@
                 <div id="AnunciosBox" class="action-animated">
                     <div class="anuncio">
                         <div class="img">
-                            <img alt="carro" src="imagem/possivelcarro.jpg">
+                            <img alt="carro" src="view/imagem/possivelcarro.jpg">
                         </div>
                         <div class="titulo"> Corça </div>
                         <div class="desc">
@@ -95,7 +95,7 @@
                 <div id="segura_anuncios">
                     <a href="#">
                         <div class="anuncios">
-                                <img class="img_anuncio" src="imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
+                                <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -104,8 +104,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -114,7 +114,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -123,8 +123,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -133,7 +133,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="imagem/hb20.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/hb20.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -142,8 +142,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -152,7 +152,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="imagem/gol.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/gol.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -161,8 +161,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -171,7 +171,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="imagem/Bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/Bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -180,8 +180,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -190,7 +190,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="imagem/xj9.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/xj9.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
@@ -199,8 +199,8 @@
                                 <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
 
                                 <div class="stars_avaliacao">
-                                    <img src="imagem/star1.png" alt="star">
-                                    <img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star"><img src="imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
 
@@ -228,7 +228,7 @@
         <!--  Caixas que contem o contato e o navegar pelo site -->
         <div class="newsletter">
             <div class="logo_mob">
-                <img src="imagem/mob.png" alt="logo">
+                <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
                 <form id="frmEmail">
@@ -271,19 +271,19 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="imagem/f.png">
-                    <img src="imagem/i.png">
-                    <img src="imagem/t.png">
+                    <img src="view/imagem/f.png">
+                    <img src="view/imagem/i.png">
+                    <img src="view/imagem/t.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="imagem/googleplay.png" width="128">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" width="128">
                 </div>
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-    <script src="js/libs/jquery/jquery-3.3.1.js"></script>
-    <script src="js/pages/melhores_anuncios.js"></script>
+    <script src="view/js/main.js"></script>
+    <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="view/js/pages/melhores_anuncios.js"></script>
     </body>
 </html>

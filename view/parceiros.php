@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mob'Share-Home</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/parceiro.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/parceiro.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="js/libs/jquery/jquery-3.3.1.js"></script>
 </head>
@@ -15,17 +15,17 @@
                 <nav class="cor_site_padrao">
                     <div id="segura_nav">
                         <div id="logo">
-                            <img src="imagem/mob.png" alt="logo" title="logo">
+                            <img src="view/imagem/mob.png" alt="logo" title="logo">
                         </div>
 
                         <div class="segura_menu">
                             <ul>
-                                <li><a href="home.php">Início</a></li>
-                                <li><a href="view/melhores_anuncios.php">Veículos em Destaques</a></li>
-                                <li><a href="view/principais_anuncios.php">Veículos à Venda</a></li>
-                                <li><a href="view/como_ganhar_dinheiro.php">Ganhe Dinheiro</a></li>
-                                <li><a href="view/parceiros.php">Seja um Parceiro</a></li>
-                                <li><a href="view/sobre.php">Sobre Nós</a></li>
+                                <li><a href="?home">Início</a></li>
+                                <li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
+                                <li><a href="?principais_anuncios">Veículos à Venda</a></li>
+                                <li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
+                                <li><a href="?parceiros">Seja um Parceiro</a></li>
+                                <li><a href="?sobre">Sobre Nós</a></li>
                             </ul>
                         </div>
 
@@ -45,7 +45,7 @@
 
              <div class="row" style=" height: 360px;">
                 <div class="cold4 esquerda">
-                    <img src="imagem/bg-parceiros.jpg" style="height: 355px; width:100%;">
+                    <img src="view/imagem/bg-parceiros.jpg" style="height: 355px; width:100%;">
                 </div>
                 <div class="cold2 center" style="width: 29%;">
                     <div class="esquerda border-left"></div>
@@ -53,12 +53,12 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
                         <button>Quero ser um Parceiro</button>
                         <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
-                        <img src="imagem/selo4.png" alt="sdssd" width="92">
+                        <img src="view/imagem/selo4.png" alt="sdssd" width="92">
                     </div>
                     <div class="direita border-right"></div>
                 </div>
                 <div class="cold4 direita">
-                    <img src="imagem/bg-usuario.jpg"  style="height: 355px; width:100%;">
+                    <img src="view/imagem/bg-usuario.jpg"  style="height: 355px; width:100%;">
                 </div>
 
              </div>
@@ -68,7 +68,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/family.jpg">
+                                <img src="view/imagem/family.jpg">
                             </div>
                             <div class="titulo">Ferias</div>
                             <div class="desc">
@@ -79,7 +79,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/people-car2.jpg">
+                                <img src="view/imagem/people-car2.jpg">
                             </div>
                             <div class="titulo">Seus Funcionarios</div>
                             <div class="desc">
@@ -90,7 +90,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/people-car.jpg">
+                                <img src="view/imagem/people-car.jpg">
                             </div>
                             <div class="titulo"> Descontos </div>
                             <div class="desc">
@@ -103,7 +103,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/people-car3.jpg">
+                                <img src="view/imagem/people-car3.jpg">
                             </div>
                             <div class="titulo"> Só o melhor </div>
                             <div class="desc">
@@ -114,7 +114,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/people-car4.jpg">
+                                <img src="view/imagem/people-car4.jpg">
                             </div>
                             <div class="titulo">Impressione Clientes</div>
                             <div class="desc">
@@ -125,7 +125,7 @@
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
-                                <img src="imagem/people-car5.jpg">
+                                <img src="view/imagem/people-car5.jpg">
                             </div>
                             <div class="titulo"> Locomoção definitiva </div>
                             <div class="desc">
@@ -141,7 +141,7 @@
         <!--  Caixas que contem o contato e o navegar pelo site -->
         <div class="newsletter">
             <div class="logo_mob">
-                <img src="imagem/mob.png" alt="logo">
+                <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
                 <form id="frmEmail">
@@ -184,13 +184,13 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="imagem/f.png">
-                    <img src="imagem/i.png">
-                    <img src="imagem/t.png">
+                    <img src="view/imagem/f.png">
+                    <img src="view/imagem/i.png">
+                    <img src="view/imagem/t.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="imagem/googleplay.png" width="128">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" width="128">
                 </div>
             </div>
         </div>
