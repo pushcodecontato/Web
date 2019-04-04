@@ -171,7 +171,7 @@
                     </a>
                     <a href="#">
                         <div class="anuncios">
-                            <img class="img_anuncio" src="view/imagem/Bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <img class="img_anuncio" src="view/imagem/bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
                                 <p class="nome_veiculo">R$ 30,00/hora</p>
 
