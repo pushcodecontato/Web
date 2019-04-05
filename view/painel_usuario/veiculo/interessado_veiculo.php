@@ -14,6 +14,7 @@
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro6.png" title="icone" alt="icone">
             </div>
             <div id="bolinha"></div>
+            <div id="bolinha"></div>
 
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
@@ -36,6 +37,9 @@
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro1.png" title="icone" alt="icone">
 
             </div>
+            <div id="bolinha"></div>
+            <div id="bolinha"></div>
+
 
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
@@ -58,6 +62,10 @@
             <div class="imagem_anuncio">
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro2.png" title="icone" alt="icone">
             </div>
+
+            <div id="bolinha"></div>
+            <div id="bolinha"></div>
+
 
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
@@ -87,6 +95,10 @@
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro2.png" title="icone" alt="icone">
             </div>
 
+            <div id="bolinha"></div>
+            <div id="bolinha"></div>
+
+
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
             </div>
@@ -110,6 +122,10 @@
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro4.png" title="icone" alt="icone">
             </div>
 
+            <div id="bolinha"></div>
+            <div id="bolinha"></div>
+
+
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
             </div>
@@ -130,6 +146,10 @@
            <div class="imagem_anuncio">
                 <img class="foto_anuncio" src="view/painel_usuario/imagem/carro5.png" title="icone" alt="icone">
             </div>
+
+            <div id="bolinha"></div>
+            <div id="bolinha"></div>
+
 
             <div class="titulo_anuncio">
                 <h4> Titulo </h4>
