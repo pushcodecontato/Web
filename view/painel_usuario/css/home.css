@@ -1,3 +1,4 @@
+@import"interessado_veiculo.css";
 /*css*/
 body{
     margin: 0px;
@@ -129,12 +130,10 @@ a{
 
 /*conteudo*/
 #conteudo{
-    width: 950px;
-    height: 660px;
-    border: solid 1px;
+    width: 1000px;
+    height: 700px;
     float: left;
-    margin: 20px;
-    border-radius: 20px;
+   
 
 }
 #h2Border{

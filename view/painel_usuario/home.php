@@ -4,9 +4,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>painel_usuario-Home</title>
+
+    <!-- import dos arquivos scripts -->
+    <script src="view/painel_usuario/js/jquery.js"></script>
+    <script src="view/painel_usuario/js/script_crud.js"></script>
+
+
     <link rel="stylesheet" 
           type="text/css"
           href="view/painel_usuario/css/home.css"/>
+
+    
 </head>
     <body>
         <!--DIV PRINCIPAL QUE SEGURA TUDO -->
@@ -65,16 +73,15 @@
             <nav>
                 <h5>Menu</h5>
                 
-                <div class="caixa_menu">
+                <div class="caixa_menu" onclick="abrir_menu('veiculo/interessado_veiculo.php')">
                     <div class="menu_icone">
                        <img class="menu_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">   
                     </div>
                     
                     <!--titulos do menu-->
-                    <div class="menu_titulo">
+                    <div class="menu_titulo" >
                         <p> 
-                            <a href="#">Gerenciar veiculos</a>
-                        
+                            Gerenciar veiculos
                         </p>
                     </div>
                     
@@ -89,7 +96,7 @@
                     <!--titulos do menu-->
                     <div class="menu_titulo">
                         <p>
-                            <a href="#">Gerenciar anúncios </a>
+                            Gerenciar anúncios 
                         </p>
                     </div>
                     
@@ -102,7 +109,7 @@
                     <!--titulos do menu-->
                     <div class="menu_titulo">
                         <p>
-                            <a href="#"> Gerenciar locações</a> 
+                         Gerenciar locações
                         
                         </p>
                     </div>
@@ -116,7 +123,7 @@
                     <!--titulos do menu-->
                     <div class="menu_titulo">
                         <p>
-                            <a href="#"> Conversas</a>
+                            Conversas
                         </p>
                     </div>
                     
