@@ -120,7 +120,7 @@ var usuario = {
         $.ajax({
             type:'post',
             method:'post',
-            url:'router.php?controller=usuarios&modo=selectAll',
+            url:'?cms/usuarios/tabela',
         }).then(function(resposta){
             $('.tbl_usuarios').html(resposta);
         })
@@ -190,8 +190,7 @@ var usuario = {
 }
 
 
-/* logar função */
-
+/* logar função  temporario */
 function logar(formulario){
 	$.ajax({
 		type:'post',

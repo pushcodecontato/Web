@@ -10,7 +10,6 @@
     <script src="view/cms/js/script_CRUD.js"></script>
     <script src="view/cms/js/notify.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>CMS-Mos'share</title>
 </head>
 <body>
@@ -59,17 +58,17 @@
                         <p>Gerenciar veiculos</p>
                     </div>
                     <div class="sub_menu" id="gerenciar_veiculos"> 
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                            <p>tipo de veiculo</p>
+                            <p>veiculos pendentes</p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
-                            <img src="view/cms/imagem/icones/copyright.png" alt="marca">
-                            <p> marca </p>
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                            <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <p>tipos de veiculos</p>
                         </div>
                         <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
                             <img src="view/cms/imagem/icones/car2.png" alt="Modelos">
-                            <p> modelo </p>
+                            <p> modelos </p>
                         </div>
                     </div>
                     <div class="item_menu" onclick="abrir_menu('120px')">

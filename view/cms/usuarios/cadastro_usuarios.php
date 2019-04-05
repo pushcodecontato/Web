@@ -28,35 +28,30 @@
         <input  name="txtEmail" class="nome_nivel" placeholder="email" value="<?=@$email?>" required>
         <input  name="txtSenha" type="password" class="nome_nivel"     value="<?=@$senha?>" placeholder="Senha" required>
         <select name="slcNivel" class="usuario_slc" id="slcNivel" requied>
+         <?php
+            require_once("controller/controllerNiveis.php");
+            
+            $controllerNiveis = new ControllerNiveis();
+            $lista_niveis = $controllerNiveis->listar_niveis();
+            
+            foreach($lista_niveis as $nivel){
+            
+          ?>
+
+              <option value="<?php echo $nivel->getId_niveis(); ?>"
+                <?php echo ($nivel->getId_niveis() == $slcNivel)?'selected':''?>>
+
+                <?php echo $nivel->getNome_nivel(); ?>
                 
+              </option>
+
+         <?php }?>
         </select>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
     </form>
 
     <div class="tbl_usuarios">
-        
+        <?php require_once("view/cms/usuarios/tabela.php")?>   
     </div>
 </div>
-
-<script>
-//Chamando a função para pegar os dados
-usuario.getDados();
-
-$.ajax({url:'router.php?controller=niveis&modo=selectall&json'}).then(function(res){
-    
-    var lista = JSON.parse(res);
-    
-    for(var i =0 ; i < lista.length;i++){
-        var item = JSON.parse(lista[i]);
-
-        if("<?=$slcNivel?>" == item.id && "<?=@$modo?>" == "ATUALIZAR"){
-            $('#slcNivel').append('<option value="'+item.id+'" selected>' + item.nome + '</option>');   
-        }
-        
-        
-        $('#slcNivel').append('<option value="'+item.id+'">' + item.nome + '</option>');
-    }
-    
-});
-</script>
 <link rel="stylesheet" type="text/css" href="view/cms/css/usuario.css">
