@@ -127,6 +127,8 @@ var usuario = {
     },
     dao:{
         insert:function(form){
+			
+			event.preventDefault();
 
             form = $(form);
 
@@ -146,11 +148,12 @@ var usuario = {
                     conteudo_subMenu('usuarios/cadastro_usuarios',true);
                 }
             })
-            return false;
         },
         update:function(form){
-            
-           form = $('form#formUsuario');
+          	
+          	event.preventDefault();
+          	  
+            form = $('form#formUsuario');
 
             console.log("Formulario: ",form);
             $.ajax({
@@ -168,7 +171,6 @@ var usuario = {
 
                 }
             })
-            return false;
         },
         delete:function(id){
             $.ajax({
@@ -192,6 +194,10 @@ var usuario = {
 
 /* logar função  temporario */
 function logar(formulario){
+	
+	// Desativa o submit do formualrio par a tela não piscar
+	event.preventDefault();
+
 	$.ajax({
 		type:'post',
 		method: 'post',
@@ -215,6 +221,4 @@ function logar(formulario){
 		
 		}
 	})
-
-	return false;
 }

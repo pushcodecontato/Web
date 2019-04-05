@@ -8,7 +8,7 @@
     $email = "";
     $senha = "";
     $slcNivel = "";
-    $submit = 'return usuario.dao.insert(this)';//js
+    $submit = 'usuario.dao.insert(this)';//js
     $id_usuario_cms = '';
     if(@$usuario){
         $nome = $usuario->getNome();
@@ -17,7 +17,7 @@
         $slcNivel = $usuario->getNivel();
         $id_usuario_cms = '&id='.$usuario->getId();
         $modo = 'ATUALIZAR';
-        $submit = 'return usuario.dao.update(this)';//js
+        $submit = 'usuario.dao.update(this)';//js
     }
 ?>
 <div class="segura_form">  
