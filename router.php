@@ -94,6 +94,12 @@
                         
                         $usuario = $controller_usuario->getById();
                         require_once('view/cms/usuarios/cadastro_usuarios.php');
+                        break;
+                   case "LOGAR":
+
+                        $controller_usuario->logar();
+
+                        break;
                 }
  
                 break;

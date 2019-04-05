@@ -142,7 +142,8 @@ var usuario = {
 
                     $.notify("usuario Cadastrado com sucesso", "success");
                     
-                    usuario.getDados();
+                    //usuario.getDados();
+                    conteudo_subMenu('usuarios/cadastro_usuarios',true);
                 }
             })
             return false;
@@ -186,4 +187,35 @@ var usuario = {
             })
         }
     }
+}
+
+
+/* logar função */
+
+function logar(formulario){
+	$.ajax({
+		type:'post',
+		method: 'post',
+		url:'router.php?controller=usuarios&modo=logar',
+		data:$(formulario).serialize()
+	}).then(function(resposta){
+		
+		console.log("Resposta: ",resposta);
+
+		if(resposta.toString().search('sucesso')>=0){
+
+			$.notify("usuario logado com sucesso", "success");
+
+			//var redirecionamento = window.location.origin + window.location.pathname + '?cms/home';
+			
+			window.location.href = '?cms/home_cms';
+
+		}else{
+
+			$.notify("Erro ao logar com usuario !", "error");
+		
+		}
+	})
+
+	return false;
 }
