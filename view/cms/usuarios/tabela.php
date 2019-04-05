@@ -7,7 +7,10 @@
 </div>
 
 <?php
-    
+   
+  if(count($listUsuarios)<1){
+    echo " <p style='text-align:center;'> não existem usuarios cadastrados!! </p> ";
+  }
   foreach($listUsuarios as $usuario){
        
 ?>
