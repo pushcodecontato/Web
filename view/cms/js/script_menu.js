@@ -13,8 +13,9 @@ function abrir_menu(height, sub_menu, item_menu){
         controle = true;
         //e a div recebe a animação de abrir, a variavel height está sendo passado no click
         //do botão
-        $(sub_menu).css("height",height).show(550);
-        $(item_menu).css("background-color", "#585858");
+        $(sub_menu).css("height","auto").show(580);
+        $(item_menu).css("background-color","#585858");
+        
     }else{
         //se for igual a true então significa que está aberto e precis ser fechado
         controle = false;

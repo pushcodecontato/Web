@@ -59,7 +59,18 @@
                         <p>Gerenciar veiculos</p>
                     </div>
                     <div class="sub_menu" id="gerenciar_veiculos"> 
-    
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
+                            <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <p>tipo de veiculo</p>
+                        </div>
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
+                            <img src="view/cms/imagem/icones/copyright.png" alt="marca">
+                            <p> marca </p>
+                        </div>
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
+                            <img src="view/cms/imagem/icones/car2.png" alt="Modelos">
+                            <p> modelo </p>
+                        </div>
                     </div>
                     <div class="item_menu" onclick="abrir_menu('120px')">
                         <img src="view/cms/imagem/icones/anuncio.png" alt="Anúncios"> 
