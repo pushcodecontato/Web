@@ -18,7 +18,7 @@
                      
                            
                     <div class="img_logo">
-                        <img class="img_logo" src="view/imagem/Mob.png" title="logo da empresa" alt="logo da empresa">
+                        <img class="img_logo" src="view/painel_usuario/imagem/Mob.png" title="logo da empresa" alt="logo da empresa">
                     </div>
                     
                     <div id="bemvindo">
@@ -123,160 +123,9 @@
                 </div>
             
             </nav>
-            
+            <!-- TODO O CONTEUDO-->
             <div id="conteudo">
-                <h2 id="h2Border">Interessados nos veículos</h2>
                 
-                
-                <div id="principal_anuncios">
-                    <!--parte de cima do anuncio-->
-                    <div class="segura_anuncio">
-                        
-                        <div class="caixa_anuncio">
-                            <div class="imagem_anuncio"> 
-                                
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        </div>
-                        
-                        <div class="caixa_anuncio">
-                        
-                            <div class="imagem_anuncio">
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                             
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        
-                        </div>
-                        
-                        <div class="caixa_anuncio">
-                            <div class="imagem_anuncio">
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                             
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        
-                        </div>
-                    
-                    
-                    </div>
-                    
-                    
-                    <!--parte de baixo do anuncio-->
-                     <div class="segura_anuncio">
-                        <div class="caixa_anuncio">
-                           <div class="imagem_anuncio">
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                             
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        
-                         
-                        </div>
-                        <div class="caixa_anuncio">
-                         
-                           <div class="imagem_anuncio">
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                             
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        
-                        </div>
-                        <div class="caixa_anuncio">
-                           <div class="imagem_anuncio">
-                                <img class="foto_anuncio" src="view/painel_usuario/imagem/carro.jpg" title="icone" alt="icone">
-                            </div>
-                            
-                            <div class="titulo_anuncio">
-                                <h4> Titulo </h4>
-                            </div>
-                            
-                             
-                            <div class="dados_anuncio">
-                                <p id="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
-                                    <strong>Avaliação:</strong> 8.9
-                                </p>
-                            </div>
-                        
-                        
-                         
-                        </div>
-                    
-                    
-                    </div>
-                
-                
-                </div>
             </div>
             
         </div>
