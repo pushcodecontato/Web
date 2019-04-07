@@ -112,27 +112,43 @@
             </section>
             <section class="section_anunciar fundo_white" id="anuncie_veiculo">
                 <div id="segura_conteudo">
-                    <h2 class="titulo_left font_green">Quer anúnciar seu veículo?</h2>
+                    <h2 class="titulo_left">Quer anúnciar seu veículo?</h2>
                     <div class="anunciar_veiculo">
                         <h2>Siga os passos abaixo e anuncie seu veículo!</h2>
                         <div class="div_passos">
-                            
+                            <img src="view/imagem/user.png" alt="teste">
+                            <h2>Criar uma conta</h2>
+                            <div class="texto_como_anunciar">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                            </div>
                         </div>
                         <div class="div_passos">
-                            
+                            <img src="view/imagem/key.png" alt="teste">
+                            <h2>Cadastre seu veículo</h2>
+                            <div class="texto_como_anunciar">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                            </div>
                         </div>
                         <div class="div_passos">
-                            
+                            <img src="view/imagem/ad.png" alt="teste">
+                            <h2>Crie um anúncio</h2>
+                            <div class="texto_como_anunciar">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                            </div>
                         </div>
                         <div class="div_passos">
-                            
+                            <img src="view/imagem/esperar.png" alt="teste">
+                            <h2>Espere os interessados</h2>
+                            <div class="texto_como_anunciar">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="section_conteudo_anuncios" id="destaques">
                 <div id="area_anuncios">
-                <h2 class="titulo_left font_green">Veja os destaques dessa semana</h2>            
+                <h2 class="titulo_left">Veja os destaques dessa semana</h2>            
                     <div id="segura_anuncios">
                         <a href="#">
                             <div class="anuncios">

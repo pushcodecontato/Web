@@ -12,7 +12,7 @@
 #principal{
     width:100%;
     height:auto;
-    min-height: 5334px;
+    min-height: 4000px;
     background-color: #fff;
     /* overflow:auto; */
 }
@@ -388,7 +388,7 @@
 .section_anunciar{
     width: 100%;
     height: auto;
-    min-height: 1300px;
+    min-height: 500px;
     margin-left: auto;
     margin-right: auto;
     
@@ -396,18 +396,17 @@
 #segura_conteudo{
     width: 1250px;
     height: auto;
-    min-height: 1300px;
+    min-height: 500px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
 }
 .anunciar_veiculo{
-    width: 1000px;
+    width: 1250px;
     height: auto;
-    min-height: 1000px;
-    /* padding: 25px; */
+    min-height: 500px;
     overflow: hidden;
-    margin-top: 30px; 
+    margin-top: 20px; 
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
@@ -415,19 +414,46 @@
 .anunciar_veiculo h2{
     text-align: center;
     font-family: "Roboto";
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;  
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .div_passos{
-    width:500px;
+    width:300px;
     height: auto;
     min-height: 350px;
-    border:1px solid black;
+    /* border:1px solid black; */
     float:left;
     margin-top: 50px;
+    margin-left: 10px;
 }
-
+.div_passos img{
+    width:180px;
+    height: 200px;
+    /* border:1px solid black; */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+    border-radius:20px;
+}
+.div_passos h2{
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 17px;
+}
+.texto_como_anunciar{
+    width:250px;
+    height: 125px;
+    /* border:1px solid black; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    text-align: center;
+    font-family: "Roboto-regular";
+    font-size: 16px;
+}
 /* fim section 5 */
 /* section 6 */
 .section_fale_conosco{
