@@ -27,7 +27,12 @@
                             </ul>
                         </div>
                         <div class="segura_login">
-                            <img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p>
+                            <div class="login_cadastro" style="width: 110px;">
+                                <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            </div>
+                            <div class="login_cadastro" style="width: 160px;">
+                                <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            </div>
                         </div>
                     </div>    
                 </nav>
@@ -42,71 +47,70 @@
             </header>
         </div>
         <div id="conteudo">
-             <div class="fundo_site_top">
-                <section class="section_anuncios">
-                    <div id="div_anuncio">
-                        <h2 class="titulo_section font_white">Por que anúnciar seu veículo?</h2>
-                        <div class="alugar_veiculo">
-                            <div class="imagem_alugar_veiculo">
-                                <img  src="view/imagem/teste1.png" alt="" title=""> 
-                            </div>
-                            <div class="area_texto">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo 
-                                </p>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </section>
+            <div class="fundo_site_top">
                 <section class="section_conteudo">
                     <div class="como_funciona" id="como_funciona">
                         <h2 class="titulo_section font_white" >Como funciona?</h2>
 
                         <div id="segura_como_funciona">
                             <div class="area_texto_maior">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                   
-                                </p>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                </ul>
                             </div >
                             <img class="imagem_como_funciona" src="view/imagem/carr.jpg" alt="carro" title="">   
                         </div>
                     </div>
+                </section>   
+                <section class="section_conteudo2" style="height:610px;">
+                    <h2 class="titulo_section font_green" style="font-size:50px; margin-top:30px;">O que pode ser alugador?</h2>
+                    <div class="area_tipo_veiculo" >
+                        <div class="tipos_veiculos">
+
+                            <a href="#"><img class="imagem_tipo" src="view/imagem/bike.png"></a>
+                            <h3>Bicicletas</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
+                            </p>
+                        </div>
+                        <div class="tipos_veiculos">
+                            <a href="#"><img class="imagem_tipo"  src="view/imagem/moto.png"></a>   
+                            <h3>Motos</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
+                            </p>     
+                        </div>
+                        <div class="tipos_veiculos">
+                            <a href="#"><img class="imagem_tipo" src="view/imagem/car.png"></a>
+                            <h3>Carros</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
+                                
+                            </p>
+                        </div>
+                    </div>
                 </section>
             </div>
-            <section class="section_conteudo2" style="height:610px;" id="tipo_veiculos">
-               
-                <h2 class="titulo_section font_green" style="font-size:50px; margin-top:30px;">O que pode ser alugador?</h2>
-                <div class="area_tipo_veiculo" >
-                    <div class="tipos_veiculos">
-
-                        <a href="#"><img class="imagem_tipo" src="view/imagem/bike.png"></a>
-                        <h3>Bicicletas</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                        </p>
-                    </div>
-                    <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo"  src="view/imagem/moto.png"></a>   
-                        <h3>Motos</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                        </p>     
-                    </div>
-                    <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo" src="view/imagem/car.png"></a>
-                        <h3>Carros</h3>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                            
-                        </p>
+            <section class="section_anuncios">
+                <div id="div_anuncio">
+                    <h2 class="titulo_section font_white">Por que anúnciar seu veículo?</h2>
+                    <div class="alugar_veiculo">
+                        <div class="imagem_alugar_veiculo">
+                            <img  src="view/imagem/slider/carro_dinheiro.jpg" alt="" title=""> 
+                        </div>
+                        <div class="area_texto">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo 
+                            </p>
+                        </div>
+                    
                     </div>
                 </div>
             </section>
