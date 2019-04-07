@@ -9,94 +9,90 @@
 </head>
 <body>
     <div id="principal">
-        <div id="header_home">
-            <header>
-                <nav class="cor_site_padrao">
-                    <div id="segura_nav">
-                        <div id="logo">
-                            <img src="view/imagem/mob.png" alt="logo" title="logo">
+        <header id="header_home">
+            <nav class="cor_site_padrao">
+                <div id="segura_nav">
+                    <div id="logo">
+                        <img src="view/imagem/mob.png" alt="logo" title="logo">
+                    </div>
+                    <div class="segura_menu">
+                        <ul>
+                            <li><a href="?home">INÍCIO</a></li>
+                            <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
+                            <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
+                            <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
+                            <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
+                            <li><a href="?sobre">SOBRE NÓS</a></li>
+                        </ul>
+                    </div>
+                    <div class="segura_login">
+                        <div class="login_cadastro" style="width: 110px;">
+                            <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
                         </div>
-                        <div class="segura_menu">
+                        <div class="login_cadastro" style="width: 160px;">
+                            <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                        </div>
+                    </div>
+                </div>    
+            </nav>
+            <div class="texto_chamativo">
+                <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!</p>
+                <p class="texto_secundario">#anuncienamobshare</p>
+                <div class="btn_anunciar">
+                    <a href="#">Anuncie!</a>
+                    <!-- <a href="#">ANUNCIE!</a> -->
+                </div>
+            </div>
+        </header>
+        <div id="conteudo">
+            <section class="section_conteudo">
+                <div class="como_funciona" id="como_funciona">
+                    <h2 class="titulo_section font_white" >Como funciona?</h2>
+
+                    <div id="segura_como_funciona">
+                        <div class="area_texto_maior">
                             <ul>
-                                <li><a href="?home">INÍCIO</a></li>
-                                <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
-                                <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
-                                <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
-                                <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
-                                <li><a href="?sobre">SOBRE NÓS</a></li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                             </ul>
-                        </div>
-                        <div class="segura_login">
-                            <div class="login_cadastro" style="width: 110px;">
-                                <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                            </div>
-                            <div class="login_cadastro" style="width: 160px;">
-                                <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                            </div>
-                        </div>
-                    </div>    
-                </nav>
-                <div class="texto_chamativo">
-                    <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!</p>
-                    <p class="texto_secundario">#anuncienamobshare</p>
-                    <div class="btn_anunciar">
-                        <a href="#">Anuncie!</a>
-                        <!-- <a href="#">ANUNCIE!</a> -->
+                        </div >
+                        <img class="imagem_como_funciona" src="view/imagem/carr.jpg" alt="carro" title="">   
                     </div>
                 </div>
-            </header>
-        </div>
-        <div id="conteudo">
-            <div class="fundo_site_top">
-                <section class="section_conteudo">
-                    <div class="como_funciona" id="como_funciona">
-                        <h2 class="titulo_section font_white" >Como funciona?</h2>
+            </section>   
+            <section class="section_conteudo2" style="height:450px;">
+                <h2 class="titulo_section" style="margin-top:30px;">O que pode ser alugador?</h2>
+                <div class="area_tipo_veiculo" >
+                    <div class="tipos_veiculos">
 
-                        <div id="segura_como_funciona">
-                            <div class="area_texto_maior">
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                </ul>
-                            </div >
-                            <img class="imagem_como_funciona" src="view/imagem/carr.jpg" alt="carro" title="">   
-                        </div>
+                        <a href="#"><img class="imagem_tipo" src="view/imagem/bike.png"></a>
+                        <h3>Bicicletas</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
+                        </p>
                     </div>
-                </section>   
-                <section class="section_conteudo2" style="height:610px;">
-                    <h2 class="titulo_section font_green" style="font-size:50px; margin-top:30px;">O que pode ser alugador?</h2>
-                    <div class="area_tipo_veiculo" >
-                        <div class="tipos_veiculos">
-
-                            <a href="#"><img class="imagem_tipo" src="view/imagem/bike.png"></a>
-                            <h3>Bicicletas</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                            </p>
-                        </div>
-                        <div class="tipos_veiculos">
-                            <a href="#"><img class="imagem_tipo"  src="view/imagem/moto.png"></a>   
-                            <h3>Motos</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                            </p>     
-                        </div>
-                        <div class="tipos_veiculos">
-                            <a href="#"><img class="imagem_tipo" src="view/imagem/car.png"></a>
-                            <h3>Carros</h3>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                
-                            </p>
-                        </div>
+                    <div class="tipos_veiculos">
+                        <a href="#"><img class="imagem_tipo"  src="view/imagem/moto.png"></a>   
+                        <h3>Motos</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
+                        </p>     
                     </div>
-                </section>
-            </div>
+                    <div class="tipos_veiculos">
+                        <a href="#"><img class="imagem_tipo" src="view/imagem/car.png"></a>
+                        <h3>Carros</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
+                            
+                        </p>
+                    </div>
+                </div>
+            </section>
             <section class="section_anuncios">
                 <div id="div_anuncio">
                     <h2 class="titulo_section font_white">Por que anúnciar seu veículo?</h2>
@@ -111,6 +107,26 @@
                             </p>
                         </div>
                     
+                    </div>
+                </div>
+            </section>
+            <section class="section_anunciar fundo_white" id="anuncie_veiculo">
+                <div id="segura_conteudo">
+                    <h2 class="titulo_left font_green">Quer anúnciar seu veículo?</h2>
+                    <div class="anunciar_veiculo">
+                        <h2>Siga os passos abaixo e anuncie seu veículo!</h2>
+                        <div class="div_passos">
+                            
+                        </div>
+                        <div class="div_passos">
+                            
+                        </div>
+                        <div class="div_passos">
+                            
+                        </div>
+                        <div class="div_passos">
+                            
+                        </div>
                     </div>
                 </div>
             </section>
@@ -250,77 +266,6 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                </div>
-            </section>
-            <section class="section_anunciar fundo_white" id="anuncie_veiculo">
-                <div id="segura_conteudo">
-                    <h2 class="titulo_left font_green">Quer anúnciar seu veículo?</h2>
-                    <div class="anunciar_veiculo">
-                        <h2>Siga os passos abaixo e anuncie seu veículo!</h2>
-                        
-                        <div class="div_passos">
-                            <div class="bolinha_passos">
-                                <p class="numero_bolinhas">1</p>
-                            </div>
-                            <div class="texto_passos">
-                                <h3 >Crie uma conta hoje é GRÁTIS!</h3>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lore
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                LoreLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lore
-                                </p>
-                            </div>
-                            <div class="img_bolinha">
-                                <img src="view/imagem/i.jpg"> 
-                            </div>
-                        </div>
-                        <div class="div_passos">
-                            <div class="img_bolinha">
-                                <img src="view/imagem/i.jpg"> 
-                            </div>
-                            <div class="texto_passos">
-                                <h3 style="margin-left: 400px;">Cadastre seu veículo</h3>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lore</p>
-                            </div>
-                            <div class="bolinha_passos">
-                                <p class="numero_bolinhas">2</p>
-                            </div>
-                        </div>
-                        <div class="div_passos">
-                            <div class="bolinha_passos">
-                                <p class="numero_bolinhas">3</p>
-                            </div>
-                            <div class="texto_passos">
-                                <h3 >Agora crie seu anúncio!</h3>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lore</p>
-                            </div>
-                            <div class="img_bolinha">
-                                <img src="view/imagem/i.jpg"> 
-                            </div>
-                        </div>
-                        <div class="div_passos">
-                            <div class="img_bolinha">
-                                <img src="view/imagem/i.jpg">  
-                            </div>
-                            <div class="texto_passos">
-                                <h3 style="margin-left: 170px;">Aguarde contato e feche negócio com alguém!</h3>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lore</p>
-                            </div>
-                            <div class="bolinha_passos">
-                                <p class="numero_bolinhas">4</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -12,7 +12,7 @@
 #principal{
     width:100%;
     height:auto;
-    min-height: 6077px;
+    min-height: 5334px;
     background-color: #fff;
     /* overflow:auto; */
 }
@@ -23,16 +23,12 @@
     min-height: 5500px;
 
 }
-.fundo_site_top{
-    width: 100%;
-    height: auto;
-    min-height: 1500px;
-}
 .section_anuncios{
     width: 100%;
     height: auto;
     min-height: 400px;
     margin: 0px auto;
+    background-color: #ededed;
 }
 
 #div_anuncio{
@@ -47,9 +43,9 @@
 .titulo_section{
     text-align: center;
     font-family: "Roboto";
-    font-weight: bold;  
-    font-size: 35px;
-    color:#469048;
+    font-weight: bold;
+    font-size: 40px;
+    color:black;
 }
 .alugar_veiculo{
     width: 1000px;
@@ -131,13 +127,12 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px;
-    list-style: circle;
    
 }
-.area_texto_maior li{
+/* .area_texto_maior li{ 
     list-style: circle;
-   
-}
+    list-style-type: decimal;
+}  */
 .imagem_como_funciona{
     float: left;
     width: 450px;
@@ -152,7 +147,7 @@
 .section_conteudo2{
     width: 100%;
     height: auto;
-    min-height: 670px;
+    min-height: 450px;
     margin: 0px auto;
 }
 
@@ -160,23 +155,25 @@
 .area_tipo_veiculo{
     width:1300px;
     height: auto;
-    min-height: 430px;
-    margin: 80px auto;
+    min-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     padding-left:50px;
 }
 .tipos_veiculos{
-    width: 340px;
+    width: 350px;
     height: auto;
-    min-height: 420px;
+    min-height: 250px;
     float: left;
     margin-top:15px;
     margin-left: 50px;
     overflow: hidden;
 }
 .imagem_tipo{
-    width: 240px;
-    height: 240px;
-    background: #277b21;
+    width: 180px;
+    height: 180px;
+    background: #00984a;
     border-radius: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -391,7 +388,7 @@
 .section_anunciar{
     width: 100%;
     height: auto;
-    min-height: 1800px;
+    min-height: 1300px;
     margin-left: auto;
     margin-right: auto;
     
@@ -399,16 +396,16 @@
 #segura_conteudo{
     width: 1250px;
     height: auto;
-    min-height: 1700px;
+    min-height: 1300px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
 }
 .anunciar_veiculo{
-    width: 1100px;
+    width: 1000px;
     height: auto;
-    min-height: 1600px;
-    padding: 25px;
+    min-height: 1000px;
+    /* padding: 25px; */
     overflow: hidden;
     margin-top: 30px; 
     margin-left: auto;
@@ -423,63 +420,14 @@
     margin-top: 40px;
 }
 .div_passos{
-    width:1000px;
+    width:500px;
     height: auto;
-    min-height: 300px;
-    margin-top: 70px; 
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+    min-height: 350px;
+    border:1px solid black;
+    float:left;
+    margin-top: 50px;
 }
-.bolinha_passos{
-    width:60px;
-    height: 60px;
-    border-radius:50px;;
-    float: left;
-    margin-left: 30px;
-    margin-top: 20px;
-    background-color:#008039;
-}
-.numero_bolinhas{
-    font-size: 25px;
-    text-align: center;
-    font-family: "OpenSans-bold";
-    margin-top: 13px;
-    color: #fff;
-}
-.texto_passos{
-    width:600px;
-    height: auto;
-    min-height: 250px;
-    font-family: "Roboto";
-    font-weight: bold;  
-    float: left;
-    margin-left: 20px;
-    margin-top: 12px;
-}
-.texto_passos h3{
-    font-family: "Roboto";
-    font-weight: bold;  
-    margin-top: 25px;
-}
-.texto_passos p{
-    font-family: "Roboto";
-    font-weight: bold;  
-    margin-top: 35px;
-}
-.img_bolinha{
-    width:270px;
-    height: 250px;
-    float: left;
-    margin-left: 10px;
-    margin-top: 30px;
-    background-color: #ececec;
-}
-.img_bolinha img{
-    width:270px;
-    height: 250px;
-    border-radius: 8px;
-}
+
 /* fim section 5 */
 /* section 6 */
 .section_fale_conosco{
