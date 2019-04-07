@@ -20,7 +20,7 @@
     src:url("../font/roboto/Roboto-Regular.ttf");
 }
 .cor_site_padrao{
-    background-color: #000000;
+    background-color: #00984A;
 }
 .cor_detalhe_site_padrao{
     background-color: #306b2c;
@@ -86,18 +86,16 @@ header{
 }
 .texto_primario_h1{
     color:#ffffff;
-    font-size: 78px;
-    text-align: center;
-    font-family: "Roboto-regular";
-    /* font-weight: bold; */
-}
-.texto_secundario_p{
-    color:#ffffff;
     font-size: 28px;
     text-align: center;
     font-family: "Roboto-regular";
-/*    margin-left: 110px;*/
-    /* font-weight: bold; */
+}
+.texto_secundario_p{
+    color:#ffffff;
+    font-size: 24px;
+    text-align: center;
+    font-family: "Roboto-regular";
+
 }
 .texto_primario{
     color:#ffffff;
@@ -138,13 +136,13 @@ nav{
     height: 100px;
 }
 #segura_nav{
-    width:1500px;
+    width:1300px;
     height: inherit;
     margin: 0 auto;
 }
 #logo{
-    width:140px;
-    height: 100px;
+    width:120px;
+    height: 90px;
     /* border:1px solid black; */
     float: left;
     /* margin-top:px; */
@@ -155,9 +153,10 @@ nav{
     height: inherit;
     margin:auto auto;
     display: block;
+    margin-top: 10px;
 }
 .segura_menu{
-    width: 895px;
+    width: 850px;
     height: inherit;
     float: left;
     padding-top: 45px;
@@ -171,103 +170,41 @@ nav{
 .segura_menu li{
     float: left;
     margin-left: 30px;
-    font-family: "Roboto";
-    font-weight: bold;    
-    font-size: 16px;   
+    font-family: "OpenSans-Regular";
+    /* font-weight: bold;     */
+    font-size: 14px;
 }
 .menu_mais{
     color:white;
     cursor: pointer;
 
 }
-.sub_menu{
-    width: 181px;
-    height: 160px;
-    color: #fff;
-    position: relative;
-    display: none;
-    background-color: #306b2c;
-    border-radius: 10px;
-    margin-top: 4px;
-}
-.seta-baixo::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 5px;
-    margin-top: -2px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #fff;
-}
-.sub_menu li{
-    width:181px;
-    height: 40px;
-    padding-left: 15px;
-    padding-top: 10px;
-    background-color: #272727;
-    margin-left: 0px;
-    font-size: 14px;
-}
-.sub_menu li:hover{
-    background: rgb(128, 128, 128);
-}
-.sub_menu a:hover{
-    color:#ffffff; 
-}
-.menu_mais:hover > .sub_menu{
-    display: block;
-}
-
-
 .segura_login{
     width: 256px;
     height: inherit;
     float: left;
-    padding-top: 35px;
-    
+    padding-top: 30px;
+    margin-left: 20px;   
 }
-#btnLogin{
-    border:none;
-    outline: none;
+.segura_login img{
+    width: 45px;
+    height: 45px;
     float: left;
-    color:white;
-    width:100px;
-    height: 43px;
-    border-radius:7px;
-    font-family: "Roboto";
-    font-weight: bold;  
-    cursor: pointer;
 }
-#btnLogin:hover{
-    transition: 1s;
-    background: #34b236;
-}
-#btnCadastro{
-    border:none;
-    outline: none;
-    float: left;
-    color:white;
-    width:130px;
-    height: 43px;
-    border-radius:7px;
-    margin-left: 25px;
-    cursor: pointer;
-    font-family: "Roboto";
-    font-weight: bold;  
-}
-#btnCadastro:hover{
-    transition: 1s;
-    background: #34b236;
-   
-/* Fim cabeçalho */
+.segura_login p{
+    margin-left: 50px;
+    margin-top: 15px;
+    color:#fff;
+    font-family: "OpenSans-Regular";
+    font-size: 14px;
+}   
 
-}
 /* footer */
 
 footer{
     width:100%;
     height: 375px;
+    padding-left: 30px;
 }
 .newsletter{
     width: 1300px;
@@ -294,7 +231,7 @@ footer{
     padding: 5px 15px; 
 }
 .segura_newsletter h3{
-   font-family: Arial;
+    font-family: "OpenSans-Regular";
     font-size: 16px;
     color:#fff;
 }
@@ -342,8 +279,8 @@ footer{
 }
 .segura_contatos h3{
     /* text-align: center; */
-    font-family: arial;
-    font-size: 18px;
+    font-family: "OpenSans-Regular";
+    font-size: 16px;
 }
 #telefone_email{
     width: 340px;
@@ -352,7 +289,20 @@ footer{
     padding: 10px 0px;
     /* border:1px solid #fff; */
     line-height: 30px;
-    font-family: arial;
+    font-family: "OpenSans-Regular";
+    font-size: 16px;
+}
+#telefone_email img{
+    width: 35px;
+    height: 35px;
+    float: left;
+}
+#telefone_email a{
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+    color: white;
+    font-family: "OpenSans-Regular";
     font-size: 16px;
 }
 .mapa_site{
@@ -361,12 +311,13 @@ footer{
     float: left;
     color: white;
     padding: 20px 0px;
+    margin-left: 10px;
   
     /* border:1px solid red; */
 }
 .mapa_site h3{
     /* text-align: center; */
-    font-family: arial;
+    font-family: "OpenSans-Regular";
     font-size: 18px;
 }
 .coluna_mapa{
@@ -380,7 +331,8 @@ footer{
 .coluna_mapa p{
     line-height: 30px;
     /* margin-left: 20px; */
-    font-family: arial;
+    font-family: "OpenSans-Regular";
+    font-size: 16px;
 }
 .redes_sociais{
     width: 465px;
@@ -391,8 +343,8 @@ footer{
 .redes_sociais p{
     text-align: center;
     color: white;
-    font-family: arial;
-    font-size: 18px;
+    font-family: "OpenSans-Regular";
+    font-size: 16px;
 }
 .segura_rs{
     width:465px;

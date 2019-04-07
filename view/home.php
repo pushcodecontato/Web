@@ -6,7 +6,6 @@
     <title>Mob'Share</title>
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/home.css"/>
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
-    <script src="view/js/pages/script_home.js"></script>
 </head>
 <body>
     <div id="principal">
@@ -19,25 +18,25 @@
                         </div>
                         <div class="segura_menu">
                             <ul>
-                                <li><a href="?home">Início</a></li>
-                                <li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
-                                <li><a href="?principais_anuncios">Veículos à Venda</a></li>
-                                <li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
-                                <li><a href="?parceiros">Seja um Parceiro</a></li>
-                                <li><a href="?sobre">Sobre Nós</a></li>
+                                <li><a href="?home">INÍCIO</a></li>
+                                <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
+                                <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
+                                <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
+                                <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
+                                <li><a href="?sobre">SOBRE NÓS</a></li>
                             </ul>
                         </div>
                         <div class="segura_login">
-                            <input type="button" name="btmLogin" id="btnLogin" class="cor_detalhe_site_padrao" value="Login">
-                            <input type="button" name="btmCadastro" id="btnCadastro" value="Cadastra-se" class="cor_detalhe_site_padrao">
+                            <img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p>
                         </div>
                     </div>    
                 </nav>
                 <div class="texto_chamativo">
-                    <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil</p>
-                    <p class="texto_secundario">O que acha de anúnciar ele AGORA!</p>
+                    <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!</p>
+                    <p class="texto_secundario">#anuncienamobshare</p>
                     <div class="btn_anunciar">
-                        <a href="#">Anuncie-já!</a>
+                        <a href="#">Anuncie!</a>
+                        <!-- <a href="#">ANUNCIE!</a> -->
                     </div>
                 </div>
             </header>
@@ -45,7 +44,7 @@
         <div id="conteudo">
              <div class="fundo_site_top">
                 <section class="section_anuncios">
-                    <div id="div_anuncio" id="porque_anunciar">
+                    <div id="div_anuncio">
                         <h2 class="titulo_section font_white">Por que anúnciar seu veículo?</h2>
                         <div class="alugar_veiculo">
                             <div class="imagem_alugar_veiculo">
@@ -83,7 +82,8 @@
                 </section>
             </div>
             <section class="section_conteudo2" style="height:610px;" id="tipo_veiculos">
-                <h2 class="titulo_section font_green" style="font-size:50px; margin-top:100px;">O que pode ser alugador?</h2>
+               
+                <h2 class="titulo_section font_green" style="font-size:50px; margin-top:30px;">O que pode ser alugador?</h2>
                 <div class="area_tipo_veiculo" >
                     <div class="tipos_veiculos">
 
@@ -109,7 +109,6 @@
                         </p>
                     </div>
                 </div>
-                
             </section>
             <section class="section_conteudo_anuncios" id="destaques">
                 <div id="area_anuncios">
@@ -367,9 +366,11 @@
                 <div class="segura_contatos">
                     <h3> Quer entrar em contato? </h3>
                     <div id="telefone_email">
-                        <p><strong>Telefone</strong>: 0800 755 855</p>
-                        <p><strong>Telefone</strong>: 0800 755 855</p>
-                        <p><strong>E-mail</strong>: atendimento@mobshare.com.br</p>
+                        <p>Telefone:  0800 755 855</p>
+                        <p>Telefone:  0800 755 855</p>
+                        <p>E-mail: atendimento@mobshare.com.br</p>
+                        <img src="view/imagem/cracha_branco.png" alt="cracha">
+                        <p><a href="?cms/home_cms">Área administrativa</a></p> 
                     </div>
                 </div>
                 <div class="mapa_site">
@@ -386,7 +387,7 @@
                         <p>Sobre a empresa</p>
                         <p>F.A.Q</p>
                         <p>Seja um parceio</p>
-                        <p><a href="?cms/home_cms">Área administrativa</a></p>                        
+                                               
                     </div>
                 </div>
             </div>
@@ -394,13 +395,13 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="view/imagem/f.png">
-                    <img src="view/imagem/i.png">
-                    <img src="view/imagem/t.png">
+                    <img src="view/imagem/instagram.png">
+                    <img src="view/imagem/facebook.png">
+                    <img src="view/imagem/twitter.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" width="128">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png">
                 </div>
             </div>
         </div>
