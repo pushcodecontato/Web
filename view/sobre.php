@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Sobre</title>
+        <title>Mob'Share - Melhores Anuncios</title>
         <link rel="stylesheet" type="text/css" href="view/css/sobre.css">
     </head>
     <body>
@@ -17,24 +17,28 @@
 
                             <div class="segura_menu">
                                 <ul>
-                                    <li><a href="?home">Início</a></li>
-									<li><a href="?melhores_anuncios">Veículos em Destaques</a></li>
-									<li><a href="?principais_anuncios">Veículos à Venda</a></li>
-									<li><a href="?como_ganhar_dinheiro">Ganhe Dinheiro</a></li>
-									<li><a href="?parceiros">Seja um Parceiro</a></li>
-									<li><a href="?sobre">Sobre Nós</a></li>
+                                <li><a href="?home">INÍCIO</a></li>
+                                <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
+                                <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
+                                <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
+                                <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
+                                <li><a href="?sobre">SOBRE NÓS</a></li>
                                 </ul>
                             </div>
 
                             <div class="segura_login">
-                                <input type="button" name="btmLogin" id="btnLogin" class="cor_detalhe_site_padrao" value="Login">
-                                <input type="button" name="btmCadastro" id="btnCadastro" value="Cadastra-se" class="cor_detalhe_site_padrao">
+                                <div class="login_cadastro" style="width: 110px;">
+                                    <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                </div>
+                                <div class="login_cadastro" style="width: 160px;">
+                                    <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                </div>
                             </div>
                         </div>    
                     </nav>
                     <div class="caixa_texto_pages_all">
                         <h1 class="texto_primario_h1">Principais Anúncios</h1>
-                        <p class="texto_secundario_p"> Os Principais Anúncios  Principais Anúncios Principais Anúncios Principais Anúncios</p>
+                        <p class="texto_secundario_p"> Os Principais Anúncios</p>
                     </div>
                 </div>
             </header>
@@ -144,9 +148,9 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="view/imagem/f.png">
-                    <img src="view/imagem/i.png">
-                    <img src="view/imagem/t.png">
+                    <img src="view/imagem/instagram.png">
+                    <img src="view/imagem/facebook.png">
+                    <img src="view/imagem/twitter.png">
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
