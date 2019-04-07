@@ -30,8 +30,12 @@
                         </div>
 
                         <div class="segura_login">
-                            <input type="button" name="btmLogin" id="btnLogin" class="cor_detalhe_site_padrao" value="Login">
-                            <input type="button" name="btmCadastro" id="btnCadastro" value="Cadastra-se" class="cor_detalhe_site_padrao">
+                            <div class="login_cadastro" style="width: 110px;">
+                                <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            </div>
+                            <div class="login_cadastro" style="width: 160px;">
+                                <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            </div>
                         </div>
                     </div>    
                 </nav>
