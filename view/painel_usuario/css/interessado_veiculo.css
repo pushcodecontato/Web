@@ -1,9 +1,19 @@
+# conteudo_interessados{
+    width: 998px;
+    height: 708px;          
+    float: left; 
+    border: solid 1px;
+    margin-top: 5px;   
 
-
-
+}
+h4{
+    font-family: verdana;
+    font-size: 16px;
+    margin-left: 60px;
+}
 #h2Border{
     width: 258px;
-    height: 30px;
+    height: 15px;
     margin-top: -15px;
     margin-left:50px; 
     background-color: #fff;
@@ -17,28 +27,28 @@
 .segura_anuncio{
     width: 900px;
     height: 280px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .caixa_anuncio{
     width: 230px;
-    height: 280px;
+    height: 300px;
     border: solid 1px;
     border-radius: 20px;
     float: left;
     margin-left: 50px;
 }
-#bolinha{
+.bolinha{
     width: 30px;
     height: 30px;
     background-color: grey;
     border-radius: 30px;
     margin-left: 220px;
-    margin-top: -70px;
+    
 }
 .imagem_anuncio{
     width: 210px;
     height: 130px;
-    border: solid 1px;
+/*    border: solid 1px;*/
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -49,32 +59,27 @@
 .foto_anuncio{
     width: 210px;
     height: 130px;
-/*
-    border: solid 1px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-*/
         
 }
 .titulo_anuncio{
-  width: 200;
-    height: 20px;
-    background-color: #000;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px;
-    padding-left: 13px;
+  width: 200px;
+  height: 20px;
+  margin-top: -80px;
+  background-color:#fff;
+    margin-left: 20px;
 }
 .dados_anuncio{
     width: 230px;
     height: 100px;
-    margin-top: -20px;
+    margin-top: -10px;
+    
 }
 
-#dados{
+.dados{
   font-family: verdana;
     font-size: 13px;
     margin-left: 10px;
-    margin-top: 80px;
 }
