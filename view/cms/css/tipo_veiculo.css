@@ -1,0 +1,79 @@
+#frmTipo_veiculo{
+    width: 445px;
+    float: left;
+    margin-left: 11px;
+}
+.tipo_veiculo_comentario{
+    padding:5px 0px 5px 0px;
+    text-align:center;
+    color:#251e1e;
+    font-weight:bold;
+    cursor:pointer;
+}
+.tipo_veiculo_comentario:hover{
+    color:#4c4848;
+}
+.tipo_veiculo_btn_adicionar{
+    width: 68px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-family: verdana;
+    font-size: 15px;
+    display: inline-block;
+}
+.tbl_tipo_veiculo{
+    min-height: 400px;
+    display: block;
+    min-width: 582px;
+    float: right;
+    height: auto;
+    border-left: solid 1px #000;
+    text-align: center;
+}
+.tipo_slc{
+     height: 35px;
+     /* outline: none; */
+     border: none;
+     background: none;
+     color: rgb(255, 255, 255);
+     font-family: "verdana";
+     /* font-weight: bold; */
+     font-size: 17px;
+     font-size: 18px;
+     width: 310px;
+     margin: 20px auto;
+     /* padding: 25px 10px; */
+     display: block;
+     resize: none;
+     border-radius: 1px;
+     border-bottom: 1px solid black;
+     display: inline-block;
+     margin-left: 22px;
+}
+.tipo_slc option{
+    color:black;
+}
+.tipo_slc:focus{
+    outline:none;
+}
+.tbl_tipo_veiculo table{
+    min-width:500px;
+    border: solid 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tbl_tipo_veiculo table thead{background-color: #e8e8e8;}
+
+.tbl_tipo_veiculo table tbody{
+    background-color: #eee;
+}
+.tbl_tipo_veiculo table tbody td{
+    font-size:1.2em;
+}
+.tbl_tipo_veiculo table tbody img{
+    width:32px;
+}

@@ -7,10 +7,21 @@
 </div>
 
 <?php
-   
+  
+  
+  require_once('controller/controllerUsuarios.php');
+
+  $controller_usuario = new ControllerUsuarios();
+    
+  $listUsuarios =  $controller_usuario->listar_usuarios();
+
+  
   if(count($listUsuarios)<1){
+
     echo " <p style='text-align:center;'> não existem usuarios cadastrados!! </p> ";
+
   }
+
   foreach($listUsuarios as $usuario){
        
 ?>
