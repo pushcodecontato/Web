@@ -3,7 +3,7 @@
 
  //variavel global para controlar se é para abrir ou fechar
  let controle = false;
-//Funççao para abrir o menu com mais opções
+//Funçao para abrir o menu com mais opções
 function abrir_menu(height, sub_menu, item_menu){
     // alert(sub_menu);
     //se o controle for igual a false significa que está fechado
@@ -22,8 +22,6 @@ function abrir_menu(height, sub_menu, item_menu){
         $(sub_menu).hide(400);
         $(item_menu).css("background-color", "#7b7b7b");
     }
-    // controle = false;
-    
+    // controle = false;   
 }
-
 // });
