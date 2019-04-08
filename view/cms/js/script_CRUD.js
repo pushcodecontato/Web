@@ -222,3 +222,18 @@ function logar(formulario){
 		}
 	})
 }
+
+/* Ignore isso!!! */
+
+function chamaModalAcessorios(){
+	$.get('?cms/veiculos/modal_acessorio.php')
+	.then(function(res){
+		modal(res.toString());
+	});
+}
+function chamaModalModelos(){
+	$.get('?cms/veiculos/modal_modelo.php')
+	.then(function(res){
+		modal(res.toString());
+	});
+}
