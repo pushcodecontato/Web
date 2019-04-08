@@ -7,14 +7,14 @@
     <h3 class="titulo_pagina">Tipo de veiculos</h3>
     <form method="POST" id="frmTipo_veiculo" action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?>">
     
-        <select name="slcTipo" class="tipo_slc" id="slcNivel" requied>
+        <select name="slcTipo" class="tipo_slc" id="slcTipo" requied>
              <option> Carro </option>
              <option> bicicleta </option>
         </select>
-        <button type="button" class="tipo_veiculo_btn_adicionar"> Adicinar </button>
+        <button type="button" class="tipo_veiculo_btn_adicionar"> Adicionar </button>
         <input  name="txtPorcentual" class="nome_nivel" placeholder="10%" required>
-        <p class="tipo_veiculo_comentario"> Adicinar acessorio ao tipo de veiculo </p>
-        <p class="tipo_veiculo_comentario"> Adicinar modelo ao tipo de veiculo </p>
+        <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios()"> Adicinar acessorio ao tipo de veiculo </p>
+        <p class="tipo_veiculo_comentario" onclick="chamaModalModelos()"> Adicinar modelo ao tipo de veiculo </p>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
     </form>
 

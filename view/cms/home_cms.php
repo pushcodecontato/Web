@@ -66,14 +66,20 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p>tipos de veiculos</p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('',true)">
-                            <img src="view/cms/imagem/icones/car2.png" alt="Modelos">
-                            <p> modelos </p>
-                        </div>
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="abrir_menu('120px','#gerenciar_anuncios')">
                         <img src="view/cms/imagem/icones/anuncio.png" alt="Anúncios"> 
                         <p>Anúncios</p>
+                    </div>
+                    <div class="sub_menu" id="gerenciar_anuncios"> 
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_pendentes',true)">
+                            <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <p> Pendentes</p>
+                        </div>
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                            <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <p> Aprovados </p>
+                        </div>
                     </div>
                     <div class="sub_menu"> 
     
@@ -99,7 +105,7 @@
                             <p>Cadastrar usuários</p>
                         </div>
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="conteudo_subMenu('fale_conosco/fale_conosco',true)">
                         <img src="view/cms/imagem/icones/fale_conosco.png" alt="fale conosco">
                         <p>Fale conosco</p>
                     </div>
@@ -121,5 +127,26 @@
             </div>
         </div>
     </div>
+    <div id="container2">
+        <div id="modal">
+        </div>
+    </div>
+    <script>
+
+        function modal(conteudo){
+            $("#container2").fadeIn(400);
+            $("#container2").click(function(e){
+               if($(e.target).attr('id') == 'container2'){
+                 fecharModal();  
+               }
+            });
+            $('#modal').html(conteudo);
+        }
+
+        function fecharModal(conteudo){
+            $("#container2").fadeOut(400);
+            $('#modal').html('');
+        }
+    </script>
 </body>
 </html>
