@@ -7,7 +7,7 @@ body{
 /*div principal*/
 #principal{
     width: 1200px;
-    height: 900px;
+    height: 922px;
     margin-left: auto;
     margin-right: auto;
     border: solid 1px;
@@ -45,11 +45,7 @@ h1{
     font-family: verdana;
     font-size: 20px;
 }
-h4{
-    font-family: verdana;
-    font-size: 16px;
-    margin-left: 60px;
-}
+
 
 
 /*foto do usurio*/
@@ -88,7 +84,7 @@ h4{
 nav{
     width: 200px;
     height: auto;
-    min-height: 700px;
+    min-height: 720px;
     background-color: whitesmoke;
     float: left;
     
@@ -130,88 +126,12 @@ a{
 
 /*conteudo*/
 #conteudo{
-    width: 1000px;
-    height: 700px;
-    float: left;
-   
-
+    width: 998px;
+    height: 708px;          
+    float: left; 
+/*    border: solid 1px;*/
+    margin-top: 13px;
 }
-#h2Border{
-    width: 258px;
-    height: 30px;
-    margin-top: -15px;
-    margin-left:50px; 
-    background-color: #fff;
-}
-#principal_anuncios{
-    width: 900px;
-    height: 580px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.segura_anuncio{
-    width: 900px;
-    height: 280px;
-    margin-top: 20px;
-}
-.caixa_anuncio{
-    width: 230px;
-    height: 280px;
-    border: solid 1px;
-    border-radius: 20px;
-    float: left;
-    margin-left: 50px;
-}
-#bolinha{
-    width: 30px;
-    height: 30px;
-    background-color: grey;
-    border-radius: 30px;
-    margin-left: 220px;
-}
-.imagem_anuncio{
-    width: 210px;
-    height: 130px;
-    border: solid 1px;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-        
-}
-
-.foto_anuncio{
-    width: 210px;
-    height: 130px;
-/*
-    border: solid 1px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-*/
-        
-}
-.titulo_anuncio{
-  width: 200;
-    height: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -20px;
-    padding-left: 13px;
-}
-.dados_anuncio{
-    width: 230px;
-    height: 100px;
-    margin-top: -20px;
-}
-
-#dados{
-  font-family: verdana;
-    font-size: 13px;
-    margin-left: 10px;
-}
-
-
 
 
 

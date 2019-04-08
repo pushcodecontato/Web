@@ -132,9 +132,7 @@
             </nav>
             <!-- TODO O CONTEUDO-->
             <div id="conteudo">
-                
             </div>
-            
         </div>
     </body>
 </html>

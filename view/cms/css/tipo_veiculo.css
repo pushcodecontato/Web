@@ -14,7 +14,7 @@
     color:#4c4848;
 }
 .tipo_veiculo_btn_adicionar{
-    width: 68px;
+    min-width: 68px;
     height: 40px;
     cursor: pointer;
     outline: none;
