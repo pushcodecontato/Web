@@ -132,6 +132,109 @@
             </nav>
             <!-- TODO O CONTEUDO-->
             <div id="conteudo">
+
+
+            <!-- conteudo locações em andamento  -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div id="conteudo_andamento"> 
+                
+                <h2 id="h2Border">Em andamento</h2>
+ 
+                <div id="principal_andamento">
+                    <div class="segura_coluna">
+                        <div class="coluna">
+
+                        </div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+                    </div>
+
+
+
+                    <div class="segura_coluna">
+                        <div class="coluna">
+
+                        </div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+                    </div>
+
+
+                    <div class="segura_coluna">
+                        <div class="coluna">
+
+                        </div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+                    </div>
+
+
+
+                    <div class="segura_coluna">
+                        <div class="coluna">
+
+                        </div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+
+                        <div class="coluna"></div>
+                    </div>
+                </div>
+
+
+                
+            
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
             </div>
         </div>
     </body>
