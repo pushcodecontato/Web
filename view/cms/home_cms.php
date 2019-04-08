@@ -99,7 +99,7 @@
                             <p>Cadastrar usuários</p>
                         </div>
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="conteudo_subMenu('fale_conosco/fale_conosco',true)">
                         <img src="view/cms/imagem/icones/fale_conosco.png" alt="fale conosco">
                         <p>Fale conosco</p>
                     </div>
