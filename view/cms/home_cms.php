@@ -26,7 +26,7 @@
                             <p>Administrador</p>
                         </div>
                         <div class="segura_info" style="padding-top:13px;">
-                            <a href="#">Sair</a>
+                            <a href="index.php">Sair</a>
                         </div>
                         <div class="imagem_home">
                             <img src="view/cms/imagem/header/house.png" alt="home">
