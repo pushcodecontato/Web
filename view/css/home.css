@@ -1,6 +1,7 @@
 
 @import "style.css";
 @import "estrutura.css";
+
 #header_home{
     width: 100%;
     height: 100vh;
@@ -12,7 +13,7 @@
 }
 .btn_padrao{
     background-color: #008039;
-    border-radius: 8pnx;
+    border-radius: 8px;
     cursor: pointer;
     text-align: center;
     border: none;

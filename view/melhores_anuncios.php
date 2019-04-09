@@ -186,6 +186,120 @@
                             </div>
                         </div>
                     </a>
+                    <a href="#">
+                        <div class="anuncios">
+                                <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Fiat Palio 4 portas</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="anuncios">
+                            <img class="img_anuncio" src="view/imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Hyundai i30</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="anuncios">
+                            <img class="img_anuncio" src="view/imagem/hb20.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Hyundai hb20</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="anuncios">
+                                <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Fiat Palio 4 portas</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="anuncios">
+                            <img class="img_anuncio" src="view/imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Hyundai i30</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="anuncios">
+                            <img class="img_anuncio" src="view/imagem/hb20.jpg" alt="Nome veiculo" title="Nome veiculo">
+                            <div class="info_anuncio">
+                                <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                <p class="info_veiculo" style="margin-top:10px;">Hyundai hb20</p>
+                                <p class="info_veiculo">2018 | 3000 Km</p>
+                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+
+                                <div class="stars_avaliacao">
+                                    <img src="view/imagem/star1.png" alt="star">
+                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                    <p class="percentual_avaliacao">4.5%</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div id="paginate">
                     <div class="paginate-prev">
