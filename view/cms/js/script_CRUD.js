@@ -4,59 +4,64 @@
 //Mensagem: variavel para passar a mensagem que será mostrada para o usuário depois de uma ação
 let mensagem = "";
 let msg = "";
-let type = "";
+let type = "" ;
 
 let caminho = "";
 var href = window.location.href;
-var caminho_absoluto = `${href}router.php`;
-caminho_absoluto = 'view/cms/';
-//Função para enviar as informações do formulario para o route.php
-//parametros passados:
-//controller = Definir qual será o controller que será acessado
-//modo = Serve para saber o que será executado no banco, insert, update ou consulta
-function route(controller, modo, id_item){
-   
-    //Desativa o elemento submit para a tela não piscar
-    event.preventDefault();
+var caminho_absoluto = 'view/cms/';
 
-    //Definir qual mensagem será mostrada de acorodo com o modo
-    if(id_item > 0){
-        mensagem = "Editado com sucesso";
-        caminho = `router.php?controller=${controller}&modo=${modo}&id=${id_item}`
-    }else{
-        mensagem = "Cadastro com sucesso";
-        caminho = `router.php?controller=${controller}&modo=${modo}`;
+function conteudo_subMenu(nome_pagina, teste){
+    if(teste){
+        $.ajax({
+            type:'GET',
+            url:'?cms/'+nome_pagina,
+            success:function(html){
+                $('.conteudo').html(html);
+            }
+        })
+
     }
+}
 
+function inserir_nivel(){
+    form = $('#formNiveis');
+    event.preventDefault();
     $.ajax({
         type:"POST",
-        url: caminho,
-        data: $('#form').serialize(),
+        url: form.attr('action'),
+        data: form.serialize(),
+        async: true,
         success:function(dados){
-
-        	console.log(dados);
-            if(dados == ""){
-                msg = "Erro! tente novamente";
-                type= 'warr';
-            } else {
-                msg = mensagem;
-                type= 'success';
-            }
-            $.notify(msg, type);
-            listarDados(); 
-           
-        }            
+            $.notify("Nível inserido com sucesso", "success");
+            conteudo_subMenu('niveis/cadastro_niveis',true);
+        }
     });
 }
-//função para excluir os dados 
-function excluir_dados(controller, modo, id_item){
+function atualizar_nivel(){
+    form = $('#formNiveis');
+    event.preventDefault();
+    $.ajax({
+        type:"POST",
+        url: form.attr('action'),
+        data: form.serialize(),
+        async: true,
+        success:function(dados){
+            $.notify("Nível editado com sucesso", "success");                //usuario.getDados();
+            conteudo_subMenu('niveis/cadastro_niveis',true);
+        }
+    });
+   
+}
+
+function excluir_niveis(controller, modo, id_item){
     $.ajax({
         type:"GET",
         url: `router.php?`,
         data: {controller: controller, modo: modo, id:id_item},
         success:function(dados){
-            $.notify("Excluido com sucesso", "success");
-            listarDados();   
+            
+            $.notify("Nível excluído com sucesso", "success");
+            conteudo_subMenu('niveis/cadastro_niveis',true);
         }            
     });
 }
@@ -67,40 +72,8 @@ function buscar_dados(controller, modo, id_item){
         data: {controller: controller, modo: modo, id:id_item},
         success:function(dados){
             $('.conteudo').html(dados);
-            listarDados(); 
+           
         }               
-    });
-}
-function conteudo_subMenu(nome_pagina,teste){
-    if(teste){
-
-        $.ajax({
-            type:'GET',
-            url:'?cms/'+nome_pagina,
-            success:function(html){
-                $('.conteudo').html(html);
-            }
-        })
-
-    }else{
-        $.ajax({
-			type: 'POST',
-			url: '?cms/niveis/'+nome_pagina,
-			success: function(dados){
-				$('.conteudo').html(dados);
-				listarDados();
-			}
-
-		})
-    }
-}
-function listarDados(){
-    $.ajax({
-        type:'get',
-        url:'?cms/niveis/tabela',
-        success: function(dados){
-            $('.tbl_niveis').html(dados);
-        }
     });
 }
 
@@ -237,9 +210,13 @@ function chamaModalModelos(){
 		modal(res.toString());
 	});
 }
-function chamaModalFaleConosco(){
-	$.get('?cms/fale_conosco/modal_fale_conosco.php')
-	.then(function(res){
-		modal(res.toString());
-	});
-}
+
+
+
+
+
+
+
+
+
+

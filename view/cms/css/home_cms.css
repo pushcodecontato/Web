@@ -282,6 +282,7 @@ form{
 .nome_nivel_slc option{
     color:black;
 }
+
 /* Usuario */
 .tbl_usuarios{
     width: 600px;
@@ -391,7 +392,21 @@ input[type='checkbox']:checked + label:before{
     float: left;
 }
 
-
+.aviso_tabela{
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    margin-top: 20px;
+    color:#fff;
+}
+.img_not_find{
+    width:70px;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 /********************************************************
 MODAL***************************************************/
 #container2{

@@ -96,7 +96,7 @@
                         <p>Usuários CMS</p>
                     </div>
                     <div class="sub_menu" id="usuarios"> 
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('cadastro_niveis')">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('niveis/cadastro_niveis', true)">
                             <img src="view/cms/imagem/icones/cliente.png" alt="Clientes">
                             <p>Cadastrar niveis</p>
                         </div>
