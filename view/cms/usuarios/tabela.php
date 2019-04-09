@@ -16,7 +16,7 @@
   $listUsuarios =  $controller_usuario->listar_usuarios();
 
   
-  if(count($lista_niveis) < 1){
+  if(count($listUsuarios) < 1){
     echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
     echo " <p class='aviso_tabela'> Nenhum usuário encontrado!</p> ";
   }
