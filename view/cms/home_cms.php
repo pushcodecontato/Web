@@ -112,7 +112,7 @@
                     <div class="sub_menu"> 
     
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="conteudo_subMenu('email_marketing/email_marketing',true)">
                         <img src="view/cms/imagem/icones/email.png" alt="Anúncios">
                         <p>Email marketing</p>
                     </div>
