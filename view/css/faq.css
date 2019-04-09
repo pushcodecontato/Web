@@ -5,7 +5,7 @@
     width:100%;
     height: auto;
     min-height: 1300px;
-    background-color: #cecece;
+    background-color: #ffffff;
     /* border:1px solid black; */
 }
 
@@ -104,23 +104,23 @@
 .linha_perguntas{
     width:999px;
     height: auto;
-    min-height: 120px;
+    min-height: 80px;
     border-top:2px solid black;
 }
 .segura_perguntas{
     width:900px;
     height: auto;
-    min-height: 100px;
+    min-height: 50px;
     padding-left: 30px;
-    padding-top: 10px;
+    padding-top: 5px;
     float: left;
+    
 
 }
 .linha_perguntas img{
     width: 60px;
     height: 70px;
     cursor: pointer;
-    margin-top:15px;
     margin-left: 15px;
     float: left;
 }
@@ -136,6 +136,9 @@
     font-size: 15px;
     line-height: 25px;
     margin-top: 10px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 .paginacao{
     width:663px;

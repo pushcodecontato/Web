@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mob'Share-Home</title>
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/faq.css"/>
-    <script src="js/libs/jquery/jquery-3.3.1.js"></script>
-    <script src="js/pages/faq.js"></script>
+    <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="view/js/faq.js"></script>
 </head>
 <body>
     <div id="principal">
@@ -56,10 +56,8 @@
                 </div>
             </div>
             <section class="conteudo_faq">
-                
-                <h2>FAQ</h2>
                 <div id="conteudo">
-                    
+                    <h2>FAQ</h2>
                     <div class="texto_faq">
                         <p>Lorem ipsum dolor sit amet, consectetur 
                             adipiscing elit. Nunc maximus, nulla ut 
@@ -96,9 +94,6 @@
                             <div class="segura_perguntas">
                                 <h3>Pergntas sobre carros</h3>
                                 <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                commodo sagittis, sapien dui mattis dui, 
-                                non pulvinar lorem felis nec erat
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
@@ -108,9 +103,6 @@
                             <div class="segura_perguntas">
                                 <h3>Pergntas sobre carros</h3>
                                 <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                commodo sagittis, sapien dui mattis dui, 
-                                non pulvinar lorem felis nec erat
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
@@ -120,9 +112,6 @@
                             <div class="segura_perguntas">
                                 <h3>Pergntas sobre carros</h3>
                                 <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                commodo sagittis, sapien dui mattis dui, 
-                                non pulvinar lorem felis nec erat
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
@@ -132,25 +121,24 @@
                             <div class="segura_perguntas">
                                 <h3>Pergntas sobre carros</h3>
                                 <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                commodo sagittis, sapien dui mattis dui, 
-                                non pulvinar lorem felis nec erat
                                 Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
+                                adipiscing elit. Nunc maximus, nulla ut 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut</p>
                             </div>
                             <img src="view/imagem/arrow_down.png" alt="seta">
                         </div>
                         <div class="linha_perguntas ">
                             <div class="segura_perguntas">
                                 <h3>Pergntas sobre carros</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                commodo sagittis, sapien dui mattis dui, 
-                                non pulvinar lorem felis nec erat
+                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut
+                                Respostas: Lorem ipsum dolor sit amet, consectetur 
                                 Lorem ipsum dolor sit amet, consectetur 
                                 adipiscing elit. Nunc maximus, nulla ut </p>
                             </div>
-                            <img src="view/imagem/arrow_down.png" alt="seta">
+                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
                         </div>
                         
                     </div>
