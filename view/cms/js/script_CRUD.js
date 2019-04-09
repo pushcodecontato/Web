@@ -237,3 +237,9 @@ function chamaModalModelos(){
 		modal(res.toString());
 	});
 }
+function chamaModalFaleConosco(){
+	$.get('?cms/fale_conosco/modal_fale_conosco.php')
+	.then(function(res){
+		modal(res.toString());
+	});
+}

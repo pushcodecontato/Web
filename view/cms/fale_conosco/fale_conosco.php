@@ -1,6 +1,5 @@
 <div class="segura_form">  
     <h3 class="titulo_pagina">Fale Conosco</h3>
-
     <div id="descarregarConteudo">
         <div id="titulos">
             <h2 style="margin-right: 100px; margin-left: 100px;">E-mail</h2>
@@ -15,7 +14,7 @@
                 <h3>lorem lorem lorem lorem lorem lorem lorem</h3>
             </div>
             <div class="abrir">
-                <button>Abrir</button>
+                <button class="" onclick="chamaModalFaleConosco();"> Abrir</button>
                 <button>Exportar</button>
             </div>
         </div>
