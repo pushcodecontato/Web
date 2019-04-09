@@ -23,15 +23,20 @@
 ?>
 <div class="segura_form">  
     <h3 class="titulo_pagina">Cadastrar nivel</h3>
-    <form method="POST" id="formNiveis" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
-        <input value="<?php echo($nome_nivel)?>" name="txtNome_nivel" class="nome_nivel" placeholder="Nome Nível" required>
-        <input value="<?php echo($descricao)?>" name="txtDescricao" class="nome_nivel" placeholder="Descrição" required>
-        <label class="titulo_menu">Menus</label><br>
+    <form class="form_cadastro" method="POST" id="formNiveis" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
+        <div class="segura_form_cadastro">
+            <label for="nome_nivel">Nome nível</label><br>
+            <input id="nome_nivel" value="<?php echo($nome_nivel)?>" name="txtNome_nivel" placeholder="Nome Nível" required style="margin-bottom:10px;"><br>
+            <label for="descricao">Descrição</label><br>
+            <input id="descricao" value="<?php echo($descricao)?>" name="txtDescricao" placeholder="Descrição" required><br>
+        </div>
+
+        <!-- <label class="titulo_menu">Menus</label><br>
         <div class="check_box_menus">
             <input type="checkbox" id="teste"><label for="teste">TESTE</label><br>
             <input type="checkbox"><label>TESTE</label><br>
             <input type="checkbox"><label>TESTE</label><br>  
-        </div>
+        </div> -->
         <!-- onclick chamando a função route()
         serve para o JavaScript chamar o route.php passado o que precisa ser feito
         enviando o controller e o modo que vai ser acessado
@@ -43,3 +48,4 @@
         <?php require_once("view/cms/niveis/tabela.php")?>  
     </div>
 </div>
+<link rel="stylesheet" type="text/css" href="view/cms/css/niveis.css">

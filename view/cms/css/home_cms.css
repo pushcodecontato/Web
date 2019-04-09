@@ -241,47 +241,9 @@ form{
     border-radius: 10px;
 }
 ::-webkit-input-placeholder {
-    color: rgb(253, 253, 253);
- }
-.nome_nivel{
-    height: 35px;
-    outline: none;
-    border: none;
-    background: none;
-    color: rgb(255, 255, 255);
-    font-family: "verdana";
-    /* font-weight: bold; */
-    font-size: 17px;
-    font-size: 18px;
-    width: 400px;
-    margin: 20px auto;
-    padding: 25px 10px;
-    display: block;
-    resize: none;
-    border-radius: 1px;
-    border-bottom: 1px solid black;
+    font-size: 15px;
 }
-.nome_nivel_slc{
-     height: 35px;
-     /* outline: none; */
-     border: none;
-     background: none;
-     color: rgb(255, 255, 255);
-     font-family: "verdana";
-     /* font-weight: bold; */
-     font-size: 17px;
-     font-size: 18px;
-     width: 400px;
-     margin: 20px auto;
-     /* padding: 25px 10px; */
-     display: block;
-     resize: none;
-     border-radius: 1px;
-     border-bottom: 1px solid black;
-}
-.nome_nivel_slc option{
-    color:black;
-}
+
 
 /* Usuario */
 .tbl_usuarios{
@@ -391,7 +353,7 @@ input[type='checkbox']:checked + label:before{
     margin-top: 5px;
     float: left;
 }
-
+/* Mensagem de aviso */
 .aviso_tabela{
     text-align: center;
     font-family: verdana;
