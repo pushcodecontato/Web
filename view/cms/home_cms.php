@@ -82,9 +82,9 @@
                         </div>
                     </div>
                     <div class="sub_menu"> 
-    
+                    
                     </div>
-                    <div class="item_menu" id="cliente_atv" onclick="abrir_menu('140px', '#clientes', '#cliente_atv')">
+                    <div class="item_menu" onclick="conteudo_subMenu('clientes/clientes',true)">
                         <img src="view/cms/imagem/icones/cliente.png" alt="Clientes">
                         <p>Clientes</p>
                     </div>

@@ -1,6 +1,3 @@
-
-
-
 //Mensagem: variavel para passar a mensagem que será mostrada para o usuário depois de uma ação
 let mensagem = "";
 let msg = "";
@@ -22,7 +19,6 @@ function conteudo_subMenu(nome_pagina, teste){
 
     }
 }
-
 function inserir_nivel(){
     form = $('#formNiveis');
     event.preventDefault();
@@ -167,7 +163,6 @@ var usuario = {
 
 /* logar função  temporario */
 function logar(formulario){
-	
 	// Desativa o submit do formualrio par a tela não piscar
 	event.preventDefault();
 
@@ -197,7 +192,6 @@ function logar(formulario){
 }
 
 /* Ignore isso!!! */
-
 function chamaModalAcessorios(){
 	$.get('?cms/veiculos/modal_acessorio.php')
 	.then(function(res){
@@ -216,13 +210,3 @@ function chamaModalFaleConosco(){
 		modal(res.toString());
 	});
 }
-
-
-
-
-
-
-
-
-
-
