@@ -1,6 +1,3 @@
-
-
-
 //Mensagem: variavel para passar a mensagem que será mostrada para o usuário depois de uma ação
 let mensagem = "";
 let msg = "";
@@ -22,7 +19,6 @@ function conteudo_subMenu(nome_pagina, teste){
 
     }
 }
-
 function inserir_nivel(){
     form = $('#formNiveis');
     event.preventDefault();
@@ -77,97 +73,88 @@ function buscar_dados(controller, modo, id_item){
     });
 }
 
-/* Usuario  js */
-var usuario = {
-    getById:function(id){//Pega o usuario
-        $.ajax({
-            type:'post',
-            method:'post',
-            url:'router.php?controller=usuarios&modo=select',
-			data:{id}
-        }).then(function(resposta){
-           	$('.conteudo').html(resposta);
-        })
-    },
-    getDados:function(){
-        $.ajax({
-            type:'post',
-            method:'post',
-            url:'?cms/usuarios/tabela',
-        }).then(function(resposta){
-            $('.tbl_usuarios').html(resposta);
-        })
-    },
-    dao:{
-        insert:function(form){
-			
-			event.preventDefault();
+/* Crud de Usuario */
+function usuario_getById(id){
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=usuarios&modo=select',
+		data:{id},
+		success:function(dados){
+			$('.conteudo').html(dados);
+		}
+	})
+}
+function usuario_getDados(){
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'?cms/usuarios/tabela',
+		success:function(dados){
+			$('.tbl_usuarios').html(dados);	
+		}
+	})
+}
+function usuario_insert(form){
 
-            form = $(form);
+	event.preventDefault();
 
-            console.log("Formulario: ",form);
-            $.ajax({
-                type:'post',
-                method:'post',
-                url:form.attr('action'),
-                data: form.serialize()
-            }).then(function(resposta){
-                console.log("Resposta do html ", resposta);
-                if(resposta.toString().search('sucesso')>=0){
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		sucess:function(dados){
+			if(dados.toString().search('sucesso')>=0){
 
-                    $.notify("usuario Cadastrado com sucesso", "success");
-                    
-                    //usuario.getDados();
-                    conteudo_subMenu('usuarios/cadastro_usuarios',true);
-                }
-            })
-        },
-        update:function(form){
-          	
-          	event.preventDefault();
-          	  
-            form = $('form#formUsuario');
+				$.notify("usuario Cadastrado com sucesso", "success");
 
-            console.log("Formulario: ",form);
-            $.ajax({
-                type:'post',
-                method:'post',
-                url:form.attr('action'),
-                data: form.serialize()
-            }).then(function(resposta){
-                console.log("Resposta do html ", resposta);
-                if(resposta.toString().search('sucesso')>=0){
+				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+			}
+		}
+	})
+}
+function usuario_update(form){
 
-                    $.notify("usuario Atualizado com sucesso", "success");
-                    
-                    conteudo_subMenu('usuarios/cadastro_usuarios',true);
+	event.preventDefault();
 
-                }
-            })
-        },
-        delete:function(id){
-            $.ajax({
-                type:'post',
-                method:'post',
-                url:'router.php?controller=usuarios&modo=excluir&id='+id,
-            }).then(function(resposta){
-                console.log("Resposta do html ", resposta);
-                if(resposta.toString().search('sucesso')>=0){
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
 
-                    $.notify("usuario Deletado com sucesso", "success");
-                    
-                    conteudo_subMenu('usuarios/cadastro_usuarios',true);
+			if(dados.toString().search('sucesso')>=0){
 
-                }
-            })
-        }
-    }
+				$.notify("usuario Atualizado com sucesso", "success");
+
+				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+
+			}
+		}
+	})
 }
 
+function usuario_delete(id){
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=usuarios&modo=excluir&id='+id,
+		success:function(dados){
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("usuario Deletado com sucesso", "info");
+
+				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+
+			}
+		}
+	});
+}
 
 /* logar função  temporario */
 function logar(formulario){
-	
 	// Desativa o submit do formualrio par a tela não piscar
 	event.preventDefault();
 
@@ -196,8 +183,8 @@ function logar(formulario){
 	})
 }
 
-/* Ignore isso!!! */
 
+/* Ignore isso!!! */
 function chamaModalAcessorios(){
 	$.get('?cms/veiculos/modal_acessorio.php')
 	.then(function(res){
@@ -210,19 +197,17 @@ function chamaModalModelos(){
 		modal(res.toString());
 	});
 }
+
+function chamaModalAnunciosAprova(){
+	$.get('?cms/anuncios/modal_anuncios_pendentes.php')
+	.then(function(res){
+		modal(res.toString());
+        })
+}
+
 function chamaModalFaleConosco(){
 	$.get('?cms/fale_conosco/modal_fale_conosco.php')
-	.then(function(res){
+        .then(function(res){
 		modal(res.toString());
 	});
 }
-
-
-
-
-
-
-
-
-
-
