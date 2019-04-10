@@ -345,9 +345,10 @@ MODAL***************************************************/
     z-index: 999;
     display: none;
     top: 0;
+    text-align: center;
 }
 #container2 #modal{
-    width: 650px;
+    width: auto;
     height: auto;
     background-color: #ffffff;
     margin-left: auto;
@@ -355,4 +356,5 @@ MODAL***************************************************/
     margin-top: 100px;
     overflow-y: overlay;
     max-height: 500px;
+    display: inline-block;
 }
