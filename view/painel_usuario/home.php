@@ -134,20 +134,89 @@
             <div id="conteudo">
 
 
-            <!-- conteudo locações em andamento  -->
+                <!-- conteudo conversas -->
             
+          
+                <div id="conteudo_conversa"> 
+                    
+                    <h2 id="h2Border">Chat Online</h2>
+    
+                    <div id="principal_conversa">
+                        <div id="ultima_conversa">
+                            <p id="titulo_conversa">Últimas Coversas</p>
+                        </div>
+
+                        <div class="segura_bolinhas">
+                            <div class="bolinha">
+                                <img class="icone_bolinha" src="view/painel_usuario/imagem/usuario.png" title="icone" alt="icone" >
+                            </div>
+
+                            <div class="bolinha">
+                                <img class="icone_bolinha" src="view/painel_usuario/imagem/usuario.png" title="icone" alt="icone" >
+                            </div>
+
+                            <div class="bolinha">
+                                <img class="icone_bolinha" src="view/painel_usuario/imagem/usuario.png" title="icone" alt="icone" >
+
+                            </div>
+
+                            <div class="bolinha">
+                                <img class="icone_bolinha" src="view/painel_usuario/imagem/usuario.png" title="icone" alt="icone" >
+
+                            </div>
+
+
+                        </div>
+                
+                    </div>
+
             
+
+                    
+                </div>
+                
+                
+                
+                <div class="segura_conversa">
+                        <div class="caixa_conversa">
+                        
+                        </div>
+
+                        <div class="caixa_conversa">
+
+                        </div>
+
+                        <div class="caixa_conversa">
+
+                        </div>
+
+                        <div class="caixa_conversa">
+
+                        </div>
+
+                    </div>
+
+                    <div id="linha_vertical"></div>
+
+                    </div>
+
+                    <div class="principal_dialogo"></div>
+                    
+                    <div class="caixa_texto">
+                        <div id="icone_caixa">
+                            <!-- <img src="view/painel_usuario/imagem/editar.png" title="icone" alt="icone"> -->
+                        </div>
+
+                    </div>
+
+                    
+                
+                
+                
+                
+                
+                
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-           
 
 
 
@@ -169,10 +238,12 @@
 
 
 
-            
+                
 
 
-            </div>
+                </div>
+
         </div>
-    </body>
+    </div>
+  </body>
 </html>
