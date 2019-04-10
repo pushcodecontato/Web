@@ -12,7 +12,7 @@
             $this->server = 'localhost';
             $this->user = 'root';
             // $this->password = '12345ola';
-            $this->password = '';
+            $this->password = 'bcd127';
             $this->database = 'mob_share';
         }
 
