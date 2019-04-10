@@ -21,7 +21,7 @@
             <td>22:50</td>
             <td>R$ 21.92</td>
             <td>dfdsfsd fsdf sdfsd sd sd</td>
-            <td>
+            <td onclick="chamaModalAnunciosAprova()">
                 <button>Aprovar</button>
                 <button>Reprovar</button>
             </td>
@@ -33,7 +33,7 @@
             <td>22:50</td>
             <td>R$ 21.92</td>
             <td>dfdsfsd fsdf sdfsd sd sd</td>
-            <td>
+            <td onclick="chamaModalAnunciosAprova()">
                 <button>Aprovar</button>
                 <button>Reprovar</button>
             </td>
@@ -45,7 +45,7 @@
             <td>22:50</td>
             <td>R$ 21.92</td>
             <td>dfdsfsd fsdf sdfsd sd sd</td>
-            <td>
+            <td onclick="chamaModalAnunciosAprova()">
                 <button>Aprovar</button>
                 <button>Reprovar</button>
             </td>

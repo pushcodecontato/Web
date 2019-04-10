@@ -210,6 +210,12 @@ function chamaModalModelos(){
 		modal(res.toString());
 	});
 }
+function chamaModalAnunciosAprova(){
+	$.get('?cms/anuncios/modal_anuncios_pendentes.php')
+	.then(function(res){
+		modal(res.toString());
+	});
+}
 
 
 
