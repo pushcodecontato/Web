@@ -26,7 +26,7 @@
                             <p>Administrador</p>
                         </div>
                         <div class="segura_info" style="padding-top:13px;">
-                            <a href="#">Sair</a>
+                            <a href="index.php">Sair</a>
                         </div>
                         <div class="imagem_home">
                             <img src="view/cms/imagem/header/house.png" alt="home">
@@ -96,7 +96,7 @@
                         <p>Usuários CMS</p>
                     </div>
                     <div class="sub_menu" id="usuarios"> 
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('cadastro_niveis')">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('niveis/cadastro_niveis', true)">
                             <img src="view/cms/imagem/icones/cliente.png" alt="Clientes">
                             <p>Cadastrar niveis</p>
                         </div>
@@ -105,14 +105,14 @@
                             <p>Cadastrar usuários</p>
                         </div>
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="conteudo_subMenu('fale_conosco/fale_conosco',true)">
                         <img src="view/cms/imagem/icones/fale_conosco.png" alt="fale conosco">
                         <p>Fale conosco</p>
                     </div>
                     <div class="sub_menu"> 
     
                     </div>
-                    <div class="item_menu" onclick="abrir_menu('120px')">
+                    <div class="item_menu" onclick="conteudo_subMenu('email_marketing/email_marketing',true)">
                         <img src="view/cms/imagem/icones/email.png" alt="Anúncios">
                         <p>Email marketing</p>
                     </div>

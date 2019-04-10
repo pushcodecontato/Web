@@ -24,29 +24,37 @@
     <h3 class="titulo_pagina">Cadastrar Usuarios</h3>
     <form method="POST" id="formUsuario" onsubmit="<?=@$submit?>" data-id="<?=@$id_usuario_cms?>"
      action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=@$id_usuario_cms?>">
-        <input  name="txtNome" class="nome_nivel" placeholder="Nome "  value="<?=@$nome?>" required>
-        <input  name="txtEmail" class="nome_nivel" placeholder="email" value="<?=@$email?>" required>
-        <input  name="txtSenha" type="password" class="nome_nivel"     value="<?=@$senha?>" placeholder="Senha" required>
-        <select name="slcNivel" class="usuario_slc" id="slcNivel" requied>
-         <?php
-            require_once("controller/controllerNiveis.php");
-            
-            $controllerNiveis = new ControllerNiveis();
-            $lista_niveis = $controllerNiveis->listar_niveis();
-            
-            foreach($lista_niveis as $nivel){
-            
-          ?>
-
-              <option value="<?php echo $nivel->getId_niveis(); ?>"
-                <?php echo ($nivel->getId_niveis() == $slcNivel)?'selected':''?>>
-
-                <?php echo $nivel->getNome_nivel(); ?>
+        <div class="segura_form_cadastro">
+            <label for="lblNome">Nome</label>
+            <input id="lblNome" name="txtNome" placeholder="Nome "  value="<?=@$nome?>" required>
+            <label for="lblEmail">Email</label>
+            <input id="lblEmail" name="txtEmail" placeholder="email" value="<?=@$email?>" required>
+            <label for="lblSenha">Senha</label>
+            <input id="lblSenha" name="txtSenha" type="password" value="<?=@$senha?>" placeholder="Senha" required>
+            <label>Nível</label>
+            <select name="slcNivel" id="slcNivel" requied>
+            <?php
+                require_once("controller/controllerNiveis.php");
                 
-              </option>
+                $controllerNiveis = new ControllerNiveis();
+                $lista_niveis = $controllerNiveis->listar_niveis();
+                
+                foreach($lista_niveis as $nivel){
+                
+            ?>
 
-         <?php }?>
-        </select>
+                <option value="<?php echo $nivel->getId_niveis(); ?>"
+                    <?php echo ($nivel->getId_niveis() == $slcNivel)?'selected':''?>>
+
+                    <?php echo $nivel->getNome_nivel(); ?>
+                    
+                </option>
+
+            <?php }?>
+            </select>
+        </div>
+       
+
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
     </form>
 

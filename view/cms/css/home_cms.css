@@ -221,6 +221,7 @@ nav{
     font-size: 17px;
     color:#fff
 }
+
 .segura_form{
     width:1050px;
     height: 670px;
@@ -241,47 +242,10 @@ form{
     border-radius: 10px;
 }
 ::-webkit-input-placeholder {
-    color: rgb(253, 253, 253);
- }
-.nome_nivel{
-    height: 35px;
-    outline: none;
-    border: none;
-    background: none;
-    color: rgb(255, 255, 255);
-    font-family: "verdana";
-    /* font-weight: bold; */
-    font-size: 17px;
-    font-size: 18px;
-    width: 400px;
-    margin: 20px auto;
-    padding: 25px 10px;
-    display: block;
-    resize: none;
-    border-radius: 1px;
-    border-bottom: 1px solid black;
+    font-size: 15px;
 }
-.nome_nivel_slc{
-     height: 35px;
-     /* outline: none; */
-     border: none;
-     background: none;
-     color: rgb(255, 255, 255);
-     font-family: "verdana";
-     /* font-weight: bold; */
-     font-size: 17px;
-     font-size: 18px;
-     width: 400px;
-     margin: 20px auto;
-     /* padding: 25px 10px; */
-     display: block;
-     resize: none;
-     border-radius: 1px;
-     border-bottom: 1px solid black;
-}
-.nome_nivel_slc option{
-    color:black;
-}
+
+
 /* Usuario */
 .tbl_usuarios{
     width: 600px;
@@ -299,42 +263,7 @@ form{
     margin-left: 20px;
 
 }
-.check_box_menus{
-    width: 540px;
-    height: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border:1px solid black; */
-    padding-left: 20px;
-    padding-top: 15px;
-}
-.check_box_menus label{
-    font-family: verdana;
-    font-size: 16px;
-    margin-left: 5px;
-}
-input[type='checkbox']{
-    position: absolute;
-    left:-1000em;
 
-}
-input[type='checkbox'] + label:before{
-    background-image: url(../imagem/icones/check0.png);
-    background-position: 0;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    content: "";
-    display: inline-block;
-    height: 20px;
-    padding-left: 5px;
-    position: relative;
-    vertical-align: top;
-    width:20px;
-
-}
-input[type='checkbox']:checked + label:before{
-    background-image: url(../imagem/icones/check1.png);
-}
 .btn_padrao{
     width: 150px;
     height: 40px;
@@ -390,8 +319,22 @@ input[type='checkbox']:checked + label:before{
     margin-top: 5px;
     float: left;
 }
-
-
+/* Mensagem de aviso */
+.aviso_tabela{
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    margin-top: 20px;
+    color:#fff;
+}
+.img_not_find{
+    width:70px;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 /********************************************************
 MODAL***************************************************/
 #container2{

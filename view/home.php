@@ -282,6 +282,72 @@
                                 </div>
                             </div>
                         </a>
+                        <a href="#">
+                            <div class="anuncios">
+                                <img class="img_anuncio" src="view/imagem/gol.jpg" alt="Nome veiculo" title="Nome veiculo">
+                                <div class="info_anuncio">
+                                    <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                    <p class="info_veiculo" style="margin-top:10px;">Volkswagem Gol</p>
+                                    <p class="info_veiculo">2018 | 3000 Km</p>
+                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+                                    
+                                    <div class="stars_avaliacao">
+                                        <img src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <p class="percentual_avaliacao">4.5%</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="anuncios">
+                                <img class="img_anuncio" src="view/imagem/bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
+                                <div class="info_anuncio">
+                                    <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                    <p class="info_veiculo" style="margin-top:10px;">HUPI Whistler</p>
+                                    <p class="info_veiculo">2018 | 3000 Km</p>
+                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+                                    
+                                    <div class="stars_avaliacao">
+                                        <img src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <p class="percentual_avaliacao">4.5%</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="anuncios">
+                                <img class="img_anuncio" src="view/imagem/xj9.jpg" alt="Nome veiculo" title="Nome veiculo">
+                                <div class="info_anuncio">
+                                    <p class="nome_veiculo">R$ 30,00/hora</p>
+
+                                    <p class="info_veiculo" style="margin-top:10px;">Yamaha Xj6</p>
+                                    <p class="info_veiculo">2018 | 3000 Km</p>
+                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+                                    
+                                    <div class="stars_avaliacao">
+                                        <img src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                        <p class="percentual_avaliacao">4.5%</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -335,24 +401,21 @@
                         <p>Telefone:  0800 755 855</p>
                         <p>E-mail: atendimento@mobshare.com.br</p>
                         <img src="view/imagem/cracha_branco.png" alt="cracha">
-                        <p><a href="?cms/home_cms">Área administrativa</a></p> 
+                        <a href="?cms/home_cms">Área administrativa</a> 
                     </div>
                 </div>
                 <div class="mapa_site">
                     <h3> Navegue pelo site </h3>
                     <div class="coluna_mapa">
-                        <p>Melhores avaliações</p>
-                        <p>Termos de uso</p>
-                        <p>Principais anúncio</p>
-                        <p>Tutorial</p>
-                        <p>Tabela de Preço</p>
+                        <a href="?melhores_anuncios">Melhores avaliações</a><br>
+                        <a href="?termos_uso.php">Termos de uso</a><br>
+                        <a href="?principais_anuncios.php">Principais anúncio</a><br>
+                        <a href="?como_ganhar_dinheiro.php">Ganhe dinheiro</a><br>
                     </div>
                     <div class="coluna_mapa">
-                        <p>Detalhe dos valores</p>
-                        <p>Sobre a empresa</p>
-                        <p>F.A.Q</p>
-                        <p>Seja um parceio</p>
-                                               
+                        <a href="?sobre.php">Sobre a empresa</a><br>
+                        <a href="?faq.php">F.A.Q</a><br>
+                        <a href="?parceiros.php">Seja um parceio</a>                 
                     </div>
                 </div>
             </div>
@@ -360,9 +423,9 @@
             <div class="redes_sociais">
                 <p>Siga nós nas redes</p>
                 <div class="segura_rs" style="text-align: center;">
-                    <img src="view/imagem/instagram.png">
-                    <img src="view/imagem/facebook.png">
-                    <img src="view/imagem/twitter.png">
+                    <a href="https://www.instagram.com/?hl=pt-br"><img src="view/imagem/instagram.png" alt="Instagran" title="Instagran"></a>
+                    <a href="https://pt-br.facebook.com/"><img src="view/imagem/facebook.png" alt="facebook" title="Facebook"></a>
+                    <a href="https://twitter.com/login?lang=pt" ><img src="view/imagem/twitter.png" alt="Twitter" title="Twitter" ></a>
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">

@@ -1,3 +1,13 @@
+
+
+<head>
+  <link rel="stylesheet" 
+          type="text/css"
+          href="view/painel_usuario/css/interessado_veiculo.css"/>
+
+    
+</head>
+
 <!--<div id="conteudo">-->
 <div id="conteudo_interessados"> 
                 

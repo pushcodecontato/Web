@@ -1,0 +1,29 @@
+/*CSS E-mail Marketing*/
+#caixaEmails{
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+    min-height: 600px;
+    height: auto;   
+}
+#caixaEmails h2{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    width: auto;
+}
+.emails{
+    width: 500px;
+    height: 40px;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: dimgrey;
+}
+#button{
+    margin-left: 900px;
+}
