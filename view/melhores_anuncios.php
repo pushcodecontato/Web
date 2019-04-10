@@ -376,6 +376,5 @@
         </footer>
     <script src="view/js/main.js"></script>
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
-    <script src="view/js/pages/melhores_anuncios.js"></script>
     </body>
 </html>
