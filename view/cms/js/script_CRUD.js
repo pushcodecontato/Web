@@ -42,7 +42,7 @@ function atualizar_nivel(){
         data: form.serialize(),
         async: true,
         success:function(dados){
-            $.notify("Nível editado com sucesso", "success");                //usuario.getDados();
+            $.notify("Nível editado com sucesso", "success"); 
             conteudo_subMenu('niveis/cadastro_niveis',true);
         }
     });

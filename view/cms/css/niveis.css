@@ -1,3 +1,35 @@
+
+/* area de cadastro de nivel */
+.titulo_pagina{
+    width:180px;
+    margin-top:-12px;
+    padding-left: 15px;
+    margin-left: 10px;
+    background-color: #fff;
+    font-family: Verdana;
+    font-size: 17px;
+    color:#fff
+}
+
+.segura_form{
+    width:1050px;
+    height: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border:1px solid black;
+    border-radius: 5px;
+    /* display: none; */
+}
+form{
+    width:600px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border:1px solid black;
+    border-radius: 10px;
+}
 ::-webkit-input-placeholder {
     font-size: 15px;
 }

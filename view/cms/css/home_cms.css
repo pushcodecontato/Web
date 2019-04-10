@@ -1,3 +1,24 @@
+@font-face{
+    font-family: "OpenSans-bold";
+    src:url("../font/Open_Sans/OpenSans-SemiBold.ttf");
+}
+@font-face{
+    font-family: "OpenSans-Regular";
+    src:url("../font/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Roboto";
+    src:url("../font/GeoSans/Roboto-Thin.ttf");
+}
+@font-face{
+    font-family: "Roboto-medium";
+    src:url("../font/roboto/Roboto-Medium.ttf");
+}
+@font-face{
+    font-family: "Roboto-regular";
+    src:url("../font/roboto/Roboto-Regular.ttf");
+}
 *{
     margin: 0;
     padding: 0;
@@ -23,7 +44,7 @@ body{
 header{
     width:1348px;
     height: 180px;
-    background-color: #585858;
+    background-color: #00984a;
     padding-top: 1px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -46,7 +67,7 @@ header{
     border: 1px solid #fff;
     margin-top: 14px;
     margin-left: 900px;
-    background-color: #7b7b7b;
+    background-color: #006330;
     border-radius: 30px;
 }
 
@@ -129,7 +150,7 @@ nav{
     height: 718px;
     border-right: 1px solid black;
     float: left;
-    background-color: #7b7b7b;
+    background-color: #ffffff;
     border-bottom-left-radius: 10px;
 }
 #texto_menu{
@@ -141,7 +162,7 @@ nav{
 }
 .menu_lateral{
     width: 235px;
-    height: 645px;
+    height: 718px;
     /* border:1px solid black; */
 }
 .item_menu{
@@ -149,18 +170,18 @@ nav{
     height: auto;
     min-height: 60px;
     border-bottom:1px solid black;
+    /* border-right: 1px solid black; */
     padding: 10px;
-    background-color: #7b7b7b;
+    background-color: #ffffff;
     cursor: pointer;
-    transition: 1s;
+    /* transition: 1s; */
 }
 .item_menu:hover, .item_sub_menu:hover{
-    background-color: #8f8f8f;
+    background-color: #006330;
 }
 .item_menu img, .item_sub_menu img{
     width: 35px;
     height: 40px;
-    background-color: #7b7b7b;
     cursor: pointer;
     float: left;
     margin-left: 5px;
@@ -170,7 +191,7 @@ nav{
     font-family: verdana;
     margin-top: 10px;
     margin-left: 50px;
-    color:#fff;
+    color:rgb(0, 0, 0);
 
 }
 .item_sub_menu{
@@ -178,8 +199,9 @@ nav{
     height: auto;
     min-height: 60px;
     border-bottom:1px solid black;
+    /* border-right: 1px solid black; */
     padding: 10px 20px;
-    background-color: #7b7b7b;
+    background-color: #ffffff;
     cursor: pointer;
 }
 .item_sub_menu p{
@@ -187,7 +209,7 @@ nav{
     font-family: verdana;
     margin-top: 10px;
     margin-left: 50px;
-    color:#fff;
+    color:rgb(0, 0, 0);
 }
 .sub_menu{
     width:235px;
@@ -201,50 +223,8 @@ nav{
     height: 718px;
     border-bottom-right-radius: 10px;
     float: left;
-    background-color: #b3b3b3;
+    background-color: #ffffff;
 }
-
-
-
-
-
-
-
-/* area de cadastro de nivel */
-.titulo_pagina{
-    width:180px;
-    margin-top:-12px;
-    padding-left: 15px;
-    margin-left: 10px;
-    background-color: #b3b3b3;
-    font-family: Verdana;
-    font-size: 17px;
-    color:#fff
-}
-
-.segura_form{
-    width:1050px;
-    height: 670px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    border:1px solid black;
-    border-radius: 5px;
-    /* display: none; */
-}
-form{
-    width:600px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    border:1px solid black;
-    border-radius: 10px;
-}
-::-webkit-input-placeholder {
-    font-size: 15px;
-}
-
 
 /* Usuario */
 .tbl_usuarios{

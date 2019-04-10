@@ -1,29 +1,98 @@
 /*CSS E-mail Marketing*/
-#caixaEmails{
-    margin-right: auto;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.segura_tabela_email{
+    width:1050px;
+    height: 670px;
     margin-left: auto;
-    width: 600px;
-    min-height: 600px;
-    height: auto;   
+    margin-right: auto;
+    margin-top: 30px;
+    border:1px solid black;
+    border-radius: 5px;
+  
+
 }
-#caixaEmails h2{
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    width: auto;
+.titulo_pagina_email{
+    width:185px;
+    margin-top:-12px;
+    padding-left: 10px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    font-family: Verdana;
+    font-size: 17px;
+    color:rgb(0, 0, 0)
 }
-.emails{
-    width: 500px;
-    height: 40px;
-    padding-top: 5px;
+.tabela{
+    width:1000px;
+    height: 580px;
+    border-left:1px solid black;
+    border-top-left-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 20px;
-    background-color: #e008d5;
 }
-#button{
-    margin-left: 900px;
+.linha_titulo{
+    width: 1000px;
+    height: 50px;
+    background-color: #005c2d;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+.col_text{
+    height: 50px;
+    float: left;
+    text-align: center;
+    padding-top: 10px;
+    font-family: "OpenSans-Regular";
+    font-size: 18px;
+   
+
+}
+.border_right{
+    border-right: 1px solid black;
+}
+.tabela_dados{
+    width: 1000px;
+    height: 528px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    
+}
+.linha_dados{
+    width: 983px;
+    height: 50px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.linha_dados:hover{
+    color: white;
+    background-color: #00984a;
+}
+.btn_exportar{
+    width:150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 875px;
+    border:none;
+    background-color: rgb(149, 148, 148);
+    border-radius: 5px;
+    font-family: "OpenSans-Regular";
+    font-size: 15px;
+    cursor: pointer;
+    padding-right: 15px;
+    background-image: url('../imagem/icones/down.png');
+    background-repeat: no-repeat;
+    background-size: 36px 36px;
+    background-position-x: 95px;
+    background-position-y: 3px;
+    outline: none;
+}
+.btn_exportar:hover{
+    transition: 0.9s;
+    background-color: #00984a;
 }
