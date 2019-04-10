@@ -1,5 +1,4 @@
-
-#conteudo_andamento{
+#conteudo_agendamento{
     width: 998px;
     height: 703px;          
     float: left; 
@@ -9,17 +8,17 @@
 }
 
 #h2Border{
-    width: 160px;
+    width: 140px;
     height: 15px;
     margin-top: -15px;
     margin-left:50px; 
     background-color:#fff;
 }
-#principal_andamento{
-    width: 940px;
+#principal_agendamento{
+    width: 990px;
     height: 670px;
     border: solid 1px;
-    margin-left: 30px;
+    margin-left: 5px;
 }
 
 .segura_coluna{
@@ -28,7 +27,7 @@
 }
 
 .coluna{
-    width: 233px;
+    width: 163px;
     height: 60px;
     float:left;
     border: solid 1px;
@@ -53,7 +52,7 @@
 }
 
 #retirada{
-    width: 170px;
+    width: 90px;
     height: 20px;
     font-family: verdana;
     font-size: 20px;
@@ -63,7 +62,7 @@
     }
 
 #devolucao{
-    width: 190px;
+    width: 100px;
     height: 20px;
     font-family: verdana;
     font-size: 20px;
@@ -72,8 +71,18 @@
     margin-top: 20px;
  }
  #retirada_data{
-    width: 200px;
+    width: 140px;
     height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+#devolucao_data{
+    width: 130px;
+    height: 50px;
     font-family: verdana;
     font-size: 20px;
     margin-left: auto;
@@ -81,12 +90,40 @@
     margin-top: 20px;
     }
 
-#devolucao_data{
-    width: 200px;
+#valor{
+    width: 60px;
     height: 20px;
     font-family: verdana;
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    }
+}
+
+#rs{
+    width: 95px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#cancelar{
+    width: 83px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.icones{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    float: left;
+    margin-left: 10px;
+}
