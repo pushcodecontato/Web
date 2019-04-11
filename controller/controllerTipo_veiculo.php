@@ -4,23 +4,29 @@ class ControllerTipoVeiculo{
 
     private $tipoVeiculoDAO;
 
-    public construct(){
+    public function __construct(){
+
         require_once('model/dao/tipo_veiculoDAO.php');
         require_once('model/tipo_veiculoClass.php');
+
         $this->tipoVeiculoDAO = new TipoVeiculoDAO();
+    
     }
 
-    public inserir_tipo_veiculo(){
+    public function inserir_tipo(){
 
         $tipo = new TipoVeiculo();
 
-        $tipo->setNome($_POST['txtNome']);
+//Parei Aqui!!!
+
+        $tipo->setNome($_POST['txtNome'])
+             ->setPercentual()
 
         $this->tipoVeiculoDAO->insert($tipo);
 
     }
 
-    public atualizar_tipo_veiculo(){
+    public function atualizar_tipo(){
 
         $tipo = new TipoVeiculo();
 
@@ -30,7 +36,7 @@ class ControllerTipoVeiculo{
         $this->tipoVeiculoDAO->update($tipo);
     }
 
-    public listar_tipo(){
+    public function listar_tipo(){
         return $this->tipoVeiculoDAO->selectAll();
     }
 

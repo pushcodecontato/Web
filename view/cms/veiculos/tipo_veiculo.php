@@ -4,12 +4,9 @@
     $modo = 'inserir';
 ?>
 <div class="segura_form">  
-    <h3 class="titulo_pagina">Tipo de veiculos</h3>
+    <h3 class="titulo_pagina verde">Tipo de veiculos</h3>
     <form method="POST" id="frmTipo_veiculo" action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?>">
-        <select name="slcTipo" class="tipo_slc" id="slcTipo" requied>
-             <option> Carro </option>
-             <option> bicicleta </option>
-        </select>
+        <input  name="txtNome" type="text" id="nome">
         <button type="button" class="tipo_veiculo_btn_adicionar"> Adicionar </button>
         <input  name="txtPorcentual" id="porcentual"  placeholder="10%" required>
         <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios()"> Adicinar acessorio ao tipo de veiculo </p>

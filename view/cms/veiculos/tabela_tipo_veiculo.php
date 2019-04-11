@@ -1,8 +1,4 @@
-<?php
-
-
-?>
-<table>
+<table class="tbl_tipos_veiculos">
     <thead><!-- Legenda cabeçario da tabela-->
         <tr>
             <th>Tipo</th>
@@ -11,21 +7,30 @@
         </tr>
     </thead>
     <tbody><!-- Dados da tabela -->
-        <tr>
-            <td>Carro</td>
-            <td>10%</td>
-            <td>
-                <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
-                <img alt="delete" title="Excluir" src="view/cms/imagem/icones/delete.png">
-            </td>
-        </tr>
-        <tr>
-            <td>Bike</td>
-            <td>10%</td>
-            <td>
-                <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
-                <img alt="delete" title="Excluir" src="view/cms/imagem/icones/delete.png">
-            </td>
-        </tr>
+        <?php
+
+            require_once("controller/controllerTipo_veiculo.php");
+
+            $controllerTipo = new ControllerTipoVeiculo();
+
+            $lista = $controllerTipo->listar_tipo();
+
+            if(count($lista)< 1 ){
+                echo "<img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                echo " <p class='aviso_tabela'> Nenhum tipo encontrado!</p> ";
+            }
+
+            foreach($lista as $tipo){?>
+
+            <tr>
+                <td><?=@$tipo->getNome()?></td>
+                <td><?=@$tipo->getPercentual()?>%</td>
+                <td>
+                    <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
+                    <img alt="delete" title="Excluir" src="view/cms/imagem/icones/delete.png">
+                </td>
+            </tr>
+
+        <?php } ?>
     </tbody>
 </table>
