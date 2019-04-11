@@ -20,7 +20,7 @@ class ControllerTipoVeiculo{
 //Parei Aqui!!!
 
         $tipo->setNome($_POST['txtNome'])
-             ->setPercentual()
+             ->setPercentual($_POST['txtPercentual']);
 
         $this->tipoVeiculoDAO->insert($tipo);
 
@@ -30,14 +30,19 @@ class ControllerTipoVeiculo{
 
         $tipo = new TipoVeiculo();
 
-        $tipo->setId($_POST['id'])
-             ->setNome($_POST['txtNome']);
+        $tipo->setId($_GET['id'])
+             ->setNome($_POST['txtNome'])
+             ->setPercentual($_POST['txtPercentual']);
 
-        $this->tipoVeiculoDAO->update($tipo);
+        $this->tipoVeiculoDAO->uptade($tipo);
     }
 
     public function listar_tipo(){
         return $this->tipoVeiculoDAO->selectAll();
+    }
+
+    public function getById(){
+        return $this->tipoVeiculoDAO->select($_GET['id']);
     }
 
 }

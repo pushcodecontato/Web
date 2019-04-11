@@ -26,7 +26,8 @@
                 <td><?=@$tipo->getNome()?></td>
                 <td><?=@$tipo->getPercentual()?>%</td>
                 <td>
-                    <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
+                    <img alt="edit" title="Editar"  onclick="tipo_veiculo_getById(<?=@$tipo->getId()?>)"
+                         src="view/cms/imagem/icones/edit.png">
                     <img alt="delete" title="Excluir" src="view/cms/imagem/icones/delete.png">
                 </td>
             </tr>

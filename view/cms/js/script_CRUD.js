@@ -86,6 +86,7 @@ function usuario_getById(id){
 		}
 	})
 }
+
 function usuario_getDados(){
 
 	conteudo_subMenu('usuarios/tabela',true);
@@ -185,6 +186,57 @@ function logar(formulario){
 		}
 	})
 }
+
+/* Crud de Tipo de veiculo */
+function tipo_veiculo_cadastro(form){
+	
+	event.preventDefault();
+
+	$.ajax({
+		type:'POST',
+		url:$(form).attr('action'),
+		data:$(form).serialize(),
+		success:function(resposta){
+			console.log("RESPOSTA:",resposta);
+			if(resposta.toString().search('sucesso')>=0){
+				$.notify("Tipo de veiculo cadastrado",'success');
+				conteudo_subMenu('veiculos/tipo_veiculo',true);
+			}
+		}
+	})
+
+}
+
+function tipo_veiculo_atualizar(form){
+
+	event.preventDefault();
+
+	$.ajax({
+		type:'POST',
+		url:$(form).attr('action'),
+		data:$(form).serialize(),
+		success:function(resposta){
+			console.log("RESPOSTA:",resposta);
+			if(resposta.toString().search('sucesso')>=0){
+				$.notify("Tipo de veiculo atualixado",'success');
+				conteudo_subMenu('veiculos/tipo_veiculo',true);
+			}
+		}
+	})
+}
+
+function tipo_veiculo_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'GET',
+		method:'GET',
+		url:'router.php?controller=tipo_veiculo&modo=select&id='+id,
+		success:function(dados){
+ 			$('.conteudo').html(dados);
+		}
+	})
+}
+
 
 
 /* Ignore isso!!! */

@@ -16,7 +16,7 @@ class TipoVeiculo{
     }
 
     public function setId($id){
-        $this->id = $id;
+        $this->id_tipo_veiculo = $id;
         return $this;
     }
 

@@ -86,6 +86,32 @@
                 }
  
                 break;
+              case "TIPO_VEICULO":
+                    
+                    require_once("controller/controllerTipo_veiculo.php");
+                    $controller_tipo_veiculo = new ControllerTipoVeiculo();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_tipo_veiculo->inserir_tipo();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_tipo_veiculo->atualizar_tipo();
+
+                            break;
+                        case "SELECT":
+                            
+                            $tipo = $controller_tipo_veiculo->getById();
+
+                            require_once('view/cms/veiculos/tipo_veiculo.php');
+
+                            break;
+                    }
+                
+                break;
         }
       
         
