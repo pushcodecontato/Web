@@ -1,15 +1,15 @@
-﻿CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `mob_share`;
--- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: mob_share
 -- ------------------------------------------------------
--- Server version	8.0.11
+-- Server version	10.1.26-MariaDB-0+deb9u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -18,48 +18,20 @@ USE `mob_share`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_acessorio_veiculo`
---
-
-DROP TABLE IF EXISTS `tbl_acessorio_veiculo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `tbl_acessorio_veiculo` (
-  `idtbl_acessorio_tbl_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de acessório do veículo',
-  `id_acessorio` int(11) DEFAULT NULL COMMENT 'código da tabela acessório',
-  `id_veiculo` int(11) DEFAULT NULL COMMENT 'código da tabela de veículo',
-  PRIMARY KEY (`idtbl_acessorio_tbl_veiculo`),
-  KEY `fk_tbl_acessorio_veiculo_tbl_veiculo_idx` (`id_veiculo`),
-  KEY `fk_tbl_acessorio_veiculo_tbl_acessorio_idx` (`id_acessorio`),
-  CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_acessorio` FOREIGN KEY (`id_acessorio`) REFERENCES `tbl_acessorios` (`id_acessorios`),
-  CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_acessorio_veiculo`
---
-
-LOCK TABLES `tbl_acessorio_veiculo` WRITE;
-/*!40000 ALTER TABLE `tbl_acessorio_veiculo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_acessorio_veiculo` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tbl_acessorios`
 --
 
 DROP TABLE IF EXISTS `tbl_acessorios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_acessorios` (
   `id_acessorios` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela acessórios',
   `nome_acessorios` varchar(150) NOT NULL COMMENT 'nome dos acessórios',
   `id_tipo_veiculo` int(11) NOT NULL COMMENT 'código da tabela tipo de veículo',
   PRIMARY KEY (`id_acessorios`),
   KEY `fk_tbl_acessorios_tbl_tipo_veiculos_idx` (`id_tipo_veiculo`),
-  CONSTRAINT `fk_tbl_acessorios_tbl_tipo_veiculos` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_acessorios_tbl_tipo_veiculos` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_anuncio` (
   `id_anuncio` int(11) NOT NULL COMMENT 'código da tabela anúncio',
   `descricao` text NOT NULL COMMENT 'descrição da tabela de anúncio',
@@ -91,9 +63,9 @@ CREATE TABLE `tbl_anuncio` (
   PRIMARY KEY (`id_anuncio`),
   KEY `fk_tbl_usuario_tbl_anuncios_idx` (`id_cliente_locador`),
   KEY `fk_tbl_veiculos_tbl_anuncios_idx` (`id_veiculo`),
-  CONSTRAINT `fk_tbl_usuario_tbl_anuncios` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`),
-  CONSTRAINT `fk_tbl_veiculos_tbl_anuncios` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_usuario_tbl_anuncios` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculos_tbl_anuncios` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +83,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio_venda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_anuncio_venda` (
   `id_anuncio_venda` int(11) NOT NULL COMMENT 'código do anúncio de venda',
   `id_veiculo` int(11) NOT NULL COMMENT 'código da tabela do veículo',
@@ -121,9 +93,9 @@ CREATE TABLE `tbl_anuncio_venda` (
   PRIMARY KEY (`id_anuncio_venda`),
   KEY `fk_tbl_usuario_tbl_anuncio_venda_idx` (`id_cliente`),
   KEY `fk_tbl_veiculo_tbl_anuncio_venda_idx` (`id_veiculo`),
-  CONSTRAINT `fk_tbl_usuario_tbl_anuncio_venda` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`),
-  CONSTRAINT `fk_tbl_veiculo_tbl_anuncio_venda` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_usuario_tbl_anuncio_venda` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculo_tbl_anuncio_venda` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +113,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_anuncio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_anuncio` (
   `id_aprovacao_anuncio` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela aprovação do anúncio',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status da aprovação',
@@ -150,9 +122,9 @@ CREATE TABLE `tbl_aprovacao_anuncio` (
   PRIMARY KEY (`id_aprovacao_anuncio`),
   KEY `fk_tbl_aprovacao_anuncio_tbl_usuario_cms_idx` (`id_usuario_cms`),
   KEY `fk_tbl_aprovacao_anuncio_tbl_anuncio_idx` (`id_anuncio`),
-  CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_anuncio` FOREIGN KEY (`id_anuncio`) REFERENCES `tbl_anuncio` (`id_anuncio`),
-  CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_anuncio` FOREIGN KEY (`id_anuncio`) REFERENCES `tbl_anuncio` (`id_anuncio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +142,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_anuncio_venda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_anuncio_venda` (
   `id_aprovacao_anuncio_venda` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código de aprovação do anúncio de venda',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status de aprovação do anúncio de venda',
@@ -179,9 +151,9 @@ CREATE TABLE `tbl_aprovacao_anuncio_venda` (
   PRIMARY KEY (`id_aprovacao_anuncio_venda`),
   KEY `fk_tbl_aprovacao_anuncio_tbl_usuario_cms_idx` (`id_usuario_cms`),
   KEY `fk_tbl_aprovacao_anuncio_venda_tbl_anuncio_venda_idx` (`id_anuncio_venda`),
-  CONSTRAINT `fk_tbl_avaliacao_anuncio_venda_tbl_anuncio_venda` FOREIGN KEY (`id_anuncio_venda`) REFERENCES `tbl_anuncio_venda` (`id_anuncio_venda`),
-  CONSTRAINT `fk_tbl_avaliacao_anuncio_venda_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_avaliacao_anuncio_venda_tbl_anuncio_venda` FOREIGN KEY (`id_anuncio_venda`) REFERENCES `tbl_anuncio_venda` (`id_anuncio_venda`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_avaliacao_anuncio_venda_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,7 +171,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_veiculo` (
   `id_aprovacao_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela aprovação do veículo',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status de aprovação',
@@ -208,9 +180,9 @@ CREATE TABLE `tbl_aprovacao_veiculo` (
   PRIMARY KEY (`id_aprovacao_veiculo`),
   KEY `fk_tbl_aprovacao_veiculo_tbl_veiculo_idx` (`id_veiculo`),
   KEY `fk_tbl_aprovacao_veiculo_tbl_usuario_cms_idx` (`id_usuario_cms`),
-  CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`),
-  CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +200,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_avaliacao_locatario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_avaliacao_locatario` (
   `id_avaliacao_locatario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código  da tabeça de avaliação do locatario',
   `nota` float DEFAULT NULL COMMENT 'nota do locatario',
@@ -237,8 +209,8 @@ CREATE TABLE `tbl_avaliacao_locatario` (
   `id_locacao` int(11) NOT NULL COMMENT 'código da tabela locação',
   PRIMARY KEY (`id_avaliacao_locatario`),
   KEY `fk_tbl_avaliacao_locacao_tbl_locacao_idx` (`id_locacao`),
-  CONSTRAINT `fk_tbl_avaliacao_locacao_tbl_locacao` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_avaliacao_locacao_tbl_locacao` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +228,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_avaliacao_servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_avaliacao_servico` (
   `id_avaliacao_servico` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela avaliação serviço',
   `nota` float DEFAULT NULL COMMENT 'nota da avaliação',
@@ -265,8 +237,8 @@ CREATE TABLE `tbl_avaliacao_servico` (
   `comentario` text COMMENT 'comentária da locação',
   PRIMARY KEY (`id_avaliacao_servico`),
   KEY `fk_tbl_avaliacao_servico_tbl_locacao_idx` (`id_locacao`),
-  CONSTRAINT `fk_tbl_avaliacao_servico_tbl_locacao` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_avaliacao_servico_tbl_locacao` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -284,7 +256,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_bancos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_bancos` (
   `id_banco` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela bancas',
   `nome_banco` varchar(60) NOT NULL COMMENT 'nome do banco',
@@ -292,7 +264,7 @@ CREATE TABLE `tbl_bancos` (
   `cidade` varchar(100) DEFAULT NULL COMMENT 'cidade do banco',
   `uf` varchar(2) DEFAULT NULL COMMENT 'estado do banco',
   PRIMARY KEY (`id_banco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -310,7 +282,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cargo_funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cargo_funcionario` (
   `id_cargo_funcionario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de cargo do funcionário',
   `id_cargo` int(11) NOT NULL COMMENT 'código da tabela de cargo',
@@ -319,9 +291,9 @@ CREATE TABLE `tbl_cargo_funcionario` (
   PRIMARY KEY (`id_cargo_funcionario`),
   KEY `fk_tbl_setor_tbl_cargo_funcionario_idx` (`id_cargo`),
   KEY `fk_tbl_funcionario_tbl_cargo_funcionario_idx` (`id_funcionario`),
-  CONSTRAINT `fk_tbl_funcionario_tbl_cargo_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`),
-  CONSTRAINT `fk_tbl_setor_tbl_cargo_funcionario` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargos` (`id_cargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_funcionario_tbl_cargo_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_setor_tbl_cargo_funcionario` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargos` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,12 +311,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cargos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cargos` (
   `id_cargo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de cargos',
   `nome` varchar(100) NOT NULL COMMENT 'nome do cargo',
   PRIMARY KEY (`id_cargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +334,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código do cliente',
   `nome_cliente` varchar(250) NOT NULL COMMENT 'nome do cliente',
@@ -380,7 +352,7 @@ CREATE TABLE `tbl_cliente` (
   `email` varchar(150) NOT NULL,
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,13 +370,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_comentario_avaliacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_comentario_avaliacao` (
   `id_comentario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela comentário',
   `comentario` text COMMENT 'comentário',
   `data` datetime NOT NULL COMMENT 'data do comentário da avaliação',
   PRIMARY KEY (`id_comentario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -422,14 +394,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_como_ganhar_dinheiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_como_ganhar_dinheiro` (
   `id_ganhar_dinheiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página como ganhar dinheiro',
   `titulo_como_ganhar` text NOT NULL COMMENT 'título da página como ganhar dinheiro',
   `texto_como_ganhar` text NOT NULL COMMENT 'texto da página como ganhar dinheiro',
   `img_como_ganhar` varchar(100) NOT NULL COMMENT 'imagem da página como ganhar dinheiro',
   PRIMARY KEY (`id_ganhar_dinheiro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -447,7 +419,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_conta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_conta` (
   `id_conta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da conta',
   `saldo_conta_bancaria` decimal(10,2) NOT NULL COMMENT 'saldo da conta bancaria',
@@ -455,8 +427,8 @@ CREATE TABLE `tbl_conta` (
   `id_banco` int(11) NOT NULL COMMENT 'código da tabela banco',
   PRIMARY KEY (`id_conta`),
   KEY `fk_tbl_conta_bancaria_tbl_` (`id_banco`),
-  CONSTRAINT `fk_tbl_conta_bancaria_tbl_` FOREIGN KEY (`id_banco`) REFERENCES `tbl_bancos` (`id_banco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_conta_bancaria_tbl_` FOREIGN KEY (`id_banco`) REFERENCES `tbl_bancos` (`id_banco`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -474,7 +446,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_contas_pagar` (
   `id_conta_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à pagar',
   `descricao` text NOT NULL COMMENT 'descrição da conta à pagar ',
@@ -485,7 +457,7 @@ CREATE TABLE `tbl_contas_pagar` (
   `codigo_pagamento` varchar(32) DEFAULT NULL COMMENT 'número do código do pagamento',
   `confirmado` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'confirmação do pagamento aceito ou não aceito',
   PRIMARY KEY (`id_conta_pagar`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -503,7 +475,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_contas_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_contas_receber` (
   `id_conta_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à receber',
   `valor` decimal(10,2) NOT NULL COMMENT 'valor das contas à receber',
@@ -514,7 +486,7 @@ CREATE TABLE `tbl_contas_receber` (
   `data_baixa` datetime DEFAULT NULL COMMENT 'data da baixa do título',
   `confirmado` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'contas foram confirmadas ou não',
   PRIMARY KEY (`id_conta_receber`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -532,12 +504,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_email_mkt`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_email_mkt` (
   `id_email_mkt` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página email marketing',
   `email` varchar(100) NOT NULL COMMENT 'email da página email marketing',
   PRIMARY KEY (`id_email_mkt`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -555,14 +527,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fale_conosco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página fale conosco',
   `nome_fale_conosco` varchar(100) NOT NULL COMMENT 'nome da página fale conosco',
   `email_fale_conosco` varchar(100) NOT NULL COMMENT 'email da página fale conosco',
   `telefone_fale_conosco` varchar(20) NOT NULL COMMENT 'telefone da página fale conosco',
   PRIMARY KEY (`id_fale_conosco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -580,14 +552,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_faq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_faq` (
   `id_faq` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página faq',
   `titulo_faq` varchar(100) NOT NULL COMMENT 'título da página faq',
   `pergunta_1_faq` text NOT NULL COMMENT 'pergunta da página faq',
   `resposta_1_faq` text NOT NULL COMMENT 'resposta da página faq',
   PRIMARY KEY (`id_faq`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -605,7 +577,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_folha_pagamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_folha_pagamento` (
   `id_folha_pagamento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela folha de pagamento',
   `valor_final` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT 'valor final da folha de pagamento',
@@ -617,9 +589,9 @@ CREATE TABLE `tbl_folha_pagamento` (
   PRIMARY KEY (`id_folha_pagamento`,`id_funcionario`),
   KEY `fk_tbl_pagamento_funcionario_tbl_funcionario_idx` (`id_funcionario`),
   KEY `fk_tbl_usuario_desktop_tbl_folha_pagamento_idx` (`id_usuario_desktop`),
-  CONSTRAINT `fk_tbl_pagamento_funcionario_tbl_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`),
-  CONSTRAINT `fk_tbl_usuario_desktop_tbl_folha_pagamento` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_pagamento_funcionario_tbl_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_usuario_desktop_tbl_folha_pagamento` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -637,7 +609,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_folha_pagamento_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_folha_pagamento_contas_pagar` (
   `id_pedido_contas_pagar` int(11) NOT NULL AUTO_INCREMENT,
   `id_folha_pagamento` int(11) NOT NULL COMMENT 'código da tabela folha de pagamento',
@@ -645,9 +617,9 @@ CREATE TABLE `tbl_folha_pagamento_contas_pagar` (
   PRIMARY KEY (`id_pedido_contas_pagar`),
   KEY `fk_tbl_funcionario_idx` (`id_folha_pagamento`),
   KEY `fk_tbl_contas_pagar_tbl_folha_pagamento_contas_pagar_idx` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_contas_pagar_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_folha_pagamento_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_folha_pagamento`) REFERENCES `tbl_folha_pagamento` (`id_folha_pagamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_contas_pagar_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_folha_pagamento_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_folha_pagamento`) REFERENCES `tbl_folha_pagamento` (`id_folha_pagamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -665,7 +637,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fornecedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fornecedor` (
   `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela do fornecedor',
   `nome_fornecedor` varchar(100) NOT NULL COMMENT 'nome do fornecedor',
@@ -673,7 +645,7 @@ CREATE TABLE `tbl_fornecedor` (
   `cod_fornecedor` varchar(32) DEFAULT NULL COMMENT 'código de identificação do fornecedor',
   `razao_social` varchar(100) DEFAULT NULL COMMENT 'razão social do fornecedor',
   PRIMARY KEY (`id_fornecedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -691,15 +663,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_foto_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_foto_veiculo` (
   `id_foto_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela foto do veículo',
   `nome_foto` varchar(255) NOT NULL COMMENT 'nome da foto ',
   `id_veiculo` int(11) NOT NULL COMMENT 'código da tabela veículo',
   PRIMARY KEY (`id_foto_veiculo`),
   KEY `fk_tbl_foto_veiculo_tbl_veiculo_idx` (`id_veiculo`),
-  CONSTRAINT `fk_tbl_foto_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_foto_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -717,7 +689,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_funcionario` (
   `id_funcionario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de funcionário',
   `nome` varchar(100) NOT NULL COMMENT 'nome do funcionário',
@@ -737,8 +709,8 @@ CREATE TABLE `tbl_funcionario` (
   `id_setor` int(11) NOT NULL COMMENT 'código da tabela de setor',
   PRIMARY KEY (`id_funcionario`),
   KEY `fk_tbl_setor_tbl_funcionario_idx` (`id_setor`),
-  CONSTRAINT `fk_tbl_setor_tbl_funcionario` FOREIGN KEY (`id_setor`) REFERENCES `tbl_setor` (`id_setor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_setor_tbl_funcionario` FOREIGN KEY (`id_setor`) REFERENCES `tbl_setor` (`id_setor`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -756,7 +728,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao` (
   `id_locacao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela locação',
   `id_cliente_locador` int(11) NOT NULL COMMENT 'código da tabela cliente locador',
@@ -767,9 +739,9 @@ CREATE TABLE `tbl_locacao` (
   PRIMARY KEY (`id_locacao`),
   KEY `fk_tbl_usuario_tbl_locacao_idx` (`id_cliente_locador`),
   KEY `fk_tbl_anuncio_tbl_locacao_idx` (`id_anuncio`),
-  CONSTRAINT `fk_tbl_anuncio_tbl_locacao` FOREIGN KEY (`id_anuncio`) REFERENCES `tbl_anuncio` (`id_anuncio`),
-  CONSTRAINT `fk_tbl_usuario_tbl_locacao` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_anuncio_tbl_locacao` FOREIGN KEY (`id_anuncio`) REFERENCES `tbl_anuncio` (`id_anuncio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_usuario_tbl_locacao` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -787,7 +759,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao_conta_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao_conta_pagar` (
   `id_locacao_conta_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à pagar',
   `id_locacao` int(11) NOT NULL COMMENT 'código da tabela locação',
@@ -795,9 +767,9 @@ CREATE TABLE `tbl_locacao_conta_pagar` (
   PRIMARY KEY (`id_locacao_conta_pagar`),
   KEY `fk_tbl_pagamento_cliente_tbl_locacao_idx` (`id_locacao`),
   KEY `fk_tbl_contas_pagar_tbl_locacao_conta_pagar_idx` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_contas_pagar_tbl_locacao_conta_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_locacao_tbl_locacao_conta_pagar` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_contas_pagar_tbl_locacao_conta_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_locacao_tbl_locacao_conta_pagar` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -815,7 +787,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao_conta_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao_conta_receber` (
   `id_locacao_conta_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela locação contas à receber',
   `id_locacao` int(11) NOT NULL COMMENT 'código da tabela locação',
@@ -823,9 +795,9 @@ CREATE TABLE `tbl_locacao_conta_receber` (
   PRIMARY KEY (`id_locacao_conta_receber`),
   KEY `fk_tbl_carteira_tbl_locacao_idx` (`id_locacao`),
   KEY `fk_tbl_contas_receber_tbl_locacao_conta_receber_idx` (`id_conta_receber`),
-  CONSTRAINT `fk_tbl_contas_receber_tbl_locacao_conta_receber` FOREIGN KEY (`id_conta_receber`) REFERENCES `tbl_contas_receber` (`id_conta_receber`),
-  CONSTRAINT `fk_tbl_locacao_tbl_locacao_contas_receber` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_contas_receber_tbl_locacao_conta_receber` FOREIGN KEY (`id_conta_receber`) REFERENCES `tbl_contas_receber` (`id_conta_receber`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_locacao_tbl_locacao_contas_receber` FOREIGN KEY (`id_locacao`) REFERENCES `tbl_locacao` (`id_locacao`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -843,12 +815,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_marca_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_marca_veiculo` (
   `id_marca_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da marca do veículo',
   `nome_marca` varchar(20) NOT NULL COMMENT 'nome da marca do veículo',
   PRIMARY KEY (`id_marca_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -866,7 +838,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_marca_veiculo_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_marca_veiculo_tipo_veiculo` (
   `id_tipo_marca` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela tipo da marca do veículo',
   `id_tipo_veiculo` int(11) NOT NULL COMMENT 'código da tabela tipo do veículo',
@@ -874,9 +846,9 @@ CREATE TABLE `tbl_marca_veiculo_tipo_veiculo` (
   PRIMARY KEY (`id_tipo_marca`),
   KEY `fk_tbl_marca_veiculo_tipo_veiculo_tbl_marca_veiculo_idx` (`id_marca_veiculo`),
   KEY `fk_tbl_marca_veiculo_tipo_veiculo_tbl_tipo_veiculo_idx` (`id_tipo_veiculo`),
-  CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_marca_veiculo` FOREIGN KEY (`id_marca_veiculo`) REFERENCES `tbl_marca_veiculo` (`id_marca_veiculo`),
-  CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_marca_veiculo` FOREIGN KEY (`id_marca_veiculo`) REFERENCES `tbl_marca_veiculo` (`id_marca_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -894,13 +866,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_melhores_avaliacoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_melhores_avaliacoes` (
   `id_melhores_avaliacoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página melhores avaliações',
   `titulo_melhores_avaliacoes` text NOT NULL COMMENT 'título da página melhores avaliações',
   `texto_melhores_avaliacoes` text NOT NULL COMMENT 'texto da página melhores avaliações',
   PRIMARY KEY (`id_melhores_avaliacoes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -918,14 +890,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_menu` (
   `id_menu` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela menu',
   `nome_menu` varchar(25) NOT NULL COMMENT 'nome do menu',
   `href` varchar(150) NOT NULL COMMENT 'url/ link do menu',
   `icone` varchar(255) NOT NULL COMMENT 'ícone do menu',
   PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -943,15 +915,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_modelo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_modelo_veiculo` (
   `id_modelo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela do modelo do veículo',
   `nome_modelo` varchar(50) NOT NULL COMMENT 'nome do modelo',
   `id_marca_tipo` int(11) NOT NULL COMMENT 'código da tabela marca tipo do veículo',
   PRIMARY KEY (`id_modelo`),
   KEY `fk_tbl_modelo_veiculo_tbl_marca_veiculo_tipo_veiculo_idx` (`id_marca_tipo`),
-  CONSTRAINT `fk_tbl_modelo_veiculo_tbl_marca_veiculo_tipo_veiculo` FOREIGN KEY (`id_marca_tipo`) REFERENCES `tbl_marca_veiculo_tipo_veiculo` (`id_tipo_marca`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_modelo_veiculo_tbl_marca_veiculo_tipo_veiculo` FOREIGN KEY (`id_marca_tipo`) REFERENCES `tbl_marca_veiculo_tipo_veiculo` (`id_tipo_marca`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -969,13 +941,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_niveis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_niveis` (
   `id_niveis` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela níveis',
   `nome_nivel` varchar(25) NOT NULL COMMENT 'nome do nível',
   `descricao` varchar(50) NOT NULL COMMENT 'descrição do nível',
   PRIMARY KEY (`id_niveis`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -984,7 +956,7 @@ CREATE TABLE `tbl_niveis` (
 
 LOCK TABLES `tbl_niveis` WRITE;
 /*!40000 ALTER TABLE `tbl_niveis` DISABLE KEYS */;
-INSERT INTO `tbl_niveis` VALUES (1,'admin','administra tudo');
+INSERT INTO `tbl_niveis` VALUES (1,'admin124','Administra toda545'),(2,'dfsdf','dsfsdf');
 /*!40000 ALTER TABLE `tbl_niveis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -994,7 +966,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_niveis_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_niveis_menu` (
   `id_niveis_menu` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela níveis do menu',
   `id_menu` int(11) NOT NULL COMMENT 'código da tabela menu',
@@ -1002,9 +974,9 @@ CREATE TABLE `tbl_niveis_menu` (
   PRIMARY KEY (`id_niveis_menu`),
   KEY `fk_tbl_niveis_menu_tbl_niveis_idx` (`id_niveis`),
   KEY `fk_tbl_niveis_menu_tbl_menu_idx` (`id_menu`),
-  CONSTRAINT `fk_tbl_niveis_menu_tbl_menu` FOREIGN KEY (`id_menu`) REFERENCES `tbl_menu` (`id_menu`),
-  CONSTRAINT `fk_tbl_niveis_menu_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_niveis_menu_tbl_menu` FOREIGN KEY (`id_menu`) REFERENCES `tbl_menu` (`id_menu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_niveis_menu_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1022,7 +994,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes` (
   `id_operacoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações',
   `id_conta` int(11) NOT NULL COMMENT 'código da tabela conta',
@@ -1031,9 +1003,9 @@ CREATE TABLE `tbl_operacoes` (
   PRIMARY KEY (`id_operacoes`),
   KEY `fk_tbl_conta_tbl_operacoes_idx` (`id_conta`),
   KEY `fk_tbl_usuario_desktop_tbl_operacoes_idx` (`id_usuario_desktop`),
-  CONSTRAINT `fk_tbl_conta_tbl_operacoes` FOREIGN KEY (`id_conta`) REFERENCES `tbl_conta` (`id_conta`),
-  CONSTRAINT `fk_tbl_usuario_desktop_tbl_operacoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_conta_tbl_operacoes` FOREIGN KEY (`id_conta`) REFERENCES `tbl_conta` (`id_conta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_usuario_desktop_tbl_operacoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1051,7 +1023,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes_contas_pagar` (
   `id_operacoes_contas_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações contas à receber',
   `id_contas_pagar` int(11) NOT NULL COMMENT 'código da tabela contas à pagar',
@@ -1059,9 +1031,9 @@ CREATE TABLE `tbl_operacoes_contas_pagar` (
   PRIMARY KEY (`id_operacoes_contas_pagar`),
   KEY `fk_tbl_contas_pagar_tbl_operacoes_contas_pagar_idx` (`id_contas_pagar`),
   KEY `fk_tbl_operacoes_tbl_operacoes_contas_pagar_idx` (`id_operacoes`),
-  CONSTRAINT `fk_tbl_contas_pagar_tbl_operacoes_contas_pagar` FOREIGN KEY (`id_contas_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_operacoes_tbl_operacoes_contas_pagar` FOREIGN KEY (`id_operacoes`) REFERENCES `tbl_operacoes` (`id_operacoes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_contas_pagar_tbl_operacoes_contas_pagar` FOREIGN KEY (`id_contas_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_operacoes_tbl_operacoes_contas_pagar` FOREIGN KEY (`id_operacoes`) REFERENCES `tbl_operacoes` (`id_operacoes`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1079,7 +1051,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes_contas_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes_contas_receber` (
   `id_operacoes_contas_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações contas à receber',
   `id_contas_receber` int(11) NOT NULL COMMENT 'código da tabela contas à receber',
@@ -1087,9 +1059,9 @@ CREATE TABLE `tbl_operacoes_contas_receber` (
   PRIMARY KEY (`id_operacoes_contas_receber`),
   KEY `fk_tbl__contas_receber_tbl_operacoes_contas_receber_idx` (`id_contas_receber`),
   KEY `fk_tbl_operacoes_tbl_operacoes_contas_receber_idx` (`id_operacoes`),
-  CONSTRAINT `fk_tbl__contas_receber_tbl_operacoes_contas_receber` FOREIGN KEY (`id_contas_receber`) REFERENCES `tbl_contas_receber` (`id_conta_receber`),
-  CONSTRAINT `fk_tbl_operacoes_tbl_operacoes_contas_receber` FOREIGN KEY (`id_operacoes`) REFERENCES `tbl_operacoes` (`id_operacoes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl__contas_receber_tbl_operacoes_contas_receber` FOREIGN KEY (`id_contas_receber`) REFERENCES `tbl_contas_receber` (`id_conta_receber`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_operacoes_tbl_operacoes_contas_receber` FOREIGN KEY (`id_operacoes`) REFERENCES `tbl_operacoes` (`id_operacoes`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1107,7 +1079,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pagina_sobre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pagina_sobre` (
   `id_sobre` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página sobre',
   `titulo_sobre` varchar(45) NOT NULL COMMENT 'título da página sobre',
@@ -1117,7 +1089,7 @@ CREATE TABLE `tbl_pagina_sobre` (
   `visao_sobre` text NOT NULL COMMENT 'visão página sobre',
   `valores_sobre` text NOT NULL COMMENT 'valores da página sobre',
   PRIMARY KEY (`id_sobre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1135,14 +1107,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pagina_tutorial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pagina_tutorial` (
   `id_tutorial` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página tutorial',
   `titulo_tutorial` varchar(100) NOT NULL COMMENT 'título da página tutorial',
   `texto_tutorial` text NOT NULL COMMENT 'texto da página tutorial',
   `foto_tutorial` varchar(200) DEFAULT NULL COMMENT 'fotos da página tutorial',
   PRIMARY KEY (`id_tutorial`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1160,7 +1132,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela pedido',
   `valor_total` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT 'valor total do pedido',
@@ -1176,9 +1148,9 @@ CREATE TABLE `tbl_pedido` (
   PRIMARY KEY (`id_pedido`),
   KEY `fk_tbl_pedidos_tbl_fornecedor_idx` (`id_fornecedor`),
   KEY `fk_tbl_usuario_desktop_tbl_pedido_idx` (`id_usuario_desktop`),
-  CONSTRAINT `fk_tbl_fornecedor_tbl_pedidos` FOREIGN KEY (`id_fornecedor`) REFERENCES `tbl_fornecedor` (`id_fornecedor`),
-  CONSTRAINT `fk_tbl_usuario_desktop_tbl_pedido` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_fornecedor_tbl_pedidos` FOREIGN KEY (`id_fornecedor`) REFERENCES `tbl_fornecedor` (`id_fornecedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_usuario_desktop_tbl_pedido` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1196,7 +1168,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido_contas_pagar` (
   `id_pedido_contas_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela pedidos de conta à pagar',
   `id_pedido` int(11) NOT NULL COMMENT 'código da tabela pedidos',
@@ -1204,9 +1176,9 @@ CREATE TABLE `tbl_pedido_contas_pagar` (
   PRIMARY KEY (`id_pedido_contas_pagar`),
   KEY `fk_tbl_pedido_tbl_pedido_contas_pagar_idx` (`id_pedido`),
   KEY `fk_tbl_contas_pagar_tbl_pedido_contas_pagar_idx` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_contas_pagar_tbl_pedido_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
-  CONSTRAINT `fk_tbl_pedido_tbl_pedido_contas_pagar` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_contas_pagar_tbl_pedido_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_pedido_tbl_pedido_contas_pagar` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1224,7 +1196,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido_produto` (
   `id_pedido_produto` int(11) NOT NULL COMMENT 'código da tabela produto do pedido',
   `quantidade` int(11) NOT NULL COMMENT 'quantidade de produtos',
@@ -1234,9 +1206,9 @@ CREATE TABLE `tbl_pedido_produto` (
   PRIMARY KEY (`id_pedido_produto`),
   KEY `fk_produto_pedido_idx` (`id_pedido`),
   KEY `fk_tbl_produto_tbl_pedido_produto_idx` (`id_produto`),
-  CONSTRAINT `fk_tbl_pedido_tbl_pedido_produto` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`),
-  CONSTRAINT `fk_tbl_produto_tbl_pedido_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_pedido_tbl_pedido_produto` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_produto_tbl_pedido_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1249,12 +1221,40 @@ LOCK TABLES `tbl_pedido_produto` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_percentual`
+--
+
+DROP TABLE IF EXISTS `tbl_percentual`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_percentual` (
+  `id_percentual` int(11) NOT NULL AUTO_INCREMENT,
+  `percentual` float NOT NULL,
+  `id_tipo_veiculo` int(11) NOT NULL,
+  `data` date DEFAULT NULL,
+  PRIMARY KEY (`id_percentual`),
+  KEY `id_tipo_veiculo` (`id_tipo_veiculo`),
+  CONSTRAINT `tbl_percentual_ibfk_1` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_percentual`
+--
+
+LOCK TABLES `tbl_percentual` WRITE;
+/*!40000 ALTER TABLE `tbl_percentual` DISABLE KEYS */;
+INSERT INTO `tbl_percentual` VALUES (7,45,2019,'0000-00-00'),(8,45,2019,'0000-00-00'),(9,34,9,'2019-04-11'),(12,13,2,'2019-04-11');
+/*!40000 ALTER TABLE `tbl_percentual` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_percentual_desconto`
 --
 
 DROP TABLE IF EXISTS `tbl_percentual_desconto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_percentual_desconto` (
   `id_percentual_desconto` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código do percentual de desconto',
   `percentual` float NOT NULL COMMENT 'porcentagem do percentual de desconto',
@@ -1264,8 +1264,8 @@ CREATE TABLE `tbl_percentual_desconto` (
   `codigo` varchar(15) NOT NULL COMMENT 'numeração do código de percentual de desconto',
   PRIMARY KEY (`id_percentual_desconto`),
   KEY `fk_tbl_percentual_desconto_tbl_cliente_idx` (`id_cliente`),
-  CONSTRAINT `fk_tbl_percentual_desconto_tbl_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_percentual_desconto_tbl_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1283,7 +1283,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_permissoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_permissoes` (
   `id_permissoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de permissoes',
   `nome` varchar(45) NOT NULL COMMENT 'nome das permissoes',
@@ -1292,7 +1292,7 @@ CREATE TABLE `tbl_permissoes` (
   `icone` varchar(100) NOT NULL COMMENT 'ícone das permissoes',
   `href` varchar(100) NOT NULL COMMENT 'link das permissoes',
   PRIMARY KEY (`id_permissoes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1310,15 +1310,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_principais_anuncios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_principais_anuncios` (
   `id_principais_anuncios` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código principais anúncios',
   `id_anuncios_venda` int(11) NOT NULL COMMENT 'código da tabela anúncios a venda',
   `status` tinyint(4) NOT NULL COMMENT 'status dos principais anúncios',
   PRIMARY KEY (`id_principais_anuncios`),
   KEY `fk_tbl_principais_anuncios_tbl_anuncios_venda_idx` (`id_anuncios_venda`),
-  CONSTRAINT `fk_tbl_principais_anuncios_tbl_anuncios_venda` FOREIGN KEY (`id_anuncios_venda`) REFERENCES `tbl_anuncio_venda` (`id_anuncio_venda`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_principais_anuncios_tbl_anuncios_venda` FOREIGN KEY (`id_anuncios_venda`) REFERENCES `tbl_anuncio_venda` (`id_anuncio_venda`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1336,7 +1336,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela prodto',
   `descricao` text COMMENT 'descrição do produto',
@@ -1344,7 +1344,7 @@ CREATE TABLE `tbl_produto` (
   `cod_produto` varchar(100) NOT NULL COMMENT 'código do produto',
   `nome` varchar(100) NOT NULL COMMENT 'nome do produto',
   PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1362,7 +1362,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_salario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_salario` (
   `id_salario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de salário',
   `salario` decimal(10,2) NOT NULL COMMENT 'salário do funcionário',
@@ -1370,8 +1370,8 @@ CREATE TABLE `tbl_salario` (
   `id_funcionario` int(11) NOT NULL COMMENT 'código da tabela de fucionário ',
   PRIMARY KEY (`id_salario`),
   KEY `fk_tbl_funcionario_tbl_salario_idx` (`id_funcionario`),
-  CONSTRAINT `fk_tbl_funcionario_tbl_salario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_funcionario_tbl_salario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1389,14 +1389,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_seja_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_seja_parceiro` (
   `id_seja_parceiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página seja parceiro',
   `titulo_seja_parceiro` varchar(45) NOT NULL COMMENT 'título da página seja parceiro',
   `texto_seja_parceiro` text NOT NULL COMMENT 'texto da página seja parceiro',
   `foto_seja_parceiro` varchar(45) NOT NULL COMMENT 'foto da página seja parceiro',
   PRIMARY KEY (`id_seja_parceiro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1414,12 +1414,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_setor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_setor` (
   `id_setor` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de setor',
   `nome` varchar(100) NOT NULL COMMENT 'nome do setor',
   PRIMARY KEY (`id_setor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1437,7 +1437,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tabela_precos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_tabela_precos` (
   `id_tabela_precos` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de preços',
   `titulo_tabela_precos` varchar(45) NOT NULL COMMENT 'título da tabela de preços',
@@ -1445,7 +1445,7 @@ CREATE TABLE `tbl_tabela_precos` (
   `descricao_tabela_precos` varchar(45) DEFAULT NULL COMMENT 'descrição da tabela de preços',
   `foto_tabela_precos` varchar(45) DEFAULT NULL COMMENT 'foto da tabela de preços',
   PRIMARY KEY (`id_tabela_precos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1463,7 +1463,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_termos_uso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_termos_uso` (
   `id_termos_uso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página termos de uso',
   `pdf_termos` varchar(45) NOT NULL COMMENT 'pdf da página termos de uso',
@@ -1471,7 +1471,7 @@ CREATE TABLE `tbl_termos_uso` (
   `texto_1_termos` varchar(45) NOT NULL COMMENT 'texto da página termos de uso',
   `icone_1_termos` varchar(45) DEFAULT NULL COMMENT 'ícone da página termos de uso',
   PRIMARY KEY (`id_termos_uso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1489,12 +1489,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_tipo_veiculo` (
-  `id_tipo_veiculo` int(11) NOT NULL auto_increment COMMENT 'código da tabela tipo de veículo',
+  `id_tipo_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela tipo de veículo',
   `nome_tipo_veiculo` varchar(20) NOT NULL COMMENT 'nome do tipo de veículo',
   PRIMARY KEY (`id_tipo_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1503,6 +1503,7 @@ CREATE TABLE `tbl_tipo_veiculo` (
 
 LOCK TABLES `tbl_tipo_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_tipo_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_tipo_veiculo` VALUES (1,'carro'),(2,'Revista'),(3,'Livro'),(4,'bicicleta'),(5,'gggggg'),(6,'Livro'),(7,'administrador23'),(8,'Revista'),(9,'administrador23');
 /*!40000 ALTER TABLE `tbl_tipo_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1512,17 +1513,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_cms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_cms` (
   `id_usuario_cms` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela usuário do  cms',
   `nome_usuario_cms` varchar(20) NOT NULL COMMENT 'nome de usuário do cms',
   `email_usuario_cms` varchar(150) NOT NULL COMMENT 'email do usuário do cms',
-  `senha` varchar(255) NOT NULL COMMENT 'senha do usuário do cms',
+  `senha` varchar(20) NOT NULL COMMENT 'senha do usuário do cms',
   `id_niveis` int(11) NOT NULL COMMENT 'código da tabela nível',
   PRIMARY KEY (`id_usuario_cms`),
   KEY `fk_tbl_usuario_cms_tbl_niveis_idx` (`id_niveis`),
-  CONSTRAINT `fk_tbl_usuario_cms_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_usuario_cms_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1531,7 +1532,7 @@ CREATE TABLE `tbl_usuario_cms` (
 
 LOCK TABLES `tbl_usuario_cms` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_cms` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_cms` VALUES (6,'Gil','teste@gmail.com','$2y$12$t.1ag39KvScusArnH.50eu2BfVc/BgEmimJqf0R49t6S.o9iV1wp.',1);
+INSERT INTO `tbl_usuario_cms` VALUES (4,'Teste','admin@bugbunny.com','$2y$12$aND8zOL49xAwq',1),(5,'GIl','gil@gmail.com','32423',1);
 /*!40000 ALTER TABLE `tbl_usuario_cms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1541,7 +1542,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_desktop`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_desktop` (
   `id_usuario_desktop` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela usuário desktop',
   `nome` varchar(100) NOT NULL COMMENT 'nome do usuário do desktop',
@@ -1553,7 +1554,7 @@ CREATE TABLE `tbl_usuario_desktop` (
   `foto` varchar(100) DEFAULT NULL COMMENT 'foto do usuário',
   `excluido` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'dado se o usuário foi excluído ou não',
   PRIMARY KEY (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1571,7 +1572,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_desktop_permissoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_desktop_permissoes` (
   `id_usuario_desktop_permicoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de permições do usuário  do desktop',
   `id_usuario_desktop` int(11) NOT NULL COMMENT 'código da tabela do usuário  do desktop',
@@ -1579,9 +1580,9 @@ CREATE TABLE `tbl_usuario_desktop_permissoes` (
   PRIMARY KEY (`id_usuario_desktop_permicoes`,`id_permicoes`),
   KEY `fk_tbl_permicoes_idx` (`id_permicoes`),
   KEY `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes_idx` (`id_usuario_desktop`),
-  CONSTRAINT `fk_tbl_permicoes_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_permicoes`) REFERENCES `tbl_permissoes` (`id_permissoes`),
-  CONSTRAINT `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_tbl_permicoes_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_permicoes`) REFERENCES `tbl_permissoes` (`id_permissoes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1599,7 +1600,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_veiculo` (
   `id_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de veículo',
   `ano` varchar(45) NOT NULL,
@@ -1615,12 +1616,23 @@ CREATE TABLE `tbl_veiculo` (
   KEY `fk_tbl_tbl_veiculo_tbl_marca_veiculo_idx` (`id_marca_veiculo`),
   KEY `fk_tbl_veiculo_tbl_modelo_veiculo_idx` (`id_modelo_veiculo`),
   KEY `fk_tbl_veiculo_tbl_cliente_idx` (`id_cliente`),
-  CONSTRAINT `fk_tbl_tbl_veiculo_tbl_marca_veiculo` FOREIGN KEY (`id_marca_veiculo`) REFERENCES `tbl_marca_veiculo` (`id_marca_veiculo`),
-  CONSTRAINT `fk_tbl_veiculo_tbl_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`),
-  CONSTRAINT `fk_tbl_veiculo_tbl_modelo_veiculo` FOREIGN KEY (`id_modelo_veiculo`) REFERENCES `tbl_modelo_veiculo` (`id_modelo`),
-  CONSTRAINT `fk_tbl_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
+  CONSTRAINT `fk_tbl_tbl_veiculo_tbl_marca_veiculo` FOREIGN KEY (`id_marca_veiculo`) REFERENCES `tbl_marca_veiculo` (`id_marca_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculo_tbl_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculo_tbl_modelo_veiculo` FOREIGN KEY (`id_modelo_veiculo`) REFERENCES `tbl_modelo_veiculo` (`id_modelo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+/*
+
+	Alterações:
+	+ tbl_tipo_veiculo{
+	   + id_tipo_veiculo auto_increment 
+	}
+	+ tbl_percentual
+
+*/
+
 
 --
 -- Dumping data for table `tbl_veiculo`
@@ -1630,32 +1642,6 @@ LOCK TABLES `tbl_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-/* tbl_percentual */
-DROP TABLE IF EXISTS `tbl_percentual`;
-CREATE TABLE IF NOT EXISTS `tbl_percentual`
-(
-  `id_percentual` INT NOT NULL AUTO_INCREMENT,
-
-  `percentual` FLOAT NOT NULL,
-
-  `id_tipo_veiculo` INT NOT NULL,
-
-  `data` DATE NULL,
-
-  PRIMARY KEY (`id_percentual`),
-
-  foreign key(id_tipo_veiculo) REFERENCES tbl_tipo_veiculo(id_tipo_veiculo)
-)
-ENGINE = InnoDB;
-
-/* Alterações */
-/* + tbl_percentual
- * tbl_tipo_veiculo {
- *	+ id_tipo_veiculo  auto_increment
- * }
-*/
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1666,6 +1652,4 @@ ENGINE = InnoDB;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-10  8:02:36
-
- 
+-- Dump completed on 2019-04-11 18:44:15
