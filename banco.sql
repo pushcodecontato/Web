@@ -1491,7 +1491,7 @@ DROP TABLE IF EXISTS `tbl_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_tipo_veiculo` (
-  `id_tipo_veiculo` int(11) NOT NULL COMMENT 'código da tabela tipo de veículo',
+  `id_tipo_veiculo` int(11) NOT NULL auto_increment COMMENT 'código da tabela tipo de veículo',
   `nome_tipo_veiculo` varchar(20) NOT NULL COMMENT 'nome do tipo de veículo',
   PRIMARY KEY (`id_tipo_veiculo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -1650,8 +1650,12 @@ CREATE TABLE IF NOT EXISTS `tbl_percentual`
 )
 ENGINE = InnoDB;
 
-
-
+/* Alterações */
+/* + tbl_percentual
+ * tbl_tipo_veiculo {
+ *	+ id_tipo_veiculo  auto_increment
+ * }
+*/
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
