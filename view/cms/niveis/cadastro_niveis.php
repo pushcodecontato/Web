@@ -44,8 +44,6 @@
         <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo($botao)?>">
     </form>
 
-    <div class="tbl_niveis">
-        <?php require_once("view/cms/niveis/tabela.php")?>  
-    </div>
+   
 </div>
 <link rel="stylesheet" type="text/css" href="view/cms/css/niveis.css">

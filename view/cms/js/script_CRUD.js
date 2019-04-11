@@ -29,7 +29,7 @@ function inserir_nivel(){
         async: true,
         success:function(dados){
             $.notify("Nível inserido com sucesso", "success");
-            conteudo_subMenu('niveis/cadastro_niveis',true);
+            conteudo_subMenu('niveis/tabela_niveis', true);
         }
     });
 }
@@ -42,8 +42,8 @@ function atualizar_nivel(){
         data: form.serialize(),
         async: true,
         success:function(dados){
-            $.notify("Nível editado com sucesso", "success");                //usuario.getDados();
-            conteudo_subMenu('niveis/cadastro_niveis',true);
+            $.notify("Nível editado com sucesso", "success"); 
+            conteudo_subMenu('niveis/tabela_niveis', true);
         }
     });
    
@@ -57,7 +57,7 @@ function excluir_niveis(controller, modo, id_item){
         success:function(dados){
             
             $.notify("Nível excluído com sucesso", "success");
-            conteudo_subMenu('niveis/cadastro_niveis',true);
+            conteudo_subMenu('niveis/tabela_niveis', true);
         }            
     });
 }
