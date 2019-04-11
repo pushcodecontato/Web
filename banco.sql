@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+﻿CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
 USE `mob_share`;
 -- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
 --
@@ -1630,6 +1630,28 @@ LOCK TABLES `tbl_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+/* tbl_percentual */
+DROP TABLE IF EXISTS `tbl_percentual`;
+CREATE TABLE IF NOT EXISTS `tbl_percentual`
+(
+  `id_percentual` INT NOT NULL AUTO_INCREMENT,
+
+  `percentual` FLOAT NOT NULL,
+
+  `id_tipo_veiculo` INT NOT NULL,
+
+  `data` DATE NULL,
+
+  PRIMARY KEY (`id_percentual`),
+
+  foreign key(id_tipo_veiculo) REFERENCES tbl_tipo_veiculo(id_tipo_veiculo)
+)
+ENGINE = InnoDB;
+
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
