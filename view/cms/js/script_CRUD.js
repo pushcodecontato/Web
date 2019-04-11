@@ -75,41 +75,39 @@ function buscar_dados(controller, modo, id_item){
 
 /* Crud de Usuario */
 function usuario_getById(id){
+	event.preventDefault();
 	 $.ajax({
 		type:'post',
 		method:'post',
 		url:'router.php?controller=usuarios&modo=select',
 		data:{id},
 		success:function(dados){
-			$('.conteudo').html(dados);
+			modal(dados);
 		}
 	})
 }
 function usuario_getDados(){
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:'?cms/usuarios/tabela',
-		success:function(dados){
-			$('.tbl_usuarios').html(dados);	
-		}
-	})
+
+	conteudo_subMenu('usuarios/tabela',true);
+
 }
 function usuario_insert(form){
 
 	event.preventDefault();
-
+	console.log("Hellow!!!!!!")
 	$.ajax({
 		type:'post',
 		method:'post',
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
-		sucess:function(dados){
+		success:function(dados){
+			console.log("Hellow@",dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("usuario Cadastrado com sucesso", "success");
 
-				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+				conteudo_subMenu('usuarios/tabela',true);
+				fecharModal();
 			}
 		}
 	})
@@ -129,7 +127,10 @@ function usuario_update(form){
 
 				$.notify("usuario Atualizado com sucesso", "success");
 
-				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+				conteudo_subMenu('usuarios/tabela',true);
+				
+				fecharModal()
+
 
 			}
 		}
@@ -137,6 +138,7 @@ function usuario_update(form){
 }
 
 function usuario_delete(id){
+	event.preventDefault();
 	$.ajax({
 		type:'post',
 		method:'post',
@@ -146,7 +148,8 @@ function usuario_delete(id){
 
 				$.notify("usuario Deletado com sucesso", "info");
 
-				conteudo_subMenu('usuarios/cadastro_usuarios',true);
+				conteudo_subMenu('usuarios/tabela',true);
+				
 
 			}
 		}
@@ -187,27 +190,27 @@ function logar(formulario){
 /* Ignore isso!!! */
 function chamaModalAcessorios(){
 	$.get('?cms/veiculos/modal_acessorio.php')
-	.then(function(res){
+	 .then(function(res){
 		modal(res.toString());
 	});
 }
 function chamaModalModelos(){
 	$.get('?cms/veiculos/modal_modelo.php')
-	.then(function(res){
+	 .then(function(res){
 		modal(res.toString());
 	});
 }
 
 function chamaModalAnunciosAprova(){
 	$.get('?cms/anuncios/modal_anuncios_pendentes.php')
-	.then(function(res){
+	 .then(function(res){
 		modal(res.toString());
-        })
+    })
 }
 
 function chamaModalFaleConosco(){
 	$.get('?cms/fale_conosco/modal_fale_conosco.php')
-        .then(function(res){
+     .then(function(res){
 		modal(res.toString());
 	});
 }
