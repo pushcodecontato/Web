@@ -20,7 +20,7 @@ class TipoVeiculo{
     }
 
     public getNome(){
-        return $nome_tipo_veiculo;
+        return $this->nome_tipo_veiculo;
     }
 
     public setNome($nome){

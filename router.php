@@ -76,7 +76,7 @@
                    case "SELECT":
                         
                         $usuario = $controller_usuario->getById();
-                        require_once('view/cms/usuarios/cadastro_usuarios.php');
+                        require_once('view/cms/usuarios/cadastro.php');
                         break;
                    case "LOGAR":
 

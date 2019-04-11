@@ -145,7 +145,7 @@
                 $('#modal').html(conteudo);
             }
 
-            function fecharModal(conteudo){
+            function fecharModal(){
                 $("#container2").fadeOut(400);
                 $('#modal').html('');
             }

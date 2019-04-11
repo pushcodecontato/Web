@@ -1,8 +1,6 @@
 <?php
-
     $controller = 'usuarios';
     $modo = 'inserir';
-
     /* dados do formulario */
     $nome = "";
     $email = "";
@@ -20,7 +18,7 @@
         $submit = 'usuario_update(this)';//js
     }
 ?>
-<div class="segura_form">  
+<div class="segura_form">
     <h3 class="titulo_pagina">Cadastrar Usuarios</h3>
     <form method="POST" id="formUsuario" onsubmit="<?=@$submit?>" data-id="<?=@$id_usuario_cms?>"
      action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=@$id_usuario_cms?>">
@@ -57,9 +55,5 @@
 
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
     </form>
-
-    <div class="tbl_usuarios">
-        <?php require_once("view/cms/usuarios/tabela.php")?>   
-    </div>
 </div>
 <link rel="stylesheet" type="text/css" href="view/cms/css/usuario.css">
