@@ -179,7 +179,7 @@
                 
                 <div class="segura_conversa">
                         <div class="caixa_conversa">
-                        
+                            
                         </div>
 
                         <div class="caixa_conversa">
@@ -199,17 +199,35 @@
                     <div id="linha_vertical"></div>
 
                     </div>
+                    <div id="segura_todo_dialogo">
 
-                    <div class="principal_dialogo"></div>
-                    
-                    <div class="caixa_texto">
-                        <div id="icone_caixa">
-                            <!-- <img src="view/painel_usuario/imagem/editar.png" title="icone" alt="icone"> -->
+                        <div class="principal_dialogo">
+                            <div class="caixa_esquerda">
+
+                            </div>
+
+                            <div class="caixa_direita">
+                                
+                            </div>
+
+                            <div class="caixa_esquerda">
+                      
+                            </div>
+
+                            <div class="caixa_direita">
+                                 
+                            </div>
+                        </div>
+                        
+                        <div class="caixa_texto">
+                            <div id="caixa_icone">
+                                <img src="view/painel_usuario/imagem/icone_conversa.png" id="icone_conversa">
+                            </div>
+                        
+
                         </div>
 
                     </div>
-
-                    
                 
                 
                 
