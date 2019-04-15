@@ -259,10 +259,12 @@ nav{
     outline: none;
     border-radius: 10px;
     border:none;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 230px;
     font-family: verdana;
     font-size: 15px;
+    color: white;
+    background-color: #00984A;
 }
 
 /********************************************************
@@ -282,11 +284,11 @@ MODAL***************************************************/
     min-width: 500px;
     height: auto;
     min-height: 200px;
-    background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
     padding: 30px;
+    background-color: rgba(0,0,0,0.0);
     /* overflow-y: overlay; */
     /* max-height: 500px:; */
     display: inline-block;

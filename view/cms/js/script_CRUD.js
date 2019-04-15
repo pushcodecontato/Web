@@ -67,7 +67,7 @@ function buscar_dados(controller, modo, id_item){
         url: `router.php?`,
         data: {controller: controller, modo: modo, id:id_item},
         success:function(dados){
-            $('.conteudo').html(dados);
+            modal(dados);
            
         }               
     });

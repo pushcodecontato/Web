@@ -1,5 +1,7 @@
-<div class="segura_form">  
-    <h3 class="titulo_pagina">Fale Conosco</h3>
+<div class="segura_form">
+    <div class="segura_text_button">
+        <h2>Fale Conosco</h2>
+    </div>
     <div id="descarregarConteudo">
         <div id="titulos">
             <h2 style="margin-right: 100px; margin-left: 100px;">E-mail</h2>
@@ -14,8 +16,8 @@
                 <h3>lorem lorem lorem lorem lorem lorem lorem</h3>
             </div>
             <div class="abrir">
-                <button class="" onclick="chamaModalFaleConosco();"> Abrir</button>
-                <button>Exportar</button>
+                <button class="btn_exportar" onclick="chamaModalFaleConosco();"> Abrir</button>
+                <button class="btn_exportar">Exportar</button>
             </div>
         </div>
     </div>

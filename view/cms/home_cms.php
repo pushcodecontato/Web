@@ -48,12 +48,41 @@
                         <div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_paginas')">
                             <img src="view/cms/imagem/icones/paginas.png" alt="Gerenciar paginas"> 
                             <p>Gerenciar paginas</p>
-                            
                         </div>
                         <div class="sub_menu" id="gerenciar_paginas"> 
-
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('paginas/home',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>Página Inicial</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>tipos de veiculos</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>veiculos pendentes</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>tipos de veiculos</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>veiculos pendentes</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>tipos de veiculos</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>veiculos pendentes</p>
+                            </div>
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <p>tipos de veiculos</p>
+                            </div>
                         </div>
-
                         <div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_veiculos')">
                             <img src="view/cms/imagem/icones/veiculo.png" alt="Gerenciar veiculos"> 
                             <p>Gerenciar veiculos</p>

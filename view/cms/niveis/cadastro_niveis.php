@@ -22,8 +22,9 @@
     
 ?>
 <div class="segura_form">  
-    <h3 class="titulo_pagina">Cadastrar nivel</h3>
+    
     <form class="form_cadastro" method="POST" id="formNiveis" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
+    <h3 class="titulo_pagina">Cadastrar nivel</h3>
         <div class="segura_form_cadastro">
             <label for="nome_nivel">Nome nível</label><br>
             <input id="nome_nivel" value="<?php echo($nome_nivel)?>" name="txtNome_nivel" placeholder="Nome Nível" required style="margin-bottom:10px;"><br>
