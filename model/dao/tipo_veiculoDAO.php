@@ -166,22 +166,85 @@ class  TipoVeiculoDAO{
 
     /* Area dos modelos ! Talves vire um novo DAO*/
     public function getModelos($id){
+
+
+        require_once("model/modeloClass.php");
+
         /* select com 4 tabelas */
 
         /* Com inner join */
-        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.* FROM tbl_tipo_veiculo  
-                inner join tbl_marca_veiculo_tipo_veiculo on tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo
-                inner join tbl_marca_veiculo    on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo
-                inner join tbl_modelo_veiculo on tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 
-                WHERE tbl_tipo_veiculo.id_tipo_veiculo = 1";
+        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.* FROM tbl_tipo_veiculo   ".
+               "inner join tbl_marca_veiculo_tipo_veiculo on tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo ".
+               "inner join tbl_marca_veiculo    on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
+               "inner join tbl_modelo_veiculo on tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca  ".
+               "WHERE tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
 
         /* Com subquery  e WHERE */
-        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.* FROM
-                tbl_marca_veiculo_tipo_veiculo,tbl_marca_veiculo,tbl_modelo_veiculo,tbl_tipo_veiculo
-                where tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo AND
-                tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo	AND
-                tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 		AND
-                tbl_tipo_veiculo.id_tipo_veiculo = 1;"
+        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.* FROM ".
+               "tbl_marca_veiculo_tipo_veiculo,tbl_marca_veiculo,tbl_modelo_veiculo,tbl_tipo_veiculo ".
+               "where tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo AND ".
+               "tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo	AND ".
+               "tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 		AND ".
+               "tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
+
+        $PDO_conex = $this->conex->connect_database();
+
+        $select = $PDO_conex->query($sql);
+
+        $lista_modelos = array();
+
+
+        while($rs_modelos = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $modelo = new Modelo();
+            $modelo->setId($rs_modelos['id_modelo'])
+                    ->setNome($rs_modelos['nome_modelo'])
+                    ->setIdMarca($rs_modelos['id_marca_tipo']);
+
+
+            $lista_modelos[] = $modelo;
+        }
+
+
+
+        $this->conex->close_database();
+
+        return $lista_modelos;
+    }
+    
+    /* Area das Marcas ! Talves vire um novo DAO*/
+    public function getMarcas($id){
+
+        require_once("model/marcaClass.php");
+
+        $sql = "SELECT tbl_marca_veiculo.*, tbl_tipo_veiculo.* FROM tbl_tipo_veiculo ".
+               "inner join tbl_marca_veiculo_tipo_veiculo on tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo = tbl_tipo_veiculo.id_tipo_veiculo ".
+               "inner join tbl_marca_veiculo on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
+               " WHERE  tbl_tipo_veiculo.id_tipo_veiculo=". $id;
+
+
+        $PDO_conex = $this->conex->connect_database();
+
+        $select = $PDO_conex->query($sql);
+
+        $lista_marcas = array();
+
+
+        while($rs_marcas = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $marca = new Marca();
+            $marca->setId($rs_marcas['id_modelo'])
+                    ->setNome($rs_marcas['nome_modelo'])
+                    ->setIdMarca($rs_marcas['id_marca_tipo']);
+
+            $lista_marcas[] = $marca;
+        }
+
+
+
+        $this->conex->close_database();
+
+        return $lista_marcas;
     }
 
 

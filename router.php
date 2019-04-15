@@ -86,6 +86,7 @@
                 }
  
                 break;
+              /* Tipo de veiculo */
               case "TIPO_VEICULO":
                     
                     require_once("controller/controllerTipo_veiculo.php");
@@ -107,6 +108,32 @@
                             $tipo = $controller_tipo_veiculo->getById();
 
                             require_once('view/cms/veiculos/tipo_veiculo.php');
+
+                            break;
+                    }
+                
+                break;
+            case "MODELOS":
+                    
+                    require_once("controller/controllerModelos.php");
+                    $controller_modelos = new ControllerModelos();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_modelos->inserir_modelo();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_modelos->atualizar_tipo();
+
+                            break;
+                        case "SELECT":
+                            
+                            $tipo = $controller_modelos->getById();
+
+                            require_once('view/cms/veiculos/modelos/modal_criar_editar.php');
 
                             break;
                     }

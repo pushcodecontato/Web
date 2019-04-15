@@ -17,8 +17,6 @@ class ControllerTipoVeiculo{
 
         $tipo = new TipoVeiculo();
 
-//Parei Aqui!!!
-
         $tipo->setNome($_POST['txtNome'])
              ->setPercentual($_POST['txtPercentual']);
 
@@ -44,7 +42,19 @@ class ControllerTipoVeiculo{
     public function getById(){
         return $this->tipoVeiculoDAO->select($_GET['id']);
     }
+    
+    /* Marcas e acessorio !  Talvers virem um controller no futuro */
+    public function listar_marcas(){
+        
+        return $this->tipoVeiculoDAO->getMarcas($_GET['id']);
 
+    }
+
+    public function listar_modelos(){
+        
+        return $this->tipoVeiculoDAO->getModelos($_GET['id']);
+
+    }
 }
 
 

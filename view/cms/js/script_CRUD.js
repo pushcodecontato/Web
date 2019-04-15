@@ -240,17 +240,24 @@ function tipo_veiculo_getById(id){
 
 
 /* Ignore isso!!! */
-function chamaModalAcessorios(){
-	$.get('?cms/veiculos/modal_acessorio.php')
+function chamaModalAcessorios(id_tipo_veiculo){
+
+	if(id_tipo_veiculo < 1)return;
+	
+	$.get('?cms/veiculos/acessorios/modal_tabela.php&id='+id_tipo_veiculo)
 	 .then(function(res){
 		modal(res.toString());
 	});
 }
-function chamaModalModelos(){
-	$.get('?cms/veiculos/modal_modelo.php')
+function chamaModalModelos(id_tipo_veiculo){
+	
+	if(id_tipo_veiculo < 1)return;
+
+	$.get('?cms/veiculos/modelos/modal_tabela.php&id='+id_tipo_veiculo)
 	 .then(function(res){
 		modal(res.toString());
 	});
+
 }
 
 function chamaModalAnunciosAprova(){
