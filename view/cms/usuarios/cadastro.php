@@ -19,9 +19,10 @@
     }
 ?>
 <div class="segura_form">
-    <h3 class="titulo_pagina">Cadastrar Usuarios</h3>
+    
     <form method="POST" id="formUsuario" onsubmit="<?=@$submit?>" data-id="<?=@$id_usuario_cms?>"
      action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=@$id_usuario_cms?>">
+     <h3 class="titulo_pagina">Cadastrar Usuarios</h3>
         <div class="segura_form_cadastro">
             <label for="lblNome">Nome</label>
             <input id="lblNome" name="txtNome" placeholder="Nome "  value="<?=@$nome?>" required>

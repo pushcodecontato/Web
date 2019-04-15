@@ -18,7 +18,7 @@
                 <p> 11 95831-3917</p>
             </div>
             <div class="descarregarConteudo">
-                <textarea rows="10" cols="40" maxlength="500">
+                <textarea rows="8" cols="40" maxlength="500">
                     Lorem Lorem Lorem Lorem LoremLorem vLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
                 </textarea>
             </div>
@@ -26,16 +26,25 @@
     </div>
 </div>
 <style>
+    *{
+        font-family: cursive;
+    }
     .caixa_modal{
         background-color: #fdfdfd;
         border-top: solid 0.1px black;
-        padding: 2px 15px;
         height: auto;
         overflow-y: auto;
         background-color:#e8e8e8;
+        border-radius: 20px;
     }
     h1{
+        width: 600px;
         text-align: center;
+        background-color: #00984A;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: white;
+        font-family: cursive;
     }
     #caixaConteudo{
         height: auto;
