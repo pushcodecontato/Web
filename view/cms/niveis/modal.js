@@ -1,5 +1,6 @@
 $('#abrir_cadastro').click(function(){
     $("#container2").fadeIn(400);
+    
    
     $.ajax({
         type:'POST',
@@ -10,3 +11,7 @@ $('#abrir_cadastro').click(function(){
         }
     });
 });
+
+// $('#container2').click(function(){
+//     $("#container2").fadeOut(400);
+// });

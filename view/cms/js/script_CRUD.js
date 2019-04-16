@@ -291,3 +291,20 @@ function chamaModalVeiculosAprova(id){
 		modal(res.toString());
     })
 }
+// FAQ
+function inserir_faq(){
+	alert('teste');
+
+
+
+}
+
+// PAGINA GANHE DINHEIRO
+
+// SEJA PARCEIRO
+
+// SOBRE NOS
+
+// TERMOS DE USO
+
+// PAGINA HOME - SESSÕES
