@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
                     <strong><?=@$modelo->getNome()?></strong>
 
                 </label>
-                <img onclick="modelo_editar(<?=@$_GET['id']?>,<?=@$modelo->getId()?>)" class="edit" src="view/cms/imagem/icones/edit.png" alt="edit">
+                <img onclick="marca_editar(<?=@$_GET['id']?>,<?=@$modelo->getId()?>)" class="edit" src="view/cms/imagem/icones/edit.png" alt="edit">
                 <img  class="delete" src="view/cms/imagem/icones/delete.png" alt="delete">
             </div>  
         <?php } ?>

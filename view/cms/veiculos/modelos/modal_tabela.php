@@ -120,3 +120,4 @@ if(isset($_GET['id'])){
 }
 </style>
 <script src="view/cms/veiculos/modelos/modal_modelo.js"></script>
+<script src="view/cms/veiculos/modelos/marcas/modal_marca.js"></script>
