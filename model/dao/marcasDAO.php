@@ -42,8 +42,9 @@ class  MarcaDAO{
     }
 
     public function update($marca){
+
         
-        $sql = "UPDATE tbl_marca_veiculo SET nome_marca =".$marca->getNome()." ". 
+        $sql = "UPDATE tbl_marca_veiculo SET nome_marca ='".$marca->getNome()."' ". 
                "WHERE id_marca_veiculo =".$marca->getId();
 
         //Abrido conexao com o BD
@@ -58,6 +59,31 @@ class  MarcaDAO{
             echo "Erro no script de update";
         }
         
+    }
+
+    public function select($id){
+        $sql = "SELECT * FROM tbl_marca_veiculo where id_marca_veiculo =".$id;
+
+        //Abrido conexao com o BD
+        $PDO_conex = $this->conex->connect_database();
+        
+        $select = $PDO_conex->query($sql);
+
+
+        if($rs_marca = $select->fetch(PDO::FETCH_ASSOC)){
+            
+            $marca = new Marca();
+
+            $marca->setId($rs_marca['id_marca_veiculo'])
+                  ->setNome($rs_marca['nome_marca']);
+            
+            return $marca;
+
+        } else {
+
+            echo "Erro no marca não encontrada";
+
+        }
     }
 
 }

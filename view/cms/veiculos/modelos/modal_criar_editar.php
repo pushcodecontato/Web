@@ -42,7 +42,7 @@
             <img class="img_not_find" alt='Nada encontrado' src='view/imagem/magnify.gif'>
             <p class='aviso_tabela'> Nenhuma marca encontrada! Cadastre uma</p>
             <div class="campo">
-                <button type="button"> Cadastrar Marca </button>
+                <button type="button" onclick="marca_adicionar(<?=@$_GET['id']?>)"> Cadastrar Marca </button>
             </div>
         <?php } else { ?>
             <div class="campo">
