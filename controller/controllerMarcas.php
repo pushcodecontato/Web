@@ -36,21 +36,21 @@
         }
 
         public function atualizar_marca(){
+
             
-            $modelo = new Modelo();
-            $modelo->setId($_GET['id'])
-                   ->setNome($_POST['nome'])
-                   ->setIdTipoMarca($_POST['id_tipo_marca']);
+            $marca = new Marca();
+            $marca->setId($_GET['id'])
+                   ->setNome($_POST['nome']);
             
-            $this->marcasDAO->update($modelo);
+            $this->marcasDAO->update($marca);
         }
         
-        public function getById($id_modelo = 0){
+        public function getById($id_marca = 0){
             
-            if($id_modelo == 0)$id_modelo = $_GET['id'];
+            if($id_marca == 0)$id_marca = $_GET['id'];
             
 
-            return $this->marcasDAO->select($id_modelo);
+            return $this->marcasDAO->select($id_marca);
 
         }
 

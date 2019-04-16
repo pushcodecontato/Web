@@ -284,3 +284,10 @@ function chamaModalFaleConosco(){
 		modal(res.toString());
 	});
 }
+
+function chamaModalVeiculosAprova(id){
+	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
+	 .then(function(res){
+		modal(res.toString());
+    })
+}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/como_ganhar_dinheiro.css">
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/header.css">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <script src="main.js"></script> -->
+    <script src="main.js"></script>
 </head>
 <body>
     <header>
@@ -29,11 +29,11 @@
                     </div>
 
                     <div class="segura_login">
-                        <div class="login_cadastro" style="width: 110px;">
-                            <a href="#"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                        <div class="login_cadastro" id="login" style="width: 110px;">
+                            <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
                         </div>
                         <div class="login_cadastro" style="width: 160px;">
-                            <a href="#"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
                         </div>
                     </div>
                 </div>    

@@ -19,27 +19,7 @@
             <td>eletrica</td>
             <td>
                 <!-- Atenção quando clicar deve abrir uma modal para aprovação! -->
-                <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
-            </td>
-        </tr>
-        <tr>
-            <td>34</td>
-            <td>Bike</td>
-            <td>Sakira</td>
-            <td>eletrica</td>
-            <td>
-                <!-- Atenção quando clicar deve abrir uma modal para aprovação! -->
-                <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
-            </td>
-        </tr>
-        <tr>
-            <td>34</td>
-            <td>Bike</td>
-            <td>Sakira</td>
-            <td>eletrica</td>
-            <td>
-                <!-- Atenção quando clicar deve abrir uma modal para aprovação! -->
-                <img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png">
+                <button onclick="chamaModalVeiculosAprova(1)"><img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png"> VER </button>
             </td>
         </tr>
     <tbody>

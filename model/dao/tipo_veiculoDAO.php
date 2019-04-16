@@ -233,7 +233,7 @@ class  TipoVeiculoDAO{
         while($rs_marcas = $select->fetch(PDO::FETCH_ASSOC)){
 
             $marca = new Marca();
-            $marca->setId($rs_marcas['id_marca'])
+            $marca->setId($rs_marcas['id_marca_veiculo'])
                   ->setNome($rs_marcas['nome_marca'])
                   ->setIdTipoMarca($rs_marcas['id_tipo_marca']);
 
