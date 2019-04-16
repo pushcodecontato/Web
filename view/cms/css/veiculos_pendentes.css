@@ -5,5 +5,20 @@
     background-color: #f5f3f3;
 }
 .tbl_veiculos_pendentes table tbody img{
-    max-width:32px;
+    max-width: 15px;
+}
+.titulo_pagina.verde{
+    width: 100%;
+    height: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    background-color: #006330;
+    color: white;
+    font-size: 2.2em;
+    text-indent: 9px;
+    float: left;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: "OpenSans-Regular";
 }
