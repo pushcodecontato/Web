@@ -1,26 +1,25 @@
 <?php
-    $controller = null;
-    $modo = null;
+// controller e modo sempre iniciam em null
+  
     $botao = 'Salvar';
     $id_nivel  = 0;
     $nome_nivel = null;
     $descricao = null;
     $router = "router.php?controller=niveis&modo=inserir";
     $funcaoJS = "inserir_nivel();";
-    
+
+    // só vai entrar nessa condição se o objeto nível existir. Se houver a condição, no momento de editar, executará esse código
     if(isset($Niveis)){
         $id_nivel = $Niveis->getId_niveis();
         $nome_nivel = $Niveis->getNome_nivel();
         $descricao = $Niveis->getDescricao();
-
         $router = "router.php?controller=niveis&modo=atualizar&id=".$id_nivel;
         $funcaoJS = "atualizar_nivel()";
         $botao = 'Editar';
-    
-        
     }
     
 ?>
+
 <div class="segura_form">  
     
     <form class="form_cadastro" method="POST" id="formNiveis" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">

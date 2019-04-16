@@ -50,37 +50,29 @@
                             <p>Gerenciar paginas</p>
                         </div>
                         <div class="sub_menu" id="gerenciar_paginas"> 
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('paginas/home',true)">
+                            <div class="item_sub_menu">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>Página Inicial</p>
+                                <p>Pagina Home</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                            <div class="item_sub_menu">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>tipos de veiculos</p>
+                                <p>Ganhe dinheiro</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
+                            <div class="item_sub_menu">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>veiculos pendentes</p>
+                                <p>Seja parceiro</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                            <div class="item_sub_menu">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>tipos de veiculos</p>
+                                <p>Sobre empresa</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
+                            <div class="item_sub_menu">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>veiculos pendentes</p>
+                                <p>Termos de uso</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_faq/tabela_faq.php',true)">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>tipos de veiculos</p>
-                            </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>veiculos pendentes</p>
-                            </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
-                                <p>tipos de veiculos</p>
+                                <p>FAQ</p>
                             </div>
                         </div>
                         <div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_veiculos')">
@@ -153,7 +145,7 @@
                     </div>   
                 </nav>
                 <div class="conteudo">
-                    
+                   
                 </div>
             </div>
         </div>
