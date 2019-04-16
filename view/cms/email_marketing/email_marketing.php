@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="view/cms/css/email_marketing.css">
 <div class="segura_text_button">
     <h2>Tabelas de emails</h2>
-    <!-- <button class="adicionar_nivel" id="abrir_cadastro">ADICIONAR NÍVEL</button> -->
 </div>
 <div class="segura_tabela_email">  
     <div class="tabela">
