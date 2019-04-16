@@ -3,7 +3,7 @@
     $controller = null;
     $modo = null;
 
-    //perguntar para o Marcel pq isso aqui HAHAHA
+    //perguntar para o Marcel pq isso aqui HAHAHA!hum?
     if(isset($_REQUEST['controller'])){
         $controller = strtoupper($_GET['controller']);
         $modo = strtoupper($_GET['modo']);
@@ -113,6 +113,7 @@
                     }
                 
                 break;
+            /* Modelos de veiculos */
             case "MODELOS":
                     
                     require_once("controller/controllerModelos.php");
@@ -126,14 +127,41 @@
                             break;
                         case "ATUALIZAR":
                             
-                            $controller_modelos->atualizar_tipo();
+                            $controller_modelos->atualizar_modelo();
 
                             break;
                         case "SELECT":
                             
-                            $tipo = $controller_modelos->getById();
+                            $modelo = $controller_modelos->getById();
 
                             require_once('view/cms/veiculos/modelos/modal_criar_editar.php');
+
+                            break;
+                    }
+                
+                break;
+                /* Marcas de Veiculos */
+                case "MARCAS":
+                    
+                    require_once("controller/controllerMarcas.php");
+                    $controller_marcas = new ControllerMarcas();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_marcas->inserir_marca();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_marcas->atualizar_marca();
+
+                            break;
+                        case "SELECT":
+                            
+                            $marca = $controller_marcas->getById();
+
+                            require_once('view/cms/veiculos/marcas/modal_criar_editar.php');
 
                             break;
                     }

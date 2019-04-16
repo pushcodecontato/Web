@@ -32,9 +32,13 @@
 
         <input  name="txtNome" type="text" id="nome"    value="<?=@$nome?>"  required>
         <input  name="txtPercentual" id="porcentual"    value="<?=@$percentual?>"  placeholder="10%" pattern="([0-9]*)" required>
+        
+        <?php if(isset($tipo)){?>
 
-        <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios(<?=@$id_tipo_veiculo?>)"> Adicinar acessorio ao tipo de veiculo </p>
-        <p class="tipo_veiculo_comentario" onclick="chamaModalModelos(<?=@$id_tipo_veiculo?>)"> Adicinar modelo ao tipo de veiculo </p>
+            <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios(<?=@$id_tipo_veiculo?>)"> Adicinar acessorio ao tipo de veiculo </p>
+            <p class="tipo_veiculo_comentario" onclick="chamaModalModelos(<?=@$id_tipo_veiculo?>)"> Adicinar modelo ao tipo de veiculo </p>
+
+        <?php } ?>
 
         <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
 

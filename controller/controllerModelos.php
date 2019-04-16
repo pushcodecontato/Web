@@ -19,13 +19,30 @@
             $modelo = new Modelo();
 
             $modelo->setNome($_POST['nome'])
-                   ->setIdMarca($_POST['id_marca_veiculo']);
+                   ->setIdTipoMarca($_POST['id_tipo_marca']);
             
             $this->modelosDAO->insert($modelo);
         
         }
+
+        public function atualizar_modelo(){
+            
+            $modelo = new Modelo();
+            $modelo->setId($_GET['id'])
+                   ->setNome($_POST['nome'])
+                   ->setIdTipoMarca($_POST['id_tipo_marca']);
+            
+            $this->modelosDAO->update($modelo);
+        }
         
-      
+        public function getById($id_modelo = 0){
+            
+            if($id_modelo == 0)$id_modelo = $_GET['id'];
+            
+
+            return $this->modelosDAO->select($id_modelo);
+
+        }
 
 
 

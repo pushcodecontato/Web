@@ -51,24 +51,24 @@
     text-align: center;
 }
 .tipo_slc{
-     height: 35px;
-     /* outline: none; */
-     border: none;
-     background: none;
-     color: rgb(255, 255, 255);
-     font-family: "verdana";
-     /* font-weight: bold; */
-     font-size: 17px;
-     font-size: 18px;
-     width: 310px;
-     margin: 20px auto;
-     /* padding: 25px 10px; */
-     display: block;
-     resize: none;
-     border-radius: 1px;
-     border-bottom: 1px solid black;
-     display: inline-block;
-     margin-left: 22px;
+    height: 35px;
+    /* outline: none; */
+    border: none;
+    background: none;
+    color: rgb(255, 255, 255);
+    font-family: "verdana";
+    /* font-weight: bold; */
+    font-size: 17px;
+    font-size: 18px;
+    width: 310px;
+    margin: 20px auto;
+    /* padding: 25px 10px; */
+    display: block;
+    resize: none;
+    border-radius: 1px;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 22px;
 }
 .tipo_slc option{
     color:black;
@@ -158,10 +158,10 @@ table.tbl_tipos_veiculos tbody tr td img{
     width: 24px;
 }
 table.tbl_tipos_veiculos tbody tr:nth-child(even) {
-  background-color: #fff;
+    background-color: #fff;
 }
 table.tbl_tipos_veiculos tbody tr:nth-child(odd) {
-  background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 table.tbl_tipos_veiculos tbody tr:hover{
     background-image: -moz-linear-gradient(top, rgb(239,239,239), rgb(232,232,232));
@@ -179,6 +179,15 @@ table.tbl_tipos_veiculos tbody tr td:hover{
 
 .modal_modelos_crud{
 
+    height: auto;
+
+    background-color: #fff;
+
+    overflow: auto;
+
+    padding: 10px 7px;
+
+    border-radius: 9px;
 }
 .modal_modelos_crud h3{
 
@@ -193,17 +202,19 @@ table.tbl_tipos_veiculos tbody tr td:hover{
     margin: 10px 2px;
 }
 .modal_modelos_crud .campo label{
-width: 213px;
-display: inline-block;
-font-weight: bold;
+
+    width: 213px;
+
+    display: inline-block;
+
+    font-weight: bold;
 }
 .modal_modelos_crud .campo input , .modal_modelos_crud .campo select{
     width: 219px;
     border: solid 0.3px #dcdcdc;
     padding: 5px;
 }
-.modal_modelos_crud .campo input{
-    
+.modal_modelos_crud .campo input{    
     outline: none;
 }
 .modal_modelos_crud .campo select{
@@ -211,6 +222,8 @@ table.tbl_tipos_veiculos tbody tr td:hover{
     border-width: 0px 0px 1px 0px;
 
     outline: none;
+
+    background-color: #fff;
 }
 .modal_modelos_crud .campo button{
     
@@ -232,5 +245,74 @@ table.tbl_tipos_veiculos tbody tr td:hover{
 }
 
 .modal_modelos_crud .campo button:hover{
+    border: solid 1.2px #000;
+}
+.modal_marcas_crud{
+
+    height: auto;
+
+    background-color: #fff;
+
+    overflow: auto;
+
+    padding: 10px 7px;
+
+    border-radius: 9px;
+}
+.modal_marcas_crud h3{
+
+    border-bottom: solid  0.1px;
+
+    margin-bottom: 15px;
+}
+.modal_marcas_crud .campo{
+
+    text-align: initial;
+
+    margin: 10px 2px;
+}
+.modal_marcas_crud .campo label{
+
+    width: 213px;
+
+    display: inline-block;
+
+    font-weight: bold;
+}
+.modal_marcas_crud .campo input , .modal_modelos_crud .campo select{
+    width: 219px;
+    border: solid 0.3px #dcdcdc;
+    padding: 5px;
+}
+.modal_marcas_crud .campo input{    
+    outline: none;
+}
+.modal_marcas_crud .campo select{
+
+    border-width: 0px 0px 1px 0px;
+
+    outline: none;
+
+    background-color: #fff;
+}
+.modal_marcas_crud .campo button{
+    
+    float: right;
+
+    padding: 4px 15px;
+
+    background: transparent;
+
+    font-size: 1.2em;
+
+    font-weight: bold;
+
+    border: solid 1.2px #e0e0e0;
+
+    cursor:pointer;
+
+    border-radius: 5.1px;
+}
+.modal_marcas_crud .campo button:hover{
     border: solid 1.2px #000;
 }

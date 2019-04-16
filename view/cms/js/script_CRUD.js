@@ -249,11 +249,22 @@ function chamaModalAcessorios(id_tipo_veiculo){
 		modal(res.toString());
 	});
 }
+
 function chamaModalModelos(id_tipo_veiculo){
 	
 	if(id_tipo_veiculo < 1)return;
 
 	$.get('?cms/veiculos/modelos/modal_tabela.php&id='+id_tipo_veiculo)
+	 .then(function(res){
+		modal(res.toString());
+	});
+
+}
+function chamaModalMarcas(id_tipo_veiculo){
+	
+	if(id_tipo_veiculo < 1)return;
+
+	$.get('?cms/veiculos/modelos/marcas/modal_tabela.php&id='+id_tipo_veiculo)
 	 .then(function(res){
 		modal(res.toString());
 	});

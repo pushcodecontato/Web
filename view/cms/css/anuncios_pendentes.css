@@ -50,7 +50,7 @@
 }
 .modal_anuncios{
     margin: 6px;
-    height: 307px;
+    height: auto;
     width: 635px;
     background-color: #fff;
 }

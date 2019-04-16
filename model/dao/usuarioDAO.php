@@ -14,7 +14,7 @@
             $sql = "INSERT INTO tbl_usuario_cms(nome_usuario_cms,email_usuario_cms,senha,id_niveis)".
                    "values('". $usuario->getNome() ."','". $usuario->getEmail() ."',".
                    "'". $usuario->genSenha() ."',". $usuario->getNivel() ." )";
-            echo $sql;
+            
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
 

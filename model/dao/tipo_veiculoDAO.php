@@ -198,8 +198,8 @@ class  TipoVeiculoDAO{
 
             $modelo = new Modelo();
             $modelo->setId($rs_modelos['id_modelo'])
-                    ->setNome($rs_modelos['nome_modelo'])
-                    ->setIdMarca($rs_modelos['id_marca_tipo']);
+                   ->setNome($rs_modelos['nome_modelo'])
+                   ->setIdTipoMarca($rs_modelos['id_marca_tipo']);
 
 
             $lista_modelos[] = $modelo;
@@ -217,7 +217,7 @@ class  TipoVeiculoDAO{
 
         require_once("model/marcaClass.php");
 
-        $sql = "SELECT tbl_marca_veiculo.*, tbl_tipo_veiculo.* FROM tbl_tipo_veiculo ".
+        $sql = "SELECT tbl_marca_veiculo.*,tbl_marca_veiculo_tipo_veiculo.* FROM tbl_tipo_veiculo ".
                "inner join tbl_marca_veiculo_tipo_veiculo on tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo = tbl_tipo_veiculo.id_tipo_veiculo ".
                "inner join tbl_marca_veiculo on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
                " WHERE  tbl_tipo_veiculo.id_tipo_veiculo=". $id;
@@ -233,9 +233,9 @@ class  TipoVeiculoDAO{
         while($rs_marcas = $select->fetch(PDO::FETCH_ASSOC)){
 
             $marca = new Marca();
-            $marca->setId($rs_marcas['id_modelo'])
-                    ->setNome($rs_marcas['nome_modelo'])
-                    ->setIdMarca($rs_marcas['id_marca_tipo']);
+            $marca->setId($rs_marcas['id_marca'])
+                  ->setNome($rs_marcas['nome_marca'])
+                  ->setIdTipoMarca($rs_marcas['id_tipo_marca']);
 
             $lista_marcas[] = $marca;
         }

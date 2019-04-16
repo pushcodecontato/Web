@@ -5,7 +5,7 @@ class Modelo{
     
     private $id_modelo;
     private $nome_modelo;
-    private $id_marca_tipo;
+    private $id_tipo_marca;
 
     public function __construct(){
 
@@ -29,12 +29,12 @@ class Modelo{
         return $this;
     }
 
-    public function getIdMarca(){
-        return $this->id_marca_tipo;
+    public function getIdTipoMarca(){
+        return $this->id_tipo_marca;
     }
 
-    public function setIdMarca($id_marca){
-        $this->id_marca_tipo = $id_marca;
+    public function setIdTipoMarca($id_tipo_marca){
+        $this->id_tipo_marca = $id_tipo_marca;
         return $this;
     }
 
