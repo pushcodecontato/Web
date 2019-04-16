@@ -167,6 +167,33 @@
                     }
                 
                 break;
+                /* CRUD DE Clientes(painel Usuario) */
+                case "CLIENTES":
+                    
+                    require_once("controller/controllerClientes.php");
+                    $controller_clientes = new ControllerClientes();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_clientes->inserir_cliente();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_clientes->atualizar_cliente();
+
+                            break;
+                        case "SELECT":
+                            
+                            $cliente = $controller_clientes->getById();
+
+                            require_once('view/cms/veiculos/marcas/modal_criar_editar.php');
+
+                            break;
+                    }
+                
+                break;
         }
       
         
