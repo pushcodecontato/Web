@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/como_ganhar_dinheiro.css">
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/header.css">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="view/js/notify.js"></script>
     <script src="main.js"></script>
 </head>
 <body>

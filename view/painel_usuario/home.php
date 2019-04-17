@@ -1,5 +1,13 @@
+<?php
+    
+    require_once('model/clienteClass.php');
+
+    // Pegando o Cliente Logado
+    if(!isset($_SESSION))session_start();
+    $cliente = unserialize($_SESSION['cliente']);
+
+?>
 <html>
-   
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +16,7 @@
     <!-- import dos arquivos scripts -->
     <script src="view/painel_usuario/js/jquery.js"></script>
     <script src="view/painel_usuario/js/script_crud.js"></script>
-
+    <script src="view/js/notify.js"></script>
 
     <link rel="stylesheet" 
           type="text/css"

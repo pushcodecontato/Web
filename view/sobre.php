@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>Mob'Share - Melhores Anuncios</title>
         <link rel="stylesheet" type="text/css" href="view/css/sobre.css">
+        <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+        <script src="view/js/notify.js"></script>
         <script src="view/js/main.js"></script>
     </head>
     <body>

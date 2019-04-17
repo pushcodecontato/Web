@@ -6,6 +6,7 @@
 
         <!-- import dos arquivos scripts -->
         <script src="view/painel_usuario/js/jquery.js"></script>
+        <script src="view/painel_usuario/js/notify.js"></script>
         <script src="view/painel_usuario/js/jqueryform.js"></script>
         <script src="view/painel_usuario/js/script_crud.js"></script>
         
@@ -25,7 +26,7 @@
                     </tr>
                     <tr>
                        <td>
-                            <input type="text" name="nome">
+                            <input type="text" name="nome" required>
                        </td>
                     </tr>
                     <tr>
@@ -38,7 +39,7 @@
                                                 <td><label> CPF: </label></td>
                                             </tr>
                                             <tr>
-                                                <td><input placeholder="482.271.062-14" name="cpf"></td>
+                                                <td><input placeholder="482.271.062-14" name="cpf" required></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -48,7 +49,7 @@
                                                 <td><label>TELEFONE:</label></td>
                                             </tr>
                                             <tr>
-                                                <td><input placeholder="(11)4325-5874" name="telefone"></td>
+                                                <td><input placeholder="(11)4325-5874" name="telefone" required></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -58,7 +59,7 @@
                                                 <td><label>CELULAR:</label></td>
                                             </tr>
                                             <tr>
-                                                <td><input placeholder="(11)95684-5478" name="celular"></td>
+                                                <td><input placeholder="(11)95684-5478" name="celular" required></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -73,7 +74,7 @@
                     </tr>
                     <tr>
                        <td>
-                            <input type="text" placeholder="gil@paulo.com" name="email">
+                            <input type="text" placeholder="gil@paulo.com" name="email" required>
                        </td>
                     </tr>
                     <tr>
@@ -83,7 +84,7 @@
                     </tr>
                     <tr>
                        <td>
-                            <input type="password" name="senha">
+                            <input type="password" name="senha" required>
                        </td>
                     </tr>
                  </table>
@@ -101,7 +102,7 @@
                                             <td><label> CEP: </label></td>
                                         </tr>
                                         <tr>
-                                            <td><input placeholder="06258-120" name="cep"></td>
+                                            <td><input placeholder="06258-120" name="cep" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -111,7 +112,7 @@
                                             <td><label> Cidade:</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input placeholder="Barueri" name="cidade"></td>
+                                            <td><input placeholder="Barueri" name="cidade" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -121,7 +122,7 @@
                                             <td><label> UF:</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input placeholder="SP" name="uf"></td>
+                                            <td><input placeholder="SP" name="uf" maxlength="2" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -137,7 +138,7 @@
                                             <td><label> Logradouro: </label></td>
                                         </tr>
                                         <tr>
-                                            <td><input name="rua"></td>
+                                            <td><input name="rua" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -147,7 +148,7 @@
                                             <td><label>Completmento:</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input name="complemento"></td>
+                                            <td><input name="complemento" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -157,7 +158,7 @@
                                             <td><label>Bairro:</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input name="bairro"></td>
+                                            <td><input name="bairro" required></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -174,12 +175,12 @@
                         <td>
                             <h4>FOTO</h4>
                             <div class="imagem_foto"></div>
-                            <input type="file" name="fotoCliente" accept="image/png, image/jpeg, image/jpg">
+                            <input type="file" name="fotoCliente" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
                         </td>
                         <td>
                             <h4>Foto CNH</h4>
                             <div class="imagem_foto"></div>
-                            <input type="file" name="fotoCNH"  accept="image/png, image/jpeg, image/jpg">
+                            <input type="file" name="fotoCNH" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
                         </td>
                     </tr>
                 </table>

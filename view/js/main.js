@@ -3,11 +3,25 @@
 function logar(form){
     event.preventDefault();
     $.post({
-        url:'router.php?controller=cliente&modo=logar',
+        url:$(form).attr('action'),
         data:$(form).serialize(),
     })
     .then(resposta=>{
         console.log("Resposta",resposta);
+        if(resposta.toString().search('sucesso')>=0){
+            
+           $.notify("usuario logado com sucesso", "success");
+           // Redirecionando o usuario depois da menssagem de sucesso aparecer
+           setTimeout(function(){
+             
+             //Redirecionando
+             window.location = "?painel_usuario/home.php";
+
+
+           },800)
+        }else{
+            $.notify(resposta.toString(),"error");
+        }
     })
        
 }
@@ -20,7 +34,10 @@ function getLogin(){
 }
 
 function getCadastro(){
+
+    // Redirecionando o usuario para o formualrio de cadastro
     window.location.href = '?painel_usuario/cadastro.php';
+
 }
 
 

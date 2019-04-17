@@ -6,6 +6,7 @@
     <title>Mob'Share</title>
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/home.css"/>
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="view/js/notify.js"></script>
     <script src="view/js/main.js"></script>
 </head>
 <body>

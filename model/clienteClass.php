@@ -113,7 +113,7 @@ class Cliente{
         return $this->uf;
     }
     public function setCNHFoto($url){
-        $this->$cnh_foto = $url;
+        $this->cnh_foto = $url;
         return $this;
     }
     public function getCNHFoto(){

@@ -191,6 +191,9 @@
                             require_once('view/cms/veiculos/marcas/modal_criar_editar.php');
 
                             break;
+                        case "LOGAR":
+                           
+                           $controller_clientes->logar();
                     }
                 
                 break;

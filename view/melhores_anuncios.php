@@ -5,7 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mob'Share - Melhores Anuncios</title>
         <link rel="stylesheet" type="text/css" media="screen" href="view/css/melhores_anuncios.css"/>
+        <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
+        <script src="view/js/notify.js"></script>
         <script src="view/js/main.js"></script>
+
     </head>
     <body>
         <div id="principal">

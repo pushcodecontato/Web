@@ -10,7 +10,7 @@
         require_once('model/clienteClass.php');
         require_once('model/dao/clienteDAO.php');
 
-        $this->usuariosDAO = new ClienteDAO();
+        $this->clientesDAO = new ClienteDAO();
 
        }
 
@@ -29,8 +29,6 @@
                    ->setBairro($_POST['bairro'])
                    ->setCidade($_POST['cidade'])
                    ->setUF($_POST['uf']);
-            
-           var_dump($_POST);
 
            if( $_FILES['fotoCliente']['size'] > 0 ){
                $cliente->setFoto($this->uploadImagem($_FILES['fotoCliente']));
@@ -39,13 +37,57 @@
            if( $_FILES['fotoCNH']['size'] > 0 ){
                $cliente->setCNHFoto($this->uploadImagem($_FILES['fotoCNH']));
            }
+           
+           /* Inserido o cliente e pegando o mesmo depois da inserção para colocar na session
+            * Para que o usuario possa entrar no painel de usuario depois de se cadastrar
+            */
+           if($cliente = $this->clientesDAO->insert($cliente)){
+              // Verificndo se a session esta ativa     
+              if(!isset($_SESSION))session_start();
+
+              $_SESSION['cliente'] = serialize($cliente);
+
+           }
+
+
+
        }
 
        public function excluir_cliente(){}
        public function atualizar_cliente(){}
        public function listar_cliente(){}
        public function getById(){}
-       public function logar(){}
+       public function logar(){
+
+            // Pegando o usuario pelo email
+           if($cliente = $this->clientesDAO->getByEmail($_POST['email'])){
+               
+               // Verificando se a senha esta correta
+              if($cliente->verificar($_POST['senha'])){
+                 
+                 // Verificando se a session esta ativa
+                 if(!isset($_SESSION))session_start();
+                 
+
+                 //guarda na session o cliente
+                 $_SESSION['cliente'] = serialize($cliente);
+
+                 echo "Cliente logado com sucesso";
+
+              }else{
+
+                 echo "Erro ao logar! senha incorreta";
+
+              }
+
+          }else{
+
+              echo "Erro ao logar!cliente não encontrado ";
+
+          }
+
+
+       }
 
 
         /* UPLOAD DE IMAGEM 

@@ -1119,6 +1119,14 @@ CREATE TABLE IF NOT EXISTS `mob_share`.`tbl_home_sessao5` (
   PRIMARY KEY (`id_home_sessao5`))
 ENGINE = InnoDB;
 
+/* Alterações 
+   + tbl_cliente{
+     + senha varchar(255)
+   } */
+
+ALTER TABLE tbl_cliente
+CHANGE COLUMN `senha` `senha` VARCHAR(255) NOT NULL ;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
