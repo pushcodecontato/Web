@@ -6,6 +6,9 @@
     if(!isset($_SESSION))session_start();
     $cliente = unserialize($_SESSION['cliente']);
 
+    //ATENÇÃO!! Pode dar erro se o cliente não estiver logado !!!
+    // Cadastre se para ser redirecionado 
+
 ?>
 <html>
 <head>
