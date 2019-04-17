@@ -4,21 +4,39 @@
     </div>
     <div id="descarregarConteudo">
         <div id="titulos">
-            <h2 style="margin-right: 100px; margin-left: 100px;">E-mail</h2>
-            <h2 style="margin-right: 250px; margin-left: 80px;">Mensagem</h2>
+            <h2 style="margin-right: 100px; margin-left: 100px;">Nome</h2>
+            <h2 style="margin-right: 250px; margin-left: 80px;">E-mail</h2>
             <h2 style="margin-right: ; margin-left: 130px;">Opções</h2>
         </div>
         <div class="itensMensagens">
-            <div class="email">
-                <h3>lucas@gmail.com</h3>
-            </div>
-            <div class="mensagem">
-                <h3>lorem lorem lorem lorem lorem lorem lorem</h3>
-            </div>
-            <div class="abrir">
-                <button class="btn_exportar" onclick="chamaModalFaleConosco();"> Abrir</button>
-                <button class="btn_exportar">Exportar</button>
-            </div>
+            <?php
+                require_once('controller/controllerFale_conosco.php');
+
+                $controller_fale_conosco = new ControllerFale_conosco();
+
+                $listRegistro =  $controller_fale_conosco->listar_registro_fale_conosco();
+
+
+                if(count($listRegistro) < 1){
+                  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+                }
+
+                foreach($listRegistro as $registro){
+            ?>
+                <div class="email">
+                    <h3><?=@$registro->getNome()?></h3>
+                </div>
+                <div class="mensagem">
+                    <h3><?=@$registro->getEmail()?></h3>
+                </div>
+                <div class="abrir">
+                    <button class="btn_exportar" onclick="chamaModalFaleConosco();"> Abrir</button>
+                    <button class="btn_exportar">Exportar</button>
+                </div>
+            <?php
+                }
+             ?>
         </div>
     </div>
 </div>

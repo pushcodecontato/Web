@@ -8,20 +8,38 @@
             <p>Mensagem</p>
        </div>
         <div id="conteudo">
-            <div class="descarregarConteudo">
-                <p> Lucas Soeiro de Souza</p>
-            </div>
-            <div class="descarregarConteudo">
-                <p>lucas@gmail.com.br</p>
-            </div>
-            <div class="descarregarConteudo">
-                <p> 11 95831-3917</p>
-            </div>
-            <div class="descarregarConteudo">
-                <textarea rows="8" cols="40" maxlength="500">
-                    Lorem Lorem Lorem Lorem LoremLorem vLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
-                </textarea>
-            </div>
+        <?php
+                require_once('controller/controllerFale_conosco.php');
+
+                $controller_fale_conosco = new ControllerFale_conosco();
+
+                $listRegistro =  $controller_fale_conosco->listar_registro_fale_conosco();
+
+
+                if(count($listRegistro) < 1){
+                  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+                }
+
+                foreach($listRegistro as $registro){
+            ?>
+                <div class="descarregarConteudo">
+                    <p><?=@$registro->getNome()?></p>
+                </div>
+                <div class="descarregarConteudo">
+                    <p><?=@$registro->getEmail()?></p>
+                </div>
+                <div class="descarregarConteudo">
+                    <p><?=@$registro->getCelular()?></p>
+                </div>
+                <div class="descarregarConteudo">
+                    <textarea rows="8" cols="40" maxlength="500">
+                        <?=@$registro->getMensagem()?>
+                    </textarea>
+                </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>

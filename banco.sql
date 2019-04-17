@@ -1118,6 +1118,18 @@ CREATE TABLE IF NOT EXISTS `mob_share`.`tbl_home_sessao5` (
   `texto4_sessao5` TEXT NOT NULL,
   PRIMARY KEY (`id_home_sessao5`))
 ENGINE = InnoDB;
+/* Alteração
+  + tbl_fale_conosco{
+    + adicionando campo mensagem_fale_conosco 
+    + retirando NOT NULL nome_fale_conosco e celular_fale_conosco
+  } */
+
+ALTER TABLE `tbl_fale_conosco` 
+CHANGE COLUMN `nome_fale_conosco` `nome_fale_conosco` VARCHAR(100) NULL COMMENT 'nome da página fale conosco' ,
+CHANGE COLUMN `celular_fale_conosco` `celular_fale_conosco` VARCHAR(20) NULL COMMENT 'telefone da página fale conosco' ,
+ADD COLUMN `mensagem_fale_conosco` TEXT NOT NULL AFTER `celular_fale_conosco`;
+
+
 
 /* Alterações 
    + tbl_cliente{
