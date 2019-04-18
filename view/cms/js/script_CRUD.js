@@ -308,3 +308,28 @@ function inserir_faq(){
 // TERMOS DE USO
 
 // PAGINA HOME - SESSÕES
+
+
+
+/* Função que exporta csv 
+ * params csv = String = texto com o csv:
+ * 'exmplo@dsdsd.sdsd;joão;(11)4323-2545\n'
+ * 'valor;valor;valor;valor\n'
+ *	\n = quebra linha
+ */
+
+ function toCSV(nome,csv = 0){
+ 	
+ 	/* Algumas validações */
+ 	var nomeArquivo = (csv != 0)? nome: 'export';
+	var csvExport = (csv != 0)? csv: nome;
+	
+ 	// Cria um link para ser ativar o download
+ 	var a    = document.createElement('a');
+	// Diz ao browser que o conteudo sera um texto do tipo csv
+	a.href        = 'data:text/csv;charset=UTF-8,' + csvExport;
+	a.target      = '_blank';
+	a.download    = nomeArquivo + new Date().getTime() +'.csv';
+	document.body.appendChild(a);
+	a.click();
+ }
