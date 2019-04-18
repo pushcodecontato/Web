@@ -143,4 +143,17 @@
         }
     }
 
+    public function listar_registro_clientes(){
+        $consulta = $this->clienteDao->selectAll();
+
+        return $consulta;
+    }
+    public function getById(){
+
+        $id_cliente = $_POST['id'];
+
+        return $this->clienteDao->selectById($id_cliente);
+
+    }
+
 ?>

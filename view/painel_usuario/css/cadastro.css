@@ -31,11 +31,6 @@ html{
     text-align: inherit;
     padding: 8px 19px;
     background-color: #fff;
-    background: rgb(255,255,255);
-    background: -moz-linear-gradient(8deg, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 48%, rgba(252,252,252,1) 100%);
-    background: -webkit-linear-gradient(8deg, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 48%, rgba(252,252,252,1)100%);
-    background: linear-gradient(8deg, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 48%, rgba(252,252,252,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fcfcfc",GradientType=1);
     border-width: 1px 0px 0px;
     border-radius: 0px;
     border-color: #c5c5c5;
