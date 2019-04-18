@@ -199,30 +199,30 @@
                 break;
                 case "FAQ":
                     
-                require_once("controller/controllerMarcas.php");
-                $controller_marcas = new ControllerMarcas();
+                require_once("controller/controllerFaq.php");
+                $controller_faq = new ControllerFaq();
 
                 switch($modo){
                     case "INSERIR":
                         
-                        $controller_marcas->inserir_marca();
+                        $controller_faq->inserir_marca();
 
                         break;
                     case "ATUALIZAR":
                         
-                        $controller_marcas->atualizar_marca();
+                        $controller_faq->atualizar_marca();
 
                         break;
-                    case "SELECT":
-                        
-                        $marca = $controller_marcas->getById();
+                    case "SELECTALL":
+                        // variavel criada aqui
+                        $listar_faq = $controller_faq->listar_faq();
 
-                        require_once('view/cms/veiculos/marcas/modal_criar_editar.php');
+                        require_once('view/cms/pagina_faq/tabela.php');
 
                         break;
                 }
             
-                 break;
+                break;
 
         }
       

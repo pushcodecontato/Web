@@ -18,6 +18,8 @@
             $this->id_niveis = $id_niveis;
             return $this;
         }
+
+
         public function getNome_nivel(){
             return $this->nome_nivel;
         }
@@ -25,6 +27,9 @@
             $this->nome_nivel = $nome_nivel;
             return $this;
         }
+
+
+        
         public function getDescricao(){
             return $this->descricao;
         }
