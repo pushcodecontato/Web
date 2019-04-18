@@ -47,10 +47,62 @@
         public function update($cliente){
 
         }
+        
+        
         public function selectAll(){
 
+            $sql = " SELECT * FROM tbl_cliente";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+
+            $listar_registros = array();
+
+            while($rs_cliente = $select->fetch(PDO::FETCH_ASSOC)){
+                
+
+                $cliente = new cliente();
+                $cliente->setId($rs_cliente['id_cliente'])
+                        ->setNome($rs_cliente['nome_cliente'])
+                        ->setEmail($rs_cliente['email'])
+                        ->setCelular($rs_cliente['celular'])
+                        ->setEstado($rs_cliente['estado'])
+                        ->setCpf($rs_cliente['cpf']);
+
+                $listar_registros[] = $cliente;
+                
+            }
+        
+            $this->conex->close_database();
+
+            return $listar_registros;
+
         }
-        public function select($id){
+        public function selectById($id){
+
+            $sql = " SELECT * FROM tbl_cliente where id_cliente = $id ";
+
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+
+            if($rs_usuario = $select->fetch(PDO::FETCH_ASSOC)){
+
+                $cliente = new cliente();
+                $cliente->setId($rs_cliente['id_cliente'])
+                        ->setNome($rs_cliente['nome_cliente'])
+                        ->setEmail($rs_cliente['email'])
+                        ->setCelular($rs_cliente['celular'])
+                        ->setEstado($rs_cliente['estado'])
+                        ->setCpf($rs_cliente['cpf']);
+
+                return $usuario;
+
+            } else {
+                    echo "Registro não encontrado!!";
+                    return 0;
+            }
 
         }
         
