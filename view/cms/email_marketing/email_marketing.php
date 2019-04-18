@@ -13,26 +13,15 @@
             </p>
         </div>
         <div class="tabela_dados">
-            <?php 
-            
-                for($i = 0; $i <=50; $i++){
-
-                
-            ?>
             <div class="linha_dados">
                 <p style="width:150px;" class="col_text">
-                    <!-- <form action=""> -->
-
-                        <input type="checkbox" value="teste">
-                    <!-- </form> -->
+                    <input type="checkbox" value="teste">
                 </p>
                 <p style="width:848px; border-left: 1px solid black;" class="col_text">
                     Teste@gmail.comsssssssssssssss
                 </p>
             </div>
-            <?php 
-                }
-            ?>
+           
         </div>
     </div>
    
