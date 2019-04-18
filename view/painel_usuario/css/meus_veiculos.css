@@ -1,11 +1,12 @@
 
 #conteudo_meus_veiculos{
-    width: 998px;
-    height: 703px;          
-    float: left; 
+    width: 960px;
+    height: 708px;
+    float: left;
     border: solid 1px;
-    margin-top: 5px;   
-
+    margin-top: 10px;
+    /* overflow-x: hidden; */
+    /* overflow-y: auto; */
 }
 
 h4{
@@ -17,8 +18,8 @@ h4{
 #h2Border{
     width: 150px;
     height: 15px;
-    margin-top: -15px;
-    margin-left:50px; 
+    margin-left:50px;
+    margin-top: -12px;
     background-color: #fff;
 }
 

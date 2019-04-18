@@ -1118,6 +1118,15 @@ CREATE TABLE IF NOT EXISTS `mob_share`.`tbl_home_sessao5` (
   `texto4_sessao5` TEXT NOT NULL,
   PRIMARY KEY (`id_home_sessao5`))
 ENGINE = InnoDB;
+
+/* Alterações */
+/* + tbl_percentual
+ * tbl_tipo_veiculo {
+ *	+ id_tipo_veiculo  auto_increment
+ * }
+*/
+
+
 /* Alteração
   + tbl_fale_conosco{
     + adicionando campo mensagem_fale_conosco 

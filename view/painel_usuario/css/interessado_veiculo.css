@@ -2,11 +2,10 @@
 
 #conteudo_interessados{
     width: 998px;
-    height: 703px;          
-    float: left; 
+    height: 703px;
+    float: left;
     border: solid 1px;
-    margin-top: 5px;   
-
+    margin-top: 10px;
 }
 
 h4{

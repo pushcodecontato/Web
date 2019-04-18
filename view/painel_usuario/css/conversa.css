@@ -1,17 +1,16 @@
 #conteudo_conversa{
     width: 998px;
-    height: 703px;          
-    float: left; 
+    height: 703px;
+    float: left;
     border: solid 1px;
-    margin-top: 5px;
-
+    margin-top: 16px;
 }
 
 #h2Border{
     width: 140px;
     height: 15px;
-    margin-top: -15px;
-    margin-left:50px; 
+    margin-top: -14px;
+    margin-left:50px;
     background-color:#fff;
 }
 #principal_conversa{
