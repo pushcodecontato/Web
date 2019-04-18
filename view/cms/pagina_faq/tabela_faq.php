@@ -13,6 +13,20 @@
             <div class="col_titulo" style="width:130px; border-left: 1px solid black;">Opções</div>
         </div>
 
+        <?php
+        // IMPORTANDO A CONTROLLER DE FAQ
+        require_once('controller/controllerFaq.php')
+        
+        // INSTANCIA DA CLASS FAQ 
+        $controller_faq = new ControllerFaq();
+
+        // CHAMANDO 
+        $listar_faq = $controller_faq->listar_faq();
+
+        if()
+        
+        ?>
+
         
         <div class="linha_resposta">
            
