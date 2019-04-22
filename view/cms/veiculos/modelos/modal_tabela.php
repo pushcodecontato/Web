@@ -34,10 +34,8 @@ if(isset($_GET['id'])){
         echo " <p class='aviso_tabela'> Nenhum Modelo encontrado!</p> ";
      }
 
-     $coluna = 1;
 
-
-     $lista_modelos =  array_chunk($lista,3);
+     $lista_modelos =  array_chunk($lista,(count($lista)/3));
 
 
     foreach($lista_modelos as $lista){?>

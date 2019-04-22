@@ -1,5 +1,14 @@
 <?php
 
+    require_once('controller/controllerVeiculo.php');
+
+    $controllerVeiculo = new ControllerVeiculos();
+    
+
+
+    $lista = $controllerVeiculo->listar_veiculos_pendentes()
+
+
 ?>
 <table>
     <thead><!-- Legenda,cabeçario da tabela-->
@@ -12,8 +21,17 @@
         </tr>
     </thead>
     <tbody><!-- Conteudo da tabela -->
+    <?php
+
+        if(count($lista)< 1 ){
+           echo "<img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+           echo " <p class='aviso_tabela'> Nenhum veiculo encontrado!</p> ";
+        }
+
+        foreach($lista as $veiculo){?>
+    ?>
         <tr>
-            <td>34</td>
+            <td><?=@?></td>
             <td>Bike</td>
             <td>Sakira</td>
             <td>eletrica</td>
@@ -22,5 +40,6 @@
                 <button onclick="chamaModalVeiculosAprova(1)"><img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png"> VER </button>
             </td>
         </tr>
+        <?php } ?>
     <tbody>
 </table>

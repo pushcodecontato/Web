@@ -39,7 +39,10 @@ class ControllerTipoVeiculo{
         return $this->tipoVeiculoDAO->selectAll();
     }
 
-    public function getById(){
+    public function getById($id = 0){
+        
+        if($id != 0)return $this->tipoVeiculoDAO->select($id);
+
         return $this->tipoVeiculoDAO->select($_GET['id']);
     }
     
@@ -53,6 +56,12 @@ class ControllerTipoVeiculo{
     public function listar_modelos(){
         
         return $this->tipoVeiculoDAO->getModelos($_GET['id']);
+
+    }
+    /* Preciso padronizar mais um pouco */
+    public function listar_acessorios(){
+        
+        return $this->tipoVeiculoDAO->getAcessorios($_GET['id_tipo_veiculo']);
 
     }
 }

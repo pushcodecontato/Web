@@ -167,6 +167,26 @@
                     }
                 
                 break;
+                /* Acessorios de Veiculos */
+                case "ACESSORIOS":
+                    
+                    require_once("controller/controllerAcessorios.php");
+                    $controller_acessorios = new ControllerAcessorios();
+
+                    switch($modo){
+                        case "INSERIR":
+
+                            $controller_acessorios->inserir_acessorio();
+
+                            break;
+                        case "ATUALIZAR":
+
+                            $controller_acessorios->atualizar_acessorio();
+
+                            break;
+                    }
+                
+                break;
                 /* CRUD DE Clientes(painel Usuario) */
                 case "CLIENTES":
                     

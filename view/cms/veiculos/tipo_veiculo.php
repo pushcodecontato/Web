@@ -35,8 +35,9 @@
         
         <?php if(isset($tipo)){?>
 
-            <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios(<?=@$id_tipo_veiculo?>)"> Adicinar acessorio ao tipo de veiculo </p>
-            <p class="tipo_veiculo_comentario" onclick="chamaModalModelos(<?=@$id_tipo_veiculo?>)"> Adicinar modelo ao tipo de veiculo </p>
+            <p class="tipo_veiculo_comentario" onclick="chamaModalAcessorios(<?=@$id_tipo_veiculo?>)"> Adicionar acessorio ao tipo de veiculo </p>
+            <p class="tipo_veiculo_comentario" onclick="chamaModalModelos(<?=@$id_tipo_veiculo?>)"> Adicionar modelo ao tipo de veiculo </p>
+            <p class="tipo_veiculo_comentario" onclick="chamaModalFip(<?=@$id_tipo_veiculo?>)"> Exportar dados da tabela Fip </p>
 
         <?php } ?>
 

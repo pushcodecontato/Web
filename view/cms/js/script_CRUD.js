@@ -244,7 +244,7 @@ function chamaModalAcessorios(id_tipo_veiculo){
 
 	if(id_tipo_veiculo < 1)return;
 	
-	$.get('?cms/veiculos/acessorios/modal_tabela.php&id='+id_tipo_veiculo)
+	$.get('?cms/veiculos/acessorios/modal_tabela.php&id_tipo_veiculo='+id_tipo_veiculo)
 	 .then(function(res){
 		modal(res.toString());
 	});
@@ -260,6 +260,13 @@ function chamaModalModelos(id_tipo_veiculo){
 	});
 
 }
+function chamaModalFip(id_tipo_veiculo){
+	$.get('?cms/veiculos/fip/modal_fip.php&id_tipo_veiculo='+id_tipo_veiculo)
+	 .then(function(res){
+		modal(res.toString());
+	});
+}
+
 function chamaModalMarcas(id_tipo_veiculo){
 	
 	if(id_tipo_veiculo < 1)return;
@@ -270,6 +277,7 @@ function chamaModalMarcas(id_tipo_veiculo){
 	});
 
 }
+
 
 function chamaModalAnunciosAprova(){
 	$.get('?cms/anuncios/modal_anuncios_pendentes.php')

@@ -79,7 +79,7 @@
 .modal_anuncios .descricao{
     display: inline-block;
     float: left;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-left: 3px;
     height: 220px;
     padding: 4px;
@@ -113,7 +113,7 @@
     border: solid 1px #e8e8e8;
     min-width: 99%;
     resize: none;
-    min-height: 100px;
+    min-height: 91px;
     padding-top: 4px;
     margin-top: 6px;
     width: 374px;

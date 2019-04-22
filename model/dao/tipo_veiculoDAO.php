@@ -247,6 +247,38 @@ class  TipoVeiculoDAO{
         return $lista_marcas;
     }
 
+    public function getAcessorios($id){
+
+        require_once("model/acessorioClass.php");
+
+        $sql = "SELECT * FROM tbl_acessorios where id_tipo_veiculo =".$id;
+
+
+        $PDO_conex = $this->conex->connect_database();
+
+        $select = $PDO_conex->query($sql);
+
+        $lista_acessorios = array();
+
+
+        while($rs_marcas = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $acessorio = new Acessorio();
+
+            $acessorio->setId($rs_marcas['id_acessorios'])
+                      ->setNome($rs_marcas['nome_acessorios'])
+                      ->setIdTipoVeiculo($rs_marcas['id_tipo_veiculo']);
+
+            $lista_acessorios[] = $acessorio;
+        }
+
+
+
+        $this->conex->close_database();
+
+        return $lista_acessorios;
+    }
+
 
 }
 
