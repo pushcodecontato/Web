@@ -28,6 +28,7 @@ class Cliente{
     public function getId(){
         return $this->id_cliente;
     }
+
     public function setNome($nome_cliente){
         $this->nome_cliente = $nome_cliente;
         return $this;
@@ -35,6 +36,7 @@ class Cliente{
     public function getNome(){
         return $this->nome_cliente;
     }
+
     public function setCPF($cpf){
         $this->cpf = $cpf;
         return $this;
@@ -42,6 +44,7 @@ class Cliente{
     public function getCPF(){
         return $this->cpf;
     }
+
     public function setTelefone($telefone){
         $this->telefone = $telefone;
         return $this;
@@ -49,6 +52,7 @@ class Cliente{
     public function getTelefone(){
         return $this->telefone;
     }
+
     public function setCelular($celular){
         $this->celular = $celular;
         return $this;
@@ -56,6 +60,7 @@ class Cliente{
     public function getCelular(){
         return $this->celular;
     }
+
     public function setEmail($email){
         $this->email = $email;
         return $this;
@@ -63,6 +68,7 @@ class Cliente{
     public function getEmail(){
         return $this->email;
     }
+
     public function setSenha($senha){
         $this->senha = $senha;
         return $this;
@@ -70,6 +76,7 @@ class Cliente{
     public function getSenha(){
         return $this->senha;
     }
+
     public function setCEP($cep){
         $this->cep = $cep;
         return $this;
@@ -77,6 +84,7 @@ class Cliente{
     public function getCEP(){
         return $this->cep;
     }
+
     public function setRua($rua){
         $this->rua = $rua;
         return $this;
@@ -84,6 +92,7 @@ class Cliente{
     public function getRua(){
         return $this->rua;
     }
+    
     public function setComplemento($complemento){
         $this->complemento = $complemento;
         return $this;
@@ -91,6 +100,7 @@ class Cliente{
     public function getComplemento(){
         return $this->complemento;
     }
+
     public function setBairro($bairro){
         $this->bairro = $bairro;
         return $this;
@@ -98,6 +108,7 @@ class Cliente{
     public function getBairro(){
         return $this->bairro;
     }
+
     public function setCidade($cidade){
         $this->cidade = $cidade;
         return $this;
@@ -105,6 +116,7 @@ class Cliente{
     public function getCidade(){
         return $this->cidade;
     }
+
     public function setUF($uf){
         $this->uf = $uf;
         return $this;
@@ -112,6 +124,7 @@ class Cliente{
     public function getUF(){
         return $this->uf;
     }
+
     public function setCNHFoto($url){
         $this->cnh_foto = $url;
         return $this;
@@ -119,6 +132,7 @@ class Cliente{
     public function getCNHFoto(){
         return $this->cnh_foto;
     }
+
     public function setFoto($url){
         $this->foto_cliente = $url;
         return $this;
@@ -126,6 +140,7 @@ class Cliente{
     public function getFoto(){
         return $this->foto_cliente;
     }
+    
     /* Funções  de Login */
     // gera o hash da senha
 	public function genSenha(){

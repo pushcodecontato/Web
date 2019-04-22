@@ -331,7 +331,6 @@ function inserir_faq(){
  	/* Algumas validações */
  	var nomeArquivo = (csv != 0)? nome: 'export';
 	var csvExport = (csv != 0)? csv: nome;
-	
  	// Cria um link para ser ativar o download
  	var a    = document.createElement('a');
 	// Diz ao browser que o conteudo sera um texto do tipo csv

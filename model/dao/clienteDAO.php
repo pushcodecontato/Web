@@ -51,7 +51,7 @@
         
         public function selectAll(){
 
-            $sql = " SELECT * FROM tbl_cliente";
+            $sql = "SELECT * FROM tbl_cliente";
             
             $PDO_conex = $this->conex->connect_database();
 
@@ -62,13 +62,22 @@
             while($rs_cliente = $select->fetch(PDO::FETCH_ASSOC)){
                 
 
-                $cliente = new cliente();
+                $cliente = new Cliente();
                 $cliente->setId($rs_cliente['id_cliente'])
                         ->setNome($rs_cliente['nome_cliente'])
-                        ->setEmail($rs_cliente['email'])
+                        ->setCPF($rs_cliente['cpf'])
+                        ->setTelefone($rs_cliente['telefone'])
                         ->setCelular($rs_cliente['celular'])
-                        ->setEstado($rs_cliente['estado'])
-                        ->setCpf($rs_cliente['cpf']);
+                        ->setEmail($rs_cliente['email'])
+                        ->setSenha($rs_cliente['senha'])
+                        ->setCEP($rs_cliente['cep'])
+                        ->setRua($rs_cliente['rua'])
+                        ->setComplemento($rs_cliente['complemento'])
+                        ->setBairro($rs_cliente['bairro'])
+                        ->setCidade($rs_cliente['cidade'])
+                        ->setUF($rs_cliente['uf'])
+                        ->setCNHFoto($rs_cliente['cnh_foto'])
+                        ->setFoto($rs_cliente['foto_cliente']);
 
                 $listar_registros[] = $cliente;
                 
