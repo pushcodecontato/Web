@@ -42,3 +42,4 @@
    
 </div>
 <button class="btn_exportar">Exportar</button>
+<button class="btn_exportar">Enviar E-mail</button>

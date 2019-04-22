@@ -87,7 +87,7 @@
     width:150px;
     height: 35px;
     margin-top: 20px;
-    margin-left: 900px;
+    margin-left: 700px;
     border:none;
     background-color: #00984A;
     color: #fff;
@@ -103,3 +103,25 @@
     background-position-y: 3px;
     outline: none;
 }
+.btn_enviar_email{
+    width:150px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 900px;
+    border:none;
+    background-color: #00984A;
+    color: #fff;
+    border-radius: 5px;
+    font-family: "OpenSans-Regular";
+    font-size: 15px;
+    cursor: pointer;
+    padding-right: 20px;
+    background-image: url('../imagem/icones/down.png');
+    background-repeat: no-repeat;
+    background-size: 36px 36px;
+    background-position-x: 95px;
+    background-position-y: 3px;
+    outline: none;
+    float: left;
+}
+

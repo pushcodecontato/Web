@@ -6,15 +6,16 @@
     <div class="nomeCampos">Cpf</div>
     <div class="nomeCampos">Email</div>
     <div class="nomeCampos">Celular</div>
+    <div class="nomeCampos">Cidade</div>
     <div class="nomeCampos">Estado</div>
     <div class="nomeCampos">Status</div>
 </div>
 <div id="segura_campos">
-    <?php            require_once('controller/controllerFale_conosco.php');
+    <?php            require_once('controller/controllerClientes.php');
 
-                    $controller_fale_conosco = new ControllerFale_conosco();
+                    $controller_clientes = new ControllerClientes();
 
-                    $listRegistro =  $controller_fale_conosco->listar_registro_fale_conosco();
+                    $listRegistro =  $controller_clientes->listar_registro_clientes();
 
 
                     if(count($listRegistro) < 1){
@@ -25,10 +26,11 @@
                     foreach($listRegistro as $registro){
                 ?>
         <div class="campos"><?=@$registro->getNome()?></div>
-        <div class="campos"><?=@$registro->getCpf()?></div>
+        <div class="campos"><?=@$registro->getCPF()?></div>
         <div class="campos"><?=@$registro->getEmail()?></div>
         <div class="campos"><?=@$registro->getCelular()?></div>
-        <div class="campos"><?=@$registro->getEstado()?></div>
+        <div class="campos"><?=@$registro->getCidade()?></div>
+        <div class="campos"><?=@$registro->getUf()?></div>
         <img src="view/cms/imagem/icones/on.png" alt="on-off">
         <?php
                     }

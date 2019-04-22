@@ -32,7 +32,7 @@
                 </div>
                 <div class="abrir">
                     <button class="btn_exportar" onclick="chamaModalFaleConosco();"> Abrir</button>
-                    <button class="btn_exportar">Exportar</button>
+                    <button class="btn_exportar" onclick="toCSV();">Exportar</button>
                 </div>
             <?php
                 }

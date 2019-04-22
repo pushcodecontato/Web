@@ -55,8 +55,6 @@
 
        public function excluir_cliente(){}
        public function atualizar_cliente(){}
-       public function listar_cliente(){}
-       public function getById(){}
        public function logar(){
 
             // Pegando o usuario pelo email
@@ -141,19 +139,19 @@
             // Caso não funcione retorna um false para quem o chamou
             return false;
         }
+    
+        public function listar_registro_clientes(){
+            $consulta = $this->clientesDAO->selectAll();
+    
+            return $consulta;
+        }
+        public function getById(){
+    
+            $id_cliente = $_POST['id'];
+    
+            return $this->clientesDAO->selectById($id_cliente);
+    
+        }
+
     }
-
-    public function listar_registro_clientes(){
-        $consulta = $this->clienteDao->selectAll();
-
-        return $consulta;
-    }
-    public function getById(){
-
-        $id_cliente = $_POST['id'];
-
-        return $this->clienteDao->selectById($id_cliente);
-
-    }
-
 ?>
