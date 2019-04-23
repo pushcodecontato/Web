@@ -32,10 +32,10 @@ if(isset($_GET['id'])){
      if(count($lista) < 1){
         echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
         echo " <p class='aviso_tabela'> Nenhum Modelo encontrado!</p> ";
-     }
+     }else{
 
 
-     $lista_modelos =  array_chunk($lista,(count($lista)/3));
+     $lista_modelos =  array_chunk($lista,round(count($lista)/3));
 
 
     foreach($lista_modelos as $lista){?>
@@ -57,7 +57,8 @@ if(isset($_GET['id'])){
 
         </div>
 
-    <?php } ?>
+    <?php }
+    } ?>
 </div>
 <style>
 .caixa_modelos{

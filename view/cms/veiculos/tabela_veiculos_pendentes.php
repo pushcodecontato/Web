@@ -26,20 +26,25 @@
         if(count($lista)< 1 ){
            echo "<img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
            echo " <p class='aviso_tabela'> Nenhum veiculo encontrado!</p> ";
-        }
+        }else{
 
-        foreach($lista as $veiculo){?>
-    ?>
+        foreach($lista as $veiculo){
+            var_dump($veiculo->getMarca());
+            var_dump($veiculo->getModelo());
+            var_dump($veiculo->getTipo());
+       ?>
+
         <tr>
-            <td><?=@?></td>
-            <td>Bike</td>
-            <td>Sakira</td>
-            <td>eletrica</td>
+            <td><?=@$veiculo->getId()?></td>
+            <td><?=@$veiculo->getTipo()?></td>
+            <td><?=@34?></td>
+            <td><?=@324?></td>
             <td>
                 <!-- Atenção quando clicar deve abrir uma modal para aprovação! -->
                 <button onclick="chamaModalVeiculosAprova(1)"><img alt="edit" title="Editar" src="view/cms/imagem/icones/edit.png"> VER </button>
             </td>
         </tr>
-        <?php } ?>
+        <?php }
+        } ?>
     <tbody>
 </table>

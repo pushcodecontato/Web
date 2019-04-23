@@ -43,6 +43,7 @@ class  VeiculoDAO{
        
     }
     public function selectAll(){
+
         $sql = " SELECT * FROM tbl_veiculo ";
 
         //Abrido conexao com o BD
@@ -66,6 +67,19 @@ class  VeiculoDAO{
                     ->setIdTipoVeiculo($rs_veiculo['id_tipo_veiculo'])
                     ->setIdMarcaVeiculo($rs_veiculo['id_marca_veiculo'])
                     ->setIdCliente($rs_veiculo['id_cliente']);
+
+             $marca   = $this->marcasDAO->select($veiculo->getIdMarcaVeiculo());
+
+             $cliente = $this->clientesDAO->selectById($veiculo->getIdCliente());
+
+             $tipo    = $this->tiposDAO->select($veiculo->getIdTipoVeiculo());
+             
+
+             /*  Colocando os objetos */
+
+             $veiculo->setMarca($marca)
+                     ->setCliente($cliente)
+                     ->setTipo($tipo);
 
             /* Pegando fotos */
             $sql = "SELECT * FROM tbl_fotos_veiculo WHERE id_veiculo=".$rs_veiculo['id_veiculo'];
@@ -112,7 +126,21 @@ class  VeiculoDAO{
                     ->setRenavam($rs_veiculo['renavam'])
                     ->setIdTipoVeiculo($rs_veiculo['id_tipo_veiculo'])
                     ->setIdMarcaVeiculo($rs_veiculo['id_marca_veiculo'])
+                    ->setIdModeloVeiculo($rs_veiculo['id_modelo_veiculo'])
                     ->setIdCliente($rs_veiculo['id_cliente']);
+             
+             $marca   = $this->marcasDAO->select($veiculo->getIdMarcaVeiculo());
+
+             $cliente = $this->modelosDAO->select($veiculo->getIdModeloVeiculo());
+
+             $tipo    = $this->tiposDAO->select($veiculo->getIdTipoVeiculo());
+             
+
+             /*  Colocando os objetos */
+
+             $veiculo->setMarca($marca)
+                     ->setCliente($cliente)
+                     ->setTipo($tipo);
 
             /* Pegando fotos */
             $sqlFoto = "SELECT * FROM tbl_fotos_veiculo WHERE id_veiculo=".$rs_veiculo['id_veiculo'];

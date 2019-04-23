@@ -26,10 +26,10 @@ if(isset($_GET['id_tipo_veiculo'])){
      if(count($lista) < 1){
         echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
         echo " <p class='aviso_tabela'> Nenhum Acessorio encontrado!</p> ";
-     }
+     }else{
 
 
-     $lista_acessorios =  array_chunk($lista,(count($lista)/3));
+     $lista_acessorios =  array_chunk($lista,round(count($lista)/3));
 
 
     foreach($lista_acessorios as $lista){?>
@@ -50,7 +50,8 @@ if(isset($_GET['id_tipo_veiculo'])){
 
         </div>
 
-    <?php } ?>
+    <?php }
+    } ?>
     </div>
 </div>
 <style>
