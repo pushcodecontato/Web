@@ -24,8 +24,10 @@
 }
 .modal_veiculos{
     margin: 6px;
+    min-height: 321px;
     height: auto;
     width: 635px;
+    overflow: auto;
     background-color: #fff;
 }
 .modal_veiculos .imagem{
@@ -109,14 +111,14 @@
     display: inline-block;
     float: left;
 }
-.modal_veiculos .descricao_veiculo_anuncios{
+.modal_veiculos .descricao_veiculo_pendentes{
     max-height: 75px;
     overflow: hidden;
     display: block;
     width: 100%;
     text-align: center;
 }
-.modal_veiculos .descricao_veiculo_anuncios .caixas_veiculo_pendentes{
+.modal_veiculos .descricao_veiculo_pendentes .caixas_veiculo_pendentes{
     display: block;
     height: auto;
     margin-left: auto;
@@ -145,6 +147,9 @@
 }
 .modal_veiculos .caixa_aprovacao{
     padding: 5px;
+    display: block;
+    /* height: 32px; */
+    width: auto;
 }
 .modal_veiculos .caixa_aprovacao button{
     padding: 2px 6px;

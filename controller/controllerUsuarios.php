@@ -72,19 +72,25 @@
 			$usuario->setEmail($_POST['txtEmail'])
 					->setSenha($_POST['txtSenha']);
 
-			$logado = $this->usuariosDao->logar($usuario);
 			
-			if($logado){
+			if($logado = $this->usuariosDao->logar($usuario)){
 				
-				echo $logado->verificar($usuario->getSenha());
+				echo " SENha correta?: ".$logado->verificar($usuario->getSenha());
 				 
 				if($logado->verificar($usuario->getSenha())){
+
+					// Verificando se a session esta ativa
+                    if(!isset($_SESSION))session_start();
+                 
+
+                    //guarda na session o usuario
+                    $_SESSION['usuario'] = serialize($logado);
 					
 					echo "sucesso ao logar com o usuario";
 
 				}else{
 
-					echo "erro ao logar com o usuario email incorreto";
+					echo "erro ao logar com o usuario senha incorreto";
 
 				}
 				

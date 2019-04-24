@@ -116,6 +116,7 @@
         public function logar($usuario){
             
             $sql = "SELECT * FROM tbl_usuario_cms where email_usuario_cms ='".$usuario->getEmail()."'";
+
                 
             $PDO_conex = $this->conex->connect_database();
 

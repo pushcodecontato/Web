@@ -1143,10 +1143,51 @@ ADD COLUMN `mensagem_fale_conosco` TEXT NOT NULL AFTER `celular_fale_conosco`;
 /* Alterações 
    + tbl_cliente{
      + senha varchar(255)
-   } */
-
+   }
+*/
 ALTER TABLE tbl_cliente
 CHANGE COLUMN `senha` `senha` VARCHAR(255) NOT NULL ;
+
+/* Alterações : Criando a tabela tbl_acessorio_veiculo que existe no modelo logico mas estranhamente esta ausente no modelo fisico atual
+
+   + tbl_acessorio_veiculo
+
+*/
+
+CREATE TABLE IF NOT EXISTS `mob_share`.`tbl_acessorio_veiculo` (
+  `idtbl_acessorio_tbl_veiculo` INT NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de acessório do veículo',
+  `id_acessorio` INT NULL COMMENT 'código da tabela acessório',
+  `id_veiculo` INT NULL COMMENT 'código da tabela de veículo',
+  PRIMARY KEY (`idtbl_acessorio_tbl_veiculo`),
+  INDEX `fk_tbl_acessorio_veiculo_tbl_veiculo_idx` (`id_veiculo` ASC),
+  INDEX `fk_tbl_acessorio_veiculo_tbl_acessorio_idx` (`id_acessorio` ASC),
+  CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_veiculo`
+    FOREIGN KEY (`id_veiculo`)
+    REFERENCES `tbl_veiculo` (`id_veiculo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_acessorio`
+    FOREIGN KEY (`id_acessorio`)
+    REFERENCES `tbl_acessorios` (`id_acessorios`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+
+/* Alterações 
+   + tbl_aprovacao_veiculo{
+     + mensagem TEXT 
+   }
+*/
+ALTER TABLE `mob_share`.`tbl_aprovacao_veiculo` 
+ADD COLUMN `mensagem` TEXT NOT NULL AFTER `id_veiculo`;
+/* Alterações
+   + tbl_usuario_cms{
+     + senha varchar(255)
+   }
+*/
+ALTER TABLE `mob_share`.`tbl_usuario_cms` 
+CHANGE COLUMN `senha` `senha` VARCHAR(255) NOT NULL COMMENT 'senha do usuário do cms' ;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

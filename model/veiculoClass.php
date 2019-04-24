@@ -25,6 +25,10 @@ class veiculo{
      * Preciso armazenar as fotos em algum lugar
      */
     private $fotos;
+    /*
+     * Preciso armazenar os acessorios em algum lugar
+     */
+    private $acessorios;
 
     public function __construct(){
 
@@ -78,7 +82,7 @@ class veiculo{
         $this->id_tipo_veiculo = $id_tipo_veiculo;
         return $this;
     }
-    public function getIdTipoVeiculo($id_tipo_veiculo){
+    public function getIdTipoVeiculo(){
         return $this->id_tipo_veiculo;
     }
     public function setIdMarcaVeiculo($id_marca_veiculo){
@@ -133,6 +137,14 @@ class veiculo{
     }
     public function getModelo(){
         return $this->modelo_veiculo;
+    }
+    /* Cuida de passar os acessorios */
+    public function setAcessorios($acessorios){
+        $this->acessorios = $acessorios;
+        return $this;
+    }
+    public function getAcessorios(){
+        return $this->acessorios;
     }
 
     /* Cuida de passar as fotos */

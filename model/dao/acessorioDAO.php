@@ -5,6 +5,7 @@
         private $conex;
 
         public function __construct(){
+            require_once('model/acessorioClass.php');
             require_once('model/dao/conexaoMysql.php');
             $this->conex = new  conexaoMysql();
         }
@@ -90,6 +91,39 @@
 
 
 
+        }
+        /* Retorna um veotr de acessorios com estado false para s eo veiculo não possui e true para caso possui */
+        public function selectByVeiculo($veiculo){
+            
+            $sql =  "SELECT *,if(tbl_acessorio_veiculo.id_veiculo IS NOT null,TRUE,FALSE) as 'estado' FROM tbl_tipo_veiculo left join tbl_acessorios ".
+                    "on tbl_tipo_veiculo.id_tipo_veiculo = tbl_acessorios.id_tipo_veiculo ".
+                    "left join tbl_acessorio_veiculo on ".
+                    "( tbl_acessorio_veiculo.id_acessorio = tbl_acessorios.id_acessorios AND  tbl_acessorio_veiculo.id_veiculo = ". $veiculo->getId() .") ".
+                    "WHERE tbl_tipo_veiculo.id_tipo_veiculo =" . $veiculo->getIdTipoVeiculo();
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+                
+            $lista_acessorio = array();
+
+            while($rs_acessorio = $select->fetch(PDO::FETCH_ASSOC)){
+
+                $acessorio = new Acessorio();
+
+                $acessorio->setId($rs_acessorio['id_acessorios'])
+                          ->setNome($rs_acessorio['nome_acessorios'])
+                          ->setIdTipoVeiculo($rs_acessorio['id_tipo_veiculo'])
+                          ->setEstado($rs_acessorio['estado']);
+
+
+                $lista_acessorio[] = $acessorio;
+
+            }
+
+            $this->conex->close_database();
+
+            return $lista_acessorio;
         }
 
 

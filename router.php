@@ -187,6 +187,36 @@
                     }
                 
                 break;
+                /* Veiculos */
+                case "VEICULOS":
+                    
+                    require_once("controller/controllerVeiculo.php");
+                    $controller_veiculos = new ControllerVeiculos();
+
+                    switch($modo){
+                        case "INSERIR":
+
+                            $controller_veiculos->inserir_veiculo();
+
+                            break;
+                        case "ATUALIZAR":
+
+                            $controller_veiculos->atualizar_veiculo();
+
+                            break;
+                       case "APROVAR":
+
+                            $controller_veiculos->aprovar_veiculo();
+
+                            break;
+                       case "REPROVAR":
+
+                            $controller_veiculos->reprovar_veiculo();
+
+                            break;
+                    }
+                
+                break;
                 /* CRUD DE Clientes(painel Usuario) */
                 case "CLIENTES":
                     

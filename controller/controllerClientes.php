@@ -121,7 +121,7 @@
                         $novoNome = (md5($entropia.$nomeArquivo))."".$extencao_arquivo;
                         
                         // Novo Caminho para a imagem 
-                        $caminho_novo_da_imagem = "view/img_upload/".$novoNome;
+                        $caminho_novo_da_imagem = "view/upload/".$novoNome;
                         // Caminho atual da imagem
                         $caminho_atual_da_imagem = $arquivo['tmp_name'];
                         

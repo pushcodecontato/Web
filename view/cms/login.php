@@ -31,7 +31,7 @@
                             <td><label>Senha:</label></td>
                         </tr>
                         <tr>
-                            <td><input name="txtSenha" required></td>
+                            <td><input type="password" name="txtSenha" required></td>
                         </tr>
                         <tr>
                             <td>
