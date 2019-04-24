@@ -47,47 +47,8 @@
             </div>
         </header>
         <div id="principal">
-            <div class="menu_faq">
-                <div class="segura_item">
-                    <div class="menu_item"><p>Duvidas</p></div>
-                    <div class="menu_item"><p>Como anunciar</p></div>
-                    <div class="menu_item"><p>Como criar conta</p></div>
-                    <div class="menu_item"><p>Chat</p></div>
-                    <div class="menu_item"><p>Moto</p></div>
-                    <div class="menu_item"><p>Carro</p></div>
-                </div>
-            </div>
             <section class="conteudo_faq">
-                <div id="conteudo">
-                    <h2>FAQ</h2>
-                    <div class="texto_faq">
-                        <p>Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                        </p>
-                    </div>
-                    
+                <div id="conteudo">                    
                     <div class="caixa_faq">
                         <div class="titulos_perguntas">
                             <h2 class="perguntas_frequentes">As perguntas mais frequentes</h2>
@@ -129,6 +90,54 @@
                                 adipiscing elit. Nunc maximus, nulla ut</p>
                             </div>
                             <img src="view/imagem/arrow_down.png" alt="seta">
+                        </div>
+                        <div class="linha_perguntas ">
+                            <div class="segura_perguntas">
+                                <h3>Pergntas sobre carros</h3>
+                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut
+                                Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut </p>
+                            </div>
+                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
+                        </div>
+                        <div class="linha_perguntas ">
+                            <div class="segura_perguntas">
+                                <h3>Pergntas sobre carros</h3>
+                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut
+                                Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut </p>
+                            </div>
+                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
+                        </div>
+                        <div class="linha_perguntas ">
+                            <div class="segura_perguntas">
+                                <h3>Pergntas sobre carros</h3>
+                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut
+                                Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut </p>
+                            </div>
+                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
+                        </div>
+                        <div class="linha_perguntas ">
+                            <div class="segura_perguntas">
+                                <h3>Pergntas sobre carros</h3>
+                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut
+                                Respostas: Lorem ipsum dolor sit amet, consectetur 
+                                Lorem ipsum dolor sit amet, consectetur 
+                                adipiscing elit. Nunc maximus, nulla ut </p>
+                            </div>
+                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
                         </div>
                         <div class="linha_perguntas ">
                             <div class="segura_perguntas">

@@ -4,8 +4,8 @@
 
         private $id_faq;
         private $titulo_faq;
-        private $pergunta_1_faq;
-        private $resposta_1_faq;
+        private $perguntas_faq;
+        private $respostas_faq;
         
         public function __construct(){
 
@@ -29,19 +29,19 @@
         }
 
             
-        public function getPergunta_1_faq1(){
-            return $this->pergunta_1_faq;
+        public function getPerguntas_faq(){
+            return $this->$perguntas_faq;
         }
-        public function setPergunta_1_faq1(){
-            $this->pergunta_1_faq = $pergunta_1_faq;
+        public function setPerguntas_faq(){
+            $this->perguntas_faq = $perguntas_faq;
             return $this;
         }
 
-        public function getResposta_1_faq(){
-            return $this->resposta_1_faq;
+        public function getRespostas_faq(){
+            return $this->resposta_faq;
         }
-        public function setResposta_1_faq(){
-            $this->resposta_1_faq = $resposta_1_faq;
+        public function setRespostas_faq(){
+            $this->respostas_faq = $respostas_faq;
             return $this;
         }
 

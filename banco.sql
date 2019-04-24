@@ -1149,9 +1149,7 @@ ALTER TABLE tbl_cliente
 CHANGE COLUMN `senha` `senha` VARCHAR(255) NOT NULL ;
 
 /* Alterações : Criando a tabela tbl_acessorio_veiculo que existe no modelo logico mas estranhamente esta ausente no modelo fisico atual
-
    + tbl_acessorio_veiculo
-
 */
 
 CREATE TABLE IF NOT EXISTS `mob_share`.`tbl_acessorio_veiculo` (
