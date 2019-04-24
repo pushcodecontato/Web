@@ -26,7 +26,7 @@
            <tr>
                 <td colspan='5'>
                       <img class='img_not_find' style=" max-width: 128px;" width='128' alt='Nada encontrado' src='view/imagem/magnify.gif'>
-                      <p class='aviso_tabela'> Nenhum veiculo encontrado!</p>
+                      <p class='aviso_tabela'> Nenhum veiculo pendente encontrado!</p>
                 </td>
            </tr>
 
