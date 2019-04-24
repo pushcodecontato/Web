@@ -13,15 +13,8 @@
 
                 $controller_fale_conosco = new ControllerFale_conosco();
 
-                $listRegistro =  $controller_fale_conosco->listar_registro_fale_conosco();
+                $registro =  $controller_fale_conosco->getById($_GET['id_fale_conosco']);
 
-
-                if(count($listRegistro) < 1){
-                  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
-                }
-
-                foreach($listRegistro as $registro){
             ?>
                 <div class="descarregarConteudo">
                     <p><?=@$registro->getNome()?></p>
@@ -37,9 +30,6 @@
                         <?=@$registro->getMensagem()?>
                     </textarea>
                 </div>
-            <?php
-            }
-            ?>
         </div>
     </div>
 </div>

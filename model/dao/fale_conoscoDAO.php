@@ -60,16 +60,16 @@ class Fale_conoscoDAO{
 
             $select = $PDO_conex->query($sql);
 
-            if($rs_usuario = $select->fetch(PDO::FETCH_ASSOC)){
+            if($rs_fale_conosco = $select->fetch(PDO::FETCH_ASSOC)){
 
                 $fale_conosco = new Fale_conosco();
                 $fale_conosco->setId($rs_fale_conosco['id_fale_conosco'])
-                        ->setNome($rs_fale_conosco['nome_fale_conoscos'])
+                        ->setNome($rs_fale_conosco['nome_fale_conosco'])
                         ->setEmail($rs_fale_conosco['email_fale_conosco'])
                         ->setCelular($rs_fale_conosco['celular_fale_conosco'])
                         ->setMensagem($rs_fale_conosco['mensagem_fale_conosco']);
 
-                return $usuario;
+                return $fale_conosco;
 
             } else {
                     echo "Registro não encontrado!!";
