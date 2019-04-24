@@ -26,7 +26,7 @@ class Fale_conosco{
         return $this->email;
     }
     
-    public function getcelular(){
+    public function getCelular(){
         return $this->celular;
     }
     

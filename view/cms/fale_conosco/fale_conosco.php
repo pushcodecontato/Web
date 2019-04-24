@@ -31,8 +31,8 @@
                     <h3><?=@$registro->getEmail()?></h3>
                 </div>
                 <div class="abrir">
-                    <button class="btn_exportar" onclick="chamaModalFaleConosco();"> Abrir</button>
-                    <button class="btn_exportar" onclick="toCSV();">Exportar</button>
+                    <button class="btn_exportar" onclick="chamaModalFaleConosco(<?=@$registro->getId()?>);"> Abrir</button>
+                    <button class="btn_exportar" onclick="exportarChamado(<?=@$registro->getId()?>)">Exportar</button>
                 </div>
             <?php
                 }
@@ -41,3 +41,5 @@
     </div>
 </div>
 <link rel="stylesheet" type="text/css" href="view/cms/css/fale_conosco.css">
+<script  src="view/cms/fale_conosco/fale_conosco.js">
+</script>

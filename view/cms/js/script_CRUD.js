@@ -286,8 +286,8 @@ function chamaModalAnunciosAprova(){
     })
 }
 
-function chamaModalFaleConosco(){
-	$.get('?cms/fale_conosco/modal_fale_conosco.php')
+function chamaModalFaleConosco(id_fale_conosco){
+	$.get('?cms/fale_conosco/modal_fale_conosco.php&id_fale_conosco='+ id_fale_conosco)
      .then(function(res){
 		modal(res.toString());
 	});
@@ -326,8 +326,7 @@ function inserir_faq(){
  *	\n = quebra linha
  */
 
- function toCSV(nome,csv = 0){
- 	
+	function toCSV(nome,csv = 0){
  	/* Algumas validações */
  	var nomeArquivo = (csv != 0)? nome: 'export';
 	var csvExport = (csv != 0)? csv: nome;

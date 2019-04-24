@@ -23,9 +23,12 @@ class ControllerFale_conosco{
 
         return $consulta;
     }
-    public function getById(){
+    
+    public function getById( $id_fale_conosco = 0 ){
+        
+        
+        if($id_fale_conosco == 0 )$id_fale_conosco = $_GET['id_fale_conosco'];
 
-        $id_fale_conosco = $_POST['id'];
 
         return $this->fale_conoscoDao->selectById($id_fale_conosco);
 
