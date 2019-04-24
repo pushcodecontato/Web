@@ -28,8 +28,7 @@ class ControllerFale_conosco{
         
         
         if($id_fale_conosco == 0 )$id_fale_conosco = $_GET['id_fale_conosco'];
-
-
+        
         return $this->fale_conoscoDao->selectById($id_fale_conosco);
 
     }

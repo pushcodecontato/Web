@@ -9,10 +9,6 @@
 
     // if(isset($))
 ?>
-
-
-
-
 <div class="segura_form">  
     
     <form class="form_cadastro" method="POST" id="formFaq" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
@@ -23,12 +19,7 @@
             <label for="resposta_faq">Adicionar Resposta</label><br>
             <textarea id="resposta_faq" value="resposta" name="txtResposta_faq" placeholder="Insira uma resposta" required></textarea><br>
         </div>
-
-      
         <input type="submit" name="btn_salvar" class="btn_padrao" value="SALVAR">
     </form>
-
-   
 </div>
-
 <link rel="stylesheet" type="text/css" href="view/cms/css/pagina_faq.css">
