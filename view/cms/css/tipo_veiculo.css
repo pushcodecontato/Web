@@ -316,3 +316,23 @@ table.tbl_tipos_veiculos tbody tr td:hover{
 .modal_marcas_crud .campo button:hover{
     border: solid 1.2px #000;
 }
+.modal_fip{
+background-color: #fbfbfb;
+padding-bottom: 8px;
+}
+.modal_fip .fip_descricao{
+margin: 12px 1px;
+}
+.modal_fip .fip_descricao img{
+
+}
+.modal_fip .fip_descricao p{
+font-size: 1.3em;
+color: #717171;
+}
+.modal_fip .btn_fip_exportar{
+    background-color: #fff;
+    border: solid 1px #dadada;
+    padding: 8px 6px;
+    cursor: pointer;
+}
