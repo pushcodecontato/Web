@@ -7,8 +7,8 @@ let caminho = "";
 var href = window.location.href;
 var caminho_absoluto = 'view/cms/';
 
-function conteudo_subMenu(nome_pagina, teste){
-    if(teste){
+function conteudo_subMenu(nome_pagina){
+
         $.ajax({
             type:'GET',
             url:'?cms/'+nome_pagina,
@@ -17,7 +17,7 @@ function conteudo_subMenu(nome_pagina, teste){
             }
         })
 
-    }
+
 }
 function inserir_nivel(){
     form = $('#formNiveis');

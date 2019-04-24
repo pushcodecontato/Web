@@ -58,8 +58,8 @@
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>Ganhe dinheiro</p>
                             </div>
-                            <div class="item_sub_menu">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php')">
+                                <img src="view/cms/imagem/icones/bike.png"  alt="tipo">
                                 <p>Seja parceiro</p>
                             </div>
                             <div class="item_sub_menu">
