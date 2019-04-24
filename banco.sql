@@ -1135,7 +1135,7 @@ ENGINE = InnoDB;
 
 ALTER TABLE `tbl_fale_conosco` 
 CHANGE COLUMN `nome_fale_conosco` `nome_fale_conosco` VARCHAR(100) NULL COMMENT 'nome da página fale conosco' ,
-CHANGE COLUMN `celular_fale_conosco` `celular_fale_conosco` VARCHAR(20) NULL COMMENT 'telefone da página fale conosco' ,
+ADD COLUMN `celular_fale_conosco` VARCHAR(20) NULL COMMENT 'telefone da página fale conosco' ,
 ADD COLUMN `mensagem_fale_conosco` TEXT NOT NULL AFTER `celular_fale_conosco`;
 
 
@@ -1187,6 +1187,35 @@ ADD COLUMN `mensagem` TEXT NOT NULL AFTER `id_veiculo`;
 */
 ALTER TABLE `mob_share`.`tbl_usuario_cms` 
 CHANGE COLUMN `senha` `senha` VARCHAR(255) NOT NULL COMMENT 'senha do usuário do cms' ;
+
+/* Alterações
+   + tbl_anuncio{
+     + id_anuncio AUTO_INCREMENT
+	 + status_aprovado denovo essa mania de not null mesmo o anuncio não estando aprovado quando é criado
+   }
+*/
+ALTER TABLE `mob_share`.`tbl_anuncio` 
+CHANGE COLUMN `id_anuncio` `id_anuncio` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela anúncio' ;
+
+
+ALTER TABLE `mob_share`.`tbl_anuncio` 
+CHANGE COLUMN `status_aprovado` `status_aprovado` TINYINT(2) NULL COMMENT 'status aprovado do anúncio' ;
+
+/* Alterações : Não achei aonde esta o valor hora
+	+ tbl_anuncio{
+	  + valor_hora decimal(10,2)
+	}
+*/
+ALTER TABLE `mob_share`.`tbl_anuncio` 
+ADD COLUMN `valor_hora` DECIMAL(10,2) NOT NULL DEFAULT 1 AFTER `status_aprovado`;
+
+/* Alterações : sem o campo mensagem
+	+ tbl_aprovacao_anuncio{
+	  + menssagem text(1021)
+	}
+*/
+ALTER TABLE `mob_share`.`tbl_aprovacao_anuncio` 
+ADD COLUMN `mensagem` TEXT(1021) NOT NULL AFTER `id_usuario_cms`;
 
 
 

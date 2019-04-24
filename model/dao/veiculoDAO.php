@@ -83,15 +83,14 @@ class  VeiculoDAO{
     }
 
     public function selectById($id){
-       $sql = " SELECT * FROM tbl_veiculo WHERE id_veiculo=".$id;
 
+       $sql = " SELECT * FROM tbl_veiculo WHERE id_veiculo=".$id;
+        
         //Abrido conexao com o BD
-        $PDO_conex = $this->conex->connect_database();
+       $PDO_conex = $this->conex->connect_database();
 
         
         $select = $PDO_conex->query($sql);
-
-        $listar_veiculo = array();
 
         if($rs_veiculo = $select->fetch(PDO::FETCH_ASSOC)){
 
@@ -153,7 +152,6 @@ class  VeiculoDAO{
 
         $this->conex->close_database();        
 
-        return $listar_veiculo;
     }
     public function selectAll(){
 

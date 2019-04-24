@@ -38,8 +38,11 @@
 }
 .tbl_anuncios_pendentes table tr{}
 .tbl_anuncios_pendentes table tbody tr td{
+    max-height: 53px;
     padding: 5px;
     border-bottom: 1px solid #ddd;
+    max-width: 172px;
+    word-break: break-word;
 }
 .tbl_anuncios_pendentes table tbody button{
     color: black;
@@ -59,6 +62,9 @@
     display: inline-block;
     float: left;
     background-color: black;
+}
+.modal_anuncios .imagem .principalImagem{
+    max-height:153px;
 }
 .modal_anuncios .imagem .lista_imagens{
     height: 54px;

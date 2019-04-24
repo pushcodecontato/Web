@@ -247,6 +247,37 @@
                     }
                 
                 break;
+                /* CRUD DE Anuncios */
+                case "ANUNCIOS":
+                    
+                    require_once('controller/controllerAnuncios.php');
+
+                   $controller_anuncio =  new ControllerAnuncios();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_anuncio->inserir_anuncio();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_anuncio->atualizar_anuncio();
+
+                            break;
+                        case "APROVAR":
+
+                            $controller_anuncio->aprovar_anuncio();
+
+                            break;
+                        case "REPROVAR":
+                                
+                            $controller_anuncio->reprovar_anuncio();
+                                
+                            break;
+                    }
+                
+                break;
                 case "FAQ":
                     
                 require_once("controller/controllerFaq.php");

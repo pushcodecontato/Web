@@ -279,8 +279,8 @@ function chamaModalMarcas(id_tipo_veiculo){
 }
 
 
-function chamaModalAnunciosAprova(){
-	$.get('?cms/anuncios/modal_anuncios_pendentes.php')
+function chamaModalAnunciosAprova(id_anuncio){
+	$.get('?cms/anuncios/modal_anuncios_pendentes.php&id_anuncio='+id_anuncio)
 	 .then(function(res){
 		modal(res.toString());
     })

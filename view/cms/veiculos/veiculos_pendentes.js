@@ -36,7 +36,8 @@ function veiculos_pendentes_aprovar(form){
             console.log("Resposta",resposta);
             if(resposta.toString().search('sucesso')>=0){
 				$.notify("veiculo aprovado",'success');
-				conteudo_subMenu('veiculos/veiculos_pendentes',true)
+				conteudo_subMenu('veiculos/veiculos_pendentes',true);
+				fecharModal();
 			}
           } 
         })
@@ -53,6 +54,7 @@ function veiculos_pendentes_reprovar(form){
             if(resposta.toString().search('sucesso')>=0){
 				$.notify("veiculo reprovado",'success');
 				conteudo_subMenu('veiculos/veiculos_pendentes',true);
+				fecharModal();
 			}
           }
         })
