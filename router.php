@@ -110,6 +110,11 @@
                             require_once('view/cms/veiculos/tipo_veiculo.php');
 
                             break;
+                        case "FIP_EXPORTAR":
+
+                            $controller_tipo_veiculo->exportar_fip();
+
+                            break;
                     }
                 
                 break;

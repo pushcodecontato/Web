@@ -17,6 +17,8 @@ function exportarFIP(id_tipo_veiculo){
 
                 marcaExportar.modelos = [];
                 marcaExportar.modelos = modelosToMarca;
+
+                exportarMarca(id_tipo_veiculo,marcaExportar);
                 
                 $('.fip_descricao p').text('Atualizando marca ' + marcaExportar.name);
                 
@@ -33,6 +35,31 @@ function exportarFIP(id_tipo_veiculo){
 
 })
 }
+
 function exportarMarca(id_tipo_veiculo,marca){
-    $.ajax({url:''})
+	
+	var marca_atual = marca
+	var modelos = marca.modelos;
+	
+	/* Removendo ligação */
+	delete marca_atual.modelos;
+
+    $.ajax({url:'router.php?controller=TIPO_VEICULO&modo=fip_exportar',
+    	method:'POST',
+    	data:marca
+   	}).then(function(resposta){
+
+   		console.log("Resposta",resposta);
+
+   		modelos.forEach(function(modelo){
+
+   			exportarModelo(resposta,modelo);
+   		
+   		})
+
+   	})
+   
+}
+function exportarModelo(id_tipo_veiculo_marca,modelo){
+	
 }

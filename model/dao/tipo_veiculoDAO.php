@@ -4,11 +4,28 @@
 class  TipoVeiculoDAO{
     
     private $conex;
+    
+    /* Ligações <--->  da tabela de tipo_veiculo */
+    private $marcasDAO;
+    private $modelosDAO;
+    
 
     public function __construct(){
         
         require_once('model/tipo_veiculoClass.php');
         require_once('model/dao/conexaoMysql.php');
+
+        /* FIP */
+        require_once('model/marcaClass.php');
+        require_once('model/modeloClass.php');
+
+        /* LIGAÇÃO marcas <---> tipo_veiculo */
+        require_once('model/dao/marcasDAO.php');
+        $this->marcasDAO = new MarcaDAO();
+
+        /* LIGAÇÃO modelos <---> veiculo */
+        require_once('model/dao/modelosDAO.php');
+        $this->modelosDAO = new ModeloDAO();
 
         $this->conex = new  conexaoMysql();
     }
@@ -279,7 +296,15 @@ class  TipoVeiculoDAO{
         return $lista_acessorios;
     }
 
+    public function exportarMarca($id_tipo_veiculo,$marca){
+        /* Verificando se a marca ja existe pelo cod da tabela fip */
+        
+        $tipo = $this->select($id_tipo_veiculo);
+        
+        $this->marcasDAO->updateByFIP($marca,$tipo);
 
+
+    }
 }
 
 
