@@ -39,6 +39,13 @@ class ControllerTipoVeiculo{
         $this->tipoVeiculoDAO->uptade($tipo);
     }
 
+    public function excluir_tipo(){
+
+
+        $this->tipoVeiculoDAO->delete($_GET['id']);
+
+    }
+
     public function listar_tipo(){
         return $this->tipoVeiculoDAO->selectAll();
     }
@@ -71,14 +78,25 @@ class ControllerTipoVeiculo{
     public function exportar_fip(){
         
         var_dump($_POST);
+        
+        if(isset($_GET['marca'])){/* Exportando marca */
 
-        $marca = new Marca();
+            $marca = new Marca();
+            $marca->setNome($_POST['name'])
+                  ->setCodFIP($_POST['id']);
 
-        $marca->setNome($_POST['name'])
-              ->setCodFIP($_POST['id']);
+            $this->tipoVeiculoDAO->exportarMarca($_GET['id_tipo_veiculo'],$marca);
 
-        $this->tipoVeiculoDAO->exportarMarca($_GET['id_tipo_veiculo'],$marca);
+        } else {/* Exportando Modelo */
+            
+            $modelo = new Modelo();
 
+            $modelo->setNome($_POST['name'])
+                   ->setCodFIP($_POST['id']);
+
+            $this->tipoVeiculoDAO->exportarModelo($_GET['id_tipo_veiculo'],$_POST['cod_marca'],$modelo);
+
+        }
         
 
     }

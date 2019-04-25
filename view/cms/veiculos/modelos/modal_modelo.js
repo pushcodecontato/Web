@@ -40,7 +40,7 @@ function modelo_insert(form){
     })
 
 }
-function modelo_uptade(form){
+function modelo_update(form){
 
     event.preventDefault();
 
@@ -62,6 +62,32 @@ function modelo_uptade(form){
     })
 
 }
+function modelo_delete(id_tipo_veiculo,id){
+
+   $('.caixa_modelos').html('')
+   $('.caixa_modelos').css({'background-image':'url(view/imagem/loading.svg)',
+                            'background-position':'center',
+                            'background-repeat':'no-repeat',
+                            'background-color':' #e8e8e8'});
+
+
+    $.ajax({
+        url:'router.php?controller=modelos&modo=excluir&id='+id,
+        type:'POST',
+        success:function(resposta){
+            
+            console.log("Resposta: ",resposta);
+
+            if(resposta.search("sucesso")>=0){
+                
+                $.notify(" Modelo atualizado com sucesso! ","success");
+
+                chamaModalModelos(id_tipo_veiculo);
+            
+            }
+        }
+    })
+}
 /*
 * Chama uma modal para criação da marca
 * @params id int = id do tipo de veiculo
@@ -82,4 +108,44 @@ function marca_editar(id,id_modelo){
     .then(function(resposta){
         modal(resposta.toString());
     })
+}
+
+/* STATUS */
+function modelos_alterar_status(caixa,id_modelo,status){
+    
+    /* Impede que entre em um loop infinito */
+    if($(caixa).attr('data-submetido') == 0){
+       $(caixa).attr('data-submetido',1);
+       return true;
+    }else{
+        $(caixa).attr('data-submetido',0);
+    }
+
+    event.preventDefault();
+
+    // Alterando status
+    status = (status == 0 )? 1 : 0;
+
+    /* Verifica se esta checkado ou não */
+    $.ajax({url:'router.php?controller=modelos&modo=alterarStatus&id='+id_modelo,
+            type:'POST',
+            method:'POST',
+            data:{status},
+            success:function(resposta){
+
+                console.log("RESPOSTA: ",resposta);
+
+                if(resposta.search("sucesso")>=0){
+                
+                    $.notify(" Modelo Alterado com sucesso! ","success");
+                    
+                                 
+                    $(caixa).attr('onclick','modelos_alterar_status(this,'+id_modelo+','+ status +')');
+
+                    $(caixa).find('input[type="checkbox"]').click()                    
+
+                }
+            }
+     })
+
 }

@@ -59,10 +59,75 @@ function marca_update(form){
                 
                 $.notify(" Modelo atualizado com sucesso! ","success");
 
-                chamaModalModelos($(form).attr('data-idTipo'));
+                chamaModalMarcas($(form).attr('data-idTipo'));
             
             }
         }
     })
+
+}
+function marca_delete(id_tipo_veiculo,id){
+
+   $('.caixa_marcas').find('*').hide(200);
+   $('.caixa_marcas').css({'background-image':'url(view/imagem/loading.svg)',
+                            'background-position':'center',
+                            'background-repeat':'no-repeat',
+                            'background-color':' #e8e8e8'});
+
+    $.ajax({
+        url:'router.php?controller=marcas&modo=excluir&id='+id+'&id_tipo_veiculo='+id_tipo_veiculo,
+        type:'POST',
+        success:function(resposta){
+            
+            console.log("Resposta: ",resposta);
+
+            if(resposta.search("sucesso")>=0){
+                
+                $.notify(" Marca Removido com sucesso! ","success");
+
+                chamaModalMarcas(id_tipo_veiculo);
+            
+            }
+        }
+    })
+}
+
+/* STATUS */
+function marcas_alterar_status(caixa,id_marca,status){
+    
+    /* Impede que entre em um loop infinito */
+    if($(caixa).attr('data-submetido') == 0){
+       $(caixa).attr('data-submetido',1);
+       return true;
+    }else{
+        $(caixa).attr('data-submetido',0);
+    }
+
+    event.preventDefault();
+
+    // Alterando status
+    status = (status == 0 )? 1 : 0;
+
+    /* Verifica se esta checkado ou não */
+    $.ajax({url:'router.php?controller=marcas&modo=alterarStatus&id='+id_marca,
+            type:'POST',
+            method:'POST',
+            data:{status},
+            success:function(resposta){
+
+                console.log("RESPOSTA: ",resposta);
+
+                if(resposta.search("sucesso")>=0){
+                
+                    $.notify(" Modelo Alterado com sucesso! ","success");
+                    
+                                 
+                    $(caixa).attr('onclick','modelos_alterar_status(this,'+id_marca+','+ status +')');
+
+                    $(caixa).find('input[type="checkbox"]').click()                    
+
+                }
+            }
+     })
 
 }

@@ -6,6 +6,11 @@ class Modelo{
     private $id_modelo;
     private $nome_modelo;
     private $id_tipo_marca;
+    /* Identifica se o estado (checket) do acessorio  0 = desativado and 1 = ativado */
+    private $status;
+
+    /* FIP */
+    private $cod_fip;
 
     public function __construct(){
 
@@ -36,6 +41,22 @@ class Modelo{
     public function setIdTipoMarca($id_tipo_marca){
         $this->id_tipo_marca = $id_tipo_marca;
         return $this;
+    }
+    public function setStatus($status){
+        $this->status = $status;
+        return $this;
+    }
+    public function getStatus(){
+        return $this->status;
+    }
+
+    /* FIP */
+    public function setCodFIP($cod_fip){
+        $this->cod_fip = $cod_fip;
+        return $this;
+    }
+    public function getCodFIP(){
+        return $this->cod_fip;
     }
 
 }

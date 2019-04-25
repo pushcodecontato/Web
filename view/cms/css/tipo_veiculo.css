@@ -317,22 +317,220 @@ table.tbl_tipos_veiculos tbody tr td:hover{
     border: solid 1.2px #000;
 }
 .modal_fip{
-background-color: #fbfbfb;
-padding-bottom: 8px;
+
+background-color: #fbfbfb;
+
+padding-bottom: 8px;
 }
 .modal_fip .fip_descricao{
-margin: 12px 1px;
+
+margin: 12px 16px;
+
+max-width: 528px;
+
+text-align: center;
 }
 .modal_fip .fip_descricao img{
 
 }
 .modal_fip .fip_descricao p{
-font-size: 1.3em;
-color: #717171;
+
+overflow-y: hidden;
+
+font-size: 1.3em;
+
+color: #717171;
+
+word-break: break-all;
+
+height: 57px;
 }
 .modal_fip .btn_fip_exportar{
-    background-color: #fff;
-    border: solid 1px #dadada;
-    padding: 8px 6px;
-    cursor: pointer;
+    
+background-color: #fff;
+    
+border: solid 1px #dadada;
+    
+padding: 8px 6px;
+    
+cursor: pointer;
+}
+.modal_acessorios{
+    background-color:white;
+    padding: 15px;
+}
+.caixa_acessorios{
+    background-color: #fdfdfd;
+    border-top: solid 0.1px black;
+    padding: 2px 15px;
+    height: auto;
+    overflow-y: auto;
+    background-color:#e8e8e8;
+}
+.caixa_acessorios input[type="checkbox"]{/* Mateus usou na linha 312  da home_cms.css */
+    /* Contra reação */
+    /* Contra reação */
+}
+.caixa_acessorios .caixa_item{
+    width: 32%;
+    text-align: center;
+    float: left;
+}
+.caixa_acessorios .caixa_item .item{
+    width: auto;
+    /* margin: 4px 0px; */
+    font-size: 20px;
+    border: solid 0.8px black;
+    border-radius: 1px;
+    padding: 4px 0px;
+    background-color: #fff;
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#ffffff",GradientType=1);
+    height: auto;
+    overflow-y: -webkit-paged-y;
+}
+.caixa_acessorios .caixa_item .item label{
+    text-align: center;
+    width: 84px;
+    word-break: break-all;
+    max-width: 84px;
+    max-height: 48px;
+    overflow: hidden;
+    display: inline-block;
+    /* float: left; */
+}
+.caixa_acessorios .caixa_item .item img{
+    width:18px;
+    margin-bottom: -3px;
+    /* float: left; */
+}
+.caixa_acessorios .caixa_item .item:hover{
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#d5d5d5",GradientType=1);
+}
+#frmAcessorio{
+
+}
+#frmAcessorio button{
+
+}
+.caixa_modelos{
+    background-color: #fdfdfd;
+    border-top: solid 0.1px black;
+    padding: 2px 15px;
+    height: 300px;
+    overflow-y: auto;
+    background-color:#e8e8e8;
+}
+.caixa_modelos input[type="checkbox"]{/* Mateus usou na linha 312  da home_cms.css */
+    left: auto;/* Contra reação */
+    position: initial;/* Contra reação */
+}
+.caixa_modelos .caixa_item{
+    width: 32%;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+    float: left;
+}
+.caixa_modelos .caixa_item .item{
+    width: auto;
+    /* margin: 4px 0px; */
+    font-size: 20px;
+    border: solid 0.8px black;
+    border-radius: 1px;
+    padding: 4px 0px;
+    background-color: #fff;
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#ffffff",GradientType=1);
+}
+.caixa_modelos .caixa_item .item label{
+    font-size:0.7em;
+}
+.caixa_modelos .caixa_item .item label strong{
+    max-width: 64px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    word-break: break-all;
+}
+.caixa_modelos .caixa_item .item img{
+    width:18px;
+    margin-bottom: -3px;
+    float:right;
+    margin-right: 5px;
+}
+.caixa_modelos .caixa_item .item:hover{
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#d5d5d5",GradientType=1);
+}
+.caixa_marcas{
+    background-color: #fdfdfd;
+    border-top: solid 0.1px black;
+    padding: 2px 15px;
+    height: 300px;
+    width: 600px;
+    overflow-y: auto;
+    background-color:#e8e8e8;
+    text-align: center;
+}
+.caixa_marcas input[type="checkbox"]{/* Mateus usou na linha 312  da home_cms.css */
+    left: auto;/* Contra reação */
+    position: initial;/* Contra reação */
+}
+.caixa_marcas .caixa_item{
+    width: 32%;
+    text-align: center;
+    display:inline-block;
+    cursor:pointer;
+    float:left;
+}
+.caixa_marcas .caixa_item .item{
+    width: auto;
+    /* margin: 4px 0px; */
+    font-size: 20px;
+    border: solid 0.8px black;
+    border-radius: 1px;
+    padding: 4px 0px;
+    background-color: #fff;
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#ffffff",GradientType=1);
+}
+.caixa_marcas .caixa_item .item label{
+    font-size:0.7em;
+}
+.caixa_marcas .caixa_item .item label strong{
+    max-width: 55px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    word-break: break-all;
+}
+.caixa_marcas .caixa_item .item img{
+    width:18px;
+    margin-bottom: -3px;
+    float:right;
+    margin-right: 5px;
+}
+.caixa_marcas .caixa_item .item:hover{
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    background: linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#d5d5d5",GradientType=1);
 }
