@@ -1010,7 +1010,7 @@ CREATE TABLE `tbl_marca_veiculo` (
 
 LOCK TABLES `tbl_marca_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_marca_veiculo` DISABLE KEYS */;
-INSERT INTO `tbl_marca_veiculo` VALUES (1,'ryundai'),(2,'ryunday');
+INSERT INTO `tbl_marca_veiculo`(id_marca_veiculo,nome_marca)VALUES (1,'ryundai'),(2,'ryunday');
 /*!40000 ALTER TABLE `tbl_marca_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1116,7 +1116,7 @@ CREATE TABLE `tbl_modelo_veiculo` (
 
 LOCK TABLES `tbl_modelo_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` DISABLE KEYS */;
-INSERT INTO `tbl_modelo_veiculo` VALUES (1,'Honda33',1),(2,'civiqyuii',1);
+INSERT INTO `tbl_modelo_veiculo`(id_marca_tipo,nome_modelo)VALUES (1,'Honda33',1),(2,'civiqyuii',1);
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
