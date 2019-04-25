@@ -286,12 +286,12 @@
                 switch($modo){
                     case "INSERIR":
                         
-                        $controller_faq->inserir_marca();
+                        $controller_faq->inserir_faq();
 
                         break;
                     case "ATUALIZAR":
                         
-                        $controller_faq->atualizar_marca();
+                        $controller_faq->atualizar_faq();
 
                         break;
                     case "SELECTALL":
