@@ -1,6 +1,5 @@
 <?php 
     
-    
     class ControllerNiveis{
        
         private $niveisDao;

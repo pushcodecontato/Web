@@ -172,6 +172,8 @@ nav{
 .menu_lateral{
     width: 235px;
     height: 718px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .item_menu{
     width: 235px;

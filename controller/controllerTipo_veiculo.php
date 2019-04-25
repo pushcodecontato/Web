@@ -9,6 +9,10 @@ class ControllerTipoVeiculo{
         require_once('model/dao/tipo_veiculoDAO.php');
         require_once('model/tipo_veiculoClass.php');
 
+        /* FIP */
+        require_once('model/marcaClass.php');
+        require_once('model/modeloClass.php');
+
         $this->tipoVeiculoDAO = new TipoVeiculoDAO();
     
     }
@@ -62,6 +66,20 @@ class ControllerTipoVeiculo{
     public function listar_acessorios(){
         
         return $this->tipoVeiculoDAO->getAcessorios($_GET['id_tipo_veiculo']);
+
+    }
+    public function exportar_fip(){
+        
+        var_dump($_POST);
+
+        $marca = new Marca();
+
+        $marca->setNome($_POST['name'])
+              ->setCodFIP($_POST['id']);
+
+        $this->tipoVeiculoDAO->exportarMarca($_GET['id_tipo_veiculo'],$marca);
+
+        
 
     }
 }

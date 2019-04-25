@@ -110,6 +110,11 @@
                             require_once('view/cms/veiculos/tipo_veiculo.php');
 
                             break;
+                        case "FIP_EXPORTAR":
+
+                            $controller_tipo_veiculo->exportar_fip();
+
+                            break;
                     }
                 
                 break;
@@ -286,12 +291,12 @@
                 switch($modo){
                     case "INSERIR":
                         
-                        $controller_faq->inserir_marca();
+                        $controller_faq->inserir_faq();
 
                         break;
                     case "ATUALIZAR":
                         
-                        $controller_faq->atualizar_marca();
+                        $controller_faq->atualizar_faq();
 
                         break;
                     case "SELECTALL":

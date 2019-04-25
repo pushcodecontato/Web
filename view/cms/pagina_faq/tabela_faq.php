@@ -12,30 +12,31 @@
             <div class="col_titulo" style="width:400px; border-left: 1px solid black;">Resposta</div>
             <div class="col_titulo" style="width:130px; border-left: 1px solid black;">Opções</div>
         </div>
+        <?php 
+        require_once('controller/controllerFaq.php');
 
-        <?php
-        // IMPORTANDO A CONTROLLER DE FAQ
-        require_once('controller/controllerFaq.php')
-        
-        // INSTANCIA DA CLASS FAQ 
-        $controller_faq = new ControllerFaq();
+            $controller_faq = new ControllerFaq();
 
-        // CHAMANDO 
-        $listar_faq = $controller_faq->listar_faq();
+            $listRegistro =  $controller_faq->listar_registro_faq();
 
-        if()
-        
+
+            if(count($listRegistro) < 1){
+              echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+              echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+            }
+
+            foreach($listRegistro as $registro){
         ?>
-
-        
         <div class="linha_resposta">
-           
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"></div>
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;">Teste, Teste, Teste</div>
+            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas_faq()?></div>
+            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas_faq()?></div>
             <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
                 <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar">
                 <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir">
             </div>
         </div>
+        <?php
+            }
+        ?>
     </div>
 </div>

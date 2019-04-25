@@ -83,6 +83,8 @@
 
             return $listar_registros;
 
+
+                
         }
         public function selectById($id_faq){
             
