@@ -11,36 +11,36 @@
 
         }
 
-        public function getId_faq(){
-            return $this->id_niveis;
+        public function getId(){
+            return $this->id_faq;
         }
-        public function setId_faq(){
-            $this->id_niveis = $id_niveis;
+        public function setId(){
+            $this->id_faq = $id_faq;
             return $this;
         }
 
 
-        public function getTitulo_faq(){
+        public function getTitulo(){
             return $this->titulo_faq;
         }
-        public function setTitulo_faq(){
+        public function setTitulo(){
             $this->titulo_faq = $titulo_faq;
             return $this;
         }
 
             
-        public function getPerguntas_faq(){
+        public function getPerguntas(){
             return $this->$perguntas_faq;
         }
-        public function setPerguntas_faq(){
+        public function setPerguntas(){
             $this->perguntas_faq = $perguntas_faq;
             return $this;
         }
 
-        public function getRespostas_faq(){
+        public function getRespostas(){
             return $this->resposta_faq;
         }
-        public function setRespostas_faq(){
+        public function setRespostas(){
             $this->respostas_faq = $respostas_faq;
             return $this;
         }
