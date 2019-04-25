@@ -62,7 +62,7 @@
                                 <img src="view/cms/imagem/icones/bike.png"  alt="tipo">
                                 <p>Seja parceiro</p>
                             </div>
-                            <div class="item_sub_menu">
+                            <div class="item_sub_menu"  onclick="conteudo_subMenu('pagina_sobre_nos/pagina_sobre_nos',true)">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>Sobre empresa</p>
                             </div>

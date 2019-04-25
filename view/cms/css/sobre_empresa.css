@@ -1,0 +1,141 @@
+#principal{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-top: 10px;
+}
+
+#borda{
+    width: 1100px;
+    height: 320px;
+    border: solid 1px;
+    margin: auto;
+    border-radius: 20px;
+
+}
+
+#borda_baixo{
+    width: 1100px;
+    height: 360px;
+    border: solid 1px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+
+}
+#h2borda{
+    width: 90px;
+    margin-top: -10px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: white;
+    text-align: center;
+}
+#h2borda_baixo{
+    width: 175px;
+    margin-top: -10px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: white;
+    text-align: center;
+}
+.conteudo_dentro{
+    width: 465px;
+    height: auto;
+    min-height:300px;
+    float: left;
+}
+.informacoes{
+    width: 110px;
+    height: 20px;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+    font-family: verdana;
+    margin-top: 10px;
+}
+
+.informacoes_dados{
+    width: 110px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    background-color: darkgray;
+    text-align: center;
+    font-family: verdana;
+    margin-top: 10px;
+}
+.campo_editar{
+    width: 465px;
+    height: auto;
+    min-height:300px;
+    float:left; 
+    margin-left:120px;
+}
+#caixa_titulo{
+  width: 380px; 
+    height: 20px;
+
+}
+
+textarea{
+    width: 335px;
+    height: 80px;
+    margin-left: 90px;
+    margin-top: -20px
+}
+#caixa_descricao{
+    width: 80px;
+    height: 20px;
+    margin-top: 30px;
+    font-weight:bold;
+}
+#upload{
+    width: 150px;
+    height: 100px;
+    border: solid 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+#botoes{
+    width: 150px;
+    height: 40px;
+    margin-left: auto;
+    margin-top: 15px;
+}
+.icone{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-left: 10px;
+}
+#salvar{
+    width: 100px;
+    height: 30px;
+    font-family: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+    border: solid 1px;
+    background-color: #fff;
+    
+}
+#salvar_icone{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+#icones_opcoes{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+
+
