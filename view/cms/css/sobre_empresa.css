@@ -206,7 +206,7 @@ segura_form{
     /* display: none; */
 }
 form{
-    width:600px;
+    width: 1200px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -214,12 +214,13 @@ form{
     border:1px solid black;
     border-radius: 10px;
     background-color: #fff;
+    /* float: left; */
 }
 ::-webkit-input-placeholder {
     font-size: 15px;
 }
 .segura_form_cadastro{
-    width:350px;
+    width: 811px;
     height: 150px;
     margin-left: auto;
     margin-right: auto;

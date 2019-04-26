@@ -8,7 +8,7 @@
         <h2>Tabelas Sobre a empresa</h2>
         <div id="segura_button"> 
             <button class="adicionar_sobre" onclick="chamaModalCadastroHistoria()">Adicionar Historia </button>
-            <button class="adicionar_sobre" id="abrir_cadastro">Adicionar missão visão Valores </button>
+            <button class="adicionar_sobre" onclick="chamaModalCadastroVisao()">Adicionar missão</button>
         </div>
         
     </div>
@@ -19,12 +19,38 @@
                  <div class="col_titulo" style="width:280px; border-left:1px solid black;"> Texto</div>
                  <div class="col_titulo" style="width:280px; border-left:1px solid black;"> imagem</div>
             </div>
+             <?php 
+        require_once('controller/controllerSobre.php');
+
+            $controller_sobre = new ControllerSobre();
+
+            $listSobre =  $controller_sobre->listar_sobre();
+
+
+            if(count($listSobre) < 1){
+              echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+              echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+            }
+
+            foreach($listFaq as $registro){
+        ?>
+            
             <div class="linha_resposta">
-                <div class="col_resposta" style="paddin-top:10px; width: 182px;">aaaaaa</div>
-                <div class="col_resposta" style="paddin-top:10px; width:280px;">aaaaaa</div>
-                <div class="col_resposta" style="paddin-top:10px; width:293px;">aaaaaa</div>
+                <div class="col_resposta" style="paddin-top:10px; width: 182px;">
+                    <?=@$registro->getTitulo_sobre()?>
+                </div>
+                <div class="col_resposta" style="paddin-top:10px; width:280px;">
+                  <?=@$registro->getTexto_sobre()?>
+                </div>
+                <div class="col_resposta" style="paddin-top:10px; width:293px;">
+                    <img src="view/upload/<?php echo($registro-getFoto_sobre())?>">
+                
+                </div>
 
             </div>
+            <?php 
+                }
+            ?>
         </div>
         
         <div class="tabela_valores_visao">
