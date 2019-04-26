@@ -2,13 +2,15 @@
     class ControllerSobre{
 
 
-        private $conex;
-        
+        private $sobreDAO;
         public function __construct(){
             // padrão - todas as controllers precisão disso
             // abrindo conexao com o mysql
-            require_once('model/dao/conexaoMysql.php');
-            $this->conex = new conexaoMysql();
+            //importando classes
+            require_once('model/sobreClass.php');
+            require_once('model/dao/sobreDAO.php');
+
+            $this->sobreDAO = new SobreDAO();
         }
         public function inserir_sobre(){
                if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -28,13 +30,13 @@
                     ->setTexto_valores_sobre($_POST['txtTexto_valores'])
                     ->setFoto_valores_sobre($this->uploadImagem($_FILES['Foto_valores_sobre']));
 
-                $this->sobreDao->insert($sobre);
+                $this->sobreDAO->insert($sobre);
             }
             
         }
         public function excluir_sobre(){
             $id_sobre = $_GET['id_sobre'];
-            $this->sobreDao->delete($id_sobre);
+            $this->sobreDAO->delete($id_sobre);
         }
         public function atualizar_sobre(){
         
@@ -56,19 +58,19 @@
                     ->setTexto_valores_sobre($_POST['txtTexto_valores'])
                     ->setFoto_valores_sobre($_POST['img_valores']);
                 
-                $this->sobreDao->update($sobre);
+                $this->sobreDAO->update($sobre);
             }
             
         }
         public function buscar_sobre(){
             $id_sobre = $_POST['id_sobre'];
             
-            return $this 
+            return $this;
 
         }
         public function listar_sobre(){
             
-        $consulta = $this->sobreDao->selectAll();
+        $consulta = $this->sobreDAO->selectAll();
 
         return $consulta;
         }
