@@ -356,6 +356,51 @@
                 }
  
                 break;
+                
+                
+                
+                
+                /*sobre*/
+
+                case 'SOBRE':
+                
+                require_once('controller/controllerSobre.php');
+
+                $controller_sobre = new ControllerSobre();
+              
+                switch($modo){
+                    case "INSERIR":
+                        
+                        $controller_sobre->inserir_sobre();
+
+                        
+                        break;
+                    case "ATUALIZAR":
+                         
+                         $controller_sobre->atualizar_sobre();
+                         
+                         break;
+                    case "EXCLUIR":
+                         $controller_sobre->excluir_sobre();
+                         break;
+                    case "SELECTALL":
+
+                        $listSobre =  $controller_sobre->listar_sobre();
+
+                        require_once('view/cms/pagina_sobre_nos/pagina_sobre_nos.php');
+
+                        break;
+                   case "SELECT":
+                        
+                        $sobre = $controller_sobre->getById();
+                        
+                        require_once('view/cms/pagina_sobre_nos/cadastro_historia.php')
+                            
+                        require_once('view/cms/pagina_sobre_nos/cadastro_visao_missao_valores');
+                        break;
+                }
+ 
+                break;
 
                 /*Termo de Uso*/
                 case 'TERMOS':
