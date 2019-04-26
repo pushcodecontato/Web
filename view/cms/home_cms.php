@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,12 +65,12 @@
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>Sobre empresa</p>
                             </div>
-                            <div class="item_sub_menu">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_termos_uso/tabela.php',true)">
+                                <img src="view/cms/imagem/icones/bike.png" alt="Termos de Uso">
                                 <p>Termos de uso</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_faq/tabela.php',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/bike.png" alt="Faq">
                                 <p>FAQ</p>
                             </div>
                         </div>
