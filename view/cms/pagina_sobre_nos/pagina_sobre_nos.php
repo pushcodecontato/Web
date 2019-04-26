@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="view/cms/css/sobre_empresa.css">
+<script src="view/cms/pagina_sobre_nos/modal.js"></script>
 
 <!--div que segura -->
 <div id="principal">
@@ -6,7 +7,7 @@
         
         <h2>Tabelas Sobre a empresa</h2>
         <div id="segura_button"> 
-            <button class="adicionar_sobre" id="abrir_cadastro">Adicionar Historia </button>
+            <button class="adicionar_sobre" onclick="chamaModalCadastroHistoria()">Adicionar Historia </button>
             <button class="adicionar_sobre" id="abrir_cadastro">Adicionar missão visão Valores </button>
         </div>
         

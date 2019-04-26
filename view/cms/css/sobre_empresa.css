@@ -101,25 +101,6 @@
     font-family: "OpenSans-Regular";
     text-transform: uppercase;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .linha_resposta{
     width: 756px;
     height: 50px;
@@ -159,7 +140,7 @@
 }
 .segura_visao{
     width: 182px;
-    height: 310px;
+    height: 320px;
     border: solid 1px;
     float: left;
     margin-left: 20px;
@@ -213,6 +194,69 @@ button{
     height: 20px;
     margin-left: 20px;
 }
+/*parte do cadastrar sobre*/
+segura_form{
+    width:900px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border:1px solid black;
+    border-radius: 5px;
+    /* display: none; */
+}
+form{
+    width:600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+}
+::-webkit-input-placeholder {
+    font-size: 15px;
+}
+.segura_form_cadastro{
+    width:350px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+}
+ .segura_form_cadastro label{
+    font-family: "OpenSans-Regular";
+    font-size: 17px;
+    line-height: 30px;
+ }
+.segura_form_cadastro input{
+   width:350px;
+   height: 35px;
+   border:1px solid #7a7a7a;
+   border-radius: 5px;
+   padding-left: 7px;
+   outline: none;
+}
+.segura_form_cadastro input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #98c9fd;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+/* area de cadastro de nivel */
+.titulo_pagina{
+    width: 599px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: "OpenSans-Regular";
+    background-color: #00984A;
+    font-size: 30px;
+    color: white;
+}
+
+
 
 
 
