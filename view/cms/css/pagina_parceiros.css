@@ -221,7 +221,7 @@ button.seja-parceiro-painel-parceiros-btn:hover{
     background-color: #0eaf5c;
 }
 /* Modal do crud de Topicos do Seja um parceiro */
-.modal_topicos{background-color: white;padding: 7px 8px;text-align: center;width: 429px;height: auto;overflow: auto;}
+.modal_topicos{background-color: white;padding: 7px 8px;text-align: center;width: 429px;height: auto;overflow: auto;min-height: 229px;}
 .modal_topicos table{
     display: block;
     margin-left: auto;

@@ -41,7 +41,7 @@
 
         <?php } ?>
 
-        <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
+        <input type="submit" name="btn_salvar" class="btn_padrao" id="btnTipoVeiculo" value="Salvar">
 
     </form>
 

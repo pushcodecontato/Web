@@ -1,5 +1,5 @@
 
-<form class="modal_topicos" onsubmit="pagina_topico_insert(this)" method='post' enctype="multipart/form-data" action="router.php?controller=seja_parceiro_topico&modo=inserir">
+<form class="modal_topicos" onsubmit="pagina_topico_insert(this)" method='post' enctype="multipart/form-data" action="router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=inserir">
     <table>
         <tr>
             <td><label>Titulo</label></td>
@@ -8,7 +8,7 @@
         <tr>
             <td colspan="2">
                 <h4> Descrição: </h4>
-                <textarea placeholder="Descrição basica" name="descricao" required></textarea>
+                <textarea placeholder="Descrição basica" name="texto" required></textarea>
             </td>
         </tr>
         <tr>

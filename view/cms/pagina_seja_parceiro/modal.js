@@ -13,7 +13,57 @@ function pagina_topico_editar(id_topico){
 
 /* CRUD de topico*/
 function pagina_topico_insert(form){
-    event.preventDefault();
+
+   var submetido = ($(form).attr('data-submit') || 0) * 1;
+   
+
+  //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
+   if(submetido == 1){
+      
+      $(form).attr('data-submit','0');
+      
+      return true;
+
+   }else{
+     
+     $(form).attr('data-submit','1');
+
+   }
+
+   event.preventDefault();
+    
+   var form = $(form);
+    
+   $(form).find('*').hide(200);
+   $(form).css({'background-image':'url(view/imagem/loading.svg)',
+                'background-repeat': 'no-repeat',
+                'background-position':'center'});
+
+   $(form).append("<p style='text-align: center; color: #888888; bottom: 0; position: absolute; width: 100%; left: 0;'> Carregando.. </p>");
+   
+   // Envia os dados do formulario
+   $(form)
+   .ajaxForm({
+       success:function(resposta){
+         console.log("RESPOSTA",resposta);
+         
+         if(resposta.toString().search('sucesso')>=0){
+
+           $.notify("Topico cadastrado com sucesso", "success");
+           
+           // Redirecionando o usuario depois da menssagem de sucesso aparecer
+           setTimeout(function(){
+             
+             fecharModal();
+
+             conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php');
+
+
+           },800)
+
+         }
+       },
+   }).submit();
 }
 function pagina_topico_update(){
 
