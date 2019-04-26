@@ -1,30 +1,30 @@
 <?php
 class ControllerFaq{
 
-    private $conex;
+    //private $conex;
     private $faqDAO;
 
     public function __construct(){
 
-        require_once('model/dao/conexaoMysql.php');
+        //require_once('model/dao/conexaoMysql.php');
         require_once('model/dao/faqDAO.php');
         require_once('model/faqClass.php');
 
-        $this->faqDAO = new FaqDAO();
+        $this->faqDao = new FaqDao();
 
         $this->conex = new conexaoMysql();
     }
     public function inserir_faq(){
 
-        $faq = new Faq();
+        //$faq = new Faq();
         //verificar se o metodo que esta chegando é GET ou POST
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 $faq = new Faq();
 
-                $faq->setTitulo_faq($_POST['txtTitulo_faq'])
-                    ->setPerguntas_faq($_POST['txtPerguntas_faq'])
-                    ->setRespostas_faq($_POST['txtRespostas_faq']);
+                $faq->setTitulo($_POST['txtTitulo'])
+                    ->setPerguntas($_POST['txtPerguntas'])
+                    ->setRespostas($_POST['txtRespostas']);
 
                 $this->faqDao->insert($faq);
             }
@@ -33,32 +33,45 @@ class ControllerFaq{
 
     public function excluir_faq(){
 
-        $id_faq = $_GET['id_faq'];
-        $this->faqDao->delete($id_faq);
+        $id = $_GET['id'];
+        $this->faqDao->delete($id);
 
     }
     public function atualizar_faq(){
-        $faq = new Faq();
-        $faq->setId_faq($_GET['id_faq'])
-               ->setTitulo($_POST['titulo_faq'])
-               ->setPerguntas_faq($_POST['perguntas_faq'])
-               ->setRespostas_faq($_POST['respostas_faq']);
 
-        $this->faqDAO->update($faq);
+        //$faq = new Faq();
+        //verificar se o metodo que esta chegando é GET ou POST
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                $faq = new Faq();
+
+                $faq->setId($_GET['id'])
+                    ->setTitulo($_POST['txtTitulo'])
+                    ->setPerguntas($_POST['txtPerguntas'])
+                    ->setRespostas($_POST['txtRespostas']);
+
+                $this->faqDao->update($faq);
+            }
 
     }
-    public function buscar_faq($id_faq = 0){
 
-         if($id_faq == 0)$id_faq = $_GET['id_faq'];
+    //$id = 0
+    public function getById(){
+
+//          if($id == 0)$id = $_GET['id'];
 
 
-        return $this->faqDao->select($id_faq);
+//         return $this->faqDao->selectById($id);
+
+
+        $id = $_POST['id'];
+        return $this->faqDao->selectById($id);
 
     }
 
-    public function listar_registro_faq(){
+    public function listar_faq(){
 
-        $consulta = $this->faqDAO->selectAll();
+        $consulta = $this->faqDao->selectAll();
 
         return $consulta;
     }

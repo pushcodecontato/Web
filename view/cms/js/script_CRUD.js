@@ -287,7 +287,7 @@ function chamaModalAnunciosAprova(id_anuncio){
 }
 
 function chamaModalFaleConosco(id_fale_conosco){
-	$.get('?cms/fale_conosco/modal_fale_conosco.php&id_fale_conosco='+ id_fale_conosco)
+	$.get('?cms/fale_conosco/modal.php&id_fale_conosco='+ id_fale_conosco)
      .then(function(res){
 		modal(res.toString());
 	});
@@ -299,12 +299,92 @@ function chamaModalVeiculosAprova(id){
 		modal(res.toString());
     })
 }
+
+
+
 // FAQ
-function inserir_faq(){
-	alert('teste');
+
+function faq_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=faq&modo=select',
+		data:{id},
+		success:function(dados){
+			modal(dados);
+		}
+	})
+}
+
+function faq_getDados(){
+
+	conteudo_subMenu('pagina_faq/tabela',true);
+
+}
+function faq_insert(form){
+
+	event.preventDefault();
+	console.log("Hellow!!!!!!")
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+			console.log("Hellow@",dados);
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Cadastrado com sucesso", "success");
+
+				conteudo_subMenu('pagina_faq/tabela',true);
+				fecharModal();
+			}
+		}
+	})
+}
+function faq_update(form){
+
+	event.preventDefault();
+
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Atualizado com sucesso", "success");
+
+				conteudo_subMenu('pagina_faq/tabela',true);
+				
+				fecharModal()
 
 
+			}
+		}
+	})
+}
 
+function faq_delete(id){
+	event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=faq&modo=excluir&id='+id,
+		success:function(dados){
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('usuarios/tabela',true);
+				
+
+			}
+		}
+	});
 }
 
 // PAGINA GANHE DINHEIRO

@@ -53,105 +53,31 @@
                         <div class="titulos_perguntas">
                             <h2 class="perguntas_frequentes">As perguntas mais frequentes</h2>
                         </div>
-                        <div class="linha_perguntas">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" alt="seta">
-                        </div>
-                        <div class="linha_perguntas">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" alt="seta">
-                        </div>
-                        <div class="linha_perguntas">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" alt="seta">
-                        </div>
-                        <div class="linha_perguntas">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut</p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" alt="seta">
-                        </div>
+                         <?php 
+                            require_once('controller/controllerFaq.php');
+
+                                $controller_faq = new ControllerFaq();
+
+                                $listFaq =  $controller_faq->listar_faq();
+
+
+                                if(count($listFaq) < 1){
+                                  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                                  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+                                }
+
+                                foreach($listFaq as $registro){
+                            ?>
                         <div class="linha_perguntas ">
                             <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut
-                                Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
+                                <h3><?=@$registro->getPerguntas()?></h3>
+                                <p>Resposta:&nbsp<?=@$registro->getRespostas()?></p>
                             </div>
                             <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
                         </div>
-                        <div class="linha_perguntas ">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut
-                                Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
-                        </div>
-                        <div class="linha_perguntas ">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut
-                                Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
-                        </div>
-                        <div class="linha_perguntas ">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut
-                                Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
-                        </div>
-                        <div class="linha_perguntas ">
-                            <div class="segura_perguntas">
-                                <h3>Pergntas sobre carros</h3>
-                                <p>Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut
-                                Respostas: Lorem ipsum dolor sit amet, consectetur 
-                                Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Nunc maximus, nulla ut </p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
-                        </div>
-                        
+                        <?php 
+                            }
+                        ?>
                     </div>
                     <div class="paginacao">
                         <div class="paginacao_item"><p>Prev</p></div>

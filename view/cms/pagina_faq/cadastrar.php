@@ -1,10 +1,10 @@
 <?php
 
     $botao = "salvar";
-    $id_faq = 0;
-    $titulo_faq = "";
-    $perguntas_faq = "";
-    $respostas_faq = "";
+    $id = 0;
+    $titulo = "";
+    $perguntas = "";
+    $respostas = "";
     $router = "router.php?controller=faq&modo=inserir";
     $funcaoJs = "inserir_faq();";
 
@@ -13,11 +13,11 @@
     // só vai entrar nessa condição se o objeto nível existir. Se houver a condição, no momento de editar, executará esse código
     if(isset($faq)){
         
-        $id_faq = $faq->getId_faq();
-        $titulo_faq = $faq->getTitulo_faq();
-        $perguntas_faq = $faq->getPerguntas_faq();
-        $resposta_faq = $faq->getRespostas_faq();
-        $router = "router.php?controller=faq&modo=atualizar&id=".$id_faq;
+        $id = $faq->getId();
+        $titulo = $faq->getTitulo();
+        $perguntas = $faq->getPerguntas();
+        $respostas = $faq->getRespostas();
+        $router = "router.php?controller=faq&modo=atualizar&id=".$id;
         $funcaoJS = "atualizar_faq()";
         $botao = 'Editar';
     }
@@ -26,12 +26,12 @@
     <form class="form_cadastro" method="POST" id="formFaq" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
     <h3 class="titulo_pagina">Cadastrar Perguntas e Respostas</h3>
         <div class="segura_form_cadastro">
-            <label for="pergunta_faq">Adicionar Título</label><br>
-            <input id="pergunta_faq" value="<?php echo($titulo_faq)?>" name="txtTitulo_faq" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
+<!--             <label for="pergunta_faq">Adicionar Título para Página</label><br>
+            <input id="pergunta_faq" value="<?php echo($titulo)?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br> -->
             <label for="pergunta_faq">Adicionar Pergunta</label><br>
-            <input id="pergunta_faq" value="<?php echo($perguntas_faq)?>" name="txtPerguntas_faq" placeholder="Insira uma pergunta" required style="margin-bottom:10px;"><br>
+            <input id="pergunta_faq" value="<?php echo($perguntas)?>" name="txtPerguntas" placeholder="Insira uma pergunta" required style="margin-bottom:10px;"><br>
             <label for="resposta_faq">Adicionar Resposta</label><br>
-            <textarea id="resposta_faq" value="<?php echo($resposta_faq)?>" name="txtRespostas_faq" placeholder="Insira uma resposta" required></textarea><br>
+            <textarea id="resposta_faq" value="<?php echo($respostas)?>" name="txtRespostas" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($respostas)?></textarea><br>
         </div>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo($botao)?>">
     </form>

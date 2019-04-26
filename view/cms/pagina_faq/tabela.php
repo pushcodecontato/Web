@@ -17,22 +17,22 @@
 
             $controller_faq = new ControllerFaq();
 
-            $listRegistro =  $controller_faq->listar_registro_faq();
+            $listFaq =  $controller_faq->listar_faq();
 
 
-            if(count($listRegistro) < 1){
+            if(count($listFaq) < 1){
               echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
               echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
             }
 
-            foreach($listRegistro as $registro){
+            foreach($listFaq as $registro){
         ?>
         <div class="linha_resposta">
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas_faq()?></div>
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas_faq()?></div>
+            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas()?></div>
+            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas()?></div>
             <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar">
-                <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir">
+                <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="faq_getById(<?=@$registro->getId()?>)">
+                <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="faq_delete(<?=@$registro->getId()?>)">
             </div>
         </div>
         <?php

@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
+﻿CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `mob_share`;
 -- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
 --
@@ -1867,3 +1867,9 @@ UNLOCK TABLES;
 	  + menssagem text(1021)
 	}
 */
+/*ALTER TABLE FAQ*/
+ALTER TABLE `mob_share`.`tbl_faq` 
+CHANGE COLUMN `id_faq` `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página faq' ,
+CHANGE COLUMN `titulo_faq` `titulo` VARCHAR(100) NOT NULL COMMENT 'título da página faq' ,
+CHANGE COLUMN `perguntas_faq` `perguntas` TEXT NOT NULL COMMENT 'pergunta da página faq' ,
+CHANGE COLUMN `respostas_faq` `respostas` TEXT NOT NULL COMMENT 'resposta da página faq' ;

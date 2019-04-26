@@ -283,31 +283,69 @@
                     }
                 
                 break;
-                case "FAQ":
+//                 case "FAQ":
                     
-                require_once("controller/controllerFaq.php");
-                $controller_faq = new ControllerFaq();
+//                 require_once("controller/controllerFaq.php");
+//                 $controller_faq = new ControllerFaq();
 
+//                 switch($modo){
+//                     case "INSERIR":
+                        
+//                         $controller_faq->inserir_faq();
+
+//                         break;
+//                     case "ATUALIZAR":
+                        
+//                         $controller_faq->atualizar_faq();
+
+//                         break;
+//                     case "SELECTALL":
+//                         // variavel criada aqui
+//                         $listar_faq = $controller_faq->listar_faq();
+
+//                         require_once('view/cms/pagina_faq/tabela.php');
+
+//                         break;
+//                 }
+            
+//                 break;
+
+                /* Faq */
+                case 'FAQ':
+                
+                require_once('controller/controllerFaq.php');
+
+                $controller_faq = new ControllerFaq();
+              
                 switch($modo){
                     case "INSERIR":
                         
                         $controller_faq->inserir_faq();
 
+                        
                         break;
                     case "ATUALIZAR":
-                        
-                        $controller_faq->atualizar_faq();
-
-                        break;
+                         
+                         $controller_faq->atualizar_faq();
+                         
+                         break;
+                    case "EXCLUIR":
+                         $controller_faq->excluir_faq();
+                         break;
                     case "SELECTALL":
-                        // variavel criada aqui
-                        $listar_faq = $controller_faq->listar_faq();
+
+                        $listFaq =  $controller_faq->listar_faq();
 
                         require_once('view/cms/pagina_faq/tabela.php');
 
                         break;
+                   case "SELECT":
+                        
+                        $faq = $controller_faq->getById();
+                        require_once('view/cms/pagina_faq/cadastrar.php');
+                        break;
                 }
-            
+ 
                 break;
 
         }

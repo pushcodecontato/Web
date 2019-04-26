@@ -70,7 +70,7 @@
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>Termos de uso</p>
                             </div>
-                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_faq/tabela_faq.php',true)">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_faq/tabela.php',true)">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>FAQ</p>
                             </div>
