@@ -403,7 +403,7 @@
                 break;
 
                 /*Termo de Uso*/
-                case 'TERMOS':
+                case ('TERMOS' || $controller == "TERMOS_USO"):
                 
                 require_once('controller/controllerTermos_uso.php');
 
@@ -432,8 +432,8 @@
 
                         break;
                    case "SELECT":
-                        
-                        $faq = $controller_termos_uso->getById();
+
+                        $termos_uso = $controller_termos_uso->getById();
                         require_once('view/cms/pagina_termos_uso/cadastrar.php');
                         break;
                 }

@@ -23,19 +23,20 @@
             if(count($listTermos_uso) < 1){
               echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
               echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
-            }
+            }else{
 
-            foreach($listTermos_uso as $registro){
-        ?>
-        <div class="linha_resposta">
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas()?></div>
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas()?></div>
-            <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="termos_uso_getById(<?=@$registro->getId()?>)">
-                <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="termos_uso_delete(<?=@$registro->getId()?>)">
-            </div>
-        </div>
-        <?php
+                foreach($listTermos_uso as $registro){
+            ?>
+                <div class="linha_resposta">
+                    <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getTitulo()?></div>
+                    <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getTexto()?></div>
+                    <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
+                        <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="termos_uso_getById(<?=@$registro->getId()?>)">
+                        <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="termos_uso_delete(<?=@$registro->getId()?>)">
+                    </div>
+                </div>
+            <?php
+                }
             }
         ?>
     </div>

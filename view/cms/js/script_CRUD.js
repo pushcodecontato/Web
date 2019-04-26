@@ -396,7 +396,7 @@ function faq_delete(id){
 
 				$.notify("Deletado com sucesso", "info");
 
-				conteudo_subMenu('usuarios/tabela',true);
+				conteudo_subMenu('pagina_faq/tabela',true);
 				
 
 			}
@@ -411,7 +411,88 @@ function faq_delete(id){
 // SOBRE NOS
 
 // TERMOS DE USO
+function termos_uso_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=termos_uso&modo=select',
+		data:{id},
+		success:function(dados){
+			modal(dados);
+		}
+	})
+}
 
+function termos_uso_getDados(){
+
+	conteudo_subMenu('pagina_termos_uso/tabela',true);
+
+}
+function termos_uso_insert(form){
+
+	event.preventDefault();
+	console.log("Hellow!!!!!!")
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+			console.log("Hellow@",dados);
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Cadastrado com sucesso", "success");
+
+				conteudo_subMenu('pagina_termos_uso/tabela',true);
+				fecharModal();
+			}
+		}
+	})
+}
+function termos_uso_update(form){
+
+	event.preventDefault();
+
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Atualizado com sucesso", "success");
+
+				conteudo_subMenu('pagina_termos_uso/tabela',true);
+				
+				fecharModal()
+
+
+			}
+		}
+	})
+}
+
+function termos_uso_delete(id){
+	event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=termos_uso&modo=excluir&id='+id,
+		success:function(dados){
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('pagina_termos_uso/tabela',true);
+				
+
+			}
+		}
+	});
+}
 // PAGINA HOME - SESSÕES
 
 
