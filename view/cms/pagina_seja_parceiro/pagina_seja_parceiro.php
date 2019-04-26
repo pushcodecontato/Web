@@ -11,28 +11,28 @@
     <div class="seja-parceiro-painel-parceiros">
         <div class="seja-parceiro-painel-parceiros-imagem">
             <img src="view/imagem/bg-parceiros.jpg">
-            <div class="seja-parceiro-painel-parceiros-imagem-alterar"></div>
+            <div onclick="sejaParceiroSalvarImagem('esquerdo',this)" class="seja-parceiro-painel-parceiros-imagem-alterar"></div>
         </div>
         <div class="seja-parceiro-painel-parceiros-conteudo">
             <div class="seja-parceiro-painel-parceiros-conteudo-bordaEsquerda"></div>
             <div class="seja-parceiro-painel-parceiros-conteudo-conteudo">
 
-                <p contenteditable >Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p>
+                <p  >Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p>
 
-                <button contenteditable>Quero ser um Parceiro</button>
+                <button >Quero ser um Parceiro</button>
 
-                <p contenteditable >Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p>
+                <p  >Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p>
 
             </div>
             <div class="seja-parceiro-painel-parceiros-conteudo-bordaDireita"></div>
         </div>
         <div class="seja-parceiro-painel-parceiros-imagem">
             <img src="view/imagem/bg-usuario.jpg">
-            <div class="seja-parceiro-painel-parceiros-imagem-alterar"></div>
+            <div onclick="sejaParceiroSalvarImagem('direito',this)" class="seja-parceiro-painel-parceiros-imagem-alterar"></div>
         </div>
         <button onclick="tornarEditavel()" class="seja-parceiro-painel-parceiros-btn btnEditar"> Editar </button>
         <button class="seja-parceiro-painel-parceiros-btn btnEsconder"> Esconder </button>
-        <button onclick="salvarPainel()" style="display:none;" id="seja-parceiro-btnSalvar" class="seja-parceiro-painel-parceiros-btn btnEsconder"> Salvar </button>
+        <button onclick="sejaParceiroSalvarPainel()" style="display:none;" id="seja-parceiro-btnSalvar" class="seja-parceiro-painel-parceiros-btn btnEsconder"> Salvar </button>
     </div>
 
     <!-- Area do gerenciamento dos topicos -->
