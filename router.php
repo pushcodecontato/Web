@@ -103,6 +103,11 @@
                             $controller_tipo_veiculo->atualizar_tipo();
 
                             break;
+                        case "EXCLUIR":
+                            
+                            $controller_tipo_veiculo->excluir_tipo();
+                            
+                            break;
                         case "SELECT":
                             
                             $tipo = $controller_tipo_veiculo->getById();
@@ -135,6 +140,16 @@
                             $controller_modelos->atualizar_modelo();
 
                             break;
+                        case "EXCLUIR":
+                            
+                            $controller_modelos->excluir_modelo();
+                            
+                            break;
+                        case "ALTERARSTATUS":
+
+                            $controller_modelos->status_modelo();
+                            
+                            break;
                         case "SELECT":
                             
                             $modelo = $controller_modelos->getById();
@@ -162,6 +177,16 @@
                             $controller_marcas->atualizar_marca();
 
                             break;
+                        case "EXCLUIR":
+                            
+                            $controller_marcas->excluir_marca();
+                            
+                            break;
+                        case "ALTERARSTATUS":
+
+                            $controller_marcas->status_marca();
+                            
+                            break;
                         case "SELECT":
                             
                             $marca = $controller_marcas->getById();
@@ -188,6 +213,16 @@
 
                             $controller_acessorios->atualizar_acessorio();
 
+                            break;
+                       case "EXCLUIR":
+                            
+                            $controller_acessorios->excluir_acessorio();
+
+                            break;
+                       case "ALTERARSTATUS":
+
+                            $controller_acessorios->status_acessorio();
+                            
                             break;
                     }
                 

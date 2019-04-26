@@ -62,6 +62,53 @@ class  MarcaDAO{
         
     }
 
+    public function delete($id,$id_tipo_veiculo){
+        /* Em desenvolvimento */
+        $sql = "UPDATE tbl_marca_veiculo_tipo_veiculo SET excluido = 1 WHERE id_marca_veiculo = $id AND id_tipo_veiculo= $id_tipo_veiculo";
+
+        $PDO_conex = $this->conex->connect_database();
+
+        if($PDO_conex->query($sql)){
+            
+            echo " Marca excluido com sucesso ";
+
+            return true;
+            
+        } else {
+
+            echo " Erro ao excluir o Marca ";
+
+            return false;
+        }
+
+        $this->conex->close_database();
+
+    }
+
+    public function status($id_marca,$status){
+
+        echo "CHegou em status ";
+
+        $sql = "UPDATE tbl_marca_veiculo SET status='$status' WHERE id_marca_veiculo=".$id_marca;
+
+         //Abrido conexao com o BD
+        $PDO_conex = $this->conex->connect_database();
+
+        if($PDO_conex->query($sql)){
+
+            echo "atualizado com sucesso";
+
+            return true;
+
+        } else {
+
+            echo "Erro no script de atualização";
+
+            return false;
+
+        }   
+    }
+
     public function select($id){
         $sql = "SELECT * FROM tbl_marca_veiculo where id_marca_veiculo =".$id;
 
@@ -90,17 +137,7 @@ class  MarcaDAO{
     public function updateByFIP($marca,$tipo){
 
         echo "Chegou no updateByFIP \n ";
-        
-        var_dump($marca);
-
-        echo "\n";
-
-        $marcapega = $this->selectByCodFIP($marca->getCodFIP());
-
-        var_dump($marcapega);
-        
-        $sql = "UPDATE tbl_marca_veiculo SET nome_marca ='".$marca->getNome()."' ". 
-               "WHERE cod_fip ='" . $marca->getCodFIP() ."'";
+       
 
         // Abrido conexao com o BD
         $PDO_conex = $this->conex->connect_database();
@@ -109,13 +146,13 @@ class  MarcaDAO{
             
             $marcaAnterior->setNome($marca->getNome());// Definindo o novo nome recebido
             
-
+            /* Fazendo o update !! */
             if($this->update($marcaAnterior)){
                 $marca->setId($marcaAnterior->getId());
             }
 
         } else {// Cria se não existir
-            echo "Criadno Marca ";
+            echo "Criano Marca ";
             $sql = "insert into tbl_marca_veiculo(nome_marca,cod_fip)".
                "VALUES('" . $marca->getNome() . "','". $marca->getCodFIP() ."')";
 
@@ -136,10 +173,11 @@ class  MarcaDAO{
         $rows = $PDO_conex->query($sql);
 
         /* VERIFICANDO SE A MARCA JÁ ESTA VINCULADO AO Tipo de veiculo */
-        if($rows->rowCount() > 0 ){
+        if($rows->rowCount() < 1 ){
             
+            echo " |Entrou| ";
             // inserindo o vinculo
-//Parei Aqui!!!
+
             $sql = "insert into tbl_marca_veiculo_tipo_veiculo(id_tipo_veiculo,id_marca_veiculo)".
                    "VALUES('" . $tipo->getId() . "',". $marca->getId() .")";
                 
@@ -153,7 +191,10 @@ class  MarcaDAO{
             
             }
 
-        } 
+        } else {
+
+            echo "Vinculo ja existente";
+        }
 
 
 

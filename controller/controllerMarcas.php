@@ -45,6 +45,19 @@
             $this->marcasDAO->update($marca);
         }
         
+        public function excluir_marca(){
+
+            $this->marcasDAO->delete($_GET['id'],$_GET['id_tipo_veiculo']);
+
+        }
+
+        public function status_marca(){
+            
+
+            $this->marcasDAO->status($_GET['id'],$_POST['status']);
+
+        }
+
         public function getById($id_marca = 0){
             
             if($id_marca == 0)$id_marca = $_GET['id'];

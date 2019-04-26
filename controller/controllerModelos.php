@@ -34,6 +34,19 @@
             
             $this->modelosDAO->update($modelo);
         }
+
+        public function excluir_modelo(){
+
+            $this->modelosDAO->delete($_GET['id']);
+
+        }
+        
+        public function status_modelo(){
+            
+
+            $this->modelosDAO->status($_GET['id'],$_POST['status']);
+
+        }
         
         public function getById($id_modelo = 0){
             

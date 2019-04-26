@@ -95,14 +95,14 @@ function usuario_getDados(){
 function usuario_insert(form){
 
 	event.preventDefault();
-	console.log("Hellow!!!!!!")
+
 	$.ajax({
 		type:'post',
 		method:'post',
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-			console.log("Hellow@",dados);
+
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("usuario Cadastrado com sucesso", "success");
@@ -225,14 +225,31 @@ function tipo_veiculo_atualizar(form){
 	})
 }
 
+function tipo_veiculo_excluir(id){
+	$.ajax({
+		type:'POST',
+		method:'POST',
+		url:'router.php?controller=tipo_veiculo&modo=excluir&id='+id,
+		success:function(resposta){
+
+			if(resposta.toString().search('sucesso')>=0){
+
+				$.notify("Tipo de veiculo removido ",'success');
+				conteudo_subMenu('veiculos/tipo_veiculo',true);
+
+			}
+		}
+	})
+}
+
 function tipo_veiculo_getById(id){
 	event.preventDefault();
-	 $.ajax({
+	$.ajax({
 		type:'GET',
 		method:'GET',
 		url:'router.php?controller=tipo_veiculo&modo=select&id='+id,
 		success:function(dados){
- 			$('.conteudo').html(dados);
+			$('.conteudo').html(dados);
 		}
 	})
 }
@@ -401,12 +418,11 @@ function faq_delete(id){
 
 /* Função que exporta csv 
  * params csv = String = texto com o csv:
- * 'exmplo@dsdsd.sdsd;joão;(11)4323-2545\n'
+ * 'exemplo@mail.com;joão;(11)4323-2545\n'
  * 'valor;valor;valor;valor\n'
  *	\n = quebra linha
  */
-
-	function toCSV(nome,csv = 0){
+function toCSV(nome,csv = 0){
  	/* Algumas validações */
  	var nomeArquivo = (csv != 0)? nome: 'export';
 	var csvExport = (csv != 0)? csv: nome;

@@ -28,7 +28,7 @@
         
         // alerando modo para atualizar
         $action = "router.php?controller=modelos&modo=atualizar&id=" . $_GET['id_modelo'];
-        $submit = "modelo_uptade(this)";
+        $submit = "modelo_update(this)";
 
         $nome   = $modelo->getNome();
     }
@@ -50,10 +50,14 @@
                 <select name="id_tipo_marca" required>
                     <?php foreach($listaMarcas as $marca){ ?>
                           
-                          <option value="<?=@$marca->getIdTipoMarca()?>"
-                          <?php if(isset($modelo) && $modelo->getIdTipoMarca() == $marca->getIdTipoMarca())echo "selected";?>>
-                                <?=@$marca->getNome()?>
-                          </option>
+                          <?php if($marca->getStatus() == 1){ ?>
+
+                              <option value="<?=@$marca->getIdTipoMarca()?>"
+                              <?php if(isset($modelo) && $modelo->getIdTipoMarca() == $marca->getIdTipoMarca())echo "selected";?>>
+                                    <?=@$marca->getNome()?>
+                              </option>
+
+                          <?php } ?>
 
                     <?php } ?>
                 </select>

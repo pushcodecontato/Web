@@ -7,7 +7,9 @@ class Marca{
     private $nome_marca;
     private $id_tipo_veiculo;
     private $id_marca_tipo;
-
+    /* Identifica se o estado (checket) do acessorio  0 = desativado and 1 = ativado */
+    private $status;
+    
     /* FIP */
     private $cod_fip;
 
@@ -42,6 +44,15 @@ class Marca{
         $this->id_marca_tipo = $id_marca_tipo;
         return $this;
     }
+
+    public function setStatus($status){
+        $this->status = $status;
+        return $this;
+    }
+    public function getStatus(){
+        return $this->status;
+    }
+
     /* FIP */
     public function setCodFIP($cod_fip){
         $this->cod_fip = $cod_fip;

@@ -23,7 +23,11 @@ class ControllerAcessorios{
            $this->acessoriosDAO->insert($acessorio);
        }
 
-       public function excluir_acessorio(){}
+       public function excluir_acessorio(){
+           
+           $this->acessoriosDAO->delete($_GET['id']);
+
+       }
        public function atualizar_acessorio(){
            
            $acessorio = new Acessorio();
@@ -34,6 +38,13 @@ class ControllerAcessorios{
            $this->acessoriosDAO->update($acessorio);
 
        }
+       public function status_acessorio(){
+            
+
+            $this->acessoriosDAO->status($_GET['id'],$_POST['status']);
+
+       }
+
        public function listar_acessorios(){}
 
        public function getById($id = 0){

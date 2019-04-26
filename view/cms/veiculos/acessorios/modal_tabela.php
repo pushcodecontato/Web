@@ -27,85 +27,35 @@ if(isset($_GET['id_tipo_veiculo'])){
         echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
         echo " <p class='aviso_tabela'> Nenhum Acessorio encontrado!</p> ";
      }else{
+        
+        if((round(count($lista)/3)) < 1){
+            $lista_acessorios =  array_chunk($lista,1);
+        }else{
+             $lista_acessorios =  array_chunk($lista,round(count($lista)/3));
+        }
 
 
-     $lista_acessorios =  array_chunk($lista,round(count($lista)/3));
+        foreach($lista_acessorios as $lista){?>
 
+            <div class="caixa_item">
 
-    foreach($lista_acessorios as $lista){?>
+            <?php foreach($lista as $acessorio){?>
+                <div class="item">
+                    <label onclick="acessorios_alterar_status(this,<?=@$acessorio->getId()?>,<?=@$acessorio->getStatus()?>)">
+                        <input type="checkbox" name="acessorios" <?=@ ($acessorio->getStatus() == 1)?'checked':''?>>
+                        <?=@$acessorio->getNome()?>
+                    </label>
+                    <img class="edit" src="view/cms/imagem/icones/edit.png"
+                         onclick="acessorios_editar(<?=@$_GET['id_tipo_veiculo']?>,<?=@$acessorio->getId()?>)" alt="edit">
+                    <img class="delete" src="view/cms/imagem/icones/delete.png" 
+                         onclick="acessorios_delete(<?=@$_GET['id_tipo_veiculo']?>,<?=@$acessorio->getId()?>)" alt="delete">
+                </div>
+            <?php } ?>
 
-        <div class="caixa_item">
-
-        <?php foreach($lista as $acessorios){?>
-            <div class="item">
-                <label>
-                    <input type="checkbox" name="acessorios" checked>
-                    <?=@$acessorios->getNome()?>
-                </label>
-                <img class="edit" src="view/cms/imagem/icones/edit.png"
-                     onclick="acessorios_editar(<?=@$acessorios->getId()?>)" alt="edit">
-                <img class="delete" src="view/cms/imagem/icones/delete.png" alt="delete">
             </div>
-        <?php } ?>
 
-        </div>
-
-    <?php }
+        <?php }
     } ?>
     </div>
 </div>
-<style>
-.modal_acessorios{
-    background-color:white;
-    padding: 15px;
-}
-.caixa_acessorios{
-    background-color: #fdfdfd;
-    border-top: solid 0.1px black;
-    padding: 2px 15px;
-    height: auto;
-    overflow-y: auto;
-    background-color:#e8e8e8;
-}
-.caixa_acessorios input[type="checkbox"]{/* Mateus usou na linha 312  da home_cms.css */
-    left: auto;/* Contra reação */
-    position: initial;/* Contra reação */
-}
-.caixa_acessorios .caixa_item{
-    width: 32%;
-    text-align: center;
-    float: left;
-}
-.caixa_acessorios .caixa_item .item{
-    width: auto;
-    /* margin: 4px 0px; */
-    font-size: 20px;
-    border: solid 0.8px black;
-    border-radius: 1px;
-    padding: 4px 0px;
-    background-color: #fff;
-    background: rgb(238,238,238);
-    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(8deg, rgba(238,238,238,1) 0%, rgba(213,213,213,1) 35%, rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#ffffff",GradientType=1);
-}
-.caixa_acessorios .caixa_item .item img{
-    width:18px;
-    margin-bottom: -3px;
-}
-.caixa_acessorios .caixa_item .item:hover{
-    background: rgb(238,238,238);
-    background: -moz-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
-    background: -webkit-linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
-    background: linear-gradient(8deg, rgba(238,238,238,1) 25%, rgba(255,255,255,1) 48%, rgba(213,213,213,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#d5d5d5",GradientType=1);
-}
-#frmAcessorio{
-
-}
-#frmAcessorio button{
-
-}
-</style>
 <script src="view/cms/veiculos/acessorios/modal_acessorios.js"></script>
