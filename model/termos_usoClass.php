@@ -1,6 +1,6 @@
 <?php
 
-    class Faq{
+    class Termos_uso{
 
     private $id;
     private $titulo;

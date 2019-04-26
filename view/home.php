@@ -353,6 +353,7 @@
                     </div>
                 </div>
             </section>
+
             <section class="section_fale_conosco" id="fale_conosco">
                 <h2>Fale conosco</h2>
                 <div class="fale_conosco">
@@ -372,11 +373,10 @@
                             </div>
                             <input type="submit" name="btnEnviar" value="Enviar" id="buttonEnviar">
                         </div>
-                       
-
                     </form>
                 </div>
             </section>
+            
         </div>
     </div>
     <footer class="cor_site_padrao">

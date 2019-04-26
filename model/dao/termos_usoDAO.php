@@ -1,10 +1,10 @@
 <?php
-    class FaqDao{
+    class Termos_usoDao{
 
         private $conex;
         // metodo construtor da classe - 
         public function __construct(){
-            require_once('model/faqClass.php');
+            require_once('model/termos_usoClass.php');
             require_once('model/dao/conexaoMysql.php');
             $this->conex = new conexaoMysql();
         }

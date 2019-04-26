@@ -22,8 +22,7 @@ class ControllerFaq{
 
                 $faq = new Faq();
 
-                $faq->setTitulo($_POST['txtTitulo'])
-                    ->setPerguntas($_POST['txtPerguntas'])
+                $faq->setPerguntas($_POST['txtPerguntas'])
                     ->setRespostas($_POST['txtRespostas']);
 
                 $this->faqDao->insert($faq);
@@ -46,7 +45,6 @@ class ControllerFaq{
                 $faq = new Faq();
 
                 $faq->setId($_GET['id'])
-                    ->setTitulo($_POST['txtTitulo'])
                     ->setPerguntas($_POST['txtPerguntas'])
                     ->setRespostas($_POST['txtRespostas']);
 
