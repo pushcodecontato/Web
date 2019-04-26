@@ -394,7 +394,7 @@
                         
                         $sobre = $controller_sobre->getById();
                         
-                        require_once('view/cms/pagina_sobre_nos/cadastro_historia.php')
+                        require_once('view/cms/pagina_sobre_nos/cadastro_historia.php');
                             
                         require_once('view/cms/pagina_sobre_nos/cadastro_visao_missao_valores');
                         break;

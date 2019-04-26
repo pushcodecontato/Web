@@ -44,7 +44,7 @@
 
                 $sobre = new Sobre();
 
-                $sobre->setId_sobre($_GET['id_sobre'])
+                /*$sobre->setId_sobre($_GET['id_sobre'])
                    ->setTitulo_sobre($_POST['txtTitulo_historia'])
                     ->setTexto_sobre($_POST['txtTexto_historia'])
                     ->setFoto_sobre($_POST['img_sobre'])
@@ -56,7 +56,40 @@
                     ->setFoto_visao_sobre($_POST['img_visao'])
                     ->setTitulo_valores_sobre($_POST['txtTitulo_valores'])
                     ->setTexto_valores_sobre($_POST['txtTexto_valores'])
-                    ->setFoto_valores_sobre($_POST['img_valores']);
+                    ->setFoto_valores_sobre($_POST['img_valores']);*/
+                
+                if(isset($_GET['valores'])){
+                    $sobre = $this->sobreDAO->selectAll();
+                    $sobre->setTitulo_valores_sobre($_POST['titulo'])
+                          ->setTexto_valores_sobre($_POST['texto']);
+                    if($_FILES['foto']['size']>0){
+                        $sobre->setFoto_valores_sobre($this->uploadImagem($_FILES['foto']));
+                    }
+                }elseif(isset($_GET['missao'])){
+                    $sobre = $this->sobreDAO->selectAll();
+                    $sobre->setTitulo_missao_sobre($_POST['titulo'])
+                          ->setTexto_missao_sobre($_POST['texto']);
+                    if($_FILES['foto']['size']>0){
+                        $sobre->setFoto_missao_sobre($this-uploadImagem($_FILES['foto']));
+                    }
+                }elseif(isset($_GET['visao'])){
+                    $sobre = $this->sobreDAO->selectAll();
+                    $sobre->setTitulo_visao_sobre($_POST['titulo'])
+                          ->setTexto_visao_sobre($_POST['texto']);
+                    if($_FILES['foto']['size']>0){
+                        $sobre->setFoto_visao_sobre($this->uploadImagem($_FILES['foto']));
+                    }
+                }elseif(isset($_GET['historia'])){
+                    $sobre = $this->sobreDAO->selectAll();
+
+                    $sobre->setTitulo_sobre($_POST['titulo'])
+                          ->setTexto_sobre($_POST['texto']);
+                          
+                    if($_FILES['foto']['size']>0){
+                        $sobre->setFoto_sobre($this->uploadImagem($_FILES['foto']));
+                    }   
+
+                }
                 
                 $this->sobreDAO->update($sobre);
             }

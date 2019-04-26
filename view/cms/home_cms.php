@@ -8,6 +8,7 @@
     <script src="view/cms/js/script_menu.js"></script>
     <script src="view/cms/js/script_CRUD.js"></script>
     <script src="view/cms/js/notify.js"></script>
+    <script src="view/cms/js/jqueryform.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CMS-Mos'share</title>
 </head>

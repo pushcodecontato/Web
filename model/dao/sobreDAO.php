@@ -86,7 +86,7 @@ class SobreDAO{
         
         $select = $PDO_conex->query($sql);
         
-        $listar_registros = array();
+        //$listar_registros = array();
         
         while($rs_sobre = $select->fetch(PDO::FETCH_ASSOC)){
             
@@ -108,6 +108,8 @@ class SobreDAO{
             
             return $sobre;
         }
+        
+        return false;
         
     }
     public function selectById($id_sobre){
