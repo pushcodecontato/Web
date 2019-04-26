@@ -24,6 +24,7 @@
             }
             $this->conex->close_database();
 
+
         }
         public function delete($id){
                 
@@ -71,10 +72,10 @@
 
                 $termos_uso = new Termos_uso();
                 $termos_uso->setId($rs_termos_uso['id'])
-                    ->setTitulo($rs_termos_uso['titulo'])
-                    ->setTexto($rs_termos_uso['texto']);
+                            ->setTitulo($rs_termos_uso['titulo'])
+                            ->setTexto($rs_termos_uso['texto']);
 
-                $listar_registros[] = $rs_termos_uso;
+                $listar_registros[] = $termos_uso;
                 
             }
         
@@ -93,18 +94,18 @@
 
             $select = $PDO_conex->query($sql);
 
-            if($rs_faq = $select->fetch(PDO::FETCH_ASSOC)){
+            if($rs_termos_uso = $select->fetch(PDO::FETCH_ASSOC)){
 
             $termos_uso = new Termos_uso();
             $termos_uso->setId($rs_termos_uso['id'])
-                        ->setTitulo($rs_termos_uso['titulo'])
-                        ->setTexto($rs_termos_uso['texto']);
+                       ->setTitulo($rs_termos_uso['titulo'])
+                       ->setTexto($rs_termos_uso['texto']);
 
-                return $faq;
+                return $termos_uso;
 
             } else {
                     echo "Registro não encontrado!!";
-                    return 0;
+                    return false;
             }
 
 
