@@ -319,6 +319,28 @@
                 
                 break;
 
+                /* HOME */
+                case "HOME":
+                
+                require_once('controller/controllerHome.php');
+
+                $controller_home = new controllerHome();
+              
+                switch($modo){
+                    case "ATUALIZAR":
+                         
+                         $controller_home->atualizar_home();
+                         
+                         break;
+                    case "ESCONDER":
+                    
+                         $controller_home->esconder_home();
+
+                         break;
+                }
+ 
+                break;
+
                 /* Faq */
                 case 'FAQ':
                 
@@ -356,10 +378,7 @@
                 }
  
                 break;
-                
-                
-                
-                
+
                 /*sobre*/
 
                 case 'SOBRE':
@@ -439,8 +458,7 @@
                 }
  
                 break;
-
-
+                
         }
       
         

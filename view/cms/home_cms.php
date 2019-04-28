@@ -50,7 +50,7 @@
                             <p>Gerenciar paginas</p>
                         </div>
                         <div class="sub_menu" id="gerenciar_paginas"> 
-                            <div class="item_sub_menu">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_home/pagina_home.php')">
                                 <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                                 <p>Pagina Home</p>
                             </div>

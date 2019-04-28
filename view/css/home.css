@@ -198,7 +198,7 @@
     text-align: center;
     margin-top: 15px;
 }
-.tipos_veiculos p{
+.tipos_veiculos p,.tipos_veiculos div{
     font-family: "Roboto-medium";
     font-size: 15px;
     text-align: center;
