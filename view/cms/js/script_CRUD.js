@@ -21,11 +21,21 @@ function conteudo_subMenu(nome_pagina){
 }
 function inserir_nivel(){
     form = $('#formNiveis');
+    
+    var nome = form.find('#nome_nivel').val();
+    var descricao = form.find('#descricao').val();
+    var slcMenu = form.find('#acessos').val();
+
     event.preventDefault();
     $.ajax({
         type:"POST",
+        method:'POST',
         url: form.attr('action'),
-        data: form.serialize(),
+        data:{
+        	'txtNome_nivel':nome,
+        	'txtDescricao':descricao,
+        	'slcMenu':slcMenu,
+        },
         async: true,
         success:function(dados){
             $.notify("Nível inserido com sucesso", "success");
@@ -34,12 +44,22 @@ function inserir_nivel(){
     });
 }
 function atualizar_nivel(){
-    form = $('#formNiveis');
+	
+	form = $('#formNiveis');
+
+	var nome = form.find('#nome_nivel').val();
+    var descricao = form.find('#descricao').val();
+    var slcMenu = form.find('#acessos').val();
+
     event.preventDefault();
     $.ajax({
         type:"POST",
         url: form.attr('action'),
-        data: form.serialize(),
+        data:{
+        	'txtNome_nivel':nome,
+        	'txtDescricao':descricao,
+        	'slcMenu':slcMenu,
+        },
         async: true,
         success:function(dados){
             $.notify("Nível editado com sucesso", "success"); 

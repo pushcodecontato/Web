@@ -1952,3 +1952,11 @@ ALTER TABLE `mob_share`.`tbl_home_sessao5`
 ADD COLUMN `subtitulo_sessao5` VARCHAR(255) NOT NULL AFTER `texto4_sessao5`;
 
 */
+/* Alterações:
+   + tbl_menu{
+     + click
+  }
+ALTER TABLE `mob_share`.`tbl_menu` 
+ADD COLUMN `click` VARCHAR(255) NOT NULL AFTER `icone`;
+
+*/

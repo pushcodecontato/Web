@@ -51,27 +51,27 @@
                         </div>
                         <div class="sub_menu" id="gerenciar_paginas"> 
                             <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_home/pagina_home.php')">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/home.png" alt="tipo">
                                 <p>Pagina Home</p>
                             </div>
                             <div class="item_sub_menu">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/money.png" alt="tipo">
                                 <p>Ganhe dinheiro</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php')">
-                                <img src="view/cms/imagem/icones/bike.png"  alt="tipo">
+                                <img src="view/cms/imagem/icones/parceiros.png"  alt="tipo">
                                 <p>Seja parceiro</p>
                             </div>
                             <div class="item_sub_menu"  onclick="conteudo_subMenu('pagina_sobre_nos/pagina_sobre_nos',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/info.png" alt="tipo">
                                 <p>Sobre empresa</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_termos_uso/tabela.php',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="Termos de Uso">
+                                <img src="view/cms/imagem/icones/termos.png" alt="Termos de Uso">
                                 <p>Termos de uso</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_faq/tabela.php',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="Faq">
+                                <img src="view/cms/imagem/icones/faq.png" alt="Faq">
                                 <p>FAQ</p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="sub_menu" id="gerenciar_veiculos"> 
                             <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_pendentes',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/aprovados.png" alt="tipo">
                                 <p>veiculos pendentes</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/tipo_veiculo',true)">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="sub_menu" id="gerenciar_anuncios"> 
                             <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_pendentes',true)">
-                                <img src="view/cms/imagem/icones/bike.png" alt="tipo">
+                                <img src="view/cms/imagem/icones/aprovados.png" alt="tipo">
                                 <p> Pendentes</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
@@ -119,11 +119,11 @@
                         </div>
                         <div class="sub_menu" id="usuarios"> 
                             <div class="item_sub_menu" onclick="conteudo_subMenu('niveis/tabela_niveis', true)">
-                                <img src="view/cms/imagem/icones/cliente.png" alt="Clientes">
+                                <img src="view/cms/imagem/icones/niveis.png" alt="Clientes">
                                 <p>Cadastrar niveis</p>
                             </div>
                             <div class="item_sub_menu" onclick="conteudo_subMenu('usuarios/tabela',true)">
-                                <img src="view/cms/imagem/icones/cliente.png" alt="Clientes">
+                                <img src="view/cms/imagem/icones/user.png" alt="Clientes">
                                 <p>Cadastrar usuários</p>
                             </div>
                         </div>
@@ -171,6 +171,7 @@
                 $('#modal').html('');
             }
         </script>
+        <script src="view/cms/js/selectize.min.js"></script>
     </div>
 </body>
 </html>
