@@ -180,3 +180,6 @@ form{
     margin-right: auto;
     display: block;
 }
+.selectize-control.multi .selectize-input > div{
+    color:black;
+}

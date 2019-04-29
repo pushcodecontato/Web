@@ -1,3 +1,11 @@
+<?php
+    require_once('controller/controllerHome.php');
+
+    $controllerHome = new controllerHome();
+    
+    $pagina = $controllerHome->getPage();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +19,7 @@
 </head>
 <body>
     <div id="principal">
-        <header id="header_home">
+        <header id="header_home" style="background-image: url(../view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
                     <div id="logo">
@@ -37,23 +45,23 @@
                     </div>
                 </div>    
             </nav>
-            <div class="texto_chamativo">
-                <p class="texto_primario">Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!</p>
-                <p class="texto_secundario">#anuncienamobshare</p>
+            <div class="texto_chamativo" style="<?=@($pagina->getBanner()->getStatus() == 0)?'display:none;':''?>">
+                <p class="texto_primario"><?=@$pagina->getBanner()->getTexto()?></p>
+                <p class="texto_secundario"><?=@$pagina->getBanner()->getTexto2()?></p>
                 <div class="btn_anunciar">
                     <a href="#">Anuncie!</a>
-                    <!-- <a href="#">ANUNCIE!</a> -->
                 </div>
             </div>
         </header>
         <div id="conteudo">
-            <section class="section_conteudo">
+            <section class="section_conteudo" style="<?=@($pagina->getComofunciona()->getStatus() == 0)?'display:none;':''?>">
                 <div class="como_funciona" id="como_funciona">
-                    <h2 class="titulo_section font_white" >Como funciona?</h2>
+                    <h2 class="titulo_section font_white" ><?=@$pagina->getComofunciona()->getTitulo()?></h2>
 
                     <div id="segura_como_funciona">
                         <div class="area_texto_maior">
-                            <ul>
+                            <?=@$pagina->getComofunciona()->getTexto()?>
+                            <!--<ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -61,88 +69,87 @@
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            </ul>
+                            </ul>-->
                         </div >
-                        <img class="imagem_como_funciona" src="view/imagem/carr.jpg" alt="carro" title="">   
+                        <img class="imagem_como_funciona" src="view/upload/<?=@$pagina->getComofunciona()->getFoto()?>" alt="carro" title="">   
                     </div>
                 </div>
             </section>   
-            <section class="section_conteudo2" style="height:450px;">
-                <h2 class="titulo_section" style="margin-top:30px;">O que pode ser alugador?</h2>
+            <section class="section_conteudo2" style="height:450px; <?=@($pagina->getOquePodeAlugar()->getStatus() == 0)?'display:none;':''?>">
+                <h2 class="titulo_section" style="margin-top:30px;"><?=@$pagina->getOquePodeAlugar()->getTitulo()?></h2>
                 <div class="area_tipo_veiculo" >
                     <div class="tipos_veiculos">
 
-                        <a href="#"><img class="imagem_tipo" src="view/imagem/bike.png"></a>
-                        <h3>Bicicletas</h3>
+                        <a href="#"><img class="imagem_tipo" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto1()?>"></a>
+                        <h3><?=@$pagina->getOquePodeAlugar()->getTitulo1()?></h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
+                            <?=@$pagina->getOquePodeAlugar()->getTexto1()?>
                         </p>
                     </div>
                     <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo"  src="view/imagem/moto.png"></a>   
-                        <h3>Motos</h3>
+                        <a href="#"><img class="imagem_tipo"  src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto2()?>"></a>   
+                        <h3><?=@$pagina->getOquePodeAlugar()->getTitulo2()?></h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
+                            <?=@$pagina->getOquePodeAlugar()->getTexto2()?>
                         </p>     
                     </div>
                     <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo" src="view/imagem/car.png"></a>
-                        <h3>Carros</h3>
+                        <a href="#"><img class="imagem_tipo" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto3()?>"></a>
+                        <h3><?=@$pagina->getOquePodeAlugar()->getTitulo3()?></h3>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus.
-                            
+                            <?=@$pagina->getOquePodeAlugar()->getTexto3()?>
                         </p>
                     </div>
                 </div>
             </section>
-            <section class="section_anuncios">
+            <section class="section_anuncios" style="<?=@($pagina->getPorQueAnunciar()->getStatus() == 0)?'display:none;':''?>">
                 <div id="div_anuncio">
-                    <h2 class="titulo_section font_white">Por que anúnciar seu veículo?</h2>
+                    <h2 class="titulo_section font_white"><?=@$pagina->getPorQueAnunciar()->getTitulo()?></h2>
                     <div class="alugar_veiculo">
                         <div class="imagem_alugar_veiculo">
-                            <img  src="view/imagem/slider/carro_dinheiro.jpg" alt="" title=""> 
+                            <img  src="view/upload/<?=@$pagina->getPorQueAnunciar()->getFoto()?>" alt="" title=""> 
                         </div>
                         <div class="area_texto">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo 
+                                <?=@$pagina->getPorQueAnunciar()->getTexto()?>
                             </p>
                         </div>
                     
                     </div>
                 </div>
             </section>
-            <section class="section_anunciar fundo_white" id="anuncie_veiculo">
+            <section class="section_anunciar fundo_white" style="<?=@($pagina->getQuerAnunciar()->getStatus() == 0)?'display:none;':''?>" id="anuncie_veiculo">
                 <div id="segura_conteudo">
-                    <h2 class="titulo_left">Quer anúnciar seu veículo?</h2>
+                    <h2 class="titulo_left"><?=@$pagina->getQuerAnunciar()->getTitulo()?></h2>
                     <div class="anunciar_veiculo">
-                        <h2>Siga os passos abaixo e anuncie seu veículo!</h2>
+                        <h2><?=@$pagina->getQuerAnunciar()->getSubTitulo()?></h2>
+                        
                         <div class="div_passos">
-                            <img src="view/imagem/user.png" alt="teste">
-                            <h2>Criar uma conta</h2>
+                            <img src="view/upload/<?=@$pagina->getQuerAnunciar()->getFoto1()?>" alt="teste">
+                            <h2><?=@$pagina->getQuerAnunciar()->getSubTitulo1()?></h2>
                             <div class="texto_como_anunciar">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                                <?=@$pagina->getQuerAnunciar()->getTexto1()?>
                             </div>
                         </div>
                         <div class="div_passos">
-                            <img src="view/imagem/key.png" alt="teste">
-                            <h2>Cadastre seu veículo</h2>
+                            <img src="view/upload/<?=@$pagina->getQuerAnunciar()->getFoto2()?>" alt="teste">
+                            <h2><?=@$pagina->getQuerAnunciar()->getSubTitulo2()?></h2>
                             <div class="texto_como_anunciar">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                                <?=@$pagina->getQuerAnunciar()->getTexto2()?>
                             </div>
                         </div>
                         <div class="div_passos">
-                            <img src="view/imagem/ad.png" alt="teste">
-                            <h2>Crie um anúncio</h2>
+                            <img src="view/upload/<?=@$pagina->getQuerAnunciar()->getFoto3()?>" alt="teste">
+                            <h2><?=@$pagina->getQuerAnunciar()->getSubTitulo3()?></h2>
                             <div class="texto_como_anunciar">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                                <?=@$pagina->getQuerAnunciar()->getTexto3()?>
                             </div>
                         </div>
                         <div class="div_passos">
-                            <img src="view/imagem/esperar.png" alt="teste">
-                            <h2>Espere os interessados</h2>
+                            <img src="view/upload/<?=@$pagina->getQuerAnunciar()->getFoto4()?>" alt="teste">
+                            <h2><?=@$pagina->getQuerAnunciar()->getSubTitulo4()?></h2>
                             <div class="texto_como_anunciar">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
+                                <?=@$pagina->getQuerAnunciar()->getTexto4()?>
                             </div>
                         </div>
                     </div>

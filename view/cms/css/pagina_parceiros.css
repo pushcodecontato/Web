@@ -36,7 +36,8 @@
     background-color: #0eaf5c;
 }
 .seja-parceiro-container{
-text-align: center;
+
+text-align: center;
 }
 
 /* Area do img > conteudo < img*/
@@ -62,17 +63,17 @@
     display:none;
 }
 .seja-parceiro-painel-parceiros-imagem:hover>.seja-parceiro-painel-parceiros-imagem-alterar{
-    height: 238px;
+    height: 239px;
     width: 232px;
     display: block;
     position: absolute;
-    margin-top: -242px;
     background-color: rgba(0, 0, 0, 0.38);
     background-image: url(../imagem/icones/upload.png);
     background-position: center;
     background-size: 50px 56px;
     background-repeat: no-repeat;
     cursor: pointer;
+    transform: translateY(-244px);
 }
 
 .seja-parceiro-painel-parceiros-imagem img{

@@ -9,10 +9,10 @@
             $this->conex = new conexaoMysql();
         }
 
-        public function insert($faq){
+        public function insert($termos_uso){
             
-            $sql = "insert into tbl_faq(perguntas,respostas)".
-               "VALUES('". $faq->getPerguntas() ."','". $faq->getRespostas() ."')";
+            $sql = "insert into tbl_termos_uso(titulo,texto)".
+               "VALUES('". $termos_uso->getTitulo() ."','". $termos_uso->getTexto() ."')";
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -24,10 +24,11 @@
             }
             $this->conex->close_database();
 
+
         }
         public function delete($id){
                 
-            $sql = " DELETE FROM tbl_faq where id = $id ";
+            $sql = " DELETE FROM tbl_termos_uso where id = $id ";
 
             $PDO_conex = $this->conex->connect_database();
 
@@ -40,10 +41,10 @@
             }
 
         }
-        public function update($faq){
+        public function update($termos_uso){
         
-                $sql = "UPDATE tbl_faq SET respostas='" . $faq->getRespostas() . "' , perguntas='" . $faq->getPerguntas() . "' " . 
-                " WHERE id =".$faq->getId(). "";
+                $sql = "UPDATE tbl_termos_uso SET titulo='" . $termos_uso->getTitulo() . "' , texto='" . $termos_uso->getTexto() . "' " . 
+                " WHERE id =".$termos_uso->getId(). "";
                 echo $sql;
                 //Abrido conexao com o BD
                 $PDO_conex = $this->conex->connect_database();
@@ -58,7 +59,7 @@
         }
         public function selectAll(){
             
-            $sql = " SELECT * FROM tbl_faq";
+            $sql = " SELECT * FROM tbl_termos_uso";
             
             $PDO_conex = $this->conex->connect_database();
 
@@ -66,15 +67,15 @@
 
             $listar_registros = array();
 
-            while($rs_faq = $select->fetch(PDO::FETCH_ASSOC)){
+            while($rs_termos_uso = $select->fetch(PDO::FETCH_ASSOC)){
                 
 
-                $faq = new Faq();
-                $faq->setId($rs_faq['id'])
-                    ->setPerguntas($rs_faq['perguntas'])
-                    ->setRespostas($rs_faq['respostas']);
+                $termos_uso = new Termos_uso();
+                $termos_uso->setId($rs_termos_uso['id'])
+                            ->setTitulo($rs_termos_uso['titulo'])
+                            ->setTexto($rs_termos_uso['texto']);
 
-                $listar_registros[] = $faq;
+                $listar_registros[] = $termos_uso;
                 
             }
         
@@ -87,24 +88,24 @@
         }
         public function selectById($id){
             
-            $sql = " SELECT * FROM tbl_faq where id = $id ";
+            $sql = " SELECT * FROM tbl_termos_uso where id = $id ";
 
             $PDO_conex = $this->conex->connect_database();
 
             $select = $PDO_conex->query($sql);
 
-            if($rs_faq = $select->fetch(PDO::FETCH_ASSOC)){
+            if($rs_termos_uso = $select->fetch(PDO::FETCH_ASSOC)){
 
-                $faq = new Faq();
-                $faq->setId($rs_faq['id'])
-                    ->setPerguntas($rs_faq['perguntas'])
-                    ->setRespostas($rs_faq['respostas']);
+            $termos_uso = new Termos_uso();
+            $termos_uso->setId($rs_termos_uso['id'])
+                       ->setTitulo($rs_termos_uso['titulo'])
+                       ->setTexto($rs_termos_uso['texto']);
 
-                return $faq;
+                return $termos_uso;
 
             } else {
                     echo "Registro não encontrado!!";
-                    return 0;
+                    return false;
             }
 
 

@@ -343,32 +343,28 @@
                     }
                 
                 break;
-//                 case "FAQ":
+
+                /* HOME */
+                case "HOME":
+                
+                require_once('controller/controllerHome.php');
+
+                $controller_home = new controllerHome();
+              
+                switch($modo){
+                    case "ATUALIZAR":
+                         
+                         $controller_home->atualizar_home();
+                         
+                         break;
+                    case "ESCONDER":
                     
-//                 require_once("controller/controllerFaq.php");
-//                 $controller_faq = new ControllerFaq();
+                         $controller_home->esconder_home();
 
-//                 switch($modo){
-//                     case "INSERIR":
-                        
-//                         $controller_faq->inserir_faq();
-
-//                         break;
-//                     case "ATUALIZAR":
-                        
-//                         $controller_faq->atualizar_faq();
-
-//                         break;
-//                     case "SELECTALL":
-//                         // variavel criada aqui
-//                         $listar_faq = $controller_faq->listar_faq();
-
-//                         require_once('view/cms/pagina_faq/tabela.php');
-
-//                         break;
-//                 }
-            
-//                 break;
+                         break;
+                }
+ 
+                break;
 
                 /* Faq */
                 case 'FAQ':
@@ -407,10 +403,7 @@
                 }
  
                 break;
-                
-                
-                
-                
+
                 /*sobre*/
 
                 case 'SOBRE':
@@ -445,7 +438,7 @@
                         
                         $sobre = $controller_sobre->getById();
                         
-                        require_once('view/cms/pagina_sobre_nos/cadastro_historia.php')
+                        require_once('view/cms/pagina_sobre_nos/cadastro_historia.php');
                             
                         require_once('view/cms/pagina_sobre_nos/cadastro_visao_missao_valores');
                         break;
@@ -453,6 +446,44 @@
  
                 break;
 
+                /*Termo de Uso*/
+                case ('TERMOS' || $controller == "TERMOS_USO"):
+                
+                require_once('controller/controllerTermos_uso.php');
+
+                $controller_termos_uso = new ControllerTermos_uso();
+              
+                switch($modo){
+                    case "INSERIR":
+                        
+                        $controller_termos_uso->inserir_termos_uso();
+
+                        break;
+                    case "ATUALIZAR":
+                         
+                         $controller_termos_uso->atualizar_termos_uso();
+                         
+                         break;
+                    case "EXCLUIR":
+                    
+                         $controller_termos_uso->excluir_termos_uso();
+                         break;
+                    case "SELECTALL":
+
+                        $listTermos_uso =  $controller_termos_uso->listar_termos_uso();
+
+                        require_once('view/cms/pagina_termos_uso/tabela.php');
+
+                        break;
+                   case "SELECT":
+
+                        $termos_uso = $controller_termos_uso->getById();
+                        require_once('view/cms/pagina_termos_uso/cadastrar.php');
+                        break;
+                }
+ 
+                break;
+                
         }
       
         

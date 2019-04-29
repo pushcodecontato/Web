@@ -1,10 +1,10 @@
 <?php
 
 class SobreDAO{
-    private $conex
+    private $conex;
         
     //metodo construtor
-        public function __construct(){
+    public function __construct(){
         require_once('model/dao/conexaoMysql.php');
         $this->conex = new conexaoMysql();
     }
@@ -40,13 +40,12 @@ class SobreDAO{
     public function delete($id){
         $sql = "DELETE FROM tbl_pagina_sobre where id_sobre = $id";
         
-        $PDO_conex = $this->conex->connect database();
+        $PDO_conex = $this->conex->connect_database();
         
         if($PDO_conex->query($sql)){
             echo"Registro deletado!";
         }else{
-            echo "Registro não encontrado!
-            $sql";
+            echo "Registro não encontrado!$sql";
             return 0;
         }
     }
@@ -64,10 +63,8 @@ class SobreDAO{
          foto_visao_sobre='" . $sobre->getFoto_visao_sobre() . "' ,
          titulo_valores_sobre='" . $sobre->getTitulo_valores_sobre() . "' ,
          texto_valores_sobre='" . $sobre-> getTexto_valores_sobre() . "' ,
-         foto_valores_sobre='" . $sobre->getFoto_valores_sobre() . "'    
-          
-    ".
-               " WHERE id_sobre =".$sobre->getId_sobre();
+         foto_valores_sobre='" . $sobre->getFoto_valores_sobre() . "'".
+        " WHERE id_sobre =".$sobre->getId_sobre();
         echo $sql;
         //Abrido conexao com o BD
         $PDO_conex = $this->conex->connect_database();
@@ -89,13 +86,12 @@ class SobreDAO{
         
         $select = $PDO_conex->query($sql);
         
-        $listar_registros = array();
+        //$listar_registros = array();
         
         while($rs_sobre = $select->fetch(PDO::FETCH_ASSOC)){
             
             $sobre = new Sobre();
-            $sobre->setId_sobre($rs_sobre['id_sobre'])
-                
+            $sobre->setId_sobre($rs_sobre['id_sobre']) 
                 ->setId_sobre($rs_sobre['id_sobre'])
                 ->setTitulo_sobre($rs_sobre['titulo_sobre'])
                 ->setTexto_sobre($rs_sobre['texto_sobre'])
@@ -112,6 +108,8 @@ class SobreDAO{
             
             return $sobre;
         }
+        
+        return false;
         
     }
     public function selectById($id_sobre){

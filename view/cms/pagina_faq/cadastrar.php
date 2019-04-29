@@ -14,7 +14,6 @@
     if(isset($faq)){
         
         $id = $faq->getId();
-        $titulo = $faq->getTitulo();
         $perguntas = $faq->getPerguntas();
         $respostas = $faq->getRespostas();
         $router = "router.php?controller=faq&modo=atualizar&id=".$id;

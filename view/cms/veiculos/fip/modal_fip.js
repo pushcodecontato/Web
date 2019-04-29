@@ -44,6 +44,15 @@ function exportarFIP(id_tipo_veiculo){
                 
                 $('.fip_descricao p').text('Atualizando marca ' + marcaExportar.name);
 
+				if(acc+1 == res.length){
+					
+					setTimeout(function(){
+						$('.fip_descricao p').text('Exportação Terminada !');
+						$('.modal_fip .btn_fip_exportar').attr('onclick','fecharModal()');
+						$('.modal_fip .btn_fip_exportar').text(' Sair ');
+					},2000);
+
+				}
 
             });
 

@@ -4,8 +4,7 @@
 
     private $id;
     private $titulo;
-    private $perguntas;
-    private $respostas;
+    private $texto;
 
     public function __construct(){
 
@@ -19,19 +18,19 @@
         return $this;
     }
 
-    public function getPerguntas(){
-        return $this->perguntas;
+    public function getTitulo(){
+        return $this->titulo;
     }
-    public function setPerguntas($perguntas){
-        $this->perguntas = $perguntas;
+    public function setTitulo($titulo){
+        $this->titulo = $titulo;
         return $this;
     }
 
-    public function getRespostas(){
-        return $this->respostas;
+    public function getTexto(){
+        return $this->texto;
     }
-    public function setRespostas($respostas){
-        $this->respostas = $respostas;
+    public function setTexto($texto){
+        $this->texto  = $texto;
         return $this;
     }
 
