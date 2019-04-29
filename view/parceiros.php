@@ -1,3 +1,13 @@
+<?php
+    require_once('controller/controllerSejaParceiro.php');
+
+    $controller_seja_parceiro = new ControllerSejaParceiro();
+
+    $lista = $controller_seja_parceiro->listar_topicos();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +79,41 @@
              </div>
              
              <div id="beficiosBox" class="center">
-                 <div class="row center">
+               <?php if(count($lista) < 1){
+                        echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                        echo " <p class='aviso_tabela'> Nenhum Topico encontrado!</p> ";
+                     }else{
+
+
+                         if(count($lista) <= 1){
+                         
+                            $lista_topicos =  array_chunk($lista,1);
+                         
+                         }else{
+
+                            $lista_topicos =  array_chunk($lista,3);
+
+                         }
+
+                        foreach($lista_topicos as $listaTopicos){?>
+                            <div class="row center">
+                                <?php foreach($listaTopicos as $topico){ ?>
+                                        <div class="cold3 center">
+                                            <div class="beneficio center">
+                                                <div class="img center">
+                                                    <img src="view/upload/<?=@$topico->getFoto()?>">
+                                                </div>
+                                                <div class="titulo"><?=@$topico->getTitulo()?></div>
+                                                <div class="desc">
+                                                    <?=@$topico->getTexto()?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php }?>
+                            </div>
+                 <?php } ?>
+               <?php } ?>
+                 <!--<div class="row center">
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
@@ -138,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                 </div>
+                 </div>-->
              </div>
         </div>
     </div>

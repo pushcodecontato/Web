@@ -1588,7 +1588,7 @@ CREATE TABLE `tbl_seja_parceiro` (
   `texto_seja_parceiro` text NOT NULL COMMENT 'texto da página seja parceiro',
   `foto_seja_parceiro` varchar(45) NOT NULL COMMENT 'foto da página seja parceiro',
   PRIMARY KEY (`id_seja_parceiro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1597,7 +1597,37 @@ CREATE TABLE `tbl_seja_parceiro` (
 
 LOCK TABLES `tbl_seja_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_seja_parceiro` DISABLE KEYS */;
+INSERT INTO `tbl_seja_parceiro` VALUES (1,'asdasd','gdfgdgdfg','dc65a38fb992a06b5385c988978b0505.png');
 /*!40000 ALTER TABLE `tbl_seja_parceiro` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_seja_parceiro_banner`
+--
+
+DROP TABLE IF EXISTS `tbl_seja_parceiro_banner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_seja_parceiro_banner` (
+  `id_seja_parceiro_banner` int(11) NOT NULL AUTO_INCREMENT,
+  `texto1_seja_parceiro_banner` varchar(255) NOT NULL,
+  `texto2_seja_parceiro_banner` varchar(255) NOT NULL,
+  `texto3_seja_parceiro_banner` varchar(255) NOT NULL,
+  `foto1_seja_parceiro_banner` varchar(255) NOT NULL,
+  `foto2_seja_parceiro_banner` varchar(255) NOT NULL,
+  `status` tinyint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_seja_parceiro_banner`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_seja_parceiro_banner`
+--
+
+LOCK TABLES `tbl_seja_parceiro_banner` WRITE;
+/*!40000 ALTER TABLE `tbl_seja_parceiro_banner` DISABLE KEYS */;
+INSERT INTO `tbl_seja_parceiro_banner` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','Quero ser um Parceiro','Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','bg-parceiros.jpg','bg-usuario.jpg',1);
+/*!40000 ALTER TABLE `tbl_seja_parceiro_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1832,9 +1862,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-29 10:14:09
-
-
+-- Dump completed on 2019-04-29 11:27:15
 /* Alterações */
 /* + tbl_percentual
  * tbl_tipo_veiculo {
@@ -1964,14 +1992,26 @@ ADD COLUMN `click` VARCHAR(255) NOT NULL AFTER `icone`;
 */
 
 /*
- Alterações;
-    
-    
-  + tbl_cliente{
-	+ status tinyint
-  }
+ Alterações:
+	+ tbl_cliente{
+		+ status tinyint
+	}
 ALTER TABLE `mob_share`.`tbl_cliente` 
 ADD COLUMN `status` TINYINT(2) NOT NULL DEFAULT 1 AFTER `senha`;
+*/
+/*
+ Alterações:
 
+	+ tbl_seja_parceiro_banner
+
+CREATE TABLE `mob_share`.`tbl_seja_parceiro_banner` (
+ `id_seja_parceiro_banner` INT NOT NULL AUTO_INCREMENT,
+ `texto1_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `texto2_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `texto3_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `foto1_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `foto2_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `status` tinyint(2) NOT NULL DEFAULT 1,
+PRIMARY KEY (`id_seja_parceiro_banner`));
 
 */

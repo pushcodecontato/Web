@@ -8,7 +8,10 @@ function pagina_topico_criar(){
     })
 }
 function pagina_topico_editar(id_topico){
-    
+    $.get('?cms/pagina_seja_parceiro/modal_topicos.php&id='+id_topico)
+    .then(function(resposta){
+        modal(resposta);
+    })
 }
 
 /* CRUD de topico*/
@@ -67,9 +70,69 @@ function pagina_topico_insert(form){
 }
 function pagina_topico_update(){
 
-}
-function pagina_topico_delete(){
+  var submetido = ($(form).attr('data-submit') || 0) * 1;
+   
 
+  //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
+  if(submetido == 1){
+      
+      $(form).attr('data-submit','0');
+      
+      return true;
+
+   }else{
+     
+     $(form).attr('data-submit','1');
+
+   }
+
+   event.preventDefault();
+    
+   var form = $(form);
+    
+   $(form).find('*').hide(200);
+   $(form).css({'background-image':'url(view/imagem/loading.svg)',
+                'background-repeat': 'no-repeat',
+                'background-position':'center'});
+
+   $(form).append("<p style='text-align: center; color: #888888; bottom: 0; position: absolute; width: 100%; left: 0;'> Carregando.. </p>");
+   
+   // Envia os dados do formulario
+   $(form)
+   .ajaxForm({
+       success:function(resposta){
+         console.log("RESPOSTA",resposta);
+         
+         if(resposta.toString().search('sucesso')>=0){
+
+           $.notify("Topico atualizado com sucesso", "success");
+           
+           // Redirecionando o usuario depois da menssagem de sucesso aparecer
+           setTimeout(function(){
+             
+             //fecharModal();
+
+             conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php');
+
+
+           },800)
+
+         }
+       },
+   }).submit();
+}
+function pagina_topico_delete(id_topico){
+  $.ajax({
+    url:'router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=EXCLUIR&id='+id_topico,
+  }).then(function(resposta){
+    console.log(resposta);
+    if(resposta.toString().search('sucesso')){
+
+      $.notify("Topico Removido com sucesso", "success");
+      conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php');
+    
+    }
+  });
 }
 /* mostra como ficara a imagem uplada */
 function mostraImagemTopico(input){
@@ -102,7 +165,7 @@ function sejaParceiroSalvarImagem(lado,img){
 
     if(formularioBanner == 0){
 
-      formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=clientes&modo=inserir"></form>');
+      formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=ATUALIZAR&banner"></form>');
     
       formularioBanner.append('<input type="file" name="fotolado'+ lado +'">');
       
@@ -143,7 +206,7 @@ function sejaParceiroSalvarPainelImagem(){
 /* Salva todo o conteudo IMG > CONTEUDO < IMG*/
 function sejaParceiroSalvarPainel(){
 
-  if(formularioBanner == 0)formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=clientes&modo=inserir"></form>');
+  if(formularioBanner == 0)formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=ATUALIZAR&banner"></form>');
 
     // Verifica se e para editar o conteudo do centro
   if($('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]')[0]){

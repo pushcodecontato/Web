@@ -309,7 +309,7 @@
                             break;
                         case "ATUALIZAR":
                             
-                            $controller_seja_parceiro->atualizar_topico();
+                            $controller_seja_parceiro->atualizar_seja_parceiro();
 
                             break;
                         case "EXCLUIR":

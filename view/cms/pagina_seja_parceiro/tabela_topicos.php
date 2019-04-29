@@ -36,8 +36,8 @@
                             <?=@$topico->getTexto()?>
                         </div>
                         <div class="botoes">
-                            <button>Editar</button>
-                            <button>Deletar</button>
+                            <button onclick="pagina_topico_editar(<?=@$topico->getId()?>)">Editar</button>
+                            <button onclick="pagina_topico_delete(<?=@$topico->getId()?>)">Deletar</button>
                         </div>
                     </div>
             <?php } ?>
