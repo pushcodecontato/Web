@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="principal">
-        <header id="header_home" style="background-image: url(../view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
+        <header id="header_home" style="background-image: url(view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
                     <div id="logo">
