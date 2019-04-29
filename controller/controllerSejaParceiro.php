@@ -28,8 +28,37 @@ class ControllerSejaParceiro{
             $this->topicosDAO->insert($topico);
        }
 
-       public function excluir_topico(){}
-       public function atualizar_topico(){}
+       public function excluir_topico(){
+             
+             $this->topicosDAO->delete($_GET['id']);
+
+       }
+       public function atualizar_seja_parceiro(){
+               if(isset($_GET['topico'])){
+                    $this->atualizar_topico();
+               }else if(isset($_GET['banner'])){
+                    $this->atualizar_banner();
+               }
+       }
+       public function atualizar_topico(){
+             
+             $topico = $this->topicosDAO->selectById($_GET['id']);
+
+             if(isset($_FILES['imagem']) && $_FILES['imagem']['size']){
+                $topico->setFoto($this->uploadImagem($_FILES['imagem']));
+             }
+             $topico->setTitulo($_POST['titulo'])
+                    ->setTexto($_POST['texto']);
+             
+             $this->topicosDAO->update($topico);
+
+       }
+       public function atualizar_banner(){
+              //var_dump($_POST);
+              //var_dump($_FILES);
+              $banner = $this->topicosDAO->selectBanner();
+              
+       }
        public function listar_topicos(){
 
            return $this->topicosDAO->selectAll();
@@ -37,9 +66,10 @@ class ControllerSejaParceiro{
        }
 
        public function getById($id = 0){
+              if($id == 0)$id = $_GET['id'];
 
-
-      }
+              return $this->topicosDAO->selectById($id);
+       }
 
        /* UPLOAD DE IMAGEM 
         * $arquivo = $_FILE['imagem'] = objeto file do PHP

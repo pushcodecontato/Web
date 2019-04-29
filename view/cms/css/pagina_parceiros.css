@@ -154,7 +154,7 @@ button.seja-parceiro-painel-parceiros-btn:hover{
 .seja-parceiro-container .pagina-painel-parceiros-topicos{
     
 }
-.seja-parceiro-painel-parceiros-topicos-tabela{width: 800px;display: block;margin-left: auto;margin-right: auto;height: 417px;overflow: auto;}
+.seja-parceiro-painel-parceiros-topicos-tabela{width: 800px;display: block;margin-left: auto;margin-right: auto;height: 426px;overflow: auto;}
 .topicos-tabela-linha{
     height:;
     width: 769px;
@@ -166,7 +166,7 @@ button.seja-parceiro-painel-parceiros-btn:hover{
 }
 .topicos-tabela-linha .item-topico{
     width: 225px;
-    max-height: 241px;
+    max-height: 284px;
     overflow: hidden;
     box-shadow: 4px 4px 20px 0 rgba(120,135,182,.1);
     background-color: #fff;
@@ -191,6 +191,8 @@ button.seja-parceiro-painel-parceiros-btn:hover{
 }
 .topicos-tabela-linha .item-topico .img img{
     width: 147px;
+    max-height: 125px;
+    overflow: hidden;
 }
 .topicos-tabela-linha .item-topico .titulo{
     font-weight: bold;
@@ -199,8 +201,9 @@ button.seja-parceiro-painel-parceiros-btn:hover{
 .topicos-tabela-linha .item-topico .desc{
     word-break: break-word;
     font-size: 0.9em;
-    height: 57px;
-    overflow: auto;
+    height: 56px;
+    max-height: 62px;
+    overflow-y: auto;
 }
 /* Caixa com os botoes de ação Editar e Deletar */
 .topicos-tabela-linha .item-topico .botoes{
@@ -222,7 +225,8 @@ button.seja-parceiro-painel-parceiros-btn:hover{
     background-color: #0eaf5c;
 }
 /* Modal do crud de Topicos do Seja um parceiro */
-.modal_topicos{background-color: white;padding: 7px 8px;text-align: center;width: 429px;height: auto;overflow: auto;min-height: 229px;}
+.modal_topicos{background-color: white;padding: 0px -1px;text-align: center;width: 429px;height: auto;overflow: auto;min-height: 229px;border-top-left-radius: 10px;border-top-right-radius: 10px;}
+.modal_topicos h3{border-top-left-radius: 10px;border-top-right-radius: 10px;font-family: "OpenSans-Regular";background-color: #00984A;font-size: 30px;color: white;}
 .modal_topicos table{
     display: block;
     margin-left: auto;
