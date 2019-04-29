@@ -16,7 +16,7 @@
 
        public function inserir_cliente(){
            $cliente = new Cliente();
-           
+           var_dump($_POST);
            $cliente->setNome($_POST['nome'])
                    ->setCPF($_POST['cpf'])
                    ->setTelefone($_POST['telefone'])

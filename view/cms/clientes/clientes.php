@@ -33,7 +33,7 @@
         <div class="campos"><?=@$registro->getUf()?></div>
         <img src="view/cms/imagem/icones/on.png" alt="on-off">
         <?php
-                    }
+            }
         ?>
 </div>
 <link rel="stylesheet" type="text/css" href="view/cms/css/cliente.css">
