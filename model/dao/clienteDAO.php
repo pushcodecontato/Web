@@ -14,10 +14,10 @@
 
             $senha = $cliente->genSenha();
 
-            $sql =  "INSERT INTO tbl_cliente(nome_cliente,cpf,telefone,celular,cnh_foto,foto_cliente,rua,bairro,cep,complemento,cidade,uf,email,senha)".
+            $sql =  "INSERT INTO tbl_cliente(nome_cliente,cpf,telefone,celular,cnh_foto,foto_cliente,rua,bairro,cep,complemento,cidade,uf,email,senha,status)".
                     "VALUES('". $cliente->getNome() ."',". $cliente->getCPF() .",". $cliente->getTelefone() .",". $cliente->getCelular() .",".
                     " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."',". $cliente->getCEP() .",".
-                    " '" . $cliente->getComplemento() . "','". $cliente->getCidade() ."','". $cliente->getUF() ."','". $cliente->getEmail() ."','". $senha ."')";
+                    " '" . $cliente->getComplemento() . "','". $cliente->getCidade() ."','". $cliente->getUF() ."','". $cliente->getEmail() ."','". $senha ."', 1)";
             
              //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -45,7 +45,7 @@
 
         }
         public function update($cliente){
-
+            
         }
         
         
@@ -77,7 +77,9 @@
                         ->setCidade($rs_cliente['cidade'])
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
-                        ->setFoto($rs_cliente['foto_cliente']);
+                        ->setFoto($rs_cliente['foto_cliente'])
+                        ->setStatus($rs_cliente['status']);
+                
 
                 $listar_registros[] = $cliente;
                 
@@ -86,6 +88,9 @@
             $this->conex->close_database();
 
             return $listar_registros;
+            
+            
+            
 
         }
         public function selectById($id){
@@ -113,7 +118,9 @@
                         ->setCidade($rs_cliente['cidade'])
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
-                        ->setFoto($rs_cliente['foto_cliente']);
+                        ->setFoto($rs_cliente['foto_cliente'])
+                        ->setStatus($rs_cliente['status']);
+                
                         //->setEstado($rs_cliente['estado']);
 
                 return $cliente;

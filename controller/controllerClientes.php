@@ -54,7 +54,10 @@
        }
 
        public function excluir_cliente(){}
-       public function atualizar_cliente(){}
+       public function atualizar_cliente(){
+           
+           
+       }
        public function logar(){
 
             // Pegando o usuario pelo email

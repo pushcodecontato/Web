@@ -284,7 +284,15 @@
                         case "LOGAR":
                            
                            $controller_clientes->logar();
+                            break;
+                            
+                            
+                            
+                        case "STATUS":
+                            $controller_clientes->status();
+                            break;
                     }
+                        
                 
                 break;
                 /* PAGINA SEJA PARCEIRO TOPICOS */
