@@ -148,13 +148,14 @@ function mostraImagemTopico(input){
 }
 var formularioBanner = 0;
 /*funções que cuidam da edição do painel IMG > conteudo < IMG*/
-function tornarEditavel(){
+function sejaParceirotornarEditavel(){
     /* Coloca a propriedade  contenteditable em todos os elementos par aque sejam editaveis */
-    $('.seja-parceiro-painel-parceiros-conteudo-conteudo * ').attr('contenteditable','true');
+    $('.seja-parceiro-painel-parceiros-conteudo-conteudo div').attr('contenteditable','true');
+    $('.seja-parceiro-painel-parceiros-conteudo-conteudo button').attr('contenteditable','true');
 
-    $('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]').focus();
-    $('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]').click();
-    $('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]').attr('autofocus','true');
+    $('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]').focus();
+    $('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]').click();
+    $('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]').attr('autofocus','true');
 
     $('#seja-parceiro-btnSalvar').show(350);
 }
@@ -167,19 +168,19 @@ function sejaParceiroSalvarImagem(lado,img){
 
       formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=ATUALIZAR&banner"></form>');
     
-      formularioBanner.append('<input type="file" name="fotolado'+ lado +'">');
+      formularioBanner.append('<input type="file" name="foto'+ lado +'">');
       
-      file = formularioBanner.find('input[type="file"][name="fotolado'+ lado +'"]');
+      file = formularioBanner.find('input[type="file"][name="foto'+ lado +'"]');
 
-    }else if(formularioBanner.find('input[type="file"][name="fotolado'+ lado +'"]')[0]){
+    }else if(formularioBanner.find('input[type="file"][name="foto'+ lado +'"]')[0]){
 
-      file = formularioBanner.find('input[type="file"][name="fotolado'+ lado +'"]');
+      file = formularioBanner.find('input[type="file"][name="foto'+ lado +'"]');
 
     }else{
 
-      formularioBanner.append('<input type="file" name="fotolado'+ lado +'">');
+      formularioBanner.append('<input type="file" name="foto'+ lado +'">');
       
-      file = formularioBanner.find('input[type="file"][name="fotolado'+ lado +'"]');
+      file = formularioBanner.find('input[type="file"][name="foto'+ lado +'"]');
     
     }
 
@@ -198,31 +199,57 @@ function sejaParceiroSalvarImagem(lado,img){
     }).click();
 
 }
-/* Salva uma imagem do lados > IMG  <  */
-function sejaParceiroSalvarPainelImagem(){
-    
-}
+function sejaParceiroEsconder(status){
 
+  if(status == 0){
+    status = 1;
+  }else{
+    status = 0;
+  }
+  $.ajax({url:'router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=ATUALIZAR&banner',
+          method:'POST',
+          type:'POST',
+          data:{
+              status
+          },
+          success:function(resposta){
+              console.log(resposta);
+              if(resposta.toString().search('sucesso')>=0){
+
+                 $.notify("Banner Atualizado com sucesso", "success");
+
+                 // Redirecionando o usuario depois da menssagem de sucesso aparecer
+                 setTimeout(function(){
+
+                   conteudo_subMenu('pagina_seja_parceiro/pagina_seja_parceiro.php');
+
+                 },800)
+
+               }
+          }
+        })
+}
 /* Salva todo o conteudo IMG > CONTEUDO < IMG*/
 function sejaParceiroSalvarPainel(){
 
   if(formularioBanner == 0)formularioBanner = $('<form  method="post" enctype="multipart/form-data" action="router.php?controller=SEJA_PARCEIRO_TOPICOS&modo=ATUALIZAR&banner"></form>');
 
     // Verifica se e para editar o conteudo do centro
-  if($('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]')[0]){
-    var texto1 = $('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]')[0].innerHTML;
-    var texto2 = $('.seja-parceiro-painel-parceiros-conteudo-conteudo p[contenteditable]')[1].innerHTML;
+  if($('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]')[0]){
+
+    var texto1 = $('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]')[0].innerHTML;
+    var texto2 = $('.seja-parceiro-painel-parceiros-conteudo-conteudo div[contenteditable]')[1].innerHTML;
     
     formularioBanner.append('<textarea name="texto1"></textarea>');
     formularioBanner.find('[name="texto1"]').text(texto1);
 
-    formularioBanner.append('<textarea name="texto2"></textarea>')
-    formularioBanner.find('[name="texto2"]').text(texto2);
+    formularioBanner.append('<textarea name="texto3"></textarea>')
+    formularioBanner.find('[name="texto3"]').text(texto2);
     
     var textoBotao = $('.seja-parceiro-painel-parceiros-conteudo-conteudo button[contenteditable]')[0].innerHTML;
 
-    formularioBanner.append('<input type="text" name="btnTexto">')
-    formularioBanner.find('[name="btnTexto"]').val(textoBotao);
+    formularioBanner.append('<input type="text" name="texto2">')
+    formularioBanner.find('[name="texto2"]').val(textoBotao);
   }
 
   //console.log("FORM : ",formularioBanner.serialize());

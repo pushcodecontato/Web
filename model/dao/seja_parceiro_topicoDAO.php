@@ -63,6 +63,26 @@
 
             $this->conex->close_database();
         }
+        public function updateBanner($banner){
+
+
+           $sql = "INSERT INTO tbl_seja_parceiro_banner(texto1_seja_parceiro_banner,texto2_seja_parceiro_banner,texto3_seja_parceiro_banner,foto1_seja_parceiro_banner,foto2_seja_parceiro_banner,status)".
+                  "VALUES('". $banner->getTexto1() ."','". $banner->getTexto2() ."',".
+                  "'". $banner->getTexto3() ."','". $banner->getFoto1() ."',".
+                  "'". $banner->getFoto2() ."',". $banner->getStatus() .")";
+
+           //Abrido conexao com o BD
+           $PDO_conex = $this->conex->connect_database();
+
+           if($PDO_conex->query($sql)){
+                echo "Update com sucesso";
+           }else{
+                echo "Erro no script de update $sql";
+           }
+
+            $this->conex->close_database();
+        }
+        
         public function selectBanner(){
 /* Parei aqui */
             $sql = "SELECT * FROM tbl_seja_parceiro_banner order by id_seja_parceiro_banner desc limit 1";
@@ -83,11 +103,11 @@
                        ->setFoto2($rs_banner['foto2_seja_parceiro_banner'])
                        ->setStatus($rs_banner['status']);
 
-                return $topico;
+                return $banner;
 
             } else {
-                    echo "Topico não encontrado!!";
-                    return false;
+                 echo "Banner não encontrado!!";
+                 return false;
             }   
         }
         public function selectAll(){

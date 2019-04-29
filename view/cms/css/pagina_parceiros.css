@@ -120,7 +120,7 @@ text-align: center;
     background-color: white;
     z-index: 12;
 }
-.seja-parceiro-painel-parceiros-conteudo-conteudo p{
+.seja-parceiro-painel-parceiros-conteudo-conteudo p,.seja-parceiro-painel-parceiros-conteudo-conteudo div{
     margin: 5px 0px;
     font-size: 0.9em;
 }
