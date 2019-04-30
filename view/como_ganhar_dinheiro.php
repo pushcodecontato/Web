@@ -29,7 +29,6 @@
                             <li><a href="?sobre">SOBRE NÓS</a></li>
                         </ul>
                     </div>
-
                     <div class="segura_login">
                         <div class="login_cadastro" id="login" style="width: 110px;">
                             <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
@@ -46,127 +45,74 @@
             </div>
         </div>
     </header>
+    		
     <div id="principal_conteudo">
+    	<?php 
+					require_once('controller/controllerComo_ganhar_dinheiro.php');
+
+					$controller_como_ganhar_dinheiro = new ControllerComo_ganhar_dinheiro();
+
+					$listComo_ganhar_dinheiro =  $controller_como_ganhar_dinheiro->listar_como_ganhar_dinheiro();
+
+
+					if(count($listComo_ganhar_dinheiro) < 1){
+					  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+					  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+					}
+
+					foreach($listComo_ganhar_dinheiro as $registro){
+				?>
         <!-- ************************CADASTRAR VEICULOS******************** --> 
-        <div id="sessao_cadastrar_veiculo">
-            <div id='titulo_cadastrar_veiculo'>
-                <h2>Como cadastrar seu veículo?</h2>
-            </div>
-            <div class="lista_cadastrar_veiculo">
-                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
-            </div>
-            <div class="lista_cadastrar_veiculo">
-                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
-            </div>
-            <div id="botao">
-                <button class="link_pagina">Saiba mais</button>
-            </div>
-        </div>
-        <!-- ************************SESSÃO ANUNCIOS******************** -->
-        <div id="sessao_anuncios">
-            <div id='titulo_cadastrar_anuncio'>
-                <h2>Como cadastrar um anuncio?</h2>
-            </div>
-            <div class="lista_cadastrar_anuncio">
-                <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
-            </div>
-            <div class="lista_cadastrar_anuncio">
-                <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
-            </div>
-            <div id="botao_anuncio">
-                <button class="link_pagina">Saiba mais</button>
-            </div>
-        </div>
-        <!-- ************************SESSÃO PAGAMENTOS******************** -->
-        <div id="sessao_pagamentos">
-            <div id='titulo_cadastrar_pagamento'>
-                <h2>Como cadastrar um anuncio?</h2>
-            </div>
-            <div class="lista_cadastrar_pagamento">
-                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
-            </div>
-            <div class="lista_cadastrar_pagamento">
-                <img src="view/imagem/de_tempo.png" alt="lista_cadastrar">
-            </div>
-            <div id="botao_pagamento">
-                <button class="link_pagina">Saiba mais</button>
-            </div>
-
-        </div>
-        <!-- ************************SESSÃO AVALIACAO******************** -->
-        <div id="sessao_avaliacao">
-        <div id='titulo_cadastrar_avaliacao'>
-            <h2>Como cadastrar um anuncio?</h2>
-        </div>
-        <div class="lista_cadastrar_avaliacao">
-            <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
-        </div>
-        <div class="lista_cadastrar_avaliacao">
-            <img src="view/imagem/lista_cadastrar.png" alt="lista_cadastrar">
-        </div>
-        <div id="botao_avaliacao">
-            <button class="link_pagina">Saiba mais</button>
-        </div>
-    </div>
-        <div id="principal">
-            <section class="sobre_tabela">
-                <h2>Sobre a tabela de percentual</h2>
-                <div class="texto_tabela">
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Nunc maximus, nulla ut 
-                        commodo sagittis, sapien dui mattis dui, 
-                        non pulvinar lorem felis nec erat</p>
-                </div>
-
-            </section>
-            <section class="tabela_percentual">
-                <h2>Como a tabela funciona</h2>
+		<section id="sessao_cadastrar_veiculo">
+			<div id="titulo_cadastrar_veiculo">
+				<h2><?=@$registro->getTitulo_sessao1()?></h2>
+			</div>
+			<div class="lista_cadastrar_veiculo">
+				<ul>
+					<br>
+					<li><?=@$registro->getLista1_sessao1()?></li>
+				</ul>
+			</div>
+			<div  class="lista_cadastrar_veiculo">
+				<figure height="300px" width="400px" style=" background-image: url(view/upload/<?=@$registro->getImg1_sessao1()?>);"> </figure>
+			</div>
+			<div class="lista_cadastrar_veiculo">
+				<ul>
+					<br>
+					<li><?=@$registro->getLista2_sessao1()?></li>
+				</ul>
+			</div>
+		</section>
+         <!-- ************************CADASTRAR ANUNCIO******************** --> 
+		<section id="sessao_cadastrar_anuncio">
+			<div id="titulo_cadastrar_anuncio">
+				<h2><?=@$registro->getTitulo_sessao2()?></h2>
+			</div>
+			<div  class="lista_cadastrar_anuncio">
+				<figure height="300px" width="400px" style=" background-image: url(view/upload/<?=@$registro->getImg1_sessao2()?>);"> </figure>
+			</div>
+			<div class="lista_cadastrar_anuncio">
+				<ul>
+					<br>
+					<li><?=@$registro->getLista1_sessao2()?></li>
+				</ul>
+			</div>
+			<div  class="lista_cadastrar_anuncio">
+				<figure height="300px" width="400px" style=" background-image: url(view/upload/<?=@$registro->getImg1_sessao1()?>);"> </figure>
+			</div>
+			<div class="lista_cadastrar_anuncio">
+				<ul>
+					<br>
+					<li><?=@$registro->getLista2_sessao2()?></li>
+				</ul>
+			</div>
+		</section>
+		 <!-- ************************TABELA DE PERCENTUAL******************** --> 
+		<section class="tabela_percentual">
+                <h2><?=@$registro->getTitulo_sessao3()?></h2>
                 <div class="hold_tabela">
                     <div class="texto_como_funciona">
-                        <p>Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Nunc maximus, nulla ut 
-                            commodo sagittis, sapien dui mattis dui, 
-                            non pulvinar lorem felis nec erat
+                        <p><?=@$registro->getTexto_sessao3()?>
                         </p>
                     </div>
                     <div class="tabela">
@@ -240,8 +186,10 @@
                     </div>
                 </div>
             </section>
-        </div>
-    </div>
+            <?php
+					}
+            ?>
+	</div>
     <footer class="cor_site_padrao">
         <!--  Caixas que contem o contato e o navegar pelo site -->
         <div class="newsletter">

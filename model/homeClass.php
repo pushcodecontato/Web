@@ -1,5 +1,6 @@
 <?php 
 /* Será que fica bom em uma só class ? Eu me odeio!!!!! ass: GIl */
+/* TÁ HORRÍVEL ISSO !! (:D) ass: Lucas*/
 class Home{
     
     /* SESSÃO 1 Banner */

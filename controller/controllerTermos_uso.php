@@ -6,7 +6,6 @@ class ControllerTermos_uso{
 
     public function __construct(){
 
-        //require_once('model/dao/conexaoMysql.php');
         require_once('model/dao/termos_usoDAO.php');
         require_once('model/termos_usoClass.php');
 
