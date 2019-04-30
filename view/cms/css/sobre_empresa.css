@@ -28,9 +28,13 @@
     padding-bottom: 30px;
 }
 #segura_button{
-    width: 480px;
+    
+    width: 273px;
+   
     height: 50px;
+    
     margin-left:auto;
+
 }
 .adicionar_sobre{
     width: 180px;

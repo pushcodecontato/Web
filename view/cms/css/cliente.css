@@ -33,4 +33,6 @@
 .campos{
     float: left;
     width: 142px;
+    word-break: break-all;
+    padding: 0px 2px;
 }

@@ -284,6 +284,39 @@
                         case "LOGAR":
                            
                            $controller_clientes->logar();
+                            break;
+                            
+                            
+                            
+                        case "STATUS":
+                            $controller_clientes->status();
+                            break;
+                    }
+                        
+                
+                break;
+                /* PAGINA SEJA PARCEIRO TOPICOS */
+                case "SEJA_PARCEIRO_TOPICOS":
+                    
+                    require_once("controller/controllerSejaParceiro.php");
+                    $controller_seja_parceiro = new ControllerSejaParceiro();
+
+                    switch($modo){
+                        case "INSERIR":
+                            
+                            $controller_seja_parceiro->inserir_topico();
+
+                            break;
+                        case "ATUALIZAR":
+                            
+                            $controller_seja_parceiro->atualizar_seja_parceiro();
+
+                            break;
+                        case "EXCLUIR":
+                            
+                            $controller_seja_parceiro->excluir_topico();
+                            
+                            break;
                     }
                 
                 break;

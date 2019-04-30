@@ -1,3 +1,14 @@
+<?php
+    require_once('controller/controllerSejaParceiro.php');
+
+    $controller_seja_parceiro = new ControllerSejaParceiro();
+
+    $lista = $controller_seja_parceiro->listar_topicos();
+    
+    $banner = $controller_seja_parceiro->getBanner();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,28 +59,64 @@
         </header>
         <div id="conteudo">
 
-             <div class="row" style=" height: 360px;">
+             <div class="row" style=" height: 360px; <?=($banner->getStatus() == 0)?'display:none;':''?>">
                 <div class="cold4 esquerda">
-                    <img src="view/imagem/bg-parceiros.jpg" style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto1()?>" style="height: 355px; width:100%;">
                 </div>
                 <div class="cold2 center" style="width: 29%;">
                     <div class="esquerda border-left"></div>
                     <div id="seja-parceiro" class="center" style="margin-top: 15px;">
-                        <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
-                        <button>Quero ser um Parceiro</button>
-                        <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
-                        <img src="view/imagem/selo4.png" alt="sdssd" width="92">
+                        <div>
+                            <?=@$banner->getTexto1()?>
+                        </div> 
+                        <button><?=@$banner->getTexto2()?></button>
+                        <div>
+                            <?=@$banner->getTexto3()?>
+                        </div>
                     </div>
                     <div class="direita border-right"></div>
                 </div>
                 <div class="cold4 direita">
-                    <img src="view/imagem/bg-usuario.jpg"  style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto2()?>"  style="height: 355px; width:100%;">
                 </div>
 
              </div>
              
              <div id="beficiosBox" class="center">
-                 <div class="row center">
+               <?php 
+
+                    if(!count($lista) < 1){
+
+
+                         if(count($lista) <= 1){
+                         
+                            $lista_topicos =  array_chunk($lista,1);
+                         
+                         }else{
+
+                            $lista_topicos =  array_chunk($lista,3);
+
+                         }
+
+                        foreach($lista_topicos as $listaTopicos){?>
+                            <div class="row center">
+                                <?php foreach($listaTopicos as $topico){ ?>
+                                        <div class="cold3 center">
+                                            <div class="beneficio center">
+                                                <div class="img center">
+                                                    <img src="view/upload/<?=@$topico->getFoto()?>">
+                                                </div>
+                                                <div class="titulo"><?=@$topico->getTitulo()?></div>
+                                                <div class="desc">
+                                                    <?=@$topico->getTexto()?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php }?>
+                            </div>
+                 <?php } ?>
+               <?php } ?>
+                 <!--<div class="row center">
                     <div class="cold3 center">
                         <div class="beneficio center">
                             <div class="img center">
@@ -138,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                 </div>
+                 </div>-->
              </div>
         </div>
     </div>

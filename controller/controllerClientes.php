@@ -16,7 +16,7 @@
 
        public function inserir_cliente(){
            $cliente = new Cliente();
-           
+           var_dump($_POST);
            $cliente->setNome($_POST['nome'])
                    ->setCPF($_POST['cpf'])
                    ->setTelefone($_POST['telefone'])
@@ -54,7 +54,10 @@
        }
 
        public function excluir_cliente(){}
-       public function atualizar_cliente(){}
+       public function atualizar_cliente(){
+           
+           
+       }
        public function logar(){
 
             // Pegando o usuario pelo email

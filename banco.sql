@@ -1,15 +1,12 @@
 /*Banco bckp*/
 /*
-
   CMS {
   
     login       : admin@mobshare.com
     senha       : 123
   
   }
-
 */
-
 CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `mob_share`;
 -- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
@@ -397,6 +394,7 @@ CREATE TABLE `tbl_cliente` (
   `uf` varchar(2) NOT NULL COMMENT 'sigla do estado do cliente ',
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
+  `status` tinyint(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -783,7 +781,7 @@ CREATE TABLE `tbl_home_sessao1` (
   `status_banner` float NOT NULL,
   `texto2_banner` text NOT NULL,
   PRIMARY KEY (`id_pagina_home`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -792,7 +790,7 @@ CREATE TABLE `tbl_home_sessao1` (
 
 LOCK TABLES `tbl_home_sessao1` WRITE;
 /*!40000 ALTER TABLE `tbl_home_sessao1` DISABLE KEYS */;
-INSERT INTO `tbl_home_sessao1` VALUES (1,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',1,'#anuncienamobshare'),(23,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',0,'#anuncienamobshare'),(24,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',1,'#anuncienamobshare');
+INSERT INTO `tbl_home_sessao1` VALUES (1,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',1,'#anuncienamobshare'),(23,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',0,'#anuncienamobshare'),(24,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',1,'#anuncienamobshare'),(25,'Ganhar dinheiro compartilhando seu veículo nunca foi tão fácil!','imagem1.jpg',0,'#anuncienamobshare');
 /*!40000 ALTER TABLE `tbl_home_sessao1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1101,8 +1099,9 @@ CREATE TABLE `tbl_menu` (
   `nome_menu` varchar(25) NOT NULL COMMENT 'nome do menu',
   `href` varchar(150) NOT NULL COMMENT 'url/ link do menu',
   `icone` varchar(255) NOT NULL COMMENT 'ícone do menu',
+  `onclick` varchar(255) NOT NULL,
   PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1111,6 +1110,7 @@ CREATE TABLE `tbl_menu` (
 
 LOCK TABLES `tbl_menu` WRITE;
 /*!40000 ALTER TABLE `tbl_menu` DISABLE KEYS */;
+INSERT INTO `tbl_menu` VALUES (1,'Gerenciar Paginas','#','paginas.png','abrir_menu(\'120px\', \'#gerenciar_paginas\')'),(2,'Gerenciar Veículos','#','veiculo.png','abrir_menu(\'120px\', \'#gerenciar_veiculos\')'),(3,'Anúncios','#','anuncio.png','abrir_menu(\'120px\',\'#gerenciar_anuncios\')'),(4,'Clientes','#','cliente.png','conteudo_subMenu(\'clientes/clientes\',true)'),(5,'Usuários','#','funcionario.png','abrir_menu(\'140px\', \'#usuarios\', \'#usuario_atv\')'),(6,'Fale conosco','#','fale_conosco.png','conteudo_subMenu(\'fale_conosco/fale_conosco\',true)'),(7,'Email marketing','#','email.png','conteudo_subMenu(\'email_marketing/email_marketing\',true)');
 /*!40000 ALTER TABLE `tbl_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1304,7 +1304,7 @@ CREATE TABLE `tbl_pagina_sobre` (
   `texto_valores_sobre` text NOT NULL,
   `foto_valores_sobre` text NOT NULL,
   PRIMARY KEY (`id_sobre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1313,6 +1313,7 @@ CREATE TABLE `tbl_pagina_sobre` (
 
 LOCK TABLES `tbl_pagina_sobre` WRITE;
 /*!40000 ALTER TABLE `tbl_pagina_sobre` DISABLE KEYS */;
+INSERT INTO `tbl_pagina_sobre` VALUES (1,'aaaaaaaa','aaaaaaaaaaaa','e85bac6eff82f03e55700514db1ff178.jpg','aaaaaaaaaaa','e85bac6eff82f03e55700514db1ff178.jpg','aaaaaaaaaaaa','aaaaaaaaaa','aaaaaaaaaaa','e85bac6eff82f03e55700514db1ff178.jpg','aaaaaaaaaa','aaaaaaaaaaa','e85bac6eff82f03e55700514db1ff178.jpg');
 /*!40000 ALTER TABLE `tbl_pagina_sobre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1586,7 +1587,7 @@ CREATE TABLE `tbl_seja_parceiro` (
   `texto_seja_parceiro` text NOT NULL COMMENT 'texto da página seja parceiro',
   `foto_seja_parceiro` varchar(45) NOT NULL COMMENT 'foto da página seja parceiro',
   PRIMARY KEY (`id_seja_parceiro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1595,7 +1596,37 @@ CREATE TABLE `tbl_seja_parceiro` (
 
 LOCK TABLES `tbl_seja_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_seja_parceiro` DISABLE KEYS */;
+INSERT INTO `tbl_seja_parceiro` VALUES (1,'asdasd','gdfgdgdfg','dc65a38fb992a06b5385c988978b0505.png');
 /*!40000 ALTER TABLE `tbl_seja_parceiro` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_seja_parceiro_banner`
+--
+
+DROP TABLE IF EXISTS `tbl_seja_parceiro_banner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_seja_parceiro_banner` (
+  `id_seja_parceiro_banner` int(11) NOT NULL AUTO_INCREMENT,
+  `texto1_seja_parceiro_banner` varchar(255) NOT NULL,
+  `texto2_seja_parceiro_banner` varchar(255) NOT NULL,
+  `texto3_seja_parceiro_banner` varchar(255) NOT NULL,
+  `foto1_seja_parceiro_banner` varchar(255) NOT NULL,
+  `foto2_seja_parceiro_banner` varchar(255) NOT NULL,
+  `status` tinyint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_seja_parceiro_banner`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_seja_parceiro_banner`
+--
+
+LOCK TABLES `tbl_seja_parceiro_banner` WRITE;
+/*!40000 ALTER TABLE `tbl_seja_parceiro_banner` DISABLE KEYS */;
+INSERT INTO `tbl_seja_parceiro_banner` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','Quero ser um Parceiro','Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','bg-parceiros.jpg','bg-usuario.jpg',1),(29,'Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','Quero ser um Parceiro','Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','bg-parceiros.jpg','bg-usuario.jpg',0),(30,'Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','Quero ser um Parceiro','Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus','bg-parceiros.jpg','bg-usuario.jpg',1);
+/*!40000 ALTER TABLE `tbl_seja_parceiro_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1830,7 +1861,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-28 11:13:02
+-- Dump completed on 2019-04-29 18:33:31
 
 
 /* Alterações */
@@ -1931,26 +1962,21 @@ DROP COLUMN `texto_1_termos`,
 CHANGE COLUMN `id_termos_uso` `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página termos de uso' ,
 CHANGE COLUMN `pdf_termos` `texto` TEXT NOT NULL COMMENT 'pdf da página termos de uso' ,
 CHANGE COLUMN `titulo_termos` `titulo` TEXT NOT NULL COMMENT 'título da página termos de uso' ;
-
 */
 
 /* Alterações: 
   +  tbl_home_sessao3{
     + `titulo_sessao3` VARCHAR(255)
   }
-
 ALTER TABLE `mob_share`.`tbl_home_sessao3` 
 ADD COLUMN `titulo_sessao3` VARCHAR(255) NOT NULL AFTER `status_sessao3`;
-
 */
 /* Alterações: 
   +  tbl_home_sessao5{
     + `subtitulo_sessao5` VARCHAR(255)
   }
-
 ALTER TABLE `mob_share`.`tbl_home_sessao5` 
 ADD COLUMN `subtitulo_sessao5` VARCHAR(255) NOT NULL AFTER `texto4_sessao5`;
-
 */
 /* Alterações:
    + tbl_menu{
@@ -1958,5 +1984,26 @@ ADD COLUMN `subtitulo_sessao5` VARCHAR(255) NOT NULL AFTER `texto4_sessao5`;
   }
 ALTER TABLE `mob_share`.`tbl_menu` 
 ADD COLUMN `click` VARCHAR(255) NOT NULL AFTER `icone`;
+*/
 
+/*
+ Alterações:
+	+ tbl_cliente{
+		+ status tinyint
+	}
+ALTER TABLE `mob_share`.`tbl_cliente` 
+ADD COLUMN `status` TINYINT(2) NOT NULL DEFAULT 1 AFTER `senha`;
+*/
+/*
+ Alterações:
+	+ tbl_seja_parceiro_banner
+CREATE TABLE `mob_share`.`tbl_seja_parceiro_banner` (
+ `id_seja_parceiro_banner` INT NOT NULL AUTO_INCREMENT,
+ `texto1_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `texto2_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `texto3_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `foto1_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `foto2_seja_parceiro_banner` VARCHAR(255) NOT NULL,
+ `status` tinyint(2) NOT NULL DEFAULT 1,
+PRIMARY KEY (`id_seja_parceiro_banner`));
 */

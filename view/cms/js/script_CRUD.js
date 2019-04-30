@@ -617,3 +617,24 @@ function toCSV(nome,csv = 0){
 	document.body.appendChild(a);
 	a.click();
  }
+
+/* ativar e desativar de cliente*/
+function clientes_ativar_desativar(id, status){
+    if (status == 0){
+        status = 1;
+    }else{
+        status = 0;
+    }
+    $.ajax({
+        type:'post',
+        method:'post',
+        url:'router.php?controller=cliente&modo=status&id='+id,
+        data:{
+            status
+        },
+        success:function(resposta){
+           console.log(resposta)
+        }
+        
+    }) 
+}
