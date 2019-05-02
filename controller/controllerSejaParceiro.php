@@ -8,7 +8,7 @@ class ControllerSejaParceiro{
        public function __construct(){
 
         require_once('model/topicoParceiroClass.php');
-        require_once('model/dao/sejaParceiroTopicoDAO.php');
+        require_once('model/dao/seja_parceiro_topicoDAO.php');
 
         $this->topicosDAO = new SejaParceiroTopicoDAO();
 
@@ -54,10 +54,31 @@ class ControllerSejaParceiro{
 
        }
        public function atualizar_banner(){
-              //var_dump($_POST);
-              //var_dump($_FILES);
+
               $banner = $this->topicosDAO->selectBanner();
-              
+
+              if(isset($_POST['texto1'])){
+
+                 $banner->setTexto1($_POST['texto1'])
+                        ->setTexto2($_POST['texto2'])
+                        ->setTexto3($_POST['texto3']);
+              }
+              if($_FILES['foto1']['size'] > 0){
+                 $banner->setFoto1($this->uploadImagem($_FILES['foto1']));
+              }
+              if($_FILES['foto2']['size'] > 0){
+                 $banner->setFoto2($this->uploadImagem($_FILES['foto2']));
+              }
+              if(isset($_POST['status'])){
+                 $banner->setStatus($_POST['status']);
+              }else{
+                 $banner->setStatus(1);
+              }
+
+              $this->topicosDAO->updateBanner($banner);
+       }
+       public function getBanner(){
+              return $this->topicosDAO->selectBanner();
        }
        public function listar_topicos(){
 

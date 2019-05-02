@@ -54,7 +54,7 @@
                                 <img src="view/cms/imagem/icones/home.png" alt="tipo">
                                 <p>Pagina Home</p>
                             </div>
-                            <div class="item_sub_menu">
+                            <div class="item_sub_menu" onclick="conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela.php')">
                                 <img src="view/cms/imagem/icones/money.png" alt="tipo">
                                 <p>Ganhe dinheiro</p>
                             </div>

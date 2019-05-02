@@ -33,12 +33,15 @@
             <td><?=$registro->getCelular()?></td>
             <td><?=$registro->getCidade()?></td>
             <td><?=$registro->getUf()?></td>
-            <td><img onclick="clientes_ativar_desativar(<?=@$registro->getId()?>,<?=@$registro->getStatus()?>)" 
+            <td>
+                    <img onclick="clientes_ativar_desativar(<?=@$registro->getId()?>,<?=@$registro->getStatus()?>)" 
+
                          <?php if( $registro->getStatus() == 1){ ?>
-                            src="view/cms/imagem/icones/on.png" alt="on-off"
+                            src="view/cms/imagem/icones/on.png" alt="on-off">
                          <?php }else{ ?>
-                            src="view/cms/imagem/icones/off.png" alt="on-off"
-             >           <?php } ?></td>
+                            src="view/cms/imagem/icones/off.png" alt="on-off">
+                        <?php } ?>
+            </td>
         </tr>
         <?php
     }

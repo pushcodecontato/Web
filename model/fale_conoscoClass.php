@@ -5,6 +5,7 @@ class Fale_conosco{
     private $id;
     private $nome;
     private $email;
+    private $telefone;
     private $celular;
     private $mensagem;
 
@@ -26,6 +27,10 @@ class Fale_conosco{
         return $this->email;
     }
     
+	public function getTelefone(){
+		return $this->telefone;
+	}
+
     public function getCelular(){
         return $this->celular;
     }
@@ -50,7 +55,12 @@ class Fale_conosco{
 		$this->email =  $email;
 		return $this;
     }
-    
+
+    public function setTelefone($telefone){
+		$this->telefone = $telefone;
+		return $this;
+    }
+
     public function setCelular($celular){
 		$this->celular =  $celular;
 		return $this;

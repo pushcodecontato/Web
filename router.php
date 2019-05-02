@@ -456,8 +456,56 @@
  
                 break;
 
+                /*COMO GANHAR DINHEIRO*/
+
+                case 'COMO_GANHAR_DINHEIRO':
+                
+                require_once('controller/controllerComo_ganhar_dinheiro.php');
+
+                $controller_como_ganhar_dinheiro = new ControllerComo_ganhar_dinheiro();
+              
+                switch($modo){
+                    case "INSERIR":
+                        
+                        $controller_como_ganhar_dinheiro->inserir_como_ganhar_dinheiro();
+
+                        
+                        break;
+                    case "ATUALIZAR":
+                         
+                         $controller_como_ganhar_dinheiro->atualizar_como_ganhar_dinheiro();
+                         
+                         break;
+                    case "EXCLUIR":
+                         $controller_como_ganhar_dinheiro->excluir_como_ganhar_dinheiro();
+                         break;
+                    case "SELECTALL":
+
+                        $listComo_ganhar_dinheiro =  $controller_como_ganhar_dinheiro->listar_como_ganhar_dinheiro();
+
+                        require_once('view/cms/pagina_como_ganhar_dinheiro/tabela.php');
+
+                        break;
+                   case "SELECT":
+                        
+                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getById();
+                        require_once('view/cms/pagina_como_ganhar_dinheiro/cadastrar_sessao1.php');
+                        break;
+                }
+ 
+                break;
+                case "FALE_CONOSCO":
+                     require_once('controller/controllerFale_conosco.php');
+                     $controller_fale_conosco = new ControllerFale_conosco();
+                     switch($modo){
+                           case "INSERIR":
+                                $controller_fale_conosco->inserir_fale_conosco();
+                                break;
+                     }
+                     break;
+
                 /*Termo de Uso*/
-                case ('TERMOS' || $controller == "TERMOS_USO"):
+                case ($controller == 'TERMOS' || $controller == "TERMOS_USO"):
                 
                 require_once('controller/controllerTermos_uso.php');
 
@@ -493,6 +541,7 @@
                 }
  
                 break;
+
                 
         }
       

@@ -32,7 +32,7 @@
         }
 
         public function delete($id){
-            $sql = "DELETE FROM tbl_niveis where id_niveis=".$id;
+            $sql = "UPDATE tbl_niveis SET excluido = 1 WHERE id_niveis=".$id;
 
             $PDO_conex = $this->conex->connect_database();
 
@@ -80,7 +80,9 @@
                 $niveis = new Niveis();
                 $niveis->setId_niveis($rs_niveis['id_niveis'])
                        ->setNome_nivel($rs_niveis['nome_nivel'])
-                       ->setDescricao($rs_niveis['descricao']);           
+                       ->setDescricao($rs_niveis['descricao'])
+                       ->setListaMenu($this->selectMenu($rs_niveis['id_niveis']))
+                       ->setExcluido($rs_niveis['excluido']);
                         
                 $listar_niveis[] = $niveis;
             }
@@ -108,6 +110,8 @@
                 $listar_niveis->setNome_nivel($rs_niveis['nome_nivel']);
                 
                 $listar_niveis->setDescricao($rs_niveis['descricao']);
+
+                $listar_niveis->setExcluido($rs_niveis['excluido']);
 
                 $listar_niveis->setListaMenu($this->selectMenu($rs_niveis['id_niveis']));
             }
@@ -162,7 +166,7 @@
                      ->setNome($rs_menu['nome_menu'])
                      ->setHref($rs_menu['href'])
                      ->setIcone($rs_menu['icone'])
-                     ->setClick($rs_menu['click'])
+                     ->setClick($rs_menu['onclick'])
                      ->setSelecionado($rs_menu['selecionado']);
                 
                 $lista_menu [] = $menu;

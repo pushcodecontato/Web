@@ -6,6 +6,7 @@ class TipoVeiculo{
     private $id_tipo_veiculo;
     private $nome_tipo_veiculo;
     private $percentual;
+    private $excluido;
     
     public function __construct(){
 
@@ -41,6 +42,14 @@ class TipoVeiculo{
 
         return $this;
     
+    }
+
+    public function setExcluido($excluido){
+        $this->excluido = $excluido;
+        return $this;
+    }
+    public function getExcluido(){
+        return $this->excluido;
     }
 }
 

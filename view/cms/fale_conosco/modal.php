@@ -26,7 +26,7 @@
                     <p><?=@$registro->getCelular()?></p>
                 </div>
                 <div class="descarregarConteudo">
-                    <textarea rows="8" cols="40" maxlength="500">
+                    <textarea rows="8" cols="40" style="resize: none;" maxlength="500">
                         <?=@$registro->getMensagem()?>
                     </textarea>
                 </div>

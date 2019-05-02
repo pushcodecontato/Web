@@ -467,11 +467,11 @@
 /* section 6 */
 .section_fale_conosco{
     width: 100%;
-    height: 650px;
+    height: 702px;
     margin: 0px auto;
     padding-top:50px;
     background-color: #ededed;
-/*    box-shadow: -7px -8px 91px 0px #848484;*/
+    /*    box-shadow: -7px -8px 91px 0px #848484;*/
 }
 
 .section_fale_conosco h2{

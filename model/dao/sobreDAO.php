@@ -123,8 +123,6 @@ class SobreDAO{
         {
             $sobre = new Sobre();
             $sobre->setId_sobre($rs_sobre['id_sobre'])
-                
-                ->setId_sobre($rs_sobre['id_sobre'])
                 ->setTitulo_sobre($rs_sobre['titulo_sobre'])
                 ->setTexto_sobre($rs_sobre['texto_sobre'])
                 ->setFoto_sobre($rs_sobre['foto_sobre'])

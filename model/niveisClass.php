@@ -5,6 +5,7 @@
         private $id_niveis;
         private $nome_nivel;
         private $descricao;
+        private $excluido;
         private $lista_menu;
 
 
@@ -46,7 +47,14 @@
         public function getListaMenu(){
             return $this->lista_menu;
         }
-        
+        /* Gets e Sets que definem se o nivel foi ou não excluido */
+        public function setExcluido($excluido){
+            $this->excluido = $excluido;
+            return $this;
+        }
+        public function getExcluido(){
+            return $this->excluido;
+        }
        
     }
     /* Class que representa os itens do menu  */

@@ -61,15 +61,39 @@
                 </div>
                 <div class="item_caixa_veiculo">
                     <label> Modelo </label>
-                    <input value="<?=@$anuncio->getVeiculo()->getModelo()->getNome()?>" disabled>
+                    <?php if($anuncio->getVeiculo()->getModelo()->getExcluido() == 1){?>
+                
+                        <input value="<?=@$anuncio->getVeiculo()->getModelo()->getNome()?>" title="Modelo excluido " style="border-color: #f70000;" disabled>
+
+                    <?php }elseif($anuncio->getVeiculo()->getModelo()->getStatus() == 0){?>
+
+                        <input value="<?=@$anuncio->getVeiculo()->getModelo()->getNome()?>" title="Modelo desativado " style="border-color: #f70000;" disabled>
+
+                    <?php }else{?>
+
+                        <input value="<?=@$anuncio->getVeiculo()->getModelo()->getNome()?>" disabled>
+
+                    <?php }?>
                 </div>
                 <div class="item_caixa_veiculo">
                     <label> Tipo </label>
-                    <input value="<?=@$anuncio->getVeiculo()->getTipo()->getNome()?>" disabled>
+                    <?php if($anuncio->getVeiculo()->getTipo()->getExcluido() == 1){ ?>
+                
+                        <input value="<?=@$anuncio->getVeiculo()->getTipo()->getNome()?>" title="Tipo de veiculo Excluido" style="border-color: #f70000;" disabled>
+                
+                    <?php }else{ ?>
+
+                        <input value="<?=@$anuncio->getVeiculo()->getTipo()->getNome()?>" disabled>
+
+                    <?php } ?>
                 </div>
                 <div class="item_caixa_veiculo">
                     <label> Marca </label>
-                    <input value="<?=@$anuncio->getVeiculo()->getMarca()->getNome()?>" disabled>
+                    <?php if($anuncio->getVeiculo()->getMarca()->getStatus() == 0){?>
+                        <input value="<?=@$anuncio->getVeiculo()->getMarca()->getNome()?>" title="Marca desativada" style="border-color: #f70000;" disabled>
+                    <?php }else{?>
+                        <input value="<?=@$anuncio->getVeiculo()->getMarca()->getNome()?>" disabled>
+                    <?php } ?>
                 </div>
             </div>
         </div>

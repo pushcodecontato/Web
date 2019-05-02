@@ -336,7 +336,12 @@ function chamaModalVeiculosAprova(id){
 		modal(res.toString());
     })
 }
-
+function chamaModalEmailMarketing(id_email_mkt){
+	$.get('?cms/email_marketing/modal.php&id_email_mkt='+ id_email_mkt)
+     .then(function(res){
+		modal(res.toString());
+	});
+}
 
 
 // FAQ
@@ -425,7 +430,88 @@ function faq_delete(id){
 }
 
 // PAGINA GANHE DINHEIRO
+function como_ganhar_dinheiro_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=como_ganhar_dinheiro&modo=select',
+		data:{id},
+		success:function(dados){
+			modal(dados);
+		}
+	})
+}
 
+function como_ganhar_dinheiro_getDados(){
+
+	conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+
+}
+function como_ganhar_dinheiro_insert(form){
+
+	event.preventDefault();
+	console.log("Hellow!!!!!!")
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+			console.log("Hellow@",dados);
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Cadastrado com sucesso", "success");
+
+				conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+				fecharModal();
+			}
+		}
+	})
+}
+function como_ganhar_dinheiro_update(form){
+
+	event.preventDefault();
+
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Atualizado com sucesso", "success");
+
+				conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+				
+				fecharModal()
+
+
+			}
+		}
+	})
+}
+
+function como_ganhar_dinheiro_delete(id){
+	event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=como_ganhar_dinheiro&modo=excluir&id='+id,
+		success:function(dados){
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+				
+
+			}
+		}
+	});
+}
 // SEJA PARCEIRO
 
 // SOBRE NOS

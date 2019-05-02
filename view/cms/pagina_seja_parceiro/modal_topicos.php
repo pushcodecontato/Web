@@ -33,7 +33,7 @@ if(isset($_GET['id'])){
     <table>
         <tr>
             <td><label>Titulo</label></td>
-            <td><input placeholder="Titulo do topico" name="titulo" value="<?=@$titulo?>" required></td>
+            <td><input placeholder="Titulo do topico" name="titulo" maxlength="45" value="<?=@$titulo?>" required></td>
         </tr>
         <tr>
             <td colspan="2">

@@ -4,7 +4,8 @@
     $controller_seja_parceiro = new ControllerSejaParceiro();
 
     $lista = $controller_seja_parceiro->listar_topicos();
-
+    
+    $banner = $controller_seja_parceiro->getBanner();
 
 ?>
 
@@ -58,31 +59,33 @@
         </header>
         <div id="conteudo">
 
-             <div class="row" style=" height: 360px;">
+             <div class="row" style=" height: 360px; <?=($banner->getStatus() == 0)?'display:none;':''?>">
                 <div class="cold4 esquerda">
-                    <img src="view/imagem/bg-parceiros.jpg" style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto1()?>" style="height: 355px; width:100%;">
                 </div>
                 <div class="cold2 center" style="width: 29%;">
                     <div class="esquerda border-left"></div>
                     <div id="seja-parceiro" class="center" style="margin-top: 15px;">
-                        <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
-                        <button>Quero ser um Parceiro</button>
-                        <p>Lorem ipsum dolor sit amet, consectetur adi,suada nibh. Quisque placerat faucibus erat a sodales. Suspendisse condimentum vehicula dolor eu dapibus</p> 
-                        <img src="view/imagem/selo4.png" alt="sdssd" width="92">
+                        <div>
+                            <?=@$banner->getTexto1()?>
+                        </div> 
+                        <button><?=@$banner->getTexto2()?></button>
+                        <div>
+                            <?=@$banner->getTexto3()?>
+                        </div>
                     </div>
                     <div class="direita border-right"></div>
                 </div>
                 <div class="cold4 direita">
-                    <img src="view/imagem/bg-usuario.jpg"  style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto2()?>"  style="height: 355px; width:100%;">
                 </div>
 
              </div>
              
              <div id="beficiosBox" class="center">
-               <?php if(count($lista) < 1){
-                        echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                        echo " <p class='aviso_tabela'> Nenhum Topico encontrado!</p> ";
-                     }else{
+               <?php 
+
+                    if(!count($lista) < 1){
 
 
                          if(count($lista) <= 1){
