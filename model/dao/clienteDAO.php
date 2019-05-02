@@ -173,6 +173,17 @@
                     return false;
             }
         }
+        
+        public function statusDAO($id,$status){
+            $sql = "UPDATE tbl_cliente set status='".$status."' where id_cliente = '".$id."';";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+            
+//            echo("<script>conteudo_subMenu(clientes.php);</script>");
+            return "1";
+        }
 
     }
 

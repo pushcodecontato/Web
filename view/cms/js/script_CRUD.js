@@ -332,7 +332,25 @@ function chamaModalFaleConosco(id_fale_conosco){
 		modal(res.toString());
 	});
 }
+function fale_conosco_delete(id){
+	//event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=fale_conosco&modo=excluir&id_fale_conosco='+id,
+		success:function(dados){
+			console.log("sgasha",dados)
+			if(dados.toString().search('sucesso')>=0){
 
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('fale_conosco/tabela',true);
+				
+
+			}
+		}
+	});
+}
 function chamaModalVeiculosAprova(id){
 	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
 	 .then(function(res){
@@ -628,6 +646,7 @@ function toCSV(nome,csv = 0){
 
 /* ativar e desativar de cliente*/
 function clientes_ativar_desativar(id, status){
+    
     if (status == 0){
         status = 1;
     }else{
@@ -636,12 +655,15 @@ function clientes_ativar_desativar(id, status){
     $.ajax({
         type:'post',
         method:'post',
-        url:'router.php?controller=cliente&modo=status&id='+id,
+        url:'router.php?controller=clientes&modo=status&id='+id,
         data:{
-            status
+            'status':status
         },
         success:function(resposta){
-           console.log(resposta)
+//            alert(resposta);
+         if(resposta == '1'){
+             conteudo_subMenu('clientes/clientes');
+         }
         }
         
     }) 
