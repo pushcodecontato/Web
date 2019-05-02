@@ -62,15 +62,39 @@
         <div class="caixas_veiculo_pendentes">
             <div class="item_caixa_veiculo">
                 <label> Modelo </label>
-                <input value="<?=@$veiculo->getModelo()->getNome()?>" disabled>
+                <?php if($veiculo->getModelo()->getExcluido() == 1){?>
+                
+                    <input value="<?=@$veiculo->getModelo()->getNome()?>" title="Modelo excluido " style="border-color: #f70000;" disabled>
+                
+                <?php }elseif($veiculo->getModelo()->getStatus() == 0){?>
+
+                    <input value="<?=@$veiculo->getModelo()->getNome()?>" title="Modelo desativado " style="border-color: #f70000;" disabled>
+
+                <?php }else{?>
+
+                    <input value="<?=@$veiculo->getModelo()->getNome()?>" disabled>
+
+                <?php }?>
             </div>
             <div class="item_caixa_veiculo">
                 <label> Tipo </label>
-                <input value="<?=@$veiculo->getTipo()->getNome()?>" disabled>
+                <?php if($veiculo->getTipo()->getExcluido() == 1){ ?>
+                
+                    <input value="<?=@$veiculo->getTipo()->getNome()?>" title="Tipo de veiculo Excluido" style="border-color: #f70000;" disabled>
+                
+                <?php }else{ ?>
+
+                    <input value="<?=@$veiculo->getTipo()->getNome()?>" disabled>
+
+                <?php } ?>
             </div>
             <div class="item_caixa_veiculo">
                 <label> Marca </label>
-                <input value="<?=@$veiculo->getMarca()->getNome()?>" disabled>
+                <?php if($veiculo->getMarca()->getStatus() == 0){?>
+                    <input value="<?=@$veiculo->getMarca()->getNome()?>" title="Marca desativada" style="border-color: #f70000;" disabled>
+                <?php }else{?>
+                    <input value="<?=@$veiculo->getMarca()->getNome()?>" disabled>
+                <?php } ?>
             </div>
         </div>
     </div>

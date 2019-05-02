@@ -123,7 +123,8 @@ class  MarcaDAO{
             $marca = new Marca();
 
             $marca->setId($rs_marca['id_marca_veiculo'])
-                  ->setNome($rs_marca['nome_marca']);
+                  ->setNome($rs_marca['nome_marca'])
+                  ->setStatus($rs_marca['status']);
             
             return $marca;
 

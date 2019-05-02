@@ -64,7 +64,7 @@
             </div>
             <div class="campo">
                 <label> Nome do modelo </label>
-                <input type="text" name="nome" value="<?=@$nome?>" required>
+                <input type="text" name="nome" maxlength="50" value="<?=@$nome?>" required>
             </div>
             <div class="campo">
                 <button type="submit"> Salvar </button>

@@ -102,6 +102,8 @@ class  ModeloDAO{
             $modelo = new Modelo();
             $modelo->setId($rs_modelos['id_modelo'])
                    ->setNome($rs_modelos['nome_modelo'])
+                   ->setStatus($rs_modelos['status'])
+                   ->setExcluido($rs_modelos['excluido'])
                    ->setIdTipoMarca($rs_modelos['id_marca_tipo']);
 
             return $modelo;

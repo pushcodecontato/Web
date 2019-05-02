@@ -42,7 +42,7 @@ CREATE TABLE `tbl_acessorio_veiculo` (
   KEY `fk_tbl_acessorio_veiculo_tbl_acessorio_idx` (`id_acessorio`),
   CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_acessorio` FOREIGN KEY (`id_acessorio`) REFERENCES `tbl_acessorios` (`id_acessorios`),
   CONSTRAINT `fk_tbl_acessorio_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,6 +51,7 @@ CREATE TABLE `tbl_acessorio_veiculo` (
 
 LOCK TABLES `tbl_acessorio_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_acessorio_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_acessorio_veiculo` VALUES (1,3,1),(2,4,1),(3,5,2),(4,3,2),(5,6,4),(6,4,3),(7,5,3),(8,3,5),(9,4,5),(10,6,6),(11,5,6),(12,3,7),(13,4,7),(14,5,8),(15,4,9),(16,6,9);
 /*!40000 ALTER TABLE `tbl_acessorio_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +71,7 @@ CREATE TABLE `tbl_acessorios` (
   PRIMARY KEY (`id_acessorios`),
   KEY `fk_tbl_acessorios_tbl_tipo_veiculos_idx` (`id_tipo_veiculo`),
   CONSTRAINT `fk_tbl_acessorios_tbl_tipo_veiculos` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +80,7 @@ CREATE TABLE `tbl_acessorios` (
 
 LOCK TABLES `tbl_acessorios` WRITE;
 /*!40000 ALTER TABLE `tbl_acessorios` DISABLE KEYS */;
-INSERT INTO `tbl_acessorios` VALUES (1,'sadasd',10,1,0),(2,'dsfsd',10,1,0);
+INSERT INTO `tbl_acessorios` VALUES (1,'sadasd',10,1,1),(2,'dsfsd',10,1,1),(3,'Semi-Automático',10,1,0),(4,' Flex',10,1,0),(5,'Direção hidráulica',10,1,0),(6,'Bancos de couro',10,1,0);
 /*!40000 ALTER TABLE `tbl_acessorios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +107,7 @@ CREATE TABLE `tbl_anuncio` (
   KEY `fk_tbl_veiculos_tbl_anuncios_idx` (`id_veiculo`),
   CONSTRAINT `fk_tbl_usuario_tbl_anuncios` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`),
   CONSTRAINT `fk_tbl_veiculos_tbl_anuncios` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,6 +116,7 @@ CREATE TABLE `tbl_anuncio` (
 
 LOCK TABLES `tbl_anuncio` WRITE;
 /*!40000 ALTER TABLE `tbl_anuncio` DISABLE KEYS */;
+INSERT INTO `tbl_anuncio` VALUES (1,'Feriado do dia do trabalho',1,1,'07:00:00','18:00:00','2019-05-04','2019-05-10',0,10.00),(2,'Final de semana',2,4,'11:00:00','15:00:00','2019-05-03','2019-10-05',0,22.00),(3,'Começo de semana ',3,7,'13:00:00','19:00:00','2018-05-07','2019-05-12',0,11.00);
 /*!40000 ALTER TABLE `tbl_anuncio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,7 +168,7 @@ CREATE TABLE `tbl_aprovacao_anuncio` (
   KEY `fk_tbl_aprovacao_anuncio_tbl_anuncio_idx` (`id_anuncio`),
   CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_anuncio` FOREIGN KEY (`id_anuncio`) REFERENCES `tbl_anuncio` (`id_anuncio`),
   CONSTRAINT `fk_tbl_avaliacao_anuncio_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,6 +177,7 @@ CREATE TABLE `tbl_aprovacao_anuncio` (
 
 LOCK TABLES `tbl_aprovacao_anuncio` WRITE;
 /*!40000 ALTER TABLE `tbl_aprovacao_anuncio` DISABLE KEYS */;
+INSERT INTO `tbl_aprovacao_anuncio` VALUES (1,0,1,8,'tudo ok');
 /*!40000 ALTER TABLE `tbl_aprovacao_anuncio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,7 +228,7 @@ CREATE TABLE `tbl_aprovacao_veiculo` (
   KEY `fk_tbl_aprovacao_veiculo_tbl_usuario_cms_idx` (`id_usuario_cms`),
   CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_usuario_cms` FOREIGN KEY (`id_usuario_cms`) REFERENCES `tbl_usuario_cms` (`id_usuario_cms`),
   CONSTRAINT `fk_tbl_avaliacao_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,6 +237,7 @@ CREATE TABLE `tbl_aprovacao_veiculo` (
 
 LOCK TABLES `tbl_aprovacao_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_aprovacao_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_aprovacao_veiculo` VALUES (4,0,8,1,'ok!'),(5,0,8,4,'ok!');
 /*!40000 ALTER TABLE `tbl_aprovacao_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +400,7 @@ CREATE TABLE `tbl_cliente` (
   `senha` varchar(255) NOT NULL,
   `status` tinyint(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,6 +409,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
+INSERT INTO `tbl_cliente` VALUES (1,'Gabriel','43534','345345','345345','92b8aca15170aad6e392c835bb11c0f0.png','55761ff015d4887afc61becf4401e7f4.png','324','324324','32423','32423','324','32','admin@bugbunny.com','$2y$12$bkQhQa5RQQX0RxwU9lZ5lOSneac1hZwtAfSnQCHTkJalLYVNrgKny',1),(2,'Gil 45435','43534543','435345','435345','4befd27b8e47c89c67efdbb2a31bdaae.png','9d476c5f9d012ec9d18bf0141799eaaa.jpg','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$srOo70lWcrDwy1GGESMyLeF7Lz5i/2pqmxN5yuQAahXodZMs6tPVe',1),(3,'Claudio','43534543','435345','435345','7cbe6b59fc9a4c38bb5faddf75a9ca02.png','a4af6044b6a1abd4e88bb3cb9a959b5a.png','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$xN33ks.UYcZVRoHWrlmcOu6Edi/Tac5DF/RXVYsxaVR4iC6RlsEQC',1);
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -716,7 +721,7 @@ CREATE TABLE `tbl_foto_veiculo` (
   PRIMARY KEY (`id_foto_veiculo`),
   KEY `fk_tbl_foto_veiculo_tbl_veiculo_idx` (`id_veiculo`),
   CONSTRAINT `fk_tbl_foto_veiculo_tbl_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -725,6 +730,7 @@ CREATE TABLE `tbl_foto_veiculo` (
 
 LOCK TABLES `tbl_foto_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_foto_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_foto_veiculo` VALUES (1,'1555769689957.jpg',1),(2,'1555769695089.jpg',1),(3,'1555769701029.jpg',1),(4,'5167320905285632_1541683227319.jpg',2),(5,'5167320905285632_1541683231994.jpg',2),(6,'5167320905285632_1541683255232.jpg',2),(7,'6122254203092992_1548158584194.jpg',3),(8,'6122254203092992_1548158595896.jpg',3),(9,'6122254203092992_1548160499989.jpg',3),(10,'6122254203092992_1548158619550.jpg',3),(11,'1555584420266.jpg',4),(12,'1555584380806.jpg',4),(13,'1555584460911.jpg',4),(14,'1550485506367.jpg',5),(15,'1550485514961.jpg',5),(16,'1550485527415.jpg',5),(17,'1556112353575.jpg',6),(18,'1556112424145.jpg',6),(19,'1556112260014.jpg',6),(20,'6536687039545344_1533549331271.jpg',7),(21,'6536687039545344_1533549339235.jpg',7),(22,'1556634069364.jpg',8),(23,'1556634054143.jpg',8),(24,'1553966231647.jpg',9),(25,'1553966241610.jpg',9),(26,'1553966261018.jpg',9);
 /*!40000 ALTER TABLE `tbl_foto_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1020,7 +1026,7 @@ CREATE TABLE `tbl_marca_veiculo` (
   `cod_fip` varchar(50) DEFAULT NULL,
   `status` tinyint(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_marca_veiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1029,7 +1035,7 @@ CREATE TABLE `tbl_marca_veiculo` (
 
 LOCK TABLES `tbl_marca_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_marca_veiculo` DISABLE KEYS */;
-INSERT INTO `tbl_marca_veiculo` VALUES (1,'ryundai',NULL,1),(2,'ryunday',NULL,1),(3,'Galeao4545',NULL,1);
+INSERT INTO `tbl_marca_veiculo` VALUES (1,'ryundai',NULL,1),(2,'ryunday',NULL,1),(3,'Galeao4545',NULL,1),(4,'volkswagen',NULL,1),(5,'BMW',NULL,1);
 /*!40000 ALTER TABLE `tbl_marca_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1050,7 +1056,7 @@ CREATE TABLE `tbl_marca_veiculo_tipo_veiculo` (
   KEY `fk_tbl_marca_veiculo_tipo_veiculo_tbl_tipo_veiculo_idx` (`id_tipo_veiculo`),
   CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_marca_veiculo` FOREIGN KEY (`id_marca_veiculo`) REFERENCES `tbl_marca_veiculo` (`id_marca_veiculo`),
   CONSTRAINT `fk_tbl_marca_veiculo_tipo_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1059,7 +1065,7 @@ CREATE TABLE `tbl_marca_veiculo_tipo_veiculo` (
 
 LOCK TABLES `tbl_marca_veiculo_tipo_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_marca_veiculo_tipo_veiculo` DISABLE KEYS */;
-INSERT INTO `tbl_marca_veiculo_tipo_veiculo` VALUES (1,10,1,1),(2,10,2,1),(3,10,3,0);
+INSERT INTO `tbl_marca_veiculo_tipo_veiculo` VALUES (1,10,1,1),(2,10,2,1),(3,10,3,1),(4,10,4,0),(5,10,5,0);
 /*!40000 ALTER TABLE `tbl_marca_veiculo_tipo_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1131,7 +1137,7 @@ CREATE TABLE `tbl_modelo_veiculo` (
   PRIMARY KEY (`id_modelo`),
   KEY `fk_tbl_modelo_veiculo_tbl_marca_veiculo_tipo_veiculo_idx` (`id_marca_tipo`),
   CONSTRAINT `fk_tbl_modelo_veiculo_tbl_marca_veiculo_tipo_veiculo` FOREIGN KEY (`id_marca_tipo`) REFERENCES `tbl_marca_veiculo_tipo_veiculo` (`id_tipo_marca`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1140,7 +1146,7 @@ CREATE TABLE `tbl_modelo_veiculo` (
 
 LOCK TABLES `tbl_modelo_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` DISABLE KEYS */;
-INSERT INTO `tbl_modelo_veiculo` VALUES (3,'Galeao',1,NULL,1,1),(4,'civiqui',1,NULL,1,1),(5,'Galeao',2,NULL,1,1);
+INSERT INTO `tbl_modelo_veiculo` VALUES (3,'Galeao',1,NULL,1,1),(4,'civiqui',1,NULL,1,1),(5,'Galeao',2,NULL,1,1),(6,'MOVE UP FLEX',4,NULL,1,0),(7,'NEW BEETLE',4,NULL,1,0),(8,'SPACEFOX',4,NULL,1,0),(9,'BMW X1',5,NULL,1,0),(10,'BMW 320I',5,NULL,1,0),(11,'BMW X6',5,NULL,1,0),(12,' GOLF',4,NULL,1,0);
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1155,8 +1161,9 @@ CREATE TABLE `tbl_niveis` (
   `id_niveis` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela níveis',
   `nome_nivel` varchar(25) NOT NULL COMMENT 'nome do nível',
   `descricao` varchar(50) NOT NULL COMMENT 'descrição do nível',
+  `excluido` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_niveis`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1165,7 +1172,7 @@ CREATE TABLE `tbl_niveis` (
 
 LOCK TABLES `tbl_niveis` WRITE;
 /*!40000 ALTER TABLE `tbl_niveis` DISABLE KEYS */;
-INSERT INTO `tbl_niveis` VALUES (4,'admin','Administra todas as operações do sistema');
+INSERT INTO `tbl_niveis` VALUES (4,'admin','Administra todas as operações do sistema',1),(5,'admin','administrador',0);
 /*!40000 ALTER TABLE `tbl_niveis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1185,7 +1192,7 @@ CREATE TABLE `tbl_niveis_menu` (
   KEY `fk_tbl_niveis_menu_tbl_menu_idx` (`id_menu`),
   CONSTRAINT `fk_tbl_niveis_menu_tbl_menu` FOREIGN KEY (`id_menu`) REFERENCES `tbl_menu` (`id_menu`),
   CONSTRAINT `fk_tbl_niveis_menu_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1194,6 +1201,7 @@ CREATE TABLE `tbl_niveis_menu` (
 
 LOCK TABLES `tbl_niveis_menu` WRITE;
 /*!40000 ALTER TABLE `tbl_niveis_menu` DISABLE KEYS */;
+INSERT INTO `tbl_niveis_menu` VALUES (1,1,5),(2,2,5),(3,3,5),(4,4,5),(5,5,5),(6,6,5),(7,7,5);
 /*!40000 ALTER TABLE `tbl_niveis_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1585,7 +1593,7 @@ CREATE TABLE `tbl_seja_parceiro` (
   `id_seja_parceiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página seja parceiro',
   `titulo_seja_parceiro` varchar(45) NOT NULL COMMENT 'título da página seja parceiro',
   `texto_seja_parceiro` text NOT NULL COMMENT 'texto da página seja parceiro',
-  `foto_seja_parceiro` varchar(45) NOT NULL COMMENT 'foto da página seja parceiro',
+  `foto_seja_parceiro` varchar(100) NOT NULL COMMENT 'foto da página seja parceiro',
   PRIMARY KEY (`id_seja_parceiro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1743,7 +1751,7 @@ CREATE TABLE `tbl_usuario_cms` (
   PRIMARY KEY (`id_usuario_cms`),
   KEY `fk_tbl_usuario_cms_tbl_niveis_idx` (`id_niveis`),
   CONSTRAINT `fk_tbl_usuario_cms_tbl_niveis` FOREIGN KEY (`id_niveis`) REFERENCES `tbl_niveis` (`id_niveis`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1752,7 +1760,7 @@ CREATE TABLE `tbl_usuario_cms` (
 
 LOCK TABLES `tbl_usuario_cms` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_cms` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_cms` VALUES (7,'admin','admin@mobshare.com','$2y$12$3pyARaO8pnQLPn5k35cDUujL2yPB/edW74yvCJAIyfZKuRCPfiq8G',4);
+INSERT INTO `tbl_usuario_cms` VALUES (8,'admin','admin@mobshare.com','$2y$12$Q4jnH9kg.BRdM6fatTCCAOH5DK7Bhe8FwkEHVfGuCseCvPbD0ie7e',5);
 /*!40000 ALTER TABLE `tbl_usuario_cms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1840,7 +1848,7 @@ CREATE TABLE `tbl_veiculo` (
   CONSTRAINT `fk_tbl_veiculo_tbl_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`),
   CONSTRAINT `fk_tbl_veiculo_tbl_modelo_veiculo` FOREIGN KEY (`id_modelo_veiculo`) REFERENCES `tbl_modelo_veiculo` (`id_modelo`),
   CONSTRAINT `fk_tbl_veiculo_tbl_tipo_veiculo` FOREIGN KEY (`id_tipo_veiculo`) REFERENCES `tbl_tipo_veiculo` (`id_tipo_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='	';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1849,6 +1857,7 @@ CREATE TABLE `tbl_veiculo` (
 
 LOCK TABLES `tbl_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_veiculo` VALUES (1,'2014','HJTY','88026','50766292645',10,4,6,1),(2,'2008','PIC45','65195','50582893948',10,4,7,1),(3,'2015','CN-346','50748','80562129195',10,4,8,1),(4,'2016','IUT-6GT','57589','10486980259',10,5,9,2),(5,'2013','OIP-756J','77000','39072700160',10,5,10,2),(6,'2014','GHY-6H5','53803','12036664000',10,5,10,2),(7,'2012','YUE-5DF','45897','53217774157',10,5,11,3),(8,'2017','ACD-6U4','56897','59817709762',10,4,8,3),(9,'2015','KJH-R456','45687','30245746848',10,4,12,3);
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1861,8 +1870,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-29 18:33:31
-
+-- Dump completed on 2019-05-01 22:32:37
 
 /* Alterações */
 /* + tbl_percentual

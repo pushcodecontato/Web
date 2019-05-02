@@ -40,4 +40,40 @@ function getCadastro(){
 
 }
 
+function fale_conosco_enviar(form){
 
+    event.preventDefault();
+
+    $(form).find('*').hide();
+    $('.fale_conosco')
+    .css({'background-image':'url(view/imagem/loading.svg)',
+          'background-position':'center',
+          'background-size':'213px',
+          'background-repeat':'no-repeat'});
+
+
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(resposta){
+
+			if(resposta.toString().search('sucesso')>=0){
+			   
+			   setTimeout(function(){
+			       $('.fale_conosco')
+                   .css({'background-image':'none',
+                         'background-position':'center;',
+                         'background-size':'213px',
+                         'background-repeat':'no-repeat'});
+
+                   $(form).find('*').show();
+			   },600);
+
+               $.notify('Formulario enviado!','success');
+			}
+
+		}
+	})
+}

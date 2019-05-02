@@ -156,6 +156,8 @@ form{
     text-align: center;
     font-family: "OpenSans-Regular";
     float: left;
+    overflow: hidden;
+    word-break: break-all;
 }
 .col_resposta img{
     width:42px;

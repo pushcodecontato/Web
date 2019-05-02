@@ -8,7 +8,24 @@ class Fale_conoscoDAO{
             require_once('model/dao/conexaoMysql.php');
             $this->conex = new  conexaoMysql();
         }
+        public function insert($fale_conosco){
+            
+            $sql = "INSERT INTO tbl_fale_conosco(nome_fale_conosco,email_fale_conosco,telefone_fale_conosco,celular_fale_conosco,mensagem_fale_conosco)".
+                   "VALUES('". $fale_conosco->getNome() ."','". $fale_conosco->getEmail() ."',". 
+                   "'". $fale_conosco->getTelefone() ."',".
+                   "'". $fale_conosco->getCelular() ."','". $fale_conosco->getMensagem() ."')";
+            
+            $PDO_conex = $this->conex->connect_database();
 
+
+            if($PDO_conex->query($sql)){
+                   echo "Registro inserido com sucesso ";
+                   return true;
+            } else {
+                   echo "Erro no script de insert!! $sql";
+                   return false;
+            }
+        }
         public function delete($id){
             $sql = " DELETE FROM tbl_fale_conosco where id_fale_conosco = $id ";
 

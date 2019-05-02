@@ -41,8 +41,7 @@
                 <td>R$ <?=@$anuncio->getValor()?></td>
                 <td><?=@$anuncio->getDescricao()?></td>
                 <td onclick="chamaModalAnunciosAprova(<?=@$anuncio->getId()?>)">
-                    <button>Aprovar</button>
-                    <button>Reprovar</button>
+                    <button>Aprovar/Reprovar</button>
                 </td>
             </tr>
 <?php       }

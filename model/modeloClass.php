@@ -8,6 +8,7 @@ class Modelo{
     private $id_tipo_marca;
     /* Identifica se o estado (checket) do acessorio  0 = desativado and 1 = ativado */
     private $status;
+    private $excluido;
 
     /* FIP */
     private $cod_fip;
@@ -48,6 +49,13 @@ class Modelo{
     }
     public function getStatus(){
         return $this->status;
+    }
+    public function setExcluido($excluido){
+        $this->excluido = $excluido;
+        return $this;
+    }
+    public function getExcluido(){
+        return $this->excluido;
     }
 
     /* FIP */

@@ -127,7 +127,7 @@
     background-color: white;
 }
 .modal_anuncios .descricao_veiculo_anuncios{
-    max-height: 75px;
+    max-height: 83px;
     overflow: hidden;
     display: block;
     width: 100%;
@@ -146,6 +146,7 @@
     float: left;
     font-size: 0.9em;
     margin: 0px 4px;
+    text-align: center;
 }
 .modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo label{
     font-weight: bold;
@@ -156,6 +157,7 @@
     width: 92px;
     text-align: center;
     background-color: white;
+    align-items: center;
 }
 .modal_anuncios input,textarea{
     color:#625d5d;

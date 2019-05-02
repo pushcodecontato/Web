@@ -135,6 +135,7 @@ class  TipoVeiculoDAO{
             
             $tipo->setId($rs_tipo['id_tipo_veiculo'])
                  ->setNome($rs_tipo['nome_tipo_veiculo'])
+                 ->setExcluido($rs_tipo['excluido'])
                  ->setPercentual($rs_tipo['percentual']);
         } else {
             echo " Tipo de veiculo não encontrado ";

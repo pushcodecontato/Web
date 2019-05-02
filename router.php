@@ -492,9 +492,18 @@
                 }
  
                 break;
+                case "FALE_CONOSCO":
+                     require_once('controller/controllerFale_conosco.php');
+                     $controller_fale_conosco = new ControllerFale_conosco();
+                     switch($modo){
+                           case "INSERIR":
+                                $controller_fale_conosco->inserir_fale_conosco();
+                                break;
+                     }
+                     break;
 
                 /*Termo de Uso*/
-                case ('TERMOS' || $controller == "TERMOS_USO"):
+                case ($controller == 'TERMOS' || $controller == "TERMOS_USO"):
                 
                 require_once('controller/controllerTermos_uso.php');
 

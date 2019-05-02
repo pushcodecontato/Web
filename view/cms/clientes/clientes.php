@@ -18,13 +18,13 @@
                     $listRegistro =  $controller_clientes->listar_registro_clientes();
 
 
-                    if(count($listRegistro) < 1){
-                        echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                        echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
-                    }
+                    if(count($listRegistro) < 1){ ?>
+                        <img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>
+                        <p class='aviso_tabela'> Nenhum registro encontrado!</p>
+             <?php } ?>
 
-                    foreach($listRegistro as $registro){
-                ?>
+                    <?php foreach($listRegistro as $registro){?>
+
                     <div class="campos"><?=$registro->getNome()?></div>
                     <div class="campos"><?=$registro->getCPF()?></div>
                     <div class="campos"><?=$registro->getEmail()?></div>

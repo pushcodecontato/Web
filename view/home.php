@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="view/css/home.css"/>
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
     <script src="view/js/notify.js"></script>
+    <script src="view/js/libs/jqueryMask/jquery.mask.js"></script>
     <script src="view/js/main.js"></script>
 </head>
 <body>
@@ -364,19 +365,22 @@
             <section class="section_fale_conosco" id="fale_conosco">
                 <h2>Fale conosco</h2>
                 <div class="fale_conosco">
-                    <form name="formFaleConosco" action="" method="POST">
+                    <form name="formFaleConosco" onsubmit="fale_conosco_enviar(this)" action="router.php?controller=FALE_CONOSCO&modo=inserir" method="POST">
                         <div class="formulario">
                             <div class="input_form">
-                                <input type="text" name="txtNome" placeholder="Nome">
+                                <input type="text" name="txtNome" maxlength="100" pattern="[a-z A-Z ã ç á é í õ ó ê è ì Ç Ã Õ Á É Ó À È Ò Ù ú ù]*" placeholder="Nome">
                             </div>
                             <div class="input_form">
-                                <input type="text" name="txtNome" placeholder="E-mail" >
+                                <input type="email" name="txtEmail" maxlength="100" pattern="^([a-z._\-0-9áéíóúàèìòùâêîôûãẽĩõũç]*@+([a-z0-9]+.+[a-z0-9])*)+$" placeholder="E-mail" >
                             </div>
                             <div class="input_form">
-                                <input type="text" name="txtNome" placeholder="Celular">
+                                <input type="text" id="txtTelefone" pattern="^(\((1[1-9]|2[12478]|3[1234578]|4[1-9]|5[1345]|6[1-9]|7[134579]|8[1-9]|9[1-9])\)([0-9]{4}[-][0-9]{4}))+$" name="txtTelefone" maxlength="20" placeholder="Telefone">
                             </div>
                             <div class="input_form">
-                                <textarea style="height: 100px;" placeholder="Mensagem"></textarea>
+                                <input type="text" id="txtCelular" name="txtCelular" maxlength="20" pattern="^(\((1[1-9]|2[12478]|3[1234578]|4[1-9]|5[1345]|6[1-9]|7[134579]|8[1-9]|9[1-9])\)(9[0-9]{4}[-][0-9]{4}))+$"  placeholder="Celular">
+                            </div>
+                            <div class="input_form">
+                                <textarea style="height: 100px;" name="menssagem" placeholder="Mensagem"></textarea>
                             </div>
                             <input type="submit" name="btnEnviar" value="Enviar" id="buttonEnviar">
                         </div>
@@ -443,5 +447,9 @@
             </div>
         </div>
     </footer>
+    <script>
+        jQuery("#txtTelefone").mask("(99)9999-9999");
+        jQuery("#txtCelular").mask("(99)99999-9999");
+    </script>
 </body>
 </html>
