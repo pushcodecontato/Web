@@ -14,7 +14,7 @@
 
                 $controller_fale_conosco = new ControllerFale_conosco();
 
-                $listRegistro =  $controller_fale_conosco->listar_registro_fale_conosco();
+                $listRegistro =  $controller_fale_conosco->listar_fale_conosco();
 
 
                 if(count($listRegistro) < 1){
@@ -33,6 +33,7 @@
                 <div class="abrir">
                     <button class="btn_exportar" onclick="chamaModalFaleConosco(<?=@$registro->getId()?>);"> Abrir</button>
                     <button class="btn_exportar" onclick="exportarChamado(<?=@$registro->getId()?>)">Exportar</button>
+                    <button class="btn_exportar" onclick="fale_conosco_delete(<?=@$registro->getId()?>)">Excluir</button>
                 </div>
             <?php
                 }

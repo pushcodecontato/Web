@@ -329,7 +329,25 @@ function chamaModalFaleConosco(id_fale_conosco){
 		modal(res.toString());
 	});
 }
+function fale_conosco_delete(id){
+	//event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=fale_conosco&modo=excluir&id_fale_conosco='+id,
+		success:function(dados){
+			console.log("sgasha",dados)
+			if(dados.toString().search('sucesso')>=0){
 
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('fale_conosco/tabela',true);
+				
+
+			}
+		}
+	});
+}
 function chamaModalVeiculosAprova(id){
 	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
 	 .then(function(res){
