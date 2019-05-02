@@ -83,6 +83,11 @@
                         $controller_usuario->logar();
 
                         break;
+                   case "DESLOGAR":
+                        
+                        $controller_usuario->deslogar();
+                        
+                        break;
                 }
  
                 break;

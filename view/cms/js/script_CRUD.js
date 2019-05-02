@@ -40,6 +40,7 @@ function inserir_nivel(){
         success:function(dados){
             $.notify("Nível inserido com sucesso", "success");
             conteudo_subMenu('niveis/tabela_niveis', true);
+            fecharModal();
         }
     });
 }
@@ -64,6 +65,7 @@ function atualizar_nivel(){
         success:function(dados){
             $.notify("Nível editado com sucesso", "success"); 
             conteudo_subMenu('niveis/tabela_niveis', true);
+            fecharModal();
         }
     });
    
@@ -159,12 +161,13 @@ function usuario_update(form){
 }
 
 function usuario_delete(id){
-	event.preventDefault();
+
 	$.ajax({
 		type:'post',
 		method:'post',
 		url:'router.php?controller=usuarios&modo=excluir&id='+id,
 		success:function(dados){
+			console.log('dados',dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("usuario Deletado com sucesso", "info");
