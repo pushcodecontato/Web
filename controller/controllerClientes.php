@@ -155,6 +155,13 @@
             return $this->clientesDAO->selectById($id_cliente);
     
         }
+        
+        public function status(){
+            $id = $_GET['id'];
+            $status = $_POST['status'];
+                return $this->clientesDAO->statusDAO($id,$status);
+            
+        }
 
     }
 ?>

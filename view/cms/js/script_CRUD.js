@@ -643,6 +643,7 @@ function toCSV(nome,csv = 0){
 
 /* ativar e desativar de cliente*/
 function clientes_ativar_desativar(id, status){
+    
     if (status == 0){
         status = 1;
     }else{
@@ -651,12 +652,15 @@ function clientes_ativar_desativar(id, status){
     $.ajax({
         type:'post',
         method:'post',
-        url:'router.php?controller=cliente&modo=status&id='+id,
+        url:'router.php?controller=clientes&modo=status&id='+id,
         data:{
-            status
+            'status':status
         },
         success:function(resposta){
-           console.log(resposta)
+//            alert(resposta);
+         if(resposta == '1'){
+             conteudo_subMenu('clientes/clientes');
+         }
         }
         
     }) 
