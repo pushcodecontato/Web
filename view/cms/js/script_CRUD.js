@@ -336,7 +336,12 @@ function chamaModalVeiculosAprova(id){
 		modal(res.toString());
     })
 }
-
+function chamaModalEmailMarketing(id_email_mkt){
+	$.get('?cms/email_marketing/modal.php&id_email_mkt='+ id_email_mkt)
+     .then(function(res){
+		modal(res.toString());
+	});
+}
 
 
 // FAQ
