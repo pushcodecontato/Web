@@ -414,7 +414,7 @@
                         <p>Telefone:  0800 755 855</p>
                         <p>E-mail: atendimento@mobshare.com.br</p>
                         <img src="view/imagem/cracha_branco.png" alt="cracha">
-                        <a href="?cms/home_cms">Área administrativa</a> 
+                        <a href="?cms/login">Área administrativa</a> 
                     </div>
                 </div>
                 <div class="mapa_site">

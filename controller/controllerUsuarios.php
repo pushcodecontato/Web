@@ -75,7 +75,7 @@
 			
 			if($logado = $this->usuariosDao->logar($usuario)){
 				
-				echo " SENha correta?: ".$logado->verificar($usuario->getSenha());
+				echo " Senha correta?: " . $logado->verificar($usuario->getSenha());
 				 
 				if($logado->verificar($usuario->getSenha())){
 
@@ -104,7 +104,19 @@
         	return $this->usuariosDao->logar($usuario);
 
         }
+		
+		public function deslogar(){
 
+			if(!isset($_SESSION))session_start();
+                 
+
+			//guarda na session o usuario
+			unset($_SESSION['usuario']);
+
+
+			header("location: ./");
+					
+		}
 
 
     }

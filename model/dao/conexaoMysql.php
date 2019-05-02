@@ -14,7 +14,7 @@
 	        $this->password = '';
             //$this->password = '12345ola';
             $this->password = 'bcd127';
-			$this->server = 'localhost';
+   	    $this->server = 'localhost';
             $this->user = 'root';
             //$this->password = '12345ola';
             $this->password = 'bcd127';
