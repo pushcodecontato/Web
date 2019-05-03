@@ -456,13 +456,13 @@ function faq_delete(id){
 }
 
 // PAGINA GANHE DINHEIRO
-function como_ganhar_dinheiro_getById(id){
+function como_ganhar_dinheiro_getById(sessao){
 	event.preventDefault();
 	 $.ajax({
 		type:'post',
 		method:'post',
 		url:'router.php?controller=como_ganhar_dinheiro&modo=select',
-		data:{id},
+		data:{sessao},
 		success:function(dados){
 			modal(dados);
 		}

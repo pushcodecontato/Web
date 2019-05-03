@@ -146,24 +146,26 @@
 }
 form{
     width: 1200px;
-    height: 600px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     border:1px solid black;
     border-radius: 10px;
     background-color: #fff;
+    overflow: scroll;
 }
 ::-webkit-input-placeholder {
     font-size: 15px;
 }
 
 .segura_form_cadastro{
-    width:350px;
-    height: 150px;
+    width: 517px;
+    height: auto;
     margin-left: 40px;
     margin-right: auto;
     margin-top: 7px;
     float: left;
+    overflow: auto;
 }
  .segura_form_cadastro label{
     font-family: "OpenSans-Regular";

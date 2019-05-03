@@ -1,9 +1,12 @@
 <link rel="stylesheet" type="text/css" href="view/cms/css/como_ganhar_dinheiro.css">
 <script src="view/cms/pagina_como_ganhar_dinheiro/modal.js"></script>
 
+<script src="view/cms/js/libs/richText/jquery.richtext.min.js"></script>
+<link  rel="stylesheet" href="view/cms/js/libs/richText/richtext.min.css">
+
 <div class="segura_text_button">
     <h2>TABELA COMO GANHAR DINHEIRO</h2>
-    <button class="adicionar_nivel" id="abrir_cadastro">ADICIONAR SESSÕES</button>
+   <!-- <button class="adicionar_nivel" id="abrir_cadastro">ADICIONAR SESSÕES</button>-->
 </div>
 <div class="segura_tabela">
     <div class="tabela_niveis">
@@ -30,8 +33,8 @@
         <div class="linha_resposta">
             <div class="col_resposta" style="padding-top: 10px; width:800px;  border-left: 1px solid black; padding-left: 140px;"><?=@$registro->getTitulo_sessao1()?></div>
             <div class="col_resposta_button" style="width:100px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(<?=@$registro->getId()?>)">
-                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(<?=@$registro->getId()?>)">
+                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(1)">
+                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(1)">
             </div>
         </div>
         <?php
@@ -64,8 +67,8 @@
         <div class="linha_resposta">
             <div class="col_resposta" style="padding-top: 10px; width:800px;  border-left: 1px solid black; padding-left: 140px;"><?=@$registro->getTitulo_sessao2()?></div>
             <div class="col_resposta_button" style="width:100px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(<?=@$registro->getId()?>)">
-                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(<?=@$registro->getId()?>)">
+                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(2)">
+                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(2)">
             </div>
         </div>
         <?php
@@ -98,8 +101,8 @@
         <div class="linha_resposta">
             <div class="col_resposta" style="padding-top: 10px; width:800px;  border-left: 1px solid black; padding-left: 140px;"><?=@$registro->getTitulo_sessao3()?></div>
             <div class="col_resposta_button" style="width:100px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(<?=@$registro->getId()?>)">
-                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(<?=@$registro->getId()?>)">
+                <img src="view/cms/imagem/icones/edit.png" style="float:left;" alt="edit" title="Editar" onclick="como_ganhar_dinheiro_getById(3)">
+                <img src="view/cms/imagem/icones/delete.png" height="48px" width="48px" alt="delete" title="Excluir" onclick="como_ganhar_dinheiro_delete(3)">
             </div>
         </div>
         <?php

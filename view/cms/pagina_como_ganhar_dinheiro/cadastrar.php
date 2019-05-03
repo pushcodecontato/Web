@@ -16,7 +16,7 @@
     $titulo_sessao3 = "";
     $texto_sessao3 = "";
     $router = "router.php?controller=como_ganhar_dinheiro&modo=inserir";
-    $funcaoJs = "inserir_como_ganhar_dinheiro();";
+    $funcaoJS = "inserir_como_ganhar_dinheiro();";
 
     // só vai entrar nessa condição se o objeto nível existir. Se houver a condição, no momento de editar, executará esse código
     if(isset($como_ganhar_dinheiro)){
@@ -42,7 +42,8 @@
     }
 ?>
 <div class="segura_form">
-    <form class="form_cadastro" method="POST" id="formComo_ganhar_dinheiro" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
+    <form class="form_cadastro" method="POST"  id="formComo_ganhar_dinheiro" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
+    <?php if(){?>
         <div class="segura_form_cadastro">
             <h3 class="titulo_pagina">Cadastrar Sessão 1</h3>
             <label for="pergunta_faq">Adicionar Título para Página</label><br>
@@ -50,23 +51,25 @@
             <label for="resposta_faq">Adicionar Lista 1</label><br>
             <textarea id="resposta_faq" value="<?php echo($lista1_sessao1)?>" name="txtLista1_sessao1" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($lista1_sessao1)?></textarea><br>
             <label for="resposta_faq">Adicionar Imagem</label><br>
-            <input type="file" name="foto">
+            <input type="file" name="img1_sessao1">
             <label for="resposta_faq">Adicionar Lista 2</label><br>
             <textarea id="resposta_faq" value="<?php echo($lista2_sessao1)?>" name="txtLista2_sessao1" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($lista2_sessao1)?></textarea><br>
         </div>
+     <?php } elseif(){}?>
         <div class="segura_form_cadastro">
             <h3 class="titulo_pagina">Cadastrar Sessão 2</h3>
             <label for="pergunta_faq">Adicionar Título para Página</label><br>
             <input id="pergunta_faq" value="<?php echo($titulo_sessao2)?>" name="txtTitulo_sessao2" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
             <label for="resposta_faq">Adicionar Imagem 1</label><br>
-            <input type="file" name="foto" >
+            <input type="file" name="img1_sessao2" >
             <label for="resposta_faq">Adicionar Lista 1</label><br>
             <textarea id="resposta_faq" value="<?php echo($lista1_sessao2)?>" name="txtLista1_sessao2" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($lista1_sessao2)?></textarea><br>
             <label for="resposta_faq">Adicionar Imagem 2</label><br>
-            <input type="file" name="foto">
+            <input type="file" name="img2_sessao2">
             <label for="resposta_faq">Adicionar Lista 2</label><br>
             <textarea id="resposta_faq" value="<?php echo($lista2_sessao2)?>" name="txtLista2_sessao2" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($lista2_sessao2)?></textarea><br>
         </div>
+        <?php?>
         <div class="segura_form_cadastro">
             <h3 class="titulo_pagina">Cadastrar Sessão 3</h3>
             <label for="pergunta_faq">Adicionar Título</label><br>
@@ -74,6 +77,7 @@
             <label for="resposta_faq">Adicionar Texto</label><br>
             <textarea id="resposta_faq" value="<?php echo($texto_sessao3)?>" name="txtTexto_sessao3" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($texto_sessao3)?></textarea><br>
         </div>
+        <?php ?>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo($botao)?>">
     </form>
 </div>

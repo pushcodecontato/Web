@@ -1,3 +1,4 @@
+@import "../font/awesome/all.css";
 @font-face{
     font-family: "OpenSans-bold";
     src:url("../font/Open_Sans/OpenSans-SemiBold.ttf");
@@ -19,6 +20,7 @@
     font-family: "Roboto-regular";
     src:url("../font/roboto/Roboto-Regular.ttf");
 }
+
 *{
     margin: 0;
     padding: 0;

@@ -8,7 +8,12 @@ $('#abrir_cadastro').click(function(){
         url: '?cms/pagina_como_ganhar_dinheiro/cadastrar.php',
         // o callback tras o retorno da requisição da url feita por post
         success:function(callback){
-            $('#modal').html(callback);
+            modal(callback);
+            setTimeout(function(){
+
+                $('#formComo_ganhar_dinheiro').find('textarea').richText();
+
+            },200);
         }
     });
 });

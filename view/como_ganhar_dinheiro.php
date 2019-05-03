@@ -68,10 +68,7 @@
 				<h2><?=@$registro->getTitulo_sessao1()?></h2>
 			</div>
 			<div class="lista_cadastrar_veiculo">
-				<ul>
-					<br>
-					<li><?=@$registro->getLista1_sessao1()?></li>
-				</ul>
+				<?=@$registro->getLista1_sessao1()?>
 			</div>
 			<div  class="lista_cadastrar_veiculo">
 				<figure height="300px" width="400px" style=" background-image: url(view/upload/<?=@$registro->getImg1_sessao1()?>);"> </figure>
