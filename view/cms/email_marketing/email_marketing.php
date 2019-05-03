@@ -40,9 +40,8 @@
 				<?php }?>
         </div>
     </div>
-   
 </div>
 <button class="btn_exportar" onclick="exportarChamado()">Exportar</button>
-<button class="btn_exportar" onclick="chamaModalEmailMarketing(<?=@$registro->getId()?>);">Enviar E-mail</button>
+<button class="btn_exportar" onclick="enviarEmail(<?=@$registro->getId()?>);">Enviar E-mail</button>
 <script src="view/cms/email_marketing/email.js"> 
 </script>

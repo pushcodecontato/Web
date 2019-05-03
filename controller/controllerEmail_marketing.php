@@ -15,7 +15,7 @@ class ControllerEmail_marketing{
     public function excluir_registro_email_marketing(){
         $id_email = $_GET['id'];
 
-        $this->email_marketingDao->delete($id_email_mkt);
+        $this->email_marketingDao->delete($id);
     }
 
     public function listar_registro_email_marketing(){
@@ -25,9 +25,9 @@ class ControllerEmail_marketing{
     }
     public function getById(){
 
-        $id_email_marketing = $_POST['id'];
+        $id = $_POST['id'];
 
-        return $this->email_marketingDao->selectById($id_email_marketing);
+        return $this->email_marketingDao->selectById($id);
 
     }
 }

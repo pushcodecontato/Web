@@ -22,7 +22,6 @@ function exportarChamado(){
 }
 function selecioneEmails(checkTodos){
     
-
     if($(checkTodos).is(':checked')){
         // Checka
         $('input[type="checkbox"][name="emails"]').prop('checked',true);
@@ -31,8 +30,8 @@ function selecioneEmails(checkTodos){
         $('input[type="checkbox"][name="emails"]').prop('checked',false);
     }
 }
-function chamaModalEmailMarketing(id_email_mkt){
-	$.get('?cms/email_marketing/modal.php&id_email_mkt='+ id_email_mkt)
+function enviarEmail(id_email_mkt){
+	$.get('?cms/email_marketing/enviar_email.php&id_email_mkt='+ id_email_mkt)
      .then(function(res){
 		modal(res.toString());
 	});
