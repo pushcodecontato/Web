@@ -27,7 +27,7 @@
         }
 
         public function delete($id){
-            $sql = " DELETE FROM tbl_usuario_cms where id_usuario_cms = $id ";
+            $sql = " UPDATE tbl_usuario_cms SET excluido = 1  WHERE id_usuario_cms = $id ";
 
             $PDO_conex = $this->conex->connect_database();
 
@@ -51,8 +51,10 @@
 
             if($PDO_conex->query($sql)){
                 echo "Update com sucesso";
+                return true;
             }else{
                 echo "Erro no script de update $sql";
+                return false;
             }
 
             $this->conex->close_database();
@@ -60,7 +62,7 @@
         
         public function selectAll(){
 
-            $sql = " SELECT * FROM tbl_usuario_cms";
+            $sql = " SELECT * FROM tbl_usuario_cms WHERE excluido = 0 ";
             
             $PDO_conex = $this->conex->connect_database();
 
@@ -115,7 +117,7 @@
 
         public function logar($usuario){
             
-            $sql = "SELECT * FROM tbl_usuario_cms where email_usuario_cms ='".$usuario->getEmail()."'";
+            $sql = "SELECT * FROM tbl_usuario_cms where email_usuario_cms ='".$usuario->getEmail()."' AND excluido = 0 ";
 
                 
             $PDO_conex = $this->conex->connect_database();

@@ -240,6 +240,8 @@
                 $("#container2").fadeOut(400);
                 $('#modal').html('');
             }
+            /* Grava o usuario logado */
+            var usuario_logado = { id:'<?=@$usuario->getId()?>',nome:'<?=@$usuario->getNome()?>'};
         </script>
         <script src="view/cms/js/selectize.min.js"></script>
     </div>

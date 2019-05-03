@@ -171,9 +171,14 @@ function usuario_delete(id){
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("usuario Deletado com sucesso", "info");
-
-				conteudo_subMenu('usuarios/tabela',true);
+				if(usuario_logado.id != id){
+					
+					conteudo_subMenu('usuarios/tabela',true);
 				
+				} else {
+					console.log("Deslogando!");
+					window.location = "router.php?controller=USUARIOS&modo=DESLOGAR";
+				}
 
 			}
 		}
@@ -204,7 +209,7 @@ function logar(formulario){
 
 		}else{
 
-			$.notify("Erro ao logar com usuario !", "error");
+			$.notify(resposta.toString(), "error");
 		
 		}
 	})
