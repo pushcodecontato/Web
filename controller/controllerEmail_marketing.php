@@ -45,17 +45,29 @@ class ControllerEmail_marketing{
         $assunto = $_POST['assunto'];
         $email = $_POST['email'];
         $mensagem = $_POST['mensagem'];
-        $remetente = 'From: lucassoeiro03@gmail.com';
-        $destinatario = 'lucassoeiro03@gmail.com';
-        $alerta = "Email enviado com sucesso !!";
+        
+        $dados = array('email'=>"$email",
+                       'assunto'=>"$assunto",
+                       'conteudo'=>"$mensagem",
+                       'key'=>"5748844fd988sdfsfsad");
+        //mail($destinatario,$assunto,$corpo,$remetente);
+        $resposta = $this->sendHttp('http://mobshare-email.herokuapp.com/email',$dados);
 
-        $corpo = "
-            Email:  ".$email."
-            Mensagem:  ".$mensagem."
-            ";
+        var_dump($resposta);
+        
 
-        mail($destinatario,$assunto,$corpo,$remetente);
-            echo $alerta;
+    }
+    public function sendHttp($url,$data){
+        $dados = http_build_query($data);
+        $contexto = stream_context_create(array(
+            'http' => array(
+                'method' => 'POST',
+                'content' => $dados,
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+                . "Content-Length: " . strlen($dados) . "\r\n",
+            )
+        ));
+        return file_get_contents($url, null, $contexto);
     }
 }
 ?>

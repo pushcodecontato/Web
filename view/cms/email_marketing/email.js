@@ -30,10 +30,70 @@ function selecioneEmails(checkTodos){
         $('input[type="checkbox"][name="emails"]').prop('checked',false);
     }
 }
-function enviarEmail(email){
-	console.log(email);
-	$.get('?cms/email_marketing/enviar_email.php&email='+ email)
-     .then(function(res){
-		modal(res.toString());
-	});
+function enviarEmail(){
+	
+	var tabela = $('.tabela');
+    
+    var emails = [];
+    
+    /*  Procurando por um input de type igual a checket e de name igual a emails no estado de checked(checkada) dentro da tabela */
+    tabela.find('input[type="checkbox"][name="emails"]:checked')
+    /* For() dentro das checkets pegas */
+    .each(function(){
+		  console.log("checket")
+          emails.push($(this).val());
+    })
+    
+	if(emails.length >= 1){
+		$.get('?cms/email_marketing/enviar_email.php')
+		 .then(function(res){
+			modal(res.toString());
+			window.emails = emails;
+		});
+	}else{
+		$.notify("Por favor! Selecione um ou mais emails!","info");
+	}
+}
+function emails_enviar(form){
+	event.preventDefault();
+	var assunto  = $(form).find('[name="assunto"]').val();
+	var menssagem  = $(form).find('[name="mensagem"]').val();
+	var acc = 0;
+	
+   $(form).find('*').hide(200);
+   $(form).css({'background-image':'url(view/imagem/loading.svg)'});
+   $(form).append("<p class='loading-emails' style='text-align: center; color: #888888; margin-top: 322px;'> Carregando.. </p>");
+   var terminado = 0;
+	do{
+		
+		var email = window.emails[acc];
+
+		setTimeout(function(){
+
+			$.ajax({url:'router.php?controller=email_marketing&modo=ENVIAR',
+			    type:'POST',
+			    method:'POST',
+			    data:{assunto,mensagem,email},
+			    success:function(resposta){
+			    	console.log("Oi:",resposta);
+			    	$(form).find('p.loading-emails').text("Email "+email+" enviado!");
+			    	
+			    	console.log("Terminado : ",terminado);
+
+			    	terminado++;
+			    	
+			    	if(window.emails.length == terminado){
+			    		$.notify("Todos os emails foram enviados com sucesso!","success");
+						/* Fechando a janela */
+			    		setTimeout(function(){fecharModal()},300);
+			    	}
+
+			    }
+		   })
+
+		},250);
+
+		acc++;
+	}while(window.emails.lenght > acc);
+
 }

@@ -36,12 +36,12 @@
                 <p style="width:848px; border-left: 1px solid black;" class="col_text">
                     <?=@$registro->getEmail()?>
                 </p>
-            </div>
-				<?php }?>
+            </div>				
         </div>
     </div>
 </div>
 <button class="btn_exportar" onclick="exportarChamado()">Exportar</button>
-<button class="btn_exportar" onclick="enviarEmail(<?=@$registro->getEmail()?>);">Enviar E-mail</button>
+<button class="btn_exportar" onclick="enviarEmail();">Enviar E-mail</button>
+<?php } ?>
 <script src="view/cms/email_marketing/email.js"> 
 </script>

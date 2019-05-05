@@ -76,6 +76,14 @@
                 </div>
                 </form>
                 <div id="segura_anuncios">
+                    <?php
+
+                        require_once('controller/controllerAnuncios.php');
+                        $controllerAnuncio =  new ControllerAnuncios();
+
+                        $lista = $controllerAnuncio->listar_anunciosProcesssados();
+
+                    ?>
                     <a href="#">
                         <div class="anuncios">
                                 <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">

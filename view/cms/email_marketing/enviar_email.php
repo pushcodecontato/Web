@@ -1,26 +1,21 @@
 <?php
     
-    $i = $_GET["email"];
     $router = "router.php?controller=email_marketing&modo=ENVIAR";
-    $funcaoJS = "enviar();";
+    $funcaoJS = "emails_enviar(this)";
 ?>
 <div class="segura_form">
     <form class="form_cadastro" method="POST" action="<?=@$router?>" onsubmit="<?=@$funcaoJS?>">
         <div class="segura_form_cadastro">
             <label for="nome_nivel">Enviar Email</label><br>
-            <input id="nome_nivel" name="email" placeholder="E-mail" required style="margin-bottom:10px;"><br>
             <input id="descricao" name="assunto" placeholder="Assunto" required><br>
-            <textarea name="mensagem" placeholder="Digite sua mensagem" style="margin-top: 20px;"  rows="8" cols="45" style="resize: none;" maxlength="500" required>
-            </textarea>
+            <textarea name="mensagem" placeholder="Digite sua mensagem" style="margin-top: 20px;"
+             rows="8" cols="45" style="resize: none;" maxlength="500" required></textarea>
         </div>
-        <?php
-         echo $email;
-         ?>
         <input type="submit" class="btn_padrao" name="enviar" value="Enviar">
     </form>
 </div>
 <style>
-    *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -68,6 +63,8 @@ form{
     border:1px solid black;
     border-radius: 10px;
     background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 ::-webkit-input-placeholder {
     font-size: 15px;
