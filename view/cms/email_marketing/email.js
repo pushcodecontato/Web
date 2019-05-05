@@ -64,36 +64,35 @@ function emails_enviar(form){
    $(form).css({'background-image':'url(view/imagem/loading.svg)'});
    $(form).append("<p class='loading-emails' style='text-align: center; color: #888888; margin-top: 322px;'> Carregando.. </p>");
    var terminado = 0;
-	do{
+   do{
 		
 		var email = window.emails[acc];
 
-		setTimeout(function(){
-
-			$.ajax({url:'router.php?controller=email_marketing&modo=ENVIAR',
+		$.ajax({url:'router.php?controller=email_marketing&modo=ENVIAR',
 			    type:'POST',
 			    method:'POST',
 			    data:{assunto,mensagem,email},
 			    success:function(resposta){
-			    	console.log("Oi:",resposta);
-			    	$(form).find('p.loading-emails').text("Email "+email+" enviado!");
-			    	
-			    	console.log("Terminado : ",terminado);
+			    	setTimeout(function(){
+						console.log("Oi:",resposta);
+						$(form).find('p.loading-emails').text("Email "+email+" enviado!");
 
-			    	terminado++;
-			    	
-			    	if(window.emails.length == terminado){
-			    		$.notify("Todos os emails foram enviados com sucesso!","success");
-						/* Fechando a janela */
-			    		setTimeout(function(){fecharModal()},300);
-			    	}
+						console.log("Terminado : ",terminado);
+
+						terminado++;
+
+						if(window.emails.length == terminado){
+							$.notify("Todos os emails foram enviados com sucesso!","success");
+							/* Fechando a janela */
+							setTimeout(function(){fecharModal()},300);
+						}
+			    		
+			    	},200);
 
 			    }
 		   })
 
-		},250);
-
 		acc++;
-	}while(window.emails.lenght > acc);
+	}while(window.emails.length > acc);
 
 }

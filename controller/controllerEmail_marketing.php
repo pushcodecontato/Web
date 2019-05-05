@@ -41,6 +41,8 @@ class ControllerEmail_marketing{
 
     }
     public function enviar(){
+        
+        sleep(1);
 
         $assunto = $_POST['assunto'];
         $email = $_POST['email'];
