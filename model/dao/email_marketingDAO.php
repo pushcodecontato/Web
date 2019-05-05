@@ -9,6 +9,22 @@ class Email_marketingDAO{
             $this->conex = new  conexaoMysql();
         }
 
+        public function insert($email_marketing){
+            
+            $sql = "INSERT INTO tbl_email_mkt(email)".
+                   "VALUES('".$email_marketing->getEmail()."')";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+
+            if($PDO_conex->query($sql)){
+                   echo "Registro inserido com sucesso ";
+                   return true;
+            } else {
+                   echo "Erro no script de insert!! $sql";
+                   return false;
+            }
+        }
         public function delete($id){
             $sql = " DELETE FROM tbl_email_mkt where id = $id ";
 

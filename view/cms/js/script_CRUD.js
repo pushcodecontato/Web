@@ -2,11 +2,30 @@
 let mensagem = "";
 let msg = "";
 let type = "" ;
-
 let caminho = "";
 var href = window.location.href;
 var caminho_absoluto = 'view/cms/';
 
+function enviar(){
+	event.preventDefault();
+	console.log("Hellow!!!!!!")
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+			console.log("Hellow@",dados);
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Email enviado com sucesso", "success");
+
+				conteudo_subMenu('email_marketing/email_marketing.php',true);
+				fecharModal();
+			}
+		}
+	})
+}
 function conteudo_subMenu(nome_pagina){
 
         $.ajax({

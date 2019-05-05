@@ -6,7 +6,7 @@
 
 <div class="segura_text_button">
     <h2>TABELA COMO GANHAR DINHEIRO</h2>
-   <!-- <button class="adicionar_nivel" id="abrir_cadastro">ADICIONAR SESSÕES</button>-->
+   <button class="adicionar_nivel" id="abrir_cadastro">ADICIONAR SESSÕES</button>
 </div>
 <div class="segura_tabela">
     <div class="tabela_niveis">

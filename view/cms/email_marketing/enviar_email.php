@@ -1,13 +1,22 @@
-<div class="segura_form">  
-    <form class="form_cadastro" method="POST" id="form" action="enviar_email.php">
+<?php
+    
+    $i = $_GET["email"];
+    $router = "router.php?controller=email_marketing&modo=ENVIAR";
+    $funcaoJS = "enviar();";
+?>
+<div class="segura_form">
+    <form class="form_cadastro" method="POST" action="<?=@$router?>" onsubmit="<?=@$funcaoJS?>">
         <div class="segura_form_cadastro">
             <label for="nome_nivel">Enviar Email</label><br>
-            <input id="nome_nivel" name="txtDestinatario" placeholder="Destinatário" required style="margin-bottom:10px;"><br>
-            <input id="descricao" name="txtAssunto" placeholder="Assunto" required><br>
-            <textarea name="txtMensagem" multiple required style="margin-top: 20px;"  rows="8" cols="45" style="resize: none;" maxlength="500">
+            <input id="nome_nivel" name="email" placeholder="E-mail" required style="margin-bottom:10px;"><br>
+            <input id="descricao" name="assunto" placeholder="Assunto" required><br>
+            <textarea name="mensagem" placeholder="Digite sua mensagem" style="margin-top: 20px;"  rows="8" cols="45" style="resize: none;" maxlength="500" required>
             </textarea>
         </div>
-        <input type="submit" class="btn_padrao" onclick="enviar_email();" value="Enviar">
+        <?php
+         echo $email;
+         ?>
+        <input type="submit" class="btn_padrao" name="enviar" value="Enviar">
     </form>
 </div>
 <style>

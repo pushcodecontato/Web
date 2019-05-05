@@ -30,8 +30,9 @@ function selecioneEmails(checkTodos){
         $('input[type="checkbox"][name="emails"]').prop('checked',false);
     }
 }
-function enviarEmail(id_email_mkt){
-	$.get('?cms/email_marketing/enviar_email.php&id_email_mkt='+ id_email_mkt)
+function enviarEmail(email){
+	console.log(email);
+	$.get('?cms/email_marketing/enviar_email.php&email='+ email)
      .then(function(res){
 		modal(res.toString());
 	});
