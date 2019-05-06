@@ -69,7 +69,27 @@ class ControllerEmail_marketing{
                 . "Content-Length: " . strlen($dados) . "\r\n",
             )
         ));
-        return file_get_contents($url, null, $contexto);
+        $resposta = "";
+        
+       $resposta = file_get_contents($url, null, $contexto);
+       if(!$resposta){
+
+           $auth = base64_encode("17259209:15553758807");
+
+           /* PROXY SENAI ME ATRASANDO!!!*/
+           $contexto = stream_context_create(array(
+            'http' => array(
+                'proxy' => "http://10.107.132.7:3129",
+                'method' => 'POST',
+                'content' => $dados,
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+                . "Content-Length: " . strlen($dados) . "\r\n",
+                )
+            ));
+            $resposta = file_get_contents($url, null, $contexto);
+       }
+        
+        return $resposta;
     }
 }
 ?>
