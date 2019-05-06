@@ -77,3 +77,17 @@ function fale_conosco_enviar(form){
 		}
 	})
 }
+function email_marketing_enviar(form){
+	event.preventDefault();
+	$.ajax({
+		url:$(form).attr('action'),
+		type:'POST',
+		method:'POST',
+		data:$(form).serialize(),
+		success:function(resposta){
+			console.log(resposta);
+			$(form).find('input[name="txtEmail"]').val('');
+			$.notify(" Email cadastrado "," success ");
+		}
+	})
+}

@@ -43,6 +43,16 @@
     margin-left: 20px;
     float: left;
 }
+.lista_cadastrar_veiculo_img{
+    width: 400px;
+    height: 300px;
+    color: black;
+    margin-left: 20px;
+    float: left;
+    background-size: 400px 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /*****************************SESSAO CADASTRAR ANUNCIO*****************/
 #sessao_cadastrar_anuncio{
     width: 1380px;

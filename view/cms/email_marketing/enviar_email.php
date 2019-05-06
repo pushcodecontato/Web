@@ -1,17 +1,21 @@
-<div class="segura_form">  
-    <form class="form_cadastro" method="POST" id="form" action="enviar_email.php">
+<?php
+    
+    $router = "router.php?controller=email_marketing&modo=ENVIAR";
+    $funcaoJS = "emails_enviar(this)";
+?>
+<div class="segura_form">
+    <form class="form_cadastro" method="POST" action="<?=@$router?>" onsubmit="<?=@$funcaoJS?>">
         <div class="segura_form_cadastro">
             <label for="nome_nivel">Enviar Email</label><br>
-            <input id="nome_nivel" name="txtDestinatario" placeholder="Destinatário" required style="margin-bottom:10px;"><br>
-            <input id="descricao" name="txtAssunto" placeholder="Assunto" required><br>
-            <textarea name="txtMensagem" multiple required style="margin-top: 20px;"  rows="8" cols="45" style="resize: none;" maxlength="500">
-            </textarea>
+            <input id="descricao" name="assunto" placeholder="Assunto" required><br>
+            <textarea name="mensagem" placeholder="Digite sua mensagem" style="margin-top: 20px;"
+             rows="8" cols="45" style="resize: none;" maxlength="500" required></textarea>
         </div>
-        <input type="submit" class="btn_padrao" onclick="enviar_email();" value="Enviar">
+        <input type="submit" class="btn_padrao" name="enviar" value="Enviar">
     </form>
 </div>
 <style>
-    *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -59,6 +63,8 @@ form{
     border:1px solid black;
     border-radius: 10px;
     background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 ::-webkit-input-placeholder {
     font-size: 15px;

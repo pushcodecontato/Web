@@ -1,7 +1,7 @@
 <?php
     class ControllerComo_ganhar_dinheiro{
 
-
+        
         private $como_ganhar_dinheiroDAO;
 
         public function __construct(){
@@ -10,6 +10,7 @@
             require_once('model/dao/como_ganhar_dinheiroDAO.php');
 
             $this->como_ganhar_dinheiroDAO = new Como_ganhar_dinheiroDAO();
+
         }
         public function inserir_como_ganhar_dinheiro(){
                if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -40,31 +41,42 @@
             $this->como_ganhar_dinheiroDAO->delete($id);
         }
         public function atualizar_como_ganhar_dinheiro(){
-        
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-                $como_ganhar_dinheiro = new Como_ganhar_dinheiro();
+            $como_ganhar_dinheiro = $this->getPage();
+               echo $como_ganhar_dinheiro->getImg1_sessao2();
+            if($_GET['sessao'] == "sessao1"){
+                var_dump($_POST);
                 $como_ganhar_dinheiro->setTitulo_sessao1($_POST['txtTitulo_sessao1'])
                     ->setLista1_sessao1($_POST['txtLista1_sessao1'])
-                    ->setLista2_sessao1($_POST['txtLista2_sessao1'])
-                    ->setImg1_sessao1($this->uploadImagem($_FILES['img1_sessao1']))
-                    ->setTitulo_sessao2($_POST['txtTitulo_sessao2'])
-                    ->setImg1_sessao2($this->uploadImagem($_FILES['img1_sessao2']))
+                    ->setLista2_sessao1($_POST['txtLista2_sessao1']);
+                    //->setImg1_sessao1($this->uploadImagem($_FILES['img1_sessao1']));
+
+            }elseif($_GET['sessao'] == "sessao2"){
+                $como_ganhar_dinheiro->setTitulo_sessao2($_POST['txtTitulo_sessao2'])
+                    //->setImg1_sessao2($this->uploadImagem($_FILES['img1_sessao2']))
                     ->setLista1_sessao2($_POST['txtLista1_sessao2'])
-                    ->setImg2_sessao2($this->uploadImagem($_FILES['img2_sessao2']))
-                    ->setLista2_sessao2($_POST['txtLista2_sessao2'])
-                    ->setTitulo_sessao3($_POST['txtTitulo_sessao3'])
+                    //->setImg2_sessao2($this->uploadImagem($_FILES['img2_sessao2']))
+                    ->setLista2_sessao2($_POST['txtLista2_sessao2']);
+
+            }elseif($_GET['sessao'] == "sessao3"){
+                $como_ganhar_dinheiro->setTitulo_sessao3($_POST['txtTitulo_sessao3'])
                     ->setTexto_sessao3($_POST['txtTexto_sessao3']);
-                
-                $this->como_ganhar_dinheiroDAO->update($como_ganhar_dinheiro);
             }
-            
+            if(isset($_FILES['img1_sessao1']) && $_FILES['img1_sessao1']['size'] > 0){
+                $como_ganhar_dinheiro->setImg1_sessao1($this->uploadImagem($_FILES['img1_sessao1']));
+             }
+             if(isset($_FILES['img1_sessao2']) && $_FILES['img1_sessao2']['size'] > 0){
+                $como_ganhar_dinheiro->setImg1_sessao2($this->uploadImagem($_FILES['img1_sessao2']));
+             }
+             if(isset($_FILES['img2_sessao2']) && $_FILES['img2_sessao2']['size'] > 0){
+                $como_ganhar_dinheiro->setImg2_sessao2($this->uploadImagem($_FILES['img2_sessao2']));
+             }
+                $this->como_ganhar_dinheiroDAO->insert($como_ganhar_dinheiro);
+          echo $como_ganhar_dinheiro->getImg1_sessao2();
         }
-        public function getById(){
-                
-            //$id = $_POST['id'];
-            
-            return $this->como_ganhar_dinheiroDAO->selectById();
+        public function getPage(){
+                            
+            return $this->como_ganhar_dinheiroDAO->selectPage();
 
         }
         public function listar_como_ganhar_dinheiro(){

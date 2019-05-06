@@ -493,7 +493,7 @@
                         break;
                    case "SELECT":
                         
-                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getById();
+                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getPage();
                         require_once('view/cms/pagina_como_ganhar_dinheiro/cadastrar.php');
                         break;
                 }
@@ -569,6 +569,28 @@
                 }
  
                 break;
+                /*Email Marketing*/
+                case "EMAIL_MARKETING":
+                
+                require_once('controller/controllerEmail_marketing.php');
+
+                $controller_email_marketing = new ControllerEmail_marketing();
+              
+                switch($modo){
+                    case "ENVIAR":
+                        
+                        $controller_email_marketing->enviar();
+
+                        break;
+                    case "INSERIR":
+                        
+                        $controller_email_marketing->inserir();
+
+                        break;
+                }
+ 
+                break;
+
 
                 
         }
