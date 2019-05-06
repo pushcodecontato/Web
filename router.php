@@ -493,7 +493,7 @@
                         break;
                    case "SELECT":
                         
-                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getById();
+                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getPage();
                         require_once('view/cms/pagina_como_ganhar_dinheiro/cadastrar.php');
                         break;
                 }

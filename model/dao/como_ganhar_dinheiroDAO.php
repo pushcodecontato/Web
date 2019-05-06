@@ -14,7 +14,7 @@ class Como_ganhar_dinheiroDao{
 
     public function insert($como_ganhar_dinheiro){
             
-            $sql = "insert into tbl_como_ganhar_dinheiro(id,titulo_sessao1,lista1_sessao1,lista2_sessao1,img1_sessao1,titulo_sessao2,img1_sessao2,lista1_sessao2,img2_sessao2,lista2_sessao2,titulo_sessao3,texto_sessao3)".
+            $sql = "insert into tbl_como_ganhar_dinheiro(titulo_sessao1,lista1_sessao1,lista2_sessao1,img1_sessao1,titulo_sessao2,img1_sessao2,lista1_sessao2,img2_sessao2,lista2_sessao2,titulo_sessao3,texto_sessao3)".
                "VALUES('". $como_ganhar_dinheiro->getTitulo_sessao1() ."',
                     '". $como_ganhar_dinheiro->getLista1_sessao1() ."',
                     '". $como_ganhar_dinheiro->getLista2_sessao1() ."',
@@ -27,7 +27,7 @@ class Como_ganhar_dinheiroDao{
                     '". $como_ganhar_dinheiro->getTitulo_sessao3() ."',
                     '". $como_ganhar_dinheiro->getTexto_sessao3() ."'
                     )";
-
+            echo $sql;
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
 
@@ -120,9 +120,9 @@ class Como_ganhar_dinheiroDao{
 
 
     }
-    public function selectById($id){
+    public function selectPage(){
 
-        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro where id = $id ";
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1";
 
         $PDO_conex = $this->conex->connect_database();
 

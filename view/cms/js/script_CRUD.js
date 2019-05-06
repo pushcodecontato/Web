@@ -516,27 +516,53 @@ function como_ganhar_dinheiro_insert(form){
 }
 function como_ganhar_dinheiro_update(form){
 
-	event.preventDefault();
+	var submetido = ($(form).attr('data-submit') || 0) * 1;
+   
 
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
-		success:function(dados){
+  //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
+   if(submetido == 1){
 
-			if(dados.toString().search('sucesso')>=0){
+      return true;
 
-				$.notify("Atualizado com sucesso", "success");
+   }else{
+     
+     $(form).attr('data-submit','1');
 
-				conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
-				
-				fecharModal()
+   }
 
+   event.preventDefault();
+    
+   var form = $(form);
+//    if(form.attr('data-sessao') == 'sessao1'){
+//    	$('form').find('[name="txtLista1_sessao1"]')[1].value= $('form').find('[name="txtLista1_sessao1"]')[0].value;
+// 	$('form').find('[name="txtLista2_sessao1"]')[1].value= $('form').find('[name="txtLista2_sessao1"]')[0].value;
+//    }else if(form.attr('data-sessao') == 'sessao2'){
+//    	$('form').find('[name="txtLista1_sessao2"]')[1].value= $('form').find('[name="txtLista1_sessao2"]')[0].value;
+// 	$('form').find('[name="txtLista2_sessao2"]')[1].value= $('form').find('[name="txtLista2_sessao2"]')[0].value;
+//    }else if(form.attr('data-sessao') == 'sessao3'){
+// 	$('form').find('[name="txtTexto_sessao3"]')[1].value= $('form').find('[name="txtTexto_sessao3"]')[0].value;
+//    }
+   	 // Envia os dados do formulario
+   $(form)
+   .ajaxForm({
+       success:function(resposta){
+         console.log("RESPOSTA",resposta);
+         
+         if(resposta.toString().search('sucesso')>=0){
 
-			}
-		}
-	})
+           $.notify("Registro alterado com sucesso", "success");
+           
+           // Redirecionando o usuario depois da menssagem de sucesso aparecer
+           setTimeout(function(){
+             
+             //Redirecionando
+			conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+
+           },800)
+
+         }
+       },
+   }).submit();
 }
 
 function como_ganhar_dinheiro_delete(id){

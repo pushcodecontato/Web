@@ -2,7 +2,6 @@
 $('#abrir_cadastro').click(function(){
     // fadeIn para abrir a modal - 400 tempo de abertura
     $("#container2").fadeIn(400);
-
     $.ajax({
         type: 'POST',
         url: '?cms/pagina_como_ganhar_dinheiro/cadastrar.php',
@@ -17,3 +16,20 @@ $('#abrir_cadastro').click(function(){
         }
     });
 });
+
+function abrir_cadastro(sessao){
+    $.ajax({
+        type: 'POST',
+        url: '?cms/pagina_como_ganhar_dinheiro/cadastrar.php&sessao='+sessao,
+        success:function(callback){
+            modal(callback);
+            setTimeout(function(){
+                //$('#formComo_ganhar_dinheiro').find('textarea').richText();
+                $('#formComo_ganhar_dinheiro').find('textarea').each(function(){
+
+                    $(this).richText();
+                })
+            },200);
+        }
+    });
+}

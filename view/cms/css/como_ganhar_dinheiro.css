@@ -5,12 +5,12 @@
     outline: none;
     border-radius: 10px;
     border: none;
-    margin-top: 380px;
     font-family: verdana;
     font-size: 15px;
     color: white;
     background-color: #00984A;
-    margin-left: 1000px;
+    float: right;
+    margin-top: 0px;
 }
 .segura_text_button{
     width:100%;
@@ -32,7 +32,7 @@
     width:180px;
     height: 45px;
     margin-top: 7px;
-    margin-left: 420px;
+    margin-left: 10px;
     border:none;
     background-color: #00984A;
     color: #fff;
@@ -136,16 +136,18 @@
 }
 
 .segura_form{
-    width:1200px;
-    height: 600px;
+    width: 700px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     border:1px solid black;
     border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
 }
 form{
-    width: 1200px;
+    width: 700px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -153,6 +155,7 @@ form{
     border-radius: 10px;
     background-color: #fff;
     overflow: scroll;
+    display: contents;
 }
 ::-webkit-input-placeholder {
     font-size: 15px;
@@ -161,11 +164,12 @@ form{
 .segura_form_cadastro{
     width: 517px;
     height: auto;
-    margin-left: 40px;
+    margin-left: AUTO;
     margin-right: auto;
     margin-top: 7px;
     float: left;
     overflow: auto;
+    display: contents;
 }
  .segura_form_cadastro label{
     font-family: "OpenSans-Regular";
