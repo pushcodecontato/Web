@@ -120,9 +120,9 @@ class Como_ganhar_dinheiroDao{
 
 
     }
-    public function selectById($id){
+    public function selectById($id = 0 ){
 
-        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro where id = $id ";
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1 ";
 
         $PDO_conex = $this->conex->connect_database();
 
