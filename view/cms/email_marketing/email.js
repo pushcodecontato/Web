@@ -57,7 +57,7 @@ function enviarEmail(){
 function emails_enviar(form){
 	event.preventDefault();
 	var assunto  = $(form).find('[name="assunto"]').val();
-	var menssagem  = $(form).find('[name="mensagem"]').val();
+	var mensagem  = $(form).find('[name="mensagem"]').val();
 	var acc = 0;
 	
    $(form).find('*').hide(200);
