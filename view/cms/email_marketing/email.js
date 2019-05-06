@@ -73,6 +73,36 @@ function emails_enviar(form){
 			    method:'POST',
 			    data:{assunto,mensagem,email},
 			    success:function(resposta){
+			    	if(resposta.toString().search('Email enviado') < 0){
+			    		setTimeout(function(){
+			    			$.ajax({url:'http://mobshare-email.herokuapp.com/email',
+			    				method:'POST',
+			    				type:'POST',
+			    				data:{
+			    					email,assunto,conteudo:mensagem,
+			    					key:"5748844fd988sdfsfsad"
+			    				}}).then(function(resposta){
+									setTimeout(function(){
+										console.log("Oi:",resposta);
+										$(form).find('p.loading-emails').text("Email "+email+" enviado!");
+
+										console.log("Terminado : ",terminado);
+
+										terminado++;
+
+										if(window.emails.length == terminado){
+											$.notify("Todos os emails foram enviados com sucesso!","success");
+											/* Fechando a janela */
+											setTimeout(function(){fecharModal()},300);
+										}
+
+									},200);
+
+			    				})
+			    		},200);
+						console.log("Erro enviando automaticamente!!");
+			    		
+			    	}
 			    	setTimeout(function(){
 						console.log("Oi:",resposta);
 						$(form).find('p.loading-emails').text("Email "+email+" enviado!");
