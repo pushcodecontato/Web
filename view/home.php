@@ -19,7 +19,13 @@
     <script src="view/js/main.js"></script>
 </head>
 <body>
+    
     <div id="principal">
+        <div class="container">
+            <div class="modal">
+
+            </div>
+        </div>
         <header id="header_home" style="background-image: url(view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
@@ -38,7 +44,7 @@
                     </div>
                     <div class="segura_login">
                         <div class="login_cadastro" id="login" style="width: 110px;">
-                            <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
                         </div>
                         <div class="login_cadastro" style="width: 160px;">
                             <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
@@ -62,15 +68,7 @@
                     <div id="segura_como_funciona">
                         <div class="area_texto_maior">
                             <?=@$pagina->getComofunciona()->getTexto()?>
-                            <!--<ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            </ul>-->
+                            
                         </div >
                         <img class="imagem_como_funciona" src="view/upload/<?=@$pagina->getComofunciona()->getFoto()?>" alt="carro" title="">   
                     </div>

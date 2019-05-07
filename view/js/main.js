@@ -33,6 +33,17 @@ function getLogin(){
     })
 }
 
+function efetuarLogin(){
+    $('.container').show();
+    $.ajax({
+        type: "POST",
+        url:'?login_usuario.php',
+        success:function(callback){
+            $(".modal").html(callback);
+        }
+    });
+}
+
 function getCadastro(){
 
     // Redirecionando o usuario para o formualrio de cadastro
