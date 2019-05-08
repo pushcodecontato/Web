@@ -49,33 +49,6 @@
                 <div id="devolucao_data">10/02/2019-10:30 </div>
             </div>
         </div>
-
-
-        <div class="segura_coluna">
-            <div class="coluna">
-
-            </div>
-
-            <div class="coluna"></div>
-
-            <div class="coluna"></div>
-
-            <div class="coluna"></div>
-        </div>
-
-
-
-        <div class="segura_coluna">
-            <div class="coluna">
-
-            </div>
-
-            <div class="coluna"></div>
-
-            <div class="coluna"></div>
-
-            <div class="coluna"></div>
-        </div>
     </div>
 
 

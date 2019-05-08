@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `mob_share`;
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
 --
 -- Host: localhost    Database: mob_share
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -98,7 +98,7 @@ CREATE TABLE `tbl_anuncio` (
   KEY `fk_tbl_veiculos_tbl_anuncios_idx` (`id_veiculo`),
   CONSTRAINT `fk_tbl_usuario_tbl_anuncios` FOREIGN KEY (`id_cliente_locador`) REFERENCES `tbl_cliente` (`id_cliente`),
   CONSTRAINT `fk_tbl_veiculos_tbl_anuncios` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `tbl_anuncio` (
 
 LOCK TABLES `tbl_anuncio` WRITE;
 /*!40000 ALTER TABLE `tbl_anuncio` DISABLE KEYS */;
-INSERT INTO `tbl_anuncio` VALUES (1,'Feriado do dia do trabalho',1,1,'07:00:00','18:00:00','2019-05-04','2019-05-10',0,10.00),(2,'Final de semana',2,4,'11:00:00','15:00:00','2019-05-03','2019-10-05',0,22.00),(3,'Começo de semana ',3,7,'13:00:00','19:00:00','2018-05-07','2019-05-12',0,11.00);
+INSERT INTO `tbl_anuncio` VALUES (1,'Feriado do dia do trabalho',1,1,'07:00:00','18:00:00','2019-05-04','2019-05-10',1,10.00),(2,'Final de semana',2,4,'11:00:00','15:00:00','2019-05-03','2019-10-05',1,22.00),(3,'Começo de semana ',3,7,'13:00:00','19:00:00','2018-05-07','2019-05-12',1,11.00),(4,'Começo de semana ',1,2,'11:00:00','13:00:00','2018-05-07','2019-05-10',1,22.00),(5,'Final de semana',2,5,'13:00:00','19:00:00','2018-05-07','2019-10-05',1,22.00),(6,'Final de semana',2,6,'13:00:00','19:00:00','2018-05-07','2019-10-05',1,22.00),(7,'Final de semana',3,8,'13:00:00','19:00:00','2018-05-07','2019-10-05',1,22.00),(8,'Final de semana',2,5,'13:00:00','19:00:00','2018-05-07','2019-10-05',1,22.00),(9,'Final de semana',3,9,'13:00:00','19:00:00','2018-05-07','2019-10-05',1,22.00);
 /*!40000 ALTER TABLE `tbl_anuncio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,22 +376,23 @@ DROP TABLE IF EXISTS `tbl_cliente`;
 CREATE TABLE `tbl_cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código do cliente',
   `nome_cliente` varchar(250) NOT NULL COMMENT 'nome do cliente',
-  `cpf` varchar(11) NOT NULL COMMENT 'cpf do cliente',
+  `cpf` varchar(11) DEFAULT NULL COMMENT 'cpf do cliente',
   `telefone` varchar(15) DEFAULT NULL COMMENT 'telefone do cliente',
-  `celular` varchar(16) NOT NULL COMMENT 'celular do cliente',
-  `cnh_foto` varchar(255) NOT NULL COMMENT 'foto da cnh do cliente',
+  `celular` varchar(16) DEFAULT NULL COMMENT 'celular do cliente',
+  `cnh_foto` varchar(255) DEFAULT NULL COMMENT 'foto da cnh do cliente',
   `foto_cliente` varchar(255) NOT NULL COMMENT 'foto do cliente',
-  `rua` varchar(150) NOT NULL COMMENT 'rua do endereço do cliente',
-  `bairro` varchar(150) NOT NULL COMMENT 'bairro do cliente',
-  `cep` varchar(8) NOT NULL COMMENT 'cep do cliente',
-  `complemento` varchar(150) NOT NULL COMMENT 'complemento do endereço do cliente',
-  `cidade` varchar(70) NOT NULL COMMENT 'cidade do cliente',
-  `uf` varchar(2) NOT NULL COMMENT 'sigla do estado do cliente ',
+  `rua` varchar(150) DEFAULT NULL COMMENT 'rua do endereço do cliente',
+  `bairro` varchar(150) DEFAULT NULL COMMENT 'bairro do cliente',
+  `cep` varchar(8) DEFAULT NULL COMMENT 'cep do cliente',
+  `complemento` varchar(150) DEFAULT NULL COMMENT 'complemento do endereço do cliente',
+  `cidade` varchar(70) DEFAULT NULL COMMENT 'cidade do cliente',
+  `uf` varchar(2) DEFAULT NULL COMMENT 'sigla do estado do cliente ',
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `status` tinyint(2) NOT NULL DEFAULT '1',
+  `dt_nascimento` date NOT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -400,7 +401,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
-INSERT INTO `tbl_cliente` VALUES (1,'Gabriel','43534','345345','345345','92b8aca15170aad6e392c835bb11c0f0.png','55761ff015d4887afc61becf4401e7f4.png','324','324324','32423','32423','324','32','admin@bugbunny.com','$2y$12$bkQhQa5RQQX0RxwU9lZ5lOSneac1hZwtAfSnQCHTkJalLYVNrgKny',1),(2,'Gil 45435','43534543','435345','435345','4befd27b8e47c89c67efdbb2a31bdaae.png','9d476c5f9d012ec9d18bf0141799eaaa.jpg','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$srOo70lWcrDwy1GGESMyLeF7Lz5i/2pqmxN5yuQAahXodZMs6tPVe',0),(3,'Claudio','43534543','435345','435345','7cbe6b59fc9a4c38bb5faddf75a9ca02.png','a4af6044b6a1abd4e88bb3cb9a959b5a.png','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$xN33ks.UYcZVRoHWrlmcOu6Edi/Tac5DF/RXVYsxaVR4iC6RlsEQC',0),(4,'Larissa Bruna ','49056154885','1141445998','11952446264','f38a682cc6d4f40631a804babaa8ec61.jpg','cfcc3b19a426269118bf894a2b9d86e9.png','Ariano Camaros','Amador Bueno','6680580','apt','Barueri','SP','lala_2.5@hotmail.com','$2y$12$Optce0mwBAfQLIdoLlGRHemKcOzf4R4oaN1wheri03zBjSsT0Pcou',1);
+INSERT INTO `tbl_cliente` VALUES (1,'Gabriel','43534','345345','345345','92b8aca15170aad6e392c835bb11c0f0.png','55761ff015d4887afc61becf4401e7f4.png','324','324324','32423','32423','324','32','admin@bugbunny.com','$2y$12$bkQhQa5RQQX0RxwU9lZ5lOSneac1hZwtAfSnQCHTkJalLYVNrgKny',1,'0000-00-00'),(2,'Gil 45435','43534543','435345','435345','4befd27b8e47c89c67efdbb2a31bdaae.png','9d476c5f9d012ec9d18bf0141799eaaa.jpg','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$srOo70lWcrDwy1GGESMyLeF7Lz5i/2pqmxN5yuQAahXodZMs6tPVe',0,'0000-00-00'),(3,'Claudio','43534543','435345','435345','7cbe6b59fc9a4c38bb5faddf75a9ca02.png','a4af6044b6a1abd4e88bb3cb9a959b5a.png','345345','4353','32423','435345','435','34','claudio@teste.com.br','$2y$12$xN33ks.UYcZVRoHWrlmcOu6Edi/Tac5DF/RXVYsxaVR4iC6RlsEQC',0,'0000-00-00'),(4,'Larissa Bruna ','49056154885','1141445998','11952446264','f38a682cc6d4f40631a804babaa8ec61.jpg','cfcc3b19a426269118bf894a2b9d86e9.png','Ariano Camaros','Amador Bueno','6680580','apt','Barueri','SP','lala_2.5@hotmail.com','$2y$12$Optce0mwBAfQLIdoLlGRHemKcOzf4R4oaN1wheri03zBjSsT0Pcou',1,'0000-00-00'),(5,'matheus',NULL,NULL,NULL,NULL,'img/1lvc017wjvcakrgb.jpg',NULL,NULL,NULL,NULL,NULL,NULL,'matheus@matheus','123',1,'1999-07-18'),(6,'Matheus',NULL,NULL,NULL,NULL,'img/1lvc017wjvcari1r.jpg',NULL,NULL,NULL,NULL,NULL,NULL,'matheus@hotmail','123',1,'1999-07-18'),(7,'Gil Ramos',NULL,NULL,NULL,NULL,'img/1lvc07hgjvcesuhm.jpg',NULL,NULL,NULL,NULL,NULL,NULL,'gilberto.tec@vivaldi.net','123',1,'1999-06-02');
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1863,6 +1864,96 @@ LOCK TABLES `tbl_veiculo` WRITE;
 INSERT INTO `tbl_veiculo` VALUES (1,'2014','HJTY','88026','50766292645',10,4,6,1),(2,'2008','PIC45','65195','50582893948',10,4,7,1),(3,'2015','CN-346','50748','80562129195',10,4,8,1),(4,'2016','IUT-6GT','57589','10486980259',10,5,9,2),(5,'2013','OIP-756J','77000','39072700160',10,5,10,2),(6,'2014','GHY-6H5','53803','12036664000',10,5,10,2),(7,'2012','YUE-5DF','45897','53217774157',10,5,11,3),(8,'2017','ACD-6U4','56897','59817709762',10,4,8,3),(9,'2015','KJH-R456','45687','30245746848',10,4,12,3);
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `view_anuncios`
+--
+
+DROP TABLE IF EXISTS `view_anuncios`;
+/*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_anuncios` AS SELECT 
+ 1 AS `locador`,
+ 1 AS `celular`,
+ 1 AS `telefone`,
+ 1 AS `rua`,
+ 1 AS `bairro`,
+ 1 AS `cep`,
+ 1 AS `complemento`,
+ 1 AS `uf`,
+ 1 AS `cidade`,
+ 1 AS `id_cliente`,
+ 1 AS `id_anuncio`,
+ 1 AS `data_inicial`,
+ 1 AS `data_final`,
+ 1 AS `descricao`,
+ 1 AS `horario_inicio`,
+ 1 AS `horario_termino`,
+ 1 AS `valor_hora`,
+ 1 AS `ano`,
+ 1 AS `placa`,
+ 1 AS `quilometragem`,
+ 1 AS `renavam`,
+ 1 AS `nome_tipo_veiculo`,
+ 1 AS `nome_marca`,
+ 1 AS `nome_modelo`,
+ 1 AS `id_tipo_veiculo`,
+ 1 AS `id_tipo_marca`,
+ 1 AS `id_modelo`,
+ 1 AS `nome_foto`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_tipo_marca`
+--
+
+DROP TABLE IF EXISTS `view_tipo_marca`;
+/*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_tipo_marca` AS SELECT 
+ 1 AS `id_tipo_veiculo`,
+ 1 AS `id_marca_veiculo`,
+ 1 AS `id_tipo_marca`,
+ 1 AS `nome_marca`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_anuncios`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_anuncios` AS select `cliente`.`nome_cliente` AS `locador`,`cliente`.`celular` AS `celular`,`cliente`.`telefone` AS `telefone`,`cliente`.`rua` AS `rua`,`cliente`.`bairro` AS `bairro`,`cliente`.`cep` AS `cep`,`cliente`.`complemento` AS `complemento`,`cliente`.`uf` AS `uf`,`cliente`.`cidade` AS `cidade`,`cliente`.`id_cliente` AS `id_cliente`,`anuncios`.`id_anuncio` AS `id_anuncio`,`anuncios`.`data_inicial` AS `data_inicial`,`anuncios`.`data_final` AS `data_final`,`anuncios`.`descricao` AS `descricao`,`anuncios`.`horario_inicio` AS `horario_inicio`,`anuncios`.`horario_termino` AS `horario_termino`,`anuncios`.`valor_hora` AS `valor_hora`,`veiculos`.`ano` AS `ano`,`veiculos`.`placa` AS `placa`,`veiculos`.`quilometragem` AS `quilometragem`,`veiculos`.`renavam` AS `renavam`,`tipo_veiculo`.`nome_tipo_veiculo` AS `nome_tipo_veiculo`,`marca_veiculo`.`nome_marca` AS `nome_marca`,`modelo_veiculo`.`nome_modelo` AS `nome_modelo`,`tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`marca_tipo`.`id_tipo_marca` AS `id_tipo_marca`,`modelo_veiculo`.`id_modelo` AS `id_modelo`,`foto_veiculo`.`nome_foto` AS `nome_foto` from (((((((`tbl_cliente` `cliente` join `tbl_anuncio` `anuncios` on((`anuncios`.`id_cliente_locador` = `cliente`.`id_cliente`))) join `tbl_veiculo` `veiculos` on((`veiculos`.`id_veiculo` = `anuncios`.`id_veiculo`))) join `tbl_tipo_veiculo` `tipo_veiculo` on((`veiculos`.`id_tipo_veiculo` = `tipo_veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` `marca_veiculo` on((`veiculos`.`id_marca_veiculo` = `marca_veiculo`.`id_marca_veiculo`))) join `tbl_marca_veiculo_tipo_veiculo` `marca_tipo` on(((`marca_tipo`.`id_tipo_veiculo` = `tipo_veiculo`.`id_tipo_veiculo`) and (`marca_tipo`.`id_marca_veiculo` = `marca_veiculo`.`id_marca_veiculo`)))) join `tbl_modelo_veiculo` `modelo_veiculo` on((`veiculos`.`id_modelo_veiculo` = `modelo_veiculo`.`id_modelo`))) join `tbl_foto_veiculo` `foto_veiculo` on((`foto_veiculo`.`id_veiculo` = `veiculos`.`id_veiculo`))) where (`anuncios`.`status_aprovado` = 1) group by `foto_veiculo`.`id_veiculo` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_tipo_marca`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_tipo_marca` AS select `tbl_tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo` AS `id_marca_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_marca` AS `id_tipo_marca`,`tbl_marca_veiculo`.`nome_marca` AS `nome_marca` from ((`tbl_tipo_veiculo` join `tbl_marca_veiculo_tipo_veiculo` on((`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_veiculo` = `tbl_tipo_veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` on((`tbl_marca_veiculo`.`id_marca_veiculo` = `tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo`))) where ((`tbl_marca_veiculo_tipo_veiculo`.`excluido` = 0) and (`tbl_marca_veiculo`.`status` = 1)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1873,4 +1964,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-06  3:58:05
+-- Dump completed on 2019-05-08  7:57:02
