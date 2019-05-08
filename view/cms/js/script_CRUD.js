@@ -503,7 +503,6 @@ function como_ganhar_dinheiro_insert(form){
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-			console.log("Hellow@",dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Cadastrado com sucesso", "success");
@@ -543,8 +542,7 @@ function como_ganhar_dinheiro_update(form){
 // 	$('form').find('[name="txtTexto_sessao3"]')[1].value= $('form').find('[name="txtTexto_sessao3"]')[0].value;
 //    }
    	 // Envia os dados do formulario
-   $(form)
-   .ajaxForm({
+   $(form).ajaxForm({
        success:function(resposta){
          console.log("RESPOSTA",resposta);
          
@@ -607,9 +605,8 @@ function termos_uso_getDados(){
 
 }
 function termos_uso_insert(form){
-
 	event.preventDefault();
-	console.log("Hellow!!!!!!")
+	console.log($(form).attr('action'));
 	$.ajax({
 		type:'post',
 		method:'post',

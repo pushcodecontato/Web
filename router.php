@@ -534,7 +534,7 @@
 
                 /*Termo de Uso*/
                 case ($controller == 'TERMOS' || $controller == "TERMOS_USO"):
-                
+                echo "estou na controller termos";
                 require_once('controller/controllerTermos_uso.php');
 
                 $controller_termos_uso = new ControllerTermos_uso();

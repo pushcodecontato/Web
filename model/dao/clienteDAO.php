@@ -34,6 +34,7 @@
                                ->setSenha($senha);
 
             } else {
+                echo $sql;
                 echo "Erro no script de insert";
                 // Retornando false para que a controller saiba que o ussuario não foi inserido
                 return false;

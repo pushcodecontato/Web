@@ -5,8 +5,8 @@
     $titulo = "";
     $texto = "";
     $router = "router.php?controller=termos_uso&modo=inserir";
-    $funcaoJs = "inserir_termos_uso();";
-    
+    $funcaoJS = "termos_uso_insert(formTermos_uso)";
+
     // só vai entrar nessa condição se o objeto nível existir. Se houver a condição, no momento de editar, executará esse código
     if(isset($termos_uso)){
         
@@ -14,12 +14,12 @@
         $titulo = $termos_uso->getTitulo();
         $texto = $termos_uso->getTexto();
         $router = "router.php?controller=termos_uso&modo=atualizar&id=".$id;
-        $funcaoJS = "atualizar_termos_uso()";
+        $funcaoJS = "termos_uso_update(formTermos_uso)";
         $botao = 'Editar';
     }
 ?>
 <div class="segura_form">
-    <form class="form_cadastro" method="POST" id="formTermos_uso" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
+    <form class="form_cadastro" method="POST" id="formTermos_uso" name="formTermos_uso" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>">
     <h3 class="titulo_pagina">Cadastrar Termos de Uso</h3>
         <div class="segura_form_cadastro">
             <label for="pergunta_faq">Adicionar Título para Página</label><br>

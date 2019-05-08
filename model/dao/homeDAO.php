@@ -93,8 +93,9 @@ class HomeDAO{
         
         $select = $PDO_conex->query($sql);
 
+        
         if($rs_sessao = $select->fetch(PDO::FETCH_ASSOC)){
-            
+        
             $sessao = new SessaoComoFunciona();
 
             $sessao->setId($rs_sessao['id_pagina_home2'])

@@ -120,6 +120,10 @@ class Como_ganhar_dinheiroDao{
 
 
     }
+    public function selectById($id = 0 ){
+
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1 ";
+    }
     public function selectPage(){
 
         $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1";
