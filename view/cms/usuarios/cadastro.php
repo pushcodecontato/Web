@@ -11,7 +11,7 @@
     if(@$usuario){
         $nome = $usuario->getNome();
         $email = $usuario->getEmail();
-        $senha = '2545';
+        $senha = '5465464487754';
         $slcNivel = $usuario->getNivel();
         $id_usuario_cms = '&id='.$usuario->getId();
         $modo = 'ATUALIZAR';

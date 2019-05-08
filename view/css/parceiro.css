@@ -27,6 +27,10 @@
 #seja-parceiro p ,#seja-parceiro div{
     font-size: 0.8em;
 }
+#seja-parceiro div *{
+    background-color:transparent;
+    font-size: 0.8em;
+}
 #seja-parceiro img{
     margin-top: 36px;
 }

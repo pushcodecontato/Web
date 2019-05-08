@@ -38,14 +38,15 @@ class ControllerTermos_uso{
 
         //verificar se o metodo que esta chegando é GET ou POST
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $termos_uso = $this->getPagina();
 
-                $termos_uso = new Termos_uso();
+                if(isset($_POST['txtTitulo'])){
+                    $termos_uso->setTitulo($_POST['txtTitulo'])
+                               ->setTexto($_POST['txtTexto']);
+                }
 
-                $termos_uso->setId($_GET['id'])
-                            ->setTitulo($_POST['txtTitulo'])
-                            ->setTexto($_POST['txtTexto']);
 
-                $this->termos_usoDao->update($termos_uso);
+                $this->termos_usoDao->insert($termos_uso);
             }
 
     }
@@ -60,6 +61,13 @@ class ControllerTermos_uso{
     public function listar_termos_uso(){
 
         $consulta = $this->termos_usoDao->selectAll();
+
+        return $consulta;
+    }
+
+    public function getPagina(){
+
+        $consulta = $this->termos_usoDao->selectPage();
 
         return $consulta;
     }

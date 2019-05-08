@@ -138,7 +138,7 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Agendamentos</p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('locacao/avaliacoes',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Avaliações dos locadores</p>
                         </div>

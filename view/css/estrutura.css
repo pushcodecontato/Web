@@ -86,14 +86,19 @@ html{
     text-align: center;
     font-family: "Roboto-regular";
     /* font-weight: bold; */
+    background-color: transparent;
 }
 .texto_secundario{
     color:#ffffff;
     margin-top: 10px;
     font-size: 22px;
     text-align: center;
-    font-family: "Roboto";;
+    font-family: "Roboto";
     font-weight: bold;
+    background-color: transparent;
+}
+.texto_primario * ,.texto_secundario *{
+    background-color: transparent;
 }
 .btn_anunciar{
     width:130px;

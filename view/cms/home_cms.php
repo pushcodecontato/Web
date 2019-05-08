@@ -24,6 +24,7 @@
             return;
         }
 
+
     }
 
 
@@ -86,9 +87,8 @@
                     <?php foreach($lista_acessos as $item_menu){ ?> 
 
                             <?php
-                                if( $item_menu->getSelecionado() != "selected"){
-                                    break;
-                                }
+                                
+                                if(! $item_menu->getSelecionado() != "selected"){
                             ?>
 
                             <div class="item_menu" onclick="<?=@$item_menu->getClick()?>">
@@ -161,7 +161,9 @@
                                     </div>
                                     
                             <?php } ?>
-                    <?php } ?>
+             <?php      }
+                    } 
+             ?>
 
                         <!--<div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_paginas')">
                                 <img src="view/cms/imagem/icones/paginas.png" alt="Gerenciar paginas"> 
