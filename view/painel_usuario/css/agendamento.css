@@ -1,5 +1,5 @@
 #conteudo_agendamento{
-    width: 998px;
+    width: 962px;
     height: 703px;
     float: left;
     border: solid 1px;
@@ -14,10 +14,9 @@
     background-color:#fff;
 }
 #principal_agendamento{
-    width: 990px;
+    width: 942px;
     height: 670px;
-    border: solid 1px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .segura_coluna{
@@ -26,7 +25,7 @@
 }
 
 .coluna{
-    width: 163px;
+    width: 155px;
     height: 60px;
     float:left;
     border: solid 1px;
