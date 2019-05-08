@@ -189,7 +189,6 @@ class  TipoVeiculoDAO{
     public function getModelos($id){
 
         /* select com 4 tabelas */
-
         /* Com inner join */
         $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*,tbl_modelo_veiculo.status as 'statusModelo' FROM tbl_tipo_veiculo   ".
                "inner join tbl_marca_veiculo_tipo_veiculo on tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo ".
@@ -198,13 +197,13 @@ class  TipoVeiculoDAO{
                "WHERE tbl_modelo_veiculo.excluido = 0 AND tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
 
         /* Com subquery  e WHERE */
-        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*,tbl_modelo_veiculo.status as 'statusModelo' FROM ".
-               "tbl_marca_veiculo_tipo_veiculo,tbl_marca_veiculo,tbl_modelo_veiculo,tbl_tipo_veiculo ".
-               "where tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo AND ".
-               "tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo	AND ".
-               "tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 		AND ".
-               "tbl_modelo_veiculo.excluido = 0                                                  		AND ".
-               "tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
+//         $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*,tbl_modelo_veiculo.status as 'statusModelo' FROM ".
+//                "tbl_marca_veiculo_tipo_veiculo,tbl_marca_veiculo,tbl_modelo_veiculo,tbl_tipo_veiculo ".
+//                "where tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo AND ".
+//                "tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo	AND ".
+//                "tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 		AND ".
+//                "tbl_modelo_veiculo.excluido = 0                                                  		AND ".
+//                "tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
 
         $PDO_conex = $this->conex->connect_database();
 
@@ -319,8 +318,11 @@ class  TipoVeiculoDAO{
 
 
     }
+
+    /*Select para painel de usuário para cadastrar veículo*/
+    public function getTipoVeiculos(){
+
+        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*, ."
+    }
 }
-
-
-
 ?>
