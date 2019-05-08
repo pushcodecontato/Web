@@ -46,35 +46,48 @@
                 </div>
             </div>
         </header>
-        <section class="section_termos_uso">
+        <?php 
 
-            <div class="conteudo">
-            <?php 
                 require_once('controller/controllerTermos_uso.php');
 
-                    $controller_termos_uso = new ControllerTermos_uso();
+                $controller_termos_uso = new ControllerTermos_uso();
+                $pagina =  $controller_termos_uso->getPagina();
 
-                    $listTermos_uso =  $controller_termos_uso->listar_termos_uso();
+         ?>
 
 
-                    if(count($listTermos_uso) < 1){
-                      echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                      echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
-                    }
+         <?php if(!$pagina){ ?>
 
-                    foreach($listTermos_uso as $registro){
-                ?>
-                <div class="texto_termos">
-                    <p><?=@$registro->getTitulo()?></p>
+                    <img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>
+                    <p class='aviso_tabela'> Nenhum registro encontrado!</p>
+
+        <?php  } elseif($pagina->getStatus() == 1 ){ ?>
+
+            <section class="section_termos_uso">
+
+                <div class="conteudo">
+                    <div class="texto_termos">
+                        <p><?=@$pagina->getTitulo()?></p>
+                    </div>
+                    <div class="termos">
+                        <p><?=@$pagina->getTexto()?></p>
+                    </div>
                 </div>
-                <div class="termos">
-                    <p><?=@$registro->getTexto()?></p>
-                </div>
-                <?php
-                    }
-                ?>
-            </div>
-        </section>
+            </section>
+
+        <?php } else { ?>
+              <script>
+                $.notify(" Pagina desabilidada! Redirecionando para o inicio ","info")
+                
+                setTimeout(function(){
+                    
+                    //Redirecionando
+                    window.location = "?home.php";
+
+                },1600);
+
+              </script>       
+        <?php } ?>
     </div>
     <footer class="cor_site_padrao">
         <!--  Caixas que contem o contato e o navegar pelo site -->

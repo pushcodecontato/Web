@@ -13,7 +13,7 @@
             <div class="col_titulo" style="width:130px; border-left: 1px solid black;">Opções</div>
         </div>
         <?php 
-        require_once('controller/controllerFaq.php');
+            require_once('controller/controllerFaq.php');
 
             $controller_faq = new ControllerFaq();
 
@@ -27,14 +27,19 @@
 
             foreach($listFaq as $registro){
         ?>
-        <div class="linha_resposta">
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas()?></div>
-            <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas()?></div>
-            <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
-                <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="faq_getById(<?=@$registro->getId()?>)">
-                <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="faq_delete(<?=@$registro->getId()?>)">
+            <div class="linha_resposta">
+                <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getPerguntas()?></div>
+                <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$registro->getRespostas()?></div>
+                <div class="col_resposta" style="width:180px;  border-left: 1px solid black;">
+                    <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="faq_getById(<?=@$registro->getId()?>)">
+                    <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="faq_delete(<?=@$registro->getId()?>)">
+                    <?php if($registro->getStatus() == 1){ ?>
+                            <img src="view/cms/imagem/icones/enable.png" alt="delete" title="Excluir" onclick="faq_status(<?=@$registro->getId()?>,1)">
+                    <?php }else{ ?>
+                            <img src="view/cms/imagem/icones/disable.png" alt="delete" title="Excluir" onclick="faq_status(<?=@$registro->getId()?>,0)">
+                    <?php } ?>
+                </div>
             </div>
-        </div>
         <?php
             }
         ?>

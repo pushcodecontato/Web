@@ -44,7 +44,9 @@ class ControllerTermos_uso{
                     $termos_uso->setTitulo($_POST['txtTitulo'])
                                ->setTexto($_POST['txtTexto']);
                 }
-
+                if(isset($_POST['status'])){
+                    $termos_uso->setStatus($_POST['status']);
+                }
 
                 $this->termos_usoDao->insert($termos_uso);
             }

@@ -33,7 +33,7 @@
 
 
             if($PDO_conex->query($sql)){
-                   echo "Registro deletado !";
+                   echo "Registro deletado ! sucesso";
             } else {
                     echo "Registro não encontrado!! $sql";
                     return 0;
@@ -42,8 +42,10 @@
         }
         public function update($faq){
         
-                $sql = "UPDATE tbl_faq SET respostas='" . $faq->getRespostas() . "' , perguntas='" . $faq->getPerguntas() . "' " . 
-                " WHERE id =".$faq->getId(). "";
+                $sql = "UPDATE tbl_faq SET respostas='" . $faq->getRespostas() . "' , perguntas='" . $faq->getPerguntas() . "' " .
+                       " , status=".$faq->getStatus()." ".
+                       " WHERE id=".$faq->getId().   " ";
+                
                 echo $sql;
                 //Abrido conexao com o BD
                 $PDO_conex = $this->conex->connect_database();
@@ -72,7 +74,8 @@
                 $faq = new Faq();
                 $faq->setId($rs_faq['id'])
                     ->setPerguntas($rs_faq['perguntas'])
-                    ->setRespostas($rs_faq['respostas']);
+                    ->setRespostas($rs_faq['respostas'])
+                    ->setStatus($rs_faq['status']);
 
                 $listar_registros[] = $faq;
                 
@@ -98,7 +101,8 @@
                 $faq = new Faq();
                 $faq->setId($rs_faq['id'])
                     ->setPerguntas($rs_faq['perguntas'])
-                    ->setRespostas($rs_faq['respostas']);
+                    ->setRespostas($rs_faq['respostas'])
+                    ->setStatus($rs_faq['status']);
 
                 return $faq;
 

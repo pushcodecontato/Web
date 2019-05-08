@@ -25,7 +25,11 @@
                     <div class="col_resposta" style="padding-top: 10px; width:400px;  border-left: 1px solid black;"><?=@$pagina->getTexto()?></div>
                     <div class="col_resposta" style="width:130px;  border-left: 1px solid black;">
                         <img src="view/cms/imagem/icones/edit.png" alt="edit" title="Editar" onclick="termos_uso()">
-                        <img src="view/cms/imagem/icones/delete.png" alt="delete" title="Excluir" onclick="termos_uso_delete()">
+                        <?php if($pagina->getStatus() == 1){ ?>
+                            <img src="view/cms/imagem/icones/enable.png" alt="ativa" title="ativar" onclick="termos_uso_status(1)">
+                        <?php }else{ ?>
+                            <img src="view/cms/imagem/icones/disable.png" alt="desativa" title="desativar" onclick="termos_uso_status(0)">
+                        <?php } ?>
                     </div>
                 </div>
             <?php

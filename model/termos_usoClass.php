@@ -5,6 +5,7 @@
     private $id;
     private $titulo;
     private $texto;
+    private $status;
 
     public function __construct(){
 
@@ -32,6 +33,13 @@
     public function setTexto($texto){
         $this->texto  = $texto;
         return $this;
+    }
+    public function setStatus($status){
+        $this->status = $status;
+        return $this;
+    }
+    public function getStatus(){
+        return $this->status;
     }
 
 }

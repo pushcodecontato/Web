@@ -36,11 +36,11 @@
         <div class="segura_form_cadastro">
             <label for="pergunta_faq">Adicionar Título para Página</label><br>
             
-            <input id="pergunta_faq" value="<?php echo($termos_uso->getTitulo())?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
+            <input maxlength="100" id="pergunta_faq" value="<?php echo($termos_uso->getTitulo())?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
             
             <label for="resposta_faq">Adicionar Termo de Uso</label><br>
 
-            <textarea id="resposta_faq" value="<?php echo($termos_uso->getTexto())?>" name="txtTexto" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($termos_uso->getTexto())?></textarea><br>
+            <textarea maxlength="65000" id="resposta_faq" name="txtTexto" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($termos_uso->getTexto())?></textarea><br>
         </div>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo($botao)?>">
     </form>

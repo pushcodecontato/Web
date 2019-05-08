@@ -6,7 +6,7 @@
     $perguntas = "";
     $respostas = "";
     $router = "router.php?controller=faq&modo=inserir";
-    $funcaoJs = "inserir_faq();";
+    $funcaoJS = "faq_inserir(this)";
 
     // if(isset($))
     
@@ -17,7 +17,7 @@
         $perguntas = $faq->getPerguntas();
         $respostas = $faq->getRespostas();
         $router = "router.php?controller=faq&modo=atualizar&id=".$id;
-        $funcaoJS = "atualizar_faq()";
+        $funcaoJS = "faq_atualizar(this)";
         $botao = 'Editar';
     }
 ?>
@@ -28,9 +28,9 @@
 <!--             <label for="pergunta_faq">Adicionar Título para Página</label><br>
             <input id="pergunta_faq" value="<?php echo($titulo)?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br> -->
             <label for="pergunta_faq">Adicionar Pergunta</label><br>
-            <input id="pergunta_faq" value="<?php echo($perguntas)?>" name="txtPerguntas" placeholder="Insira uma pergunta" required style="margin-bottom:10px;"><br>
+            <input id="pergunta_faq" maxlength="100" value="<?php echo($perguntas)?>" name="txtPerguntas" placeholder="Como Anucniar meu carro?" required style="margin-bottom:10px;"><br>
             <label for="resposta_faq">Adicionar Resposta</label><br>
-            <textarea id="resposta_faq" value="<?php echo($respostas)?>" name="txtRespostas" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($respostas)?></textarea><br>
+            <textarea id="resposta_faq" maxlength="65000" value="<?php echo($respostas)?>" name="txtRespostas" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($respostas)?></textarea><br>
         </div>
         <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo($botao)?>">
     </form>
