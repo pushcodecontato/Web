@@ -198,9 +198,9 @@ a{
     width: 960px;
     height: 720px;
     float: left;
-    /* border: solid 1px; */
     overflow-x: hidden;
     overflow-y: auto;
+    margin-top: 5px;
 }
 
 

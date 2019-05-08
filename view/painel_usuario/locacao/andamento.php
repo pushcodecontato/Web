@@ -1,5 +1,3 @@
-
-
 <head>
   <link rel="stylesheet" 
           type="text/css"
