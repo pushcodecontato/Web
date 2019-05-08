@@ -41,11 +41,17 @@
         }
 
         public function update($usuario){
-             
-             $sql = "UPDATE tbl_usuario_cms SET nome_usuario_cms = '" . $usuario->getNome() . "',".
-                    "email_usuario_cms= '" . $usuario->getEmail() . "',senha = '" . $usuario->genSenha() . "',id_niveis =" .  $usuario->getNivel() ." ".
-                    "WHERE id_usuario_cms = " .  $usuario->getId() . " ";
-                          
+
+             if($usuario->getSenha() == "5465464487754"){/* Senha padrão que vem no form de edição */
+                     $sql = "UPDATE tbl_usuario_cms SET nome_usuario_cms = '" . $usuario->getNome() . "',".
+                            "email_usuario_cms= '" . $usuario->getEmail() . "',id_niveis =" .  $usuario->getNivel() ." ".
+                            "WHERE id_usuario_cms = " .  $usuario->getId() . " ";
+             }else{
+                     $sql = "UPDATE tbl_usuario_cms SET nome_usuario_cms = '" . $usuario->getNome() . "',".
+                            "email_usuario_cms= '" . $usuario->getEmail() . "',senha = '" . $usuario->genSenha() . "',id_niveis =" .  $usuario->getNivel() ." ".
+                            "WHERE id_usuario_cms = " .  $usuario->getId() . " ";
+             }
+
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
 
@@ -132,6 +138,7 @@
                         ->setEmail($rs_usuario['email_usuario_cms'])
                         ->setSenha($rs_usuario['senha'])
                         ->setNivel($rs_usuario['id_niveis']);
+                 echo "sdasdasdasd";
 
                 return $usuario;
 
