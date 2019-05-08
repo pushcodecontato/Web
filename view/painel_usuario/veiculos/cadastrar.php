@@ -81,10 +81,22 @@
         <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
     </div>
     <div class="veiculos-titulo">Upload de imagem</div>
+    
+    
+<!--
+        <div class="conteudo_upload">
+            
+
+
+        </div>
+-->
+
+  
+  
     <table class="veiculos-cadastrar-table">
         <tr>
             <td>
-                <div></div>
+                <div class="div_foto"></div>
             </td>
             <td></td>
             <td></td>
@@ -94,4 +106,5 @@
         <tr>
     </table>
 </form>
+
 <link rel="stylesheet" type="text/css" href="view/painel_usuario/veiculos/cadastrar.css">
