@@ -586,17 +586,15 @@ function como_ganhar_dinheiro_delete(id){
 // SOBRE NOS
 
 // TERMOS DE USO
-function termos_uso_getById(id){
-	event.preventDefault();
+function termos_uso(){
 	 $.ajax({
-		type:'post',
-		method:'post',
-		url:'router.php?controller=termos_uso&modo=select',
-		data:{id},
-		success:function(dados){
-			modal(dados);
-		}
-	})
+        type: 'POST',
+        url: '?cms/pagina_termos_uso/cadastrar.php',
+        // o callback tras o retorno da requisição da url feita por post
+        success:function(resposta){
+            modal(resposta);
+        }
+    });
 }
 
 function termos_uso_getDados(){
@@ -604,26 +602,7 @@ function termos_uso_getDados(){
 	conteudo_subMenu('pagina_termos_uso/tabela',true);
 
 }
-function termos_uso_insert(form){
-	event.preventDefault();
-	console.log($(form).attr('action'));
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
-		success:function(dados){
-			console.log("Hellow@",dados);
-			if(dados.toString().search('sucesso')>=0){
 
-				$.notify("Cadastrado com sucesso", "success");
-
-				conteudo_subMenu('pagina_termos_uso/tabela',true);
-				fecharModal();
-			}
-		}
-	})
-}
 function termos_uso_update(form){
 
 	event.preventDefault();
@@ -634,7 +613,7 @@ function termos_uso_update(form){
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-
+			console.log("Dados : ",dados)
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Atualizado com sucesso", "success");
@@ -649,7 +628,7 @@ function termos_uso_update(form){
 	})
 }
 
-function termos_uso_delete(id){
+/*function termos_uso_delete(id){
 	event.preventDefault();
 	$.ajax({
 		type:'post',
@@ -666,7 +645,7 @@ function termos_uso_delete(id){
 			}
 		}
 	});
-}
+}*/
 // PAGINA HOME - SESSÕES
 
 

@@ -89,6 +89,7 @@
     text-align: center;
     font-family: "OpenSans-Regular";
     float: left;
+    overflow: hidden;
 }
 .col_resposta img{
     width:42px;
@@ -115,11 +116,8 @@
 }
 
 .segura_form{
-    width:900px;
-    height: 450px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
     border:1px solid black;
     border-radius: 5px;
     /* display: none; */
@@ -129,7 +127,6 @@ form{
     height: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
     border:1px solid black;
     border-radius: 10px;
     background-color: #fff;
@@ -178,4 +175,16 @@ form{
     text-transform: uppercase;
     box-sizing: border-box;
     font-family: "OpenSans-Regular";
+}
+
+#formTermos_uso textarea{
+    border: solid 1px #e8e8e8;
+    min-width: 99%;
+    resize: none;
+    min-height: 91px;
+    padding-top: 4px;
+    margin-top: 6px;
+    width: 374px;
+    padding-left: 10px;
+    background-color: white;
 }
