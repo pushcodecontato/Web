@@ -296,7 +296,6 @@
                         case "STATUS":
 						
                            echo($controller_clientes->status());
-//                            echo('<script>alert("dkdk");</script>');
                             break;
                     }
                         
