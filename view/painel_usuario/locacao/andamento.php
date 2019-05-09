@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" 
           type="text/css"
-          href="view/painel_usuario/css/andamento.css"/>
+          href="view/painel_usuario/locacao/css/andamento.css"/>
 </head>
 
  

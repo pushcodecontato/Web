@@ -1,0 +1,72 @@
+/*css cadaastrar anuncio*/
+
+
+#conteudo_anuncio{
+    width: 962px;
+    height: 700px;
+    float: left;
+    border: solid 1px;
+    margin-top: 15px;
+}
+
+#h2Border{
+    width: 198px;
+    height: 15px;
+    margin-top: -15px;
+    margin-left:50px; 
+    background-color:#fff;
+}
+
+.base{
+    width:100%;
+    height:680;
+/*     background-color:red; */
+    margin-top:25px;
+}
+
+.conteudo_esquerda{
+    width:355px;
+    height:680px;
+    border:solid 1px;
+    float: left;
+    margin-left: 10px;
+    
+}
+#titulo{
+    width: 100px;
+    height: 20px;
+/*    background-color: lightcoral;*/
+    font-size: 15px;
+    margin-left:20px;
+    font-family: verdana;
+    margin-top:10px;
+    display:block;
+
+}
+
+#titulo2{
+    width: 100px;
+    height: 20px;
+/*     background-color: lightcoral; */
+    font-size: 12px;
+    margin-left:20px;
+    font-family: verdana;
+    margin-top:30px;
+    display:block;
+ 
+}
+
+#cb_veiculos{
+    width:300px;
+    height:30px;
+    margin-left: 20px;
+    margin-top:-50px;
+   
+}
+
+.conteudo_direita{
+    width:560px;
+    height:680px;
+    border:solid 1px;
+    float: left;
+}

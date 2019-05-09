@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" 
           type="text/css"
-          href="view/painel_usuario/css/avaliacoes.css"/>
+          href="view/painel_usuario/locacao/css/avaliacoes.css"/>
 </head>
 
  

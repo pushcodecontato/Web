@@ -87,8 +87,8 @@
                         <img src="view/cms/imagem/icones/paginas.png" alt="Gerenciar paginas"> 
                         <p>Gerenciar anuncios</p>
                     </div>
-                    <div class="sub_menu" id="gerenciar_anuncios"> 
-                        <div class="item_sub_menu">
+                    <div class="sub_menu" id="gerenciar_anuncios" > 
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/cadastrar_anuncio',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p>Cadastrar anúncio</p>
                         </div>
@@ -96,7 +96,7 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Interessados </p>
                         </div>
-                        <div class="item_sub_menu">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncio_estatistica',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Estatística </p>
                         </div>

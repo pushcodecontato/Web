@@ -1,7 +1,7 @@
 
 
 <head>
-  <link rel="stylesheet" type="text/css" href="view/painel_usuario/css/interessado_veiculo.css"/>
+  <link rel="stylesheet" type="text/css" href="view/painel_usuario/anuncios/css/interessado_veiculo.css"/>
 </head>
 
 <!--<div id="conteudo">-->

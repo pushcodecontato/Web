@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" 
           type="text/css"
-          href="view/painel_usuario/css/agendamento.css"/>
+          href="view/painel_usuario/locacao/css/agendamento.css"/>
 </head>
 
 <!-- conteudo agendamento -->
