@@ -1,9 +1,28 @@
 <?php
+    
+    $cliente = null;
+    $boolean = "false";
     require_once('controller/controllerHome.php');
+    require_once('model/clienteClass.php');
 
     $controllerHome = new controllerHome();
-    
     $pagina = $controllerHome->getPage();
+    
+    // Pegando o Cliente Logado
+    if(!isset($_SESSION))session_start();
+
+    if(isset($_POST['logout'])){
+        echo "Sucesso";
+        $boolean = false;
+        session_destroy();
+    }
+   
+    if(isset($_SESSION['cliente'])){
+        $cliente = unserialize($_SESSION['cliente']);
+        $boolean = true;
+    }
+        
+    
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +38,20 @@
     <script src="view/js/main.js"></script>
 </head>
 <body>
-    
+<script>
+    $(document).ready(function(){
+        if(<?php echo $boolean?>)
+            headerLogado();
+        else
+            headerNaoLogado();
+    });
+</script>
+<div id="principal">
+    <div class="container">
+        <div class="modal">
+
+        </div>
+    </div>
     <div id="principal">
         <div class="container">
             <div class="modal">
@@ -42,6 +74,7 @@
                             <li><a href="?sobre">SOBRE NÓS</a></li>
                         </ul>
                     </div>
+                    <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
                     <div class="segura_login">
                         <div class="login_cadastro" id="login" style="width: 110px;">
                             <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
@@ -449,6 +482,7 @@
     <script>
         jQuery("#txtTelefone").mask("(99)9999-9999");
         jQuery("#txtCelular").mask("(99)99999-9999");
+       
     </script>
 </body>
 </html>

@@ -181,6 +181,10 @@ form{
     border: solid 1px #e8e8e8;
     min-width: 99%;
     resize: none;
+    min-height: 91px;
+    padding-top: 4px;
+    margin-top: 6px;
+    width: 374px;
     min-height: 171px;
     padding-top: 4px;
     margin-top: 6px;

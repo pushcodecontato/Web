@@ -287,16 +287,11 @@
 
                             break;
                         case "LOGAR":
-                           
                            $controller_clientes->logar();
                             break;
-                            
-                            
-                            
                         case "STATUS":
-						
                            echo($controller_clientes->status());
-                            break;
+			   break;
                     }
                         
                 
@@ -590,8 +585,6 @@
                     }
  
                 break;
-
-
                 
         }
       

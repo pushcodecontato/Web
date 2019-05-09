@@ -84,8 +84,9 @@
             } else {
 
                 $this->conex->close_database();
-                
-                return false;
+                echo "Registro não encontrado!!";
+
+               return false;
             }
         
                 
