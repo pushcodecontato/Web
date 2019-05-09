@@ -32,56 +32,38 @@
             <!--CABEÇALHO-->
             <header>
                 <!--TODO CONTEUDO DO CABEÇALHO-->
-                <div id="conteudo_header">
-                     
-                           
+                <div id="conteudo_header">     
                     <div class="img_logo">
-                        <img class="img_logo" src="view/painel_usuario/imagem/Mob.png" title="logo da empresa" alt="logo da empresa">
+                        <img src="view/imagem/Mob.png" title="logo da empresa" alt="logo da empresa">
                     </div>
-                    
-                    <div id="bemvindo">
-                        <h1> Bem vindo! </h1>
-                        <h4><?=@$cliente->getNome()?></h4>
-                    
-                    </div>
-                    
-                   
-                    
-                    <div class="img_logo">
-                        <img class="img_usuario" src="view/painel_usuario/imagem/usuario.png" title="oto do usuario" alt="foto do usuario">
-                        
-                        
-                    </div>
-                    
-                    <!--Segura todos icones-->
-                    <div id="segura_icones"> 
-                        
-                        <div class="icone">
-                            
-                            <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
-                        
+                    <div class="boasVindas">
+                        <div id="bemVindo">
+                            <h3>Olá! <?=@$cliente->getNome()?></h3>
+                            <p>Você tem 10 notificações</p>
+                            <div id="segura_icones"> 
+                                <div class="icone"> 
+                                    <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
+                                </div>
+                                <div class="icone">
+                                    <img class="img_icone" src="view/painel_usuario/imagem/star.png" title="icone" alt="icone">
+                                </div> 
+                                <div class="icone">
+                                <img class="img_icone" src="view/painel_usuario/imagem/chart.png" title="icone" alt="icone">
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="icone">
-                              <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
-                        
-                        </div>
-                        
-                        <div class="icone">
-                          <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
-                        </div>
-                        
-                        <div class="icone">
-                            <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
-                        
-                        </div>
-                    </div>
                 
+                        <div class="img_cliente" >
+                            <div class="editarPerfil">
+                                <img id="imgEditarPerfil" src="view/painel_usuario/imagem/editarPerfil.png">
+                            </div>
+                            <img src="view/upload/<?=@$cliente->getFoto()?>" title="Foto do usuario" alt="foto do usuario">
+                        </div>
+                    </div>
                 </div>
             </header>
             <!--MENU-->
             <nav>
-                <h5>Menu</h5>
                 <div class="menu_lateral">
                     <div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_anuncios')">
                         <img src="view/cms/imagem/icones/paginas.png" alt="Gerenciar paginas"> 
