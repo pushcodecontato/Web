@@ -89,8 +89,7 @@ function closeLogin(){
 
 function getCadastro(){
     // Redirecionando o usuario para o formualrio de cadastro
-    window.location.href = '?painel_usuario/cadastro.php';
-
+    window.location.href = '?cadastro_usuario.php';
 }
 
 function fale_conosco_enviar(form){

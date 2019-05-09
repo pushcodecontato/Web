@@ -24,8 +24,11 @@
 }
 /*css*/
 body{
-    margin: 0px;
-    padding: 0px;
+    width:100%;
+    height: 100vh;
+    background-image: url('../../imagem/edgar-guerra-426747-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /*div principal*/
 #principal{
@@ -156,10 +159,11 @@ header{
 /*menu*/
 nav{
     width: 236px;
-    height: 720px;
+    height: 715px;
     border-right: 1px solid black;
     float: left;
     border-bottom-left-radius: 20px;
+    background-color: #fff;
 }
 #texto_menu{
     font-family: verdana;
@@ -264,48 +268,6 @@ a{
     float: left;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: #fff;
+    border-bottom-right-radius: 20px;
 }
-
-/* conteudo de outras paginas MEUS VEICULOS LOCADOS*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

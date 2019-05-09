@@ -1,0 +1,111 @@
+@import "style.css";
+@import "estrutura.css";
+
+#principal{
+    width:100%;
+    height: auto;
+    min-height: 2000px;
+}
+.containerCadastro{
+    width:1200px;
+    height: auto;
+    min-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+}
+.containerCadastro h1{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.seguraCadastro{
+    width:1000px;
+    height: auto;
+    min-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+}
+.seguraCadastro h2{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.linha{
+    width:950px;
+    border-bottom:2px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+  
+}
+.formDadosPessoais{
+    width:480px;
+    height: 500px;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    margin-left: 100px;
+    margin-top: 60px;
+}
+.formDadosPessoais label{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.formDadosPessoais input[type="text"], input[type="date"]{
+    width: 440px;
+    height: 40px;
+    background-color: #dcdcdc;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    color: #000;
+}
+.formCarregarFotos{
+    width:320px;
+    height: 550px;;
+    float: left;
+}
+.addFotoCliente{
+    width:200px;
+    height: 200px;
+    border-radius: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #dcdcdc;
+
+}
+.addCnhCliente{
+    width:200px;
+    height: 150px;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #dcdcdc;
+    margin-top: 20px;
+}
+.btnFoto{
+    width:250px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    background-color: #00984A;
+    color: #fff;
+    font-family: roboto;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+}

@@ -45,10 +45,11 @@
                                     <img class="img_icone" src="view/painel_usuario/imagem/icone_home.png" title="icone" alt="icone">
                                 </div>
                                 <div class="icone">
-                                    <img class="img_icone" src="view/painel_usuario/imagem/star.png" title="icone" alt="icone">
+                                    <img class="img_icone" src="view/painel_usuario/imagem/chart.png" title="icone" alt="icone">
                                 </div> 
                                 <div class="icone">
-                                <img class="img_icone" src="view/painel_usuario/imagem/chart.png" title="icone" alt="icone">
+                                    <img class="img_icone" src="view/painel_usuario/imagem/star.png" title="icone" alt="icone">
+                                    
                                 </div>
                             </div>
                         </div>
