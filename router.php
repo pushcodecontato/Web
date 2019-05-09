@@ -291,7 +291,8 @@
                             break;
                         case "STATUS":
                            echo($controller_clientes->status());
-                            break;
+//                         echo('<script>alert("dkdk");</script>');
+                           break;
                     }
                         
                 
@@ -381,7 +382,8 @@
                 require_once('controller/controllerFaq.php');
 
                 $controller_faq = new ControllerFaq();
-              
+
+                
                 switch($modo){
                     case "INSERIR":
                         
@@ -532,20 +534,20 @@
                 require_once('controller/controllerTermos_uso.php');
 
                 $controller_termos_uso = new ControllerTermos_uso();
-              
+
                 switch($modo){
                     case "INSERIR":
-                        
+
                         $controller_termos_uso->inserir_termos_uso();
 
                         break;
                     case "ATUALIZAR":
-                         
+
                          $controller_termos_uso->atualizar_termos_uso();
-                         
+
                          break;
                     case "EXCLUIR":
-                    
+
                          $controller_termos_uso->excluir_termos_uso();
                          break;
                     case "SELECTALL":
@@ -561,31 +563,29 @@
                         require_once('view/cms/pagina_termos_uso/cadastrar.php');
                         break;
                 }
- 
+
                 break;
                 /*Email Marketing*/
                 case "EMAIL_MARKETING":
                 
-                require_once('controller/controllerEmail_marketing.php');
+                   require_once('controller/controllerEmail_marketing.php');
 
-                $controller_email_marketing = new ControllerEmail_marketing();
+                   $controller_email_marketing = new ControllerEmail_marketing();
               
-                switch($modo){
-                    case "ENVIAR":
-                        
-                        $controller_email_marketing->enviar();
+                   switch($modo){
+                      case "ENVIAR":
 
-                        break;
-                    case "INSERIR":
-                        
-                        $controller_email_marketing->inserir();
+                         $controller_email_marketing->enviar();
 
-                        break;
-                }
+                         break;
+                       case "INSERIR":
+
+                         $controller_email_marketing->inserir();
+
+                         break;
+                    }
  
                 break;
-
-
                 
         }
       

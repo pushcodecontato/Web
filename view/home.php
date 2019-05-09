@@ -52,6 +52,12 @@
 
         </div>
     </div>
+    <div id="principal">
+        <div class="container">
+            <div class="modal">
+
+            </div>
+        </div>
         <header id="header_home" style="background-image: url(view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
@@ -68,9 +74,14 @@
                             <li><a href="?sobre">SOBRE NÓS</a></li>
                         </ul>
                     </div>
-                 
                     <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-
+                    <div class="segura_login">
+                        <div class="login_cadastro" id="login" style="width: 110px;">
+                            <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                        </div>
+                        <div class="login_cadastro" style="width: 160px;">
+                            <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                        </div>
                     </div>
                 </div>    
             </nav>

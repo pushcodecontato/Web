@@ -180,7 +180,8 @@
             $PDO_conex = $this->conex->connect_database();
 
             $select = $PDO_conex->query($sql);
-            
+
+            echo("<script>conteudo_subMenu(clientes.php);</script>");
             return "1";
         }
 

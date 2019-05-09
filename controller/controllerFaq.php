@@ -42,11 +42,17 @@ class ControllerFaq{
         //verificar se o metodo que esta chegando é GET ou POST
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-                $faq = new Faq();
+                $faq = $this->faqDao->selectById($_GET['id']);
+                
+                if(isset($_POST['txtPerguntas'])){
 
-                $faq->setId($_GET['id'])
-                    ->setPerguntas($_POST['txtPerguntas'])
-                    ->setRespostas($_POST['txtRespostas']);
+                    $faq->setPerguntas($_POST['txtPerguntas'])
+                        ->setRespostas($_POST['txtRespostas']);
+                
+                }
+                if(isset($_POST['status'])){
+                    $faq->setStatus($_POST['status']);
+                }
 
                 $this->faqDao->update($faq);
             }

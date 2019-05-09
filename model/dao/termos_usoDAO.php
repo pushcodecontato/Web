@@ -11,8 +11,8 @@
 
         public function insert($termos_uso){
             
-            $sql = "insert into tbl_termos_uso(titulo,texto)".
-               "VALUES('". $termos_uso->getTitulo() ."','". $termos_uso->getTexto() ."')";
+            $sql = "insert into tbl_termos_uso(titulo,texto,status)".
+               "VALUES('". $termos_uso->getTitulo() ."','". $termos_uso->getTexto() ."',". $termos_uso->getStatus() .")";
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -43,8 +43,9 @@
         }
         public function update($termos_uso){
         
-                $sql = "UPDATE tbl_termos_uso SET titulo='" . $termos_uso->getTitulo() . "' , texto='" . $termos_uso->getTexto() . "' " . 
-                " WHERE id =".$termos_uso->getId(). "";
+                $sql = "UPDATE tbl_termos_uso SET titulo='" . $termos_uso->getTitulo() . "' , texto='" . $termos_uso->getTexto() . "' " .
+                       ", status = ".$termos_uso->getStatus() ." ".
+                       " WHERE id =".$termos_uso->getId(). " ";
                 echo $sql;
                 //Abrido conexao com o BD
                 $PDO_conex = $this->conex->connect_database();
@@ -73,7 +74,8 @@
                 $termos_uso = new Termos_uso();
                 $termos_uso->setId($rs_termos_uso['id'])
                            ->setTitulo($rs_termos_uso['titulo'])
-                           ->setTexto($rs_termos_uso['texto']);
+                           ->setTexto($rs_termos_uso['texto'])
+                           ->setStatus($rs_termos_uso['status']);
 
                 $this->conex->close_database();
 
@@ -82,10 +84,9 @@
             } else {
 
                 $this->conex->close_database();
-                
                 echo "Registro não encontrado!!";
-                
-                return false;
+
+               return false;
             }
         
                 
@@ -106,7 +107,8 @@
                 $termos_uso = new Termos_uso();
                 $termos_uso->setId($rs_termos_uso['id'])
                             ->setTitulo($rs_termos_uso['titulo'])
-                            ->setTexto($rs_termos_uso['texto']);
+                            ->setTexto($rs_termos_uso['texto'])
+                            ->setStatus($rs_termos_uso['status']);
 
                 $listar_registros[] = $termos_uso;
                 
@@ -132,7 +134,8 @@
             $termos_uso = new Termos_uso();
             $termos_uso->setId($rs_termos_uso['id'])
                        ->setTitulo($rs_termos_uso['titulo'])
-                       ->setTexto($rs_termos_uso['texto']);
+                       ->setTexto($rs_termos_uso['texto'])
+                       ->setStatus($rs_termos_uso['status']);
 
                 return $termos_uso;
 

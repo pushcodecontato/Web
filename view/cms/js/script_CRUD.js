@@ -405,67 +405,37 @@ function faq_getDados(){
 function faq_insert(form){
 
 	event.preventDefault();
-	console.log("Hellow!!!!!!")
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
-		success:function(dados){
-			console.log("Hellow@",dados);
-			if(dados.toString().search('sucesso')>=0){
-
-				$.notify("Cadastrado com sucesso", "success");
-
-				conteudo_subMenu('pagina_faq/tabela',true);
-				fecharModal();
-			}
-		}
-	})
-}
-function faq_update(form){
-
-	event.preventDefault();
 
 	$.ajax({
 		type:'post',
 		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
+		url:'router.php?controller=fale_conosco&modo=excluir&id_fale_conosco='+id,
 		success:function(dados){
-
-			if(dados.toString().search('sucesso')>=0){
-
-				$.notify("Atualizado com sucesso", "success");
-
-				conteudo_subMenu('pagina_faq/tabela',true);
-				
-				fecharModal()
-
-
-			}
-		}
-	})
-}
-
-function faq_delete(id){
-	event.preventDefault();
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:'router.php?controller=faq&modo=excluir&id='+id,
-		success:function(dados){
+			console.log("sgasha",dados)
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Deletado com sucesso", "info");
 
-				conteudo_subMenu('pagina_faq/tabela',true);
+				conteudo_subMenu('fale_conosco/tabela',true);
 				
 
 			}
 		}
 	});
 }
+function chamaModalVeiculosAprova(id){
+	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
+	 .then(function(res){
+		modal(res.toString());
+    })
+}
+function chamaModalEmailMarketing(id_email_mkt){
+	$.get('?cms/email_marketing/modal.php&id_email_mkt='+ id_email_mkt)
+     .then(function(res){
+		modal(res.toString());
+	});
+}
+
 
 // PAGINA GANHE DINHEIRO
 function como_ganhar_dinheiro_getById(sessao){
@@ -596,6 +566,7 @@ function termos_uso_getDados(){
 
 }
 
+
 function termos_uso_update(form){
 
 	event.preventDefault();
@@ -614,6 +585,28 @@ function termos_uso_update(form){
 				conteudo_subMenu('pagina_termos_uso/tabela',true);
 				
 				fecharModal()
+
+
+			}
+		}
+	})
+}
+function termos_uso_status(status_atual){
+	
+	var novoStatus = (status_atual == 1)?0:1;
+
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=termos_uso&modo=atualizar',
+		data: {status:novoStatus},
+		success:function(dados){
+			console.log("Dados : ",dados)
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Atualizado com sucesso", "success");
+
+				conteudo_subMenu('pagina_termos_uso/tabela',true);
 
 
 			}
@@ -686,4 +679,100 @@ function clientes_ativar_desativar(id, status){
         }
         
     }) 
+}
+/* Faq */
+function faq_inserir(form){
+	event.preventDefault();
+	$.ajax({
+		url:$(form).attr('action'),
+		type:'POST',
+		method:'POST',
+		data:$(form).serialize(),
+		success:function(resposta){
+			console.log("Resposta : ",resposta);
+			if(resposta.toString().search('sucesso') >= 0){
+				$.notify(" Questão salva com sucesso ","success")
+				conteudo_subMenu('pagina_faq/tabela.php');
+				fecharModal();
+			}
+		}
+	})
+}
+function faq_atualizar(form){
+	event.preventDefault();
+	$.ajax({
+		url:$(form).attr('action'),
+		type:'POST',
+		method:'POST',
+		data:$(form).serialize(),
+		success:function(resposta){
+			console.log("Respota:",resposta);
+			if(resposta.toString().search('sucesso') >= 0){
+				$.notify(" Questão salva com sucesso ","success")
+				conteudo_subMenu('pagina_faq/tabela.php');
+				fecharModal();
+			}
+		}
+	})
+}
+
+function faq_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=faq&modo=select',
+		data:{id},
+		success:function(dados){
+			modal(dados);
+		}
+	})
+}
+
+function faq_getDados(){
+
+	conteudo_subMenu('pagina_faq/tabela',true);
+
+}
+function faq_delete(id){
+	event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=faq&modo=excluir&id='+id,
+		success:function(dados){
+			console.log("Dados:",dados)
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('pagina_faq/tabela');
+				
+
+			}
+		}
+	});
+}
+function faq_status(id,status_atual){
+	// Redefinindo status_atual
+	if (status_atual == 0)status_atual = 1;
+    else status_atual = 0;
+
+    $.ajax({
+		url:'router.php?controller=faq&modo=atualizar&id='+id,
+		type:'POST',
+		method:'POST',
+		data:{
+			status:status_atual
+		},
+		success:function(resposta){
+
+			if(resposta.toString().search('sucesso') >= 0){
+				
+				$.notify(" Questão salva com sucesso ","success")
+				conteudo_subMenu('pagina_faq/tabela.php');
+				
+			}
+		}
+	})
 }

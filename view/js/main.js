@@ -72,7 +72,7 @@ function headerNaoLogado(){
 }
 
 function efetuarLogin(){
-    $('.container').fadeIn(250);
+    $('.container').fadeIn(250)
     $.ajax({
         type: "POST",
         url:'?login_usuario.php',
@@ -81,6 +81,7 @@ function efetuarLogin(){
         }
     });
 }
+
 
 function closeLogin(){
     $('.container').fadeOut(250);

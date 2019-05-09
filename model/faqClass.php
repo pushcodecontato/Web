@@ -6,6 +6,7 @@
     private $titulo;
     private $perguntas;
     private $respostas;
+    private $status;
 
     public function __construct(){
 
@@ -34,7 +35,13 @@
         $this->respostas = $respostas;
         return $this;
     }
-
+    public function setStatus($status){
+        $this->status = $status;
+        return $this;
+    }
+    public function getStatus(){
+        return $this->status;
+    }
 }
 
 ?>

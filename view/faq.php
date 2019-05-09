@@ -62,22 +62,35 @@
 
 
                                 if(count($listFaq) < 1){
-                                  echo "<img class='img_not_find alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                                  echo " <p class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+                                  echo "<img style='width: 279px; display: block; margin-left: auto; margin-right: auto; margin-top: 13px;' class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                                  echo " <p style='text-align: center;' class='aviso_tabela'> Nenhum registro encontrado!</p> ";
                                 }
-
-                                foreach($listFaq as $registro){
+                                $acc = 0 ;
                             ?>
-                        <div class="linha_perguntas ">
-                            <div class="segura_perguntas">
-                                <h3><?=@$registro->getPerguntas()?></h3>
-                                <p>Resposta:&nbsp<?=@$registro->getRespostas()?></p>
-                            </div>
-                            <img src="view/imagem/arrow_down.png" id="seta" alt="seta">
-                        </div>
-                        <?php 
-                            }
-                        ?>
+                        <?php foreach($listFaq as $registro){ ?>
+                                <?php if($registro->getStatus() == 1){ ?>
+                                    <div class="linha_perguntas ">
+                                        <div class="segura_perguntas">
+                                            <h3><?=@$registro->getPerguntas()?></h3>
+                                            <p>Resposta:&nbsp<?=@$registro->getRespostas()?></p>
+                                        </div>
+                                        <img src="view/imagem/arrow_down.png" onclick="ver_resposta_completa(this)" id="seta" alt="seta">
+                                    </div>
+                                <?php }else{ 
+                                        $acc++;
+                                      }?>
+                        <?php } ?>
+                        <?php if(count($listFaq) == $acc){ ?>
+                                <script>
+                                    setTimeout(function(){
+                                        $(".caixa_faq").notify(
+                                          "Sem dados!", 
+                                          { position:"top" }
+                                        );    
+                                    },400);
+                                    
+                                </script>
+                        <?php } ?>
                     </div>
                     <div class="paginacao">
                         <div class="paginacao_item"><p>Prev</p></div>

@@ -85,7 +85,7 @@
 }
 .col_resposta{
     /* width:440px; */
-    height: 50px;
+    height: 47px;
     text-align: center;
     font-family: "OpenSans-Regular";
     float: left;
@@ -95,7 +95,7 @@
     width:42px;
     height: 45px;
     margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 1px;
     float: left;
 }
 /* Mensagem de aviso */
@@ -185,6 +185,10 @@ form{
     padding-top: 4px;
     margin-top: 6px;
     width: 374px;
+    min-height: 171px;
+    padding-top: 4px;
+    margin-top: 6px;
+    width: 421px;
     padding-left: 10px;
     background-color: white;
 }
