@@ -83,6 +83,11 @@
                         $controller_usuario->logar();
 
                         break;
+                   case "DESLOGAR":
+                        
+                        $controller_usuario->deslogar();
+                        
+                        break;
                 }
  
                 break;
@@ -282,14 +287,10 @@
 
                             break;
                         case "LOGAR":
-                           
                            $controller_clientes->logar();
                             break;
-                            
-                            
-                            
                         case "STATUS":
-                            $controller_clientes->status();
+                           echo($controller_clientes->status());
                             break;
                     }
                         
@@ -486,8 +487,8 @@
                         break;
                    case "SELECT":
                         
-                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getById();
-                        require_once('view/cms/pagina_como_ganhar_dinheiro/cadastrar_sessao1.php');
+                        $como_ganhar_dinheiro = $controller_como_ganhar_dinheiro->getPage();
+                        require_once('view/cms/pagina_como_ganhar_dinheiro/cadastrar.php');
                         break;
                 }
  
@@ -499,12 +500,35 @@
                            case "INSERIR":
                                 $controller_fale_conosco->inserir_fale_conosco();
                                 break;
-                     }
-                     break;
+                                case "ATUALIZAR":
+                         
+                         $controller_fale_conosco->atualizar_fale_conosco();
+                         
+                         break;
+                    case "EXCLUIR":
+                    
+                         $controller_fale_conosco->excluir_fale_conosco();
+                         break;
+                    case "SELECTALL":
+
+                        $listFale_conosco =  $controller_fale_conosco->listar_fale_conosco();
+
+                        require_once('view/cms/pagina_fale_conosco/tabela.php');
+
+                        break;
+                   case "SELECT":
+
+                        $fale_conosco = $controller_fale_conosco->getById();
+                        require_once('view/cms/pagina_fale_conosco/cadastrar.php');
+                        break;
+                     
+            
+                }
+                break;
 
                 /*Termo de Uso*/
                 case ($controller == 'TERMOS' || $controller == "TERMOS_USO"):
-                
+                echo "estou na controller termos";
                 require_once('controller/controllerTermos_uso.php');
 
                 $controller_termos_uso = new ControllerTermos_uso();
@@ -539,6 +563,28 @@
                 }
  
                 break;
+                /*Email Marketing*/
+                case "EMAIL_MARKETING":
+                
+                require_once('controller/controllerEmail_marketing.php');
+
+                $controller_email_marketing = new ControllerEmail_marketing();
+              
+                switch($modo){
+                    case "ENVIAR":
+                        
+                        $controller_email_marketing->enviar();
+
+                        break;
+                    case "INSERIR":
+                        
+                        $controller_email_marketing->inserir();
+
+                        break;
+                }
+ 
+                break;
+
 
                 
         }

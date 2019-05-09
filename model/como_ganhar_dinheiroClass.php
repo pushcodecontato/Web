@@ -77,7 +77,7 @@ class Como_ganhar_dinheiro{
         return $this->img1_sessao2;
     }
     public function setImg1_sessao2($img1_sessao2){
-        $this->img1_sessao2ssion1 = $img1_sessao2;
+        $this->img1_sessao2 = $img1_sessao2;
         return $this;
     }
 

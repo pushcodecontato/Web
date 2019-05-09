@@ -26,24 +26,24 @@ class ControllerFale_conosco{
 
     }
 
-    public function excluir_registro_fale_conosco(){
-        $id_usuario = $_GET['id'];
+    public function excluir_fale_conosco(){
+        $id = $_GET['id_fale_conosco'];
 
-        $this->usuariosDao->delete($id_fale_conosco);
+        $this->fale_conoscoDao->delete($id);
     }
 
-    public function listar_registro_fale_conosco(){
+    public function listar_fale_conosco(){
         $consulta = $this->fale_conoscoDao->selectAll();
 
         return $consulta;
     }
     
-    public function getById( $id_fale_conosco = 0 ){
+    public function getById( $id = 0 ){
         
         
-        if($id_fale_conosco == 0 )$id_fale_conosco = $_GET['id_fale_conosco'];
+        if($id == 0 )$id = $_GET['id_fale_conosco'];
         
-        return $this->fale_conoscoDao->selectById($id_fale_conosco);
+        return $this->fale_conoscoDao->selectById($id);
 
     }
 }

@@ -1,4 +1,7 @@
 <!-- form que tem o Conteudo  -->
+<?php
+
+?>
 <form class="veiculos-cadastrar">
     <div class="veiculos-titulo">Cadastrar Veiculo</div>
     <table class="veiculos-cadastrar-table">
@@ -8,10 +11,11 @@
                     <tr>
                         <td>
                             <label>Tipo de veiculos</label>
-                            <select>
-                                <option>Carros</option>
-                                <option>Bicicleta</option>
-                                <option>Skate</option>
+                            <select onchange="getTipoVeiculo(this.value)">
+                                <option>Carro</option>
+                                <option value="2">Bicicleta</option>
+                                <option value="3">Moto</option>
+                                <option value="4">Caminhão</option>
                             </select>
                         </td>
                     </tr>
@@ -81,10 +85,22 @@
         <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
     </div>
     <div class="veiculos-titulo">Upload de imagem</div>
+    
+    
+<!--
+        <div class="conteudo_upload">
+            
+
+
+        </div>
+-->
+
+  
+  
     <table class="veiculos-cadastrar-table">
         <tr>
             <td>
-                <div></div>
+                <div class="div_foto"></div>
             </td>
             <td></td>
             <td></td>
@@ -94,4 +110,5 @@
         <tr>
     </table>
 </form>
-<link rel="stylesheet" type="text/css" href="view/painel_usuario/veiculos/cadastrar.css">
+<link rel="stylesheet" type="text/css" href="view/painel_usuario/veiculos/css/cadastrarVeiculo.css">
+<script src="view/painel_usuario/veiculos/js/script.js"></script>

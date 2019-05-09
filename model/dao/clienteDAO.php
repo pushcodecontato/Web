@@ -34,6 +34,7 @@
                                ->setSenha($senha);
 
             } else {
+                echo $sql;
                 echo "Erro no script de insert";
                 // Retornando false para que a controller saiba que o ussuario não foi inserido
                 return false;
@@ -169,9 +170,18 @@
 
 
             } else {
-                    echo "Usuario não encontrado!!";
                     return false;
             }
+        }
+        
+        public function statusDAO($id,$status){
+            $sql = "UPDATE tbl_cliente set status='".$status."' where id_cliente = '".$id."';";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+            
+            return "1";
         }
 
     }

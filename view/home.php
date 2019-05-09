@@ -1,9 +1,28 @@
 <?php
+    
+    $cliente = null;
+    $boolean = "false";
     require_once('controller/controllerHome.php');
+    require_once('model/clienteClass.php');
 
     $controllerHome = new controllerHome();
-    
     $pagina = $controllerHome->getPage();
+    
+    // Pegando o Cliente Logado
+    if(!isset($_SESSION))session_start();
+
+    if(isset($_POST['logout'])){
+        echo "Sucesso";
+        $boolean = false;
+        session_destroy();
+    }
+   
+    if(isset($_SESSION['cliente'])){
+        $cliente = unserialize($_SESSION['cliente']);
+        $boolean = true;
+    }
+        
+    
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +38,20 @@
     <script src="view/js/main.js"></script>
 </head>
 <body>
-    <div id="principal">
+<script>
+    $(document).ready(function(){
+        if(<?php echo $boolean?>)
+            headerLogado();
+        else
+            headerNaoLogado();
+    });
+</script>
+<div id="principal">
+    <div class="container">
+        <div class="modal">
+
+        </div>
+    </div>
         <header id="header_home" style="background-image: url(view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
@@ -36,13 +68,9 @@
                             <li><a href="?sobre">SOBRE NÓS</a></li>
                         </ul>
                     </div>
-                    <div class="segura_login">
-                        <div class="login_cadastro" id="login" style="width: 110px;">
-                            <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                        </div>
-                        <div class="login_cadastro" style="width: 160px;">
-                            <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                        </div>
+                 
+                    <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
+
                     </div>
                 </div>    
             </nav>
@@ -62,15 +90,7 @@
                     <div id="segura_como_funciona">
                         <div class="area_texto_maior">
                             <?=@$pagina->getComofunciona()->getTexto()?>
-                            <!--<ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            </ul>-->
+                            
                         </div >
                         <img class="imagem_como_funciona" src="view/upload/<?=@$pagina->getComofunciona()->getFoto()?>" alt="carro" title="">   
                     </div>
@@ -397,10 +417,11 @@
                 <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
-                <form id="frmEmail">
+                <form id="frmEmail" onsubmit="email_marketing_enviar(this)" action="router.php?controller=EMAIL_MARKETING&modo=INSERIR" method="POST" >
                     <h3>Quer receber noticias?</h3>
-                    <input type="text" placeholder="Insira seu email" class="input_newsletter">
-                    <button class="botao_newsletter">Enviar</button>
+                    <input type="email" name="txtEmail" placeholder="Insira seu email" class="input_newsletter">
+<!--                     <button type="submit" name="btnEnviar" class="botao_newsletter">Enviar</button> -->
+                    <input class="botao_newsletter" type="submit" name="btnEnviar" value="Enviar">
                 </form>
             </div>
         </div>
@@ -414,7 +435,7 @@
                         <p>Telefone:  0800 755 855</p>
                         <p>E-mail: atendimento@mobshare.com.br</p>
                         <img src="view/imagem/cracha_branco.png" alt="cracha">
-                        <a href="?cms/home_cms">Área administrativa</a> 
+                        <a href="?cms/login">Área administrativa</a> 
                     </div>
                 </div>
                 <div class="mapa_site">
@@ -450,6 +471,7 @@
     <script>
         jQuery("#txtTelefone").mask("(99)9999-9999");
         jQuery("#txtCelular").mask("(99)99999-9999");
+       
     </script>
 </body>
 </html>

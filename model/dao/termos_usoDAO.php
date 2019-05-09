@@ -57,6 +57,39 @@
 
                 $this->conex->close_database();
         }
+        public function selectPage(){
+            
+            $sql = " SELECT * FROM tbl_termos_uso order by id desc limit 1";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            $select = $PDO_conex->query($sql);
+
+            $listar_registros = array();
+
+           if($rs_termos_uso = $select->fetch(PDO::FETCH_ASSOC)){
+
+
+                $termos_uso = new Termos_uso();
+                $termos_uso->setId($rs_termos_uso['id'])
+                           ->setTitulo($rs_termos_uso['titulo'])
+                           ->setTexto($rs_termos_uso['texto']);
+
+                $this->conex->close_database();
+
+                return $termos_uso;
+
+            } else {
+
+                $this->conex->close_database();
+                
+                echo "Registro não encontrado!!";
+                
+                return false;
+            }
+        
+                
+        }
         public function selectAll(){
             
             $sql = " SELECT * FROM tbl_termos_uso";

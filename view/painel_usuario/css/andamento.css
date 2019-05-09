@@ -1,24 +1,23 @@
 
 #conteudo_andamento{
-    width: 998px;
+    width: 962px;
     height: 703px;
     float: left;
     border: solid 1px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #h2Border{
     width: 160px;
     height: 15px;
     margin-top: -15px;
-    margin-left:50px; 
+    margin-left:50px;
     background-color:#fff;
 }
 #principal_andamento{
     width: 940px;
     height: 670px;
-    border: solid 1px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .segura_coluna{

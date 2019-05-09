@@ -35,9 +35,9 @@ function abrir_menu(d, sub_menu, item_menu){
     }
 }
 
-function conteudo_subMenu(nome_pagina, teste){
+function conteudo_subMenu(nome_pagina){
 
-    if(teste){
+    
         $.ajax({
             type:'GET',
             url:'?painel_usuario/'+nome_pagina,
@@ -46,5 +46,5 @@ function conteudo_subMenu(nome_pagina, teste){
             }
         })
 
-    }
+    
 }

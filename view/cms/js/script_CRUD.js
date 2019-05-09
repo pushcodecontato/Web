@@ -2,11 +2,30 @@
 let mensagem = "";
 let msg = "";
 let type = "" ;
-
 let caminho = "";
 var href = window.location.href;
 var caminho_absoluto = 'view/cms/';
 
+function enviar(){
+	event.preventDefault();
+	console.log("Hellow!!!!!!")
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:$(form).attr('action'),
+		data: $(form).serialize(),
+		success:function(dados){
+			console.log("Hellow@",dados);
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Email enviado com sucesso", "success");
+
+				conteudo_subMenu('email_marketing/email_marketing.php',true);
+				fecharModal();
+			}
+		}
+	})
+}
 function conteudo_subMenu(nome_pagina){
 
         $.ajax({
@@ -40,6 +59,7 @@ function inserir_nivel(){
         success:function(dados){
             $.notify("Nível inserido com sucesso", "success");
             conteudo_subMenu('niveis/tabela_niveis', true);
+            fecharModal();
         }
     });
 }
@@ -64,6 +84,7 @@ function atualizar_nivel(){
         success:function(dados){
             $.notify("Nível editado com sucesso", "success"); 
             conteudo_subMenu('niveis/tabela_niveis', true);
+            fecharModal();
         }
     });
    
@@ -159,18 +180,24 @@ function usuario_update(form){
 }
 
 function usuario_delete(id){
-	event.preventDefault();
+
 	$.ajax({
 		type:'post',
 		method:'post',
 		url:'router.php?controller=usuarios&modo=excluir&id='+id,
 		success:function(dados){
+			console.log('dados',dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("usuario Deletado com sucesso", "info");
-
-				conteudo_subMenu('usuarios/tabela',true);
+				if(usuario_logado.id != id){
+					
+					conteudo_subMenu('usuarios/tabela',true);
 				
+				} else {
+					console.log("Deslogando!");
+					window.location = "router.php?controller=USUARIOS&modo=DESLOGAR";
+				}
 
 			}
 		}
@@ -190,19 +217,12 @@ function logar(formulario){
 	}).then(function(resposta){
 		
 		console.log("Resposta: ",resposta);
-
 		if(resposta.toString().search('sucesso')>=0){
-
 			$.notify("usuario logado com sucesso", "success");
-
 			//var redirecionamento = window.location.origin + window.location.pathname + '?cms/home';
-			
 			window.location.href = '?cms/home_cms';
-
 		}else{
-
-			$.notify("Erro ao logar com usuario !", "error");
-		
+			$.notify(resposta.toString(), "error");
 		}
 	})
 }
@@ -329,7 +349,25 @@ function chamaModalFaleConosco(id_fale_conosco){
 		modal(res.toString());
 	});
 }
+function fale_conosco_delete(id){
+	//event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=fale_conosco&modo=excluir&id_fale_conosco='+id,
+		success:function(dados){
+			console.log("sgasha",dados)
+			if(dados.toString().search('sucesso')>=0){
 
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('fale_conosco/tabela',true);
+				
+
+			}
+		}
+	});
+}
 function chamaModalVeiculosAprova(id){
 	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
 	 .then(function(res){
@@ -430,13 +468,13 @@ function faq_delete(id){
 }
 
 // PAGINA GANHE DINHEIRO
-function como_ganhar_dinheiro_getById(id){
+function como_ganhar_dinheiro_getById(sessao){
 	event.preventDefault();
 	 $.ajax({
 		type:'post',
 		method:'post',
 		url:'router.php?controller=como_ganhar_dinheiro&modo=select',
-		data:{id},
+		data:{sessao},
 		success:function(dados){
 			modal(dados);
 		}
@@ -458,7 +496,6 @@ function como_ganhar_dinheiro_insert(form){
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-			console.log("Hellow@",dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Cadastrado com sucesso", "success");
@@ -471,27 +508,52 @@ function como_ganhar_dinheiro_insert(form){
 }
 function como_ganhar_dinheiro_update(form){
 
-	event.preventDefault();
+	var submetido = ($(form).attr('data-submit') || 0) * 1;
+   
 
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
-		success:function(dados){
+  //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
+   if(submetido == 1){
 
-			if(dados.toString().search('sucesso')>=0){
+      return true;
 
-				$.notify("Atualizado com sucesso", "success");
+   }else{
+     
+     $(form).attr('data-submit','1');
 
-				conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
-				
-				fecharModal()
+   }
 
+   event.preventDefault();
+    
+   var form = $(form);
+//    if(form.attr('data-sessao') == 'sessao1'){
+//    	$('form').find('[name="txtLista1_sessao1"]')[1].value= $('form').find('[name="txtLista1_sessao1"]')[0].value;
+// 	$('form').find('[name="txtLista2_sessao1"]')[1].value= $('form').find('[name="txtLista2_sessao1"]')[0].value;
+//    }else if(form.attr('data-sessao') == 'sessao2'){
+//    	$('form').find('[name="txtLista1_sessao2"]')[1].value= $('form').find('[name="txtLista1_sessao2"]')[0].value;
+// 	$('form').find('[name="txtLista2_sessao2"]')[1].value= $('form').find('[name="txtLista2_sessao2"]')[0].value;
+//    }else if(form.attr('data-sessao') == 'sessao3'){
+// 	$('form').find('[name="txtTexto_sessao3"]')[1].value= $('form').find('[name="txtTexto_sessao3"]')[0].value;
+//    }
+   	 // Envia os dados do formulario
+   $(form).ajaxForm({
+       success:function(resposta){
+         console.log("RESPOSTA",resposta);
+         
+         if(resposta.toString().search('sucesso')>=0){
 
-			}
-		}
-	})
+           $.notify("Registro alterado com sucesso", "success");
+           
+           // Redirecionando o usuario depois da menssagem de sucesso aparecer
+           setTimeout(function(){
+             
+             //Redirecionando
+			conteudo_subMenu('pagina_como_ganhar_dinheiro/tabela',true);
+
+           },800)
+
+         }
+       },
+   }).submit();
 }
 
 function como_ganhar_dinheiro_delete(id){
@@ -517,17 +579,15 @@ function como_ganhar_dinheiro_delete(id){
 // SOBRE NOS
 
 // TERMOS DE USO
-function termos_uso_getById(id){
-	event.preventDefault();
+function termos_uso(){
 	 $.ajax({
-		type:'post',
-		method:'post',
-		url:'router.php?controller=termos_uso&modo=select',
-		data:{id},
-		success:function(dados){
-			modal(dados);
-		}
-	})
+        type: 'POST',
+        url: '?cms/pagina_termos_uso/cadastrar.php',
+        // o callback tras o retorno da requisição da url feita por post
+        success:function(resposta){
+            modal(resposta);
+        }
+    });
 }
 
 function termos_uso_getDados(){
@@ -535,27 +595,7 @@ function termos_uso_getDados(){
 	conteudo_subMenu('pagina_termos_uso/tabela',true);
 
 }
-function termos_uso_insert(form){
 
-	event.preventDefault();
-	console.log("Hellow!!!!!!")
-	$.ajax({
-		type:'post',
-		method:'post',
-		url:$(form).attr('action'),
-		data: $(form).serialize(),
-		success:function(dados){
-			console.log("Hellow@",dados);
-			if(dados.toString().search('sucesso')>=0){
-
-				$.notify("Cadastrado com sucesso", "success");
-
-				conteudo_subMenu('pagina_termos_uso/tabela',true);
-				fecharModal();
-			}
-		}
-	})
-}
 function termos_uso_update(form){
 
 	event.preventDefault();
@@ -566,7 +606,7 @@ function termos_uso_update(form){
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-
+			console.log("Dados : ",dados)
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Atualizado com sucesso", "success");
@@ -581,7 +621,7 @@ function termos_uso_update(form){
 	})
 }
 
-function termos_uso_delete(id){
+/*function termos_uso_delete(id){
 	event.preventDefault();
 	$.ajax({
 		type:'post',
@@ -598,7 +638,7 @@ function termos_uso_delete(id){
 			}
 		}
 	});
-}
+}*/
 // PAGINA HOME - SESSÕES
 
 
@@ -625,6 +665,7 @@ function toCSV(nome,csv = 0){
 
 /* ativar e desativar de cliente*/
 function clientes_ativar_desativar(id, status){
+    
     if (status == 0){
         status = 1;
     }else{
@@ -633,12 +674,15 @@ function clientes_ativar_desativar(id, status){
     $.ajax({
         type:'post',
         method:'post',
-        url:'router.php?controller=cliente&modo=status&id='+id,
+        url:'router.php?controller=clientes&modo=status&id='+id,
         data:{
-            status
+            'status':status
         },
         success:function(resposta){
-           console.log(resposta)
+//            alert(resposta);
+         if(resposta == '1'){
+             conteudo_subMenu('clientes/clientes');
+         }
         }
         
     }) 

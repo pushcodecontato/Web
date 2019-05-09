@@ -62,8 +62,10 @@
 
             return $consulta;
         }
-        public function buscar_nivel(){
-            $id_nivel = $_GET['id'];
+        public function buscar_nivel($id_nivel = 0 ){
+
+            if($id_nivel == 0)$id_nivel = $_GET['id'];
+
             return $this->niveisDao->selectById($id_nivel);
         }
 

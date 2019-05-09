@@ -83,9 +83,9 @@
                 <img src="view/imagem/mob.png" alt="logo">
             </div>
             <div class="segura_newsletter">
-                <form id="frmEmail">
+                <form id="frmEmail" onsubmit="email_marketing_enviar(this)" action="router.php?controller=EMAIL_MARKETING&modo=INSERIR" method="POST">
                     <h3>Quer receber noticias?</h3>
-                    <input type="text" placeholder="Insira seu email" class="input_newsletter">
+                    <input type="text" name="txtEmail" placeholder="Insira seu email" class="input_newsletter">
                     <button class="botao_newsletter">Enviar</button>
                 </form>
             </div>

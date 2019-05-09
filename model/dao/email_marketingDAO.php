@@ -9,8 +9,24 @@ class Email_marketingDAO{
             $this->conex = new  conexaoMysql();
         }
 
+        public function insert($email_marketing){
+            
+            $sql = "INSERT INTO tbl_email_mkt(email)".
+                   "VALUES('".$email_marketing->getEmail()."')";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+
+            if($PDO_conex->query($sql)){
+                   echo "Registro inserido com sucesso ";
+                   return true;
+            } else {
+                   echo "Erro no script de insert!! $sql";
+                   return false;
+            }
+        }
         public function delete($id){
-            $sql = " DELETE FROM tbl_email_mkt where id_tbl_email_mkt = $id ";
+            $sql = " DELETE FROM tbl_email_mkt where id = $id ";
 
             $PDO_conex = $this->conex->connect_database();
 
@@ -37,7 +53,7 @@ class Email_marketingDAO{
                 
 
                 $email_marketing = new Email_marketing();
-                $email_marketing->setId($rs_email_marketing['id_email_mkt'])
+                $email_marketing->setId($rs_email_marketing['id'])
                         ->setEmail($rs_email_marketing['email']);
 
                 $listar_registros[] = $email_marketing;
@@ -51,7 +67,7 @@ class Email_marketingDAO{
         }
         public function selectById($id){
 
-            $sql = " SELECT * FROM tbl_email_mkt where id_email_marketing = $id ";
+            $sql = " SELECT * FROM tbl_email_mkt where id = $id ";
 
             $PDO_conex = $this->conex->connect_database();
 
@@ -60,8 +76,8 @@ class Email_marketingDAO{
             if($rs_usuario = $select->fetch(PDO::FETCH_ASSOC)){
 
                 $email_marketing = new Email_marketing();
-                $email_marketing->setId($rs_email_marketing['id_email_marketing'])
-                        ->setEmail($rs_email_marketing['email_email_marketing']);
+                $email_marketing->setId($rs_email_marketing['id'])
+                        ->setEmail($rs_email_marketing['email']);
 
                 return $usuario;
 

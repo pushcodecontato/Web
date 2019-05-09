@@ -7,7 +7,7 @@
     $cliente = unserialize($_SESSION['cliente']);
 
     //ATENÇÃO!! Pode dar erro se o cliente não estiver logado !!!
-    // Cadastre se para ser redirecionado 
+    
 
 ?>
 <html>
@@ -116,11 +116,11 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p>lista veículo</p>
                         </div>
-                        <div class="item_sub_menu">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/meus_veiculos_locados',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p>Meus Veiculos Locados</p>
                         </div>
-                        <div class="item_sub_menu">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('veiculos/veiculos_estatistica')">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p>Estatísticas</p>
                         </div>
@@ -138,7 +138,7 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Agendamentos</p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('locacao/avaliacoes',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Avaliações dos locadores</p>
                         </div>
@@ -175,9 +175,13 @@
             <div id="conteudo">
 
 
-                <!-- conteudo conversas -->
+                <!-- conteudo MEUS VEICULOS LOCADOS -->
             
-          
+            <div class="conteudo_veiculos_locados">
+                
+                
+                
+            </div>
                 
 
 
@@ -202,7 +206,6 @@
                 
 
 
-                </div>
 
         </div>
     </div>

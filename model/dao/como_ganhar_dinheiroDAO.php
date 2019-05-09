@@ -14,7 +14,7 @@ class Como_ganhar_dinheiroDao{
 
     public function insert($como_ganhar_dinheiro){
             
-            $sql = "insert into tbl_como_ganhar_dinheiro(titulo_sessao1,lista1_sessao1,lista2_sessao1,img1_sessao1,titulo_sessao2,img1_sessao2,lista1_sessao2,img2_sessao2,lista2_sessao2,titulo_sessao3,texto_session3)".
+            $sql = "insert into tbl_como_ganhar_dinheiro(titulo_sessao1,lista1_sessao1,lista2_sessao1,img1_sessao1,titulo_sessao2,img1_sessao2,lista1_sessao2,img2_sessao2,lista2_sessao2,titulo_sessao3,texto_sessao3)".
                "VALUES('". $como_ganhar_dinheiro->getTitulo_sessao1() ."',
                     '". $como_ganhar_dinheiro->getLista1_sessao1() ."',
                     '". $como_ganhar_dinheiro->getLista2_sessao1() ."',
@@ -25,8 +25,9 @@ class Como_ganhar_dinheiroDao{
                     '". $como_ganhar_dinheiro->getImg2_sessao2() ."',
                     '". $como_ganhar_dinheiro->getLista2_sessao2() ."',
                     '". $como_ganhar_dinheiro->getTitulo_sessao3() ."',
-                    '". $como_ganhar_dinheiro->getTexto_sessao3() ."')";
-
+                    '". $como_ganhar_dinheiro->getTexto_sessao3() ."'
+                    )";
+            echo $sql;
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
 
@@ -65,7 +66,7 @@ class Como_ganhar_dinheiroDao{
                 img2_sessao2='" . $como_ganhar_dinheiro->getImg2_sessao2() . "' ,
                 lista2_sessao2='" . $como_ganhar_dinheiro->getLista2_sessao2() . "' ,
                 titulo_sessao3='" . $como_ganhar_dinheiro->getTitulo_sessao3() . "' ,
-                texto_session3='" . $como_ganhar_dinheiro->getTexto_sessao3() . "'".
+                texto_sessao3='" . $como_ganhar_dinheiro->getTexto_sessao3() . "'".
                 " WHERE id =".$como_ganhar_dinheiro->getId();
 
                 echo $sql;
@@ -82,77 +83,80 @@ class Como_ganhar_dinheiroDao{
         
         
     }
-        public function selectAll(){
-            
-            $sql = " SELECT * FROM tbl_como_ganhar_dinheiro";
-            
-            $PDO_conex = $this->conex->connect_database();
+    public function selectAll(){
 
-            $select = $PDO_conex->query($sql);
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro";
 
-            $listar_registros = array();
+        $PDO_conex = $this->conex->connect_database();
 
-            while($rs_como_ganhar_dinheiro = $select->fetch(PDO::FETCH_ASSOC)){
-                
+        $select = $PDO_conex->query($sql);
 
-                $como_ganhar_dinheiro = new Como_ganhar_dinheiro();
-                $como_ganhar_dinheiro->setId($rs_como_ganhar_dinheiro['id'])
-                                    ->setTitulo_sessao1($rs_como_ganhar_dinheiro['titulo_sessao1'])
-                                    ->setLista1_sessao1($rs_como_ganhar_dinheiro['lista1_sessao1'])
-                                    ->setLista2_sessao1($rs_como_ganhar_dinheiro['lista2_sessao1'])
-                                    ->setImg1_sessao1($rs_como_ganhar_dinheiro['img1_sessao1'])
-                                    ->setTitulo_sessao2($rs_como_ganhar_dinheiro['titulo_sessao2'])
-                                    ->setImg1_sessao2($rs_como_ganhar_dinheiro['img1_sessao2'])
-                                    ->setLista1_sessao2($rs_como_ganhar_dinheiro['lista1_sessao2'])
-                                    ->setImg2_sessao2($rs_como_ganhar_dinheiro['img2_sessao2'])
-                                    ->setLista2_sessao2($rs_como_ganhar_dinheiro['lista2_sessao2'])
-                                    ->setTitulo_sessao3($rs_como_ganhar_dinheiro['titulo_sessao3'])
-                                    ->setTexto_sessao3($rs_como_ganhar_dinheiro['texto_sessao3']);
+        $listar_registros = array();
 
-                $listar_registros[] = $como_ganhar_dinheiro;
-                
-            }
-        
-            $this->conex->close_database();
+        while($rs_como_ganhar_dinheiro = $select->fetch(PDO::FETCH_ASSOC)){
 
-            return $listar_registros;
+            $como_ganhar_dinheiro = new Como_ganhar_dinheiro();
+            $como_ganhar_dinheiro->setId($rs_como_ganhar_dinheiro['id'])
+                                ->setTitulo_sessao1($rs_como_ganhar_dinheiro['titulo_sessao1'])
+                                ->setLista1_sessao1($rs_como_ganhar_dinheiro['lista1_sessao1'])
+                                ->setLista2_sessao1($rs_como_ganhar_dinheiro['lista2_sessao1'])
+                                ->setImg1_sessao1($rs_como_ganhar_dinheiro['img1_sessao1'])
+                                ->setTitulo_sessao2($rs_como_ganhar_dinheiro['titulo_sessao2'])
+                                ->setImg1_sessao2($rs_como_ganhar_dinheiro['img1_sessao2'])
+                                ->setLista1_sessao2($rs_como_ganhar_dinheiro['lista1_sessao2'])
+                                ->setImg2_sessao2($rs_como_ganhar_dinheiro['img2_sessao2'])
+                                ->setLista2_sessao2($rs_como_ganhar_dinheiro['lista2_sessao2'])
+                                ->setTitulo_sessao3($rs_como_ganhar_dinheiro['titulo_sessao3'])
+                                ->setTexto_sessao3($rs_como_ganhar_dinheiro['texto_sessao3']);
 
-
-                
-        }
-        public function selectById($id){
-            
-            $sql = " SELECT * FROM tbl_como_ganhar_dinheiro where id = $id ";
-
-            $PDO_conex = $this->conex->connect_database();
-
-            $select = $PDO_conex->query($sql);
-
-            if($rs_como_ganhar_dinheiro = $select->fetch(PDO::FETCH_ASSOC)){
-
-                $como_ganhar_dinheiro = new Como_ganhar_dinheiro();
-                $como_ganhar_dinheiro->setId($rs_como_ganhar_dinheiro['id'])
-                    ->setTitulo_sessao1($rs_como_ganhar_dinheiro['titulo_sessao1'])
-                    ->setLista1_sessao1($rs_como_ganhar_dinheiro['lista1_sessao1'])
-                    ->setLista2_sessao1($rs_como_ganhar_dinheiro['lista2_sessao1'])
-                    ->setImg1_sessao1($rs_como_ganhar_dinheiro['img1_sessao1'])
-                    ->setTitulo_sessao2($rs_como_ganhar_dinheiro['titulo_sessao2'])
-                    ->setImg1_sessao2($rs_como_ganhar_dinheiro['img1_sessao2'])
-                    ->setLista1_sessao2($rs_como_ganhar_dinheiro['lista1_sessao2'])
-                    ->setImg2_sessao2($rs_como_ganhar_dinheiro['img2_sessao2'])
-                    ->setLista2_sessao2($rs_como_ganhar_dinheiro['lista2_sessao2'])
-                    ->setTitulo_sessao3($rs_como_ganhar_dinheiro['titulo_sessao3'])
-                    ->setTexto_sessao3($rs_como_ganhar_dinheiro['texto_sessao3']);
-
-                return $como_ganhar_dinheiro;
-
-            } else {
-                    echo "Registro não encontrado!!";
-                    return 0;
-            }
-
+            $listar_registros[] = $como_ganhar_dinheiro;
 
         }
+
+        $this->conex->close_database();
+
+        return $listar_registros;
+
+
+
+    }
+    public function selectById($id = 0 ){
+
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1 ";
+    }
+    public function selectPage(){
+
+        $sql = " SELECT * FROM tbl_como_ganhar_dinheiro order by id desc limit 1";
+
+        $PDO_conex = $this->conex->connect_database();
+
+        $select = $PDO_conex->query($sql);
+
+        if($rs_como_ganhar_dinheiro = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $como_ganhar_dinheiro = new Como_ganhar_dinheiro();
+            $como_ganhar_dinheiro->setId($rs_como_ganhar_dinheiro['id'])
+                ->setTitulo_sessao1($rs_como_ganhar_dinheiro['titulo_sessao1'])
+                ->setLista1_sessao1($rs_como_ganhar_dinheiro['lista1_sessao1'])
+                ->setLista2_sessao1($rs_como_ganhar_dinheiro['lista2_sessao1'])
+                ->setImg1_sessao1($rs_como_ganhar_dinheiro['img1_sessao1'])
+                ->setTitulo_sessao2($rs_como_ganhar_dinheiro['titulo_sessao2'])
+                ->setImg1_sessao2($rs_como_ganhar_dinheiro['img1_sessao2'])
+                ->setLista1_sessao2($rs_como_ganhar_dinheiro['lista1_sessao2'])
+                ->setImg2_sessao2($rs_como_ganhar_dinheiro['img2_sessao2'])
+                ->setLista2_sessao2($rs_como_ganhar_dinheiro['lista2_sessao2'])
+                ->setTitulo_sessao3($rs_como_ganhar_dinheiro['titulo_sessao3'])
+                ->setTexto_sessao3($rs_como_ganhar_dinheiro['texto_sessao3']);
+
+            return $como_ganhar_dinheiro;
+
+        } else {
+                echo "Registro não encontrado!!";
+                return 0;
+        }
+
+
+    }
 
 }
 ?>

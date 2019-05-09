@@ -7,7 +7,7 @@
         <div class="linha_titulo">
             <p style="width:150px;" class="col_text">
                 SELECIONE
-                            <input type="checkbox" value="checkTodos" name="checkTodos" onChange="selecioneEmails(this)">
+<!--             	<input type="checkbox" value="checkTodos" name="checkTodos" onChange="selecioneEmails(this)"> -->
             </p>
             <p style="width:848px; border-left: 1px solid black;" class="col_text">
                EMAIL
@@ -31,18 +31,17 @@
             ?>
             <div class="linha_dados">
                 <p style="width:150px;" class="col_text">
-                    <input type="checkbox" value=" <?=@$registro->getEmail()?>" name="emails">
+                    <input type="checkbox" id="<?=@$registro->getId()?>" value="<?=@$registro->getEmail()?>" name="emails">
                 </p>
                 <p style="width:848px; border-left: 1px solid black;" class="col_text">
                     <?=@$registro->getEmail()?>
                 </p>
             </div>
-				<?php }?>
+            <?php } ?>
         </div>
     </div>
-   
 </div>
 <button class="btn_exportar" onclick="exportarChamado()">Exportar</button>
-<button class="btn_exportar" onclick="chamaModalEmailMarketing(<?=@$registro->getId()?>);">Enviar E-mail</button>
+<button class="btn_exportar" onclick="enviarEmail();">Enviar E-mail</button>
 <script src="view/cms/email_marketing/email.js"> 
 </script>
