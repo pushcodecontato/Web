@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" 
           type="text/css"
-          href="view/painel_usuario/css/meus_veiculos_locados.css"/>
+          href="view/painel_usuario/veiculos/css/meus_veiculos_locados.css"/>
 </head>
 
        
