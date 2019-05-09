@@ -11,7 +11,7 @@
         public function __construct(){
             //$this->server = '0.tcp.ngrok.io;port=15477';
             $this->user = 'root';
-	        $this->password = '';
+	        // $this->password = '';
             //$this->password = '12345ola';
             $this->password = 'bcd127';
    	        $this->server = 'localhost';

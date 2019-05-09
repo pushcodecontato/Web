@@ -35,7 +35,12 @@
     <h3 class="titulo_pagina">Cadastrar Termos de Uso</h3>
         <div class="segura_form_cadastro">
             <label for="pergunta_faq">Adicionar Título para Página</label><br>
+
+            <input id="pergunta_faq" value="<?php echo($termos_uso->getTitulo())?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
             
+            <label for="resposta_faq">Adicionar Termo de Uso</label><br>
+
+            <textarea id="resposta_faq" value="<?php echo($termos_uso->getTexto())?>" name="txtTexto" placeholder="Insira uma resposta" rows="5" cols="45" required><?php echo($termos_uso->getTexto())?></textarea><br>
             <input maxlength="100" id="pergunta_faq" value="<?php echo($termos_uso->getTitulo())?>" name="txtTitulo" placeholder="Insira um Título" required style="margin-bottom:10px;"><br>
             
             <label for="resposta_faq">Adicionar Termo de Uso</label><br>

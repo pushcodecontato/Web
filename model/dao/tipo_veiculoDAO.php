@@ -192,7 +192,7 @@ class  TipoVeiculoDAO{
         /* Com inner join */
         $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*,tbl_modelo_veiculo.status as 'statusModelo' FROM tbl_tipo_veiculo   ".
                "inner join tbl_marca_veiculo_tipo_veiculo on tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo ".
-               "inner join tbl_marca_veiculo    on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
+               "inner join tbl_marca_veiculo on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
                "inner join tbl_modelo_veiculo on tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca  ".
                "WHERE tbl_modelo_veiculo.excluido = 0 AND tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
 
@@ -322,7 +322,7 @@ class  TipoVeiculoDAO{
     /*Select para painel de usuário para cadastrar veículo*/
     public function getTipoVeiculos(){
 
-        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*, ."
+        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo. ."
     }
 }
 ?>

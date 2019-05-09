@@ -44,7 +44,8 @@ class ControllerTermos_uso{
                     $termos_uso->setTitulo($_POST['txtTitulo'])
                                ->setTexto($_POST['txtTexto']);
                 }
-                if(isset($_POST['status'])){
+
+               if(isset($_POST['status'])){
                     $termos_uso->setStatus($_POST['status']);
                 }
 

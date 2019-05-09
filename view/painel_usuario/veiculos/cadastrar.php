@@ -11,9 +11,9 @@
                     <tr>
                         <td>
                             <label>Tipo de veiculos</label>
-                            <select onchange="getTipoVeiculo(this.value)">
-                                <option>Carro</option>
-                                <option value="2">Bicicleta</option>
+                            <select id="cb_veiculos" onchange="getTipoVeiculo(this.value)">
+                                <option value="1">Carro</option>
+                                <option value="2" selected="selected">Bicicleta</option>
                                 <option value="3">Moto</option>
                                 <option value="4">Caminhão</option>
                             </select>

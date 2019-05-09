@@ -22,9 +22,7 @@
     <script src="view/painel_usuario/js/script_menu.js"></script>
     <script src="view/js/notify.js"></script>
 
-    <link rel="stylesheet" 
-          type="text/css"
-          href="view/painel_usuario/css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="view/painel_usuario/css/home.css"/>
 
     
 </head>

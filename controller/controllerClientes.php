@@ -46,20 +46,14 @@
               if(!isset($_SESSION))session_start();
 
               $_SESSION['cliente'] = serialize($cliente);
-
            }
-
-
-
        }
 
        public function excluir_cliente(){}
        public function atualizar_cliente(){
-           
-           
+            
        }
        public function logar(){
-
             // Pegando o usuario pelo email
            if($cliente = $this->clientesDAO->getByEmail($_POST['email'])){
                
@@ -68,29 +62,19 @@
                  
                  // Verificando se a session esta ativa
                  if(!isset($_SESSION))session_start();
-                 
-
                  //guarda na session o cliente
                  $_SESSION['cliente'] = serialize($cliente);
 
                  echo "Cliente logado com sucesso";
 
               }else{
-
                  echo "Erro ao logar! senha incorreta";
-
               }
 
           }else{
-
-              echo "Erro ao logar!cliente não encontrado ";
-
+              echo "Usuário não cadastrado, verifique email e senha!";
           }
-
-
        }
-
-
         /* UPLOAD DE IMAGEM 
          * $arquivo = $_FILE['foto'] = objeto file do PHP
          */

@@ -217,19 +217,12 @@ function logar(formulario){
 	}).then(function(resposta){
 		
 		console.log("Resposta: ",resposta);
-
 		if(resposta.toString().search('sucesso')>=0){
-
 			$.notify("usuario logado com sucesso", "success");
-
 			//var redirecionamento = window.location.origin + window.location.pathname + '?cms/home';
-			
 			window.location.href = '?cms/home_cms';
-
 		}else{
-
 			$.notify(resposta.toString(), "error");
-		
 		}
 	})
 }
@@ -358,6 +351,61 @@ function chamaModalFaleConosco(id_fale_conosco){
 }
 function fale_conosco_delete(id){
 	//event.preventDefault();
+	$.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=fale_conosco&modo=excluir&id_fale_conosco='+id,
+		success:function(dados){
+			console.log("sgasha",dados)
+			if(dados.toString().search('sucesso')>=0){
+
+				$.notify("Deletado com sucesso", "info");
+
+				conteudo_subMenu('fale_conosco/tabela',true);
+				
+
+			}
+		}
+	});
+}
+function chamaModalVeiculosAprova(id){
+	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
+	 .then(function(res){
+		modal(res.toString());
+    })
+}
+function chamaModalEmailMarketing(id_email_mkt){
+	$.get('?cms/email_marketing/modal.php&id_email_mkt='+ id_email_mkt)
+     .then(function(res){
+		modal(res.toString());
+	});
+}
+
+
+// FAQ
+
+function faq_getById(id){
+	event.preventDefault();
+	 $.ajax({
+		type:'post',
+		method:'post',
+		url:'router.php?controller=faq&modo=select',
+		data:{id},
+		success:function(dados){
+			modal(dados);
+		}
+	})
+}
+
+function faq_getDados(){
+
+	conteudo_subMenu('pagina_faq/tabela',true);
+
+}
+function faq_insert(form){
+
+	event.preventDefault();
+
 	$.ajax({
 		type:'post',
 		method:'post',
@@ -518,6 +566,7 @@ function termos_uso_getDados(){
 
 }
 
+
 function termos_uso_update(form){
 
 	event.preventDefault();
@@ -564,6 +613,7 @@ function termos_uso_status(status_atual){
 		}
 	})
 }
+
 /*function termos_uso_delete(id){
 	event.preventDefault();
 	$.ajax({
