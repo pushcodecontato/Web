@@ -320,9 +320,9 @@ class  TipoVeiculoDAO{
     }
 
     /*Select para painel de usuário para cadastrar veículo*/
-    public function getTipoVeiculos(){
+//     public function getTipoVeiculos(){
 
-        $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo. ."
-    }
+//         $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo. ."
+//     }
 }
 ?>
