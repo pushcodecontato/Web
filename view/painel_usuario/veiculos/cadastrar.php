@@ -3,21 +3,13 @@
     
     require_once('controller/controllerTipo_veiculo.php');
 
-    require_once('controller/controllerMarcas.php');
-
-    require_once('controller/controllerModelos.php');
-
     $controller_tipo_veiculo = new ControllerTipoVeiculo();
-
-    $controller_marcas = new ControllerMarcas();
-
-    $controller_modelos = new ControllerModelos();
 
     $tipo_veiculo = $controller_tipo_veiculo->listar_tipo();
 
-    $marcas = $controller_tipo_veiculo->listar_marcas();
+   // $marcas = $controller_tipo_veiculo->listar_marcas();
 
-    $modelos = $controller_tipo_veiculo->listar_modelos();
+   // $modelos = $controller_tipo_veiculo->listar_modelos();
 
     $router = "";
     
@@ -52,15 +44,8 @@
                     <tr>
                         <td> 
                             <label>Marcas</label>
-                            <select id="cb_marcas" onchange="getMarcas(this.value)">
-                                <?php
-                                    $router = "router.php?controller=marcas&modo=select";
-                                    $list_marcas =  $controller_marcas->listar_marcas();
-
-                                    foreach($list_marcas as $registro){
-                                ?>
-                                <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
-                                <?php }?>  
+                            <select id="cb_marcas" onchange="getMarca(this.value)">
+                                <option value=""></option>                             
                             </select>
                         </td>
                     </tr>
