@@ -239,7 +239,6 @@ class  TipoVeiculoDAO{
                "inner join tbl_marca_veiculo on tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo ".
                "WHERE tbl_marca_veiculo_tipo_veiculo.excluido = 0 AND tbl_tipo_veiculo.id_tipo_veiculo=". $id;
 
-
         $PDO_conex = $this->conex->connect_database();
 
         $select = $PDO_conex->query($sql);
@@ -269,7 +268,7 @@ class  TipoVeiculoDAO{
 
 
         $sql = "SELECT * FROM tbl_acessorios where excluido = 0 AND  id_tipo_veiculo =".$id;
-
+        
 
         $PDO_conex = $this->conex->connect_database();
 

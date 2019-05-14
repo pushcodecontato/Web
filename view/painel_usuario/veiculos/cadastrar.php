@@ -25,6 +25,7 @@
                         <td>
                             <label>Tipo de veiculos</label>
                             <select id="cb_veiculos" onchange="getTipoVeiculo(this.value)">
+                                <option value="0">Selecione o tipo</option>
                                 <?php
                                     $router = "router.php?controller=tipo_veiculo&modo=select";
                                     $list_tipo =  $controller_tipo_veiculo->listar_tipo();
@@ -44,14 +45,7 @@
                         <td> 
                             <label>Marcas</label>
                             <select id="cb_marcas" onchange="getMarca(this.value)">
-                                <?php
-                                    $router = "router.php?controller=tipo_veiculo&modo=select";
-                                    $list_tipo =  $controller_tipo_veiculo->listar_tipo();
-
-                                    foreach($list_tipo as $registro){
-                                ?>
-                                <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
-                                <?php }?>                             
+                                
                             </select>
                         </td>
                     </tr>
