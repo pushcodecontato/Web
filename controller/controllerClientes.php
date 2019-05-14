@@ -17,18 +17,19 @@
        public function inserir_cliente(){
            $cliente = new Cliente();
            var_dump($_POST);
-           $cliente->setNome($_POST['nome'])
-                   ->setCPF($_POST['cpf'])
-                   ->setTelefone($_POST['telefone'])
-                   ->setCelular($_POST['celular'])
-                   ->setEmail($_POST['email'])
-                   ->setSenha($_POST['senha'])
-                   ->setCEP($_POST['cep'])
-                   ->setComplemento($_POST['complemento'])
-                   ->setRua($_POST['rua'])
-                   ->setBairro($_POST['bairro'])
-                   ->setCidade($_POST['cidade'])
-                   ->setUF($_POST['uf']);
+           $cliente->setNome($_POST['txtNome'])
+                   ->setCPF($_POST['txtCpf'])
+                   ->setTelefone($_POST['txtTelefone'])
+                   ->setCelular($_POST['txtCelular'])
+                   ->setEmail($_POST['txtEmail'])
+                   ->setSenha($_POST['txtSenha'])
+                   ->setCEP($_POST['txtCep'])
+                   ->setComplemento($_POST['txtComplemento'])
+                   ->setRua($_POST['txtRua'])
+                   ->setBairro($_POST['txtBairro'])
+                   ->setCidade($_POST['txtCidade'])
+                   ->setDt_nascimento($_POST['txtDtNasc'])
+                   ->setUF($_POST['txtUf']);
 
            if( $_FILES['fotoCliente']['size'] > 0 ){
                $cliente->setFoto($this->uploadImagem($_FILES['fotoCliente']));

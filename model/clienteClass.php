@@ -18,6 +18,7 @@ class Cliente{
     private $cnh_foto;
     private $foto_cliente;
     private $status;
+    private $dt_nascimento;
     
     public function __construct(){
 
@@ -165,7 +166,16 @@ class Cliente{
 	// verifica se a senha passada por paramentro esta correta
 	public function verificar( $senha ){
 		return password_verify( $senha , $this->senha );
-	}
+    }
+
+    public function setDt_nascimento($dt_nascimento){
+        $this->dt_nascimento = $dt_nascimento;
+        return $this;
+    }
+    public function getDt_nascimento(){
+        return $this->dt_nascimento;
+    }
+    
 }
 
 

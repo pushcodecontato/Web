@@ -22,7 +22,10 @@ form label{
     display:inline-block;
 
 }
-form input[type="text"], input[type="date"]{
+form input[type="text"], 
+input[type="date"],
+input[type="password"],
+input[type="submit"]{
     width: 440px;
     height: 40px;
     background-color: #dcdcdc;
@@ -87,19 +90,24 @@ form input[type="text"], input[type="date"]{
     float: left;
 
 }
-.addFotoCliente{
+#addFotoCliente{
     width:200px;
     height: 200px;
     border-radius: 150px;
-    margin-right: auto;
+    display: block;
     margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #dcdcdc;
 
 }
-.addCnhCliente{
+#addCnhCliente{
     width:200px;
     height: 150px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-right: auto;
     margin-left: auto;
     background-color: #dcdcdc;
@@ -118,6 +126,7 @@ form input[type="text"], input[type="date"]{
     text-align: center;
     padding-top: 12px;
     font-size: 20px;
+    font-weight: bold;
 }
 .formDadosComunicacao{
     width:900px;
@@ -127,8 +136,18 @@ form input[type="text"], input[type="date"]{
     padding-right: 20px;
     margin-top: 30px;
 }
-#txtEmail{
+#txtEmail, #txtRua, #txtComplemento{
     width: 890px;
+    
+}
+#btnCadastrar{
+    width: 890px;
+    background-color: #00984A;
+    color:#fff;
+    cursor: pointer;
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
 }
 .linhaInput{
     width:900px;
@@ -139,4 +158,19 @@ form input[type="text"], input[type="date"]{
     width:449px;
     height: 80px;
     float: left;
+}
+.col_3{
+    width:300px;
+    height: 100px;
+    float: left;
+    /* border:1px solid black; */
+}
+#chkTermos{
+    float:left;
+    margin-top:20px; 
+    width:50px;
+}
+.form-center input[type="chebox"]{
+    padding: 50px;
+    width:50px;
 }
