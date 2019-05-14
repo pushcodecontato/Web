@@ -13,15 +13,15 @@
             $this->user = 'root';
 	        $this->password = '';
             //$this->password = '12345ola';
-<<<<<<< HEAD
+//            HEAD
+//            $this->password = 'bcd127';
+//=======
+//             HEAD
             $this->password = 'bcd127';
-=======
-<<<<<<< HEAD
-            $this->password = 'bcd127';
-=======
+//=======
              $this->password = 'bcd127';
->>>>>>> 2f2ac44a550337385d16de8271a0ce21ac1d88fc
->>>>>>> 13114282d192cd46a2a452720bfb215c62a9b235
+//            2f2ac44a550337385d16de8271a0ce21ac1d88fc
+//            13114282d192cd46a2a452720bfb215c62a9b235
    	        $this->server = 'localhost';
             $this->user = 'root';
             $this->database = 'mob_share';
