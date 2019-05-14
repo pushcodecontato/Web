@@ -125,6 +125,15 @@
                             $controller_tipo_veiculo->exportar_fip();
 
                             break;
+                        case "JSON_MARCAS":
+
+                            $Listamarcas = $controller_tipo_veiculo->listar_marcas(); 
+                            $lista = array();   
+                            foreach($Listamarcas as $marca){
+                                $lista[]= $marca->to_json();
+                            }
+                            echo json_encode($lista);
+                            break;
                     }
                 
                 break;
@@ -342,11 +351,6 @@
                         case "APROVAR":
 
                             $controller_anuncio->aprovar_anuncio();
-
-                            break;
-                        case "PROCESSADOS":
-
-                        $controller_anuncio->listar_anunciosProcesssados();
 
                             break;
                         case "REPROVAR":

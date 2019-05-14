@@ -61,6 +61,10 @@ class Marca{
     public function getCodFIP(){
         return $this->cod_fip;
     }
+
+    public function to_json(){
+        return array('id_marca'=>$this->id_marca_veiculo,'nome_marca'=>$this->nome_marca,'id_marca_tipo'=>$this->id_marca_tipo);
+    }
 }
 
 ?>
