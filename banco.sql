@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE  IF NOT EXISTS `mob_share` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `mob_share`;
--- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: mob_share
+-- Host: mob-share.mysql.uhserver.com    Database: mob_share
 -- ------------------------------------------------------
--- Server version	8.0.11
+-- Server version	5.6.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `mob_share`;
 
 DROP TABLE IF EXISTS `tbl_acessorio_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_acessorio_veiculo` (
   `idtbl_acessorio_tbl_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de acessório do veículo',
   `id_acessorio` int(11) DEFAULT NULL COMMENT 'código da tabela acessório',
@@ -52,7 +52,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_acessorios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_acessorios` (
   `id_acessorios` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela acessórios',
   `nome_acessorios` varchar(150) NOT NULL COMMENT 'nome dos acessórios',
@@ -81,7 +81,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_anuncio` (
   `id_anuncio` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela anúncio',
   `descricao` text NOT NULL COMMENT 'descrição da tabela de anúncio',
@@ -117,7 +117,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio_venda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_anuncio_venda` (
   `id_anuncio_venda` int(11) NOT NULL COMMENT 'código do anúncio de venda',
   `id_veiculo` int(11) NOT NULL COMMENT 'código da tabela do veículo',
@@ -147,7 +147,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_anuncio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_anuncio` (
   `id_aprovacao_anuncio` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela aprovação do anúncio',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status da aprovação',
@@ -178,7 +178,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_anuncio_venda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_anuncio_venda` (
   `id_aprovacao_anuncio_venda` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código de aprovação do anúncio de venda',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status de aprovação do anúncio de venda',
@@ -207,7 +207,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_aprovacao_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_aprovacao_veiculo` (
   `id_aprovacao_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela aprovação do veículo',
   `status_aprovacao` tinyint(4) NOT NULL COMMENT 'status de aprovação',
@@ -238,7 +238,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_avaliacao_locatario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_avaliacao_locatario` (
   `id_avaliacao_locatario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código  da tabeça de avaliação do locatario',
   `nota` float DEFAULT NULL COMMENT 'nota do locatario',
@@ -266,7 +266,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_avaliacao_servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_avaliacao_servico` (
   `id_avaliacao_servico` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela avaliação serviço',
   `nota` float DEFAULT NULL COMMENT 'nota da avaliação',
@@ -294,7 +294,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_bancos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_bancos` (
   `id_banco` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela bancas',
   `nome_banco` varchar(60) NOT NULL COMMENT 'nome do banco',
@@ -320,7 +320,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cargo_funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cargo_funcionario` (
   `id_cargo_funcionario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de cargo do funcionário',
   `id_cargo` int(11) NOT NULL COMMENT 'código da tabela de cargo',
@@ -331,7 +331,7 @@ CREATE TABLE `tbl_cargo_funcionario` (
   KEY `fk_tbl_funcionario_tbl_cargo_funcionario_idx` (`id_funcionario`),
   CONSTRAINT `fk_tbl_funcionario_tbl_cargo_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`),
   CONSTRAINT `fk_tbl_setor_tbl_cargo_funcionario` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargos` (`id_cargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -340,6 +340,7 @@ CREATE TABLE `tbl_cargo_funcionario` (
 
 LOCK TABLES `tbl_cargo_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_cargo_funcionario` DISABLE KEYS */;
+INSERT INTO `tbl_cargo_funcionario` VALUES (26,4,8,NULL),(27,2,8,NULL),(28,18,8,NULL);
 /*!40000 ALTER TABLE `tbl_cargo_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,12 +350,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cargos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cargos` (
   `id_cargo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de cargos',
   `nome` varchar(100) NOT NULL COMMENT 'nome do cargo',
   PRIMARY KEY (`id_cargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -363,6 +364,7 @@ CREATE TABLE `tbl_cargos` (
 
 LOCK TABLES `tbl_cargos` WRITE;
 /*!40000 ALTER TABLE `tbl_cargos` DISABLE KEYS */;
+INSERT INTO `tbl_cargos` VALUES (1,'Cabeleireiro'),(2,'Sapateiro'),(3,'Vendedor'),(4,'Outro'),(5,'Açougueiro'),(6,'Advogado'),(7,'Alfaiate'),(8,'Aprendiz'),(9,'Atendente'),(10,'DBA'),(11,'Dentista'),(12,'Desenhista'),(13,'Designer'),(14,'Documentado'),(15,'Doméstica'),(16,'Professor'),(17,'Guarda'),(18,'Programador'),(19,'Motorista'),(20,'Jornalista'),(21,'Engenheiro'),(22,'Apresentador'),(23,'Investigador'),(24,'Policial'),(25,'Enfermeiro'),(26,'Medico'),(27,'Politico'),(28,'Diretor'),(29,'Gerente'),(30,'Garçom'),(31,'Jornaleiro'),(32,'Jardineiro'),(33,'letricista'),(34,'Musico'),(35,'Nutricionista'),(36,'Psicólogo'),(37,'Publicitário'),(38,'Químico'),(39,'Radialista'),(40,'Salva Vidas'),(41,'Síndico'),(42,'Serralheiro'),(43,'Sorveteiro'),(44,'Tecnico TI'),(45,'Tapeceiro'),(46,'Veterinário'),(47,'Zelador'),(48,'Arquiteto'),(49,'Artesão'),(50,'Auditor'),(51,'Assistente'),(52,'Babá'),(53,'Back Office'),(54,'Balanceiro'),(55,'Balconista'),(56,'Bamburista'),(57,'Barista'),(58,'Barman'),(59,'Berçarista'),(60,'Bibliotecário'),(61,'Bilheteiro'),(62,'Biologista'),(63,'Biólogo'),(64,'Biomédico'),(65,'Bioquímico'),(66,'Biotecnólogo'),(67,'Blogueiro'),(68,'Bombeiro'),(69,'Borracheiro'),(70,'Acrilista'),(71,'Adestrador'),(72,'Administrador'),(73,'Agente'),(74,'Analista Tributário'),(75,'Antropólogo'),(76,'Aquarista'),(77,'Arqueólogo'),(78,'Arquivista'),(79,'Artista'),(80,'Ascensorista'),(81,'Assessor'),(82,'Ator'),(83,'Avaliador'),(84,'Azulejista'),(85,'Caixa'),(86,'Camareiro'),(87,'Carpinteiro'),(88,'Carteiro'),(89,'Chaveiro'),(90,'Comissário'),(91,'Comprador'),(92,'Confeiteiro'),(93,'Consultor'),(94,'Contador'),(95,'Controlador'),(96,'Coordenador'),(97,'Cozinheiro'),(98,'Costureiro'),(99,'Cuidador'),(100,'Curador'),(101,'Dançarino'),(102,'Decorador'),(103,'Divulgador'),(104,'Economista'),(105,'Eletricista'),(106,'Embalador'),(107,'Encanador'),(108,'Empacotador'),(109,'Ciêntista'),(110,'Entregador'),(111,'Estatístico'),(112,'Etiquetador'),(113,'Farmacêutico'),(114,'Ferramenteiro'),(115,'Ferreiro'),(116,'Fiscal'),(117,'Fisioterapeuta'),(118,'Florista'),(119,'Fotógrafo'),(120,'Funileiro'),(121,'Fresador'),(122,'Fundidor de Metais'),(123,'Gastrônomo'),(124,'Astronomo'),(125,'Governanta'),(126,'Gesseiro'),(127,'Impressor'),(128,'Ilustrador'),(129,'Inspetor'),(130,'Segurança'),(131,'Instrumentista'),(132,'Intérprete'),(133,'Instalador'),(134,'Lavador'),(135,'Limpador'),(136,'Manicure'),(137,'Maquiador'),(138,'Marceneiro'),(139,'Mecânico'),(140,'Matematico'),(141,'Montador'),(142,'Motoboy'),(143,'Soldado'),(144,'Padeiro'),(145,'Pedreiro'),(146,'Pintor'),(147,'Repórter'),(148,'Webmaster');
 /*!40000 ALTER TABLE `tbl_cargos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,7 +374,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código do cliente',
   `nome_cliente` varchar(250) NOT NULL COMMENT 'nome do cliente',
@@ -411,7 +413,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_comentario_avaliacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_comentario_avaliacao` (
   `id_comentario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela comentário',
   `comentario` text COMMENT 'comentário',
@@ -435,7 +437,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_como_ganhar_dinheiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_como_ganhar_dinheiro` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página como ganhar dinheiro',
   `titulo_sessao1` text NOT NULL COMMENT 'título da página como ganhar dinheiro',
@@ -469,7 +471,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_conta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_conta` (
   `id_conta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da conta',
   `saldo_conta_bancaria` decimal(10,2) NOT NULL COMMENT 'saldo da conta bancaria',
@@ -496,7 +498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_contas_pagar` (
   `id_conta_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à pagar',
   `descricao` text NOT NULL COMMENT 'descrição da conta à pagar ',
@@ -507,7 +509,7 @@ CREATE TABLE `tbl_contas_pagar` (
   `codigo_pagamento` varchar(32) DEFAULT NULL COMMENT 'número do código do pagamento',
   `confirmado` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'confirmação do pagamento aceito ou não aceito',
   PRIMARY KEY (`id_conta_pagar`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -516,6 +518,7 @@ CREATE TABLE `tbl_contas_pagar` (
 
 LOCK TABLES `tbl_contas_pagar` WRITE;
 /*!40000 ALTER TABLE `tbl_contas_pagar` DISABLE KEYS */;
+INSERT INTO `tbl_contas_pagar` VALUES (1,'Pagamento do mes 4','2019-05-15',900.00,NULL,NULL,'435345',0),(2,'fffff','2019-05-13',900.00,NULL,NULL,'fff',0);
 /*!40000 ALTER TABLE `tbl_contas_pagar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -525,7 +528,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_contas_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_contas_receber` (
   `id_conta_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à receber',
   `valor` decimal(10,2) NOT NULL COMMENT 'valor das contas à receber',
@@ -554,7 +557,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_email_mkt`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_email_mkt` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página email marketing',
   `email` varchar(100) NOT NULL COMMENT 'email da página email marketing',
@@ -578,7 +581,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fale_conosco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página fale conosco',
   `nome_fale_conosco` varchar(100) DEFAULT NULL COMMENT 'nome da página fale conosco',
@@ -606,7 +609,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_faq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_faq` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página faq',
   `perguntas` text NOT NULL COMMENT 'pergunta da página faq',
@@ -632,7 +635,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_folha_pagamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_folha_pagamento` (
   `id_folha_pagamento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela folha de pagamento',
   `valor_final` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT 'valor final da folha de pagamento',
@@ -646,7 +649,7 @@ CREATE TABLE `tbl_folha_pagamento` (
   KEY `fk_tbl_usuario_desktop_tbl_folha_pagamento_idx` (`id_usuario_desktop`),
   CONSTRAINT `fk_tbl_pagamento_funcionario_tbl_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`),
   CONSTRAINT `fk_tbl_usuario_desktop_tbl_folha_pagamento` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -655,6 +658,7 @@ CREATE TABLE `tbl_folha_pagamento` (
 
 LOCK TABLES `tbl_folha_pagamento` WRITE;
 /*!40000 ALTER TABLE `tbl_folha_pagamento` DISABLE KEYS */;
+INSERT INTO `tbl_folha_pagamento` VALUES (1,900.00,'2019-05-15','Pagamento do mes 4','435345',8,1),(2,900.00,'2019-05-13','fffff','fff',8,1);
 /*!40000 ALTER TABLE `tbl_folha_pagamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -664,7 +668,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_folha_pagamento_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_folha_pagamento_contas_pagar` (
   `id_pedido_contas_pagar` int(11) NOT NULL AUTO_INCREMENT,
   `id_folha_pagamento` int(11) NOT NULL COMMENT 'código da tabela folha de pagamento',
@@ -674,7 +678,7 @@ CREATE TABLE `tbl_folha_pagamento_contas_pagar` (
   KEY `fk_tbl_contas_pagar_tbl_folha_pagamento_contas_pagar_idx` (`id_conta_pagar`),
   CONSTRAINT `fk_tbl_contas_pagar_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
   CONSTRAINT `fk_tbl_folha_pagamento_tbl_folha_pagamento_contas_pagar` FOREIGN KEY (`id_folha_pagamento`) REFERENCES `tbl_folha_pagamento` (`id_folha_pagamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -683,6 +687,7 @@ CREATE TABLE `tbl_folha_pagamento_contas_pagar` (
 
 LOCK TABLES `tbl_folha_pagamento_contas_pagar` WRITE;
 /*!40000 ALTER TABLE `tbl_folha_pagamento_contas_pagar` DISABLE KEYS */;
+INSERT INTO `tbl_folha_pagamento_contas_pagar` VALUES (1,1,1),(2,2,2);
 /*!40000 ALTER TABLE `tbl_folha_pagamento_contas_pagar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -692,7 +697,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fornecedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fornecedor` (
   `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela do fornecedor',
   `nome_fornecedor` varchar(100) NOT NULL COMMENT 'nome do fornecedor',
@@ -718,7 +723,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_foto_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_foto_veiculo` (
   `id_foto_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela foto do veículo',
   `nome_foto` varchar(255) NOT NULL COMMENT 'nome da foto ',
@@ -745,28 +750,33 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_funcionario` (
   `id_funcionario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de funcionário',
   `nome` varchar(100) NOT NULL COMMENT 'nome do funcionário',
-  `cpf` int(11) NOT NULL COMMENT 'cpf do funcionário',
+  `cpf` varchar(16) NOT NULL COMMENT 'cpf do funcionário',
   `cod_funcionario` varchar(32) NOT NULL COMMENT 'código de verificação do funcionário',
   `email` varchar(150) NOT NULL COMMENT 'email do funcionário',
   `demissao` date DEFAULT NULL COMMENT 'data de demissão do funcionário',
-  `rg` int(9) DEFAULT NULL COMMENT 'rg do funcionário',
+  `rg` varchar(14) DEFAULT NULL COMMENT 'rg do funcionário',
   `dt_nacimento` date DEFAULT NULL COMMENT 'data de nascimento do funcionário',
-  `cep` int(8) DEFAULT NULL COMMENT 'cep do endereço do funcionário',
+  `cep` varchar(12) DEFAULT NULL COMMENT 'cep do endereço do funcionário',
   `uf` varchar(2) DEFAULT NULL COMMENT 'estado do funcionário',
   `cidade` varchar(100) DEFAULT NULL COMMENT 'cidade do funcionário',
+  `bairro` varchar(80) DEFAULT NULL,
   `logradouro` varchar(100) DEFAULT NULL COMMENT 'logradouro do endereço do funcionário',
   `n` varchar(10) DEFAULT NULL,
-  `telefone` varchar(12) DEFAULT NULL COMMENT 'telefone do funcionário',
+  `telefone` varchar(14) DEFAULT NULL COMMENT 'telefone do funcionário',
   `admissao` date DEFAULT NULL COMMENT 'data de admissão do funcionário',
   `id_setor` int(11) NOT NULL COMMENT 'código da tabela de setor',
+  `id_cargo` int(11) NOT NULL,
+  `excluido` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_funcionario`),
   KEY `fk_tbl_setor_tbl_funcionario_idx` (`id_setor`),
+  KEY `fk_tbl_cargo_tbl_funcionario_idx` (`id_cargo`),
+  CONSTRAINT `fk_tbl_cargo_tbl_funcionario` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargos` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_setor_tbl_funcionario` FOREIGN KEY (`id_setor`) REFERENCES `tbl_setor` (`id_setor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -775,6 +785,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
+INSERT INTO `tbl_funcionario` VALUES (8,'Claudio Ramos','342.895.237-94','f3423','claudio@ramos.com',NULL,'32.894.723-9','2000-01-03','54656-456','sp','Barueri','Silveira','rua jose','763','(54)6465-4151','2019-05-15',4,18,0);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -784,7 +795,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_home_sessao1`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home_sessao1` (
   `id_pagina_home` int(11) NOT NULL AUTO_INCREMENT,
   `texto_banner` text NOT NULL,
@@ -811,7 +822,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_home_sessao2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home_sessao2` (
   `id_pagina_home2` int(11) NOT NULL AUTO_INCREMENT,
   `titulo_sessao2` varchar(255) NOT NULL,
@@ -838,7 +849,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_home_sessao3`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home_sessao3` (
   `id_home_sessao3` int(11) NOT NULL AUTO_INCREMENT,
   `foto1_sessao3` varchar(255) NOT NULL,
@@ -872,7 +883,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_home_sessao4`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home_sessao4` (
   `id_home_sessao4` int(11) NOT NULL AUTO_INCREMENT,
   `titulo_sessao4` varchar(45) NOT NULL,
@@ -899,7 +910,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_home_sessao5`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home_sessao5` (
   `id_home_sessao5` int(11) NOT NULL AUTO_INCREMENT,
   `status_sessao5` float NOT NULL,
@@ -937,7 +948,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao` (
   `id_locacao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela locação',
   `id_cliente_locador` int(11) NOT NULL COMMENT 'código da tabela cliente locador',
@@ -968,7 +979,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao_conta_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao_conta_pagar` (
   `id_locacao_conta_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela contas à pagar',
   `id_locacao` int(11) NOT NULL COMMENT 'código da tabela locação',
@@ -996,7 +1007,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_locacao_conta_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_locacao_conta_receber` (
   `id_locacao_conta_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela locação contas à receber',
   `id_locacao` int(11) NOT NULL COMMENT 'código da tabela locação',
@@ -1024,7 +1035,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_marca_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_marca_veiculo` (
   `id_marca_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da marca do veículo',
   `nome_marca` varchar(20) NOT NULL COMMENT 'nome da marca do veículo',
@@ -1050,7 +1061,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_marca_veiculo_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_marca_veiculo_tipo_veiculo` (
   `id_tipo_marca` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela tipo da marca do veículo',
   `id_tipo_veiculo` int(11) NOT NULL COMMENT 'código da tabela tipo do veículo',
@@ -1080,7 +1091,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_melhores_avaliacoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_melhores_avaliacoes` (
   `id_melhores_avaliacoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página melhores avaliações',
   `titulo_melhores_avaliacoes` text NOT NULL COMMENT 'título da página melhores avaliações',
@@ -1104,7 +1115,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_menu` (
   `id_menu` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela menu',
   `nome_menu` varchar(25) NOT NULL COMMENT 'nome do menu',
@@ -1131,7 +1142,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_modelo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_modelo_veiculo` (
   `id_modelo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela do modelo do veículo',
   `nome_modelo` varchar(50) NOT NULL COMMENT 'nome do modelo',
@@ -1161,7 +1172,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_niveis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_niveis` (
   `id_niveis` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela níveis',
   `nome_nivel` varchar(25) NOT NULL COMMENT 'nome do nível',
@@ -1187,7 +1198,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_niveis_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_niveis_menu` (
   `id_niveis_menu` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela níveis do menu',
   `id_menu` int(11) NOT NULL COMMENT 'código da tabela menu',
@@ -1216,7 +1227,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes` (
   `id_operacoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações',
   `id_conta` int(11) NOT NULL COMMENT 'código da tabela conta',
@@ -1245,7 +1256,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes_contas_pagar` (
   `id_operacoes_contas_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações contas à receber',
   `id_contas_pagar` int(11) NOT NULL COMMENT 'código da tabela contas à pagar',
@@ -1273,7 +1284,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_operacoes_contas_receber`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_operacoes_contas_receber` (
   `id_operacoes_contas_receber` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela operações contas à receber',
   `id_contas_receber` int(11) NOT NULL COMMENT 'código da tabela contas à receber',
@@ -1301,7 +1312,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pagina_sobre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pagina_sobre` (
   `id_sobre` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página sobre',
   `titulo_sobre` varchar(45) NOT NULL COMMENT 'título da página sobre',
@@ -1336,7 +1347,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela pedido',
   `valor_total` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT 'valor total do pedido',
@@ -1372,7 +1383,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido_contas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido_contas_pagar` (
   `id_pedido_contas_pagar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela pedidos de conta à pagar',
   `id_pedido` int(11) NOT NULL COMMENT 'código da tabela pedidos',
@@ -1400,7 +1411,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido_produto` (
   `id_pedido_produto` int(11) NOT NULL COMMENT 'código da tabela produto do pedido',
   `quantidade` int(11) NOT NULL COMMENT 'quantidade de produtos',
@@ -1430,7 +1441,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_percentual`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_percentual` (
   `id_percentual` int(11) NOT NULL AUTO_INCREMENT,
   `percentual` float NOT NULL,
@@ -1458,7 +1469,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_percentual_desconto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_percentual_desconto` (
   `id_percentual_desconto` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código do percentual de desconto',
   `percentual` float NOT NULL COMMENT 'porcentagem do percentual de desconto',
@@ -1487,7 +1498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_permissoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_permissoes` (
   `id_permissoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de permissoes',
   `nome` varchar(45) NOT NULL COMMENT 'nome das permissoes',
@@ -1496,7 +1507,7 @@ CREATE TABLE `tbl_permissoes` (
   `icone` varchar(100) NOT NULL COMMENT 'ícone das permissoes',
   `href` varchar(100) NOT NULL COMMENT 'link das permissoes',
   PRIMARY KEY (`id_permissoes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1505,6 +1516,7 @@ CREATE TABLE `tbl_permissoes` (
 
 LOCK TABLES `tbl_permissoes` WRITE;
 /*!40000 ALTER TABLE `tbl_permissoes` DISABLE KEYS */;
+INSERT INTO `tbl_permissoes` VALUES (1,'Usuários','Usuários','Controla os Usuario do sistema e suas atribuições','far fa-user','javascript:getTbl(\'usuario\')'),(2,'Funcionários','Funcionários','Controla os Funionarios incluindo seus salarios, setores e etc..','fas fa-briefcase','javascript:getTbl(\'funcionario\')'),(3,'Conta a Receber','C. Receber','Controla as contas a Receber da empresa','fas fa-cash-register','javascript:getTbl(\'conta_receber\')'),(4,'Conta a Pagar','C. Pagar','Controla as contas a Pagar da empresa','fas fa-money-check','javascript:getTbl(\'conta_pagar\')'),(5,'Conciliação Bancaria','C. Bancaria','Controla as contas a Pagar da empresa','fas fa-tasks','javascript:getTbl(\'bancaria\')'),(6,'Pedidos','Pedidos','Controla e criar os Pedidos de compra da empresa','fas fa-shopping-cart','javascript:getTbl(\'bancaria\')');
 /*!40000 ALTER TABLE `tbl_permissoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1514,7 +1526,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_principais_anuncios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_principais_anuncios` (
   `id_principais_anuncios` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código principais anúncios',
   `id_anuncios_venda` int(11) NOT NULL COMMENT 'código da tabela anúncios a venda',
@@ -1540,7 +1552,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela prodto',
   `descricao` text COMMENT 'descrição do produto',
@@ -1566,7 +1578,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_salario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_salario` (
   `id_salario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de salário',
   `salario` decimal(10,2) NOT NULL COMMENT 'salário do funcionário',
@@ -1575,7 +1587,7 @@ CREATE TABLE `tbl_salario` (
   PRIMARY KEY (`id_salario`),
   KEY `fk_tbl_funcionario_tbl_salario_idx` (`id_funcionario`),
   CONSTRAINT `fk_tbl_funcionario_tbl_salario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1584,6 +1596,7 @@ CREATE TABLE `tbl_salario` (
 
 LOCK TABLES `tbl_salario` WRITE;
 /*!40000 ALTER TABLE `tbl_salario` DISABLE KEYS */;
+INSERT INTO `tbl_salario` VALUES (1,900.00,'2019-05-08 00:00:00',8);
 /*!40000 ALTER TABLE `tbl_salario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1593,7 +1606,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_seja_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_seja_parceiro` (
   `id_seja_parceiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página seja parceiro',
   `titulo_seja_parceiro` varchar(45) NOT NULL COMMENT 'título da página seja parceiro',
@@ -1619,7 +1632,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_seja_parceiro_banner`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_seja_parceiro_banner` (
   `id_seja_parceiro_banner` int(11) NOT NULL AUTO_INCREMENT,
   `texto1_seja_parceiro_banner` varchar(255) NOT NULL,
@@ -1648,12 +1661,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_setor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_setor` (
   `id_setor` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de setor',
   `nome` varchar(100) NOT NULL COMMENT 'nome do setor',
   PRIMARY KEY (`id_setor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1662,6 +1675,7 @@ CREATE TABLE `tbl_setor` (
 
 LOCK TABLES `tbl_setor` WRITE;
 /*!40000 ALTER TABLE `tbl_setor` DISABLE KEYS */;
+INSERT INTO `tbl_setor` VALUES (1,'Administrativo'),(2,'Atacado'),(3,'Atendimento ao cliente'),(4,'Auditoria'),(5,'Comercial'),(6,'Comunicação'),(7,'Contabilidade'),(8,'Controladoria'),(9,'Credit'),(10,'Desenvolvimento de negócios'),(11,'Estratégia'),(12,'Financeiro'),(13,'Garantia de Qualidade'),(14,'Inteligência de Mercado'),(15,'Legal'),(16,'Logística'),(17,'Manutenção'),(18,'Marketing'),(19,'Operações'),(20,'Pesquisa e Desenvolvimento'),(21,'Planejamento'),(22,'Planejamento Financeiro'),(23,'Processos'),(24,'Produção'),(25,'Projetos'),(26,'Recursos Humanos'),(27,'Seguros'),(28,'Tesouraria'),(29,'TI – Tecnologia da Informação'),(30,'Treinamento e Desenvolvimento'),(31,'Tributário, Fiscal'),(32,'Varejo'),(33,'Vendas');
 /*!40000 ALTER TABLE `tbl_setor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1671,7 +1685,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tabela_precos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_tabela_precos` (
   `id_tabela_precos` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de preços',
   `titulo_tabela_precos` varchar(45) NOT NULL COMMENT 'título da tabela de preços',
@@ -1697,7 +1711,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_termos_uso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_termos_uso` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da página termos de uso',
   `texto` text NOT NULL COMMENT 'pdf da página termos de uso',
@@ -1723,7 +1737,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_tipo_veiculo` (
   `id_tipo_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela tipo de veículo',
   `nome_tipo_veiculo` varchar(20) NOT NULL COMMENT 'nome do tipo de veículo',
@@ -1748,7 +1762,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_cms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_cms` (
   `id_usuario_cms` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela usuário do  cms',
   `nome_usuario_cms` varchar(20) NOT NULL COMMENT 'nome de usuário do cms',
@@ -1778,19 +1792,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_desktop`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_desktop` (
   `id_usuario_desktop` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela usuário desktop',
   `nome` varchar(100) NOT NULL COMMENT 'nome do usuário do desktop',
   `email` varchar(128) NOT NULL COMMENT 'email do usuário do desktop',
   `senha` varchar(128) DEFAULT NULL COMMENT 'senha do usuário do desktop',
-  `telefone` varchar(12) DEFAULT NULL COMMENT 'telefone do usuário',
-  `cpf` int(11) DEFAULT '0' COMMENT 'cpf do usuário',
+  `telefone` varchar(14) DEFAULT NULL COMMENT 'telefone do usuário',
+  `cpf` varchar(14) DEFAULT '0' COMMENT 'cpf do usuário',
   `logado` datetime DEFAULT NULL COMMENT 'data quando usuário logou',
   `foto` varchar(100) DEFAULT NULL COMMENT 'foto do usuário',
   `excluido` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'dado se o usuário foi excluído ou não',
   PRIMARY KEY (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1799,6 +1813,7 @@ CREATE TABLE `tbl_usuario_desktop` (
 
 LOCK TABLES `tbl_usuario_desktop` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_desktop` DISABLE KEYS */;
+INSERT INTO `tbl_usuario_desktop` VALUES (1,'Luiz Ricardo Silveira','lluizricardosilveira@eanac.com.br','202cb962ac59075b964b07152d234b70','(11)4303-0655','312.024.068-07',NULL,NULL,0);
 /*!40000 ALTER TABLE `tbl_usuario_desktop` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1808,7 +1823,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario_desktop_permissoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_usuario_desktop_permissoes` (
   `id_usuario_desktop_permicoes` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de permições do usuário  do desktop',
   `id_usuario_desktop` int(11) NOT NULL COMMENT 'código da tabela do usuário  do desktop',
@@ -1818,7 +1833,7 @@ CREATE TABLE `tbl_usuario_desktop_permissoes` (
   KEY `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes_idx` (`id_usuario_desktop`),
   CONSTRAINT `fk_tbl_permicoes_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_permicoes`) REFERENCES `tbl_permissoes` (`id_permissoes`),
   CONSTRAINT `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1827,6 +1842,7 @@ CREATE TABLE `tbl_usuario_desktop_permissoes` (
 
 LOCK TABLES `tbl_usuario_desktop_permissoes` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_desktop_permissoes` DISABLE KEYS */;
+INSERT INTO `tbl_usuario_desktop_permissoes` VALUES (24,1,1),(25,1,2),(26,1,6);
 /*!40000 ALTER TABLE `tbl_usuario_desktop_permissoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1836,7 +1852,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_veiculo` (
   `id_veiculo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'código da tabela de veículo',
   `ano` varchar(45) NOT NULL,
@@ -1870,73 +1886,76 @@ INSERT INTO `tbl_veiculo` VALUES (1,'2014','HJTY','88026','50766292645',10,4,6,1
 UNLOCK TABLES;
 
 --
--- Temporary view structure for view `view_anuncios`
+-- Temporary table structure for view `view_anuncios`
 --
 
 DROP TABLE IF EXISTS `view_anuncios`;
 /*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_anuncios` AS SELECT 
- 1 AS `locador`,
- 1 AS `celular`,
- 1 AS `telefone`,
- 1 AS `rua`,
- 1 AS `bairro`,
- 1 AS `cep`,
- 1 AS `complemento`,
- 1 AS `uf`,
- 1 AS `cidade`,
- 1 AS `id_cliente`,
- 1 AS `id_anuncio`,
- 1 AS `data_inicial`,
- 1 AS `data_final`,
- 1 AS `descricao`,
- 1 AS `horario_inicio`,
- 1 AS `horario_termino`,
- 1 AS `valor_hora`,
- 1 AS `ano`,
- 1 AS `placa`,
- 1 AS `quilometragem`,
- 1 AS `renavam`,
- 1 AS `nome_tipo_veiculo`,
- 1 AS `nome_marca`,
- 1 AS `nome_modelo`,
- 1 AS `id_tipo_veiculo`,
- 1 AS `id_tipo_marca`,
- 1 AS `id_modelo`,
- 1 AS `nome_foto`*/;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_anuncios` (
+  `locador` tinyint NOT NULL,
+  `celular` tinyint NOT NULL,
+  `telefone` tinyint NOT NULL,
+  `rua` tinyint NOT NULL,
+  `bairro` tinyint NOT NULL,
+  `cep` tinyint NOT NULL,
+  `complemento` tinyint NOT NULL,
+  `uf` tinyint NOT NULL,
+  `cidade` tinyint NOT NULL,
+  `id_cliente` tinyint NOT NULL,
+  `id_anuncio` tinyint NOT NULL,
+  `data_inicial` tinyint NOT NULL,
+  `data_final` tinyint NOT NULL,
+  `descricao` tinyint NOT NULL,
+  `horario_inicio` tinyint NOT NULL,
+  `horario_termino` tinyint NOT NULL,
+  `valor_hora` tinyint NOT NULL,
+  `ano` tinyint NOT NULL,
+  `placa` tinyint NOT NULL,
+  `quilometragem` tinyint NOT NULL,
+  `renavam` tinyint NOT NULL,
+  `nome_tipo_veiculo` tinyint NOT NULL,
+  `nome_marca` tinyint NOT NULL,
+  `nome_modelo` tinyint NOT NULL,
+  `id_tipo_veiculo` tinyint NOT NULL,
+  `id_tipo_marca` tinyint NOT NULL,
+  `id_modelo` tinyint NOT NULL,
+  `nome_foto` tinyint NOT NULL
+) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `view_tipo_marca`
+-- Temporary table structure for view `view_tipo_marca`
 --
 
 DROP TABLE IF EXISTS `view_tipo_marca`;
 /*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_tipo_marca` AS SELECT 
- 1 AS `id_tipo_veiculo`,
- 1 AS `id_marca_veiculo`,
- 1 AS `id_tipo_marca`,
- 1 AS `nome_marca`*/;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_tipo_marca` (
+  `id_tipo_veiculo` tinyint NOT NULL,
+  `id_marca_veiculo` tinyint NOT NULL,
+  `id_tipo_marca` tinyint NOT NULL,
+  `nome_marca` tinyint NOT NULL
+) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
 --
 -- Final view structure for view `view_anuncios`
 --
 
+/*!50001 DROP TABLE IF EXISTS `view_anuncios`*/;
 /*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_anuncios` AS select `cliente`.`nome_cliente` AS `locador`,`cliente`.`celular` AS `celular`,`cliente`.`telefone` AS `telefone`,`cliente`.`rua` AS `rua`,`cliente`.`bairro` AS `bairro`,`cliente`.`cep` AS `cep`,`cliente`.`complemento` AS `complemento`,`cliente`.`uf` AS `uf`,`cliente`.`cidade` AS `cidade`,`cliente`.`id_cliente` AS `id_cliente`,`anuncios`.`id_anuncio` AS `id_anuncio`,`anuncios`.`data_inicial` AS `data_inicial`,`anuncios`.`data_final` AS `data_final`,`anuncios`.`descricao` AS `descricao`,`anuncios`.`horario_inicio` AS `horario_inicio`,`anuncios`.`horario_termino` AS `horario_termino`,`anuncios`.`valor_hora` AS `valor_hora`,`veiculos`.`ano` AS `ano`,`veiculos`.`placa` AS `placa`,`veiculos`.`quilometragem` AS `quilometragem`,`veiculos`.`renavam` AS `renavam`,`tipo_veiculo`.`nome_tipo_veiculo` AS `nome_tipo_veiculo`,`marca_veiculo`.`nome_marca` AS `nome_marca`,`modelo_veiculo`.`nome_modelo` AS `nome_modelo`,`tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`marca_tipo`.`id_tipo_marca` AS `id_tipo_marca`,`modelo_veiculo`.`id_modelo` AS `id_modelo`,`foto_veiculo`.`nome_foto` AS `nome_foto` from (((((((`tbl_cliente` `cliente` join `tbl_anuncio` `anuncios` on((`anuncios`.`id_cliente_locador` = `cliente`.`id_cliente`))) join `tbl_veiculo` `veiculos` on((`veiculos`.`id_veiculo` = `anuncios`.`id_veiculo`))) join `tbl_tipo_veiculo` `tipo_veiculo` on((`veiculos`.`id_tipo_veiculo` = `tipo_veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` `marca_veiculo` on((`veiculos`.`id_marca_veiculo` = `marca_veiculo`.`id_marca_veiculo`))) join `tbl_marca_veiculo_tipo_veiculo` `marca_tipo` on(((`marca_tipo`.`id_tipo_veiculo` = `tipo_veiculo`.`id_tipo_veiculo`) and (`marca_tipo`.`id_marca_veiculo` = `marca_veiculo`.`id_marca_veiculo`)))) join `tbl_modelo_veiculo` `modelo_veiculo` on((`veiculos`.`id_modelo_veiculo` = `modelo_veiculo`.`id_modelo`))) join `tbl_foto_veiculo` `foto_veiculo` on((`foto_veiculo`.`id_veiculo` = `veiculos`.`id_veiculo`))) where (`anuncios`.`status_aprovado` = 1) group by `foto_veiculo`.`id_veiculo` */;
+/*!50013 DEFINER=`mob_share`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_anuncios` AS select 1 AS `locador`,1 AS `celular`,1 AS `telefone`,1 AS `rua`,1 AS `bairro`,1 AS `cep`,1 AS `complemento`,1 AS `uf`,1 AS `cidade`,1 AS `id_cliente`,1 AS `id_anuncio`,1 AS `data_inicial`,1 AS `data_final`,1 AS `descricao`,1 AS `horario_inicio`,1 AS `horario_termino`,1 AS `valor_hora`,1 AS `ano`,1 AS `placa`,1 AS `quilometragem`,1 AS `renavam`,1 AS `nome_tipo_veiculo`,1 AS `nome_marca`,1 AS `nome_modelo`,1 AS `id_tipo_veiculo`,1 AS `id_tipo_marca`,1 AS `id_modelo`,1 AS `nome_foto` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1945,16 +1964,17 @@ SET character_set_client = @saved_cs_client;
 -- Final view structure for view `view_tipo_marca`
 --
 
+/*!50001 DROP TABLE IF EXISTS `view_tipo_marca`*/;
 /*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_tipo_marca` AS select `tbl_tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo` AS `id_marca_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_marca` AS `id_tipo_marca`,`tbl_marca_veiculo`.`nome_marca` AS `nome_marca` from ((`tbl_tipo_veiculo` join `tbl_marca_veiculo_tipo_veiculo` on((`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_veiculo` = `tbl_tipo_veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` on((`tbl_marca_veiculo`.`id_marca_veiculo` = `tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo`))) where ((`tbl_marca_veiculo_tipo_veiculo`.`excluido` = 0) and (`tbl_marca_veiculo`.`status` = 1)) */;
+/*!50013 DEFINER=`mob_share`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_tipo_marca` AS select 1 AS `id_tipo_veiculo`,1 AS `id_marca_veiculo`,1 AS `id_tipo_marca`,1 AS `nome_marca` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1968,4 +1988,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-09  9:14:00
+-- Dump completed on 2019-05-13 22:22:35

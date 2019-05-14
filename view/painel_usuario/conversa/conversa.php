@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" 
           type="text/css"
-          href="view/painel_usuario/css/conversa.css"/>
+          href="view/painel_usuario/conversa/css/conversa.css"/>
 </head>
 
 <div id="conteudo_conversa"> 

@@ -18,6 +18,44 @@
 
                  <br><label id="titulo2"> Dias Disponíveis</label><br>
                 
+                <div class="principal_segura_conteudo">
+                    <div class="segura_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                    </div>
+                    <div class="dias_semana">
+                        <label class="dia">Segunda - Feira</label>
+                         <label class="dia">Quarta- Feira</label>
+                         <label class="dia">Sexta - Feira</label>
+                         <label class="dia">Domingo - Feira</label>
+                    </div>
+                    
+                    
+                    <div class="segura_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                        <input type="checkbox" class="caixinha_checkbox">
+                    </div>
+                    
+                    <div class="dias_semana">
+                        <label class="dia">Terça- Feira</label>
+                         <label class="dia">Quinta- Feira</label>
+                    </div>
+                </div>
+                <div class="segura_hora">
+                
+                    <label id="titulo_veiculo"> Veiculos</label><br>
+                    <input class="caixa_texto_veiculo"type="text">
+                    
+                    <label id="titulo_veiculo"> Veiculos</label><br>
+<!--                    <input class="caixa_texto_veiculo"type="text">-->
+                
+                
+                
+                </div>
+                
+                
                 
 
 
