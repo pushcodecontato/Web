@@ -9,13 +9,11 @@
     $router = "router.php?controller=anuncios&modo=PROCESSADOS";
     
 ?>
-<head>
+<ead>
   <link rel="stylesheet" 
           type="text/css"
           href="view/painel_usuario/locacao/css/andamento.css"/>
 </head>
-
- 
 <div id="conteudo_andamento"> 
                 
     <h2 id="h2Border">Em andamento</h2>
