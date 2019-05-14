@@ -24,7 +24,6 @@
                     <tr>
                         <td>
                             <label>Tipo de veiculos</label>
-                            
                             <select id="cb_veiculos" onchange="getTipoVeiculo(this.value)">
                                 <?php
                                     $router = "router.php?controller=tipo_veiculo&modo=select";
@@ -44,22 +43,16 @@
                     <tr>
                         <td> 
                             <label>Marcas</label>
-<<<<<<< HEAD
-<!--                             <select id="cb_marcas" onchange="getMarcas(this.value)">
-<!--                                 <?php
-                                    $router = "router.php?controller=marcas&modo=select";
-                                    $list_marcas =  $controller_marcas->listar_marcas();
-
-                                    foreach($list_marcas as $registro){
-                                ?> -->
-                                <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
-                                <?php }?>  
-                            </select> -->
-=======
                             <select id="cb_marcas" onchange="getMarca(this.value)">
-                                <option value=""></option>                             
+                                <?php
+                                    $router = "router.php?controller=tipo_veiculo&modo=select";
+                                    $list_tipo =  $controller_tipo_veiculo->listar_tipo();
+
+                                    foreach($list_tipo as $registro){
+                                ?>
+                                <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
+                                <?php }?>                             
                             </select>
->>>>>>> 13114282d192cd46a2a452720bfb215c62a9b235
                         </td>
                     </tr>
                 </table>
@@ -108,10 +101,16 @@
     </table>
     <div class="veiculos-titulo">Acessórios</div>
     <div class="veiculos-cadastrar-acessorios">
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" >Sufilme</label>
+        <?php
+            $router = "router.php?controller=tipo_veiculo&modo=select";
+            $list_tipo =  $controller_tipo_veiculo->listar_tipo();
+
+            foreach($list_tipo as $registro){
+        ?>
+        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" ><?=@$registro->getNome()?></label>
+        <?php
+            }
+        ?>
     </div>
     <div class="veiculos-titulo">Upload de imagem</div>
     

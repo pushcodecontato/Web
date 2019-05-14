@@ -12,12 +12,11 @@ class ControllerAnuncios{
         require_once('model/usuarioClass.php');
         require_once('model/dao/anuncioDAO.php');
 
-        $this->anunciosDAO = new AnuncioDAO();
+       $this->anunciosDAO = new AnuncioDAO();
 
        }
 
        public function inserir_anuncio(){}
-
        public function excluir_anuncio(){}
        public function atualizar_anuncio(){}
        public function listar_anuncios(){}
@@ -69,7 +68,6 @@ class ControllerAnuncios{
            return $this->anunciosDAO->selectById($_GET['id_anuncio']);
 
        }
-
 
 }
 

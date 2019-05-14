@@ -8,8 +8,6 @@
 
     $router = "router.php?controller=anuncios&modo=PROCESSADOS";
     
-    //$funcaoJS = "tipo_veiculo_getById(id)";
-    /*onsubmit="<?=@$funcaoJS?>"*/
 ?>
 <head>
   <link rel="stylesheet" 
@@ -41,8 +39,6 @@
             </div>
         </div>
 
-
-
         <div class="segura_coluna">
         <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados"  action="<?=@$router?>" >
             <?php
@@ -50,22 +46,22 @@
 
                 $list_tipo =  $controller_anuncios->listar_anunciosProcesssados();
 
-                foreach($list_tipo as $registro){
+                foreach($list_tipo as $anuncio){
             ?>
             <div class="coluna">
-                <div id="nome"><?=@$registro->getLocador()?></div>
+                <div id="nome"></div>
             </div>
 
             <div class="coluna">
-                <div id="veiculo"><?=@$registro->getVeiculo()?></div>
+                <div id="veiculo"><?=@$anuncio->getVeiculo()->getModelo()->getNome()?></div>
             </div>
 
             <div class="coluna">
-                <div id="retirada_data"><?=@$registro->getHorarioInicio()?></div>
+                <div id="retirada_data"><?=@$anuncio->getHorarioInicio()?></div>
             </div>
 
             <div class="coluna">
-                <div id="devolucao_data"><?=@$registro->getHorarioTermino()?></div>
+                <div id="devolucao_data"><?=@$anuncio->getHorarioTermino()?></div>
             </div>
             <?php
                 }
