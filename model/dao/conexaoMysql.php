@@ -11,7 +11,7 @@
         public function __construct(){
             //$this->server = '0.tcp.ngrok.io;port=15477';
             $this->user = 'root';
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	        $this->password = '';
             //$this->password = '12345ola';
 //            HEAD
@@ -23,9 +23,9 @@
              $this->password = 'bcd127';
 //            2f2ac44a550337385d16de8271a0ce21ac1d88fc
 //            13114282d192cd46a2a452720bfb215c62a9b235
-=======
+//=======
             $this->password = 'bcd127';
->>>>>>> 7747f9b75c485ebc52884736a3fbd463df4bb323
+//>>>>>>> 7747f9b75c485ebc52884736a3fbd463df4bb323
    	        $this->server = 'localhost';
             $this->user = 'root';
             $this->database = 'mob_share';

@@ -133,15 +133,15 @@
                         <p> Minhas Locações </p>
                     </div>
                     <div class="sub_menu" id="gerenciar_locacoes"> 
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('minhas_locacoes/carros_alugados',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Carros Alugados </p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('minhas_locacoes/avaliacoes',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Avaliações </p>
                         </div>
-                        <div class="item_sub_menu" onclick="conteudo_subMenu('anuncios/anuncios_aprovados',true)">
+                        <div class="item_sub_menu" onclick="conteudo_subMenu('minhas_locacoes/estatistica',true)">
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Estatísticas </p>
                         </div>
