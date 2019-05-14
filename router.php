@@ -344,6 +344,11 @@
                             $controller_anuncio->aprovar_anuncio();
 
                             break;
+                        case "PROCESSADOS":
+
+                        $controller_anuncio->listar_anunciosProcesssados();
+
+                            break;
                         case "REPROVAR":
                                 
                             $controller_anuncio->reprovar_anuncio();

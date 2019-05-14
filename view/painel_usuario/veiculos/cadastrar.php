@@ -52,16 +52,16 @@
                     <tr>
                         <td> 
                             <label>Marcas</label>
-                            <select id="cb_marcas" onchange="getMarcas(this.value)">
-                                <?php
+<!--                             <select id="cb_marcas" onchange="getMarcas(this.value)">
+<!--                                 <?php
                                     $router = "router.php?controller=marcas&modo=select";
                                     $list_marcas =  $controller_marcas->listar_marcas();
 
                                     foreach($list_marcas as $registro){
-                                ?>
+                                ?> -->
                                 <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
                                 <?php }?>  
-                            </select>
+                            </select> -->
                         </td>
                     </tr>
                 </table>

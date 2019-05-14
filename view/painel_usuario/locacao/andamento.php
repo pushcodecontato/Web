@@ -1,3 +1,16 @@
+<?php
+    
+    require_once('controller/controllerAnuncios.php');
+
+    $controller_anuncios = new ControllerAnuncios();
+
+    $anuncios_processados = $controller_anuncios->listar_anunciosProcesssados();
+
+    $router = "router.php?controller=anuncios&modo=PROCESSADOS";
+    
+    //$funcaoJS = "tipo_veiculo_getById(id)";
+    /*onsubmit="<?=@$funcaoJS?>"*/
+?>
 <head>
   <link rel="stylesheet" 
           type="text/css"
@@ -31,21 +44,33 @@
 
 
         <div class="segura_coluna">
+        <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados"  action="<?=@$router?>" >
+            <?php
+                //$router = "router.php?controller=anuncios&modo=PROCESSADOS";
+
+                $list_tipo =  $controller_anuncios->listar_anunciosProcesssados();
+
+                foreach($list_tipo as $registro){
+            ?>
             <div class="coluna">
-                <div id="nome"> Mikaela </div>
+                <div id="nome"><?=@$registro->getLocador()?></div>
             </div>
 
             <div class="coluna">
-                <div id="veiculo">Camaro </div>
+                <div id="veiculo"><?=@$registro->getVeiculo()?></div>
             </div>
 
             <div class="coluna">
-                <div id="retirada_data">10/02/2019-10:30 </div>
+                <div id="retirada_data"><?=@$registro->getHorarioInicio()?></div>
             </div>
 
             <div class="coluna">
-                <div id="devolucao_data">10/02/2019-10:30 </div>
+                <div id="devolucao_data"><?=@$registro->getHorarioTermino()?></div>
             </div>
+            <?php
+                }
+            ?>
+        </form>
         </div>
     </div>
 
