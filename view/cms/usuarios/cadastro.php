@@ -1,6 +1,7 @@
 <?php
     $controller = 'usuarios';
     $modo = 'inserir';
+    $botao = "Inserir";
     /* dados do formulario */
     $nome = "";
     $email = "";
@@ -15,7 +16,8 @@
         $slcNivel = $usuario->getNivel();
         $id_usuario_cms = '&id='.$usuario->getId();
         $modo = 'ATUALIZAR';
-        $submit = 'usuario_update(this)';//js
+        $submit = 'usuario_update()';//js
+        $botao = "Atualizar";
     }
 ?>
 <div class="segura_form">
@@ -62,7 +64,7 @@
         </div>
        
 
-        <input type="submit" name="btn_salvar" class="btn_padrao" value="Salvar">
+        <input type="submit" name="btn_salvar" class="btn_padrao" value="<?php echo $botao?>">
     </form>
 </div>
 <link rel="stylesheet" type="text/css" href="view/cms/css/usuario.css">

@@ -73,40 +73,82 @@
             </div>
         </header>
         <div class="containerCadastro">
-            <h1>Cadastro de usuário</h1>
             <form>
+            <h1>Cadastro de usuário</h1>
                 <div class="seguraCadastro">
                     <h2>Dados pessoais</h2>
                     <div class="linha"></div>
+                    <div class="form-center" style="height: 600px;">
+                        <div id="dadosPessoais" class="formDadosPessoais">
+                            <label for="txtNome">Nome*</label><br>
+                            <input type="text" name="txtNome" id="txtNome" placeholder="Nome"><br>
+                            <label for="txtNome">Data de nascimento*</label><br>
+                            <input type="date" name="txtNome" id="txtNome" ><br>
+                            <label for="txtCpf">CPF*</label><br>
+                            <input type="text" name="txtCpf" id="txtCpf" placeholder="CPF"><br>
+                            <label for="txtRg">RG*</label><br>
+                            <input type="text" name="txtRg" id="txtRg" placeholder="RG"><br>
+                            <label for="txtCnh">CNH*</label><br>
+                            <input type="text" name="txtCnh" id="txtCnh" placeholder="CNH"><br>
+                        </div>
+                        <div class="formCarregarFotos">
+                            <h2>Foto</h2>
+                            <div class="addFotoCliente">
+                                
+                            </div>
+                            <div class="btnFoto">
+                                <p>Adicionar foto</p>
+                            </div>
+                            <div class="addCnhCliente">
 
-                    <div class="formDadosPessoais">
-                        <label for="txtNome">Nome*</label><br>
-                        <input type="text" name="txtNome" id="txtNome" placeholder="Nome"><br>
-                        <label for="txtNome">Data de nascimento*</label><br>
-                        <input type="date" name="txtNome" id="txtNome" ><br>
-                        <label for="txtCpf">CPF*</label><br>
-                        <input type="text" name="txtCpf" id="txtCpf" placeholder="CPF"><br>
-                        <label for="txtRg">RG*</label><br>
-                        <input type="text" name="txtRg" id="txtRg" placeholder="RG"><br>
-                        <label for="txtCnh">CNH*</label><br>
-                        <input type="text" name="txtCnh" id="txtCnh" placeholder="CNH"><br>
+                            </div>
+                            <div class="btnFoto">
+                                <p>Adicionar foto CNH</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="formCarregarFotos">
-                        <h2>Foto</h2>
-                        <div class="addFotoCliente">
-                            
-                        </div>
-                        <div class="btnFoto">
-                            <p>Adicionar foto</p>
-                        </div>
-                        <div class="addCnhCliente">
-
-                        </div>
-                        <div class="btnFoto">
-                            <p>Adicionar foto CNH</p>
+                </div>
+                <div class="seguraCadastro">
+                    <h2>Comunicação</h2>
+                    <div class="linha"></div>
+                    <div class="form-center" style="height: 220px;">
+                        <div class="formDadosComunicacao">
+                            <label for="txtNome">Email*</label><br>
+                            <input type="text" name="txtNome" id="txtEmail" placeholder="example@example.com"><br>
+                            <div class="linhaInput">
+                                <div class="col_2">
+                                    <label for="txtNome">Telefone</label><br>
+                                    <input type="text" name="txtNome" id="txtNome" placeholder="11 0000-0000">
+                                </div>
+                                <div class="col_2">
+                                    <label for="txtCpf">Celular*</label><br>
+                                    <input type="text" name="txtCpf" id="txtCpf" placeholder="11 90000-0000">
+                                </div>
+                               
+                            </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="seguraCadastro">
+                    <h2>Comunicação</h2>
+                    <div class="linha"></div>
+                    <div class="form-center" style="height: 220px;">
+                        <div class="formDadosComunicacao">
+                            <label for="txtNome">Email*</label><br>
+                            <input type="text" name="txtNome" id="txtEmail" placeholder="example@example.com"><br>
+                            <div class="linhaInput">
+                                <div class="col_2">
+                                    <label for="txtNome">Telefone</label><br>
+                                    <input type="text" name="txtNome" id="txtNome" placeholder="11 0000-0000">
+                                </div>
+                                <div class="col_2">
+                                    <label for="txtCpf">Celular*</label><br>
+                                    <input type="text" name="txtCpf" id="txtCpf" placeholder="11 90000-0000">
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
