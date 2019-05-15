@@ -63,6 +63,10 @@ class TipoVeiculo{
     public function getExcluido(){
         return $this->excluido;
     }
+
+    public function to_json(){
+        return array('id_tipo_veiculo'=>$this->id_tipo_veiculo, 'nome_tipo_veiculo'=>$this->nome_tipo_veiculo);
+    }
 }
 
 
