@@ -8,7 +8,7 @@
                 
                 <h2 id="h2Border">Veiculos alugados</h2>
  
-                <div id="principal_agendamento">
+                <div id="principal">
                     <div class="segura_coluna">
                         <div class="coluna">
                             <div id="nome"> Nome </div>

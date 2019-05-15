@@ -40,9 +40,9 @@
     height: 300px;
 }
 .bolinha{
-    width: 50px;
-    height: 50px;
-   border: solid 1px;
+    width: 52px;
+    height: 52px;
+    border: solid 1px;
     border-radius: 100px;
     margin-top: 28px;
 }
@@ -101,8 +101,8 @@
 #segura_todo_dialogo{
     width: 400px;
     height: 350px;
-    margin-left:650px;
-    margin-top: 700px;
+    margin-left: 425px;
+    margin-top: 211px;
 }
 
 #icone_conversa{
