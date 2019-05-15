@@ -60,4 +60,20 @@ function getModeloVeiculo(idTipoMarca){
        
         
     })
+
+
+}
+function preencheData(){
+    atual = new Date();
+    
+    var option = '<option>Selecione o ano do veiculo</option>';
+    anoAtual = atual.getFullYear();
+    
+    for(var anoAnterio = 1500;anoAnterio < anoAtual ; anoAtual--){
+
+        option += `<option value='${anoAtual}'>${anoAtual}</option>`; 
+    }
+   
+    $('#cb_data').html(option);
+    
 }

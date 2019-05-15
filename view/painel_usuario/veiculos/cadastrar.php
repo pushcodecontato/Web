@@ -45,7 +45,7 @@
                 <table>
                     <td>
                         <label> Ano </label>
-                        <select>
+                        <select id="cb_data">
                             <option> 2015 </option>
                             <option> 2016 </option>
                             <option> 2017 </option>
@@ -109,5 +109,6 @@
 
     $(document).ready(function(){
         selectTipoVeiculo();
+        preencheData();
     })
 </script>
