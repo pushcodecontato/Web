@@ -1,3 +1,27 @@
+<?php
+    
+    $cliente = null;
+    $boolean = "false";
+    require_once('controller/controllerHome.php');
+    require_once('model/clienteClass.php');
+
+    $controllerHome = new controllerHome();
+    $pagina = $controllerHome->getPage();
+    
+    // Pegando o Cliente Logado
+    if(!isset($_SESSION))session_start();
+
+    if(isset($_POST['logout'])){
+        echo "Sucesso";
+        $boolean = false;
+        session_destroy();
+    }
+   
+    if(isset($_SESSION['cliente'])){
+        $cliente = unserialize($_SESSION['cliente']);
+        $boolean = true;
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,17 +46,17 @@
                         <div class="segura_menu">
                             <ul>
                                 <li><a href="?home">INÍCIO</a></li>
-                                <li><a href="?melhores_anuncios">VEÍCULOS EM DESTAQUE</a></li>
+                                <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
                                 <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
                                 <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
                                 <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
                                 <li><a href="?sobre">SOBRE NÓS</a></li>
                             </ul>
                         </div>
-
+                        <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
                         <div class="segura_login">
                             <div class="login_cadastro" id="login" style="width: 110px;">
-                                <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
                             </div>
                             <div class="login_cadastro" style="width: 160px;">
                                 <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
@@ -147,4 +171,12 @@
         </div>
     </footer>
 </body>
+<script>
+    $(document).ready(function(){
+        if(<?php echo $boolean?>)
+            headerLogado();
+        else
+            headerNaoLogado();
+    });
+</script>
 </html>

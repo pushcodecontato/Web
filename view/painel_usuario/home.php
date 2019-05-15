@@ -7,7 +7,7 @@
     $cliente = unserialize($_SESSION['cliente']);
 
     //ATENÇÃO!! Pode dar erro se o cliente não estiver logado !!!
-    
+    if($cliente->getCpf() == null) echo "oi";
 
 ?>
 <html>

@@ -29,11 +29,6 @@
         public function update($acessorio){
             
         }
-        public function selectAll(){
-            
-
-
-        }
 
         public function selectAllProcessados(){
 
@@ -74,7 +69,8 @@
                     $lista_anuncios[] = $anuncio;
 
             }
-
+            
+           
 
             $this->conex->close_database();        
 

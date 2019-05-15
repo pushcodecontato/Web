@@ -11,7 +11,7 @@
         public function __construct(){
          
             $this->user = 'root';
-	        $this->password = 'bcd127';
+	        $this->password = '';
    	        $this->server = 'localhost';
             $this->user = 'root';
             $this->database = 'mob_share';

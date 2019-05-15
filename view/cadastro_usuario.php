@@ -63,7 +63,7 @@
                             <label for="txtNome">Nome*</label><br>
                             <input type="text" name="txtNome" id="txtNome" placeholder="Nome" required><br>
                             <label for="txtNome">Data de nascimento*</label><br>
-                            <input type="date" name="txtDtNasc" id="txtDtNasc" ><br>
+                            <input type="text" name="txtDtNasc" id="txtDtNasc" placeholder="00/00/0000"><br>
                             <label for="txtCpf">CPF*</label><br>
                             <input type="text" name="txtCpf" id="txtCpf" placeholder="CPF" required><br>
                             <label for="txtRg">RG*</label><br>
@@ -75,16 +75,16 @@
                             <h2>Foto</h2>
                             <div id="fotoCliente">
                                 <div class="addFotoCliente" id="addFotoCliente"></div>
-                                <input type="file" name="fotoCliente" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
-                                <div class="btnFoto">
+                                <input id="adicionarCliente" type="file" style="display:none;" name="fotoCliente" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
+                                <div class="btnFoto" id="btnFotoCliente">
                                     <p>Adicionar foto</p>
                                 </div>
                             </div>
                             <div id="fotoCNh">
                                 <div class="addFotoCliente" id="addCnhCliente"></div>
-                                <input type="file" name="fotoCNH" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
+                                <input id="addFotoCnh" type="file" style="display:none;" name="fotoCNH" onchange="mostraImagem64(this)" accept="image/png, image/jpeg, image/jpg" required>
                                 
-                                <div class="btnFoto">
+                                <div class="btnFoto" id="btnFotoCnh">
                                     <p>Adicionar foto CNH</p>
                                 </div>
                             </div>
@@ -246,4 +246,21 @@
         </div>
     </footer>
 </body>
+<script>
+    $(document).ready(function(){
+        jQuery("#txtDtNasc").mask("99/99/9999");
+        jQuery("#txtCpf").mask("999.999.999-99");
+        jQuery("#txtRg").mask("99.999.999-9");
+        jQuery("#txtTelefone").mask("(99) 9999-9999");
+        jQuery("#txtCelular").mask("(99) 99999-9999");
+        jQuery("#txtCep").mask("99999-999");
+    });
+
+    $('#btnFotoCliente').click(function(){
+        $('#adicionarCliente').trigger('click');
+    });
+    $('#btnFotoCnh').click(function(){
+        $('#addFotoCnh').trigger('click');
+    });
+</script>
 </html>   

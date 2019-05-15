@@ -102,7 +102,7 @@ input[type="submit"]{
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #dcdcdc;
-
+    
 }
 #addCnhCliente{
     width:200px;
@@ -127,6 +127,7 @@ input[type="submit"]{
     padding-top: 12px;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 .formDadosComunicacao{
     width:900px;

@@ -1,17 +1,49 @@
+<?php
+    
+    $cliente = null;
+    $boolean = "false";
+    require_once('controller/controllerHome.php');
+    require_once('model/clienteClass.php');
+
+    $controllerHome = new controllerHome();
+    $pagina = $controllerHome->getPage();
+    
+    // Pegando o Cliente Logado
+    if(!isset($_SESSION))session_start();
+
+    if(isset($_POST['logout'])){
+        echo "Sucesso";
+        $boolean = false;
+        session_destroy();
+    }
+   
+    if(isset($_SESSION['cliente'])){
+        $cliente = unserialize($_SESSION['cliente']);
+        $boolean = true;
+    }
+        
+    
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Como ganhar dinheiro</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="view/css/como_ganhar_dinheiro.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="view/css/header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/como_ganhar_dinheiro.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="view/css/header.css"/>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
     <script src="view/js/notify.js"></script>
-    <script src="main.js"></script>
+    <script src="view/js/main.js"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="modal">
+
+        </div>
+    </div>
     <header>
         <div id="imgPretaRgb">
             <nav class="cor_site_padrao">
@@ -22,22 +54,23 @@
                     <div class="segura_menu">
                         <ul>
                             <li><a href="?home">INÍCIO</a></li>
-                            <li><a href="?melhores_anuncios">VEÍCULOS EM DESTAQUE</a></li>
+                            <li><a href="?melhores_anuncios">VEICULOS EM DESTAQUE</a></li>
                             <li><a href="?principais_anuncios">VEÍCULOS A VENDA</a></li>
                             <li><a href="?como_ganhar_dinheiro">GANHE DINHEIRO</a></li>
                             <li><a href="?parceiros">SEJA UM PARCEIRO</a></li>
                             <li><a href="?sobre">SOBRE NÓS</a></li>
                         </ul>
                     </div>
+                    <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
                     <div class="segura_login">
                         <div class="login_cadastro" id="login" style="width: 110px;">
-                            <a href="javascript:getLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
                         </div>
                         <div class="login_cadastro" style="width: 160px;">
                             <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
                         </div>
                     </div>
-                </div>    
+                </div>     
             </nav>
             <div class="caixa_texto_pages_all">
                 <h1 class="texto_primario_h1">Ganhe Dinheiro</h1>
@@ -195,4 +228,12 @@
         </div>
     </footer>
 </body>
+<script>
+    $(document).ready(function(){
+        if(<?php echo $boolean?>)
+            headerLogado();
+        else
+            headerNaoLogado();
+    });
+</script>
 </html>

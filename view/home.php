@@ -2,12 +2,17 @@
     
     $cliente = null;
     $boolean = "false";
+    $endereco = null;
     require_once('controller/controllerHome.php');
+    require_once('controller/controllerAnuncios.php');
     require_once('model/clienteClass.php');
 
     $controllerHome = new controllerHome();
+    $controllerAnuncio = new ControllerAnuncios();
+
     $pagina = $controllerHome->getPage();
-    
+    $anuncios = $controllerAnuncio->listar_anunciosProcesssados();
+
     // Pegando o Cliente Logado
     if(!isset($_SESSION))session_start();
 
@@ -20,8 +25,9 @@
     if(isset($_SESSION['cliente'])){
         $cliente = unserialize($_SESSION['cliente']);
         $boolean = true;
-    }
         
+    }
+        echo $endereco;
     
 
 ?>
@@ -192,14 +198,23 @@
                 <h2 class="titulo_left">Veja os destaques dessa semana</h2>            
                     <div id="segura_anuncios">
                         <a href="#">
-                            <div class="anuncios">
-                                    <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
+                            <?php
 
-                                    <p class="info_veiculo" style="margin-top:10px;">Fiat Palio 4 portas</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+                                foreach($anuncios as $anuncio){
+                                    
+                                    if(isset($_SESSION['cliente'])){
+                                        $endereco = $anuncio->getVeiculo()->getCliente()->getCidade() . " " . $anuncio->getVeiculo()->getCliente()->getUf();
+                                    }
+                               
+                            ?>
+                            <div class="anuncios">
+                                    <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
+                                <div class="info_anuncio">
+                                    <p class="nome_veiculo">R$<?=@ $anuncio->getValor();?> /hora</p>
+
+                                    <p class="info_veiculo" style="margin-top:10px;"><?=@ $anuncio->getVeiculo()->getMarca()->getNome(). " " .$anuncio->getVeiculo()->getModelo()->getNome()?></p>
+                                    <p class="info_veiculo"><?=@ $anuncio->getVeiculo()->getAno() . " | " . $anuncio->getVeiculo()->getQuilometragem() . " KM" ?></p>
+                                    <p class="info_veiculo" ><?=@ $anuncio->getVeiculo()->getCliente()->getNome() . " | " . $endereco  ?></p>
                                     
                                     <div class="stars_avaliacao">
                                         <img src="view/imagem/star1.png" alt="star">
@@ -212,183 +227,12 @@
                                     
                                 </div>
                             </div>
+                            <?php
+                            
+                            }
+                            ?>
                         </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Hyundai i30</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/hb20.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Hyundai hb20</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/gol.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Volkswagem Gol</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">HUPI Whistler</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/xj9.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Yamaha Xj6</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/gol.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Volkswagem Gol</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/bicicleta.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">HUPI Whistler</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/xj9.jpg" alt="Nome veiculo" title="Nome veiculo">
-                                <div class="info_anuncio">
-                                    <p class="nome_veiculo">R$ 30,00/hora</p>
-
-                                    <p class="info_veiculo" style="margin-top:10px;">Yamaha Xj6</p>
-                                    <p class="info_veiculo">2018 | 3000 Km</p>
-                                    <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
-                                    
-                                    <div class="stars_avaliacao">
-                                        <img src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                        <p class="percentual_avaliacao">4.5%</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </a>
+                        
                     </div>
                 </div>
             </section>

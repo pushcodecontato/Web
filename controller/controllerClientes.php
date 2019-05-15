@@ -16,8 +16,14 @@
 
        public function inserir_cliente(){
            $cliente = new Cliente();
-           var_dump($_POST);
-           $cliente->setNome($_POST['txtNome'])
+           
+           /* Inserido o cliente e pegando o mesmo depois da inserção para colocar na session
+            * Para que o usuario possa entrar no painel de usuario depois de se cadastrar
+            */
+           $callback = $this->getByEmail($_POST['txtEmail']);
+           
+            if($callback == null){
+                $cliente->setNome($_POST['txtNome'])
                    ->setCPF($_POST['txtCpf'])
                    ->setTelefone($_POST['txtTelefone'])
                    ->setCelular($_POST['txtCelular'])
@@ -31,23 +37,24 @@
                    ->setDt_nascimento($_POST['txtDtNasc'])
                    ->setUF($_POST['txtUf']);
 
-           if( $_FILES['fotoCliente']['size'] > 0 ){
-               $cliente->setFoto($this->uploadImagem($_FILES['fotoCliente']));
-           }
+                if( $_FILES['fotoCliente']['size'] > 0 ){
+                    $cliente->setFoto($this->uploadImagem($_FILES['fotoCliente']));
+                }
 
-           if( $_FILES['fotoCNH']['size'] > 0 ){
-               $cliente->setCNHFoto($this->uploadImagem($_FILES['fotoCNH']));
-           }
-           
-           /* Inserido o cliente e pegando o mesmo depois da inserção para colocar na session
-            * Para que o usuario possa entrar no painel de usuario depois de se cadastrar
-            */
-           if($cliente = $this->clientesDAO->insert($cliente)){
-              // Verificndo se a session esta ativa     
-              if(!isset($_SESSION))session_start();
+                if( $_FILES['fotoCNH']['size'] > 0 ){
+                    $cliente->setCNHFoto($this->uploadImagem($_FILES['fotoCNH']));
+                }
+                
+                if($cliente = $this->clientesDAO->insert($cliente)){
+                // Verificndo se a session esta ativa     
+                    if(!isset($_SESSION))session_start();
 
-              $_SESSION['cliente'] = serialize($cliente);
-           }
+                    $_SESSION['cliente'] = serialize($cliente);
+                }
+            }else{
+                echo "Já existe um usuário cadastro com esse endereço de email";
+            }
+         
        }
 
        public function excluir_cliente(){}
@@ -138,6 +145,11 @@
             $id_cliente = $_POST['id'];
     
             return $this->clientesDAO->selectById($id_cliente);
+    
+        }
+        public function getByEmail($email){
+    
+            return $this->clientesDAO->selectByEmail($email);
     
         }
         

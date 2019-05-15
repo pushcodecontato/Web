@@ -12,4 +12,3 @@ function abrir_menu(nome_pagina){
 
    });
 }
-

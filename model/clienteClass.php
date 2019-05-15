@@ -45,6 +45,7 @@ class Cliente{
     }
     public function getCPF(){
         return $this->cpf;
+        
     }
 
     public function setTelefone($telefone){
@@ -169,7 +170,13 @@ class Cliente{
     }
 
     public function setDt_nascimento($dt_nascimento){
-        $this->dt_nascimento = $dt_nascimento;
+        if(strpos($dt_nascimento, '/')){
+            $this->dt_nascimento = date('Y-m-d', strtotime($dt_nascimento));
+        }
+        elseif(strpos($dt_nascimento, '-')){
+            $this->dt_nascimento = date('d/m/Y', strtotime($dt_nascimento));
+        }
+        
         return $this;
     }
     public function getDt_nascimento(){

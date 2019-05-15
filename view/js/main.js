@@ -122,8 +122,10 @@ function fale_conosco_enviar(form){
 
                    $(form).find('*').show();
 			   },600);
-
-               $.notify('Formulario enviado!','success');
+                $.notify("Formulario enviado com sucesso.", {
+                    style: 'classNotify',
+                    className: 'classSuccess'
+                });
 			}
 
 		}
@@ -139,7 +141,10 @@ function email_marketing_enviar(form){
 		success:function(resposta){
 			console.log(resposta);
 			$(form).find('input[name="txtEmail"]').val('');
-			$.notify(" Email cadastrado "," success ");
+			$.notify("EMail cadastrado", {
+                style: 'classNotify',
+                className: 'classSuccess'
+            });
 		}
 	})
 }
@@ -168,7 +173,7 @@ function mostraImagem64(input){
   
      var form = $(form);
   
-     $(form).find('fieldset,button').hide(200);
+     $(form).find('.containerCadastro').hide(200);
      $(form).css({'background-image':'url(view/imagem/loading.svg)'});
      $(form).append("<p style='text-align: center; color: #888888; bottom: 0; position: absolute; width: 100%; left: 0;'> Carregando.. </p>");
      
@@ -179,14 +184,28 @@ function mostraImagem64(input){
            console.log("RESPOSTA",resposta);
            if(resposta.toString().search('sucesso')>=0){
   
-             $.notify("usuario cadstrado com sucesso", "success");
+            $.notify("Usuário cadastrado com sucesso", {
+                style: 'classNotify',
+                className: 'classSuccess'
+            });
              // Redirecionando o usuario depois da menssagem de sucesso aparecer
              setTimeout(function(){  
                //Redirecionando
                window.location = "?painel_usuario/home.php";
              },800)
            }
+           else{
+            $.notify(resposta.toString(), {
+                style: 'classNotify',
+                className: 'classError'
+            });
+           }
          },
      }).submit();
   
   }
+
+  
+
+    
+   
