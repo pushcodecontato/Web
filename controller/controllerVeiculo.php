@@ -74,6 +74,10 @@
         public function listar_veiculos_pendentes(){
             return $this->veiculosDAO->selectAllPendentes();
         }
+        /* Retorna uma lsita com os veiculo que ainda não foram aprovados ou pendentes */
+        public function listar_veiculos_aprovados(){
+            return $this->veiculosDAO->selectAllAprovados();
+        }
 
     }
 
