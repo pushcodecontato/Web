@@ -38,23 +38,41 @@ class locacaoDAO{
 
     }
 
-    public function selectAll($status,$id_cliente_logado){
+    public function selectAll($status,$id_cliente){
         
        
        if($status = "andamento"){
         
-        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio AND tbl_locacao.data_hora_final is null) where tbl_anuncio.id_cliente_locador="$id_cliente_logado; 
+        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio AND tbl_locacao.data_hora_final is null) where tbl_anuncio.id_cliente_locador="$id_cliente; 
        
        }else{
       
-        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio) where tbl_anuncio.id_cliente_locador="$id_cliente_logado; 
+        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio) where tbl_anuncio.id_cliente_locador="$id_cliente; 
        
        }
-
+        
        $PDO_conex = $this->conex->connect_database();
 
-       $select = $PDO_conex->query($sql);
+        $select = $PDO_conex->query($sql);
 
+        $listar = array();
+
+
+        while($rs_locacao = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $rs_locacao = new Modelo();
+            $rs_locacao->setId($rs_locacao['id_modelo'])
+                   ->setNome($rs_locacao['nome_modelo'])
+                   ->setStatus($rs_locacao['statusModelo'])
+                   ->setIdTipoMarca($rs_locacao['id_marca_tipo']);
+
+
+            $listar[] = $rs_locacao;
+        }
+
+        $this->conex->close_database();
+
+        return $listar;
     }
 
     public function selectById($id){
