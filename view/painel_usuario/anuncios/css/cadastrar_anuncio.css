@@ -190,6 +190,16 @@
      border: solid 1px;
      float: left;
      margin-left: 53px;
+     box-shadow: 4px 4px 20px 0 rgba(120,135,182,.1);
+     border-radius: 3px;
+     border: solid 1px #eff1f9;
+     color: #747c81;
+     transition: all .3s ease;
+     padding: 2px 11px 7px 11px;
+}
+.caixa_veiculo:hover{
+        transform: translateY(2px);
+    box-shadow: none;
 }
 .segura_img{
     width: 210px;
@@ -197,6 +207,7 @@
     border:solid 1px;
     margin-left:auto;
     margin-right: auto;
+    overflow: hidden;
     margin-top: 15p;
 }
 
@@ -218,6 +229,7 @@
     width: 200px;
     height: 50px;
     margin-left: 20px;
+    border: solid 1px #eee;
 }
 
 .segura_botoes{
