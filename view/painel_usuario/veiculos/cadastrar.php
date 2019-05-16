@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- form que tem o Conteudo  -->
 <?php
     
@@ -13,10 +12,10 @@
     $funcaoJS = "tipo_veiculo_getById(id)";
 ?>
 <form class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
-=======
+
 
 <form  class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
->>>>>>> feea42e205aa8906b90d193a61998f5827bdb7f5
+
     <div class="veiculos-titulo">Cadastrar Veiculo</div>
     <table class="veiculos-cadastrar-table">
         <tr>
@@ -49,13 +48,9 @@
                     <tr>
                         <td>
                             <label>Modelo</label>
-<<<<<<< HEAD
-                            <select id="cb_modelos" onchange="getModelos(this.value)">
                                     
-=======
                             <select id="cb_modelos">
                                 
->>>>>>> feea42e205aa8906b90d193a61998f5827bdb7f5
                             </select>
                         </td>
                     </tr>
