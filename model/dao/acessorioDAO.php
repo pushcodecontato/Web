@@ -98,10 +98,7 @@
 
             }   
         }
-        public function selectAll(){
-            
 
-        }
         public function selectById($id){
             
             $sql = "SELECT * FROM tbl_acessorios where id_acessorios =".$id;
@@ -171,6 +168,7 @@
 
             return $lista_acessorio;
         }
+
 
 
     }

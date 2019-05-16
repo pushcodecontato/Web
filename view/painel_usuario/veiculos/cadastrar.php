@@ -1,21 +1,4 @@
-<!-- form que tem o Conteudo  -->
-<?php
-    
-    require_once('controller/controllerTipo_veiculo.php');
-
-    $controller_tipo_veiculo = new ControllerTipoVeiculo();
-
-    $tipo_veiculo = $controller_tipo_veiculo->listar_tipo();
-
-    $router = "";
-    
-    $funcaoJS = "tipo_veiculo_getById(id)";
-?>
-<form class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
-
-
-<form  class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
-
+<form  class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" enctype="multipart/form-data">
     <div class="veiculos-titulo">Cadastrar Veiculo</div>
     <table class="veiculos-cadastrar-table">
         <tr>
@@ -24,7 +7,7 @@
                     <tr>
                         <td>
                             <label>Tipo de veiculos</label>
-                            <select id="cb_veiculos" onchange="getMarcaVeiculo(this.value)">
+                            <select id="cb_veiculos" onchange="getMarcaVeiculo(this.value); getAcessorios(this.value)">
                                            
                             </select>
                         </td>
@@ -37,7 +20,7 @@
                         <td> 
                             <label>Marcas</label>
                             <select id="cb_marcas" onchange="getModeloVeiculo(this.value)">
-                                
+                                <option>Selecione a marca</option>
                             </select>
                         </td>
                     </tr>
@@ -50,7 +33,7 @@
                             <label>Modelo</label>
                                     
                             <select id="cb_modelos">
-                                
+                                <option>Selecione um modelo</option>
                             </select>
                         </td>
                     </tr>
@@ -62,23 +45,21 @@
                 <table>
                     <td>
                         <label> Ano </label>
-                        <select id="cb_data">
-                            <option> 2015 </option>
-                            <option> 2016 </option>
-                            <option> 2017 </option>
+                        <select id="cb_data" name="sltAno">
+                           
                         </select>
                     </td>
                     <td>
                         <label> Valor do veículo </label>
-                        <input>
+                        <input type="text" placeholder="Valor" name="txtValor">
                     </td>
                     <td>
                         <label>Placa</label>
-                        <input>
+                        <input type="text" placeholder="Placa" name="txtPlaca">
                     </td>
                     <td style="width:185px;">
                         <label>Renavam</label>
-                        <input>
+                        <input type="text" name="txtRenavam" placeholder="Ranavam">
                     </td>
                 </table>
             </td>
@@ -86,18 +67,17 @@
     </table>
     <div class="veiculos-titulo">Acessórios</div>
     <div class="veiculos-cadastrar-acessorios">
-       
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" ></label>
-        
+        <select style="display:none;" id="selectAcessorios" multiple name="sltAcessorios">
+           
+        </select>
     </div>
     <div class="veiculos-titulo">Upload de imagem</div>
     
     <div class="segura_upload">
         <div class="conteudo_upload">
-        </div>
 
-         <div class="conteudo_upload">
         </div>
+        <input type="file" name="ftVeiculo[]" multiple="multiple" onchange="mostraVeiculo64(this)">
     </div>
 
     <div class="segura_aviso">
@@ -122,10 +102,12 @@
 </form>
 <link rel="stylesheet" type="text/css" href="view/painel_usuario/veiculos/css/cadastrar.css">
 <script src="view/painel_usuario/veiculos/js/script.js"></script>
+<script src="view/cms/js/selectize.min.js"></script>
 <script>
 
     $(document).ready(function(){
         selectTipoVeiculo();
         preencheData();
     })
+   
 </script>

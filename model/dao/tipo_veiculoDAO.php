@@ -196,15 +196,6 @@ class  TipoVeiculoDAO{
                "inner join tbl_modelo_veiculo on tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca  ".
                "WHERE tbl_modelo_veiculo.excluido = 0 AND tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
 
-        /* Com subquery  e WHERE */
-//         $sql = "SELECT tbl_marca_veiculo.*,tbl_modelo_veiculo.*,tbl_modelo_veiculo.status as 'statusModelo' FROM ".
-//                "tbl_marca_veiculo_tipo_veiculo,tbl_marca_veiculo,tbl_modelo_veiculo,tbl_tipo_veiculo ".
-//                "where tbl_tipo_veiculo.id_tipo_veiculo = tbl_marca_veiculo_tipo_veiculo.id_tipo_veiculo AND ".
-//                "tbl_marca_veiculo.id_marca_veiculo = tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo	AND ".
-//                "tbl_modelo_veiculo.id_marca_tipo = tbl_marca_veiculo_tipo_veiculo.id_tipo_marca 		AND ".
-//                "tbl_modelo_veiculo.excluido = 0                                                  		AND ".
-//                "tbl_tipo_veiculo.id_tipo_veiculo =" . $id;
-
         $PDO_conex = $this->conex->connect_database();
 
         $select = $PDO_conex->query($sql);
@@ -267,7 +258,7 @@ class  TipoVeiculoDAO{
     public function getAcessorios($id){
 
 
-        $sql = "SELECT * FROM tbl_acessorios where excluido = 0 AND  id_tipo_veiculo =".$id;
+        $sql = "SELECT * FROM tbl_acessorios where excluido = 0 AND status = 1 AND id_tipo_veiculo =".$id;
         
 
         $PDO_conex = $this->conex->connect_database();

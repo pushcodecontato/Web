@@ -144,6 +144,15 @@
                             }
                             echo json_encode($lista);
                             break;
+                        case "LISTAR_ACESSORIOS":
+                        
+                            $lista_acessorios = $controller_tipo_veiculo->listar_acessorios();
+                            $lista = array();
+                            foreach($lista_acessorios as $acessorio){
+                                $lista[] = $acessorio->to_json();    
+                            }   
+                            echo json_encode($lista);
+                            break;
 
                     }
                 

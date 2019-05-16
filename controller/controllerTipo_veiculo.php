@@ -74,6 +74,8 @@ class ControllerTipoVeiculo{
         
         return $this->tipoVeiculoDAO->getAcessorios($_GET['id_tipo_veiculo']);
 
+        echo $_GET['id_tipo_veiculo'];
+
     }
     public function exportar_fip(){
         

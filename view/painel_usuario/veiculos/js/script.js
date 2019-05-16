@@ -39,28 +39,6 @@ function getMarcaVeiculo(idTipoVeiculo){
     });
 }
 
-// function getMarcaVeiculo(idTipoVeiculo){
-//     $.ajax(`router.php?controller=tipo_veiculo&modo=json_marcas&id=${idTipoVeiculo}`).then(res=>{
-//         dados = JSON.parse(res)
-//         if(dados.length > 0){
-//             var option = '<option>Selecione a marca</option>';
-//             for(var objeto of dados){
-//                 option += `<option value='${objeto.id_marca_tipo}'>${objeto.nome_marca}</option>`;
-//             }
-          
-//             $('#cb_marcas').prop( "disabled",false);
-           
-//         }else{
-//             option = '<option>Marca não encontrada</option>';
-//             $('#cb_marcas').attr("disabled", true);
-//         }
-//         $('#cb_marcas').html(option);
-       
-        
-//     });
-
-// }
-
 function getModeloVeiculo(idTipoMarca){
     console.log(idTipoMarca);
     $.ajax(`router.php?controller=modelos&modo=json_modelos&idTipoMarca=${idTipoMarca}`).then(res=>{
@@ -99,3 +77,36 @@ function preencheData(){
    
     $('#cb_data').html(option);
 }
+
+function getAcessorios(idTipoVeiculo){
+    console.log('OI');
+    $.ajax(`router.php?controller=tipo_veiculo&modo=listar_acessorios&id_tipo_veiculo=${idTipoVeiculo}`).then(res=>{
+        dados = JSON.parse(res);
+        console.log(res)
+        if(dados.length > 0){
+            var option;
+            for(var objeto of dados){
+                option += `<option value="${objeto.id_acessorio}">${objeto.nome_acessorio}</option>`;
+            }
+        }
+        $('#selectAcessorios').html(option);
+        $("#selectAcessorios").show();
+        $("#selectAcessorios").selectize();
+    });
+}
+function mostraVeiculo64(input){
+    $('.conteudo_upload img').remove();
+    var file = input.files;
+    var cont = 0;
+    while(cont < file.length){
+        let reader = new FileReader();
+        reader.onloadend = function() {
+           $('.conteudo_upload')
+           .append('<img width="129" src="'+ reader.result +'">');
+        }
+        reader.readAsDataURL(file[cont]);
+        cont++;
+    }
+    
+  }
+  
