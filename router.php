@@ -120,6 +120,16 @@
                             require_once('view/cms/veiculos/tipo_veiculo.php');
 
                             break;
+                        case "BUSCAR":
+                            
+                            $tipoVeiculos = $controller_tipo_veiculo->listar_tipo();
+
+                            $lista = array();
+                            foreach($tipoVeiculos as $tipo){
+                                $lista[] = $tipo->to_json();
+                            }
+                                echo json_encode($lista);
+                            break;
                         case "FIP_EXPORTAR":
 
                             $controller_tipo_veiculo->exportar_fip();
@@ -171,6 +181,15 @@
 
                             require_once('view/cms/veiculos/modelos/modal_criar_editar.php');
 
+                            break;
+                        case "JSON_MODELOS":
+                            
+                            $listaModelos = $controller_modelos->listar_modelos();
+                            $lista = array();
+                            foreach($listaModelos as $modelos){
+                                $lista[] = $modelos->to_json();
+                            }
+                            echo json_encode($lista);                            
                             break;
                     }
                 

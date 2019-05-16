@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- form que tem o Conteudo  -->
 <?php
     
@@ -12,6 +13,10 @@
     $funcaoJS = "tipo_veiculo_getById(id)";
 ?>
 <form class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
+=======
+
+<form  class="veiculos-cadastrar"  method="POST" id="formCadastroVeiculo" name="formCadastroVeiculo" onsubmit="<?=@$funcaoJS?>" action="<?=@$router?>" >
+>>>>>>> feea42e205aa8906b90d193a61998f5827bdb7f5
     <div class="veiculos-titulo">Cadastrar Veiculo</div>
     <table class="veiculos-cadastrar-table">
         <tr>
@@ -20,16 +25,8 @@
                     <tr>
                         <td>
                             <label>Tipo de veiculos</label>
-                            <select id="cb_veiculos" onchange="getTipoVeiculo(this.value)">
-                                <option value="0">Selecione o tipo</option>
-                                <?php
-                                    $router = "router.php?controller=tipo_veiculo&modo=select";
-                                    $list_tipo =  $controller_tipo_veiculo->listar_tipo();
-
-                                    foreach($list_tipo as $registro){
-                                ?>
-                                <option value="<?=@$registro->getId()?>"><?=@$registro->getNome()?></option>   
-                                <?php }?>                             
+                            <select id="cb_veiculos" onchange="getMarcaVeiculo(this.value)">
+                                           
                             </select>
                         </td>
                     </tr>
@@ -40,7 +37,7 @@
                     <tr>
                         <td> 
                             <label>Marcas</label>
-                            <select id="cb_marcas" onchange="getMarca(this.value)">
+                            <select id="cb_marcas" onchange="getModeloVeiculo(this.value)">
                                 
                             </select>
                         </td>
@@ -52,8 +49,13 @@
                     <tr>
                         <td>
                             <label>Modelo</label>
+<<<<<<< HEAD
                             <select id="cb_modelos" onchange="getModelos(this.value)">
                                     
+=======
+                            <select id="cb_modelos">
+                                
+>>>>>>> feea42e205aa8906b90d193a61998f5827bdb7f5
                             </select>
                         </td>
                     </tr>
@@ -65,7 +67,7 @@
                 <table>
                     <td>
                         <label> Ano </label>
-                        <select>
+                        <select id="cb_data">
                             <option> 2015 </option>
                             <option> 2016 </option>
                             <option> 2017 </option>
@@ -89,16 +91,9 @@
     </table>
     <div class="veiculos-titulo">Acessórios</div>
     <div class="veiculos-cadastrar-acessorios">
-        <?php
-            $router = "router.php?controller=tipo_veiculo&modo=select";
-            $list_tipo =  $controller_tipo_veiculo->listar_tipo();
-
-            foreach($list_tipo as $registro){
-        ?>
-        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" ><?=@$registro->getNome()?></label>
-        <?php
-            }
-        ?>
+       
+        <label class="veiculos-cadastrar-checkbox"><input type="checkbox" ></label>
+        
     </div>
     <div class="veiculos-titulo">Upload de imagem</div>
     
@@ -132,3 +127,10 @@
 </form>
 <link rel="stylesheet" type="text/css" href="view/painel_usuario/veiculos/css/cadastrar.css">
 <script src="view/painel_usuario/veiculos/js/script.js"></script>
+<script>
+
+    $(document).ready(function(){
+        selectTipoVeiculo();
+        preencheData();
+    })
+</script>

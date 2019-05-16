@@ -154,41 +154,10 @@
             </nav>
             <!-- TODO O CONTEUDO-->
             <div id="conteudo">
-
-
-                <!-- conteudo MEUS VEICULOS LOCADOS -->
-            
-            <div class="conteudo_veiculos_locados">
-                
-                
-                
+                              
             </div>
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
-
-
-
         </div>
     </div>
   </body>
+  
 </html>

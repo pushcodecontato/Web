@@ -116,6 +116,27 @@ class  ModeloDAO{
 
 
     }
+    public function selectAll($idTipoMarca){
+        $sql = "SELECT * FROM tbl_modelo_veiculo WHERE id_marca_tipo=".$idTipoMarca;
+
+        $PDO_conex = $this->conex->connect_database();
+
+        $select = $PDO_conex->query($sql);
+        $listaModelos = array();
+        while($rs_modelos = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $modelo = new Modelo();
+            $modelo->setId($rs_modelos['id_modelo'])
+                   ->setNome($rs_modelos['nome_modelo'])
+                   ->setStatus($rs_modelos['status'])
+                   ->setExcluido($rs_modelos['excluido'])
+                   ->setIdTipoMarca($rs_modelos['id_marca_tipo']);
+
+            $listaModelos[] = $modelo;
+        }
+        return $listaModelos;
+
+    }
     public function updateByFIP($modelo,$marca,$tipo){
         echo "Chegou no updateByFIP \n ";
 

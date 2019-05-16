@@ -66,7 +66,9 @@ class Modelo{
     public function getCodFIP(){
         return $this->cod_fip;
     }
-
+    public function to_json(){
+        return array('id_modelo'=>$this->getId(), 'nome_modelo'=>$this->getNome());
+    }
 }
 
 

@@ -14,6 +14,13 @@
 
         }
 
+        public function listar_modelos(){
+            
+            $idTipoMarca = $_GET['idTipoMarca'];
+
+            return $this->modelosDAO->selectAll($idTipoMarca);
+        }
+
         public function inserir_modelo(){
               
             $modelo = new Modelo();
