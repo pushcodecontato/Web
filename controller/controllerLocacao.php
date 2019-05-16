@@ -31,12 +31,12 @@ class ControllerLocacao{
        if(isset($_GET['andamento'])){
            
         $status = "andamento";  
+        $this->locacaoDAO->selectAll($status,$cliente->getId());
         
        }else{
            
        }
 
-       $this->locacaoDAO->selectAll($status,$cliente->getId());
     }
 }
 

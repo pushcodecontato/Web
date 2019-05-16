@@ -1,15 +1,15 @@
 <?php
     
-    require_once('controller/controllerAnuncios.php');
+    require_once("controller/controllerLocacao.php");
+    
+    $controller_locacao = new ControllerLocacao();
 
-    $controller_anuncios = new ControllerAnuncios();
+    $locacao = $controller_locacao->listar();
 
-    $anuncios_processados = $controller_anuncios->listar_anunciosProcesssados();
-
-    $router = "router.php?controller=anuncios&modo=PROCESSADOS";
+    $router = "router.php?controller=locacao&modo=SELECTALL";
     
 ?>
-<ead>
+<head>
   <link rel="stylesheet" 
           type="text/css"
           href="view/painel_usuario/locacao/css/andamento.css"/>
@@ -42,24 +42,24 @@
             <?php
                 //$router = "router.php?controller=anuncios&modo=PROCESSADOS";
 
-                $list_tipo =  $controller_anuncios->listar_anunciosProcesssados();
+                $list_tipo =  $controller_locacao->listar();
 
-                foreach($list_tipo as $anuncio){
+                foreach($list_tipo as $locacao){
             ?>
             <div class="coluna">
                 <div id="nome"></div>
             </div>
 
             <div class="coluna">
-                <div id="veiculo"><?=@$anuncio->getVeiculo()->getModelo()->getNome()?></div>
+                <div id="veiculo"><?=@$locacao->getVeiculo()->getModelo()->getNome()?></div>
             </div>
 
             <div class="coluna">
-                <div id="retirada_data"><?=@$anuncio->getHorarioInicio()?></div>
+                <div id="retirada_data"><?=@$locacao->getHorarioInicio()?></div>
             </div>
 
             <div class="coluna">
-                <div id="devolucao_data"><?=@$anuncio->getHorarioTermino()?></div>
+                <div id="devolucao_data"><?=@$locacao->getHorarioTermino()?></div>
             </div>
             <?php
                 }

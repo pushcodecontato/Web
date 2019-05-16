@@ -134,6 +134,7 @@
                             }
                             echo json_encode($lista);
                             break;
+
                     }
                 
                 break;
@@ -236,6 +237,34 @@
                        case "ALTERARSTATUS":
 
                             $controller_acessorios->status_acessorio();
+                            
+                            break;
+                    }
+                
+                break;
+
+                /* Acessorios de Veiculos */
+                case "LOCACAO":
+                    
+                    require_once("controller/controllerLocacao.php");
+                    $controller_locacao = new ControllerLocacao();
+
+                    switch($modo){
+                        case "INSERIR":
+
+                            
+                            break;
+                        case "ATUALIZAR":
+
+                            
+                            break;
+                       case "EXCLUIR":
+                            
+                            
+                            break;
+                       case "SELECTALL":
+
+                            $controller_locacao->listar();
                             
                             break;
                     }

@@ -38,9 +38,10 @@ class locacaoDAO{
 
     }
 
-    public function selectAll($tipo,$id_cliente_logado){
+    public function selectAll($status,$id_cliente_logado){
+        
        
-       if($tipo = "andamento"){
+       if($status = "andamento"){
         
         $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio AND tbl_locacao.data_hora_final is null) where tbl_anuncio.id_cliente_locador="$id_cliente_logado; 
        

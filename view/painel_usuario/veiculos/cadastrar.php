@@ -7,10 +7,6 @@
 
     $tipo_veiculo = $controller_tipo_veiculo->listar_tipo();
 
-   // $marcas = $controller_tipo_veiculo->listar_marcas();
-
-   // $modelos = $controller_tipo_veiculo->listar_modelos();
-
     $router = "";
     
     $funcaoJS = "tipo_veiculo_getById(id)";
@@ -56,10 +52,8 @@
                     <tr>
                         <td>
                             <label>Modelo</label>
-                            <select>
-                                <option>Carros</option>
-                                <option>Bicicleta</option>
-                                <option>Skate</option>
+                            <select id="cb_modelos" onchange="getModelos(this.value)">
+                                    
                             </select>
                         </td>
                     </tr>
