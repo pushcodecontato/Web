@@ -262,7 +262,7 @@
                 
                 break;
 
-                /* Acessorios de Veiculos */
+                /*LOCACAO*/
                 case "LOCACAO":
                     
                     require_once("controller/controllerLocacao.php");
@@ -284,7 +284,7 @@
                        case "SELECTALL":
 
                             $controller_locacao->listar();
-                            
+                            require_once('view/painel_usuario/locacao/andamento.php');
                             break;
                     }
                 

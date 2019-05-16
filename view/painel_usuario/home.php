@@ -1,7 +1,6 @@
 <?php
     
     require_once('model/clienteClass.php');
-
     // Pegando o Cliente Logado
     if(!isset($_SESSION))session_start();
     $cliente = unserialize($_SESSION['cliente']);

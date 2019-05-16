@@ -20,7 +20,9 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none; 
-    text-decoration: none;
+    text-decoration: none;;
+    font-family: "OpenSans-Regular";
+}
 }
 /*css*/
 body{
@@ -263,8 +265,8 @@ a{
 
 /*conteudo*/
 #conteudo{
-    width: 1112px;
-    height: 715px;
+    width: 1105px;
+    height: 710px;
     float: left;
     overflow-x: hidden;
     overflow-y: auto;

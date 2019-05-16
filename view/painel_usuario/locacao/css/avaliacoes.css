@@ -1,20 +1,23 @@
 #conteudo_andamento{
-    width: 962px;
-    height: 703px;
-    float: left;
+    width: 1068px;
+    height: 685px;
+    float: right;
     border: solid 1px;
     margin-top: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
 }
 
 #h2Border{
-    width: 253px;
+    width: 279px;
     height: 15px;
     margin-top: -15px;
     margin-left:50px;
     background-color:#fff;
+    margin-bottom: 20px;
 }
 #principal_andamento{
-    width: 940px;
+    width: 1047px;
     height: 670px;
     margin-left: 10px;
 }
@@ -23,12 +26,79 @@
     width: 100%;
     height: 60px;
 }
+#nome {
+    width: 60px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#nome{
+    width: 60px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#veiculo{
+    width: 60px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
 
+#retirada{
+    width: 157px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    }
+
+#devolucao{
+    width: 190px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+ }
+ #retirada_data{
+    width: 200px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    }
+
+#devolucao_data{
+    width: 200px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    }
 .coluna{
-    width: 154px;
+    width: 174px;
     height: 60px;
     float:left;
     border: solid 1px;
     font-family: verdana;
     font-size: 18px;
+    border-radius: 20px;
+    margin-bottom: 5px;
 }
