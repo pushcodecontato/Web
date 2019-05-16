@@ -303,7 +303,7 @@ CREATE TABLE `tbl_bancos` (
   `uf` varchar(2) DEFAULT NULL COMMENT 'estado do banco',
   `excluido` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_banco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,6 +312,7 @@ CREATE TABLE `tbl_bancos` (
 
 LOCK TABLES `tbl_bancos` WRITE;
 /*!40000 ALTER TABLE `tbl_bancos` DISABLE KEYS */;
+INSERT INTO `tbl_bancos` VALUES (1,'Mesa Verde','564656547','Barueri','SP',0),(2,'Bradesco Serra nova','74875478','Barueri','SP',0);
 /*!40000 ALTER TABLE `tbl_bancos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -482,7 +483,7 @@ CREATE TABLE `tbl_conta` (
   PRIMARY KEY (`id_conta`),
   KEY `fk_tbl_conta_bancaria_tbl_` (`id_banco`),
   CONSTRAINT `fk_tbl_conta_bancaria_tbl_` FOREIGN KEY (`id_banco`) REFERENCES `tbl_bancos` (`id_banco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -491,6 +492,7 @@ CREATE TABLE `tbl_conta` (
 
 LOCK TABLES `tbl_conta` WRITE;
 /*!40000 ALTER TABLE `tbl_conta` DISABLE KEYS */;
+INSERT INTO `tbl_conta` VALUES (1,1000.25,'56478645',2,0),(2,100.00,'54854888',1,0);
 /*!40000 ALTER TABLE `tbl_conta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -511,7 +513,7 @@ CREATE TABLE `tbl_contas_pagar` (
   `codigo_pagamento` varchar(32) DEFAULT NULL COMMENT 'número do código do pagamento',
   `confirmado` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'confirmação do pagamento aceito ou não aceito',
   PRIMARY KEY (`id_conta_pagar`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -520,7 +522,7 @@ CREATE TABLE `tbl_contas_pagar` (
 
 LOCK TABLES `tbl_contas_pagar` WRITE;
 /*!40000 ALTER TABLE `tbl_contas_pagar` DISABLE KEYS */;
-INSERT INTO `tbl_contas_pagar` VALUES (1,'Pagamento do mes 4','2019-05-15',900.00,NULL,NULL,'435345',0),(2,'fffff','2019-05-13',900.00,NULL,NULL,'fff',0);
+INSERT INTO `tbl_contas_pagar` VALUES (1,'Pagamento do mes 4','2019-05-15',900.00,NULL,NULL,'435345',0),(2,'fffff','2019-05-13',900.00,NULL,NULL,'fff',0),(4,'Material par aos alunos','2019-01-01',548.00,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `tbl_contas_pagar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -717,7 +719,7 @@ CREATE TABLE `tbl_fornecedor` (
 
 LOCK TABLES `tbl_fornecedor` WRITE;
 /*!40000 ALTER TABLE `tbl_fornecedor` DISABLE KEYS */;
-INSERT INTO `tbl_fornecedor` VALUES (1,'Guilherme ','56.489.475/6748-94','for5847','Gui fundation',0),(2,'Carlos','56.486.745/6748-65','for342','SoftHawse',0);
+INSERT INTO `tbl_fornecedor` VALUES (1,'Guilherme ','56.489.475/6748-94','for5847','Gui fundation',0),(2,'Carlos','56.486.745/6748-65','for342','SoftHawse',1);
 /*!40000 ALTER TABLE `tbl_fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -789,7 +791,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario` VALUES (8,'Claudio Ramos','342.895.237-94','f3423','claudio@ramos.com',NULL,'32.894.723-9','2000-01-03','54656-456','sp','Barueri','Silveira','rua jose','763','(54)6465-4151','2019-05-15',4,18,0);
+INSERT INTO `tbl_funcionario` VALUES (8,'Claudio Ramos','342.895.237-94','f3423','claudio@ramos.com',NULL,'32.894.723-9','2000-01-03','54656-456','sp','Barueri','Silveira','rua jose','763','(54)6465-4151','2019-05-15',4,18,1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1366,12 +1368,13 @@ CREATE TABLE `tbl_pedido` (
   `id_fornecedor` int(11) NOT NULL COMMENT 'código da tabela fornecedor',
   `id_usuario_desktop` int(11) NOT NULL COMMENT 'código da tabela usuário desktop',
   `excluido` tinyint(2) NOT NULL DEFAULT '0',
+  `confirmado` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_pedido`),
   KEY `fk_tbl_pedidos_tbl_fornecedor_idx` (`id_fornecedor`),
   KEY `fk_tbl_usuario_desktop_tbl_pedido_idx` (`id_usuario_desktop`),
   CONSTRAINT `fk_tbl_fornecedor_tbl_pedidos` FOREIGN KEY (`id_fornecedor`) REFERENCES `tbl_fornecedor` (`id_fornecedor`),
   CONSTRAINT `fk_tbl_usuario_desktop_tbl_pedido` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1380,6 +1383,7 @@ CREATE TABLE `tbl_pedido` (
 
 LOCK TABLES `tbl_pedido` WRITE;
 /*!40000 ALTER TABLE `tbl_pedido` DISABLE KEYS */;
+INSERT INTO `tbl_pedido` VALUES (1,120.00,'Cartão','2020-04-01','pvf3423','Material',0.00,'2018-02-01',0.00,1,1,1,0),(2,2.00,'Cartão','2019-03-01','pic474','Material de escritorio',0.00,'2019-02-02',0.00,1,1,1,0),(3,1428.00,'Cartão','2019-03-01','ped4575','Material par aos alunos',0.00,'2019-02-01',0.00,1,1,0,1);
 /*!40000 ALTER TABLE `tbl_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1399,7 +1403,7 @@ CREATE TABLE `tbl_pedido_contas_pagar` (
   KEY `fk_tbl_contas_pagar_tbl_pedido_contas_pagar_idx` (`id_conta_pagar`),
   CONSTRAINT `fk_tbl_contas_pagar_tbl_pedido_contas_pagar` FOREIGN KEY (`id_conta_pagar`) REFERENCES `tbl_contas_pagar` (`id_conta_pagar`),
   CONSTRAINT `fk_tbl_pedido_tbl_pedido_contas_pagar` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1408,6 +1412,7 @@ CREATE TABLE `tbl_pedido_contas_pagar` (
 
 LOCK TABLES `tbl_pedido_contas_pagar` WRITE;
 /*!40000 ALTER TABLE `tbl_pedido_contas_pagar` DISABLE KEYS */;
+INSERT INTO `tbl_pedido_contas_pagar` VALUES (1,3,4);
 /*!40000 ALTER TABLE `tbl_pedido_contas_pagar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1424,12 +1429,13 @@ CREATE TABLE `tbl_pedido_produto` (
   `valor` decimal(10,2) NOT NULL COMMENT 'valor unitário',
   `id_produto` int(11) NOT NULL COMMENT 'código da tabela do produto',
   `id_pedido` int(11) NOT NULL COMMENT 'código da tabela do pedido',
+  `confirmado` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_pedido_produto`),
   KEY `fk_produto_pedido_idx` (`id_pedido`),
   KEY `fk_tbl_produto_tbl_pedido_produto_idx` (`id_produto`),
   CONSTRAINT `fk_tbl_pedido_tbl_pedido_produto` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`),
   CONSTRAINT `fk_tbl_produto_tbl_pedido_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1438,6 +1444,7 @@ CREATE TABLE `tbl_pedido_produto` (
 
 LOCK TABLES `tbl_pedido_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_pedido_produto` DISABLE KEYS */;
+INSERT INTO `tbl_pedido_produto` VALUES (1,10,12.00,1,1,0),(5,10,0.20,1,2,0),(16,10,0.80,1,3,0),(17,54,10.00,1,3,0),(18,88,10.00,1,3,0);
 /*!40000 ALTER TABLE `tbl_pedido_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1576,7 +1583,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (1,'lapis preto de n°2 pic',10.20,'p3423','Lapis',0),(2,'caneta ',2.00,'123','Caneta',0);
+INSERT INTO `tbl_produto` VALUES (1,'lapis preto de n°2 pic',10.20,'p3423','Lapis',0),(2,'caneta ',2.00,'123','Caneta',1);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1874,7 +1881,7 @@ CREATE TABLE `tbl_usuario_desktop_permissoes` (
   KEY `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes_idx` (`id_usuario_desktop`),
   CONSTRAINT `fk_tbl_permicoes_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_permicoes`) REFERENCES `tbl_permissoes` (`id_permissoes`),
   CONSTRAINT `fk_tbl_usuario_desktop_tbl_usuario_desktop_permicoes` FOREIGN KEY (`id_usuario_desktop`) REFERENCES `tbl_usuario_desktop` (`id_usuario_desktop`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1883,7 +1890,7 @@ CREATE TABLE `tbl_usuario_desktop_permissoes` (
 
 LOCK TABLES `tbl_usuario_desktop_permissoes` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_desktop_permissoes` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_desktop_permissoes` VALUES (24,1,1),(25,1,2),(26,1,6);
+INSERT INTO `tbl_usuario_desktop_permissoes` VALUES (33,1,1),(34,1,2),(35,1,4),(36,1,5),(37,1,6);
 /*!40000 ALTER TABLE `tbl_usuario_desktop_permissoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2108,4 +2115,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-15 19:57:59
+-- Dump completed on 2019-05-16  4:24:07
