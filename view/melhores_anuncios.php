@@ -111,7 +111,7 @@
                         $controllerAnuncio =  new ControllerAnuncios();
 
                         $lista = $controllerAnuncio->listar_anunciosProcesssados();
-
+                        echo count($lista);
                     ?>
                     <a href="#">
                         <div class="anuncios">
@@ -185,7 +185,6 @@
                                     <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
                                     <p class="percentual_avaliacao">4.5%</p>
                                 </div>
-
                             </div>
                         </div>
                     </a>
