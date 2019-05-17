@@ -1,6 +1,5 @@
 <?php
 
-
 class ControllerAnuncios{
        
        private $anunciosDAO;
@@ -12,11 +11,43 @@ class ControllerAnuncios{
         require_once('model/usuarioClass.php');
         require_once('model/dao/anuncioDAO.php');
 
-       $this->anunciosDAO = new AnuncioDAO();
+        $this->anunciosDAO = new AnuncioDAO();
 
        }
 
-       public function inserir_anuncio(){}
+       public function inserir_anuncio(){
+
+              require_once('model/clienteClass.php');
+
+              // Pegando o Cliente Logado
+              if(!isset($_SESSION))session_start();
+
+              $cliente = unserialize($_SESSION['cliente']);
+
+              var_dump($_POST);
+
+              $id_veiculo   = $_POST['cb_veiculos'];
+              $data_inicial = $_POST['data_inicial'];
+              $data_final   = $_POST['data_final'];
+              $hora_inicial = $_POST['hora_inicial'];
+              $hora_final   = $_POST['hora_final'];
+              $descricao    = $_POST['descricao'];
+              $valor_hora   = $_POST['valor_hora'];
+              $id_cliente   = $cliente->getId();
+              
+              $anuncio = new Anuncio();
+              $anuncio->setDescricao($descricao)
+                      ->setIdClienteLocador($id_cliente)
+                      ->setIdVeiculo($id_veiculo)
+                      ->setHorarioInicio($hora_inicial)
+                      ->setHorarioTermino($hora_final)
+                      ->setDataInicial($data_inicial)
+                      ->setDataFinal($data_final)
+                      ->setValor($valor_hora);
+               
+              $this->anunciosDAO->insert($anuncio);
+
+       }
        public function excluir_anuncio(){}
        public function atualizar_anuncio(){}
        public function listar_anuncios(){}

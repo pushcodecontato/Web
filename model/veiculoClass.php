@@ -140,7 +140,7 @@ class veiculo{
     }
     /* Cuida de passar os acessorios */
     public function setAcessorios($acessorios){
-        $this->acessorios = $acessorios;
+        $this->acessorios[] = $acessorios;
         return $this;
     }
     public function getAcessorios(){
@@ -149,7 +149,7 @@ class veiculo{
 
     /* Cuida de passar as fotos */
     public function setFotos($fotos){
-        $this->fotos = $fotos;
+        $this->fotos[] = $fotos;
         return $this;
     }
     public function getFotos(){

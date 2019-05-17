@@ -318,6 +318,78 @@ class  VeiculoDAO{
         
     }
 
+    public function selectAllAprovados(){
+        /* Pegando todos os Veiculos que não tenha um status */
+        $sql = "SELECT * FROM tbl_veiculo inner join tbl_aprovacao_veiculo on (tbl_veiculo.id_veiculo = tbl_aprovacao_veiculo.id_veiculo AND tbl_aprovacao_veiculo.status_aprovacao = 0)";
+
+        //Abrido conexao com o BD
+        $PDO_conex = $this->conex->connect_database();
+
+        
+        $select = $PDO_conex->query($sql);
+
+        $listar_veiculo = array();
+
+        while($rs_veiculo = $select->fetch(PDO::FETCH_ASSOC)){
+
+            $veiculo = new Veiculo();
+
+            $veiculo->setId($rs_veiculo['id_veiculo'])
+                    ->setAno($rs_veiculo['ano'])
+                    ->setPlaca($rs_veiculo['placa'])
+                    ->setQuilometragem($rs_veiculo['quilometragem'])
+                    ->setRenavam($rs_veiculo['renavam'])
+                    ->setIdTipoVeiculo($rs_veiculo['id_tipo_veiculo'])
+                    ->setIdMarcaVeiculo($rs_veiculo['id_marca_veiculo'])
+                    ->setIdModeloVeiculo($rs_veiculo['id_modelo_veiculo'])
+                    ->setIdCliente($rs_veiculo['id_cliente']);
+             
+             $marca   = $this->marcasDAO->select($veiculo->getIdMarcaVeiculo());
+
+             $modelo  = $this->modelosDAO->select($veiculo->getIdModeloVeiculo());
+
+             $tipo    = $this->tiposDAO->select($veiculo->getIdTipoVeiculo());
+
+             $cliente = $this->clientesDAO->selectById($veiculo->getIdCliente());
+
+             $acessorios = $this->acessoriosDAO->selectByVeiculo($veiculo);
+             
+
+             /*  Colocando os objetos */
+
+             $veiculo->setMarca($marca)
+                     ->setModelo($modelo)
+                     ->setTipo($tipo)
+                     ->setCliente($cliente)
+                     ->setAcessorios($acessorios);
+
+            /* Pegando fotos */
+            $sqlFoto = "SELECT * FROM tbl_foto_veiculo WHERE id_veiculo=".$rs_veiculo['id_veiculo'];
+
+            $selectFoto = $PDO_conex->query($sqlFoto);
+            
+            $fotos = array();
+            // Verifica se o select possui alguma coisa e evita o erro call to member
+            if($selectFoto){
+
+                while($rs_fotos = $selectFoto->fetch(PDO::FETCH_ASSOC)){
+                    $fotos[]=  $rs_fotos['nome_foto'];
+                }
+
+            }
+
+            $veiculo->setFotos($fotos);
+
+            $listar_veiculo[] = $veiculo;
+
+        }
+        
+
+        $this->conex->close_database();        
+
+        return $listar_veiculo;
+        
+    }
 }
 
 

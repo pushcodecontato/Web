@@ -126,6 +126,7 @@
         public function listar_veiculos_pendentes(){
             return $this->veiculosDAO->selectAllPendentes();
         }
+
         public function uploadImagem($arquivo){
             // Verifica Se o arquivo tem um tamanho $_File tem conteudo
             if($arquivo['size']>0){
@@ -172,6 +173,10 @@
 
             // Caso não funcione retorna um false para quem o chamou
             return false;
+	}
+        /* Retorna uma lsita com os veiculo que ainda não foram aprovados ou pendentes */
+        public function listar_veiculos_aprovados(){
+            return $this->veiculosDAO->selectAllAprovados();
         }
 
     }

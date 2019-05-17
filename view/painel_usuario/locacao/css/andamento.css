@@ -1,36 +1,53 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "OpenSans-Regular";
+}
 #conteudo_andamento{
-    width: 962px;
-    height: 703px;
+    width: 1068px;
+    height: 685px;
     float: left;
     border: solid 1px;
     margin-top: 15px;
+    float: right;
+    margin-right: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 #h2Border{
-    width: 160px;
+    width: 175px;
     height: 15px;
     margin-top: -15px;
     margin-left:50px;
     background-color:#fff;
 }
 #principal_andamento{
-    width: 940px;
+    margin-top: 20px;
+    width: 1053px;
     height: 670px;
-    margin-left: 10px;
+    float: right;
+    border-radius: 20px;
 }
 
 .segura_coluna{
     width: 100%;
     height: 60px;
+    border-radius: 20px;
 }
 
 .coluna{
-    width: 233px;
+    width: 260px;
     height: 60px;
     float:left;
     border: solid 1px;
+    border-radius: 20px;
+    margin-top: 5px;
+    /* margin-right: 5px; */
 }
+
+.coluna {}
 #nome{
     width: 60px;
     height: 20px;

@@ -38,6 +38,8 @@ html{
     text-decoration: none;
 }
 
+@media screen and (min-width:1000px)
+{
 
 .texto_chamativo{
     width: 550px;
@@ -494,5 +496,24 @@ footer{
     margin-right: auto;
     display: block;
     
+    }
+    
 }
 
+@media screen and (max-width:680px) /* colocar a palavra device para simular no celular*/
+{
+#header_home {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(../imagem/slider/imagem1.jpg);
+/* background-color:aquamarine; */
+}
+
+
+
+    
+}

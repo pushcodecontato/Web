@@ -17,10 +17,27 @@
             $this->conex = new  conexaoMysql();
         }
 
-        public function insert($acessorio){
-            $sql = "INSERT INTO tbl_anuncio (descricao,id_cliente_locador, id_veiculo, horario_inicio, horario_termino, data_inicial, data_final)".
-                   "VALUES ('Final de semana na zona oeste', 1 , '3', '01:00', '18:00', '2019-04-10', '2019-04-26')";
-        }
+        public function insert($anuncio){
+
+            $sql = "INSERT INTO tbl_anuncio (descricao,id_cliente_locador, id_veiculo, horario_inicio, horario_termino, data_inicial, data_final,valor_hora)".
+                   "VALUES ('". $anuncio->getDescricao() ."', ". $anuncio->getIdClienteLocador() ." , ". $anuncio->getIdVeiculo() .", '". $anuncio->getHorarioInicio() ."', '". $anuncio->getHorarioTermino() ."', '". $anuncio->getDataInicial() ."', '". $anuncio->getDataFinal() ."',". $anuncio->getValor() .")";
+
+            //Abrido conexao com o BD
+            $PDO_conex = $this->conex->connect_database();
+
+            if($PDO_conex->query($sql)){
+
+                echo "inserido com sucesso";
+
+                return true;
+
+            } else {
+                echo $sql;
+                echo "Erro no script de insert";
+                // Retornando false para que a controller saiba que o ussuario não foi inserido
+                return false;
+            }
+        } 
 
         public function delete($id){
             
@@ -203,6 +220,8 @@
 
             $this->conex->close_database();
         }
+        /* PAINEL DE USUARIO */
+
     }
 
 ?>

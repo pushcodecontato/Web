@@ -58,7 +58,7 @@ class Anuncio{
         $this->horario_termino = $horario_termino;
         return $this;
     }
-    public function getHorarioTermino(){
+    public function getHorarioTermino($br = 0){
         if($br != 0)return date("d/m/Y", strtotime($this->horario_termino));
         
         return $this->horario_termino;
@@ -68,7 +68,8 @@ class Anuncio{
         return $this;
     }
     public function getDataInicial($br = 0){
-
+        
+        echo ($this->data_inicial);
         //Retorna no padrão br 
         if($br == 'br')return date("d/m/Y", strtotime($this->data_inicial));
 

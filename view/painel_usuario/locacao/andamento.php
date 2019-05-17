@@ -1,12 +1,5 @@
 <?php
     
-    require_once("controller/controllerLocacao.php");
-    
-    $controller_locacao = new ControllerLocacao();
-
-    $locacao = $controller_locacao->listar();
-
-    $router = "router.php?controller=locacao&modo=SELECTALL";
     
 ?>
 <head>
@@ -40,35 +33,37 @@
         <div class="segura_coluna">
         <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados"  action="<?=@$router?>" >
             <?php
-                //$router = "router.php?controller=anuncios&modo=PROCESSADOS";
+                
 
-                $list_tipo =  $controller_locacao->listar();
+//                 require_once("controller/controllerLocacao.php");
 
-                foreach($list_tipo as $locacao){
+//                 $controller_locacao = new ControllerLocacao();
+
+//                 $router = "router.php?controller=locacao&modo=SELECTALL";
+                
+//                 $listar_locacao =  $controller_locacao->listar();
+
+//                 foreach($listar_locacao as $locacao){
             ?>
             <div class="coluna">
                 <div id="nome"></div>
             </div>
 
             <div class="coluna">
-                <div id="veiculo"><?=@$locacao->getVeiculo()->getModelo()->getNome()?></div>
+                <div id="veiculo"></div>
             </div>
 
             <div class="coluna">
-                <div id="retirada_data"><?=@$locacao->getHorarioInicio()?></div>
+                <div id="retirada_data"></div>
             </div>
 
             <div class="coluna">
-                <div id="devolucao_data"><?=@$locacao->getHorarioTermino()?></div>
+                <div id="devolucao_data"></div>
             </div>
             <?php
-                }
+                //}
             ?>
         </form>
         </div>
     </div>
-
-
-    
-
 </div>

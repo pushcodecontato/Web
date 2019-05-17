@@ -79,7 +79,6 @@ function preencheData(){
 }
 
 function getAcessorios(idTipoVeiculo){
-    console.log('OI');
     $.ajax(`router.php?controller=tipo_veiculo&modo=listar_acessorios&id_tipo_veiculo=${idTipoVeiculo}`).then(res=>{
         dados = JSON.parse(res);
         console.log(res)
@@ -110,3 +109,28 @@ function mostraVeiculo64(input){
     
   }
   
+  function cadastrar_veiculo(form){
+    var submetido = ($(form).attr('data-submit') || 0) * 1;
+    //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
+     if(submetido == 1){
+        $(form).attr('data-submit',0)
+        return true;
+     }else{ 
+       $(form).attr('data-submit','1');
+     }
+     event.preventDefault();
+  
+     var form = $(form);
+     // Envia os dados do formulario
+     $(form)
+     .ajaxForm({
+         success:function(resposta){
+           console.log("RESPOSTA",resposta);
+           if(resposta.toString().search('sucesso')>=0){
+  
+                console.log('oi');
+           }
+          
+         },
+     }).submit();
+  }
