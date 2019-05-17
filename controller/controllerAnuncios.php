@@ -77,6 +77,7 @@ class ControllerAnuncios{
             
             if(!isset($_SESSION))session_start();
             
+            
             $id_usuarioCMS = 1;
 
             if(isset($_SESSION['usuario'])){

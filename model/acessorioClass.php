@@ -53,6 +53,10 @@ class Acessorio{
         return $this->estado;
     }
 
+    public function to_json(){
+        return array('id_acessorio'=>$this->getId(), 'nome_acessorio'=>$this->getNome());
+    }
+
 }
 
 ?>

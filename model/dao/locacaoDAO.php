@@ -4,11 +4,17 @@
 class locacaoDAO{
 
     private $conex;
+    private $anuncioDAO;
 
     public function __construct(){
         
         require_once('model/dao/conexaoMysql.php');
+        require_once('model/locacaoClass.php');
+        require_once('model/clienteClass.php');
+        require_once('model/dao/anuncioDAO.php');
         
+        $this->anuncioDAO = new AnuncioDao();
+
         $this->conex = new  conexaoMysql();
     }
 
@@ -40,34 +46,36 @@ class locacaoDAO{
 
     public function selectAll($status,$id_cliente){
         
-       
-       if($status = "andamento"){
+       echo("helo!!!!!!");
+       if($status == "andamento"){
         
-        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio AND tbl_locacao.data_hora_final is null) where tbl_anuncio.id_cliente_locador="$id_cliente; 
+        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio AND tbl_locacao.data_hora_final is null) where tbl_anuncio.id_cliente_locador=$id_cliente"; 
        
        }else{
       
-        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio) where tbl_anuncio.id_cliente_locador="$id_cliente; 
+        $sql = "SELECT tbl_locacao.* FROM tbl_anuncio inner join tbl_locacao on (tbl_locacao.id_anuncio = tbl_anuncio.id_anuncio) where tbl_anuncio.id_cliente_locador=$id_cliente"; 
        
        }
-        
-       $PDO_conex = $this->conex->connect_database();
+       echo("helo!!!!!!");
+       echo $sql;
+        $PDO_conex = $this->conex->connect_database();
 
         $select = $PDO_conex->query($sql);
 
         $listar = array();
 
-
         while($rs_locacao = $select->fetch(PDO::FETCH_ASSOC)){
 
-            $rs_locacao = new Modelo();
-            $rs_locacao->setId($rs_locacao['id_modelo'])
-                   ->setNome($rs_locacao['nome_modelo'])
-                   ->setStatus($rs_locacao['statusModelo'])
-                   ->setIdTipoMarca($rs_locacao['id_marca_tipo']);
+            $locacao = new Locacao();
+            $locacao->setId($rs_locacao['id_locacao'])
+                   ->setId_cliente_locador($rs_locacao['id_cliente_locador'])
+                   ->setData_hora_final($rs_locacao['data_hora_final'])
+                   ->setId_percentual($rs_locacao['id_percentual'])
+                   ->setValor_locacao($rs_locacao['valor_locacao']);
+            
+            $locacao->setAnuncio( $this->anuncioDAO->selectById($rs_locacao['id_anuncio']) ); 
 
-
-            $listar[] = $rs_locacao;
+            $listar[] = $locacao;
         }
 
         $this->conex->close_database();
@@ -75,37 +83,6 @@ class locacaoDAO{
         return $listar;
     }
 
-    public function selectById($id){
-            
-        $sql = "SELECT * FROM tbl_locacao where id_locacao =".$id;
-
-        $PDO_conex = $this->conex->connect_database();
-
-        $select = $PDO_conex->query($sql);
-
-        if($rs_locacao = $select->fetch(PDO::FETCH_ASSOC)){
-
-            $acessorio = new Acessorio();
-
-            $acessorio->setId($rs_locacao['id_locacao'])
-                        ->setId_cliente_locador($rs_locacao['id_cliente_locador'])
-                        ->setAnuncio($rs_locacao['id_anuncio'])
-                        ->setValor_locacao($rs_locacao['valor_locacao'])
-                        ->setData_hora_final($rs_locacao['data_hora_final'])
-                        ->setId_percentual($rs_locacao['id_percentual']);
-
-
-            $this->conex->close_database();
-
-            return $acessorio;
-
-        } else {
-
-            $this->conex->close_database();
-
-            return false;
-        }
-
-    }
+    public function selectById($id){}
 }
 ?>

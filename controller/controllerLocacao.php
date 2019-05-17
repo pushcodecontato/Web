@@ -2,44 +2,35 @@
 
 class ControllerLocacao{
     
-    private $locacaoDao;
+    private $locacaoDAO;
 
-    public function __contruct(){
-
+    public function __construct(){
+        echo("<pre>helo!!!!!!");
         require_once('model/clienteClass.php');        
-        require_once('model/locacaoClass.php');
-        require_once('model/tipo_veiculoClass.php');
-        require_once('model/dao/locacaoDao.php');
-        require_once('model/dao/tipo_veiculoDao.php');
-        
-        $this->locacaoDAO = new LocacaoDAO();
-        
-    }
-    public function inserir(){
-
-    }
-    public function atualizar(){
-
+        //require_once('model/locacaoClass.php');
+        require_once('model/dao/locacaoDAO.php');
+        echo("helo!!!!!!</pre>");
+        $this->locacaoDAO = new locacaoDAO();
     }
 
-    public function excluir(){
+    public function inserir(){}
+    public function atualizar(){}
+    public function excluir(){}
 
-    }
+    public function listar($status = "normal"){
+        echo("helo!!!!!!");
+        if(!isset($_SESSION))session_start();
 
-    public function listar(){
+        $cliente = unserialize($_SESSION['cliente']);
       
-    if(!isset($_SESSION))session_start();
-      $cliente = unserialize($_SESSION['cliente']);
-      $status = "normal";
-      
-       if(isset($_GET['andamento'])){
-           
-        $status = "andamento";  
-        $this->locacaoDAO->selectAll($status,$cliente->getId());
+        if(isset($_GET['andamento'])){
+            $status = "andamento";
+        }
         
-       }else{
-           
-       }
+        $lista  = $this->locacaoDAO->selectAll($status,$cliente->getId());
+        
+        return $lista;
+
 
     }
 }

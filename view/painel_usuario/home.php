@@ -17,9 +17,14 @@
 
     <!-- import dos arquivos scripts -->
     <script src="view/painel_usuario/js/jquery.js"></script>
+    <script src="view/painel_usuario/js/jqueryform.js"></script>
     <script src="view/painel_usuario/js/script_crud.js"></script>
     <script src="view/painel_usuario/js/script_menu.js"></script>
+<<<<<<< HEAD
+    
+=======
     <script src="view/js/libs/jqueryMask/jquery.mask.js"></script>
+>>>>>>> f86e72879996eff607fd7b458202b7463174e128
     <script src="view/js/notify.js"></script>
 
     <link rel="stylesheet" type="text/css" href="view/painel_usuario/css/home.css"/>

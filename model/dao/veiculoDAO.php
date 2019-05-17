@@ -42,7 +42,30 @@ class  VeiculoDAO{
     }
 
     public function insert($veiculo){
+        $sql = "INSERT INTO tbl_veiculo(ano,placa,quilometragem,renavam,id_tipo_veiculo,id_marca_veiculo,id_modelo_veiculo, id_cliente)
+        VALUES('".$veiculo->getAno()."','".$veiculo->getPlaca()."',
+        '".$veiculo->getQuilometragem()."',
+        '".$veiculo->getRenavam()."' ,
+        ".$veiculo->getIdTipoVeiculo().", 
+        ".$veiculo->getIdMarcaVeiculo().",
+        ".$veiculo->getIdModeloVeiculo().",
+        ".$veiculo->getIdCliente().");";
 
+        $PDO_conex = $this->conex->connect_database();
+
+        if($PDO_conex->query($sql)){  
+            $id_veiculo = $PDO_conex->lastInsertId();
+           
+            for($cont = 0; $cont < count($veiculo->getFotos());$cont++){
+                $sql = "INSERT INTO tbl_foto_veiculo (nome_foto,id_veiculo) VALUES('".$veiculo->getFotos()[$cont]."',".$id_veiculo.")";
+                if($PDO_conex->query($sql)){
+                    echo "Dados inserido com sucesso";
+                }
+                else{
+                    echo "Erro no insert";
+                }
+            }
+        }
 
     }
 

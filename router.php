@@ -144,6 +144,15 @@
                             }
                             echo json_encode($lista);
                             break;
+                        case "LISTAR_ACESSORIOS":
+                        
+                            $lista_acessorios = $controller_tipo_veiculo->listar_acessorios();
+                            $lista = array();
+                            foreach($lista_acessorios as $acessorio){
+                                $lista[] = $acessorio->to_json();    
+                            }   
+                            echo json_encode($lista);
+                            break;
 
                     }
                 
@@ -282,9 +291,9 @@
                             
                             break;
                        case "SELECTALL":
-
-                            $controller_locacao->listar();
                             require_once('view/painel_usuario/locacao/andamento.php');
+                            $controller_locacao->listar();
+                            
                             break;
                     }
                 
@@ -299,7 +308,7 @@
                         case "INSERIR":
 
                             $controller_veiculos->inserir_veiculo();
-
+                            
                             break;
                         case "ATUALIZAR":
 
