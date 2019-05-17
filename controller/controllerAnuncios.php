@@ -24,8 +24,6 @@ class ControllerAnuncios{
 
               $cliente = unserialize($_SESSION['cliente']);
 
-              var_dump($_POST);
-
               $id_veiculo   = $_POST['cb_veiculos'];
               $data_inicial = $_POST['data_inicial'];
               $data_final   = $_POST['data_final'];
@@ -78,6 +76,7 @@ class ControllerAnuncios{
         public function reprovar_anuncio(){
             
             if(!isset($_SESSION))session_start();
+            
             
             $id_usuarioCMS = 1;
 

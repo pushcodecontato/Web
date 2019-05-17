@@ -13,7 +13,7 @@ class Locacao{
     }
 
     public function getId(){
-        return $this->$id_locacao;
+        return $this->id_locacao;
     }
 
     public function setId_cliente_locador($id_cliente_locador){
@@ -22,7 +22,7 @@ class Locacao{
     }
 
     public function getId_cliente_locador(){
-        return $this->$id_cliente_locador;
+        return $this->id_cliente_locador;
     }
 
     public function setAnuncio($id_anuncio){
@@ -31,7 +31,7 @@ class Locacao{
     }
 
     public function getAnuncio(){
-        return $this->$id_anuncio;
+        return $this->id_anuncio;
     }
 
     public function setValor_locacao($valor_locacao){
@@ -40,7 +40,7 @@ class Locacao{
     }
 
     public function getValor_locacao(){
-        return $this->$valor_locacao;
+        return $this->valor_locacao;
     }
 
     public function setData_hora_final($data_hora_final){
@@ -49,15 +49,15 @@ class Locacao{
     }
 
     public function getData_hora_final(){
-        return $this->$data_hora_final;
+        return $this->data_hora_final;
     }
     
     public function setId_percentual($id_percentual){
-        $this->id_locacao = $id_percentual;
+        $this->id_percentual = $id_percentual;
         return $this;
     }
 
     public function getId_percentual(){
-        return $this->$id_percentual;
+        return $this->id_percentual;
     }
 }
