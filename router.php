@@ -308,7 +308,7 @@
                         case "INSERIR":
 
                             $controller_veiculos->inserir_veiculo();
-
+                            
                             break;
                         case "ATUALIZAR":
 
