@@ -291,9 +291,9 @@
                             
                             break;
                        case "SELECTALL":
-
-                            $controller_locacao->listar();
                             require_once('view/painel_usuario/locacao/andamento.php');
+                            $controller_locacao->listar();
+                            
                             break;
                     }
                 

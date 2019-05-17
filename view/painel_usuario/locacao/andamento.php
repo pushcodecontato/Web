@@ -1,7 +1,10 @@
 <?php
-    
-    
+                
+        require_once("controller/controllerLocacao.php");
+
+        $router = "router.php?controller=locacao&modo=SELECTALL";
 ?>
+
 <head>
   <link rel="stylesheet" 
           type="text/css"
@@ -31,22 +34,10 @@
         </div>
 
         <div class="segura_coluna">
-        <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados"  action="<?=@$router?>" >
-            <?php
-                
-
-//                 require_once("controller/controllerLocacao.php");
-
-//                 $controller_locacao = new ControllerLocacao();
-
-//                 $router = "router.php?controller=locacao&modo=SELECTALL";
-                
-//                 $listar_locacao =  $controller_locacao->listar();
-
-//                 foreach($listar_locacao as $locacao){
-            ?>
+        <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados">
+          
             <div class="coluna">
-                <div id="nome"></div>
+                <div id="nome"><?=@$locacao->getNome_cliente?></div>
             </div>
 
             <div class="coluna">
@@ -60,9 +51,7 @@
             <div class="coluna">
                 <div id="devolucao_data"></div>
             </div>
-            <?php
-                //}
-            ?>
+           
         </form>
         </div>
     </div>
