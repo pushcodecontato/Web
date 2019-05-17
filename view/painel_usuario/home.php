@@ -34,7 +34,7 @@
                 <!--TODO CONTEUDO DO CABEÇALHO-->
                 <div id="conteudo_header">     
                     <div class="img_logo">
-                        <img src="view/imagem/Mob.png" title="logo da empresa" alt="logo da empresa">
+                        <img src="view/imagem/mob.png" title="logo da empresa" alt="logo da empresa">
                     </div>
                     <div class="boasVindas">
                         <div id="bemVindo">

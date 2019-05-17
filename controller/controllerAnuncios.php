@@ -24,8 +24,6 @@ class ControllerAnuncios{
 
               $cliente = unserialize($_SESSION['cliente']);
 
-              var_dump($_POST);
-
               $id_veiculo   = $_POST['cb_veiculos'];
               $data_inicial = $_POST['data_inicial'];
               $data_final   = $_POST['data_final'];
@@ -98,6 +96,10 @@ class ControllerAnuncios{
 
            return $this->anunciosDAO->selectById($_GET['id_anuncio']);
 
+       }
+       /* Painel de Usuario */
+       public function listar_anunciosByUser($id_cliente){               
+        return $this->anunciosDAO->selectAllByUser($id_cliente);
        }
 
 }
