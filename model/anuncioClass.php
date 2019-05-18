@@ -131,8 +131,24 @@ class Anuncio{
          $intervalo = $data1->diff($data2);
 
          return $intervalo->format('%R%a dias');
-
+    }
+    public function to_json(){
         
+        $veiculo = $this->veiculo->to_json();
+        $cliente = $this->veiculo->getCliente()->to_json();
+
+        return array('id_anuncio'=>$this->id_anuncio,
+                     'descricao'=>$this->descricao,
+                     'id_cliente_locador'=>$this->id_cliente_locador,
+                     'id_veiculo'=>$this->id_veiculo,
+                     'horario_inicio'=>$this->horario_inicio,
+                     'horario_termino'=>$this->horario_termino,
+                     'data_inicial'=>$this->data_inicial,
+                     'data_final'=>$this->data_final,
+                     'valor_hora'=>$this->valor_hora,
+                     'status_aprovado'=>$this->status_aprovado,
+                     'cliente'=>$cliente,
+                     'veiculo'=>$veiculo);
     }
 
 }

@@ -198,7 +198,7 @@
                             foreach($listaModelos as $modelos){
                                 $lista[] = $modelos->to_json();
                             }
-                            echo json_encode($lista);                            
+                            echo json_encode($lista);                         
                             break;
                     }
                 
@@ -357,7 +357,7 @@
                             break;
                         case "STATUS":
                            echo($controller_clientes->status());
-			   break;
+			            break;
                     }
                         
                 
@@ -414,6 +414,19 @@
                                 
                             $controller_anuncio->reprovar_anuncio();
                                 
+                            break;
+                        case "BUSCAR":
+                            
+                            $anuncios = $controller_anuncio->buscar_anuncio_aprovado();
+
+                            if(isset($_GET["json"])){
+                                   $lista = array();
+                                   foreach($anuncios as $anuncio){
+                                       $lista[] = $anuncio->to_json();
+                                   }
+                                   echo json_encode($lista);
+                            }
+
                             break;
                     }
                 

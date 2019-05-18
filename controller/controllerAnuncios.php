@@ -100,7 +100,16 @@ class ControllerAnuncios{
        }
        /* Painel de Usuario */
        public function listar_anunciosByUser($id_cliente){               
-        return $this->anunciosDAO->selectAllByUser($id_cliente);
+           return $this->anunciosDAO->selectAllByUser($id_cliente);
+       }
+       /* Retorna os anuncios Aprovado (Atenção essa função se adapta se não passar nada ela retorna tudo ) */
+       public function buscar_anuncio_aprovado($id_tipo_veiculo = false,$id_marca_tipo = false,$id_modelo = false){
+           
+           $id_tipo_veiculo = (isset($_GET['id_tipo_veiculo']) && $_GET['id_tipo_veiculo'] > 0)?$_GET['id_tipo_veiculo']:$id_tipo_veiculo;
+           $id_marca_tipo   = (isset($_GET['id_marca_tipo']) && $_GET['id_marca_tipo'] > 0)?$_GET['id_marca_tipo']:$id_marca_tipo;
+           $id_modelo       = (isset($_GET['id_modelo']) && $_GET['id_modelo'] > 0)?$_GET['id_modelo']:$id_modelo;
+           
+           return $this->anunciosDAO->selectAllAprovadosBuscar($id_tipo_veiculo,$id_marca_tipo,$id_modelo);
        }
 
 }

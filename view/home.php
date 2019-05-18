@@ -202,10 +202,12 @@
 
                                 foreach($anuncios as $anuncio){
                                     
+
                                     if(isset($_SESSION['cliente'])){
                                         $endereco = $anuncio->getVeiculo()->getCliente()->getCidade() . " " . $anuncio->getVeiculo()->getCliente()->getUf();
                                     }
-                               
+                                    /* Pegando os anuncios processados e que foram aprovados */
+                                    if($anuncio->getStatus() == 1){
                             ?>
                             <div class="anuncios">
                                     <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
@@ -228,7 +230,7 @@
                                 </div>
                             </div>
                             <?php
-                            
+                                    }
                             }
                             ?>
                         </a>

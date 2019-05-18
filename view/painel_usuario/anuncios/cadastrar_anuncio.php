@@ -14,16 +14,11 @@
     $controllerAnuncio = new ControllerAnuncios();
     $controllerVeiculo  = new ControllerVeiculos();
 
-    $listaAnuncios = $controllerAnuncio->listar_anunciosProcesssados();
-    $lista = array();
-    foreach($listaAnuncios as $anuncio){
-        if($anuncio->getIdClienteLocador() == $cliente->getId()){
-          $lista[] = $anuncio;
-        }
-    }
+    $lista = $controllerAnuncio->listar_anunciosByUser($cliente->getId());
 
     $listaVeiculo = $controllerVeiculo->listar_veiculos_aprovados();
     $listaV = array();
+    
     foreach($listaVeiculo as $veiculo){
         if($veiculo->getIdCliente() == $cliente->getId()){
           $listaV[] = $veiculo;
@@ -118,11 +113,21 @@
                      <?php foreach($lista_caixas as $lista_item){ ?>
                              <div class="segura_caixas">
                                 <?php foreach($lista_item as $item){ ?>
-                                     <div class="caixa_veiculo">
+                                     <div class="caixa_veiculo" <?=@$item->getId()?>
+                                     style="<?php if($item->getStatus() == 0)echo("opacity: 0.6;")?>">
                                         <div class="segura_img">
                                             <img src="view/upload/<?=@$item->getVeiculo()->getFotos()[0]?>" style="   width: 100%; " alt="foto">
                                         </div>
-                                        <div class="nome_veiculo"><?=@$item->getVeiculo()->getModelo()->getNome()?></div>
+                                        <div class="nome_veiculo">
+                                        <?=@$item->getVeiculo()->getModelo()->getNome()?>
+                                        <?php if($item->getStatus() == 0){?>
+                                            <span style="color: red;">Reprovados</span>
+                                        <?php }else if($item->getStatus() == 1){?>
+                                            <span style="color: #2d2;">Aprovado</span>
+                                        <?php }else{?>
+                                            <span style="color: #414cd4;">Pendente</span>
+                                        <?php } ?>
+                                        </div>
                                         <label class="informacao">Horario: <?=@$item->getHorarioInicio()?></label><br>
                                         <label class="informacao">tipo de veículo: <?=@$item->getVeiculo()->getTipo()->getNome()?></label><br>
                                         <label class="informacao">Descrição:</label><br>

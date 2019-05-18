@@ -14,9 +14,8 @@ function anuncio_insert(form){
           success:function(resposta){
             console.log("Resposta",resposta);
             if(resposta.toString().search('sucesso')>=0){
-				$.notify("veiculo aprovado",'success');
-				conteudo_subMenu('veiculos/veiculos_pendentes',true);
-				fecharModal();
+				$.notify("Anuncio registrado!",'success');
+				conteudo_subMenu('veiculos/veiculos_pendentes');
 			}
           } 
         })

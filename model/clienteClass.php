@@ -182,6 +182,36 @@ class Cliente{
     public function getDt_nascimento(){
         return $this->dt_nascimento;
     }
+
+    public function to_json($seguro = false){
+    	if(!$seguro){
+    		return array('id_cliente'=>$this->id_cliente,
+    					 'nome_cliente'=>$this->nome_cliente,
+    					 'cidade'=>$this->cidade,
+    					 'uf'=>$this->uf,
+    					 'status'=>$this->status);
+    	}else{
+    		/* Modo seguro passa dados interesantes!So usar no cms ou talves no painel de usuario(no painel seria interesante fzer um filtro para tirar datdos sencifeis) */
+			return array('id_cliente'=>$this->id_cliente,
+    					 'nome_cliente'=>$this->nome_cliente,
+    					 'cidade'=>$this->cidade,
+    					 'cpf'=>$this->cpf,
+    					 'telefone'=>$this->telefone,
+    					 'celular'=>$this->celular,
+    					 'email'=>$this->email,
+    					 'cep'=>$this->cep,
+    					 'rua'=>$this->rua,
+    					 'complemento'=>$this->complemento,
+    					 'bairro'=>$this->bairro,
+    					 'cidade'=>$this->cidade,
+    					 'uf'=>$this->uf,
+    					 'cnh_foto'=>$this->cnh_foto,
+    					 'foto_cliente'=>$this->foto_cliente,
+    					 'status'=>$this->status,
+    					 'dt_nascimento'=>$this->dt_nascimento,);
+    	}
+    	
+    }
     
 }
 

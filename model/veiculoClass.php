@@ -140,7 +140,7 @@ class veiculo{
     }
     /* Cuida de passar os acessorios */
     public function setAcessorios($acessorios){
-        $this->acessorios[] = $acessorios;
+        $this->acessorios = $acessorios;
         return $this;
     }
     public function getAcessorios(){
@@ -149,14 +149,42 @@ class veiculo{
 
     /* Cuida de passar as fotos */
     public function setFotos($fotos){
-        $this->fotos[] = $fotos;
+        $this->fotos = $fotos;
         return $this;
     }
     public function getFotos(){
         return $this->fotos;
     }
-
+    public function to_json(){
+        
+        $tipo_veiculo   = $this->tipo_veiculo->to_json();
+        $marca_veiculo  = $this->marca_veiculo->to_json();
+        $modelo_veiculo = $this->modelo_veiculo->to_json();
+        $cliente        = $this->cliente->to_json();
+        $acessorios     = array();
+        foreach($this->acessorios as $acessorio){
+            $acessorios[] = $acessorio->to_json();
+        }
+        return array('id_veiculo'=>$this->id_veiculo,
+                     'ano'=>$this->ano,
+                     'placa'=>$this->placa,
+                     'quilometragem'=>$this->quilometragem,
+                     'renavam'=>$this->renavam,
+                     'id_tipo_veiculo'=>$this->id_tipo_veiculo,
+                     'id_marca_veiculo'=>$this->id_marca_veiculo,
+                     'id_modelo_veiculo'=>$this->id_modelo_veiculo,
+                     'id_cliente'=>$this->id_cliente,
+                     'foto'=>$this->fotos,
+                     'acessorios'=>$acessorios,
+                     'tipo_veiculo'=>$tipo_veiculo,
+                     'marca_veiculo'=>$marca_veiculo,
+                     'modelo_veiculo'=>$modelo_veiculo,
+                     'cliente'=>$cliente);
+    }
 }
+
+
+
 
 
 ?>

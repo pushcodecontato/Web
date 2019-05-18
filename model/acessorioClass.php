@@ -54,7 +54,11 @@ class Acessorio{
     }
 
     public function to_json(){
-        return array('id_acessorio'=>$this->getId(), 'nome_acessorio'=>$this->getNome());
+        return array('id_acessorio'=>$this->getId(),
+                     'nome_acessorio'=>$this->getNome(),
+                     'id_tipo_veiculo'=>$this->id_tipo_veiculo,
+                     'status'=>$this->status,
+                     'estado'=>$this->estado);
     }
 
 }

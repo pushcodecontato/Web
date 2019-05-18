@@ -21,6 +21,13 @@
         $cliente = unserialize($_SESSION['cliente']);
         $boolean = true;
     }
+
+    /* LISTA TIPO VEICULO */
+    require_once('controller/controllerTipo_veiculo.php');
+    require_once('controller/controllerAnuncios.php');
+    $controllerAnuncio = new ControllerAnuncios();
+
+    $anuncios = $controllerAnuncio->listar_anunciosProcesssados();
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +39,7 @@
         <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
         <script src="view/js/notify.js"></script>
         <script src="view/js/main.js"></script>
-
+        <script src="view/js/melhores_anuncios.js"></script>
     </head>
     <body>
         <div id="principal">
@@ -76,30 +83,41 @@
                 </div>
             </header>
             <div id="conteudo">
-                
+                <?php
+                    require_once("controller/controllerTipo_veiculo.php");
+
+                    $controllerTipo = new ControllerTipoVeiculo();
+
+                    $tipos = $controllerTipo->listar_tipo();
+                ?>
                 <form id="pesquisa">
                     <div id="explicao_como_alugar">
                      <form>
                         <div class="combo_box">
                             <label>Tipo de veículo</label><br>
-                            <select>
-                                <option>Tipo de veiculo</option>
-                            </select>
-                        </div>
-                        <div class="combo_box">
-                            <label>Modelo</label><br>
-                            <select>
-                                <option>Selecione o modelo</option>
+                            <select name="tipo" onchange="getMarcas(this.value)">
+                                <option value="0">Selecione o tipo</option>
+                                <?php if(count($tipos) > 0){?>
+                                    <?php foreach($tipos as $tipo){?>
+                                        <option value="<?=@$tipo->getId()?>"><?=@$tipo->getNome()?></option>
+                                    <?php }?>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="combo_box">
                             <label>Marca</label><br>
-                            <select>
-                                <option>Selecione a marca</option>
+                            <select name="marcas" onchange="getModelos(this.value)">
+                                <option value="0">Selecione a marca</option>
                             </select>
                         </div>
                         <div class="combo_box">
-                            <input type="button" class="btn_filtro" value="Filtrar">
+                            <label>Modelo</label><br>
+                            <select name="modelos" onchange="anuncios_filtrar()">
+                                <option value="0">Selecione o modelo</option>
+                            </select>
+                        </div>
+                        <div class="combo_box">
+                            <input type="button" onclick="anuncios_filtrar()" class="btn_filtro" value="Filtrar">
                         </div>
                     </form> 
                 </div>
@@ -110,29 +128,34 @@
                         require_once('controller/controllerAnuncios.php');
                         $controllerAnuncio =  new ControllerAnuncios();
 
-                        $lista = $controllerAnuncio->listar_anunciosProcesssados();
-                        echo count($lista);
+                        $anuncios = $controllerAnuncio->listar_anunciosProcesssados();
+                        
                     ?>
-                    <a href="#">
-                        <div class="anuncios">
-                                <img class="img_anuncio" src="view/imagem/palio.jpg" alt="Nome veiculo" title="Nome veiculo">
-                            <div class="info_anuncio">
-                                <p class="nome_veiculo">R$ 30,00/hora</p>
+                        <?php foreach($anuncios as $anuncio){ ?>
+                        <?php if($anuncio->getStatus() == 1){?>
+                                <a href="#">
+                                    <div class="anuncios">
+                                            <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
+                                        <div class="info_anuncio">
+                                            <p class="nome_veiculo">R$ <?=@ $anuncio->getValor();?>/hora</p>
+                                            <p class="info_veiculo" style="margin-top:10px;"><?=@ $anuncio->getVeiculo()->getMarca()->getNome(). " " .$anuncio->getVeiculo()->getModelo()->getNome()?></p>
+                                            <p class="info_veiculo"><?=@ $anuncio->getVeiculo()->getAno() . " | " . $anuncio->getVeiculo()->getQuilometragem() . " KM" ?></p>
+                                            <p class="info_veiculo" >
+                                                Matheus Vieira | <?=@((isset($_SESSION['cliente']))?$anuncio->getVeiculo()->getCliente()->getCidade() . " " . $anuncio->getVeiculo()->getCliente()->getUf():'')?>
+                                            </p>
 
-                                <p class="info_veiculo" style="margin-top:10px;">Fiat Palio 4 portas</p>
-                                <p class="info_veiculo">2018 | 3000 Km</p>
-                                <p class="info_veiculo" >Matheus Vieira | São Paulo-SP</p>
+                                            <div class="stars_avaliacao">
+                                                <img src="view/imagem/star1.png" alt="star">
+                                                <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
+                                                <p class="percentual_avaliacao">4.5%</p>
+                                            </div>
 
-                                <div class="stars_avaliacao">
-                                    <img src="view/imagem/star1.png" alt="star">
-                                    <img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star"><img src="view/imagem/star1.png" alt="star">
-                                    <p class="percentual_avaliacao">4.5%</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
+                                        </div>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        <?php } ?>
+                    <!--<a href="#">
                         <div class="anuncios">
                             <img class="img_anuncio" src="view/imagem/i30.jpg" alt="Nome veiculo" title="Nome veiculo">
                             <div class="info_anuncio">
@@ -339,7 +362,7 @@
 
                             </div>
                         </div>
-                    </a>
+                    </a>-->
                 </div>
                 <div id="paginate">
                     <div class="paginate-prev">
