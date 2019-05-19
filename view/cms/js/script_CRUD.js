@@ -8,14 +8,12 @@ var caminho_absoluto = 'view/cms/';
 
 function enviar(){
 	event.preventDefault();
-	console.log("Hellow!!!!!!")
 	$.ajax({
 		type:'post',
 		method:'post',
 		url:$(form).attr('action'),
 		data: $(form).serialize(),
 		success:function(dados){
-			console.log("Hellow@",dados);
 			if(dados.toString().search('sucesso')>=0){
 
 				$.notify("Email enviado com sucesso", "success");

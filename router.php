@@ -1,5 +1,4 @@
 <?php
-
     $controller = null;
     $modo = null;
 
@@ -608,7 +607,6 @@
 
                 /*Termo de Uso*/
                 case ($controller == 'TERMOS' || $controller == "TERMOS_USO"):
-                echo "estou na controller termos";
                 require_once('controller/controllerTermos_uso.php');
 
                 $controller_termos_uso = new ControllerTermos_uso();
@@ -664,9 +662,21 @@
                     }
  
                 break;
-                
-        }
-      
-        
+                case "SOLICITAR_ANUNCIO":
+                require_once('controller/controllerSolicitarAnuncio.php');
+                $controller_solicitar_anuncio = new ControllerSolicitacaoAnuncio();
+                switch($modo){
+                    case "INSERIR":
+                        $controller_solicitar_anuncio->inserir();
+                        break;
+                    case "ATUALIZAR":
+                        $controller_fale_conosco->atualizar_fale_conosco();
+                        break;
+                    case "EXCLUIR":
+                    $controller_fale_conosco->excluir_fale_conosco();
+                    break;
+                break;
+            }
+        }        
     }
 ?>

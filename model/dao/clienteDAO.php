@@ -91,7 +91,8 @@
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
                         ->setFoto($rs_cliente['foto_cliente'])
-                        ->setStatus($rs_cliente['status']);
+                        ->setStatus($rs_cliente['status'])
+                        ->setNumero($rs_cliente['numero']);
                 
 
                 $listar_registros[] = $cliente;
@@ -132,7 +133,8 @@
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
                         ->setFoto($rs_cliente['foto_cliente'])
-                        ->setStatus($rs_cliente['status']);
+                        ->setStatus($rs_cliente['status'])
+                        ->setNumero($rs_cliente['numero']);
                 
                         //->setEstado($rs_cliente['estado']);
 

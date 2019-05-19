@@ -207,8 +207,9 @@
                             /* Pegando os anuncios processados e que foram aprovados */
                             if($anuncio->getStatus() == 1){
                         ?>
-                       
-                            <div class="anuncios" style="cursor:pointer;" onclick="javascrip:visualizar(<?=@ $anuncio->getId()?>)">
+                        <a href="?visualizar_anuncios.php&id_anuncio=<?=@ $anuncio->getid();?>">
+                           
+                            <div class="anuncios">
                                     <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0][0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
                                 <div class="info_anuncio">
                                     <p class="nome_veiculo">R$<?=@ $anuncio->getValor();?> /hora</p>
@@ -232,7 +233,8 @@
                                     }
                             }
                             ?>
-                            
+                        </a>
+                        
                     </div>
                 </div>
             </section>

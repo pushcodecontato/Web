@@ -1,7 +1,10 @@
 <?php
-    
-    if(isset($_POST[id_anuncio])) {
-        echo "IDDDDDDDD".$_POST['id_anuncio'];
+    require_once("controller/controllerAnuncios.php");
+    require_once("model/veiculoClass.php");
+    require_once("model/clienteClass.php");
+
+    if(isset($_GET['id_anuncio'])) {
+        $id_anuncio = $_GET['id_anuncio'];
     }
    
     // Pegando o Cliente Logado
@@ -17,6 +20,13 @@
         $cliente = unserialize($_SESSION['cliente']);
         $boolean = true;
     }
+    
+    $controllerAnuncios = new ControllerAnuncios();
+    $listaAnuncios = $controllerAnuncios->getById($id_anuncio);
+
+    // echo "<pre>";
+    // var_dump($listaAnuncios->getVeiculo()->getFotos()[0]);
+
 ?>
 <html>
     <head>
@@ -88,6 +98,11 @@
     </script>
     
     <body>
+        <div class="container">
+            <div class="modal">
+
+            </div>
+        </div>
         <div id="principal">
             <header>
                 <div id="imgPretaRgb">
@@ -130,72 +145,31 @@
                 <div class="linha"></div>
             </div>
             <div id="caixa_slide">
-            
-            
-                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:685px;overflow:hidden;visibility:hidden;">
-        <!-- Loading Screen -->
-                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-                <!-- <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" /> -->
-                </div>
-            <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:580px;overflow:hidden;">
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro.png" /> -->
-                </div>
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro2.jpg" /> -->
-                </div>
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro3.jpg" /> -->
-                </div>
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro4.jpg" /> -->
-                </div>
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro5.jpg" /> -->
-                </div>
-                <div>
-                    <!-- <img data-u="image" src="imagem/carro6.jpg" /> -->
-                </div>
-   
-            </div>
-        <!-- Bullet Navigator -->
-            <div data-u="navigator" class="jssorb053" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
-                <div data-u="prototype" class="i" style="width:16px;height:16px;">
-                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <path class="b" d="M11400,13800H4600c-1320,0-2400-1080-2400-2400V4600c0-1320,1080-2400,2400-2400h6800 c1320,0,2400,1080,2400,2400v6800C13800,12720,12720,13800,11400,13800z"></path>
-                    </svg>
-                </div>
-            </div>
-            <!-- Arrow Navigator -->
-            <div data-u="arrowleft" class="jssora093" style="width:50px;height:50px;top:0px;left:30px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <circle class="c" cx="8000" cy="8000" r="5920"></circle>
-                    <polyline class="a" points="7777.8,6080 5857.8,8000 7777.8,9920 "></polyline>
-                    <line class="a" x1="10142.2" y1="8000" x2="5857.8" y2="8000"></line>
-                </svg>
-            </div>
-            <div data-u="arrowright" class="jssora093" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <circle class="c" cx="8000" cy="8000" r="5920"></circle>
-                    <polyline class="a" points="8222.2,6080 10142.2,8000 8222.2,9920 "></polyline>
-                    <line class="a" x1="5857.8" y1="8000" x2="10142.2" y2="8000"></line>
-                </svg>
+                <?php
+                    foreach($listaAnuncios->getVeiculo()->getFotos()[0] as $fotos){
+                ?>
+                    <div>
+                        <img src="view/upload/<?php echo$fotos?>" style="width:150px; height:150px;">
+                    </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>            
     </div>
     <div id="informacao_carro">
-        Tipo veículo: Carro<br><br>
-        Marca: Fiat<br><br>
-        Modelo: Palio 4 portas<br><br>
-        Ano: 2002<br><br>
-        Placa: xxxx-xxxx<br><br>
-        Quilometragem: 2000km<br><br>
-        Valor hora: R$30,00<br><br>
+        Tipo veículo: <?=@ $listaAnuncios->getVeiculo()->getTipo()->getNome() ?><br><br>
+        Marca: <?=@ $listaAnuncios->getVeiculo()->getMarca()->getNome() ?><br><br>
+        Modelo: <?=@ $listaAnuncios->getVeiculo()->getModelo()->getNome() ?><br><br>
+        Ano: <?=@ $listaAnuncios->getVeiculo()->getAno() ?><br><br>
+        Placa: <?=@ $listaAnuncios->getVeiculo()->getPlaca() ?><br><br>
+        Quilometragem: <?=@ $listaAnuncios->getVeiculo()->getQuilometragem() ?> km<br><br>
+        Valor hora: R$ <?=@ $listaAnuncios->getValor() ?><br><br>
         Avaliação: 7.8
     </div>
     <div id="segura_botao">
-        <input class="botao"type="button" value="Alugar">
-            <input class="botao"type="button" value="Agendar">
+        <input class="botao" type="button" value="Alugar" onclick="chamarSolicitacao(<?=@ $id_anuncio?>, <?=@ $cliente->getId()?> )">
+            <input class="botao" type="button" value="Agendar">
     
     </div>
     
@@ -203,45 +177,41 @@
         <div id="conteudo_dentro">
             <div id="acessorios"> Acessórios</div>
             <div id="linha2">
-            </div>
-            <br>Radio
-            MP3<br><br>
-            DVD<br><br>
-            TV<br><br>
-            Ar condicionado<br><br>
-            teto solar<br><br>
-            trava elétrica<br><br>
-            vidro eletrico
-        
+                <?php
+
+                    foreach($listaAnuncios->getVeiculo()->getAcessorios() as $acessorios){
+                 ?>  
+                    <p><?=@ $acessorios->getNome()?></p>
+                <?php
+                    }
+                ?>
+                
+            </div>        
         </div>
         <div id="conteudo_dentro">
             <div id="acessorios">Sobre o Anúncio</div>
-            <div id="linha2"> </div>
-            <h3>Dias Disponiveis</h3>
-            Segunda<br>
-            terça<br>
-            Quarta<br>
-            Quinta<br>
-            
-            <div id="segura_horario">
-                <div id="entrada">
-                    <strong>Horário de Entrada</strong><br>
-                    10:00
-                </div>
+            <div id="linha2"> 
 
-                <div id="saida">
-                    <strong>Horário de Saída</strong>
-                    10:00
-                </div>
-            </div>
-            
+                      
+                <div id="segura_horario">
+                    <div id="entrada">
+                        <strong>Horário de Entrada</strong><br>
+                        <?=@ $listaAnuncios->getHorarioInicio()?>
+                    </div>
 
+                    <div id="saida">
+                        <strong>Horário de Saída</strong>
+                        <?=@ $listaAnuncios->getHorarioTermino()?>
+                    </div>
+                </div>
+                
+
+                
+                <h3>Descrição</h3>
+                <p> <?=@ $listaAnuncios->getDescricao()?></p>
             
-            <h3>Descrição</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</p>
             
-            
-        
+            </div>  
         </div>
                 
                 
@@ -251,20 +221,20 @@
         <div class="linha_dados"></div>
         
             <div id="conteudo_dados">
-                Nome: Larissa Bruna<br><br>
-                Email: teste@teste.com<br><br>
-                Telefone: (00)0000-0000<br><br>
-                Celular: (00)0000-0000<br><br>
+                Nome:  <?=@ $listaAnuncios->getLocador()->getNome() ?><br><br>
+                Email:  <?=@ $listaAnuncios->getLocador()->getEmail() ?><br><br>
+                Telefone: <?=@ $listaAnuncios->getLocador()->getTelefone() ?><br><br>
+                Celular: <?=@ $listaAnuncios->getLocador()->getCelular() ?><br><br>
             </div>
             <div id="conteudo_dados2">
-                Cidade: Osasco<br><br>
-                Rua: Floresta negra<br><br>
-                Bairro: Azure<br><br>
-                CEP: 00000-000<br><br>
+                Cidade:  <?=@ $listaAnuncios->getLocador()->getCidade() ?><br><br>
+                Rua:  <?=@ $listaAnuncios->getLocador()->getRua() ?><br><br>
+                Bairro:  <?=@ $listaAnuncios->getLocador()->getBairro() ?><br><br>
+                CEP:  <?=@ $listaAnuncios->getLocador()->getCep() ?><br><br>
             </div>
             <div id="conteudo_dados3">
-                Complemento: mercadinho <br><br>
-                Numero:200 
+                Complemento:  <?=@ $listaAnuncios->getLocador()->getComplemento() ?> <br><br>
+                Numero: <?=@ $listaAnuncios->getLocador()->getNumero() ?> 
                 
             </div>
         

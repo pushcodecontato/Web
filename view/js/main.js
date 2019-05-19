@@ -205,20 +205,38 @@ function mostraImagem64(input){
   
   }
 
-function visualizar(id_anuncio){
-    window.location.href = 'view/visualizar_anuncios.php?id_anuncio = 1';
-    //    $.ajax({
-//        type: "POST",
-//        url:"?visualizar_anuncios.php",
-//        data:{"id_anuncio":id_anuncio},
-//        success:function(callback){
-//            console.log(callback);
-//          window.location.href = '?visualizar_anuncios.php';
-//        }
-//    })
-    
+//   FUNÇÂO PARA CHAMAR A MODAL SOLICITACAO ANUNCIO
+
+function chamarSolicitacao(idAnuncio,idCliente){
+    $('.container').fadeIn(300);
+    $.ajax({
+        type:"GET",
+        url:`view/modal/solicitacaoAnuncio.php?idAnuncio=${idAnuncio}&idCliente=${idCliente}`,
+        success:function(callback){
+            console.log(callback);
+            $('.modal').html(callback);
+        }
+    }); 
 }
   
+function inserirSolicitacao(idCliente,idAnuncio,form){
+    event.preventDefault();
+    
+    var form = $(form);
+    var dtInicial = form.find('#dtInicial').val();
+    var dtFinal = form.find('#dtFinal').val();
+    var hrInicial = form.find('#hrInicial').val();
+    var hrFinal = form.find('#hrFinal').val();
+    $.ajax({
+        type:"POST",
+        url: form.attr('action'),
+        data: {"id_anuncio":idAnuncio,
+               "id_cliente":idCliente,"dtInicial":dtInicial,"dtFinal":dtFinal,"hrInicial":hrInicial,"hrFinal":hrFinal},
+        success:function(callback){
+            console.log(callback);
+        }
 
+    });
+}
     
    
