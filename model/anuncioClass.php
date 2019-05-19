@@ -16,6 +16,7 @@ class Anuncio{
     /* Objecto Veiculo */
     private $veiculo;
     private $cliente;
+    private $solicitacao;
 
     public function setId($id_anuncio){
         $this->id_anuncio = $id_anuncio;
@@ -123,7 +124,13 @@ class Anuncio{
     public function getLocador(){
         return $this->cliente;
     }
-
+    public function setSolicitacao($solicitacao){
+        $this->solicitacao = $solicitacao;
+        return $this;
+    }
+    public function getSolicitacao(){
+        return $this->solicitacao;
+    }
     /* Calcula os dias Disponiveis apartir de hoje */
     public function countDias(){
         
@@ -139,7 +146,7 @@ class Anuncio{
         
         $veiculo = $this->veiculo->to_json();
         $cliente = $this->veiculo->getCliente()->to_json();
-
+        /// KKK isso foi estralho 
         return array('id_anuncio'=>$this->id_anuncio,
                      'descricao'=>$this->descricao,
                      'id_cliente_locador'=>$this->id_cliente_locador,

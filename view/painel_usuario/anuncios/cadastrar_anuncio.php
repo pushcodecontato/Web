@@ -116,7 +116,7 @@
                                      <div class="caixa_veiculo" <?=@$item->getId()?>
                                      style="<?php if($item->getStatus() == 0)echo("opacity: 0.6;")?>">
                                         <div class="segura_img">
-                                            <img src="view/upload/<?=@$item->getVeiculo()->getFotos()[0][0]?>" style="   width: 100%; " alt="foto">
+                                            <img src="view/upload/<?=@$item->getVeiculo()->getFotos()[0]?>" style="   width: 100%; " alt="foto">
                                         </div>
                                         <div class="nome_veiculo">
                                         <?=@$item->getVeiculo()->getModelo()->getNome()?>

@@ -20,9 +20,9 @@
             <?php
                 require_once("controller/controllerVeiculo.php");
 
-                $veiculo = new ControllerVeiculos();
+                $controller_veiculo = new ControllerVeiculos();
 
-                $veiculos_cliente = $veiculo->getAllById($cliente->getId());
+                $veiculos_cliente = $controller_veiculo->getAllById($cliente->getId());
 
                 foreach($veiculos_cliente as $veiculos){
 

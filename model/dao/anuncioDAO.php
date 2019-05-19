@@ -4,6 +4,8 @@
 
         private $conex;
         private $veiculosDAO;
+        private $clienteDAO;
+        private $solicitacaoDAO;
 
         public function __construct(){
             
@@ -13,6 +15,14 @@
             /* LIGAÇÃO veiculos <---> anuncios */
             require_once('model/dao/veiculoDAO.php');
             $this->veiculosDAO = new VeiculoDAO();
+
+            /* LIGAÇÃO anuncio <---> cliente */
+            require_once('model/dao/clienteDAO.php');
+            $this->clienteDAO = new ClienteDAO();
+
+            /* LIGAÇÃO solicitação <---> anuncio */
+            require_once('model/dao/solicitacaoAnuncioDAO.php');
+            $this->solicitacaoDAO = new SolicitacaoAnuncioDAO($this);
 
             $this->conex = new  conexaoMysql();
         }
@@ -325,6 +335,61 @@
             $this->conex->close_database();        
 
             return $lista_anuncios;
+        }
+        /* Painel de usuario Interssados nos veiculo */
+        
+        public function selectAllInteresadosByUser($id_cliente){
+                $sql = "SELECT tbl_solicitacao_anuncio.id_solicitacao_anuncio , tbl_solicitacao_anuncio.id_cliente as id_locatario,tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao,if(tbl_solicitacao_anuncio.status_solicitacao = 0 ,'pendente',if(tbl_solicitacao_anuncio.status_solicitacao = 1,'Aprovado','Reprovado')) as 'status' ".
+                       "FROM tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio ".
+                       "inner join tbl_veiculo 					  on tbl_anuncio.id_veiculo = tbl_veiculo.id_veiculo ".
+                       "inner join tbl_marca_veiculo_tipo_veiculo on tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo = tbl_veiculo.id_marca_veiculo ".
+                       "inner join tbl_solicitacao_anuncio 		  on tbl_solicitacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio ".
+                       "WHERE tbl_anuncio.id_cliente_locador = $id_cliente";
+
+                $PDO_conex = $this->conex->connect_database();
+            
+                $select = $PDO_conex->query($sql);
+
+                $lista_anuncios = array();
+
+                while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
+
+                    $anuncio = new Anuncio();
+
+                    $anuncio->setId($rs_anuncio['id_anuncio'])
+                            ->setDescricao($rs_anuncio['descricao'])
+                            ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
+                            ->setIdVeiculo($rs_anuncio['id_veiculo'])
+                            ->setHorarioInicio($rs_anuncio['horario_inicio'])
+                            ->setHorarioTermino($rs_anuncio['horario_termino'])
+                            ->setDataInicial($rs_anuncio['data_inicial'])
+                            ->setDataFinal($rs_anuncio['data_final'])
+                            ->setValor($rs_anuncio['valor_hora'])
+                            ->setStatus($rs_anuncio['status_aprovacao']);
+
+
+
+                    $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
+                    
+                    $cliente_locatario = $this->clienteDAO->selectById($rs_anuncio['id_locatario']);
+                    // Pegando solicitaço 
+                    $solicitacao = $this->solicitacaoDAO->selectById($rs_anuncio['id_solicitacao_anuncio']);
+
+                    $anuncio->setVeiculo($veiculo)
+                            ->setSolicitacao($solicitacao)
+                            ->setLocador($veiculo->getCliente());
+
+
+
+                    $lista_anuncios[] = $anuncio;
+
+               }
+
+
+
+               $this->conex->close_database();        
+
+               return $lista_anuncios;
         }
     }
 

@@ -89,9 +89,9 @@
                     
                     }while(count($_FILES['ftVeiculo']['name'])>$acc);
 
-                
+                    $veiculo->setFotos(array());
                     for($cont = 0; $cont < count($arquivos); $cont++){
-                        $veiculo->setFotos($this->uploadImagem($arquivos[$cont]));
+                         $veiculo->getFotos()[] = $this->uploadImagem($arquivos[$cont]);
                     }
                   
 

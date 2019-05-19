@@ -149,11 +149,11 @@ class veiculo{
 
     /* Cuida de passar as fotos */
     public function setFotos($fotos){
-        $this->fotos[] = $fotos;
+        $this->fotos = $fotos;
         return $this;
     }
-    public function getFotos(){
-        return $this->fotos;
+    public function &getFotos(){
+        return  $this->fotos;
     }
     public function to_json(){
         

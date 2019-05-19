@@ -459,7 +459,7 @@ class  VeiculoDAO{
 
             }
 
-            $veiculo->setFotos($fotos[0]);
+            $veiculo->setFotos($fotos);
 
             
 

@@ -10,6 +10,7 @@ class ControllerAnuncios{
         require_once('model/anuncioClass.php');
         require_once('model/usuarioClass.php');
         require_once('model/dao/anuncioDAO.php');
+        require_once('model/clienteClass.php');
 
         $this->anunciosDAO = new AnuncioDAO();
 
@@ -17,7 +18,7 @@ class ControllerAnuncios{
 
        public function inserir_anuncio(){
 
-              require_once('model/clienteClass.php');
+              
 
               // Pegando o Cliente Logado
               if(!isset($_SESSION))session_start();
@@ -102,6 +103,14 @@ class ControllerAnuncios{
        /* Painel de Usuario */
        public function listar_anunciosByUser($id_cliente){               
            return $this->anunciosDAO->selectAllByUser($id_cliente);
+       }
+       public function listar_anuncios_interessadosByUser(){
+               // Pegando o Cliente Logado
+               if(!isset($_SESSION))session_start();
+
+               $cliente = unserialize($_SESSION['cliente']);
+               
+               return $this->anunciosDAO->selectAllInteresadosByUser($cliente->getId());
        }
        /* Retorna os anuncios Aprovado (Atenção essa função se adapta se não passar nada ela retorna tudo ) */
        public function buscar_anuncio_aprovado($id_tipo_veiculo = false,$id_marca_tipo = false,$id_modelo = false){
