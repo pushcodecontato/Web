@@ -1,0 +1,235 @@
+/*css*/
+@import "style.css";
+@import "estrutura.css";
+
+/* jssor slider css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssorb053 .i {position:absolute;cursor:pointer;}
+        .jssorb053 .i .b {fill:#fff;fill-opacity:0.5;}
+        .jssorb053 .i:hover .b {fill-opacity:.7;}
+        .jssorb053 .iav .b {fill-opacity: 1;}
+        .jssorb053 .i.idn {opacity:.3;}
+
+        .jssora093 {display:block;position:absolute;cursor:pointer;}
+        .jssora093 .c {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+        .jssora093 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+        .jssora093:hover {opacity:.8;}
+        .jssora093.jssora093dn {opacity:.6;}
+        .jssora093.jssora093ds {opacity:.3;pointer-events:none;}
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#principal{
+    width:100%;
+    height: auto;
+    min-height: 1300px;
+    background-color: #cecece;
+    /* border:1px solid black; */
+}
+#segura_titulos{
+    width:1400px;
+    height: 100px;
+    padding-top: 30px;
+  
+}
+
+.anuncio{
+    width: 100px;
+    height: 20px;
+    font-size: 20px;
+    font-family: verdana;
+    margin-left: 180px;
+    margin-top: 50px;
+}
+.anuncio_2{
+    width: 55px;
+    height: 20px;
+    font-size: 20px;
+    font-family: verdana;
+    margin-left: 1005px;
+    margin-top: -20px;
+}
+#bolinha_chat{
+    width: 40px;
+    height: 40px;
+    border: solid 1px;
+    margin-left: 1070px;
+    margin-top: -25px;
+    border-radius: 100px;
+    background-color: #009900;
+    
+}
+
+
+.linha{
+    width: 990px;
+    height: 2px;
+    background-color: black;
+    margin-left: 180px;
+    margin-top: 10px;
+   
+}
+
+#caixa_slide{
+    width: 550px;
+    height: 395px;
+    margin-left: 200px;
+    margin-top: 80px;
+/*     background-image: url(../imagem/carro.png);*/
+/*    background-size: 500px; 300px;*/
+    
+    
+}
+#informacao_carro{
+    width: 300px;
+    height: 500px;
+    margin-left: 850px;
+    margin-top: -400px;
+    font-family: verdana;
+    font-size: 19px;
+}
+#segura_botao{
+    width: 400px;
+    height: 30px;
+    margin-left: 780px;
+    margin-top: -130px;
+}
+.botao{
+    width: 100px;
+    height: 30px;
+    font-family: verdana;
+    font-size: 18px;
+    margin-left: 50px;
+    border: solid 1px;
+    border-radius: 5px;
+    color:#000; 
+    font-weight: bold;
+    
+}
+.conteudo2{
+    width: 1050px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#conteudo_dentro{
+    width: 500px;
+    height: 400px;
+    float: left;
+    margin-left: 10px;
+    font-family: verdana;
+    font-size: 19px;
+    margin-top: 50px;
+}
+#linha2{
+    width: 500px;
+    height: 2px;
+    background-color: black;
+    margin-top: -50px;
+}
+
+#acessorios{
+    width: 200px;
+    height: 80px;
+    font-size: 20px;
+    font-family: verdana;
+}
+h3{
+    margin-left: 20px;
+    font-weight: normal;
+}
+p{
+    text-align: justify;
+}
+#entrada{
+    width: 300px;
+    height: 30px;
+  
+
+}
+#saida{
+   width: 200px;
+    height: 30px;
+    
+    margin-top: 30px;
+    
+}
+#segura_horario{
+    width: 200px;
+    height: 130px;
+   
+    margin-left: 200px;
+    margin-top: -100px;
+}
+#dados{
+    width: 200px;
+    height: 50px;
+    margin-top: 150px;
+    margin-left:  180px;
+     font-size: 20px;
+    font-family: verdana;
+}
+.linha_dados{
+    width: 1000px;
+    height: 2px;
+    background-color: black;
+    margin-left:  180px;
+}
+#conteudo_dados{
+    width: 300px;
+    height: 200px;
+  
+    margin-left: 200px;
+    font-family: verdana;
+    font-size: 19px;
+    margin-top: 30px;
+}
+#conteudo_dados2{
+    width: 300px;
+    height: 200px;
+    
+    margin-left: 550px;
+    margin-top: -200px;
+    font-family: verdana;
+    font-size: 19px;
+}
+#conteudo_dados3{
+    width: 300px;
+    margin-left: 150px;
+    font-family: verdana;
+    font-size: 19px;
+    margin-top: 30px;
+      margin-left: 800px;
+    margin-top: -200px;
+}
+#mapa{
+    width: 930px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+

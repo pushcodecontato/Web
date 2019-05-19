@@ -28,7 +28,7 @@ function logar(form){
         data:$(form).serialize(),
     })
     .then(resposta=>{
-        console.log("Resposta",resposta);
+
         if(resposta.toString().search('sucesso')>=0){
             //Se tudo der certo o login será efertuado com sucesso
             //E o menu do cliente ira mudar, assim tendo acesso ao painel de usuario
@@ -56,7 +56,7 @@ function headerLogado(){
         url:"view/menu/menuLogado.php",
         success:function(dados){
             $(".modoLogin").html(dados);
-            console.log(dados)
+          
         }
     })
 }
@@ -65,7 +65,7 @@ function headerNaoLogado(){
         type:"GET",
         url:"view/menu/menuNaoLogado.php",
         success:function(dados){
-            console.log(dados)
+            
             $(".modoLogin").html(dados);
         }
     })
@@ -205,6 +205,19 @@ function mostraImagem64(input){
   
   }
 
+function visualizar(id_anuncio){
+    window.location.href = 'view/visualizar_anuncios.php?id_anuncio = 1';
+    //    $.ajax({
+//        type: "POST",
+//        url:"?visualizar_anuncios.php",
+//        data:{"id_anuncio":id_anuncio},
+//        success:function(callback){
+//            console.log(callback);
+//          window.location.href = '?visualizar_anuncios.php';
+//        }
+//    })
+    
+}
   
 
     

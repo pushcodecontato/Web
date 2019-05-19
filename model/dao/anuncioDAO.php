@@ -19,6 +19,8 @@
 
         public function insert($anuncio){
 
+            var_dump($anuncio);
+
             $sql = "INSERT INTO tbl_anuncio (descricao,id_cliente_locador, id_veiculo, horario_inicio, horario_termino, data_inicial, data_final,valor_hora)".
                    "VALUES ('". $anuncio->getDescricao() ."', ". $anuncio->getIdClienteLocador() ." , ". $anuncio->getIdVeiculo() .", '". $anuncio->getHorarioInicio() ."', '". $anuncio->getHorarioTermino() ."', '". $anuncio->getDataInicial() ."', '". $anuncio->getDataFinal() ."',". $anuncio->getValor() .")";
 

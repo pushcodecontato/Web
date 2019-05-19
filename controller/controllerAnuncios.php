@@ -43,6 +43,7 @@ class ControllerAnuncios{
                       ->setDataFinal($data_final)
                       ->setValor($valor_hora);
                
+           
               $this->anunciosDAO->insert($anuncio);
 
        }

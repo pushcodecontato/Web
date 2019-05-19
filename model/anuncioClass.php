@@ -72,14 +72,8 @@ class Anuncio{
         }
         
         return $this;
-        return $this;
     }
-    public function getDataInicial($br = 0){
-        
-        echo ($this->data_inicial);
-        //Retorna no padrão br 
-        if($br == 'br')return date("d/m/Y", strtotime($this->data_inicial));
-
+    public function getDataInicial(){
         return $this->data_inicial;
     }
     public function setDataFinal($data_final){
@@ -92,11 +86,8 @@ class Anuncio{
         }
         return $this;
     }
-    public function getDataFinal($br = 0){
-        
+    public function getDataFinal(){
         //Retorna no padrão br 
-        if($br == 'br')return date("d/m/Y", strtotime($this->data_final));
-
         return $this->data_final;
     }
     public function setStatus($status_aprovado){
