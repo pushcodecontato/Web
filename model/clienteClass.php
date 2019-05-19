@@ -19,6 +19,7 @@ class Cliente{
     private $foto_cliente;
     private $status;
     private $dt_nascimento;
+    private $numero;
     
     public function __construct(){
 
@@ -157,7 +158,15 @@ class Cliente{
     public function getFoto(){
         return $this->foto_cliente;
     }
-    
+
+    public function setNumero($numero){
+        $this->numero = $numero;
+        return $this;
+    }
+    public function getNumero(){
+        return $this->numero;
+    }
+
     /* Funções  de Login */
     // gera o hash da senha
 	public function genSenha(){

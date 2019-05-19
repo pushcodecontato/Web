@@ -1,3 +1,4 @@
+
 <?php 
 
     require_once('controller/controllerAnuncios.php');
@@ -11,12 +12,11 @@
 <head>
   <link rel="stylesheet" type="text/css" href="view/painel_usuario/anuncios/css/interessado_veiculo.css"/>
 </head>
-
+<link rel="stylesheet" type="text/css" href="view/painel_usuario/anuncios/css/interessado_veiculo.css"/>
 <!--<div id="conteudo">-->
 <div id="conteudo_interessados"> 
                 
     <h2 id="h2Border">Interessados nos veículos</h2>
-
 
     <div id="principal_anuncios">
         <!--parte de cima do anuncio-->
@@ -54,6 +54,11 @@
         ?>
         <!--<div class="segura_anuncio">
             
+        <div class="segura_anuncio">
+            <?php
+            
+                
+            ?>
             <div class="caixa_anuncio">
 
                 <div class="imagem_anuncio"> 

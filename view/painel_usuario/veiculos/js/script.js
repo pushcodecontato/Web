@@ -67,7 +67,7 @@ function getModeloVeiculo(idTipoMarca){
 function preencheData(){
     atual = new Date();
     
-    var option = '<option>Selecione o ano do veiculo</option>';
+    var option = '<option>Ano do veiculo</option>';
     anoAtual = atual.getFullYear();
     
     for(var anoAnterio = 1500;anoAnterio < anoAtual ; anoAtual--){
@@ -108,7 +108,7 @@ function mostraVeiculo64(input){
     }
     
   }
-  
+
   function cadastrar_veiculo(form){
     var submetido = ($(form).attr('data-submit') || 0) * 1;
     //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
@@ -122,13 +122,14 @@ function mostraVeiculo64(input){
   
      var form = $(form);
      // Envia os dados do formulario
-     $(form)
-     .ajaxForm({
-         success:function(resposta){
-           console.log("RESPOSTA",resposta);
+     $(form).ajaxForm({
+        success:function(resposta){
            if(resposta.toString().search('sucesso')>=0){
   
-                console.log('oi');
+                console.log("Sucesso");
+           }else{
+                console.log("Falha");
+                console.log(resposta);
            }
           
          },

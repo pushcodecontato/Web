@@ -1,6 +1,4 @@
 /*css cadaastrar anuncio*/
-
-
 #conteudo_anuncio{
     width: 100%;
     height: 700px;
@@ -20,33 +18,28 @@
 .base{
     width:100%;
     height:680;
-/*     background-color:red; */
     margin-top:25px;
 }
 
 .conteudo_esquerda{
     width:355px;
     height:680px;
-    /*     border:solid 1px; */
     float: left;
     margin-left: 20px;
 }
 #titulo{
     width: 100px;
     height: 20px;
-/*    background-color: lightcoral;*/
     font-size: 15px;
     margin-left:20px;
     font-family: verdana;
     margin-top:10px;
     display:block;
-
 }
 
 #titulo2{
     width: 100px;
     height: 20px;
-/*     background-color: lightcoral; */
     font-size: 12px;
     margin-left:20px;
     font-family: verdana;
@@ -66,7 +59,6 @@
 .conteudo_direita{
      width: 595px;
      height: 680px;
-     /* background-color: pink; */
      float: left;
      margin-left: 100px;
      overflow: auto;
@@ -75,7 +67,6 @@
 .principal_segura_conteudo{
     width: 100%;
     height: 100px;
-/*    background-color: red;*/
 }
 
 .segura_checkbox{
@@ -95,12 +86,9 @@
 .dia{
     width: 100%;
     height: 14px;
-/*    background-color: cadetblue;*/
     margin-top: 6px;
     font-family: verdana;
     font-size: 12px;
-    /* margin-top: 20px; */
-    /* line-height: 1.759; */
     display: block;
 }
 

@@ -15,8 +15,8 @@
             $senha = $cliente->genSenha();
 
             $sql =  "INSERT INTO tbl_cliente(nome_cliente,cpf,telefone,celular,cnh_foto,foto_cliente,rua,bairro,cep,complemento,cidade,uf,email,senha,status, dt_nascimento)".
-                    "VALUES('". $cliente->getNome() ."','". $cliente->getCPF() ."','". $cliente->getTelefone() ."','". $cliente->getCelular() ."',".
-                    " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."',". $cliente->getCEP() .",".
+                    "VALUES('". $cliente->getNome() ."', '". $cliente->getCPF() ."', '". $cliente->getTelefone() ."','". $cliente->getCelular() ."',".
+                    " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."','". $cliente->getCEP() ."',".
                     " '" . $cliente->getComplemento() . "','". $cliente->getCidade() ."','". $cliente->getUF() ."','". $cliente->getEmail() ."','". $senha ."', 1, '".$cliente->getDt_nascimento()."')";
             
              //Abrido conexao com o BD
@@ -91,7 +91,8 @@
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
                         ->setFoto($rs_cliente['foto_cliente'])
-                        ->setStatus($rs_cliente['status']);
+                        ->setStatus($rs_cliente['status'])
+                        ->setNumero($rs_cliente['numero']);
                 
 
                 $listar_registros[] = $cliente;
@@ -132,7 +133,8 @@
                         ->setUF($rs_cliente['uf'])
                         ->setCNHFoto($rs_cliente['cnh_foto'])
                         ->setFoto($rs_cliente['foto_cliente'])
-                        ->setStatus($rs_cliente['status']);
+                        ->setStatus($rs_cliente['status'])
+                        ->setNumero($rs_cliente['numero']);
                 
                         //->setEstado($rs_cliente['estado']);
 

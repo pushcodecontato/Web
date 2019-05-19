@@ -44,6 +44,7 @@ class ControllerAnuncios{
                       ->setDataFinal($data_final)
                       ->setValor($valor_hora);
                
+           
               $this->anunciosDAO->insert($anuncio);
 
        }
@@ -91,9 +92,9 @@ class ControllerAnuncios{
             $this->anunciosDAO->reprovar($_GET['id_anuncio'],$_POST['motivo'],$id_usuarioCMS);
         }
 
-       public function getById($id = 0){
+       public function getById($id){
 
-           if($id != 0)return $this->anunciosDAO->selectById($id);
+           return $this->anunciosDAO->selectById($id);
 
 
            return $this->anunciosDAO->selectById($_GET['id_anuncio']);

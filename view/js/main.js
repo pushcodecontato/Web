@@ -28,7 +28,7 @@ function logar(form){
         data:$(form).serialize(),
     })
     .then(resposta=>{
-        console.log("Resposta",resposta);
+
         if(resposta.toString().search('sucesso')>=0){
             //Se tudo der certo o login será efertuado com sucesso
             //E o menu do cliente ira mudar, assim tendo acesso ao painel de usuario
@@ -56,7 +56,7 @@ function headerLogado(){
         url:"view/menu/menuLogado.php",
         success:function(dados){
             $(".modoLogin").html(dados);
-            console.log(dados)
+          
         }
     })
 }
@@ -65,7 +65,7 @@ function headerNaoLogado(){
         type:"GET",
         url:"view/menu/menuNaoLogado.php",
         success:function(dados){
-            console.log(dados)
+            
             $(".modoLogin").html(dados);
         }
     })
@@ -155,7 +155,7 @@ function mostraImagem64(input){
     var reader = new FileReader();
   
     reader.onloadend = function() {
-       $(input).parent().find('.addFotoCliente').css({'backgroundimage':'url("'+ rea-der.result +'")'});
+       $(input).parent().find('.addFotoCliente').css({'background-image':'url("'+ reader.result +'")'});
     }
     console.log(file);
     reader.readAsDataURL(file);
@@ -205,7 +205,38 @@ function mostraImagem64(input){
   
   }
 
-  
+//   FUNÇÂO PARA CHAMAR A MODAL SOLICITACAO ANUNCIO
 
+function chamarSolicitacao(idAnuncio,idCliente){
+    $('.container').fadeIn(300);
+    $.ajax({
+        type:"GET",
+        url:`view/modal/solicitacaoAnuncio.php?idAnuncio=${idAnuncio}&idCliente=${idCliente}`,
+        success:function(callback){
+            console.log(callback);
+            $('.modal').html(callback);
+        }
+    }); 
+}
+  
+function inserirSolicitacao(idCliente,idAnuncio,form){
+    event.preventDefault();
+    
+    var form = $(form);
+    var dtInicial = form.find('#dtInicial').val();
+    var dtFinal = form.find('#dtFinal').val();
+    var hrInicial = form.find('#hrInicial').val();
+    var hrFinal = form.find('#hrFinal').val();
+    $.ajax({
+        type:"POST",
+        url: form.attr('action'),
+        data: {"id_anuncio":idAnuncio,
+               "id_cliente":idCliente,"dtInicial":dtInicial,"dtFinal":dtFinal,"hrInicial":hrInicial,"hrFinal":hrFinal},
+        success:function(callback){
+            console.log(callback);
+        }
+
+    });
+}
     
    

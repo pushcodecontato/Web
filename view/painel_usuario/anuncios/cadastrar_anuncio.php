@@ -34,7 +34,6 @@
           type="text/css"
           href="view/painel_usuario/anuncios/css/cadastrar_anuncio.css"/>
 </head>
-    <!--- titulo do conteudo --->
     <div id="conteudo_anuncio"> 
         <h2 id="h2Border">Cadastrar</h2>
             <form onsubmit="anuncio_insert(this)" action="router.php?controller=ANUNCIOS&modo=INSERIR">
@@ -51,24 +50,24 @@
                 <div class="segura_hora">
 
                     <label id="titulo_veiculo"> Data Inicial</label><br>
-                    <input class="caixa_texto_veiculo" name="data_inicial" type="date">
+                    <input class="caixa_texto_veiculo" name="data_inicial" type="text">
                 </div>
                 <div class="segura_hora">
 
                     <label id="titulo_veiculo_entrega"> Data de Final</label><br>
-                    <input class="caixa_texto_veiculo" name="data_final" type="date">
+                    <input class="caixa_texto_veiculo" name="data_final" type="text">
 
                 </div>
 
                 <div class="segura_hora">
 
                     <label id="titulo_veiculo"> Hora Retirada</label><br>
-                    <input class="caixa_texto_veiculo" name="hora_inicial" type="time">
+                    <input class="caixa_texto_veiculo" name="hora_inicial" type="text">
                 </div>
                 <div class="segura_hora">
 
                     <label id="titulo_veiculo_entrega"> Hora de entrega</label><br>
-                    <input class="caixa_texto_veiculo" name="hora_final" type="time">
+                    <input class="caixa_texto_veiculo" name="hora_final" type="text">
 
                 </div>
                 <br>
@@ -108,15 +107,16 @@
 
                          }
 
-                                
+                               
                      ?>
                      <?php foreach($lista_caixas as $lista_item){ ?>
                              <div class="segura_caixas">
                                 <?php foreach($lista_item as $item){ ?>
+                                    
                                      <div class="caixa_veiculo" <?=@$item->getId()?>
                                      style="<?php if($item->getStatus() == 0)echo("opacity: 0.6;")?>">
                                         <div class="segura_img">
-                                            <img src="view/upload/<?=@$item->getVeiculo()->getFotos()[0]?>" style="   width: 100%; " alt="foto">
+                                            <img src="view/upload/<?=@$item->getVeiculo()->getFotos()[0][0]?>" style="   width: 100%; " alt="foto">
                                         </div>
                                         <div class="nome_veiculo">
                                         <?=@$item->getVeiculo()->getModelo()->getNome()?>

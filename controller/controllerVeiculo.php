@@ -100,23 +100,21 @@
                 $this->veiculosDAO->insert($veiculo);
                 
             }   
-           
-                
-
             
         }
 
         public function atualizar_veiculo(){
 
             
-            
         }
         
-        public function getById($id_veiculo = 0){
-            
-            if($id_veiculo == 0)$id_veiculo = $_GET['id_veiculo'];
+        public function getById($id_veiculo){
 
             return $this->veiculosDAO->selectById($id_veiculo);
+        }
+        public function getAllById($id_veiculo){
+
+            return $this->veiculosDAO->selectAllById($id_veiculo);
         }
 
         public function listar_veiculos(){

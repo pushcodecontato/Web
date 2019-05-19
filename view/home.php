@@ -197,20 +197,20 @@
                 <div id="area_anuncios">
                 <h2 class="titulo_left">Veja os destaques dessa semana</h2>            
                     <div id="segura_anuncios">
-                        <a href="#">
-                            <?php
+                    <?php
 
-                                foreach($anuncios as $anuncio){
-                                    
-
-                                    if(isset($_SESSION['cliente'])){
-                                        $endereco = $anuncio->getVeiculo()->getCliente()->getCidade() . " " . $anuncio->getVeiculo()->getCliente()->getUf();
-                                    }
-                                    /* Pegando os anuncios processados e que foram aprovados */
-                                    if($anuncio->getStatus() == 1){
-                            ?>
+                        foreach($anuncios as $anuncio){
+                            
+                            if(isset($_SESSION['cliente'])){
+                                $endereco = $anuncio->getVeiculo()->getCliente()->getCidade() . " " . $anuncio->getVeiculo()->getCliente()->getUf();
+                            }
+                            /* Pegando os anuncios processados e que foram aprovados */
+                            if($anuncio->getStatus() == 1){
+                        ?>
+                        <a href="?visualizar_anuncios.php&id_anuncio=<?=@ $anuncio->getid();?>">
+                           
                             <div class="anuncios">
-                                    <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
+                                    <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0][0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
                                 <div class="info_anuncio">
                                     <p class="nome_veiculo">R$<?=@ $anuncio->getValor();?> /hora</p>
 

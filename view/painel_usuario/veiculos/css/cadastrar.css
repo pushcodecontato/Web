@@ -1,91 +1,106 @@
-.veiculos-cadastrar{
 
+#segura_table{
+    width: 1110px;
+    height: 685px;
 }
-.veiculos-cadastrar .veiculos-titulo{border-bottom: solid 0.1px black;width: 814px;display: block;margin-left: auto;margin-right: auto;margin-bottom: 5px;}
-.veiculos-cadastrar table.veiculos-cadastrar-table{width: 755px;height: auto;display: block;margin-left: auto;margin-right: auto;overflow-x: hidden;margin-bottom: 7px;}
-.veiculos-cadastrar table.veiculos-cadastrar-table tr{
-    width: 100%;
+#segura_table h2{
+    font-size: 27px;
+    font-family: "OpenSans-bold";
+    margin-top: 20px;
+    margin-left: 50px;
 }
-.veiculos-cadastrar table.veiculos-cadastrar-table tr td{min-width: 152px;padding: 0px 5px;}
-.veiculos-cadastrar table.veiculos-cadastrar-table tr td label{
-    display: block;
-    font-size: 1.1em;
-}
-.veiculos-cadastrar table.veiculos-cadastrar-table tr td input,.veiculos-cadastrar table.veiculos-cadastrar-table tr td select{
-    width: 100%;
-}
-.veiculos-cadastrar table.veiculos-cadastrar-table tr td input{}
-.veiculos-cadastrar table.veiculos-cadastrar-table tr td select{
-    display: block;
-    width: 100%;
-    border: solid black;
-    border-width: 0px 0px 1.3px 0px;
-    padding: 4px;
-    outline: none;
-    margin: 0px 0px 4px 0px;
-}
-/* Necessario para pegar input do typo checkbox */
-.veiculos-cadastrar-acessorios .veiculos-cadastrar-checkbox{text-align: initial;margin: 4px 0px;padding: 2px 9px;border-radius: 5px;float: left;margin-left: 4px;}
-.veiculos-cadastrar-acessorios .veiculos-cadastrar-checkbox input{width: auto;}
-.veiculos-cadastrar-acessorios{
-    height: 90px;
-    display: block;
-    width: 812px;
-    margin-left: auto;
+.tabela{
+    width: 1000px;
+    height: 635px;
     margin-right: auto;
-    text-align: initial;
+    margin-left: auto;
+    margin-top: 20px;
+}
+.row_veiculo{
+    width: 1000px;
+    height: 90px;
+    padding-left: 50px;
+    font-family: "OpenSans-bold";
 }
 
-.conteudo_upload{
-    width:100%;
-    height:100px;
-    border: solid 1px;
-    margin-left:30px;
-/*     margin-top:60px; */
-    float:left;
+.colunaSelect{
+    width: 290px;
+    height: 70px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.colunaSelect select{
+    width: 100%;
+    height: 40px;
+    background-color: #dcdcdc;
+    border:none;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    color: #000;
+    
+}
+.coluna-2{
+    height: 70px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.coluna-2 input, select{
+    width: 100%;
+    height: 40px;
+    background-color: #dcdcdc;
+    border:none;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    color: #000;
+}
+.tituloAcessorio{
+    font-size: 19px;
+    font-family: "OpenSans-bold";
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.select_acessorio input{
+    width: 400px;
+    height: 40px;
+    background-color: #dcdcdc;
+    border:none;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    color: #000;
 
+}
+#row_fotos{
+    width: 990px;
+    height: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    clear:both;
+    overflow: auto;
+}
+.conteudo_upload{
+    width: auto;
+    min-width: 140px;
+    height: 140px;
+    margin-left: 50px;
 }
 .conteudo_upload img{
-    float:left;
-
-}
-.segura_upload{
-    width:290px;
-    height:100px;
-/*     background-color:pink; */
-    margin-top:60px;
-    margin-left:50px;
-}
-
-.segura_aviso{
-    width:300px;
-    height:250px;
-/*     background-color:pink; */
-    margin-left:620px;
-    margin-top:-110px;
-    text-align: justify;
+    width:140px;
+    height: 140px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    float: left;
     
 }
-.aviso{
-    width:100%;
-    height:20px;
-/*     background-color:red; */
-    font-family:verdana;
-    text-align: justify
-   
-}
-
-.segura_botao{
-    width:300px;
-    height:30px;
-/*     background-color:aquamarine; */
-    margin-top:90px;
-    margin-left:auto;
-    margin-right:auto;
-
-}
-.botaoSalvar{
-    width:250px;
-    height:30px;
-    
+#row_fotos input{
+    margin-left: 40px;
+    margin-top: 40px;
 }
