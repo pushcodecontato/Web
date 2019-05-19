@@ -155,7 +155,7 @@ function mostraImagem64(input){
     var reader = new FileReader();
   
     reader.onloadend = function() {
-       $(input).parent().find('.addFotoCliente').css({'backgroundimage':'url("'+ rea-der.result +'")'});
+       $(input).parent().find('.addFotoCliente').css({'background-image':'url("'+ reader.result +'")'});
     }
     console.log(file);
     reader.readAsDataURL(file);

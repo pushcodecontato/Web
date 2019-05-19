@@ -15,8 +15,8 @@
             $senha = $cliente->genSenha();
 
             $sql =  "INSERT INTO tbl_cliente(nome_cliente,cpf,telefone,celular,cnh_foto,foto_cliente,rua,bairro,cep,complemento,cidade,uf,email,senha,status, dt_nascimento)".
-                    "VALUES('". $cliente->getNome() ."','". $cliente->getCPF() ."','". $cliente->getTelefone() ."','". $cliente->getCelular() ."',".
-                    " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."',". $cliente->getCEP() .",".
+                    "VALUES('". $cliente->getNome() ."', '". $cliente->getCPF() ."', '". $cliente->getTelefone() ."','". $cliente->getCelular() ."',".
+                    " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."','". $cliente->getCEP() ."',".
                     " '" . $cliente->getComplemento() . "','". $cliente->getCidade() ."','". $cliente->getUF() ."','". $cliente->getEmail() ."','". $senha ."', 1, '".$cliente->getDt_nascimento()."')";
             
              //Abrido conexao com o BD

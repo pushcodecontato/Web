@@ -23,7 +23,6 @@
     text-decoration: none;;
     font-family: "OpenSans-Regular";
 }
-}
 /*css*/
 body{
     width:100%;
@@ -162,7 +161,6 @@ header{
 nav{
     width: 236px;
     height: 715px;
-    border-right: 1px solid black;
     float: left;
     border-bottom-left-radius: 20px;
     background-color: #fff;
@@ -172,7 +170,7 @@ nav{
     font-size: 19px;
     margin-top: 30px;
     margin-left: 20px;
-    border-bottom:1px solid black;
+
 }
 .menu_lateral{
     width: 235px;
@@ -184,7 +182,6 @@ nav{
     width: 235px;
     height: auto;
     min-height: 60px;
-    border-bottom:1px solid black;
     padding: 3px 10px;
     cursor: pointer;
 }
@@ -207,7 +204,6 @@ nav{
     width: 235px;
     height: auto;
     min-height: 60px;
-    border-bottom:1px solid black;
     padding: 3px 20px;
     background-color: #ffffff;
     cursor: pointer;
@@ -265,11 +261,22 @@ a{
 
 /*conteudo*/
 #conteudo{
-    width: 1105px;
-    height: 710px;
+    width: 1112px;
+    height: 716px;
     float: left;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #fff;
     border-bottom-right-radius: 20px;
+}
+.btnPadrao{
+    width:auto;
+    min-width: 140px;
+    height: 50px;
+    border: none;
+    background-color: #00984A;
+    color:#fff;
+    margin-left:430px;
+    margin-top: 10px;
+    border-radius: 4px;
 }

@@ -64,7 +64,14 @@ class Anuncio{
         return $this->horario_termino;
     }
     public function setDataInicial($data_inicial){
-        $this->data_inicial = $data_inicial;
+        if(strpos($data_inicial, '/')){
+            $this->data_inicial = date('Y-m-d', strtotime($data_inicial));
+        }
+        elseif(strpos($data_inicial, '-')){
+            $this->data_inicial = date('d/m/Y', strtotime($data_inicial));
+        }
+        
+        return $this;
         return $this;
     }
     public function getDataInicial($br = 0){
@@ -77,7 +84,12 @@ class Anuncio{
     }
     public function setDataFinal($data_final){
 
-        $this->data_final = $data_final;
+        if(strpos($data_final, '/')){
+            $this->data_final = date('Y-m-d', strtotime($data_final));
+        }
+        elseif(strpos($data_final, '-')){
+            $this->data_final = date('d/m/Y', strtotime($data_final));
+        }
         return $this;
     }
     public function getDataFinal($br = 0){
