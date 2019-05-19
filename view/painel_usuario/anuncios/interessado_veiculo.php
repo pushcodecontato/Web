@@ -1,3 +1,12 @@
+<?php
+
+    require_once("controller/controllerSolicitarAnuncio.php");
+   
+    $controllerSolicitarAnuncio = new ControllerSolicitacaoAnuncio();
+    echo "<pre>";
+    var_dump($controllerSolicitarAnuncio->selectByIdCliente('2'));
+
+?>
 <link rel="stylesheet" type="text/css" href="view/painel_usuario/anuncios/css/interessado_veiculo.css"/>
 <!--<div id="conteudo">-->
 <div id="conteudo_interessados"> 
@@ -10,7 +19,7 @@
         <div class="segura_anuncio">
             <?php
             
-                
+
             ?>
             <div class="caixa_anuncio">
 
@@ -37,6 +46,7 @@
             </div>
 
             <div class="caixa_anuncio">
+
 
                 <div class="imagem_anuncio">
                     <img class="foto_anuncio" src="view/painel_usuario/imagem/carro1.png" title="icone" alt="icone">

@@ -3,7 +3,7 @@
     $idAnuncio = "";
         $idCliente = $_GET['idCliente'];
         $idAnuncio = $_GET['idAnuncio'];
-
+    
 ?>
 <form action="router.php?controller=SOLICITAR_ANUNCIO&modo=inserir" id="formSolicitacao" method="post" onsubmit="inserirSolicitacao(<?=@ $idCliente?>, <?=@ $idAnuncio?>, this)">
     <label>Data inicial</label><br>

@@ -8,8 +8,9 @@
             //importando classes
             require_once('model/solicitacaoAnuncioClass.php');
             require_once('model/dao/solicitacaoAnuncioDAO.php');
-
+        
             $this->solicitacaoDAO = new SolicitacaoAnuncioDAO();
+            
         }
 
         public function inserir(){
@@ -25,8 +26,8 @@
                 $this->solicitacaoDAO->insert($solicitacaoAnuncio);
             }
         }
-        public function selectByIdAnuncio(){
-            
+        public function selectByIdCliente($idCliente){
+            return $this->solicitacaoDAO->getByIdCliente($idCliente);
         }
     }
     

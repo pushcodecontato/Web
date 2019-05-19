@@ -6,7 +6,13 @@
         public function __construct(){
             require_once('model/solicitacaoAnuncioClass.php');
             require_once('model/dao/conexaoMysql.php');
+            require_once('model/dao/AnuncioDAO.php');
+            require_once('model/dao/ClienteDAO.php');
+
             $this->conex = new conexaoMysql();
+            $this->AnuncioDAO = new AnuncioDAO();
+            $this->ClienteDAO = new Cliente();
+
         }
 
         public function insert($solicitacao){
@@ -27,6 +33,33 @@
                 echo "Erro no script de insert".$sql;
             }
 
+        }
+        public function getByIdCliente($idCliente){
+            $sql = "SELECT * FROM tbl_solicitacao_anuncio where status_solicitacao = 0";
+
+            $PDO_conex = $this->conex->connect_database();
+            $select = $PDO_conex->query($sql);
+
+            $lista_array = array();
+
+            while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
+                $solicitacao = new SolicitacaoAnuncio();
+
+                $solicitacao->setId_solicitacao_anuncio($rs_anuncio['id_solicitacao_anuncio'])
+                            ->setId_anuncio($rs_anuncio['id_anuncio'])
+                            ->setId_cliente($rs_anuncio['id_cliente'])
+                            ->setData_inicio($rs_anuncio['data_inicio'])
+                            ->setData_final($rs_anuncio['data_final'])
+                            ->setHora_inicial($rs_anuncio['hora_inicial'])
+                            ->setHora_final($rs_anuncio['hora_final']);
+
+                $anuncio = $this->AnuncioDAO->selectAllByUser($idCliente);
+                $cliente = $this->ClienteDAO->selectById(8);
+                $solicitacao->setAnuncio($anuncio)
+                            ->setCliente($cliente);
+
+                var_dump($solicitacao);
+            }
         }
 
 

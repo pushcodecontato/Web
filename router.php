@@ -669,12 +669,6 @@
                     case "INSERIR":
                         $controller_solicitar_anuncio->inserir();
                         break;
-                    case "ATUALIZAR":
-                        $controller_fale_conosco->atualizar_fale_conosco();
-                        break;
-                    case "EXCLUIR":
-                    $controller_fale_conosco->excluir_fale_conosco();
-                    break;
                 break;
             }
         }        
