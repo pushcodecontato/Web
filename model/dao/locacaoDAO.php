@@ -1,7 +1,7 @@
 <?php
 
 
-class locacaoDAO{
+class LocacaoDAO{
 
     private $conex;
     private $anuncioDAO;
@@ -36,13 +36,9 @@ class locacaoDAO{
 
         }
     }
-    public function update(){
+    public function update(){}
 
-    }
-
-    public function delete(){
-
-    }
+    public function delete(){}
 
     public function selectAll($status,$id_cliente){
         
@@ -84,5 +80,9 @@ class locacaoDAO{
     }
 
     public function selectById($id){}
+    
+    public function selectAndamento(){
+         
+    }
 }
 ?>
