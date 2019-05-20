@@ -25,7 +25,7 @@
             </div>
 
             <div class="coluna">
-                <div id="retirada"> Data de retirada </div>
+                <div id="retirada">Data de retirada </div>
             </div>
 
             <div class="coluna">

@@ -9,9 +9,9 @@
 }
 
 #h2Border{
-    width: 279px;
+    width: 289px;
     height: 15px;
-    margin-top: -15px;
+    margin-top: -17px;
     margin-left:50px;
     background-color:#fff;
     margin-bottom: 20px;
@@ -65,7 +65,7 @@
     }
 
 #devolucao{
-    width: 190px;
+    width: 139px;
     height: 20px;
     font-family: verdana;
     font-size: 20px;

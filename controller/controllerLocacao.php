@@ -33,6 +33,10 @@ class ControllerLocacao{
 
 
     }
+
+    public function listarAndamento(){
+        
+    }
 }
 
 ?>
