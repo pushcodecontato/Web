@@ -5,14 +5,14 @@
         // metodo construtor da classe - 
         public function __construct($anuncioDAO = false){
             if(!$anuncioDAO){
-                require_once('model/dao/AnuncioDAO.php');
+                require_once('model/dao/anuncioDAO.php');
                 $this->AnuncioDAO = new AnuncioDAO();
             }else{
                 $this->AnuncioDAO = $anuncioDAO;
             }
             require_once('model/solicitacaoAnuncioClass.php');
             require_once('model/dao/conexaoMysql.php');
-            require_once('model/dao/ClienteDAO.php');
+            require_once('model/dao/clienteDAO.php');
 
             $this->conex      = new conexaoMysql();
             $this->ClienteDAO = new ClienteDAO();
@@ -42,8 +42,11 @@
             
             $sql = "SELECT * FROM tbl_solicitacao_anuncio WHERE id_solicitacao_anuncio = $id_solicitacao_anuncio";
             $PDO_conex = $this->conex->connect_database();
+            
             $select = $PDO_conex->query($sql);
             if($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
+                
+
                 $solicitacao = new SolicitacaoAnuncio();
 
                 $solicitacao->setId_solicitacao_anuncio($rs_anuncio['id_solicitacao_anuncio'])
@@ -52,14 +55,16 @@
                             ->setData_inicio($rs_anuncio['data_inicio'])
                             ->setData_final($rs_anuncio['data_final'])
                             ->setHora_inicial($rs_anuncio['hora_inicial'])
-                            ->setHora_final($rs_anuncio['hora_final']);
-
+                            ->setHora_final($rs_anuncio['hora_final'])
+                            ->setStatus_solicitacao($rs_anuncio['status_solicitacao']);
+                //var_dump($solicitacao);
                 $anuncio = $this->AnuncioDAO->selectById($rs_anuncio['id_anuncio']);
 
                 $cliente = $this->ClienteDAO->selectById($rs_anuncio['id_cliente']);
                 /* Parece que vai funcionar */
-                $solicitacao->setAnuncio($anuncio)
-                            ->setCliente($cliente);
+                return $solicitacao->setAnuncio($anuncio)
+                                   ->setCliente($cliente);
+                
             }
         }
         public function getByIdCliente($idCliente){
@@ -90,7 +95,42 @@
             }
         }
 
+        public function aprovar($id_solicitacao_anuncio){
 
+            $sql = "UPDATE tbl_solicitacao_anuncio SET status_solicitacao = 1 WHERE id_solicitacao_anuncio = $id_solicitacao_anuncio";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            if($PDO_conex->query($sql)){
+                
+                $solicitacao = $this->selectById($id_solicitacao_anuncio);
+                
+                $sql = "INSERT INTO tbl_locacao".
+                       "(`id_cliente_locador`,`id_anuncio`,`valor_locacao`,`id_percentual`,`status_finalizado`)".
+                       "VALUES(". $solicitacao->getId_cliente() .",". $solicitacao->getId_anuncio() .",". $solicitacao->getAnuncio()->getValor() .",".
+                       "". $solicitacao->getAnuncio()->getVeiculo()->getTipo()->getPercentual() .",0)";
+                if($PDO_conex->query($sql)){
+                        echo "Aprovado com sucesso";
+                }
+            } else {
+                echo "Erro no script de insert".$sql;
+            }
+        }
+
+        public function reprovar($id_solicitacao_anuncio){
+
+            $sql = "UPDATE tbl_solicitacao_anuncio SET status_solicitacao = 2 WHERE id_solicitacao_anuncio = $id_solicitacao_anuncio";
+            
+            $PDO_conex = $this->conex->connect_database();
+
+            if($PDO_conex->query($sql)){
+                
+                echo "Aprovado com sucesso";
+
+            } else {
+                echo "Erro no script de insert".$sql;
+            }
+        }
     }
 
 ?>

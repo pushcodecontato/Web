@@ -669,6 +669,12 @@
                     case "INSERIR":
                         $controller_solicitar_anuncio->inserir();
                         break;
+                    case "APROVAR":
+                        $controller_solicitar_anuncio->aprovar();
+                        break;
+                    case "REPROVAR":
+                        $controller_solicitar_anuncio->reprovar();
+                        break;
                 break;
             }
         }        

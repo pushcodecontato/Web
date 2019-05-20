@@ -238,5 +238,4 @@ function inserirSolicitacao(idCliente,idAnuncio,form){
 
     });
 }
-    
-   
+/* Modal */

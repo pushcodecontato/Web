@@ -12,7 +12,7 @@
 <!--<div id="conteudo">-->
 <div id="conteudo_interessados"> 
                 
-    <h2 id="h2Border">Interessados nos veículos</h2>
+    <h2 id="h2Border">Interessados</h2>
 
     <div id="principal_anuncios">
         <!--parte de cima do anuncio-->
@@ -21,7 +21,7 @@
         <?php }else{ ?>
                 <?php foreach($lista as $item) {?>
 
-                        <div class="caixa_anuncio">
+                        <div class="caixa_anuncio" onclick="solicitacao_ver(<?=@$item->getSolicitacao()->getId_solicitacao_anuncio()?>)">
 
                             <div class="imagem_anuncio"> 
                                 
@@ -33,13 +33,20 @@
 
                             <div class="titulo_anuncio">
                                 <h4> <?=@$item->getVeiculo()->getModelo()->getNome()?> </h4>
+                                <?php if($item->getSolicitacao()->getStatus_solicitacao() == 0){?>
+                                        <span style="color: #414cd4; float: right; margin-top: 5px;"> Pendente </span>
+                                <?php }else if($item->getSolicitacao()->getStatus_solicitacao() == 1){?>
+                                        <span style="color: #2d2; float: right; margin-top: 5px;"> Aprovado </span>
+                                <?php }else if($item->getSolicitacao()->getStatus_solicitacao() == 2){?>
+                                        <span style="color: red; float: right; margin-top: 5px;"> Reprovado</span>
+                                <?php } ?>
                             </div>
 
                             <div class="dados_anuncio">
                                 <p class="dados"> 
-                                    <strong>Nome:</strong> Larissa Bruna<br><br>
-                                    <strong>Horário:</strong> 12h - 13h<br><br>
-                                    <strong>Valor previsto: </strong>R$120<br><br>
+                                    <strong>Nome:</strong> <?=@$item->getSolicitacao()->getCliente()->getNome()?><br><br>
+                                    <strong>Horário:</strong> <?=@$item->getSolicitacao()->getHora_inicial()?> - <?=@$item->getSolicitacao()->getHora_final()?><br><br>
+                                    <strong>Valor previsto: </strong>R$ <?=@$item->getSolicitacao()->getValorTotal($item->getValor())?><br><br>
                                     <strong>Avaliação:</strong> 8.9
                                 </p>
                             </div>
@@ -47,181 +54,8 @@
 
                 <?php }?>
         <?php } ?>
-        
-        <!--<div class="segura_anuncio">
-            
-        <div class="segura_anuncio">
-            <?php
-            
-
-            ?>
-            <div class="caixa_anuncio">
-
-                <div class="imagem_anuncio"> 
-
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro6.png" title="icone" alt="icone">
-                </div>
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="caixa_anuncio">
-
-
-                <div class="imagem_anuncio">
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro1.png" title="icone" alt="icone">
-
-                </div>
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-
-            </div>
-
-            <div class="caixa_anuncio">
-                <div class="imagem_anuncio">
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro2.png" title="icone" alt="icone">
-                </div>
-
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-
-            </div>
-
-
-        </div>-->
-
-
-        <!--parte de baixo do anuncio-->
-         <!--<div class="segura_anuncio">
-            <div class="caixa_anuncio">
-               <div class="imagem_anuncio">
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro2.png" title="icone" alt="icone">
-                </div>
-
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-
-
-            </div>
-            <div class="caixa_anuncio">
-
-               <div class="imagem_anuncio">
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro4.png" title="icone" alt="icone">
-                </div>
-
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-
-            </div>
-            <div class="caixa_anuncio">
-               <div class="imagem_anuncio">
-                    <img class="foto_anuncio" src="view/painel_usuario/imagem/carro5.png" title="icone" alt="icone">
-                </div>
-
-                <div class="bolinha"></div>
-                <div class="bolinha"></div>
-
-
-                <div class="titulo_anuncio">
-                    <h4> Titulo </h4>
-                </div>
-
-
-                <div class="dados_anuncio">
-                    <p class="dados"> 
-                        <strong>Nome:</strong> Larissa Bruna<br><br>
-                        <strong>Horário:</strong> 12h - 13h<br><br>
-                        <strong>Valor previsto: </strong>R$120<br><br>
-                        <strong>Avaliação:</strong> 8.9
-                    </p>
-                </div>
-
-
-
-            </div>
-
-
-        </div>-->
-
-
     </div>
 
 </div>
+
+<script src="view/painel_usuario/anuncios/js/script.js"></script>

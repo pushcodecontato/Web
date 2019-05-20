@@ -374,7 +374,7 @@
                     $cliente_locatario = $this->clienteDAO->selectById($rs_anuncio['id_locatario']);
                     // Pegando solicitaço 
                     $solicitacao = $this->solicitacaoDAO->selectById($rs_anuncio['id_solicitacao_anuncio']);
-
+                    
                     $anuncio->setVeiculo($veiculo)
                             ->setSolicitacao($solicitacao)
                             ->setLocador($veiculo->getCliente());

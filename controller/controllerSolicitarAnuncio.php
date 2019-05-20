@@ -29,6 +29,21 @@
         public function selectByIdCliente($idCliente){
             return $this->solicitacaoDAO->getByIdCliente($idCliente);
         }
+        public function selectById($id_solicitacao = false){
+            
+            if($id_solicitacao)return $this->solicitacaoDAO->selectById($id_solicitacao);
+
+            return $this->solicitacaoDAO->selectById($_GET['id']);
+
+        }
+        public function aprovar(){
+            
+            $this->solicitacaoDAO->aprovar($_GET['id']);
+            
+        }
+        public function reprovar(){
+            $this->solicitacaoDAO->reprovar($_GET['id']);
+        }
     }
     
 ?>

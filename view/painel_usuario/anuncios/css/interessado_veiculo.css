@@ -1,7 +1,7 @@
 
 
 #conteudo_interessados{
-    width: 998px;
+    width: 1044px;
     height: 703px;
     float: left;
     border: solid 1px;
@@ -15,16 +15,18 @@ h4{
 }
 #h2Border{
     width: 258px;
-    height: 15px;
+    height: 19px;
     margin-top: -15px;
-    margin-left:50px; 
+    margin-left:50px;
     background-color: #fff;
+    color: #272626;
 }
 #principal_anuncios{
-    width: 900px;
+    width: 100%;
     height: 580px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 25px;
 }
 .segura_anuncio{
     width: 900px;
@@ -32,12 +34,18 @@ h4{
     margin-top: 50px;
 }
 .caixa_anuncio{
-    width: 230px;
-    height: 300px;
-    border: solid 1px;
-    border-radius: 20px;
-    float: left;
     margin-left: 50px;
+    width: 244px;
+    height: 321px;
+    box-shadow: 4px 4px 20px 0 rgba(120,135,182,.1);
+    border-radius: 3px;
+    border: solid 1px #eff1f9;
+    color: #747c81;
+    transition: all .3s ease;
+    padding: 2px 11px 7px 11px;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
 }
 .bolinha{
     width: 30px;
@@ -69,9 +77,10 @@ h4{
 .titulo_anuncio{
   width: 200px;
   height: 20px;
-  margin-top: -70px;
+  margin-top: -72px;
   background-color:#fff;
-    margin-left: 20px;
+  margin-left: 20px;
+  color: black;
 }
 .dados_anuncio{
     width: 230px;
@@ -82,6 +91,149 @@ h4{
 
 .dados{
   font-family: verdana;
-    font-size: 13px;
-    margin-left: 10px;
+  font-size: 1em;
+  color: #3a3939;
+  margin-left: 10px;
+}
+.caixa_anuncio:hover{
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.modal_anuncios{
+    margin: 6px;
+    height: auto;
+    width: 635px;
+    background-color: #fff;
+}
+.modal_anuncios .imagem{
+    width: 235px;
+    display: inline-block;
+    float: left;
+    background-color: black;
+}
+.modal_anuncios .imagem .principalImagem{
+    max-height:153px;
+}
+.modal_anuncios .imagem .lista_imagens{
+    height: 54px;
+    overflow-x: scroll;
+ }
+.modal_anuncios .imagem .lista_imagens .item_imagem{
+    display: inline-block;
+}
+.modal_anuncios .imagem .lista_imagens .item_imagem img{
+    height: 32px;
+    min-width: 32px;
+}
+.modal_anuncios .imagem img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal_anuncios .descricao{
+    display: inline-block;
+    float: left;
+    padding-top: 0px;
+    padding-left: 3px;
+    height: 220px;
+    padding: 4px;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios{
+    width: auto;
+    overflow: hidden;
+    height: 204px;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos{
+    text-align: left;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos .campo_anuncios{
+    width: 50%;
+    float: left;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos label{
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos input{
+    border: solid 1px #e8e8e8;
+    margin: 3px 0px;
+    min-height: 25px;
+    width: 98%;
+    background-color: white;
+    text-indent: 4px;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos textarea{
+    border: solid 1px #e8e8e8;
+    min-width: 99%;
+    resize: none;
+    min-height: 91px;
+    padding-top: 4px;
+    margin-top: 6px;
+    width: 374px;
+    padding-left: 10px;
+    background-color: white;
+}
+.modal_anuncios .descricao_veiculo_anuncios{
+    max-height: 83px;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.modal_anuncios .descricao_veiculo_anuncios .caixas_veiculo_anuncios{
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    width: 606px;
+}
+.modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo{
+    display: inline-block;
+    float: left;
+    font-size: 0.9em;
+    margin: 0px 4px;
+    text-align: center;
+}
+.modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo label{
+    font-weight: bold;
+}
+.modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo input{
+    border: solid 1px #ccc;
+    display: block;
+    width: 92px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+}
+.modal_anuncios input,textarea{
+    color:#625d5d;
+}
+.modal_anuncios .caixa_aprovacao{
+    padding: 5px;
+}
+.modal_anuncios .caixa_aprovacao button{
+    padding: 2px 6px;
+    background-color: white;
+    border: solid 1px #ccc;
+    margin: 3px;
+    font-size: 1.2em;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos input:hover{
+    border-color:#004b50;
+    color:black;
+}
+.modal_anuncios .descricao .caixa_inputs_anuncios .caixa_campos textarea:hover{
+    border-color:#004b50;
+    color:black;
+}
+.modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo input:hover{
+    color:black;
+    border-color:#004b50;
+}
+.modal_anuncios .caixa_aprovacao button:hover{
+    border-color:black;
+    color:#002334;
 }

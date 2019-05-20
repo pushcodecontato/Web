@@ -18,7 +18,7 @@
         }
 
         public function getId_solicitacao_anuncio(){
-            return $this->$id_solicitacao_anuncio;
+            return $this->id_solicitacao_anuncio;
         }
         
         public function setId_solicitacao_anuncio($id_solicitacao_anuncio){
@@ -115,6 +115,22 @@
         public function setAnuncio($anuncio){
             $this->anuncio = $anuncio;
             return $this;
+        }
+
+        public function getHorasTotais(){
+            
+            $datetime_inicial =  new DateTime($this->data_inicio." ".$this->hora_inicial);
+            $datetime_final   =  new DateTime($this->data_final ." ".$this->hora_final);
+
+            $intervalo = $datetime_inicial->diff($datetime_final);
+
+
+            
+            return $intervalo->format('%H');
+        }
+        public function getValorTotal($valor_hora){
+                $horas_totais = $this->getHorasTotais();
+                return $valor_hora * $horas_totais;
         }
 
 }

@@ -210,7 +210,7 @@
                         <a href="?visualizar_anuncios.php&id_anuncio=<?=@ $anuncio->getid();?>">
                            
                             <div class="anuncios">
-                                    <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0][0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
+                                    <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
                                 <div class="info_anuncio">
                                     <p class="nome_veiculo">R$<?=@ $anuncio->getValor();?> /hora</p>
 
