@@ -16,7 +16,7 @@
         $slcNivel = $usuario->getNivel();
         $id_usuario_cms = '&id='.$usuario->getId();
         $modo = 'ATUALIZAR';
-        $submit = 'usuario_update()';//js
+        $submit = 'usuario_update(this)';//js
         $botao = "Atualizar";
     }
 ?>

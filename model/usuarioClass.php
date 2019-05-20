@@ -58,12 +58,12 @@ class Usuario{
 
 	// gera o hash da senha
 	public function genSenha(){
-		return password_hash( $this->senha ,CRYPT_BLOWFISH,['cost'=>12] );
+		return md5($this->senha);
 	}
 
 	// verifica se a senha passada por paramentro esta correta
 	public function verificar( $senha ){
-		return password_verify( $senha , $this->senha );
+		return md5($senha) == $this->senha ;
 	}
 
  }
