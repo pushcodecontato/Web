@@ -63,7 +63,7 @@ class Usuario{
 
 	// verifica se a senha passada por paramentro esta correta
 	public function verificar( $senha ){
-		return md5($senha) == $this->senha ;
+		return md5($senha) == $this->senha;
 	}
 
  }
