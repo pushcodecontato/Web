@@ -10,7 +10,7 @@
         //método construtos para passar os dados do banco 
         public function __construct(){
          
-            $this->user = 'root';
+        
 	        $this->password = 'bcd127';
    	        $this->server = 'localhost';
             $this->user = 'root';
