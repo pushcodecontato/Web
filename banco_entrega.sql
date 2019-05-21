@@ -895,10 +895,10 @@ CREATE TABLE `tbl_home_sessao4` (
   `id_home_sessao4` int(11) NOT NULL AUTO_INCREMENT,
   `titulo_sessao4` varchar(45) NOT NULL,
   `foto_sessao4` varchar(255) NOT NULL,
-  `texto_sessao4` varchar(45) NOT NULL,
+  `texto_sessao4` text NOT NULL,
   `status_sessao4` varchar(45) NOT NULL,
   PRIMARY KEY (`id_home_sessao4`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -907,7 +907,7 @@ CREATE TABLE `tbl_home_sessao4` (
 
 LOCK TABLES `tbl_home_sessao4` WRITE;
 /*!40000 ALTER TABLE `tbl_home_sessao4` DISABLE KEYS */;
-INSERT INTO `tbl_home_sessao4` VALUES (2,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','Lorem ipsum dolor sit amet, consectetur adipi','1');
+INSERT INTO `tbl_home_sessao4` VALUES (2,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','Lorem ipsum dolor sit amet, consectetur adipi','1'),(11,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','Conchecimenyo','1'),(12,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','Conchecimenyo','0'),(13,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','Conchecimenyo','1'),(14,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','\n                Conchecimenyplpop','1'),(15,'Por que anúnciar seu veículo?','carro_dinheiro.jpg','<span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; font-weight: 400; background-color: rgb(255, 255, 255);\">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</span>','1');
 /*!40000 ALTER TABLE `tbl_home_sessao4` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -923,9 +923,9 @@ CREATE TABLE `tbl_home_sessao5` (
   `status_sessao5` float NOT NULL,
   `titulo_sessao5` varchar(45) NOT NULL,
   `subtitulo1_sessao5` varchar(45) NOT NULL,
-  `subtitulo2_sessao5` varchar(45) NOT NULL,
-  `subtitulo3_sessao5` varchar(45) NOT NULL,
-  `subtitulo4_sessao5` varchar(45) NOT NULL,
+  `subtitulo2_sessao5` text NOT NULL,
+  `subtitulo3_sessao5` text NOT NULL,
+  `subtitulo4_sessao5` text NOT NULL,
   `foto1_sessao5` varchar(255) NOT NULL,
   `foto2_sessao5` varchar(255) NOT NULL,
   `foto3_sessao5` varchar(255) NOT NULL,
@@ -936,7 +936,7 @@ CREATE TABLE `tbl_home_sessao5` (
   `texto4_sessao5` text NOT NULL,
   `subtitulo_sessao5` varchar(255) NOT NULL,
   PRIMARY KEY (`id_home_sessao5`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -945,7 +945,7 @@ CREATE TABLE `tbl_home_sessao5` (
 
 LOCK TABLES `tbl_home_sessao5` WRITE;
 /*!40000 ALTER TABLE `tbl_home_sessao5` DISABLE KEYS */;
-INSERT INTO `tbl_home_sessao5` VALUES (1,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad');
+INSERT INTO `tbl_home_sessao5` VALUES (1,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(13,0,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(14,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(15,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo ','                        Crie um anúncio      ','                        Espere os interessado','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad'),(16,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo                    ','                        Crie um anúncio                    ','                        Espere os interessados                    ','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad');
 /*!40000 ALTER TABLE `tbl_home_sessao5` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2108,4 +2108,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-21  9:20:26
+-- Dump completed on 2019-05-21 10:29:54
