@@ -79,8 +79,6 @@
 #info_anuncio{
     width:1000px;
     height: 500px;
-    /* border:1px solid black; */
-    float: left;
 }
 #acessorios{
     width:490px;
@@ -150,4 +148,37 @@
     font-size: 20px;
     line-height: 30px;
     overflow: auto;
+}
+.info_locador{
+    width:1000px;
+    height: 250px;
+    /* border:1px solid black; */
+}
+.sobre_locador{
+    width:332px;
+    height: 250px;
+    float: left;
+   
+}
+.titulo_locador{
+    width:1000px;
+    font-family: "OpenSans-Regular";
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid black;
+}
+.sobre_locador{
+    padding-left: 20px;
+    padding-top: 50px;
+}
+.sobre_locador p{
+    font-family: "OpenSans-Regular";
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.mapa{
+    width:1000px;
+    height: 500px;
+    /* border:1px solid black; */
 }
