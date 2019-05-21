@@ -25,7 +25,7 @@
     $listaAnuncios = $controllerAnuncios->getById($id_anuncio);
 
     // echo "<pre>";
-    // var_dump($listaAnuncios->getVeiculo()->getFotos()[0]);
+    // var_dump($cliente);
 
     // var_dump($listaAnuncios->getVeiculo()->getAcessorios()[0]->getNome());
 
@@ -66,23 +66,23 @@
                             </ul>
                         </div>
                         <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                        <div class="segura_login">
-                            <div class="login_cadastro" id="login" style="width: 110px;">
-                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            <div class="segura_login">
+                                <div class="login_cadastro" id="login" style="width: 110px;">
+                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                </div>
+                                <div class="login_cadastro" style="width: 160px;">
+                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                </div>
                             </div>
-                            <div class="login_cadastro" style="width: 160px;">
-                                <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                            </div>
-                        </div>
+                            
                     </div>    
                 </nav>
                 <div class="caixa_texto_pages_all">
-                    <h1 class="texto_primario_h1">F.A.Q</h1>
+                    <h1 class="texto_primario_h1">Anúncio</h1>
                     <p class="texto_secundario_p">Dúvidas frequetes</p>
                 </div>
             </div>
         </header>
-       
         <div class="segura_anuncio">
             <h3 class="titulo_anuncio">Anúncio</h3>
             <div class="linha_info_veiculo">
@@ -99,13 +99,11 @@
                         <p><strong>Quilometragem:  </strong><?=@ $listaAnuncios->getVeiculo()->getQuilometragem() ?> km</p>
                         <p><strong>Valor hora: R$  </strong><?=@ $listaAnuncios->getValor() ?></p>
                         <p><strong>Avaliação: </strong> 7.8</p>
-
                     </div>
                     <div id="segura_botao">
-                        <input class="botao" type="button" value="Alugar" onclick="chamarSolicitacao(<?=@ $id_anuncio?>, <?=@ $cliente->getId()?> )">
+                        <input class="botao" type="button" value="Alugar" onclick="chamarSolicitacao(<?=@ $id_anuncio?>, $cliente->getId();)">
                         <input class="botao" type="button" value="Agendar">
                     </div>
-
                 </div>
             </div>
             <div id="info_anuncio">
@@ -122,7 +120,7 @@
                     ?>
                 </div>
                 <div id="sobre_anuncio">
-                <h3>Sobre o anúncio</h3>
+                    <h3>Sobre o anúncio</h3>
                     <div class="linha_sobre">
                        
                         <div class="info_sobre_anuncio">
@@ -141,9 +139,31 @@
                             <h4>Descrição</h4>
                             <p><strong><?=@ $listaAnuncios->getDescricao()?></strong></p>
                         </div>
-                        
                     </div>     
                 </div>
+            </div>
+            <h3 class="titulo_locador">Sobre o anúncio</h3>
+            <div class="info_locador">
+                <div class="sobre_locador">
+                    <p><strong>Nome:</strong> <?=@ $listaAnuncios->getLocador()->getNome()?></p>
+                    <p><strong>Email:</strong> <?=@ $listaAnuncios->getLocador()->getEmail()?></p>
+                    <p><strong>Telefone:</strong> <?=@ $listaAnuncios->getLocador()->getTelefone()?> </p>
+                    <p><strong>Celular:</strong> <?=@ $listaAnuncios->getLocador()->getCelular()?></p>
+                    
+                </div>
+                <div class="sobre_locador">
+                    <p><strong>Cidade:</strong> <?=@ $listaAnuncios->getLocador()->getCidade()?></p>
+                    <p><strong>Rua:</strong> <?=@ $listaAnuncios->getLocador()->getRua()?></p>
+                    <p><strong>Bairro:</strong> <?=@ $listaAnuncios->getLocador()->getBairro()?> </p>
+                    <p><strong>Cep:</strong> <?=@ $listaAnuncios->getLocador()->getCep()?></p>
+                </div>
+                <div class="sobre_locador">
+                    <p><strong>Complemento:</strong> <?=@ $listaAnuncios->getLocador()->getComplemento()?></p>
+                    <p><strong>Número:</strong> <?=@ $listaAnuncios->getLocador()->getNumero()?></p>
+                </div>
+            </div>  
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1030520848535!2d-46.90027078447631!3d-23.52879566627676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf0154039cb55b%3A0xadf34a919f156950!2sSENAI+Jandira+-+Professor+Vicente+Amato!5e0!3m2!1spt-PT!2sbr!4v1558439674243!5m2!1spt-PT!2sbr" width="1000" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
