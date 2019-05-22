@@ -130,3 +130,8 @@
     float: left;
     margin-left: 10px;
 }
+.caixa_mapa{
+    min-width: 50vmax;
+    min-height: 80vh;
+}
+.caixa_mapa #mapa{min-width: 100%;min-height: 79vh;}

@@ -49,7 +49,9 @@
                                     <strong>Nome:</strong> <?=@$item->getSolicitacao()->getCliente()->getNome()?><br><br>
                                     <strong>Horário:</strong> <?=@$item->getSolicitacao()->getHora_inicial()?> - <?=@$item->getSolicitacao()->getHora_final()?><br><br>
                                     <strong>Valor previsto: </strong>R$ <?=@$item->getSolicitacao()->getValorTotal($item->getValor())?><br><br>
-                                    <strong>Avaliação:</strong> 8.9
+                                    <strong>Avaliação:</strong> 8.9<br>
+                                    <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                    <img class="star_left" src="view/imagem/star1.png" alt="star">
                                 </p>
                             </div>
                         </div>

@@ -17,7 +17,36 @@
 
         <!---div que segura a tabela --->
         <div class="segura_tabela">
-            <table class="table_veiculos_locados" border="1">
+            <table class="desktop">
+                <thead>
+                    <tr>
+                        <th > Nome</th>
+                        <th >Veículo</th>
+                        <th >Data</th>
+                        <th >Horário</th>
+                        <th >Valor Horário</th>
+                        <th >Valor Total</th>
+                        <th >Avaliação</th>
+                    </tr>
+                 </thead>
+                <tbody>
+                    <tr>
+                        <td>Larissa</td>
+                        <td>Fox</td>
+                        <td>08/05/2019</td>
+                        <td>09:25</td>
+                        <td>R$50</td>
+                        <td>R$100</td>
+                        <td>
+                            <img class="star_left" src="view/imagem/star1.png" alt="star">
+                            <img class="star_left" src="view/imagem/star1.png" alt="star">
+                            <img class="star_left" src="view/imagem/star1.png" alt="star">
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <!--<table class="table_veiculos_locados" border="1">
                 <tr>
                     <td height="10" class="titulo_table"> Nome</td>
                     <td class="titulo_table">Veículo</td>
@@ -40,7 +69,7 @@
                 </tr>
 
 
-            </table>
+            </table>-->
 
             <div class="segura_button">
                 <button>Previous</button>

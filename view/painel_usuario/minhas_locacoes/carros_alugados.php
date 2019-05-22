@@ -15,9 +15,36 @@
 <div id="conteudo_agendamento"> 
                 
                 <h2 id="h2Border">Veiculos alugados</h2>
- 
-                <div id="principal">
-                    <div class="segura_coluna">
+
+                     <table class="desktop">
+                        <thead>
+                            <tr>
+                                <th>Usuário</th>
+                                <th>Veículo</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Valor/hora</th>
+                                <th>Valor Total</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($lista as $item){ ?>
+                                  <tr>
+                                      <td><?=@ $item->getLocador()->getNome()?></td>
+                                      <td><?=@ $item->getAnuncio()->getVeiculo()->getModelo()->getNome()?></td>
+                                      <td><?=@ $item->getSolicitacao()->getData_inicio()."-".$item->getSolicitacao()->getData_final()?></td>
+                                      <td><?=@ $item->getSolicitacao()->getHora_inicial()."-".$item->getSolicitacao()->getHora_final()?></td>
+                                      <td>R$<?=@ $item->getAnuncio()->getValor() ?></td>
+                                      <td>R$<?=@ $item->getSolicitacao()->getValorTotal($item->getAnuncio()->getValor())?></td>
+                                      <td>
+                                          <a href='javascript:mapa_ver(<?=json_encode($item->getAnuncio()->to_json())?>)'><i class='fas fa-map-marked-alt'></i> Mapa</a>
+                                      </td>
+                                  </tr>
+                            <?php } ?>
+                        </tbody>
+                     </table>
+                    <!--<div class="segura_coluna">
                         <div class="coluna">
                             <div id="nome"> Nome </div>
                         </div>
@@ -84,8 +111,7 @@
                         </div>
                     </div>
                 <?php } ?>                                 
-            </div>
-</div>
+            </div>-->
 
 <link rel="stylesheet" href="view/js/libs/leaflet/leaflet.css">
 <script src="view/js/libs/leaflet/leaflet.js"></script>
