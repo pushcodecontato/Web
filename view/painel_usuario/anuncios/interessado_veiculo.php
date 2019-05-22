@@ -9,6 +9,7 @@
     
 ?>
 <link rel="stylesheet" type="text/css" href="view/painel_usuario/anuncios/css/interessado_veiculo.css"/>
+
 <!--<div id="conteudo">-->
 <div id="conteudo_interessados"> 
                 
@@ -17,7 +18,8 @@
     <div id="principal_anuncios">
         <!--parte de cima do anuncio-->
         <?php if(count($lista)<1){?>
-                <p> Nenhuma Solicitação ocorreu para os seus anuncios </p>
+                <img class="img_not_find" style="width: 241px;display: block;margin-left: auto;margin-top: 84px;margin-right: auto;" width="128" alt="Nada encontrado" src="view/imagem/magnify.gif">
+                <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhum anuncio Aprovado encontrado!</p>
         <?php }else{ ?>
                 <?php foreach($lista as $item) {?>
 

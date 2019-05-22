@@ -101,7 +101,7 @@
                         <p><strong>Avaliação: </strong> 7.8</p>
                     </div>
                     <div id="segura_botao">
-                        <input class="botao" type="button" value="Alugar" onclick="chamarSolicitacao(<?=@ $id_anuncio?>, $cliente->getId();)">
+                        <input class="botao" type="button" value="Alugar" onclick="chamarSolicitacao(<?=@ $id_anuncio?>, <?=@ $cliente->getId()?>)">
                         <input class="botao" type="button" value="Agendar">
                     </div>
                 </div>

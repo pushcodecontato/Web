@@ -1,3 +1,5 @@
+<?php
+
 class Locacao{
 
     private $id_locacao;
@@ -6,6 +8,10 @@ class Locacao{
     private $valor_locacao;
     private $data_hora_final;
     private $id_percentual;
+
+    private $anuncio;
+    private $solicitacao;
+    private $locador;
 
     public function setId($id_locacao){
         $this->id_locacao = $id_locacao;
@@ -25,13 +31,21 @@ class Locacao{
         return $this->id_cliente_locador;
     }
 
-    public function setAnuncio($id_anuncio){
-        $this->id_locacao = $id_anuncio;
+    public function setAnuncio($anuncio){
+        $this->anuncio = $anuncio;
         return $this;
     }
 
     public function getAnuncio(){
-        return $this->id_anuncio;
+        return $this->anuncio;
+    }
+    public function setSolicitacao($solicitacao){
+        $this->solicitacao = $solicitacao;
+        return $this;
+    }
+
+    public function getSolicitacao(){
+        return $this->solicitacao;
     }
 
     public function setValor_locacao($valor_locacao){
@@ -60,4 +74,14 @@ class Locacao{
     public function getId_percentual(){
         return $this->id_percentual;
     }
+
+    public function setLocador($locador){
+        $this->locador = $locador;
+        return $this;
+    }
+    public function getLocador(){
+        return $this->locador;
+    }
 }
+
+?>

@@ -5,11 +5,9 @@ class ControllerLocacao{
     private $locacaoDAO;
 
     public function __construct(){
-        echo("<pre>helo!!!!!!");
         require_once('model/clienteClass.php');        
-        //require_once('model/locacaoClass.php');
+        require_once('model/locacaoClass.php');
         require_once('model/dao/locacaoDAO.php');
-        echo("helo!!!!!!</pre>");
         $this->locacaoDAO = new locacaoDAO();
     }
 
@@ -18,7 +16,7 @@ class ControllerLocacao{
     public function excluir(){}
 
     public function listar($status = "normal"){
-        echo("helo!!!!!!");
+        
         if(!isset($_SESSION))session_start();
 
         $cliente = unserialize($_SESSION['cliente']);
@@ -34,8 +32,16 @@ class ControllerLocacao{
 
     }
 
-    public function listarAndamento(){
+    public function listarMinhasLocações(){
         
+        if(!isset($_SESSION))session_start();
+
+        $cliente = unserialize($_SESSION['cliente']);
+      
+        
+        $lista  = $this->locacaoDAO->selectAllLocatario($cliente->getId());
+        
+        return $lista;
     }
 }
 

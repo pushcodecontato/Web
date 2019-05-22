@@ -2,7 +2,11 @@
                 
         require_once("controller/controllerLocacao.php");
 
+        $controller = new ControllerLocacao();
+
         $router = "router.php?controller=locacao&modo=SELECTALL";
+
+        $lista = $controller->listar("andamento");
 ?>
 
 <head>
@@ -32,27 +36,25 @@
                 <div id="devolucao"> Data de devolução </div>
             </div>
         </div>
+        <?php foreach($lista as $item){?>
+            <div class="segura_coluna">
 
-        <div class="segura_coluna">
-        <form method="POST" id="formAnunciosProcessados" name="formmAnunciosProcessados">
-          
-            <div class="coluna">
-                <div id="nome"><?=@$locacao->getNome_cliente?></div>
-            </div>
+                <div class="coluna">
+                    <div id="nome"><?=@$item->getLocador()->getNome()?></div>
+                </div>
 
-            <div class="coluna">
-                <div id="veiculo"></div>
-            </div>
+                <div class="coluna">
+                    <div id="veiculo"><?=@$item->getAnuncio()->getVeiculo()->getModelo()->getNome()?></div>
+                </div>
 
-            <div class="coluna">
-                <div id="retirada_data"></div>
-            </div>
+                <div class="coluna">
+                    <div id="retirada_data"><?=@$item->getSolicitacao()->getData_inicio()?></div>
+                </div>
 
-            <div class="coluna">
-                <div id="devolucao_data"></div>
+                <div class="coluna">
+                    <div id="devolucao_data"><?=@$item->getSolicitacao()->getData_final()?></div>
+                </div>
             </div>
-           
-        </form>
-        </div>
+        <?php } ?>
     </div>
 </div>

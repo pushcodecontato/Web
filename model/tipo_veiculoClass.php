@@ -6,6 +6,7 @@ class TipoVeiculo{
     private $id_tipo_veiculo;
     private $nome_tipo_veiculo;
     private $percentual;
+    private $id_percentual;
     private $excluido;
     private $data;
     
@@ -43,7 +44,13 @@ class TipoVeiculo{
         
         return $this;
     }
-    
+    public function setIdPercentual($id_percentual){
+        $this->id_percentual = $id_percentual;
+        return $this;
+    }
+    public function getIdPercentual(){
+        return $this->id_percentual;
+    }
     public function getPercentual(){
         return $this->percentual;
     }

@@ -427,6 +427,10 @@
                             }
 
                             break;
+                        case "DELETAR":
+                                echo "DELETAR";
+                                $controller_anuncio->excluir_anuncio();
+                                break;
                     }
                 
                 break;

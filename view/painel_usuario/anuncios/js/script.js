@@ -1,7 +1,13 @@
 /* Modals */
-function anuncio_editar(id){
-
+function anuncio_ver(id){
+	$.ajax({
+		url:'?painel_usuario/anuncios/anuncio.php&id='+id,
+		success:function(resposta){
+			modal(resposta);
+		}
+		})
 }
+
 /* CRUD */
 function anuncio_insert(form){
     window.ddd = form;
@@ -32,24 +38,21 @@ function anuncios_pendentes_modal_ver_imagem(imagem){
 
     imagemSelecionada.css({'border':'solid 1px blue'});
 }
-function anuncio_update(form){
-    event.preventDefault();
-    $.ajax({
-          url:$(form).attr('action'),
-          type:'POST',
-          method:'POST',
-          data:$(form).serialize(),
-          success:function(resposta){
-            console.log("Resposta",resposta);
-            if(resposta.toString().search('sucesso')>=0){
-				$.notify("veiculo aprovado",'success');
-				conteudo_subMenu('veiculos/veiculos_pendentes',true);
+function anuncio_delete(id){
+	$.ajax({
+		url:'router.php?controller=ANUNCIOS&modo=deletar&id='+id,
+		method:'POST',
+		type:'POST',
+		success:function(resposta){
+			console.log("Res:",resposta);
+			if(resposta.toString().search('sucesso')>=0){
+				$.notify(' Anuncio Deletado com sucesso ','success')
 				fecharModal();
 			}
-          } 
-        })
+		}
+	})
 }
-function anuncio_delete(form){
+function anuncio_update(form){
     event.preventDefault();
     $.ajax({
           url:$(form).attr('action'),

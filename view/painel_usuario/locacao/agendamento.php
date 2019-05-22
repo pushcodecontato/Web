@@ -1,7 +1,13 @@
+<?php
+                
+        require_once("controller/controllerLocacao.php");
+
+        $controller = new ControllerLocacao();
+
+        $lista = $controller->listar();
+?>
 <head>
-  <link rel="stylesheet" 
-          type="text/css"
-          href="view/painel_usuario/locacao/css/agendamento.css"/>
+  <link rel="stylesheet" type="text/css" href="view/painel_usuario/locacao/css/agendamento.css"/>
 </head>
 <!-- conteudo agendamento -->
 <div id="conteudo_agendamento"> 
@@ -35,35 +41,37 @@
         </div>
 
     </div>
-    <div class="segura_coluna">
-        <div class="coluna">
-            <div id="nome"> Mikaela </div>
-        </div>
+    <?php foreach($lista as $item) {?>
+        <div class="segura_coluna">
+            <div class="coluna">
+                <div id="nome"> <?=@$item->getLocador()->getNome()?> </div>
+            </div>
 
-        <div class="coluna">
-            <div id="veiculo">Camaro </div>
-        </div>
+            <div class="coluna">
+                <div id="veiculo"> <?=@$item->getAnuncio()->getVeiculo()->getModelo()->getNome()?> </div>
+            </div>
 
-        <div class="coluna">
-            <div id="retirada_data">10/02/2019 </div>
-        </div>
+            <div class="coluna">
+                <div id="retirada_data"><?=@$item->getSolicitacao()->getData_inicio()?></div>
+            </div>
 
-        <div class="coluna">
-            <div id="devolucao_data">10/02/2019 </div>
-        </div>
+            <div class="coluna">
+                <div id="devolucao_data"><?=@$item->getSolicitacao()->getData_final()?></div>
+            </div>
 
-        <div class="coluna">
-            <div id="rs"> R$200,00 </div>
-        </div>
+            <div class="coluna">
+                <div id="rs"> R$<?=@$item->getSolicitacao()->getValorTotal($item->getAnuncio()->getValor())?></div>
+            </div>
 
-        <div class="coluna">
-            <div id="cancelar"> 
+            <div class="coluna">
+                <div id="cancelar"> 
 
-                <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
+                    <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
 
-                 <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
+                     <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
+                </div>
             </div>
         </div>
-    </div>                   
+    <?php } ?>           
 </div>
 </div>

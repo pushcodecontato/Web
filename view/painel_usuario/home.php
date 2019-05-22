@@ -24,6 +24,7 @@
     <script src="view/js/notify.js"></script>
 
     <link rel="stylesheet" type="text/css" href="view/painel_usuario/css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="view/cms/font/awesome/all.css"/>
 
     
 </head>

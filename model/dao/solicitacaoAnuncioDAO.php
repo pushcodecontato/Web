@@ -97,18 +97,22 @@
 
         public function aprovar($id_solicitacao_anuncio){
 
-            $sql = "UPDATE tbl_solicitacao_anuncio SET status_solicitacao = 1 WHERE id_solicitacao_anuncio = $id_solicitacao_anuncio";
-            
+            $solicitacao = $this->selectById($id_solicitacao_anuncio);
+
+            $sql = "INSERT INTO tbl_locacao".
+                   "(`id_cliente_locador`,`id_anuncio`,`valor_locacao`,`id_percentual`,`status_finalizado`)".
+                   "VALUES(". $solicitacao->getId_cliente() .",". $solicitacao->getId_anuncio() .",". $solicitacao->getAnuncio()->getValor() .",".
+                   "". $solicitacao->getAnuncio()->getVeiculo()->getTipo()->getIdPercentual() .",0)";
+            echo $sql;
             $PDO_conex = $this->conex->connect_database();
 
             if($PDO_conex->query($sql)){
                 
-                $solicitacao = $this->selectById($id_solicitacao_anuncio);
+                $id_locacao = $PDO_conex->lastInsertId();
+
                 
-                $sql = "INSERT INTO tbl_locacao".
-                       "(`id_cliente_locador`,`id_anuncio`,`valor_locacao`,`id_percentual`,`status_finalizado`)".
-                       "VALUES(". $solicitacao->getId_cliente() .",". $solicitacao->getId_anuncio() .",". $solicitacao->getAnuncio()->getValor() .",".
-                       "". $solicitacao->getAnuncio()->getVeiculo()->getTipo()->getPercentual() .",0)";
+                $sql = "UPDATE tbl_solicitacao_anuncio SET status_solicitacao = 1 , id_locacao = $id_locacao WHERE id_solicitacao_anuncio = $id_solicitacao_anuncio";
+                
                 if($PDO_conex->query($sql)){
                         echo "Aprovado com sucesso";
                 }

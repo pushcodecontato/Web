@@ -1,3 +1,11 @@
+<?php
+                
+        require_once("controller/controllerLocacao.php");
+
+        $controller = new ControllerLocacao();
+
+        $lista = $controller->listar();
+?>
 <head>
   <link rel="stylesheet" 
           type="text/css"
@@ -39,9 +47,6 @@
 
 
                     </div>
-
-
-
                     <div class="segura_coluna">
                         <div class="coluna">
                             <div id="nome">Larissa </div>

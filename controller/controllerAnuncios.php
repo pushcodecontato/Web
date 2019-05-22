@@ -48,7 +48,9 @@ class ControllerAnuncios{
               $this->anunciosDAO->insert($anuncio);
 
        }
-       public function excluir_anuncio(){}
+       public function excluir_anuncio(){
+               $this->anunciosDAO->delete($_GET['id']);
+       }
        public function atualizar_anuncio(){}
        public function listar_anuncios(){}
         

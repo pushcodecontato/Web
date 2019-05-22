@@ -12,6 +12,7 @@ class Anuncio{
     private $data_final;
     private $valor_hora;
     private $status_aprovado;
+    private $menssagem;
 
     /* Objecto Veiculo */
     private $veiculo;
@@ -87,6 +88,16 @@ class Anuncio{
         }
         return $this;
     }
+
+    public function setMenssagem($menssagem){
+        $this->menssagem = $menssagem;
+        return $this;
+    }
+
+    public function getMenssagem(){
+        return $this->menssagem;
+    }
+
     public function getDataFinal(){
         //Retorna no padrão br 
         return $this->data_final;

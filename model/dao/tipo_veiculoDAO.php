@@ -120,7 +120,7 @@ class  TipoVeiculoDAO{
 
     public function select($id){
         /* LEFT JOIN pois o valor pode não existir na tabela de percentual */
-        $sql = "SELECT tbl_tipo_veiculo.*, if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.percentual) )  as 'percentual' ,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.data) )  as 'data' FROM tbl_tipo_veiculo ".
+        $sql = "SELECT tbl_tipo_veiculo.*,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.id_percentual) )  as 'id_percentual' , if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.percentual) )  as 'percentual' ,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.data) )  as 'data' FROM tbl_tipo_veiculo ".
                "left join tbl_percentual on  tbl_percentual.id_tipo_veiculo = tbl_tipo_veiculo.id_tipo_veiculo ".
                "WHERE tbl_tipo_veiculo.id_tipo_veiculo =" . $id . " group by tbl_tipo_veiculo.id_tipo_veiculo  ";
         
@@ -131,12 +131,13 @@ class  TipoVeiculoDAO{
 
         if($rs_tipo = $select->fetch(PDO::FETCH_ASSOC)){
 
-            $tipo = new TipoVeiculo();
-            
+                        $tipo = new TipoVeiculo();
+
             $tipo->setId($rs_tipo['id_tipo_veiculo'])
                  ->setData($rs_tipo['data'])
                  ->setNome($rs_tipo['nome_tipo_veiculo'])
                  ->setExcluido($rs_tipo['excluido'])
+                 ->setIdPercentual($rs_tipo['id_percentual'])
                  ->setPercentual($rs_tipo['percentual']);
         } else {
             echo " Tipo de veiculo não encontrado ";
@@ -152,7 +153,7 @@ class  TipoVeiculoDAO{
             
             /* LEFT JOIN pois o valor pode não existir na tabela de percentual */
 
-            $sql = " SELECT tbl_tipo_veiculo.*, if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.percentual) )  as 'percentual' ,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.data) )  as 'data' FROM tbl_tipo_veiculo ".
+            $sql = " SELECT tbl_tipo_veiculo.*,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.id_percentual) )  as 'id_percentual' , if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.percentual) )  as 'percentual' ,if(tbl_percentual.percentual is null, 0, Max(tbl_percentual.data) )  as 'data' FROM tbl_tipo_veiculo ".
                    " left join tbl_percentual on  tbl_percentual.id_tipo_veiculo = tbl_tipo_veiculo.id_tipo_veiculo ".
                    " WHERE tbl_tipo_veiculo.excluido = 0 ".
                    " group by tbl_tipo_veiculo.id_tipo_veiculo ";
@@ -171,6 +172,7 @@ class  TipoVeiculoDAO{
                 $tipo->setId($rs_tipos['id_tipo_veiculo'])
                      ->setData($rs_tipos['data'])
                      ->setNome($rs_tipos['nome_tipo_veiculo'])
+                     ->setIdPercentual($rs_tipo['id_percentual'])
                      ->setPercentual($rs_tipos['percentual']);
 
 

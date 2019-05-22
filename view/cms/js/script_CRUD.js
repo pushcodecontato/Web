@@ -25,11 +25,23 @@ function enviar(){
 	})
 }
 function conteudo_subMenu(nome_pagina){
+		
+		var conteudo = $('.conteudo');
+		conteudo.html('');
+		conteudo.css({
+			"background-image": "url(view/imagem/loading.svg)",
+   			"background-size":"246px",
+    		"background-repeat":"no-repeat",
+    		"background-position":"center"
+		})
 
         $.ajax({
             type:'GET',
             url:'?cms/'+nome_pagina,
             success:function(html){
+            	conteudo.css({
+					"background-image": "none",
+				})
                 $('.conteudo').html(html);
             }
         })

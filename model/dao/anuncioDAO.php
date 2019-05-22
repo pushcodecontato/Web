@@ -52,16 +52,25 @@
         } 
 
         public function delete($id){
-            
+            $sql = " UPDATE tbl_anuncio SET excluido = 1 ".
+                   " WHERE tbl_anuncio.id_anuncio = $id ";
+            echo $sql;
+            //Abrido conexao com o BD
+            $PDO_conex = $this->conex->connect_database();
+
+            if($PDO_conex->query($sql)){
+                echo " Deletado com sucesso ";
+            } else {
+                echo " Erro no script de Deletar ";
+            }
+            $this->conex->close_database();
         }
 
-        public function update($acessorio){
-            
-        }
+        public function update(){}
 
         public function selectAllProcessados(){
 
-            $sql = "SELECT tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao FROM tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio";
+            $sql = "SELECT tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao FROM tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE tbl_anuncio.excluido = 0";
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -108,7 +117,7 @@
         /* Retorna uma lsita do sanuncios que ainda não foram aprovados ou reprovados */
         public function selectAllPendentes(){
 
-            $sql = "SELECT * FROM tbl_anuncio WHERE id_anuncio not in (select id_anuncio from tbl_aprovacao_anuncio)";
+            $sql = "SELECT * FROM tbl_anuncio WHERE id_anuncio not in (select id_anuncio from tbl_aprovacao_anuncio) AND tbl_anuncio.excluido = 0";
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -154,7 +163,7 @@
         }
         public function selectById($id){
             
-            $sql = "SELECT * FROM tbl_anuncio WHERE id_anuncio=". $id;
+            $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao,if(tbl_aprovacao_anuncio.status_aprovacao is null,'pendente',tbl_aprovacao_anuncio.mensagem) as mensagem  FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE tbl_anuncio.excluido = 0 AND tbl_anuncio.id_anuncio=". $id;
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -176,7 +185,9 @@
                             ->setHorarioTermino($rs_anuncio['horario_termino'])
                             ->setDataInicial($rs_anuncio['data_inicial'])
                             ->setDataFinal($rs_anuncio['data_final'])
-                            ->setValor($rs_anuncio['valor_hora']);
+                            ->setValor($rs_anuncio['valor_hora'])
+                            ->setMenssagem($rs_anuncio['mensagem'])
+                            ->setStatus($rs_anuncio['status_aprovacao']);
 
                     
                     
@@ -235,7 +246,8 @@
         /* PAINEL DE USUARIO */
         public function selectAllByUser($id_cliente){
             
-            $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE tbl_anuncio.id_cliente_locador = $id_cliente";
+            $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE 
+tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
@@ -288,7 +300,8 @@
 
             $wheres = array();
             /* APROVADOS */
-            $wheres [] = "tbl_aprovacao_anuncio.status_aprovacao = 1";
+            $wheres[] = "tbl_aprovacao_anuncio.status_aprovacao = 1";
+            $wheres[] = " tbl_anuncio.excluido = 0 ";
             /* FILTRO:   */
             if($id_tipo_veiculo)$wheres[] = " tbl_veiculo.id_tipo_veiculo = $id_tipo_veiculo ";
             if($id_marca_tipo)$wheres[]   = " tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo = $id_marca_tipo ";
@@ -344,7 +357,7 @@
                        "inner join tbl_veiculo 					  on tbl_anuncio.id_veiculo = tbl_veiculo.id_veiculo ".
                        "inner join tbl_marca_veiculo_tipo_veiculo on tbl_marca_veiculo_tipo_veiculo.id_marca_veiculo = tbl_veiculo.id_marca_veiculo ".
                        "inner join tbl_solicitacao_anuncio 		  on tbl_solicitacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio ".
-                       "WHERE tbl_anuncio.id_cliente_locador = $id_cliente";
+                       "WHERE tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
                 $PDO_conex = $this->conex->connect_database();
             
