@@ -1,14 +1,13 @@
 #conteudo_agendamento{
     width: 100%;
-    height: 703px;
+    height: 700px;
     float: left;
-    border: solid 1px;
     margin-top: 15px;
 }
 
 #h2Border{
     width: 99px;
-    height: 15px;
+    height: 30px;
     margin-top: -15px;
     margin-left:50px;
     background-color:#fff;
@@ -23,7 +22,6 @@
 .segura_coluna{
     width: 2000px;
     height: 60px;
-    /* background-color: antiquewhite; */
 }
 
 .coluna{

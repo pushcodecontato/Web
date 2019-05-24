@@ -42,65 +42,7 @@
                     </tr>
             <?php } ?>
         </tbody>
-    </table>
-    <!--<div class="segura_coluna">
-        <div class="coluna">
-            <div id="nome"> Nome </div>
-        </div>
-
-        <div class="coluna">
-            <div id="veiculo"> Veiculo </div>
-        </div>
-
-        <div class="coluna">
-            <div id="retirada">retirada </div>
-        </div>
-
-        <div class="coluna">
-            <div id="devolucao">  devolução </div>
-        </div>
-
-        <div class="coluna">
-            <div id="valor"> valor </div>
-        </div>
-
-        <div class="coluna">
-            <div id="cancelar"> cancelar </div>
-        </div>
-
-    </div>
-    <?php foreach($lista as $item) {?>
-        <div class="segura_coluna">
-            <div class="coluna">
-                <div id="nome"> <?=@$item->getLocador()->getNome()?> </div>
-            </div>
-
-            <div class="coluna">
-                <div id="veiculo"> <?=@$item->getAnuncio()->getVeiculo()->getModelo()->getNome()?> </div>
-            </div>
-
-            <div class="coluna">
-                <div id="retirada_data"><?=@$item->getSolicitacao()->getData_inicio()?></div>
-            </div>
-
-            <div class="coluna">
-                <div id="devolucao_data"><?=@$item->getSolicitacao()->getData_final()?></div>
-            </div>
-
-            <div class="coluna">
-                <div id="rs"> R$<?=@$item->getSolicitacao()->getValorTotal($item->getAnuncio()->getValor())?></div>
-            </div>
-
-            <div class="coluna">
-                <div id="cancelar"> 
-
-                    <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
-
-                     <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
-                </div>
-            </div>
-        </div>
-    <?php } ?> -->         
+    </table>      
 </div>
 </div>
 <link rel="stylesheet" href="view/js/libs/leaflet/leaflet.css">

@@ -147,11 +147,11 @@
                             <img src="view/cms/imagem/icones/bike.png" alt="tipo">
                             <p> Estatísticas </p>
                         </div>
-                    </div>
+                    <!-- </div>
                     <div class="item_menu" onclick="conteudo_subMenu('conversa/conversa',true)">
                         <img src="view/cms/imagem/icones/funcionario.png" alt="Usuario CMS">
                         <p>Conversas</p>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
             <!-- TODO O CONTEUDO-->

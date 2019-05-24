@@ -30,9 +30,6 @@
                                 <img class="foto_anuncio" src="view/upload/<?=@$item->getVeiculo()->getFotos()[0]?>" title="icone" alt="icone">
 
                             </div>
-                            <div class="bolinha"></div>
-                            <div class="bolinha"></div>
-
                             <div class="titulo_anuncio">
                                 <h4> <?=@$item->getVeiculo()->getModelo()->getNome()?> </h4>
                                 <?php if($item->getSolicitacao()->getStatus_solicitacao() == 0){?>
@@ -46,12 +43,11 @@
 
                             <div class="dados_anuncio">
                                 <p class="dados"> 
-                                    <strong>Nome:</strong> <?=@$item->getSolicitacao()->getCliente()->getNome()?><br><br>
-                                    <strong>Horário:</strong> <?=@$item->getSolicitacao()->getHora_inicial()?> - <?=@$item->getSolicitacao()->getHora_final()?><br><br>
-                                    <strong>Valor previsto: </strong>R$ <?=@$item->getSolicitacao()->getValorTotal($item->getValor())?><br><br>
-                                    <strong>Avaliação:</strong> 8.9<br>
-                                    <img class="star_left" src="view/imagem/star1.png" alt="star">
-                                    <img class="star_left" src="view/imagem/star1.png" alt="star">
+                                    <strong>Nome:</strong> <?=@$item->getSolicitacao()->getCliente()->getNome()?><br>
+                                    <strong>Horário:</strong> <?=@$item->getSolicitacao()->getHora_inicial()?> - <?=@$item->getSolicitacao()->getHora_final()?><br>
+                                    <strong>Valor previsto: </strong>R$ <?=@$item->getSolicitacao()->getValorTotal($item->getValor())?><br>
+                                    <strong>Avaliação:</strong><img class="star_left" src="view/imagem/star1.png" alt="star">
+                                    <img class="star_left" src="view/imagem/star1.png" alt="star">                                    
                                 </p>
                             </div>
                         </div>
@@ -59,7 +55,5 @@
                 <?php }?>
         <?php } ?>
     </div>
-
 </div>
-
 <script src="view/painel_usuario/anuncios/js/script.js"></script>

@@ -1,13 +1,9 @@
 
 #conteudo_meus_veiculos{
-    width: 960px;
+    width: 1055px;
     height: 708px;
-    OVERFLOW: SCROLL;
     float: left;
-    border: solid 1px;
     margin-top: 10px;
-    /* overflow-x: hidden; */
-    /* overflow-y: auto; */
 }
 
 h4{
@@ -17,18 +13,12 @@ h4{
 }
 
 #h2Border{
-    width: 150px;
+    width: 176px;
     height: 15px;
     margin-left:50px;
-    margin-top: -12px;
+    margin-top: -6px;
     background-color: #fff;
 }
-
-
-
-
-
-
 #principal_veiculos{
     width: 900px;
     height: 580px;
