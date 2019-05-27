@@ -97,7 +97,7 @@
     text-align: justify;
 }
 .alugar_veiculo .area_texto * {
-    background-color:transparent;
+    background-color: transparent!important;
 }
 .section_conteudo{
     width: 100%;

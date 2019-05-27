@@ -33,13 +33,14 @@ class  TipoVeiculoDAO{
 
     public function insert($tipo_veiculo){
         
+        var_dump($tipo_veiculo);
         $sql ="INSERT INTO tbl_tipo_veiculo(nome_tipo_veiculo) VALUES
             ('" . $tipo_veiculo->getNome() . "')";
 
         $PDO_conex = $this->conex->connect_database();
         
         if($PDO_conex->query($sql)){
-
+            
            echo "Insert com sucesso";
             
             // Inserindo o percentual na tabela tbl_percentual
@@ -47,9 +48,9 @@ class  TipoVeiculoDAO{
            $id_tipo_veiculo = $PDO_conex->lastInsertId();
 
            $sql = "INSERT INTO tbl_percentual(percentual,id_tipo_veiculo,data)".
-                   "VALUE(". $tipo_veiculo->getPercentual() ."," . $id_tipo_veiculo . " ,'" . date('Y-m-d H:i:s') . "')";
+                   "VALUE('". $tipo_veiculo->getPercentual() ."'," . $id_tipo_veiculo . " ,'" . date('Y-m-d H:i:s') . "')";
 
-
+                   echo $sql;
            if($PDO_conex->query($sql)){
                echo "Insert com sucesso";
            }else{
@@ -58,7 +59,7 @@ class  TipoVeiculoDAO{
            }
 
         }else{
-            echo "Erro no script de insert";
+            echo "Erro no script de insert". $sql;
         }
 
         $this->conex->close_database();
@@ -172,7 +173,7 @@ class  TipoVeiculoDAO{
                 $tipo->setId($rs_tipos['id_tipo_veiculo'])
                      ->setData($rs_tipos['data'])
                      ->setNome($rs_tipos['nome_tipo_veiculo'])
-                     ->setIdPercentual($rs_tipo['id_percentual'])
+                     ->setIdPercentual($rs_tipos['id_percentual'])
                      ->setPercentual($rs_tipos['percentual']);
 
 

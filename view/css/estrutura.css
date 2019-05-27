@@ -38,7 +38,7 @@ html{
     text-decoration: none;
 }
 
-@media screen and (min-width:1000px)
+@media screen and (min-width: 1000px)
 {
 
 .texto_chamativo{
@@ -500,19 +500,59 @@ footer{
     
 }
 
-@media screen and (max-width:680px) /* colocar a palavra device para simular no celular*/
+@media screen and (max-device-width: 680px)
 {
-#header_home {
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-image: url(../imagem/slider/imagem1.jpg);
-/* background-color:aquamarine; */
-}
+    #header_home {
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-image: url(../imagem/slider/imagem1.jpg);
+    /* background-color:aquamarine; */
+    }
+    .cor_site_padrao{
+        background-color: #00984A;
+    }
+    nav{
+        width: 680px;
+        height: 42px;
+    }
+    .segura_menu{
+        /* float: left; */
+        /* padding-top: 45px; */
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        background-color: black;
+        /* margin-left: 10px; */
+        height: 89px;
+        width: 97px;
+    }
+    .segura_menu:hover{
+        max-width: 90%;
+        width: 335px;
+        min-height: 100vh;
+        height: 100vmax;
+    }
+    /* Evento hover  mostra menu */
+    .segura_menu:hover>ul{
+        display: block;
+    }
+    .segura_menu ul{
+        font-size: 1.6em;
+        margin-top: 26px;
+        display: none;
+    }
+    .segura_menu ul li{
 
+        padding: 3px 0px 2px 10px;
+    }
+    .segura_menu ul li a{
+
+        color: #b9b9b9;
+    }
 
 
     

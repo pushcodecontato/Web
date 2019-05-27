@@ -1,8 +1,7 @@
 #conteudo_agendamento{
     width: 1068px;
-    height: 680px;
+    height: 541px;
     float: left;
-    border: solid 1px;
     margin-top: 15px;
     border-radius: 20px;
     float: right;
@@ -11,7 +10,7 @@
 
 #h2Border{
     width: 160px;
-    height: 15px;
+    height: 30px;
     margin-top: -15px;
     margin-left:50px;
     background-color:#fff;

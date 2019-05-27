@@ -29,9 +29,10 @@
     <h3 class="titulo_pagina verde">Tipo de veiculos</h3>
     <form onsubmit="<?=@$submit?>" method="POST" id="frmTipo_veiculo"
      action="router.php?controller=<?=@$controller?>&modo=<?=@$modo?><?=@$id?>">
-
+        <label>Tipo de veiculo</label>
         <input  name="txtNome" type="text" id="nome"    value="<?=@$nome?>"  required>
-        <input  name="txtPercentual" id="porcentual"    value="<?=@$percentual?>"  placeholder="10%" pattern="([0-9]*)" required>
+        <label>Porcentual</label>
+        <input  name="txtPercentual" id="porcentual"    value="<?=@$percentual?>"  placeholder="10" required>
         
         <?php if(isset($tipo)){?>
 
