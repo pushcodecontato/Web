@@ -923,7 +923,7 @@ CREATE TABLE `tbl_home_sessao5` (
   `id_home_sessao5` int(11) NOT NULL AUTO_INCREMENT,
   `status_sessao5` float NOT NULL,
   `titulo_sessao5` varchar(45) NOT NULL,
-  `subtitulo1_sessao5` varchar(45) NOT NULL,
+  `subtitulo1_sessao5` text NOT NULL,
   `subtitulo2_sessao5` text NOT NULL,
   `subtitulo3_sessao5` text NOT NULL,
   `subtitulo4_sessao5` text NOT NULL,
@@ -937,7 +937,7 @@ CREATE TABLE `tbl_home_sessao5` (
   `texto4_sessao5` text NOT NULL,
   `subtitulo_sessao5` varchar(255) NOT NULL,
   PRIMARY KEY (`id_home_sessao5`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -946,7 +946,7 @@ CREATE TABLE `tbl_home_sessao5` (
 
 LOCK TABLES `tbl_home_sessao5` WRITE;
 /*!40000 ALTER TABLE `tbl_home_sessao5` DISABLE KEYS */;
-INSERT INTO `tbl_home_sessao5` VALUES (1,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(13,0,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(14,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(15,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo ','                        Crie um anúncio      ','                        Espere os interessado','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad'),(16,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo                    ','                        Crie um anúncio                    ','                        Espere os interessados                    ','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad');
+INSERT INTO `tbl_home_sessao5` VALUES (1,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(13,0,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(14,1,'Quer anúnciar seu veículo?','Criar uma conta','Cadastre seu veículo','Crie um anúncio','Espere os interessados','user.png','key.png','ad.png','esperar.png','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo','dsadasdasdasdad'),(15,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo ','                        Crie um anúncio      ','                        Espere os interessado','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad'),(16,1,'Quer anúnciar seu veículo?','                        Criar uma conta      ','                        Cadastre seu veículo                    ','                        Crie um anúncio                    ','                        Espere os interessados                    ','user.png','key.png','ad.png','esperar.png','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo                    ','dsadasdasdasdad'),(17,1,'Quer anúnciar seu veículo?','                                                Criar uma conta                          ','                                                Cadastre seu veículo                                        ','                                                Crie um anúncio                                        ','                                                Espere os interessados                                        ','user.png','key.png','ad.png','esperar.png','aaaaaaaaaaaaaa','                                                aaaaaaaaaaaaaaaa','                                                aaaaaaaaaaaaaaaaaa','                                                aaaaaaaaaaaaa','dsadasdasdasdad');
 /*!40000 ALTER TABLE `tbl_home_sessao5` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1965,6 +1965,171 @@ LOCK TABLES `tbl_veiculo` WRITE;
 INSERT INTO `tbl_veiculo` VALUES (1,'2014','HJTY','88026','50766292645',10,4,6,1),(2,'2008','PIC45','65195','50582893948',10,4,7,1),(3,'2015','CN-346','50748','80562129195',10,4,8,1),(4,'2016','IUT-6GT','57589','10486980259',10,5,9,2),(5,'2013','OIP-756J','77000','39072700160',10,5,10,2),(6,'2014','GHY-6H5','53803','12036664000',10,5,10,2),(7,'2012','YUE-5DF','45897','53217774157',10,5,11,3),(8,'2017','ACD-6U4','56897','59817709762',10,4,8,3),(9,'2015','KJH-R456','45687','30245746848',10,4,12,3);
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `view_anuncios`
+--
+
+DROP TABLE IF EXISTS `view_anuncios`;
+/*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_anuncios` AS SELECT 
+ 1 AS `avaliacao`,
+ 1 AS `numero_locacao`,
+ 1 AS `id_anuncio`,
+ 1 AS `id_tipo_veiculo`,
+ 1 AS `id_tipo_marca`,
+ 1 AS `id_modelo`,
+ 1 AS `locador`,
+ 1 AS `cpf`,
+ 1 AS `telefone`,
+ 1 AS `celular`,
+ 1 AS `cnh_foto`,
+ 1 AS `foto_cliente`,
+ 1 AS `rua`,
+ 1 AS `bairro`,
+ 1 AS `cep`,
+ 1 AS `cidade`,
+ 1 AS `complemento`,
+ 1 AS `uf`,
+ 1 AS `email`,
+ 1 AS `dt_nascimento`,
+ 1 AS `ano`,
+ 1 AS `placa`,
+ 1 AS `quilometragem`,
+ 1 AS `renavam`,
+ 1 AS `nome_tipo_veiculo`,
+ 1 AS `nome_foto`,
+ 1 AS `nome_marca`,
+ 1 AS `nome_modelo`,
+ 1 AS `data_inicial`,
+ 1 AS `data_final`,
+ 1 AS `descricao`,
+ 1 AS `horario_inicio`,
+ 1 AS `horario_termino`,
+ 1 AS `valor_hora`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_meus_veiculo`
+--
+
+DROP TABLE IF EXISTS `view_meus_veiculo`;
+/*!50001 DROP VIEW IF EXISTS `view_meus_veiculo`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_meus_veiculo` AS SELECT 
+ 1 AS `ano`,
+ 1 AS `placa`,
+ 1 AS `quilometragem`,
+ 1 AS `renavam`,
+ 1 AS `nome_tipo_veiculo`,
+ 1 AS `nome_marca`,
+ 1 AS `nome_modelo`,
+ 1 AS `nome_foto`,
+ 1 AS `id_cliente`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_num_locacao`
+--
+
+DROP TABLE IF EXISTS `view_num_locacao`;
+/*!50001 DROP VIEW IF EXISTS `view_num_locacao`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_num_locacao` AS SELECT 
+ 1 AS `numero_locacao`,
+ 1 AS `id_anuncio`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_tipo_marca`
+--
+
+DROP TABLE IF EXISTS `view_tipo_marca`;
+/*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_tipo_marca` AS SELECT 
+ 1 AS `id_tipo_veiculo`,
+ 1 AS `id_marca_veiculo`,
+ 1 AS `id_tipo_marca`,
+ 1 AS `nome_marca`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_anuncios`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_anuncios`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_anuncios` AS select if(isnull(`avaliacao_servico`.`id_avaliacao_servico`),0,avg(`avaliacao_servico`.`nota`)) AS `avaliacao`,`num_locacao`.`numero_locacao` AS `numero_locacao`,`anuncio`.`id_anuncio` AS `id_anuncio`,`tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`marca_tipo`.`id_tipo_marca` AS `id_tipo_marca`,`modelo_veiculo`.`id_modelo` AS `id_modelo`,`cliente`.`nome_cliente` AS `locador`,`cliente`.`cpf` AS `cpf`,`cliente`.`telefone` AS `telefone`,`cliente`.`celular` AS `celular`,`cliente`.`cnh_foto` AS `cnh_foto`,`cliente`.`foto_cliente` AS `foto_cliente`,`cliente`.`rua` AS `rua`,`cliente`.`bairro` AS `bairro`,`cliente`.`cep` AS `cep`,`cliente`.`cidade` AS `cidade`,`cliente`.`complemento` AS `complemento`,`cliente`.`uf` AS `uf`,`cliente`.`email` AS `email`,`cliente`.`dt_nascimento` AS `dt_nascimento`,`veiculo`.`ano` AS `ano`,`veiculo`.`placa` AS `placa`,`veiculo`.`quilometragem` AS `quilometragem`,`veiculo`.`renavam` AS `renavam`,`tipo_veiculo`.`nome_tipo_veiculo` AS `nome_tipo_veiculo`,`foto_veiculo`.`nome_foto` AS `nome_foto`,`marca_veiculo`.`nome_marca` AS `nome_marca`,`modelo_veiculo`.`nome_modelo` AS `nome_modelo`,`anuncio`.`data_inicial` AS `data_inicial`,`anuncio`.`data_final` AS `data_final`,`anuncio`.`descricao` AS `descricao`,`anuncio`.`horario_inicio` AS `horario_inicio`,`anuncio`.`horario_termino` AS `horario_termino`,`anuncio`.`valor_hora` AS `valor_hora` from (((((((((((`tbl_anuncio` `anuncio` join `tbl_cliente` `cliente` on((`cliente`.`id_cliente` = `anuncio`.`id_cliente_locador`))) join `tbl_veiculo` `veiculo` on(((`veiculo`.`id_cliente` = `cliente`.`id_cliente`) and (`veiculo`.`id_veiculo` = `anuncio`.`id_veiculo`)))) join `tbl_tipo_veiculo` `tipo_veiculo` on((`tipo_veiculo`.`id_tipo_veiculo` = `veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` `marca_veiculo` on((`marca_veiculo`.`id_marca_veiculo` = `veiculo`.`id_marca_veiculo`))) join `tbl_modelo_veiculo` `modelo_veiculo` on((`veiculo`.`id_modelo_veiculo` = `modelo_veiculo`.`id_modelo`))) join `tbl_marca_veiculo_tipo_veiculo` `marca_tipo` on((`marca_tipo`.`id_tipo_marca` = `modelo_veiculo`.`id_marca_tipo`))) join `tbl_foto_veiculo` `foto_veiculo` on((`foto_veiculo`.`id_veiculo` = `veiculo`.`id_veiculo`))) join `tbl_aprovacao_anuncio` `aprovacao_anuncio` on((`aprovacao_anuncio`.`id_anuncio` = `anuncio`.`id_anuncio`))) left join `tbl_locacao` `locacao` on((`locacao`.`id_anuncio` = `anuncio`.`id_anuncio`))) left join `tbl_avaliacao_servico` `avaliacao_servico` on((`locacao`.`id_locacao` = `avaliacao_servico`.`id_locacao`))) left join `view_num_locacao` `num_locacao` on((`num_locacao`.`id_anuncio` = `anuncio`.`id_anuncio`))) where ((`cliente`.`status` = 1) and (`aprovacao_anuncio`.`status_aprovacao` = 1)) group by `anuncio`.`id_anuncio`,`num_locacao`.`id_anuncio` order by (avg(`avaliacao_servico`.`nota`) > 4) desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_meus_veiculo`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_meus_veiculo`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_meus_veiculo` AS select `veiculo`.`ano` AS `ano`,`veiculo`.`placa` AS `placa`,`veiculo`.`quilometragem` AS `quilometragem`,`veiculo`.`renavam` AS `renavam`,`tipo_veiculo`.`nome_tipo_veiculo` AS `nome_tipo_veiculo`,`marca_veiculo`.`nome_marca` AS `nome_marca`,`modelo_veiculo`.`nome_modelo` AS `nome_modelo`,`foto_veiculo`.`nome_foto` AS `nome_foto`,`veiculo`.`id_cliente` AS `id_cliente` from ((((`tbl_veiculo` `veiculo` join `tbl_tipo_veiculo` `tipo_veiculo` on((`tipo_veiculo`.`id_tipo_veiculo` = `veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` `marca_veiculo` on((`marca_veiculo`.`id_marca_veiculo` = `veiculo`.`id_marca_veiculo`))) join `tbl_modelo_veiculo` `modelo_veiculo` on((`modelo_veiculo`.`id_modelo` = `veiculo`.`id_modelo_veiculo`))) join `tbl_foto_veiculo` `foto_veiculo` on((`foto_veiculo`.`id_veiculo` = `veiculo`.`id_veiculo`))) where (`veiculo`.`id_cliente` = 1) group by `foto_veiculo`.`id_veiculo` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_num_locacao`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_num_locacao`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_num_locacao` AS select count(`locacao`.`id_anuncio`) AS `numero_locacao`,`locacao`.`id_anuncio` AS `id_anuncio` from `tbl_locacao` `locacao` group by `locacao`.`id_anuncio` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_tipo_marca`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_tipo_marca`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_tipo_marca` AS select `tbl_tipo_veiculo`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo` AS `id_marca_veiculo`,`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_marca` AS `id_tipo_marca`,`tbl_marca_veiculo`.`nome_marca` AS `nome_marca` from ((`tbl_tipo_veiculo` join `tbl_marca_veiculo_tipo_veiculo` on((`tbl_marca_veiculo_tipo_veiculo`.`id_tipo_veiculo` = `tbl_tipo_veiculo`.`id_tipo_veiculo`))) join `tbl_marca_veiculo` on((`tbl_marca_veiculo`.`id_marca_veiculo` = `tbl_marca_veiculo_tipo_veiculo`.`id_marca_veiculo`))) where ((`tbl_marca_veiculo_tipo_veiculo`.`excluido` = 0) and (`tbl_marca_veiculo`.`status` = 1)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1975,4 +2140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-23 11:25:59
+-- Dump completed on 2019-05-28  7:53:23
