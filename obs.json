@@ -4,13 +4,18 @@
 		para:2020,
 		anos:4,
 		dias:{
-			horas_de_trabalho:8
+			"horas_de_trabalho_por_dia":8
 		},
-		dias:1.025,
-		horas_de_trabalho:8.200
+		"dias":1.025,
+		"horas_de_trabalho_da_infraestrutura":8.200,
+		"projeto_mobshare":{
+			de:"15/02/19",
+		    para:"02/06/19"
+		}
 	},
 	edificio:{
-		valor_hora:2.343,
+		valor_hora:3.041,
+		valor_total_mes:2.190,
 		aqua:{
 			custo_por_mes:70.00,
 			horas_no_mes:720,
@@ -25,10 +30,13 @@
 			custo_por_mes:1500,
 			horas_no_mes:720,
 			valor_hora:2.08
+		},
+		outros:{
+			custo_mes:500
 		}
 	},
 	infraestrutura:{
-		valor_hora:5.465,
+		"valor_hora_por_4_anos":5.465,
 		computadores:{
 			valor_hora:5,
 			Desktop:{
@@ -61,84 +69,87 @@
 		}
 	},
 	administrativos:{
-		valor_hora:,
+		valor_hora:75.642,
+		meses_do_projeto:5,
+		valor_por_mes:54000,
+		valor_total:272311.2,
 		Diretor:{
-			valor_hora:,
+			valor_hora:8.497,
 			horas_no_mes:720,
 			salario_mensal:6118
 		},
 		Gerente_administrativo:{
-			valor_hora:,
+			valor_hora:5.388,
 			horas_no_mes:720,
 			salario_mensal:3887
 		},
 		Coordenador_financeiro:{
-			valor_hora:,
+			valor_hora:5.398,
 			horas_no_mes:720,
 			salario_mensal:4493
 		},
 		Coordenador_rh:{
-			valor_hora:,
+			valor_hora:6.96,
 			horas_no_mes:720,
 			salario_mensal:5014
 		},
 		Coodenador_de_infraestrutura:{
-			valor_hora:,
+			valor_hora:8.145,
 			horas_no_mes:720,
 			salario_mensal:5865,
 		},
 		Coodenador_de_suporte_tecnico:{
-			valor_hora:,
+			valor_hora:4.420,
 			horas_no_mes:720,
 			salario_mensal:3183
 		},
 		Analista_financeiro:{
-			valor_hora:,
+			valor_hora:4.59,
 			horas_no_mes:720,
-			salario_mensal:3807
+			salario_mensal:38073,35
 		},
 		Analista_rh:{
-			valor_hora:,
+			valor_hora:4.188,
 			horas_no_mes:720,
 			salario_mensal:3016
 		},
 		Assistente_administraditvo:{
-			valor_hora:,
+			valor_hora:2.356,
 			horas_no_mes:720,
 			salario_mensal:1697
 		},
 		Assistente_departamento_pessoal:{
-			valor_hora:,
+			valor_hora:2.356,
 			horas_no_mes:720,
 			salario_mensal:1697
 		},
 		Vendedor_de_ti:{
-			valor_hora:,
+			valor_hora:3.590,
 			horas_no_mes:720,
 			salario_mensal:2585
 		},
 		Gerente_de_ti:{
-			valor_hora:,
+			valor_hora:8.761,
 			horas_no_mes:720,
 			salario_mensal:6308
 		},
 		Estagiario_de_suporte:{
-			valor_hora:,
+			valor_hora:1.984,
 			horas_no_mes:720,
 			salario_mensal:1429
 		},
 		Tecnico_de_informatica:{
-			valor_hora:,
+			valor_hora:2.058,
 			horas_no_mes:720,
 			salario_mensal:1482
 		},
 		Analista_de_redes:{
-			valor_hora:,
+			valor_hora:4.706,
 			horas_no_mes:720,
 			salario_mensal:3389
 		},
 		Tecnico_de_redes:{
-			valor_hora:,
+			valor_hora:2.245,
 			horas_no_mes:720,
 			salario_mensal:1617
 		}
