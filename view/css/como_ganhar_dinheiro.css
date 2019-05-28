@@ -42,6 +42,7 @@
     color: black;
     margin-left: 20px;
     float: left;
+    word-break: break-word;
 }
 .lista_cadastrar_veiculo_img{
     width: 400px;
@@ -62,7 +63,7 @@
     margin-left: auto;
 }
 #titulo_cadastrar_anuncio{
-    width: 400px;
+    width: 523px;
     height: 50px;
     padding-top: 5px;
     margin: auto;
