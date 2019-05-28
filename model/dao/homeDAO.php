@@ -282,7 +282,7 @@ class HomeDAO{
                "'". $sessao->getFoto3() ."','". $sessao->getFoto4() ."',".
                "'". $sessao->getTexto1() ."','". $sessao->getTexto2() ."',".
                "'". $sessao->getTexto3() ."','". $sessao->getTexto4() ."')";
-
+        echo $sql;
         $PDO_conex = $this->conex->connect_database();
 
         if($PDO_conex->query($sql)){

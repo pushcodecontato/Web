@@ -210,7 +210,7 @@
     width: 182px;
     min-height: 291px;
     height: auto;
-    border: solid 1px;
+    /* border: solid 1px; */
     float: left;
     margin-left: 20px;
 }
@@ -255,22 +255,23 @@ button{
     font-family: verdana;
     font-size:12px;
     border: solid 1px;
-    margin-top: 5px;
+    margin-top: 10px;
     word-break: break-all;
 }
 .segura_icones{
-   width: 115px;
-    height: 20px;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
+   width: 29px;
+   border: solid;
+   height: 29px;
+   margin-top: 12px;
+   margin-left: auto;
+   margin-right: auto;
 }
 .icone{
     /* margin-right: auto; */
     width: 21px;
     height: 20px;
     /* background-color: aquamarine; */
-    margin-left: 54px;
+    margin-left: 2px;
 }
 }
 /*parte do cadastrar sobre*/
