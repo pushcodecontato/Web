@@ -1,5 +1,5 @@
 function getMarcas(id_tipo_veiculo){
-    
+
     if(id_tipo_veiculo < 1)return;
     anuncios_filtrar();
     $.get('router.php?controller=tipo_veiculo&modo=json_marcas&id='+id_tipo_veiculo)
@@ -9,15 +9,19 @@ function getMarcas(id_tipo_veiculo){
         var slcMarcas = $('select[name="marcas"]');
         slcMarcas.html('');
         slcMarcas.append("<option value='0'>Selecione a Marca</option>");
-        for(var marca of marcas){
+        /*for(var marca of marcas){
             slcMarcas.append("<option value='" + marca.id_marca_tipo + "'>"+ marca.nome_marca +"</option>");
+        }*/
+        for(var i = 0 ; i < marcas.length;i++){
+          var marca = marcas[i];
+          slcMarcas.append("<option value='" + marca.id_marca_tipo + "'>"+ marca.nome_marca +"</option>");
         }
     })
 }
 function getModelos(id_marca_tipo){
 
     if(id_marca_tipo < 1)return;
-    
+
     anuncios_filtrar()
 
     $.get('router.php?controller=MODELOS&modo=JSON_MODELOS&idTipoMarca='+id_marca_tipo)
@@ -27,7 +31,8 @@ function getModelos(id_marca_tipo){
         var slcModelos = $('select[name="modelos"]');
         slcModelos.html('');
         slcModelos.append("<option value='0'>Selecione o modelo </option>");
-        for(var modelo of modelos){
+        for(var i = 0 ; i < modelos.length;i++){
+            var modelo  = modelos[i];
             slcModelos.append("<option value='" + modelo.id_modelo + "'>"+ modelo.nome_modelo +"</option>");
         }
     })
@@ -38,19 +43,20 @@ function anuncios_filtrar(){
     var slcModelos      = $('select[name="modelos"]');
     var caixaAnuncios   = $('#segura_anuncios');
 
-    var id_tipo_veiculo = slcTipos.val()  || 0; 
+    var id_tipo_veiculo = slcTipos.val()  || 0;
     var id_marca_tipo   = slcMarcas.val() || 0;
     var id_modelo       = slcModelos.val()|| 0;
 
     $.get('router.php?controller=ANUNCIOS&modo=BUSCAR&id_tipo_veiculo='+id_tipo_veiculo+'&id_marca_tipo='+id_marca_tipo+'&id_modelo='+id_modelo+'&json')
     .then(function(resposta){
       var anuncios = JSON.parse(resposta);
-      
+
       caixaAnuncios.html('');//Limpando!!
       if(anuncios.length < 1){
           caixaAnuncios.append('<p> Nenhum Anuncio Encontrado! <p>')
       }
-      for(var anuncio of anuncios){
+      for(var i = 0 ; i < anuncios.length;i++){
+         var anuncio = anuncios[i];
          var view = '<a href="#">\
                             <div class="anuncios">\
                                     <img class="img_anuncio" src="view/upload/' + anuncio.veiculo.foto[0] + '" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">\
@@ -71,7 +77,7 @@ function anuncios_filtrar(){
                         </a>';
          caixaAnuncios.append(view);//Adicionando;
       }
-        
+
     });
 
 }
