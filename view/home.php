@@ -32,7 +32,7 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,13 +52,13 @@
             headerNaoLogado();
     });
 </script>
-<div id="principal">
+<div class="principal">
     <div class="container">
         <div class="modal">
 
         </div>
     </div>
-    <div id="principal">
+    <div class="principal">
         <div class="container">
             <div class="modal">
 
@@ -81,15 +81,16 @@
                         </ul>
                     </div>
                     <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                    <div class="segura_login">
-                        <div class="login_cadastro" id="login" style="width: 110px;">
-                            <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                        </div>
-                        <div class="login_cadastro" style="width: 160px;">
-                            <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                        <div class="segura_login">
+                            <div class="login_cadastro" id="login" style="width: 110px;">
+                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            </div>
+                            <div class="login_cadastro" style="width: 160px;">
+                                <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </nav>
             <div class="texto_chamativo" style="<?=@($pagina->getBanner()->getStatus() == 0)?'display:none;':''?>">
                 <p class="texto_primario"><?=@$pagina->getBanner()->getTexto()?></p>
@@ -118,21 +119,21 @@
                 <div class="area_tipo_veiculo" >
                     <div class="tipos_veiculos">
 
-                        <a href="#"><img class="imagem_tipo" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto1()?>"></a>
+                        <a href="#"><img class="imagem_tipo" alt="" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto1()?>"></a>
                         <h3><?=@$pagina->getOquePodeAlugar()->getTitulo1()?></h3>
                         <p>
                             <?=@$pagina->getOquePodeAlugar()->getTexto1()?>
                         </p>
                     </div>
                     <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo"  src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto2()?>"></a>   
+                        <a href="#"><img class="imagem_tipo" alt="" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto2()?>"></a>   
                         <h3><?=@$pagina->getOquePodeAlugar()->getTitulo2()?></h3>
                         <p>
                             <?=@$pagina->getOquePodeAlugar()->getTexto2()?>
                         </p>     
                     </div>
                     <div class="tipos_veiculos">
-                        <a href="#"><img class="imagem_tipo" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto3()?>"></a>
+                        <a href="#"><img class="imagem_tipo" alt="" src="view/upload/<?=@$pagina->getOquePodeAlugar()->getFoto3()?>"></a>
                         <h3><?=@$pagina->getOquePodeAlugar()->getTitulo3()?></h3>
                         <p>
                             <?=@$pagina->getOquePodeAlugar()->getTexto3()?>
@@ -195,7 +196,7 @@
             </section>
             <section class="section_conteudo_anuncios" id="destaques">
                 <div id="area_anuncios">
-                <h2 class="titulo_left">Veja os destaques dessa semana</h2>            
+                    <h2 class="titulo_left">Veja os destaques dessa semana</h2>            
                     <div id="segura_anuncios">
                     <?php
 
@@ -208,16 +209,13 @@
                             if($anuncio->getStatus() == 1){
                         ?>
                         <a href="?visualizar_anuncios.php&id_anuncio=<?=@ $anuncio->getid();?>">
-                           
                             <div class="anuncios">
                                     <img class="img_anuncio" src="view/upload/<?=@ $anuncio->getVeiculo()->getFotos()[0];?>" alt="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>" title="<?=@ $anuncio->getVeiculo()->getModelo()->getNome()?>">
                                 <div class="info_anuncio">
                                     <p class="nome_veiculo">R$<?=@ $anuncio->getValor();?> /hora</p>
-
                                     <p class="info_veiculo" style="margin-top:10px;"><?=@ $anuncio->getVeiculo()->getMarca()->getNome(). " " .$anuncio->getVeiculo()->getModelo()->getNome()?></p>
                                     <p class="info_veiculo"><?=@ $anuncio->getVeiculo()->getAno() . " | " . $anuncio->getVeiculo()->getQuilometragem() . " KM" ?></p>
                                     <p class="info_veiculo" ><?=@ $anuncio->getVeiculo()->getCliente()->getNome() . " | " . $endereco  ?></p>
-                                    
                                     <div class="stars_avaliacao">
                                         <img src="view/imagem/star1.png" alt="star">
                                         <img class="star_left" src="view/imagem/star1.png" alt="star">
@@ -226,15 +224,13 @@
                                         <img class="star_left" src="view/imagem/star1.png" alt="star">
                                         <p class="percentual_avaliacao">4.5%</p>
                                     </div>
-                                    
                                 </div>
                             </div>
+                        </a>
                             <?php
                                     }
                             }
                             ?>
-                        </a>
-                        
                     </div>
                 </div>
             </section>
@@ -320,7 +316,7 @@
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                    <img class="center" style="display:block;" alt="" src="view/imagem/googleplay.png">
                 </div>
             </div>
         </div>
@@ -330,5 +326,6 @@
         jQuery("#txtCelular").mask("(99)99999-9999");
        
     </script>
+</div>
 </body>
 </html>
