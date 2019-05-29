@@ -124,9 +124,9 @@ function mostraVeiculo64(input){
      // Envia os dados do formulario
      $(form).ajaxForm({
         success:function(resposta){
-           if(resposta.toString().search('sucesso')>=0){
-  
-                console.log("Sucesso");
+           if(resposta.toString().toLowerCase().search('sucesso')>=0){
+                $.notify(" Veículo Cadastrado com sucesso! ","success")
+                conteudo_subMenu('veiculos/meus_veiculos',true)
            }else{
                 console.log("Falha");
                 console.log(resposta);
