@@ -59,11 +59,11 @@
         </div>
     </div>
     <div class="principal">
-        <div class="container">
+        <!--<div class="container">
             <div class="modal">
 
             </div>
-        </div>
+        </div>-->
         <header id="header_home" style="background-image: url(view/upload/<?=@$pagina->getBanner()->getFoto()?>);<?=@($pagina->getBanner()->getStatus() == 0)?'height: 100px;':''?>">
             <nav class="cor_site_padrao">
                 <div id="segura_nav">
