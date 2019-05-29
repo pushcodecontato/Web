@@ -5,7 +5,7 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -125,7 +125,7 @@
                                     <input type="text" name="txtCep" id="txtCep" placeholder="00000-000" required>
                                 </div>
                                 <div class="col_2">
-                                    <label for="txtCIdade">Cidade*</label><br>
+                                    <label for="txtCidade">Cidade*</label><br>
                                     <input type="text" name="txtCidade" id="txtCidade" placeholder="Ex. Jandira" required>
                                 </div>
                                
@@ -240,27 +240,27 @@
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="Play Store">
                 </div>
             </div>
         </div>
     </footer>
-</body>
-<script>
-    $(document).ready(function(){
-        jQuery("#txtDtNasc").mask("99/99/9999");
-        jQuery("#txtCpf").mask("999.999.999-99");
-        jQuery("#txtRg").mask("99.999.999-9");
-        jQuery("#txtTelefone").mask("(99) 9999-9999");
-        jQuery("#txtCelular").mask("(99) 99999-9999");
-        jQuery("#txtCep").mask("99999-999");
-    });
+    <script>
+        $(document).ready(function(){
+            jQuery("#txtDtNasc").mask("99/99/9999");
+            jQuery("#txtCpf").mask("999.999.999-99");
+            jQuery("#txtRg").mask("99.999.999-9");
+            jQuery("#txtTelefone").mask("(99) 9999-9999");
+            jQuery("#txtCelular").mask("(99) 99999-9999");
+            jQuery("#txtCep").mask("99999-999");
+        });
 
-    $('#btnFotoCliente').click(function(){
-        $('#adicionarCliente').trigger('click');
-    });
-    $('#btnFotoCnh').click(function(){
-        $('#addFotoCnh').trigger('click');
-    });
-</script>
+        $('#btnFotoCliente').click(function(){
+            $('#adicionarCliente').trigger('click');
+        });
+        $('#btnFotoCnh').click(function(){
+            $('#addFotoCnh').trigger('click');
+        });
+    </script>
+</body>
 </html>   
