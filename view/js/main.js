@@ -172,8 +172,12 @@ function mostraImagem64(input){
 
      var form = $(form);
 
-     $(form).find('.containerCadastro').hide(200);
-     $(form).css({'background-image':'url(view/imagem/loading.svg)'});
+     $(form).find('*').hide(200);
+     $(form).css({'background-image':'url(view/imagem/loading.svg)',
+     		 	  'background-position':'center',
+    			  'background-repeat':' no-repeat',
+    			  'background-size':' 345px'});
+
      $(form).append("<p style='text-align: center; color: #888888; bottom: 0; position: absolute; width: 100%; left: 0;'> Carregando.. </p>");
 
      // Envia os dados do formulario

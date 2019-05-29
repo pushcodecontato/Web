@@ -53,7 +53,7 @@
             </div>
         </header>
         <div class="containerCadastro">
-            <form id="frmCliente"  method='post' enctype="multipart/form-data" onsubmit="clientes_cadastrar(this)" action="router.php?controller=clientes&modo=inserir">
+            <form id="frmCliente" style="min-height: 400px;"  method='post' enctype="multipart/form-data" onsubmit="clientes_cadastrar(this)" action="router.php?controller=clientes&modo=inserir">
             <h1>Cadastro de usuário</h1>
                 <div class="seguraCadastro">
                     <h2>Dados pessoais</h2>
