@@ -5,9 +5,9 @@ $.notify.addStyle('classNotify', {
     classes: {
         base: {
         "height":"40px",
-       
+
         "padding": "10px 10px 0px 10px",
-        "border-radius": "2px", 
+        "border-radius": "2px",
         "color": "white",
         "font-family":"OpenSans-Regular",
         },
@@ -18,9 +18,8 @@ $.notify.addStyle('classNotify', {
             "background-color": "#ff2020"
         }
     }
-    
-});
 
+});
 function logar(form){
     event.preventDefault();
     $.post({
@@ -39,7 +38,7 @@ function logar(form){
                style: 'classNotify',
                className: 'classSuccess'
            });
-           
+
         }else{
             $.notify(resposta.toString(), {
                 style: 'classNotify',
@@ -47,7 +46,7 @@ function logar(form){
             });
         }
     })
-       
+
 }
 
 function headerLogado(){
@@ -56,7 +55,7 @@ function headerLogado(){
         url:"view/menu/menuLogado.php",
         success:function(dados){
             $(".modoLogin").html(dados);
-          
+
         }
     })
 }
@@ -65,7 +64,7 @@ function headerNaoLogado(){
         type:"GET",
         url:"view/menu/menuNaoLogado.php",
         success:function(dados){
-            
+
             $(".modoLogin").html(dados);
         }
     })
@@ -112,7 +111,7 @@ function fale_conosco_enviar(form){
 		success:function(resposta){
 
 			if(resposta.toString().search('sucesso')>=0){
-			   
+
 			   setTimeout(function(){
 			       $('.fale_conosco')
                    .css({'background-image':'none',
@@ -151,45 +150,45 @@ function email_marketing_enviar(form){
 // FUNÇÃO PARA CADASTRA CLIENTE
 function mostraImagem64(input){
     var file = input.files[0];
-  
+
     var reader = new FileReader();
-  
+
     reader.onloadend = function() {
        $(input).parent().find('.addFotoCliente').css({'background-image':'url("'+ reader.result +'")'});
     }
     console.log(file);
     reader.readAsDataURL(file);
   }
-  
-  function clientes_cadastrar(form){ 
+
+  function clientes_cadastrar(form){
      var submetido = ($(form).attr('data-submit') || 0) * 1;
     //Efita o lopp do ajaxForm (DIFICIL DE EXPLICAR)!Quando damos submit() no ajaxForm ele chama o onsubmit do formulario e então retorna para essa função que cria o reinvia acedentalmente
      if(submetido == 1){
         return true;
-     }else{ 
+     }else{
        $(form).attr('data-submit','1');
      }
      event.preventDefault();
-  
+
      var form = $(form);
-  
+
      $(form).find('.containerCadastro').hide(200);
      $(form).css({'background-image':'url(view/imagem/loading.svg)'});
      $(form).append("<p style='text-align: center; color: #888888; bottom: 0; position: absolute; width: 100%; left: 0;'> Carregando.. </p>");
-     
+
      // Envia os dados do formulario
      $(form)
      .ajaxForm({
          success:function(resposta){
            console.log("RESPOSTA",resposta);
            if(resposta.toString().search('sucesso')>=0){
-  
+
             $.notify("Usuário cadastrado com sucesso", {
                 style: 'classNotify',
                 className: 'classSuccess'
             });
              // Redirecionando o usuario depois da menssagem de sucesso aparecer
-             setTimeout(function(){  
+             setTimeout(function(){
                //Redirecionando
                window.location = "?painel_usuario/home.php";
              },800)
@@ -202,7 +201,7 @@ function mostraImagem64(input){
            }
          },
      }).submit();
-  
+
   }
 
 //   FUNÇÂO PARA CHAMAR A MODAL SOLICITACAO ANUNCIO
@@ -216,12 +215,12 @@ function chamarSolicitacao(idAnuncio,idCliente){
             console.log(callback);
             $('.modal').html(callback);
         }
-    }); 
+    });
 }
-  
+
 function inserirSolicitacao(idCliente,idAnuncio,form){
     event.preventDefault();
-    
+
     var form = $(form);
     var dtInicial = form.find('#dtInicial').val();
     var dtFinal = form.find('#dtFinal').val();

@@ -6,12 +6,12 @@
     $cliente = unserialize($_SESSION['cliente']);
 ?>
 <div class="usuarioLogado">
-    <img src="view/upload/<?=@$cliente->getFoto();?>">
+    <img src="view/upload/<?=@$cliente->getFoto();?>" alt="foto do cliente">
     <div class="infoUser">
         <p style="font-size:18px;">Seja bem vindo</p>
         <p><?=@$cliente->getNome();?></p>
         <a href="?painel_usuario/home.php" class="painelUsuario">Painel do usuário </a>|
-        <spam class="logout"> Fazer logout</spam>
+        <label class="logout"> Fazer logout</label>
     </div>
 </div>
 
