@@ -30,7 +30,7 @@
     $anuncios = $controllerAnuncio->listar_anunciosProcesssados();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,14 +66,15 @@
                                 </ul>
                             </div>
                             <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                            <div class="segura_login">
-                                <div class="login_cadastro" id="login" style="width: 110px;">
-                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                <div class="segura_login">
+                                    <div class="login_cadastro" id="login" style="width: 110px;">
+                                        <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                    </div>
+                                    <div class="login_cadastro" style="width: 160px;">
+                                        <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                    </div>
                                 </div>
-                                <div class="login_cadastro" style="width: 160px;">
-                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                                </div>
-                            </div>
+                             </div>
                         </div>    
                     </nav>
                     <div class="caixa_texto_pages_all">
@@ -92,7 +93,6 @@
                 ?>
                 <form id="pesquisa">
                     <div id="explicao_como_alugar">
-                     <form>
                         <div class="combo_box">
                             <label>Tipo de veículo</label><br>
                             <select name="tipo" onchange="getMarcas(this.value)">
@@ -119,8 +119,7 @@
                         <div class="combo_box">
                             <input type="button" onclick="anuncios_filtrar()" class="btn_filtro" value="Filtrar">
                         </div>
-                    </form> 
-                </div>
+                    </div>
                 </form>
                 <div id="segura_anuncios">
                     <?php
@@ -219,14 +218,13 @@
                     </div>
                     <p>Baixe nosso aplicativo na playstore</p>
                     <div class="playstore">
-                        <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                        <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="image" title="image">
                     </div>
                 </div>
             </div>
         </footer>
     <script src="view/js/main.js"></script>
     <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
-    </body>
     <script>
         $(document).ready(function(){
             if(<?php echo $boolean?>)
@@ -235,4 +233,7 @@
                 headerNaoLogado();
         });
     </script>
+    
+    </body>
+    
 </html>

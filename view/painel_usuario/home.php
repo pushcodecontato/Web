@@ -9,7 +9,8 @@
     if($cliente->getCpf() == null);
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,7 +59,7 @@
                 
                         <div class="img_cliente" >
                             <div class="editarPerfil">
-                                <img id="imgEditarPerfil" src="view/painel_usuario/imagem/editarPerfil.png">
+                                <img id="imgEditarPerfil" src="view/painel_usuario/imagem/editarPerfil.png" alt="imagem">
                             </div>
                             <img src="view/upload/<?=@$cliente->getFoto()?>" title="Foto do usuario" alt="foto do usuario">
                         </div>
@@ -152,13 +153,13 @@
                         <img src="view/cms/imagem/icones/funcionario.png" alt="Usuario CMS">
                         <p>Conversas</p>
                     </div> -->
+                    </div>
                 </div>
             </nav>
             <!-- TODO O CONTEUDO-->
             <div id="conteudo">
                               
             </div>
-        </div>
     </div>
     <div id="container">
         <div id="modal">

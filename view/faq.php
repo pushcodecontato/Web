@@ -23,7 +23,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,12 +59,13 @@
                             </ul>
                         </div>
                         <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                        <div class="segura_login">
-                            <div class="login_cadastro" id="login" style="width: 110px;">
-                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                            </div>
-                            <div class="login_cadastro" style="width: 160px;">
-                                <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            <div class="segura_login">
+                                <div class="login_cadastro" id="login" style="width: 110px;">
+                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                </div>
+                                <div class="login_cadastro" style="width: 160px;">
+                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                </div>
                             </div>
                         </div>
                     </div>    
@@ -75,69 +76,67 @@
                 </div>
             </div>
         </header>
-        <div id="principal">
-            <section class="conteudo_faq">
-                <div id="conteudo">                    
-                    <div class="caixa_faq">
-                        <div class="titulos_perguntas">
-                            <h2 class="perguntas_frequentes">As perguntas mais frequentes</h2>
-                        </div>
-                         <?php 
-                            require_once('controller/controllerFaq.php');
+        <section class="conteudo_faq">
+            <div id="conteudo">                    
+                <div class="caixa_faq">
+                    <div class="titulos_perguntas">
+                        <h2 class="perguntas_frequentes">As perguntas mais frequentes</h2>
+                    </div>
+                     <?php 
+                        require_once('controller/controllerFaq.php');
 
-                                $controller_faq = new ControllerFaq();
+                            $controller_faq = new ControllerFaq();
 
-                                $listFaq =  $controller_faq->listar_faq();
+                            $listFaq =  $controller_faq->listar_faq();
 
 
-                                if(count($listFaq) < 1){
-                                  echo "<img style='width: 279px; display: block; margin-left: auto; margin-right: auto; margin-top: 13px;' class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                                  echo " <p style='text-align: center;' class='aviso_tabela'> Nenhum registro encontrado!</p> ";
-                                }
-                                $acc = 0 ;
-                            ?>
-                        <?php foreach($listFaq as $registro){ ?>
-                                <?php if($registro->getStatus() == 1){ ?>
-                                    <div class="linha_perguntas ">
-                                        <div class="segura_perguntas">
-                                            <h3><?=@$registro->getPerguntas()?></h3>
-                                            <p>Resposta:&nbsp<?=@$registro->getRespostas()?></p>
-                                        </div>
-                                        <img src="view/imagem/arrow_down.png" onclick="ver_resposta_completa(this)" id="seta" alt="seta">
+                            if(count($listFaq) < 1){
+                              echo "<img style='width: 279px; display: block; margin-left: auto; margin-right: auto; margin-top: 13px;' class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
+                              echo " <p style='text-align: center;' class='aviso_tabela'> Nenhum registro encontrado!</p> ";
+                            }
+                            $acc = 0 ;
+                        ?>
+                    <?php foreach($listFaq as $registro){ ?>
+                            <?php if($registro->getStatus() == 1){ ?>
+                                <div class="linha_perguntas ">
+                                    <div class="segura_perguntas">
+                                        <h3><?=@$registro->getPerguntas()?></h3>
+                                        <p>Resposta:<?=@$registro->getRespostas()?></p>
                                     </div>
-                                <?php }else{ 
-                                        $acc++;
-                                      }?>
-                        <?php } ?>
-                        <?php if(count($listFaq) == $acc){ ?>
-                                <script>
-                                    setTimeout(function(){
-                                        $(".caixa_faq").notify(
-                                          "Sem dados!", 
-                                          { position:"top" }
-                                        );    
-                                    },400);
-                                    
-                                </script>
-                        <?php } ?>
-                    </div>
-                    <div class="paginacao">
-                        <div class="paginacao_item"><p>Prev</p></div>
-                        <div class="paginacao_item"><p>1</p></div>
-                        <div class="paginacao_item"><p>2</p></div>
-                        <div class="paginacao_item"><p>3</p></div>
-                        <div class="paginacao_item"><p>4</p></div>
-                        <div class="paginacao_item"><p>5</p></div>
-                        <div class="paginacao_item"><p>6</p></div>
-                        <div class="paginacao_item"><p>7</p></div>
-                        <div class="paginacao_item"><p>8</p></div>
-                        <div class="paginacao_item"><p>9</p></div>
-                        <div class="paginacao_item"><p>Next</p></div>
-                    </div>
+                                    <img src="view/imagem/arrow_down.png" onclick="ver_resposta_completa(this)" id="seta" alt="seta">
+                                </div>
+                            <?php }else{ 
+                                    $acc++;
+                                  }?>
+                    <?php } ?>
+                    <?php if(count($listFaq) == $acc){ ?>
+                            <script>
+                                setTimeout(function(){
+                                    $(".caixa_faq").notify(
+                                      "Sem dados!", 
+                                      { position:"top" }
+                                    );    
+                                },400);
+
+                            </script>
+                    <?php } ?>
                 </div>
-                
-            </section>  
-        </div>
+                <div class="paginacao">
+                    <div class="paginacao_item"><p>Prev</p></div>
+                    <div class="paginacao_item"><p>1</p></div>
+                    <div class="paginacao_item"><p>2</p></div>
+                    <div class="paginacao_item"><p>3</p></div>
+                    <div class="paginacao_item"><p>4</p></div>
+                    <div class="paginacao_item"><p>5</p></div>
+                    <div class="paginacao_item"><p>6</p></div>
+                    <div class="paginacao_item"><p>7</p></div>
+                    <div class="paginacao_item"><p>8</p></div>
+                    <div class="paginacao_item"><p>9</p></div>
+                    <div class="paginacao_item"><p>Next</p></div>
+                </div>
+            </div>
+
+        </section>  
         <footer class="cor_site_padrao">
             <!--  Caixas que contem o contato e o navegar pelo site -->
             <div class="newsletter">
@@ -190,19 +189,20 @@
                     </div>
                     <p>Baixe nosso aplicativo na playstore</p>
                     <div class="playstore">
-                        <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                        <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="googleplay">
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script>
+        $(document).ready(function(){
+            if(<?php echo $boolean?>)
+                headerLogado();
+            else
+                headerNaoLogado();
+        });
+    </script>
 </body>
-<script>
-    $(document).ready(function(){
-        if(<?php echo $boolean?>)
-            headerLogado();
-        else
-            headerNaoLogado();
-    });
-</script>
+
 </html>

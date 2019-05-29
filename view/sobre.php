@@ -57,12 +57,13 @@
                                 </ul>
                             </div>
                             <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                            <div class="segura_login">
-                                <div class="login_cadastro" id="login" style="width: 110px;">
-                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                                </div>
-                                <div class="login_cadastro" style="width: 160px;">
-                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                <div class="segura_login">
+                                    <div class="login_cadastro" id="login" style="width: 110px;">
+                                        <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                    </div>
+                                    <div class="login_cadastro" style="width: 160px;">
+                                        <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>    
@@ -89,12 +90,6 @@
                         <br>
                         <p>
                             <?=@$registro->getTexto_sobre()?>
-                           <!-- <span>&nbsp&nbsp&nbsp</span>A empresa Mob’Share nasceu de uma iniciativa privada que atua em parceria  com  prefeituras  em  todo  o  território  nacional  com  o  objetivo  de auxiliar as prefeituras em projetos de mobilidade e urbanismo.
-                            <br>
-                            <span>&nbsp&nbsp&nbsp</span>A  empresa  está  localizada  no Pq  Industrial  em  Santo  André  no grande  ABC,  em  prédio  próprio,  contendo  os  setores administrativos  da organização.
-                            <br>
-                            <span>&nbsp&nbsp&nbsp</span>O principal foco da empresa está no processo de compartilhamento de  transporte  pessoal,  além  das  empresas  já  conhecidas  e  renomadas  no mercado  atual  como  UBER,  99Taxis,  entre  outras,  o  nosso  negócio  visa conscientizar  as  pessoas  que  podemos  compartilhar  o  nosso  meio  de transporte que estiver parado, podendo gerar renda pessoal. 
-                            -->
                         </p>  
                     </div>
                     <figure id="imgEmpresa" style="background-image: url(view/upload/<?=@$registro->getFoto_sobre()?>);"> 
@@ -116,7 +111,7 @@
                         <h2> MISSÃO</h2>
                         <br>
                         <figure>
-                          <img src="view/upload/<?php echo($registro->getFoto_missao_sobre())?>" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/upload/<?php echo($registro->getFoto_missao_sobre())?>" style="width:200px;height:200px;" alt="imagem">
                         </figure>
                         <p>
                             <?=@$registro->getTexto_missao_sobre()?>
@@ -126,7 +121,7 @@
                         <h2> VISÃO</h2>
                         <br>
                         <figure>
-                          <img src="view/upload/<?php echo($registro->getFoto_visao_sobre())?>" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/upload/<?php echo($registro->getFoto_visao_sobre())?>" style="width:200px;height:200px;" alt="imagem">
                         </figure>
                         <p>
                            <?=@$registro->getTexto_visao_sobre()?>
@@ -136,7 +131,7 @@
                         <h2> VALORES</h2>
                         <br>
                         <figure>
-                          <img src="view/upload/<?php echo($registro->getFoto_valores_sobre())?>" alt="The Pulpit Rock" width="200px" height="200px">
+                          <img src="view/upload/<?php echo($registro->getFoto_valores_sobre())?>" style="width:200px;height:200px;" alt="imagem">
                         </figure>
                         <p>
                            <?=@$registro->getTexto_valores_sobre()?>
@@ -196,19 +191,20 @@
                         </div>
                         <p>Baixe nosso aplicativo na playstore</p>
                         <div class="playstore">
-                            <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                            <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="googleplay">
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
+        <script>
+            $(document).ready(function(){
+                if(<?php echo $boolean?>)
+                    headerLogado();
+                else
+                    headerNaoLogado();
+            });
+        </script>
     </body> 
-    <script>
-        $(document).ready(function(){
-            if(<?php echo $boolean?>)
-                headerLogado();
-            else
-                headerNaoLogado();
-        });
-    </script>
+    
 </html>

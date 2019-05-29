@@ -62,14 +62,15 @@
                         </ul>
                     </div>
                     <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                    <div class="segura_login">
-                        <div class="login_cadastro" id="login" style="width: 110px;">
-                            <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                        </div>
-                        <div class="login_cadastro" style="width: 160px;">
-                            <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                        </div>
-                    </div>
+						<div class="segura_login">
+							<div class="login_cadastro" id="login" style="width: 110px;">
+								<a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+							</div>
+							<div class="login_cadastro" style="width: 160px;">
+								<a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+							</div>
+						</div>
+					</div>
                 </div>     
             </nav>
             <div class="caixa_texto_pages_all">
@@ -97,7 +98,7 @@
 				<?=@$como_ganhar_dinheiro->getLista1_sessao1()?>
 			</div>
 			<div  class="lista_cadastrar_veiculo_img">
-				<img src="view/upload/<?=@$como_ganhar_dinheiro->getImg1_sessao1()?>" height="300px" width="400px">
+				<img src="view/upload/<?=@$como_ganhar_dinheiro->getImg1_sessao1()?>" style="height:300px; width:400px;" alt="imagem">
         	</div>
 			<div class="lista_cadastrar_veiculo">
                 <?=@$como_ganhar_dinheiro->getLista2_sessao1()?>
@@ -109,12 +110,13 @@
 				<h2><?=@$como_ganhar_dinheiro->getTitulo_sessao2()?></h2>
 			</div>
 			<div  class="lista_cadastrar_anuncio">
-            <img src="view/upload/<?=@$como_ganhar_dinheiro->getImg1_sessao2()?>" height="300px" width="300px"></div>
+            	<img src="view/upload/<?=@$como_ganhar_dinheiro->getImg1_sessao2()?>" style="height:300px; width:400px;" alt="imagem">
+            </div>
 			<div class="lista_cadastrar_anuncio">
 				<?=@$como_ganhar_dinheiro->getLista1_sessao2()?>
 			</div>
 			<div  class="lista_cadastrar_anuncio">
-            <img src="view/upload/<?=@$como_ganhar_dinheiro->getImg2_sessao2()?>" height="300px" width="300px">
+            <img src="view/upload/<?=@$como_ganhar_dinheiro->getImg2_sessao2()?>" style="height:300px; width:400px;" alt="imagem">
 			</div>
 			<div class="lista_cadastrar_anuncio">
 				<?=@$como_ganhar_dinheiro->getLista2_sessao2()?>
@@ -125,8 +127,7 @@
                 <h2><?=@$como_ganhar_dinheiro->getTitulo_sessao3()?></h2>
                 <div class="hold_tabela">
                     <div class="texto_como_funciona">
-                        <p><?=@$como_ganhar_dinheiro->getTexto_sessao3()?>
-                        </p>
+                       <?=@ $como_ganhar_dinheiro->getTexto_sessao3() ?>
                     </div>
                     <div class="tabela">
                         <div class="linha_titulos">
@@ -222,13 +223,12 @@
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="googleplay">
                 </div>
             </div>
         </div>
     </footer>
-</body>
-<script>
+    <script>
     $(document).ready(function(){
         if(<?php echo $boolean?>)
             headerLogado();
@@ -236,4 +236,6 @@
             headerNaoLogado();
     });
 </script>
+</body>
+
 </html>

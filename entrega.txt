@@ -1,0 +1,17 @@
+{
+	"Trazer":[
+		{tipo:"tcc-documento-impresso",quantidade:2,caracteristicas:{
+			encardenado
+		}},
+		{tipo:"manual-de-usuario-impresso",quantidade:1,caracteristicas:{
+			encardenado
+		}},
+		{tipo:" Midia dvd/pendravin/cd ",quantidade:1,caracteristicas:{
+			desc:" Todo o tcc(codigos fontes e toda a documentação) "
+		}}
+		
+	],
+	"dia 14 ":{
+		desc:" Dia para a entrega do capa dura"
+	}
+}
