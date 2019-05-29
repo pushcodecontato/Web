@@ -23,7 +23,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,12 +54,13 @@
                             </ul>
                         </div>
                         <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                        <div class="segura_login">
-                            <div class="login_cadastro" id="login" style="width: 110px;">
-                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
-                            </div>
-                            <div class="login_cadastro" style="width: 160px;">
-                                <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                            <div class="segura_login">
+                                <div class="login_cadastro" id="login" style="width: 110px;">
+                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                </div>
+                                <div class="login_cadastro" style="width: 160px;">
+                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                </div>
                             </div>
                         </div>
                     </div>    
@@ -88,7 +89,8 @@
         <?php  } elseif($pagina->getStatus() == 1 ){ ?>
 
             <section class="section_termos_uso">
-
+                <!-- ACessibilidade -->
+                <h2 style="opacity:0;"><?=@$pagina->getTitulo()?></h2>
                 <div class="conteudo">
                     <div class="texto_termos">
                         <p><?=@$pagina->getTitulo()?></p>
@@ -165,18 +167,18 @@
                 </div>
                 <p>Baixe nosso aplicativo na playstore</p>
                 <div class="playstore">
-                    <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                    <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="Play store">
                 </div>
             </div>
         </div>
     </footer>
+    <script>
+        $(document).ready(function(){
+            if(<?php echo $boolean?>)
+                headerLogado();
+            else
+                headerNaoLogado();
+        });
+    </script>
 </body>
-<script>
-    $(document).ready(function(){
-        if(<?php echo $boolean?>)
-            headerLogado();
-        else
-            headerNaoLogado();
-    });
-</script>
 </html>

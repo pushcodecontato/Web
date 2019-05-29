@@ -32,7 +32,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,14 +68,15 @@
                             </ul>
                         </div>
                         <div class="modoLogin" onload="verificarLogin(<?php $cliente ?>)">
-                        <div class="segura_login">
-                            <div class="login_cadastro" id="login" style="width: 110px;">
-                                <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                            <div class="segura_login">
+                                <div class="login_cadastro" id="login" style="width: 110px;">
+                                    <a href="javascript:efetuarLogin()"><img src="view/imagem/login_amarelo.png" alt="login"><p>LOGIN</p></a>
+                                </div>
+                                <div class="login_cadastro" style="width: 160px;">
+                                    <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
+                                </div>
                             </div>
-                            <div class="login_cadastro" style="width: 160px;">
-                                <a href="javascript:getCadastro()"><img src="view/imagem/downloads2/cadastrar.png" alt="login"><p>CADATRAR-SE</p></a>
-                            </div>
-                        </div>
+                         </div>
                     </div>    
                 </nav>
                 <div class="caixa_texto_pages_all">
@@ -88,7 +89,7 @@
 
              <div class="row" style=" height: 360px; <?=($banner->getStatus() == 0)?'display:none;':''?>">
                 <div class="cold4 esquerda">
-                    <img src="view/upload/<?=@$banner->getFoto1()?>" style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto1()?>" style="height: 355px; width:100%;" alt="Empresas">
                 </div>
                 <div class="cold2 center" style="width: 29%;">
                     <div class="esquerda border-left"></div>
@@ -104,7 +105,7 @@
                     <div class="direita border-right"></div>
                 </div>
                 <div class="cold4 direita">
-                    <img src="view/upload/<?=@$banner->getFoto2()?>"  style="height: 355px; width:100%;">
+                    <img src="view/upload/<?=@$banner->getFoto2()?>"  style="height: 355px; width:100%;" alt="Pessoal">
                 </div>
 
              </div>
@@ -126,12 +127,12 @@
                          }
 
                         foreach($lista_topicos as $listaTopicos){?>
-                            <div class="row center">
+                            <div class="row center" style="height: auto; overflow: hidden; ">
                                 <?php foreach($listaTopicos as $topico){ ?>
                                         <div class="cold3 center">
                                             <div class="beneficio center">
                                                 <div class="img center">
-                                                    <img src="view/upload/<?=@$topico->getFoto()?>">
+                                                    <img src="view/upload/<?=@$topico->getFoto()?>" alt="<?=@$topico->getTitulo()?>">
                                                 </div>
                                                 <div class="titulo"><?=@$topico->getTitulo()?></div>
                                                 <div class="desc">
@@ -143,76 +144,6 @@
                             </div>
                  <?php } ?>
                <?php } ?>
-                 <!--<div class="row center">
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/family.jpg">
-                            </div>
-                            <div class="titulo">Ferias</div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/people-car2.jpg">
-                            </div>
-                            <div class="titulo">Seus Funcionarios</div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/people-car.jpg">
-                            </div>
-                            <div class="titulo"> Descontos </div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                 <div class="row center">
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/people-car3.jpg">
-                            </div>
-                            <div class="titulo"> Só o melhor </div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/people-car4.jpg">
-                            </div>
-                            <div class="titulo">Impressione Clientes</div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cold3 center">
-                        <div class="beneficio center">
-                            <div class="img center">
-                                <img src="view/imagem/people-car5.jpg">
-                            </div>
-                            <div class="titulo"> Locomoção definitiva </div>
-                            <div class="desc">
-                                lorem ipsum lacus vehicula faucibus tristique molestie mi, commodo 
-                            </div>
-                        </div>
-                    </div>
-                 </div>-->
              </div>
         </div>
     </div>
@@ -268,18 +199,18 @@
                     </div>
                     <p>Baixe nosso aplicativo na playstore</p>
                     <div class="playstore">
-                        <img class="center" style="display:block;" src="view/imagem/googleplay.png">
+                        <img class="center" style="display:block;" src="view/imagem/googleplay.png" alt="Play Store">
                     </div>
                 </div>
             </div>
         </footer>
-    </body>
-    <script>
-        $(document).ready(function(){
-            if(<?php echo $boolean?>)
-                headerLogado();
-            else
-                headerNaoLogado();
-        });
+        <script>
+            $(document).ready(function(){
+                if(<?php echo $boolean?>)
+                    headerLogado();
+                else
+                    headerNaoLogado();
+            });
     </script>
+    </body>
 </html>
