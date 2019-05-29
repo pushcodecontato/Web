@@ -26,17 +26,26 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($lista as $item){?>
-                      <tr>
-                        <td><?=@$item->getLocador()->getNome()?></td>
-                        <td><?=@$item->getAnuncio()->getVeiculo()->getModelo()->getNome()?></td>
-                        <td><?=@$item->getSolicitacao()->getData_inicio()?></td>
-                        <td><?=@$item->getSolicitacao()->getData_final()?></td>
-                        <td>
-                            <a><i class="far fa-comments" style="font-size: 2em;"></i></a>
-                        </td>
-                      </tr>
-                <?php } ?>
+                <?php if(count($lista)<1){?>
+                        <tr>
+                            <td colspan="5">
+                                <img class="img_not_find" style="width: 241px;display: block;margin-left: auto;margin-top: 84px;margin-right: auto;" width="128" alt="Nada encontrado" src="view/imagem/magnify.gif">
+                                <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhuma locação  encontrada!</p>
+                            </td>
+                        </tr>
+                <?php }else{ ?>
+                    <?php foreach($lista as $item){?>
+                          <tr>
+                            <td><?=@$item->getLocador()->getNome()?></td>
+                            <td><?=@$item->getAnuncio()->getVeiculo()->getModelo()->getNome()?></td>
+                            <td><?=@$item->getSolicitacao()->getData_inicio()?></td>
+                            <td><?=@$item->getSolicitacao()->getData_final()?></td>
+                            <td>
+                                <a><i class="far fa-comments" style="font-size: 2em;"></i></a>
+                            </td>
+                          </tr>
+                    <?php } ?>
+               <?php } ?>
             </tbody>
         </table>
     </div>

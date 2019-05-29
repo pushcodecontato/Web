@@ -1,9 +1,9 @@
 #conteudo_andamento{
-    width: 1068px;
+    width: 100%;
     height: 685px;
     float: right;
     margin-top: 15px;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     border-radius: 20px;
 }
 
@@ -14,6 +14,13 @@
     margin-left:50px;
     background-color:#fff;
     margin-bottom: 20px;
+    width: 100%;
+    margin: 0;
+    height: 42px;
+    margin-top: -13px;
+    padding: 4px 14px;
+    border: solid 1px #ddd;
+    border-bottom: 2px solid #ddd;
 }
 #principal_andamento{
     width: 1047px;

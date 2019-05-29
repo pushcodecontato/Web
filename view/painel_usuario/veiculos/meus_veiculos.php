@@ -23,35 +23,39 @@
                 $controller_veiculo = new ControllerVeiculos();
 
                 $veiculos_cliente = $controller_veiculo->getAllById($cliente->getId());
+                if(count($veiculos_cliente)<1){?>
+                        <img class="img_not_find" style="width: 241px;display: block;margin-left: auto;margin-top: 84px;margin-right: auto;" width="128" alt="Nada encontrado" src="view/imagem/magnify.gif">
+                        <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhum veículo encontrado!</p>
+                <?php }else{?>
 
-                foreach($veiculos_cliente as $veiculos){
+                    <?php foreach($veiculos_cliente as $veiculos){?>
+                        <div class="caixa_veiculo">
 
-            ?>
-                <div class="caixa_veiculo">
-                    
-                    <div class="imagem_veiculo"> 
+                            <div class="imagem_veiculo"> 
 
-                        <img class="foto_veiculo" src="view/upload/<?=@  $veiculos->getFotos()[0] ?>" title="icone" alt="icone">
-                    </div>
-                    <div class="bolinha"></div>
+                                <img class="foto_veiculo" src="view/upload/<?=@  $veiculos->getFotos()[0] ?>" title="icone" alt="icone">
+                            </div>
+                            <div class="bolinha"></div>
 
-                    <div class="titulo_veiculo">
-                        <h4><?=@  $veiculos->getModelo()->getNome()?></h4>
-                    </div>
+                            <div class="titulo_veiculo">
+                                <h4><?=@  $veiculos->getModelo()->getNome()?></h4>
+                            </div>
 
-                    <div class="dados_veiculo">
-                        <p class="dados"> 
-                            <strong>Marca: </strong><?=@  $veiculos->getMarca()->getNome()?><br><br>
-                            <strong>Modelo:</strong> <?=@  $veiculos->getModelo()->getNome()?><br><br>
-                            <strong>Ano: </strong><?=@  $veiculos->getAno()?><br><br>
-                            <strong>Locado:</strong>
-                        </p>
-                    </div>
+                            <div class="dados_veiculo">
+                                <p class="dados"> 
+                                    <strong>Marca: </strong><?=@  $veiculos->getMarca()->getNome()?><br><br>
+                                    <strong>Modelo:</strong> <?=@  $veiculos->getModelo()->getNome()?><br><br>
+                                    <strong>Ano: </strong><?=@  $veiculos->getAno()?><br><br>
+                                    <strong>Locado:</strong>
+                                </p>
+                            </div>
 
-                </div>
-            <?php
+                        </div>
+                    <?php
+                    }
+
                 }
-            ?>
+               ?>
 
             </div>
 

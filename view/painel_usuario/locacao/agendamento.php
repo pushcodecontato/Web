@@ -27,6 +27,14 @@
             </tr>
         </thead>
         <tbody>
+        <?php if(count($lista)<1){?>
+                <tr>
+                    <td colspan="6">
+                        <img class="img_not_find" style="width: 241px;display: block;margin-left: auto;margin-top: 84px;margin-right: auto;" width="128" alt="Nada encontrado" src="view/imagem/magnify.gif">
+                        <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhuma locação  encontrada!</p>
+                    </td>
+                </tr>
+        <?php }else{?>
             <?php foreach($lista as $item) {?>
                     <tr>
                         <td><?=@$item->getLocador()->getNome()?></td>
@@ -41,6 +49,7 @@
                         </td>
                     </tr>
             <?php } ?>
+        <?php } ?>
         </tbody>
     </table>      
 </div>

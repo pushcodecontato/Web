@@ -11,6 +11,13 @@
     margin-top: -15px;
     margin-left:50px;
     background-color:#fff;
+    width: 100%;
+    margin: 0;
+    height: 42px;
+    margin-top: -13px;
+    padding: 4px 14px;
+    border: solid 1px #ddd;
+    border-bottom: 2px solid #ddd;
 }
 #principal_agendamento{
     margin-top: 45px;

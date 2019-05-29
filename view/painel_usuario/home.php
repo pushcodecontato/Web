@@ -158,7 +158,33 @@
             </nav>
             <!-- TODO O CONTEUDO-->
             <div id="conteudo">
-                              
+                 <div class="itemmenu center " onclick="conteudo_subMenu('anuncios/cadastrar_anuncio',true)"  title="Controla os Usuario do sistema e suas atribuições">
+                        <div class="img">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="center separator"></div>
+                        <div class="desc">
+                            Cadastrar Anúncio
+                        </div>
+                 </div>
+                 <div class="itemmenu center " onclick="conteudo_subMenu('veiculos/cadastrar',true)" title="Controla os Usuario do sistema e suas atribuições">
+                        <div class="img">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <div class="center separator"></div>
+                        <div class="desc">
+                            Cadastrar Veículo
+                        </div>
+                 </div>
+                 <div class="itemmenu center " onclick="conteudo_subMenu('locacao/andamento',true)" title="Controla os Usuario do sistema e suas atribuições">
+                        <div class="img">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="center separator"></div>
+                        <div class="desc">
+                            Em andamento
+                        </div>
+                 </div>
             </div>
     </div>
     <div id="container">
