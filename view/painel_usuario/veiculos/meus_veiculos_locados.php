@@ -43,8 +43,8 @@
 
         </table>
         <div class="segura_button">
-            <button>Previous</button>
-            <button>Next</button>
+            <button class="btn">Previous</button>
+            <button class="btn">Next</button>
         </div>
     </div>
 </div>

@@ -82,7 +82,7 @@
                 <div class="segura_descricao">
                      <label class="descricao">Descricao</label><br>
                      <textarea class="descricao_text" name="descricao" style=" float:left; width: 355px; height: 86px; resize: none; border: solid 1px #ccc;"></textarea>
-                     <input class="botao_salvar" type="submit" value="Salvar Anúncio">
+                     <input class="btn botao_salvar" type="submit" value="Salvar Anúncio">
                 </div>
 
                 

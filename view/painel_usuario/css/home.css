@@ -176,13 +176,16 @@ nav{
     height: 639px;
     overflow-y: auto;
     overflow-x: hidden;
+    border: 0px solid rgb(204, 204, 204);
+    border-width: 0px 1px 0px 0px;
 }
 .item_menu{
     width: 235px;
     height: auto;
     min-height: 60px;
-    padding: 3px 10px;
+    padding: 11px 10px;
     cursor: pointer;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 
 .item_menu img, .item_sub_menu img{
@@ -206,6 +209,7 @@ nav{
     padding: 3px 20px;
     background-color: #ffffff;
     cursor: pointer;
+    border: 1px solid rgb(243, 243, 243);
 }
 .item_sub_menu p{
     font-size: 15px;
@@ -442,4 +446,22 @@ table.desktop tbody tr td:hover{
     -webkit-box-shadow: 0px 3px 37px -1px rgba(87,87,87,1);
     -moz-box-shadow: 0px 3px 37px -1px rgba(87,87,87,1);
     box-shadow: 0px 3px 37px -1px rgba(87,87,87,1);
+}
+.btn{
+    display: block;
+    background-color: #eee;
+    width: 100%;
+    min-width: 127px;
+    font-size: 1.2em;
+    padding: 3px 9px 7px 9px;
+    height: 56px;
+    border: solid 0.1px #eee;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.3em;
+    background-color: #00984A;
+    color: #fff;
+    text-align: center;
+    transition: background 2s;
 }

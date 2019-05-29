@@ -10,6 +10,7 @@ function abrir_menu(d, sub_menu, item_menu){
     //então recebe a "ação" de abrir
     if(backup_menu == sub_menu){
         $(sub_menu).css("height","auto").slideUp(300);
+        $(sub_menu).css({'border':' solid 1px #ccc'});
         controle = false;
         backup_menu = "";
     }
@@ -17,11 +18,13 @@ function abrir_menu(d, sub_menu, item_menu){
         $(backup_menu).css("height","auto").slideUp(300);
         if(controle == false){
             $(sub_menu).css("height","auto").slideDown(350);
+            $(sub_menu).css({'border':' solid 1px #ccc'});
             controle = true;
             backup_menu = sub_menu;
         }
         else{
             $(sub_menu).css("height","auto").slideDown(350);
+            $(sub_menu).css({'border':' solid 1px #ccc'});
             controle = false;
             backup_menu = sub_menu;
         }
@@ -30,6 +33,7 @@ function abrir_menu(d, sub_menu, item_menu){
         backup_menu = sub_menu;
         if(controle == false){
             $(sub_menu).css("height","auto").slideDown(350);
+            $(sub_menu).css({'border':' solid 1px #ccc'});
             controle = true;
         }  
     }

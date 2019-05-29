@@ -207,7 +207,7 @@
 .home-painel-banner .home-operacoes{
     
 }
-.home-painel-banner-imagem{display: block;position: relative;margin-top: -332px;}
+.home-painel-banner-imagem{display: block;position: relative;margin-top: -332px;overflow: hidden;}
 .home-painel-banner-imagem img{width: 100%;height: 500px;}
 .home-painel-banner-imagem:hover>.mascara-imagem{
     display:block;

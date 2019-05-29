@@ -19,7 +19,7 @@
         <!--parte de cima do anuncio-->
         <?php if(count($lista)<1){?>
                 <img class="img_not_find" style="width: 241px;display: block;margin-left: auto;margin-top: 84px;margin-right: auto;" width="128" alt="Nada encontrado" src="view/imagem/magnify.gif">
-                <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhum anuncio Aprovado encontrado!</p>
+                <p class="aviso_tabela" style="font-size: 1.3em; text-align: center; font-weight: bold;"> Nenhum anuncio encontrado!</p>
         <?php }else{ ?>
                 <?php foreach($lista as $item) {?>
 

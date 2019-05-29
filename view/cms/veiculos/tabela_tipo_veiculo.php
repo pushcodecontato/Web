@@ -14,25 +14,31 @@
             $controllerTipo = new ControllerTipoVeiculo();
 
             $lista = $controllerTipo->listar_tipo();
+        ?>
 
-            if(count($lista)< 1 ){
-                echo "<img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>";
-                echo " <p class='aviso_tabela'> Nenhum tipo encontrado!</p> ";
-            }
+            <?php if(count($lista)< 1 ){?>
+                <tr>
+                    <td colspan="3">
+                        <img class='img_not_find' alt='Nada encontrado' src='view/imagem/magnify.gif'>
+                        <p class='aviso_tabela'> Nenhum tipo encontrado!</p>
+                    </td>
+                </tr>
+            <?php } else { ?>
 
-            foreach($lista as $tipo){?>
+                <?php foreach($lista as $tipo){ ?>
 
-            <tr>
-                <td><?=@$tipo->getNome()?></td>
-                <td><?=@$tipo->getPercentual()?>%</td>
-                <td>
-                    <img alt="edit" title="Editar"  onclick="tipo_veiculo_getById(<?=@$tipo->getId()?>)"
-                         src="view/cms/imagem/icones/edit.png">
-                    <img alt="delete" onclick="tipo_veiculo_excluir(<?=@$tipo->getId()?>)" 
-                         title="Excluir" src="view/cms/imagem/icones/delete.png">
-                </td>
-            </tr>
+                    <tr>
+                        <td><?=@$tipo->getNome()?></td>
+                        <td><?=@$tipo->getPercentual()?>%</td>
+                        <td>
+                            <img alt="edit" title="Editar"  onclick="tipo_veiculo_getById(<?=@$tipo->getId()?>)"
+                                 src="view/cms/imagem/icones/edit.png">
+                            <img alt="delete" onclick="tipo_veiculo_excluir(<?=@$tipo->getId()?>)" 
+                                 title="Excluir" src="view/cms/imagem/icones/delete.png">
+                        </td>
+                    </tr>
 
-        <?php } ?>
+                <?php } ?>
+          <?php }?>
     </tbody>
 </table>
