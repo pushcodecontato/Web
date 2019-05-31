@@ -41,7 +41,8 @@
                             <td><?=@$item->getSolicitacao()->getData_inicio()?></td>
                             <td><?=@$item->getSolicitacao()->getData_final()?></td>
                             <td>
-                                <a><i class="far fa-comments" style="font-size: 2em;"></i></a>
+                                <a><i class="far fa-comments"></i></a>
+                                <a><i class="fas fa-user-check"></i></a>
                             </td>
                           </tr>
                     <?php } ?>

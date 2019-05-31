@@ -19,3 +19,10 @@ function mapa_ver(anuncio){
     },1000);
 
 }
+
+
+/* 
+
+    Funções da api da pagar me
+
+*/

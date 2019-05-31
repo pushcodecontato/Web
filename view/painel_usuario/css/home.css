@@ -356,6 +356,12 @@ tbody tr td:nth-child(even):hover{
     color:#00ff37;
 }
 */
+table.desktop tbody tr td i{
+  font-size: 2em;
+}
+table.desktop tbody tr td i:hover{
+  color: #00da2f;
+}
 table.desktop tbody tr:hover{
     background-image: -moz-linear-gradient(top, rgb(239,239,239), rgb(232,232,232));
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(239,239,239)), to(rgb(232,232,232)));
