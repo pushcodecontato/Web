@@ -1,7 +1,11 @@
 <?php
-
+/**
+  @author gilberto.tec@vivaldi.net
+  @data  28/04/2019
+  @comment  Implementando o crud da pagian home
+*/
 class controllerHome{
-    
+
     private $homeDAO;
 
     public function __construct(){
@@ -17,13 +21,13 @@ class controllerHome{
         echo $_POST['status'];
 
         if(isset($_GET['banner'])){
-            
+
             $banner = $this->homeDAO->selectBanner();
 
             $this->homeDAO->insertBanner($banner,$_POST['status']);
 
         }elseif(isset($_GET['sessao_como_funciona'])){
-            
+
             $sessao = $this->homeDAO->selectSessaoComoFunciona();
 
             $this->homeDAO->insertSessaoComoFunciona($sessao,$_POST['status']);
@@ -41,7 +45,7 @@ class controllerHome{
             $this->homeDAO->insertSessaoPorQueAnunciar($sessao,$_POST['status']);
 
         }elseif(isset($_GET['sessao_quer_anunciar'])){
-            
+
             $sessao = $this->homeDAO->selectSessaoQuerAnunciar();
 
             $this->homeDAO->insertSessaoQuerAnunciar($sessao,$_POST['status']);
@@ -52,13 +56,13 @@ class controllerHome{
     public function atualizar_home(){
 
         /* Foi mal galera mas só consegui assim */
-        
+
         if(isset($_GET['banner'])){
-            
+
             $this->update_sessao1();
 
         }elseif(isset($_GET['sessao_como_funciona'])){
-            
+
             $this->update_sessao2();
 
         }elseif(isset($_GET['sessao_oque_pode_alugar'])){
@@ -70,21 +74,21 @@ class controllerHome{
             $this->update_sessao4();
 
         }elseif(isset($_GET['sessao_quer_anunciar'])){
-            
+
             $this->update_sessao5();
 
         }
     }
-    
+
 
     public function update_sessao1(){/* Banner */
-        
+
         $banner = $this->homeDAO->selectBanner();
 
         if( isset($_FILES['foto']) && $_FILES['foto']['size'] > 0 ){
             $banner->setFoto($this->uploadImagem($_FILES['foto']));
         }
-        
+
 
         if(isset($_POST['texto'])){
             $banner->setTexto($_POST['texto']);
@@ -114,7 +118,7 @@ class controllerHome{
 
 
         $this->homeDAO->insertSessaoComoFunciona($sessao);
-        
+
     }
     public function update_sessao3(){
 
@@ -232,16 +236,16 @@ class controllerHome{
         $this->homeDAO->insertSessaoQuerAnunciar($sessao);
     }
     public function getPage(){
-        
+
         return $this->homeDAO->selectPage();
 
     }
 
-    /* UPLOAD DE IMAGEM 
+    /* UPLOAD DE IMAGEM
      * $arquivo = $_FILE['foto'] = objeto file do PHP
      */
     public function uploadImagem($arquivo){
-            
+
             // Verifica Se o arquivo tem um tamanho $_File tem conteudo
             if($arquivo['size']>0){
 
@@ -251,35 +255,35 @@ class controllerHome{
                 $nomeArquivo = pathinfo($arquivo['name'], PATHINFO_FILENAME);
                 // Pega a extenção do arquivo
                 $extencao_arquivo = strrchr($arquivo['name'],".");
-                
+
                 // Define o tipo de arquivo que pode ler armazenado
                 if( in_array($extencao_arquivo,$arquivosPermitidos) ){
 
                     $tamanho = round(($arquivo['size'])/1024);
                     // Define o tamanho maximo de para a foto enviada
-                    if($tamanho<=4096){// 4 MB 
+                    if($tamanho<=4096){// 4 MB
                         // Operações sobre o arquivo de imagem
                         /* AREA SEGURA!!! */
-                        
+
                         /*  Aleatoriedade nessesaria para gerar um nome diferente:
                          *  gera 3 valores aleatorios entre 1 e 9  e os soma com a data atual do upload
                          */
                         $entropia = rand(1, 9) . "" . rand(1, 9) . "" .rand(1, 9) . "" . date('Y-m-d H:i:s');
 
-                        // Criando novo nome para a imagem baseado na entropia 
+                        // Criando novo nome para a imagem baseado na entropia
                         $novoNome = (md5($entropia.$nomeArquivo))."".$extencao_arquivo;
-                        
-                        // Novo Caminho para a imagem 
+
+                        // Novo Caminho para a imagem
                         $caminho_novo_da_imagem = "view/upload/".$novoNome;
                         // Caminho atual da imagem
                         $caminho_atual_da_imagem = $arquivo['tmp_name'];
-                        
-                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO 
+
+                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO
                         if(move_uploaded_file($caminho_atual_da_imagem,$caminho_novo_da_imagem)){
-                            
+
                             // Caso tudo tenha dado certo retorna o novo nome do arquivo
                             return $novoNome;
-                        
+
                         }
                     }
                 }

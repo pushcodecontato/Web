@@ -1,5 +1,18 @@
 <?php
+/**
+  @author gilberto.tec@vivaldi.net
+  @data  11/04/2019
+  @comment  Implementando a estrutura basica do tipo de veiculo
 
+  @author gilberto.tec@vivaldi.net
+  @data  25/04/2019
+  @comment  Arrumando e finalizando o crud de tipo de veiculo
+
+  @author matheus.vieira@sadas.sadasd
+  @data  16/05/2019
+  @comment  Arruamdno crud para a pagina de cadastro de veiculo
+
+*/
 class ControllerTipoVeiculo{
 
     private $tipoVeiculoDAO;
@@ -14,7 +27,7 @@ class ControllerTipoVeiculo{
         require_once('model/modeloClass.php');
 
         $this->tipoVeiculoDAO = new TipoVeiculoDAO();
-    
+
     }
 
     public function inserir_tipo(){
@@ -51,36 +64,36 @@ class ControllerTipoVeiculo{
     }
 
     public function getById($id = 0){
-        
+
         if($id != 0)return $this->tipoVeiculoDAO->select($id);
 
         return $this->tipoVeiculoDAO->select($_GET['id']);
     }
-    
+
     /* Marcas e acessorio !  Talvers virem um controller no futuro */
     public function listar_marcas(){
-        
+
         return $this->tipoVeiculoDAO->getMarcas($_GET['id']);
 
     }
 
     public function listar_modelos(){
-        
+
         return $this->tipoVeiculoDAO->getModelos($_GET['id']);
 
     }
     /* Preciso padronizar mais um pouco */
     public function listar_acessorios(){
-        
+
         return $this->tipoVeiculoDAO->getAcessorios($_GET['id_tipo_veiculo']);
 
         echo $_GET['id_tipo_veiculo'];
 
     }
     public function exportar_fip(){
-        
+
         var_dump($_POST);
-        
+
         if(isset($_GET['marca'])){/* Exportando marca */
 
             $marca = new Marca();
@@ -90,7 +103,7 @@ class ControllerTipoVeiculo{
             $this->tipoVeiculoDAO->exportarMarca($_GET['id_tipo_veiculo'],$marca);
 
         } else {/* Exportando Modelo */
-            
+
             $modelo = new Modelo();
 
             $modelo->setNome($_POST['name'])
@@ -99,7 +112,7 @@ class ControllerTipoVeiculo{
             $this->tipoVeiculoDAO->exportarModelo($_GET['id_tipo_veiculo'],$_POST['cod_marca'],$modelo);
 
         }
-        
+
 
     }
 }

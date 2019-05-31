@@ -5,19 +5,19 @@ class HomeDAO{
     private $conex;
 
     public function __construct(){
-     
+
         require_once('model/homeClass.php');
         require_once('model/dao/conexaoMysql.php');
         $this->conex = new  conexaoMysql();
-    
+
     }
 
     public function selectPage(){
 
-        
+
 
         $home = new Home();
-        
+
         $banner                   = $this->selectBanner();
         $sessao_como_funciona     = $this->selectSessaoComoFunciona();
         $sessao_oque_pode_alugar  = $this->selectSessaoOquePodeAlugar();
@@ -42,11 +42,11 @@ class HomeDAO{
 
          //Abrido conexao com o BD
         $PDO_conex = $this->conex->connect_database();
-        
+
         $select = $PDO_conex->query($sql);
 
         if($rs_banner = $select->fetch(PDO::FETCH_ASSOC)){
-            
+
             $banner = new Banner();
 
             $banner->setId($rs_banner['id_pagina_home'])
@@ -54,7 +54,7 @@ class HomeDAO{
                    ->setTexto2($rs_banner['texto2_banner'])
                    ->setFoto($rs_banner['foto_banner'])
                    ->setStatus($rs_banner['status_banner']);
-            
+
             return $banner;
 
         } else {
@@ -66,15 +66,20 @@ class HomeDAO{
         }
 
         $this->conex->close_database();
-    
+
     }
+    /**
+      Função que o banner da home
+      @param Object $banner  o banner da pagina
+      @param int    $status  0 para esconder e 1 para mostrar
+    */
     public function insertBanner($banner,$status = 1){
 
         echo $status;
          // Pegando o ultimo banner
          $sql = "INSERT INTO `tbl_home_sessao1`(`status_banner`,`texto_banner`,`foto_banner`,`texto2_banner`)".
                 "VALUES($status,'". $banner->getTexto() ."','". $banner->getFoto() ."','". $banner->getTexto2() ."')";
-        
+
         $PDO_conex = $this->conex->connect_database();
 
         if($PDO_conex->query($sql)){
@@ -87,15 +92,15 @@ class HomeDAO{
 
     /* DAO */
     public function selectSessaoComoFunciona(){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "SELECT * FROM tbl_home_sessao2 order  by id_pagina_home2 desc limit 1";
         $PDO_conex = $this->conex->connect_database();
-        
+
         $select = $PDO_conex->query($sql);
 
-        
+
         if($rs_sessao = $select->fetch(PDO::FETCH_ASSOC)){
-        
+
             $sessao = new SessaoComoFunciona();
 
             $sessao->setId($rs_sessao['id_pagina_home2'])
@@ -103,7 +108,7 @@ class HomeDAO{
                    ->setTexto($rs_sessao['texto_sessao2'])
                    ->setFoto($rs_sessao['foto_sessao2'])
                    ->setStatus($rs_sessao['status_sessao2']);
-            
+
             return $sessao;
 
         } else {
@@ -116,8 +121,13 @@ class HomeDAO{
 
         $this->conex->close_database();
     }
+    /**
+      Função que cuida da sessao como funciona
+      @param Object $sessao  a sessao da pagian
+      @param int    $status  0 para esconder e 1 para mostrar
+    */
     public function insertSessaoComoFunciona($sessao,$status = 1){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "INSERT INTO `tbl_home_sessao2`(`status_sessao2`,`titulo_sessao2`,`texto_sessao2`,`foto_sessao2`)".
                "VALUES($status,'". $sessao->getTitulo() ."','". $sessao->getTexto() ."','". $sessao->getFoto() ."')";
 
@@ -133,14 +143,14 @@ class HomeDAO{
 
     /* DAO */
     public function selectSessaoOquePodeAlugar(){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "SELECT * FROM tbl_home_sessao3 order  by id_home_sessao3 desc limit 1";
         $PDO_conex = $this->conex->connect_database();
-        
+
         $select = $PDO_conex->query($sql);
 
         if($rs_sessao = $select->fetch(PDO::FETCH_ASSOC)){
-            
+
             $sessao = new SessaoOquePodeAlugar();
 
             $sessao->setId($rs_sessao['id_home_sessao3'])
@@ -155,7 +165,7 @@ class HomeDAO{
                    ->setFoto3($rs_sessao['foto3_sessao3'])
                    ->setTitulo3($rs_sessao['titulo3_sessao3'])
                    ->setTexto3($rs_sessao['texto3_sessao3']);
-            
+
             return $sessao;
 
         } else {
@@ -168,8 +178,13 @@ class HomeDAO{
 
         $this->conex->close_database();
     }
+    /**
+      Função que cuida da sessao Oque pode ser alugado
+      @param Object $sessao  a sessao da pagian
+      @param int    $status  0 para esconder e 1 para mostrar
+    */
     public function insertSessaoOquePodeAlugar($sessao,$status = 1){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "INSERT INTO `tbl_home_sessao3`(`status_sessao3`,`titulo_sessao3`,`foto1_sessao3`,`foto2_sessao3`,`foto3_sessao3`,`titulo1_sessao3`,`titulo2_sessao3`,`titulo3_sessao3`,`texto1_sessao3`,`texto2_sessao3`,`texto3_sessao3`)".
                "VALUES($status,'". $sessao->getTitulo() ."','". $sessao->getFoto1() ."','". $sessao->getFoto2() ."','". $sessao->getFoto3() ."',".
                "'". $sessao->getTitulo1() ."','". $sessao->getTitulo2() ."','". $sessao->getTitulo3() ."',".
@@ -183,19 +198,19 @@ class HomeDAO{
             echo "Erro no script de insert";
         }
         $this->conex->close_database();
-        
+
     }
-    
+
     /* DAO */
     public function selectSessaoPorQueAnunciar(){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "SELECT * FROM tbl_home_sessao4 order  by id_home_sessao4 desc limit 1";
         $PDO_conex = $this->conex->connect_database();
-        
+
         $select = $PDO_conex->query($sql);
 
         if($rs_sessao = $select->fetch(PDO::FETCH_ASSOC)){
-            
+
             $sessao = new SessaoPorQueAnunciar();
 
             $sessao->setId($rs_sessao['id_home_sessao4'])
@@ -203,7 +218,7 @@ class HomeDAO{
                    ->setTitulo($rs_sessao['titulo_sessao4'])
                    ->setTexto($rs_sessao['texto_sessao4'])
                    ->setStatus($rs_sessao['status_sessao4']);
-            
+
             return $sessao;
 
         } else {
@@ -216,8 +231,13 @@ class HomeDAO{
 
         $this->conex->close_database();
     }
+    /**
+      Função que cuida da sessao Por que anunciar
+      @param Object $sessao  a sessao da pagian
+      @param int    $status  0 para esconder e 1 para mostrar
+    */
     public function insertSessaoPorQueAnunciar($sessao,$status = 1){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "INSERT INTO `tbl_home_sessao4`(`status_sessao4`,`titulo_sessao4`,`foto_sessao4`,`texto_sessao4`)".
                "VALUES($status,'". $sessao->getTitulo() ."','". $sessao->getFoto() ."','". $sessao->getTexto() ."')";
 
@@ -233,14 +253,14 @@ class HomeDAO{
 
     /* DAO */
     public function selectSessaoQuerAnunciar(){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "SELECT * FROM tbl_home_sessao5 order  by id_home_sessao5 desc limit 1";
         $PDO_conex = $this->conex->connect_database();
-        
+
         $select = $PDO_conex->query($sql);
 
         if($rs_sessao = $select->fetch(PDO::FETCH_ASSOC)){
-            
+
             $sessao = new SessaoQuerAnunciar();
 
             $sessao->setId($rs_sessao['id_home_sessao5'])
@@ -259,7 +279,7 @@ class HomeDAO{
                    ->setSubTitulo4($rs_sessao['subtitulo4_sessao5'])
                    ->setFoto4($rs_sessao['foto4_sessao5'])
                    ->setTexto4($rs_sessao['texto4_sessao5']);
-            
+
             return $sessao;
 
         } else {
@@ -272,8 +292,13 @@ class HomeDAO{
 
         $this->conex->close_database();
     }
+    /**
+      Função que cuida da sessao Quer anunciar
+      @param Object $sessao  a sessao da pagina
+      @param int    $status  0 para esconder e 1 para mostrar
+    */
     public function insertSessaoQuerAnunciar($sessao,$status = 1){
-        // Pegando o ultimo 
+        // Pegando o ultimo
         $sql = "INSERT INTO `tbl_home_sessao5`(`status_sessao5`,`titulo_sessao5`,`subtitulo_sessao5`,`subtitulo1_sessao5`,`subtitulo2_sessao5`,`subtitulo3_sessao5`,`subtitulo4_sessao5`,`foto1_sessao5`,`foto2_sessao5`,`foto3_sessao5`,`foto4_sessao5`,`texto1_sessao5`,`texto2_sessao5`,`texto3_sessao5`,`texto4_sessao5`)VALUES".
                "($status,'". $sessao->getTitulo() ."','". $sessao->getSubTitulo() ."',".
                "'". $sessao->getSubTitulo1() ."','". $sessao->getSubTitulo2() ."',".

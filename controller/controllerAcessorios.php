@@ -1,9 +1,18 @@
 <?php
+/**
+  @author gilberto.tec@vivaldi.net
+  @data  22/04/2019
+  @comment  Implementando a estrutura do Crud de Acessorio
 
+  @author gilberto.tec@vivaldi.net
+  @data  25/04/2019
+  @comment  Arruamndo crud
+  
+*/
 class ControllerAcessorios{
-       
+
        private $acessoriosDAO;
-        
+
        public function __construct(){
         //importando classes
         require_once('model/acessorioClass.php');
@@ -14,32 +23,32 @@ class ControllerAcessorios{
        }
 
        public function inserir_acessorio(){
-           
+
            $acessorio = new Acessorio();
-           
+
            $acessorio->setIdTipoVeiculo($_GET['id_tipo_veiculo'])
                      ->setNome($_POST['nome']);
-           
+
            $this->acessoriosDAO->insert($acessorio);
        }
 
        public function excluir_acessorio(){
-           
+
            $this->acessoriosDAO->delete($_GET['id']);
 
        }
        public function atualizar_acessorio(){
-           
+
            $acessorio = new Acessorio();
 
            $acessorio->setId($_GET['id_acessorios'])
                      ->setNome($_POST['nome']);
-           
+
            $this->acessoriosDAO->update($acessorio);
 
        }
        public function status_acessorio(){
-            
+
 
             $this->acessoriosDAO->status($_GET['id'],$_POST['status']);
 

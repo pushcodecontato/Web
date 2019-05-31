@@ -1,7 +1,7 @@
 <?php
 
     class ClienteDAO{
-        
+
         private $conex;
 
         public function __construct(){
@@ -18,17 +18,17 @@
                     "VALUES('". $cliente->getNome() ."', '". $cliente->getCPF() ."', '". $cliente->getTelefone() ."','". $cliente->getCelular() ."',".
                     " '". $cliente->getCNHFoto() ."','". $cliente->getFoto() ."','". $cliente->getRua() ."','". $cliente->getBairro() ."','". $cliente->getCEP() ."',".
                     " '" . $cliente->getComplemento() . "','". $cliente->getCidade() ."','". $cliente->getUF() ."','". $cliente->getEmail() ."','". $senha ."', 1, '".$cliente->getDt_nascimento()."')";
-            
+
              //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
-            
+
 
             if($PDO_conex->query($sql)){
                 echo "inserido com sucesso";
 
                 // PEGANDO O ID do Ultimo Registro inserido
                 $id_cliente = $PDO_conex->lastInsertId();
-                
+
                 // Retornando o cliente inserido para a acontroller colocar na session
                 return $cliente->setId($id_cliente)
                                ->setSenha($senha);
@@ -46,7 +46,7 @@
 
         }
         public function update($cliente){
-            
+
         }
         public function selectByEmail($email){
             $sql = "SELECT email FROM tbl_cliente WHERE email = '".$email."'";
@@ -60,12 +60,12 @@
 
             return $email;
         }
-        
-        
+
+
         public function selectAll(){
 
             $sql = "SELECT * FROM tbl_cliente";
-            
+
             $PDO_conex = $this->conex->connect_database();
 
             $select = $PDO_conex->query($sql);
@@ -73,7 +73,7 @@
             $listar_registros = array();
 
             while($rs_cliente = $select->fetch(PDO::FETCH_ASSOC)){
-                
+
 
                 $cliente = new Cliente();
                 $cliente->setId($rs_cliente['id_cliente'])
@@ -93,18 +93,18 @@
                         ->setFoto($rs_cliente['foto_cliente'])
                         ->setStatus($rs_cliente['status'])
                         ->setNumero($rs_cliente['numero']);
-                
+
 
                 $listar_registros[] = $cliente;
-                
+
             }
-        
+
             $this->conex->close_database();
 
             return $listar_registros;
-            
-            
-            
+
+
+
 
         }
         public function selectById($id){
@@ -135,7 +135,7 @@
                         ->setFoto($rs_cliente['foto_cliente'])
                         ->setStatus($rs_cliente['status'])
                         ->setNumero($rs_cliente['numero']);
-                
+
                         //->setEstado($rs_cliente['estado']);
 
                 return $cliente;
@@ -146,7 +146,7 @@
             }
 
         }
-        
+
         // Pega o usuario baseado no email
         public function getByEmail($email){
 
@@ -160,7 +160,7 @@
             if($rs_cliente = $select->fetch(PDO::FETCH_ASSOC)){
 
                 $cliente = new Cliente();
-                
+
                 // Montando o cliente com os dados do banco
 
                 $cliente->setId($rs_cliente['id_cliente'])
@@ -178,7 +178,7 @@
                         ->setUF($rs_cliente['uf'])
                         ->setFoto($rs_cliente['foto_cliente'])
                         ->setCNHFoto($rs_cliente['cnh_foto']);
-                
+
                 // Retorna o cliente para que o controller possa verificar a senha e guardar na session
                 return $cliente;
 
@@ -187,10 +187,14 @@
                     return false;
             }
         }
-        
+        /**
+          Função Altera os status do cliente
+          @param int    $id_tipo_veiculo  id do cliente
+          @param int    $id_marca_tipo    0 ou 1 
+        */
         public function statusDAO($id,$status){
             $sql = "UPDATE tbl_cliente set status='".$status."' where id_cliente = '".$id."';";
-            
+
             $PDO_conex = $this->conex->connect_database();
 
             $select = $PDO_conex->query($sql);

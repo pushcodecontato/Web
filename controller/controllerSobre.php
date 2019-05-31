@@ -1,4 +1,14 @@
 <?php
+/**
+  @author larisa@asdas.sdsd
+  @data  25/04/2019
+  @comment  Iniciando o gerenciamento da pagina de sobre
+
+  @author larisa@asdas.ssdsd
+  @data  26/04/2019
+  @comment  Finalizando o gerenciamnto da pagina
+
+*/
     class ControllerSobre{
 
 
@@ -32,14 +42,14 @@
 
                 $this->sobreDAO->insert($sobre);
             }
-            
+
         }
         public function excluir_sobre(){
             $id_sobre = $_GET['id_sobre'];
             $this->sobreDAO->delete($id_sobre);
         }
         public function atualizar_sobre(){
-        
+
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 $sobre = new Sobre();
@@ -57,7 +67,7 @@
                     ->setTitulo_valores_sobre($_POST['txtTitulo_valores'])
                     ->setTexto_valores_sobre($_POST['txtTexto_valores'])
                     ->setFoto_valores_sobre($_POST['img_valores']);*/
-                
+
                 if(isset($_GET['valores'])){
                     $sobre = $this->sobreDAO->selectAll();
                     $sobre->setTitulo_valores_sobre($_POST['titulo'])
@@ -84,32 +94,32 @@
 
                     $sobre->setTitulo_sobre($_POST['titulo'])
                           ->setTexto_sobre($_POST['texto']);
-                          
+
                     if($_FILES['foto']['size']>0){
                         $sobre->setFoto_sobre($this->uploadImagem($_FILES['foto']));
-                    }   
+                    }
 
                 }
-                
+
                 $this->sobreDAO->update($sobre);
             }
-            
+
         }
         public function buscar_sobre(){
             $id_sobre = $_POST['id_sobre'];
-            
+
             return $this;
 
         }
         public function listar_sobre(){
-            
+
         $consulta = $this->sobreDAO->selectAll();
 
         return $consulta;
         }
-        
+
          public function uploadImagem($arquivo){
-            
+
             // Verifica Se o arquivo tem um tamanho $_File tem conteudo
             if($arquivo['size']>0){
 
@@ -119,35 +129,35 @@
                 $nomeArquivo = pathinfo($arquivo['name'], PATHINFO_FILENAME);
                 // Pega a extenção do arquivo
                 $extencao_arquivo = strrchr($arquivo['name'],".");
-                
+
                 // Define o tipo de arquivo que pode ler armazenado
                 if( in_array($extencao_arquivo,$arquivosPermitidos) ){
 
                     $tamanho = round(($arquivo['size'])/1024);
                     // Define o tamanho maximo de para a foto enviada
-                    if($tamanho<=4096){// 4 MB 
+                    if($tamanho<=4096){// 4 MB
                         // Operações sobre o arquivo de imagem
                         /* AREA SEGURA!!! */
-                        
+
                         /*  Aleatoriedade nessesaria para gerar um nome diferente:
                          *  gera 3 valores aleatorios entre 1 e 9  e os soma com a data atual do upload
                          */
                         $entropia = rand(1, 9) . "" . rand(1, 9) . "" .rand(1, 9) . "" . date('Y-m-d H:i:s');
 
-                        // Criando novo nome para a imagem baseado na entropia 
+                        // Criando novo nome para a imagem baseado na entropia
                         $novoNome = (md5($entropia.$nomeArquivo))."".$extencao_arquivo;
-                        
-                        // Novo Caminho para a imagem 
+
+                        // Novo Caminho para a imagem
                         $caminho_novo_da_imagem = "view/upload/".$novoNome;
                         // Caminho atual da imagem
                         $caminho_atual_da_imagem = $arquivo['tmp_name'];
-                        
-                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO 
+
+                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO
                         if(move_uploaded_file($caminho_atual_da_imagem,$caminho_novo_da_imagem)){
-                            
+
                             // Caso tudo tenha dado certo retorna o novo nome do arquivo
                             return $novoNome;
-                        
+
                         }
                     }
                 }
@@ -156,8 +166,8 @@
             // Caso não funcione retorna um false para quem o chamou
             return false;
         }
-    
 
-        
+
+
 }
 ?>

@@ -1,4 +1,18 @@
 <?php
+/**
+  @author lucas@sdfsdf.dsfdf
+  @data  26/04/2019
+  @comment Implementando o crud da pagina de termos de uso
+
+  @author gilberto.tec@vivaldi.net
+  @data  08/05/2019
+  @comment  Arrumando e implementando par ao servidor do professor
+
+  @author matheus.vieira@asdasd.sdsd
+  @data  09/05/2019
+  @comment  Resolvendo alguns erros e conflitos 
+
+*/
 class ControllerTermos_uso{
 
     //private $conex;
@@ -25,7 +39,7 @@ class ControllerTermos_uso{
 
                 $this->termos_usoDao->insert($termos_uso);
             }
-            
+
     }
 
     public function excluir_termos_uso(){

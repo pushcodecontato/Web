@@ -1,9 +1,18 @@
-<?php 
-       
+<?php
+/**
+  @author lucas@sdfsdf.dsfdf
+  @data  18/04/2019
+  @comment Implementando a estrutura do fale conosco e exportação csv
+
+  @author gilberto.tec@vivaldi.net
+  @data  25/05/2019
+  @comment  Arrumando e implementando inseir do fale conosco
+
+*/
 class ControllerFale_conosco{
-    
+
     private $fale_conoscoDao;
-    
+
     public function __construct(){
         //importando classes
         require_once('model/fale_conoscoClass.php');
@@ -12,7 +21,7 @@ class ControllerFale_conosco{
         $this->fale_conoscoDao = new Fale_conoscoDao();
     }
     public function inserir_fale_conosco(){
-        
+
         $fale_conosco = new Fale_conosco();
 
         $fale_conosco->setNome($_POST['txtNome'])
@@ -20,7 +29,7 @@ class ControllerFale_conosco{
                      ->setTelefone($_POST['txtTelefone'])
                      ->setCelular($_POST['txtCelular'])
                      ->setMensagem($_POST['menssagem']);
-        
+
         $this->fale_conoscoDao->insert($fale_conosco);
 
 
@@ -37,12 +46,12 @@ class ControllerFale_conosco{
 
         return $consulta;
     }
-    
+
     public function getById( $id = 0 ){
-        
-        
+
+
         if($id == 0 )$id = $_GET['id_fale_conosco'];
-        
+
         return $this->fale_conoscoDao->selectById($id);
 
     }

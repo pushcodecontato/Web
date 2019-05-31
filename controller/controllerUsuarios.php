@@ -1,10 +1,19 @@
-<?php 
-    
-    
+<?php
+/**
+  @author gilberto.tec@vivaldi.net
+  @data  04/04/2019
+  @comment  Implementando a estrutura basica do crud de usuarios
+
+  @author gilberto.tec@vivaldi.net
+  @data  08/05/2019
+  @comment  Arrumando crud de Usuario
+
+*/
+
     class ControllerUsuarios{
-       
+
         private $usuariosDao;
-        
+
         public function __construct(){
             //importando classes
             require_once('model/usuarioClass.php');
@@ -18,7 +27,7 @@
 
             //verificar se o metodo que esta chegando é GET ou POST
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		
+
                 $usuario = new Usuario();
 
 				$usuario->setNome($_POST['txtNome'])
@@ -34,7 +43,7 @@
             $id_usuario = $_GET['id'];
 
             if( $this->usuariosDao->delete($id_usuario) ){
-            	
+
             	if(!isset($_SESSION))session_start();
 
             	if(isset($_SESSION['usuario'])){
@@ -53,7 +62,7 @@
         public function atualizar_usuarios(){
 			//verificar se o metodo que esta chegando é GET ou POST
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		
+
                 $usuario = new Usuario();
 
 				$usuario->setId($_GET['id'])
@@ -81,23 +90,23 @@
         public function logar(){
 
 			$usuario  = new Usuario();
-			
+
 			$usuario->setEmail($_POST['txtEmail'])
 					->setSenha($_POST['txtSenha']);
 
-			
+
 			if($logado = $this->usuariosDao->logar($usuario)){
-				
-				 
+
+
 				if($logado->verificar($usuario->getSenha())){
 
 					// Verificando se a session esta ativa
                     if(!isset($_SESSION))session_start();
-                 
+
 
                     //guarda na session o usuario
                     $_SESSION['usuario'] = serialize($logado);
-					
+
 					echo " sucesso ao logar com o usuario";
 
 				}else{
@@ -105,30 +114,30 @@
 					echo "Erro ao logar com o usuario senha incorreta";
 
 				}
-				
-			
+
+
 			}else{
-			   
+
 			   echo " Erro !!!! ";
-				
-			
+
+
 			}
 
         	return $this->usuariosDao->logar($usuario);
 
         }
-		
+
 		public function deslogar(){
 
 			if(!isset($_SESSION))session_start();
-                 
+
 
 			//guarda na session o usuario
 			unset($_SESSION['usuario']);
 
 
 			header("location: ./");
-					
+
 		}
 
 

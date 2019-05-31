@@ -8,10 +8,10 @@
         private $solicitacaoDAO;
 
         public function __construct(){
-            
+
             require_once('model/anuncioClass.php');
             require_once('model/dao/conexaoMysql.php');
-            
+
             /* LIGAÇÃO veiculos <---> anuncios */
             require_once('model/dao/veiculoDAO.php');
             $this->veiculosDAO = new VeiculoDAO();
@@ -49,7 +49,7 @@
                 // Retornando false para que a controller saiba que o ussuario não foi inserido
                 return false;
             }
-        } 
+        }
 
         public function delete($id){
             $sql = " UPDATE tbl_anuncio SET excluido = 1 ".
@@ -67,7 +67,7 @@
         }
 
         public function update(){}
-
+        /* Retorna os anuncios processados */
         public function selectAllProcessados(){
 
             $sql = "SELECT tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao FROM tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE tbl_anuncio.excluido = 0";
@@ -83,7 +83,7 @@
             while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
 
                     $anuncio = new Anuncio();
-                    
+
                     $anuncio->setId($rs_anuncio['id_anuncio'])
                             ->setDescricao($rs_anuncio['descricao'])
                             ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
@@ -95,8 +95,8 @@
                             ->setValor($rs_anuncio['valor_hora'])
                             ->setStatus($rs_anuncio['status_aprovacao']);
 
-                    
-                    
+
+
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
 
                     $anuncio->setVeiculo($veiculo)
@@ -107,14 +107,14 @@
                     $lista_anuncios[] = $anuncio;
 
             }
-            
-           
 
-            $this->conex->close_database();        
+
+
+            $this->conex->close_database();
 
             return $lista_anuncios;
         }
-        /* Retorna uma lsita do sanuncios que ainda não foram aprovados ou reprovados */
+        /* Retorna uma lista do sanuncios que ainda não foram aprovados ou reprovados */
         public function selectAllPendentes(){
 
             $sql = "SELECT * FROM tbl_anuncio WHERE id_anuncio not in (select id_anuncio from tbl_aprovacao_anuncio) AND tbl_anuncio.excluido = 0";
@@ -130,7 +130,7 @@
             while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
 
                     $anuncio = new Anuncio();
-                    
+
                     $anuncio->setId($rs_anuncio['id_anuncio'])
                             ->setDescricao($rs_anuncio['descricao'])
                             ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
@@ -141,8 +141,8 @@
                             ->setDataFinal($rs_anuncio['data_final'])
                             ->setValor($rs_anuncio['valor_hora']);
 
-                    
-                    
+
+
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
 
                     $anuncio->setVeiculo($veiculo)
@@ -155,14 +155,14 @@
             }
 
 
-            $this->conex->close_database();        
+            $this->conex->close_database();
 
             return $lista_anuncios;
 
 
         }
         public function selectById($id){
-            
+
             $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao,if(tbl_aprovacao_anuncio.status_aprovacao is null,'pendente',tbl_aprovacao_anuncio.mensagem) as mensagem  FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE tbl_anuncio.excluido = 0 AND tbl_anuncio.id_anuncio=". $id;
 
             //Abrido conexao com o BD
@@ -176,7 +176,7 @@
             if($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
 
                     $anuncio = new Anuncio();
-                    
+
                     $anuncio->setId($rs_anuncio['id_anuncio'])
                             ->setDescricao($rs_anuncio['descricao'])
                             ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
@@ -189,8 +189,8 @@
                             ->setMenssagem($rs_anuncio['mensagem'])
                             ->setStatus($rs_anuncio['status_aprovacao']);
 
-                    
-                    
+
+
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
 
                     $anuncio->setVeiculo($veiculo)
@@ -203,18 +203,24 @@
             } else {
 
                 return false;
-            
+
             }
 
 
-            $this->conex->close_database();        
+            $this->conex->close_database();
         }
+        /**
+          Função que aprova os anuncios
+          @param int    $id_anuncio  id do anuncio que será abrovado
+          @param string $mensagem  mensagem de aprovação
+          @param int    $id_usuario_cms  id do usuario cms que aprovou
+          @return boolean se o vinculo ocorreu ou não
+        */
+        public function aprovar($id_anuncio, $mensagem, $id_usuario_cms){
 
-        public function aprovar($id_veiculo, $mensagem, $id_usuario_cms){
-        
             $sql = "INSERT INTO tbl_aprovacao_anuncio (status_aprovacao,mensagem,id_usuario_cms,id_anuncio)".
                    " VALUES(1,'". $mensagem ."',". $id_usuario_cms .",". $id_veiculo .")";
-            
+
             echo "SQL : $sql ";
 
             //Abrido conexao com o BD
@@ -227,6 +233,13 @@
             }
             $this->conex->close_database();
         }
+        /**
+          Função que reprova os anuncios
+          @param int    $id_anuncio  id do anuncio que será abrovado
+          @param string $mensagem  mensagem de aprovação
+          @param int    $id_usuario_cms  id do usuario cms que aprovou
+          @return boolean se o vinculo ocorreu ou não
+        */
         public function reprovar($id_veiculo, $mensagem, $id_usuario_cms){
 
             $sql = "INSERT INTO tbl_aprovacao_anuncio (status_aprovacao,mensagem,id_usuario_cms,id_anuncio)".
@@ -245,8 +258,8 @@
         }
         /* PAINEL DE USUARIO */
         public function selectAllByUser($id_cliente){
-            
-            $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE 
+
+            $sql = "SELECT tbl_anuncio.*,if(tbl_aprovacao_anuncio.status_aprovacao is null,2,tbl_aprovacao_anuncio.status_aprovacao) as status_aprovacao FROM tbl_anuncio left join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio WHERE
 tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
             //Abrido conexao com o BD
@@ -259,7 +272,7 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
             while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
 
                     $anuncio = new Anuncio();
-                    
+
                     $anuncio->setId($rs_anuncio['id_anuncio'])
                             ->setDescricao($rs_anuncio['descricao'])
                             ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
@@ -271,8 +284,8 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
                             ->setValor($rs_anuncio['valor_hora'])
                             ->setStatus($rs_anuncio['status_aprovacao']);
 
-                    
-                    
+
+
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
 
                     $anuncio->setVeiculo($veiculo)
@@ -283,15 +296,22 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
                     $lista_anuncios[] = $anuncio;
 
             }
-            
-           
 
-            $this->conex->close_database();        
+
+
+            $this->conex->close_database();
 
             return $lista_anuncios;
         }
+        /**
+          Função que filtra os anucnios
+          @param int    $id_tipo_veiculo  id do tipo de veiculo carro, moto
+          @param int    $id_marca_tipo    id da marca
+          @param int    $id_modelo        id do modelo
+          @return anucios[] um vetor com os anuncios encontrados
+        */
         public function selectAllAprovadosBuscar($id_tipo_veiculo = false,$id_marca_tipo = false ,$id_modelo = false){
-           
+
             $sql = "SELECT tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao FROM ".
                    "tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio ".
                    "inner join tbl_veiculo on tbl_anuncio.id_veiculo = tbl_veiculo.id_veiculo ".
@@ -310,7 +330,7 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
             $sql .= implode(' AND ',$wheres);
             //Abrido conexao com o BD
             $PDO_conex = $this->conex->connect_database();
-            
+
             $select = $PDO_conex->query($sql);
 
             $lista_anuncios = array();
@@ -318,7 +338,7 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
             while($rs_anuncio = $select->fetch(PDO::FETCH_ASSOC)){
 
                     $anuncio = new Anuncio();
-                    
+
                     $anuncio->setId($rs_anuncio['id_anuncio'])
                             ->setDescricao($rs_anuncio['descricao'])
                             ->setIdClienteLocador($rs_anuncio['id_cliente_locador'])
@@ -330,8 +350,8 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
                             ->setValor($rs_anuncio['valor_hora'])
                             ->setStatus($rs_anuncio['status_aprovacao']);
 
-                    
-                    
+
+
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
 
                     $anuncio->setVeiculo($veiculo)
@@ -342,15 +362,15 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
                     $lista_anuncios[] = $anuncio;
 
             }
-            
-           
 
-            $this->conex->close_database();        
+
+
+            $this->conex->close_database();
 
             return $lista_anuncios;
         }
         /* Painel de usuario Interssados nos veiculo */
-        
+
         public function selectAllInteresadosByUser($id_cliente){
                 $sql = "SELECT tbl_solicitacao_anuncio.id_solicitacao_anuncio , tbl_solicitacao_anuncio.id_cliente as id_locatario,tbl_anuncio.*,tbl_aprovacao_anuncio.status_aprovacao,if(tbl_solicitacao_anuncio.status_solicitacao = 0 ,'pendente',if(tbl_solicitacao_anuncio.status_solicitacao = 1,'Aprovado','Reprovado')) as 'status' ".
                        "FROM tbl_anuncio inner join tbl_aprovacao_anuncio on tbl_aprovacao_anuncio.id_anuncio = tbl_anuncio.id_anuncio ".
@@ -360,7 +380,7 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
                        "WHERE tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
                 $PDO_conex = $this->conex->connect_database();
-            
+
                 $select = $PDO_conex->query($sql);
 
                 $lista_anuncios = array();
@@ -383,11 +403,11 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
 
                     $veiculo = $this->veiculosDAO->selectById($rs_anuncio['id_veiculo']);
-                    
+
                     $cliente_locatario = $this->clienteDAO->selectById($rs_anuncio['id_locatario']);
-                    // Pegando solicitaço 
+                    // Pegando solicitaço
                     $solicitacao = $this->solicitacaoDAO->selectById($rs_anuncio['id_solicitacao_anuncio']);
-                    
+
                     $anuncio->setVeiculo($veiculo)
                             ->setSolicitacao($solicitacao)
                             ->setLocador($veiculo->getCliente());
@@ -400,7 +420,7 @@ tbl_anuncio.excluido = 0 AND tbl_anuncio.id_cliente_locador = $id_cliente";
 
 
 
-               $this->conex->close_database();        
+               $this->conex->close_database();
 
                return $lista_anuncios;
         }

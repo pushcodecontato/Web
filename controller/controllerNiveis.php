@@ -1,11 +1,21 @@
-<?php 
-    
+<?php
+      /**
+        @author matheus.vieira@dsads.sdd
+        @data  04/04/2019
+        @comment  Implementando sistema de niveis
+
+        @author gilberto.tec@vivaldi.net
+        @data  02/05/2019
+        @comment  Ajustando para o menu do cms
+
+      */
+
     class ControllerNiveis{
-       
+
         private $niveisDao;
         private $niveis;
         // $path = $_SERVER['DOCUMENT_ROOT'];
-        
+
         public function __construct(){
             //importando classes
             require_once('model/niveisClass.php');
@@ -29,7 +39,7 @@
                 $this->niveis->setNome_nivel($nome_nivel);
                 $this->niveis->setDescricao($descricao);
                 $this->niveis->setListaMenu($menus);
-                
+
                 $this->niveisDao->insert($this->niveis);
             }
         }
@@ -39,7 +49,7 @@
             $this->niveisDao->delete($id_nivel);
         }
         public function atualizar_niveis(){
-            
+
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 $nome_nivel = $_POST['txtNome_nivel'];
@@ -70,7 +80,7 @@
         }
 
         public function listar_menu($id = 0){
-            
+
             if($id == 0 && isset($_GET['id']))$id = $_GET['id'];
 
             return $this->niveisDao->selectMenu($id);

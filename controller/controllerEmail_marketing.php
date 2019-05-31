@@ -1,9 +1,18 @@
-<?php 
-       
+<?php
+/**
+  @author lucas@sdfsdf.dsfdf
+  @data  18/04/2019
+  @comment Implementando a estrutura do email markting
+
+  @author gilberto.tec@vivaldi.net
+  @data  25/05/2019
+  @comment  Arrumando e implementando o envio de email
+
+*/
 class ControllerEmail_marketing{
-    
+
     private $email_marketingDao;
-    
+
     public function __construct(){
         //importando classes
         require_once('model/email_marketingClass.php');
@@ -19,11 +28,11 @@ class ControllerEmail_marketing{
     }
 
     public function inserir(){
-        
+
         $email_marketing = new Email_marketing();
 
         $email_marketing->setEmail($_POST['txtEmail']);
-        
+
         $this->email_marketingDao->insert($email_marketing);
 
     }
@@ -41,13 +50,13 @@ class ControllerEmail_marketing{
 
     }
     public function enviar(){
-        
+
         sleep(1);
 
         $assunto = $_POST['assunto'];
         $email = $_POST['email'];
         $mensagem = $_POST['mensagem'];
-        
+
         $dados = array('email'=>"$email",
                        'assunto'=>"$assunto",
                        'conteudo'=>"$mensagem",
@@ -56,7 +65,7 @@ class ControllerEmail_marketing{
         $resposta = $this->sendHttp('http://mobshare-email.herokuapp.com/email',$dados);
 
         var_dump($resposta);
-        
+
 
     }
     public function sendHttp($url,$data){
@@ -70,7 +79,7 @@ class ControllerEmail_marketing{
             )
         ));
         $resposta = "";
-        
+
        $resposta = file_get_contents($url, null, $contexto);
        if(!$resposta){
 
@@ -88,7 +97,7 @@ class ControllerEmail_marketing{
             ));
             $resposta = file_get_contents($url, null, $contexto);
        }
-        
+
         return $resposta;
     }
 }

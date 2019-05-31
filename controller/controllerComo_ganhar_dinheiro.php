@@ -1,7 +1,13 @@
 <?php
+/**
+  @author lucas@sdfsdf.sdfds
+  @data  30/04/2019
+  @comment  Implementando a estrutura do Crud da pagina de Como ganhar dilheiro
+
+*/
     class ControllerComo_ganhar_dinheiro{
 
-        
+
         private $como_ganhar_dinheiroDAO;
 
         public function __construct(){
@@ -34,7 +40,7 @@
 
                 $this->como_ganhar_dinheiroDAO->insert($como_ganhar_dinheiro);
             }
-            
+
         }
         public function excluir_como_ganhar_dinheiro(){
             $id = $_GET['id'];
@@ -75,19 +81,19 @@
           echo $como_ganhar_dinheiro->getImg1_sessao2();
         }
         public function getPage(){
-                            
+
             return $this->como_ganhar_dinheiroDAO->selectPage();
 
         }
         public function listar_como_ganhar_dinheiro(){
-            
+
         $consulta = $this->como_ganhar_dinheiroDAO->selectAll();
 
         return $consulta;
         }
-        
+
          public function uploadImagem($arquivo){
-            
+
             // Verifica Se o arquivo tem um tamanho $_File tem conteudo
             if($arquivo['size']>0){
 
@@ -97,35 +103,35 @@
                 $nomeArquivo = pathinfo($arquivo['name'], PATHINFO_FILENAME);
                 // Pega a extenção do arquivo
                 $extencao_arquivo = strrchr($arquivo['name'],".");
-                
+
                 // Define o tipo de arquivo que pode ler armazenado
                 if( in_array($extencao_arquivo,$arquivosPermitidos) ){
 
                     $tamanho = round(($arquivo['size'])/1024);
                     // Define o tamanho maximo de para a foto enviada
-                    if($tamanho<=4096){// 4 MB 
+                    if($tamanho<=4096){// 4 MB
                         // Operações sobre o arquivo de imagem
                         /* AREA SEGURA!!! */
-                        
+
                         /*  Aleatoriedade nessesaria para gerar um nome diferente:
                          *  gera 3 valores aleatorios entre 1 e 9  e os soma com a data atual do upload
                          */
                         $entropia = rand(1, 9) . "" . rand(1, 9) . "" .rand(1, 9) . "" . date('Y-m-d H:i:s');
 
-                        // Criando novo nome para a imagem baseado na entropia 
+                        // Criando novo nome para a imagem baseado na entropia
                         $novoNome = (md5($entropia.$nomeArquivo))."".$extencao_arquivo;
-                        
-                        // Novo Caminho para a imagem 
+
+                        // Novo Caminho para a imagem
                         $caminho_novo_da_imagem = "view/upload/".$novoNome;
                         // Caminho atual da imagem
                         $caminho_atual_da_imagem = $arquivo['tmp_name'];
-                        
-                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO 
+
+                        // MOVENDO ARQUIVO DO CAMINHO ATUAL PARA O NOVO CAMINHO
                         if(move_uploaded_file($caminho_atual_da_imagem,$caminho_novo_da_imagem)){
-                            
+
                             // Caso tudo tenha dado certo retorna o novo nome do arquivo
                             return $novoNome;
-                        
+
                         }
                     }
                 }
@@ -134,6 +140,6 @@
             // Caso não funcione retorna um false para quem o chamou
             return false;
         }
-    
+
 }
 ?>

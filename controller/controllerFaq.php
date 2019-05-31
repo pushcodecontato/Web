@@ -1,4 +1,18 @@
 <?php
+/**
+  @author larisa@sdfsdf.dsfdf
+  @data  16/04/2019
+  @comment Inicio do CRUD de FAQ
+
+  @author lucas@sadasd
+  @data  25/04/2019
+  @comment  Terminando crud de FAq
+
+  @author gilberto.tec@vivaldi.net
+  @data  22/05/2019
+  @comment  Arrumando crud
+
+*/
 class ControllerFaq{
 
     //private $conex;
@@ -27,7 +41,7 @@ class ControllerFaq{
 
                 $this->faqDao->insert($faq);
             }
-            
+
     }
 
     public function excluir_faq(){
@@ -43,12 +57,12 @@ class ControllerFaq{
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 $faq = $this->faqDao->selectById($_GET['id']);
-                
+
                 if(isset($_POST['txtPerguntas'])){
 
                     $faq->setPerguntas($_POST['txtPerguntas'])
                         ->setRespostas($_POST['txtRespostas']);
-                
+
                 }
                 if(isset($_POST['status'])){
                     $faq->setStatus($_POST['status']);
