@@ -241,4 +241,23 @@ function inserirSolicitacao(idCliente,idAnuncio,form){
 
     });
 }
-/* Modal */
+$(document).ready(function(){
+
+	$('#menu_icone_reposnsivo').on('click',function(){
+		console.log("Hellow");
+		$('.segura_menu').off('click');
+		$('.segura_menu').slideDown(360,function(){
+			$('.segura_menu').click(function(e){
+				if($(e.target).hasClass('segura_menu')){
+					$('.segura_menu').fadeOut();
+				}
+			})
+
+
+		});
+
+	})
+
+
+
+})

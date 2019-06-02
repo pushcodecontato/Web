@@ -1,3 +1,6 @@
+
+
+
 @font-face{
     font-family: "OpenSans-bold";
     src:url("../font/Open_Sans/OpenSans-SemiBold.ttf");
@@ -37,9 +40,6 @@ html{
     list-style: none;
     text-decoration: none;
 }
-
-@media screen and (min-width: 1000px)
-{
 
 .texto_chamativo{
     width: 550px;
@@ -495,12 +495,29 @@ footer{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    
-    }
-    
 }
-
-@media screen and (max-device-width: 680px)
+    
+#menu_icone_reposnsivo{
+    display: none;
+    float: right;
+    text-align: center;
+    font-size: 39px;
+    margin-top: 28px;
+    margin-right: 32px;
+    padding: 8px;
+    border: solid 1px #23b213;
+    border-radius: 4px;
+    color: #D4DB26;
+}
+/* Isso esta a contecendo por que max-device-width != max-width
+    no desktop so vemos o max-width  só esse e considerado
+    e no celujalr e usado o max-device-width
+    !!Ai funcionou agora em celular e e desktoos com 
+    esse width pegamos essa configuração
+    bem agora vamos fafer outros media baseado no site
+    1100 px exibe o site normal de boa então vamos criar um deia querie de no minimo 1100px
+ */
+/*@media only and (max-device-width: 680px),(max-width:680px)
 {
     #header_home {
         width: 100%;
@@ -510,7 +527,7 @@ footer{
         background-size: cover;
         background-attachment: fixed;
         background-image: url(../imagem/slider/imagem1.jpg);
-    /* background-color:aquamarine; */
+
     }
     .cor_site_padrao{
         background-color: #00984A;
@@ -520,15 +537,12 @@ footer{
         height: 42px;
     }
     .segura_menu{
-        /* float: left; */
-        /* padding-top: 45px; */
-        position: fixed;
-        right: 0px;
-        top: 0px;
-        background-color: black;
-        /* margin-left: 10px; */
-        height: 89px;
-        width: 97px;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        background-color: black;
+        height: 89px;
+        width: 97px;
     }
     .segura_menu:hover{
         max-width: 90%;
@@ -536,7 +550,6 @@ footer{
         min-height: 100vh;
         height: 100vmax;
     }
-    /* Evento hover  mostra menu */
     .segura_menu:hover>ul{
         display: block;
     }
@@ -554,6 +567,307 @@ footer{
         color: #b9b9b9;
     }
 
+}*/
+#segura_nav .segura_menu.ativo{
+    display:block;
+}
+/* Menu e Footer mobile */
+@media only and (min-device-width: 350px) and (max-device-width:960px), (min-width:350px) and (max-width:960px){
+    #segura_nav{
+        display: block;
+        margin-left: auto;
+        margin-top: auto;
+        width: 100%;
+    }
+    #segura_nav #menu_icone_reposnsivo{
+        display:block;
+    }
+    #segura_nav .segura_menu{
+        position: fixed;
+        background-color: #00000094;
+        width: 100%;
+        height: 100vh;
+        padding-top: 0px;
+        margin: 0px;
+        top: 0;
+        display: none;
+        left: 0;
+        z-index: 95;
+    }
 
+    #segura_nav .segura_menu ul{
+
+        width: 40%;
+
+        min-width: 152px;
+    }
+    #segura_nav .segura_menu ul li{
+
+        float: unset;
+
+        margin: unset;
+
+        border-bottom: solid 1px;
+
+        font-size: 1.5em;
+
+        background-color: #2bb52b;
+
+        border-color: #ccc;
+
+        height: 17vh;
+
+        overflow: hidden;
+
+        padding-top: 5vh;
+
+        text-indent: 24px;
+    }
+    #segura_nav .modoLogin{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #03b85b;
+        border-radius: 12px;
+        margin: 0px 5px 5px 0px;
+        padding-bottom: 8px;
+        z-index: 99;
+    }
+    #segura_nav .modoLogin .segura_login{
+
+        padding-top: 9px;
+
+        width: auto;
+    }
+    footer{
+
+        height: auto;
+
+        overflow: auto;
+
+    }
+    footer .newsletter{
+
+        width: 98%;
+
+    }
+    footer .newsletter .logo_mob{
+
+        width: 30%;
+
+        float: left;
+
+        margin: unset;
+
+        min-width: 150px;
+
+    }
+    footer .newsletter .segura_newsletter{
+
+        width: 70%;
+
+        float: left;
+
+        margin: auto;
+
+    }
+    footer .contatos{
+
+        width: 100%;
+
+        height: auto;
+
+        overflow: auto;
+
+        text-align: center;
+
+    }
+    footer .contatos .segura_mapa_contato{
+
+        text-align: initial;
+
+        display: block;
+
+        width: 100%;
+
+        height: auto;
+
+    }
+    footer .contatos .segura_mapa_contato .segura_contatos{
+
+    width: 30%;
+
+    min-width: 400px;
+
+    }
+    footer .contatos .segura_mapa_contato .mapa_site{
+
+        height: auto;
+
+        width: 30%;
+
+        overflow: auto;
+
+        display: block;
+
+        min-width: 400px;
+
+        margin: 0px;
+    }
+    
+    footer .contatos .redes_sociais{
+        
+    }
+}
+/* Menu e Footer table */
+@media not all, (max-width: 1351px) and (min-width: 961px){
+    #segura_nav{
+        display: block;
+        margin-left: auto;
+        margin-top: auto;
+        width: 100%;
+    }
+    #segura_nav #menu_icone_reposnsivo{
+        display:block;
+    }
+    #segura_nav .segura_menu{
+        position: fixed;
+        background-color: #00000094;
+        width: 100%;
+        height: 100vh;
+        padding-top: 0px;
+        margin: 0px;
+        top: 0;
+        display: none;
+        left: 0;
+        z-index: 95;
+    }
+
+    #segura_nav .segura_menu ul{
+
+        width: 40%;
+
+        min-width: 152px;
+    }
+    #segura_nav .segura_menu ul li{
+
+        float: unset;
+
+        margin: unset;
+
+        border-bottom: solid 1px;
+
+        font-size: 1.5em;
+
+        background-color: #2bb52b;
+
+        border-color: #ccc;
+
+        height: 17vh;
+
+        overflow: hidden;
+
+        padding-top: 5vh;
+
+        text-indent: 24px;
+    }
+    #segura_nav .modoLogin{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #03b85b;
+        border-radius: 12px;
+        margin: 0px 5px 5px 0px;
+        padding-bottom: 8px;
+        z-index: 99;
+    }
+    #segura_nav .modoLogin .segura_login{
+
+        padding-top: 9px;
+
+        width: auto;
+    }
+    footer{
+
+        height: auto;
+
+        overflow: auto;
+
+    }
+    footer .newsletter{
+
+        width: 98%;
+
+    }
+    footer .newsletter .logo_mob{
+
+        width: 30%;
+
+        float: left;
+
+        margin: unset;
+
+        min-width: 150px;
+
+    }
+    footer .newsletter .segura_newsletter{
+
+        width: 70%;
+
+        float: left;
+
+        margin: auto;
+
+    }
+    footer .contatos{
+
+        width: 100%;
+
+        height: auto;
+
+        overflow: auto;
+
+        text-align: center;
+
+    }
+    footer .contatos .segura_mapa_contato{
+
+        text-align: initial;
+
+        display: block;
+
+        width: 100%;
+
+        height: auto;
+
+    }
+    footer .contatos .segura_mapa_contato .segura_contatos{
+
+    width: 30%;
+
+    min-width: 400px;
+
+    }
+    footer .contatos .segura_mapa_contato .mapa_site{
+
+        height: auto;
+
+        width: 30%;
+
+        overflow: auto;
+
+        display: block;
+
+        min-width: 400px;
+
+        margin: 0px;
+    }
+    
+    footer .contatos .redes_sociais{
+        
+    }
+}
+/* Menu e Footer normal */
+@media only and (min-device-width: 1352px),only and (min-width:1352px){
     
 }

@@ -33,6 +33,7 @@
         <script src="view/js/libs/jquery/jquery-3.3.1.js"></script>
         <script src="view/js/notify.js"></script>
         <script src="view/js/main.js"></script>
+        <link rel="stylesheet" href="view/cms/font/awesome/all.css">
     </head>
     <body>
         <div id="principal">
@@ -48,6 +49,7 @@
                             <div id="logo">
                                 <img src="view/imagem/mob.png" alt="logo" title="logo">
                             </div>
+                            <i id="menu_icone_reposnsivo" class="fas fa-align-justify"></i>
                             <div class="segura_menu">
                                 <ul>
                                     <li><a href="?home">INÍCIO</a></li>

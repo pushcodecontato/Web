@@ -42,6 +42,7 @@
     <script src="view/js/notify.js"></script>
     <script src="view/js/libs/jqueryMask/jquery.mask.js"></script>
     <script src="view/js/main.js"></script>
+    <link rel="stylesheet" href="view/cms/font/awesome/all.css">
 </head>
 <body>
 <script>
@@ -70,6 +71,7 @@
                     <div id="logo">
                         <img src="view/imagem/mob.png" alt="logo" title="logo">
                     </div>
+                    <i id="menu_icone_reposnsivo" class="fas fa-align-justify"></i>
                     <div class="segura_menu">
                         <ul>
                             <li><a href="?home">INÍCIO</a></li>
