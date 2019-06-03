@@ -26,3 +26,23 @@ function mapa_ver(anuncio){
     Funções da api da pagar me
 
 */
+
+function locacao_modal_ver_imagem(imagem){
+
+    var imagemSelecionada = $(imagem);
+    var imagemPrincipal = $('.imagem img.principalImagem');
+    
+    imagemPrincipal.attr('src',imagemSelecionada.attr('src'));
+
+    // Limpando as imagens selecionadas
+    $('.imagem .lista_imagens .item_imagem img').css({'border':'none'});
+
+    imagemSelecionada.css({'border':'solid 1px blue'});
+}
+
+function chamaModalConfirmacao(id_locacao){
+    $.ajax({url:'?painel_usuario/locacao/modal_confirmar&id_locacao='+id_locacao})
+    .then(function(resposta){
+        modal(resposta);
+    })
+}

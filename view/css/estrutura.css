@@ -601,17 +601,28 @@ footer{
         min-width: 152px;
     }
     #segura_nav .segura_menu ul li{
-float: unset;
-margin: unset;
-border-bottom: solid 1px;
-font-size: 112%;
-background-color: #2bb52b;
-border-color: #ccc;
-height: 17vh;
-overflow: hidden;
-padding-top: 5vh;
-text-indent: 24px;
-}
+
+float: unset;
+
+margin: unset;
+
+border-bottom: solid 1px;
+
+font-size: 112%;
+
+background-color: #2bb52b;
+
+border-color: #ccc;
+
+height: 17vh;
+
+overflow: hidden;
+
+padding-top: 5vh;
+
+text-indent: 24px;
+
+}
     #segura_nav .modoLogin{
         position: fixed;
         bottom: 0;

@@ -104,3 +104,147 @@
     margin-right: auto;
     margin-top: 20px;
     }
+
+
+/* Modal de confirmaçaõ do fim da locação */
+
+.locacao-modal{
+    margin: 6px;
+    height: auto;
+    width: 635px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+.locacao-modal .imagem{
+    width: 235px;
+    display: inline-block;
+    float: left;
+    background-color: black;
+}
+.locacao-modal .imagem .principalImagem{
+    max-height: 178px;
+}
+.locacao-modal .imagem .lista_imagens{
+    height: 62px;
+    overflow-x: scroll;
+ }
+.locacao-modal .imagem .lista_imagens .item_imagem{
+    display: inline-block;
+}
+.locacao-modal .imagem .lista_imagens .item_imagem img{
+    height: 32px;
+    min-width: 32px;
+}
+.locacao-modal .imagem img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.locacao-modal .descricao{
+    display: inline-block;
+    float: left;
+    padding-top: 0px;
+    width: 377px;
+    padding-left: 0px;
+    height: 262px;
+    padding: 2px;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios{
+    width: auto;
+    height: 204px;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos{
+    text-align: left;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos .campo_anuncios{
+    width: 50%;
+    float: left;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos label{
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos input{
+    border: solid 1px #e8e8e8;
+    margin: 3px 0px;
+    min-height: 25px;
+    width: 98%;
+    background-color: white;
+    text-indent: 4px;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos textarea{
+    border: solid 1px #e8e8e8;
+    min-width: 99%;
+    resize: none;
+    min-height: 91px;
+    padding-top: 4px;
+    margin-top: 6px;
+    width: 374px;
+    padding-left: 10px;
+    background-color: white;
+}
+.locacao-modal .descricao_veiculo_anuncios{
+    max-height: 83px;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.locacao-modal .descricao_veiculo_anuncios .caixas_veiculo_anuncios{
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    width: 606px;
+}
+.locacao-modal .caixas_veiculo_anuncios .item_caixa_veiculo{
+    display: inline-block;
+    float: left;
+    font-size: 0.9em;
+    margin: 0px 4px;
+    text-align: center;
+}
+.locacao-modal .caixas_veiculo_anuncios .item_caixa_veiculo label{
+    font-weight: bold;
+}
+.locacao-modal .caixas_veiculo_anuncios .item_caixa_veiculo input{
+    border: solid 1px #ccc;
+    display: block;
+    width: 92px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+}
+.locacao-modal input,textarea{
+    color:#625d5d;
+}
+.locacao-modal .caixa_aprovacao{
+    padding: 5px;
+}
+.locacao-modal .caixa_aprovacao button{margin: 2px;}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos input:hover{
+    border-color:#004b50;
+    color:black;
+}
+.locacao-modal .descricao .caixa_inputs_anuncios .caixa_campos textarea:hover{
+    border-color:#004b50;
+    color:black;
+}
+.locacao-modal .caixas_veiculo_anuncios .item_caixa_veiculo input:hover{
+    color:black;
+    border-color:#004b50;
+}
+.locacao-modal .caixa_aprovacao button:hover{
+    border-color:black;
+    color:#002334;
+}
+.locacao-modal-form{
+}
+.locacao-modal-form-titulo{
+    background-color: #00984A;
+    font-size: 1.8em;
+    /* border-radius: 6px 6px 0px 0px; */
+    color: white;
+}

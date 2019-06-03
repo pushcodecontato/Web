@@ -41,8 +41,8 @@
                             <td><?=@$item->getSolicitacao()->getData_inicio()?></td>
                             <td><?=@$item->getSolicitacao()->getData_final()?></td>
                             <td>
-                                <a><i class="far fa-comments"></i></a>
-                                <a><i class="fas fa-user-check"></i></a>
+                                <a onclick=""><i class="far fa-comments"></i></a>
+                                <a href="javascript:chamaModalConfirmacao(<?=@$item->getId()?>)"><i class="fas fa-user-check"></i></a>
                             </td>
                           </tr>
                     <?php } ?>
@@ -51,3 +51,5 @@
         </table>
     </div>
 </div>
+<script src="view/js/pagarme.min.js"></script>
+<script src="view/painel_usuario/locacao/js/script.js"></script>

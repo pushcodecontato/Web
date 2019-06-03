@@ -159,7 +159,7 @@ header{
 /*menu*/
 nav{
     width: 236px;
-    height: 715px;
+    height: 716px;
     float: left;
     border-bottom-left-radius: 20px;
     background-color: #fff;
@@ -272,7 +272,7 @@ a{
     background-color: #fff;
     display: inline-flex;
     border-bottom-right-radius: 20px;
-    min-height: 1112px;
+    min-height: 646px;
 }
 .btnPadrao{
     width:auto;

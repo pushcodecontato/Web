@@ -52,6 +52,13 @@ class ControllerLocacao{
 
         return $lista;
     }
+    public function select($id_locacao){
+        
+        $locacao  = $this->locacaoDAO->selectById($id_locacao);
+
+        return $locacao;
+    
+    }
 }
 
 ?>
