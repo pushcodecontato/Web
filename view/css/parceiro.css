@@ -102,8 +102,57 @@
     overflow: hidden;
 }
 #beficiosBox{
-    width: 1200px;
+    width: 100%;
     height: auto;
     min-height: 500px;
     overflow: auto;
+}
+@media only and (min-device-width: 350px) and (max-device-width:960px), (min-width:350px) and (max-width:960px){
+    #beficiosBox{
+
+    }
+    #beficiosBox .row{
+
+    }
+    #beficiosBox .row .cold3.center{
+
+        display: inline-block;
+
+        text-align: center;
+
+        width: 262px;
+
+    }
+    .beneficio{
+        float: left;
+    }
+    .seja-parceiro-conteudo{
+        width: 26%!important;
+    }
+}
+@media only and (min-device-width: 961px) and (max-device-width:1268px), (min-width:961px) and (max-width:1268px){
+    #beficiosBox{
+
+    }
+    #beficiosBox .row{
+
+    }
+    #beficiosBox .row .cold3.center{
+
+        display: inline-block;
+
+        text-align: center;
+
+        width: 262px;
+
+    }
+    .beneficio{
+        float: left;
+    }
+    .seja-parceiro-conteudo{
+        width: 26%!important;
+    }
+}
+@media only and (min-device-width: 1268px),(min-width:1268px){
+
 }

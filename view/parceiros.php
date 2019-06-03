@@ -93,7 +93,7 @@
                 <div class="cold4 esquerda">
                     <img src="view/upload/<?=@$banner->getFoto1()?>" style="height: 355px; width:100%;" alt="Empresas">
                 </div>
-                <div class="cold2 center" style="width: 29%;">
+                <div class="cold2 center seja-parceiro-conteudo" style="width: 29%;">
                     <div class="esquerda border-left"></div>
                     <div id="seja-parceiro" class="center" style="margin-top: 15px;">
                         <div>
