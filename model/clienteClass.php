@@ -201,6 +201,7 @@ class Cliente{
     					 'nome_cliente'=>$this->nome_cliente,
     					 'cidade'=>$this->cidade,
     					 'uf'=>$this->uf,
+    					 'email'=>$this->email,
     					 'status'=>$this->status);
     	}else{
     		/* Modo seguro passa dados interesantes!So usar no cms ou talves no painel de usuario(no painel seria interesante fzer um filtro para tirar datdos sencifeis) */

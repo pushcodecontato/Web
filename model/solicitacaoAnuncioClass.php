@@ -128,13 +128,34 @@
             
             return $intervalo->format('%H');
         }
-        public function getValorTotal($valor_hora){
+        public function getValorTotal($valor_hora = 0){
+                
+                if($valor_hora == 0)$valor_hora = $this->anuncio->getValor();
+
                 $horas_totais = $this->getHorasTotais();
+                
                 return $valor_hora * $horas_totais;
+        }
+        public function to_json(){
+
+                $anuncio     = $this->anuncio->to_json();
+                $cliente     = $this->cliente->to_json();
+                $valor_total = $this->getValorTotal($anuncio['valor_hora']);
+
+                /// KKK isso foi estralho 
+                return array('id_solicitacao_anuncio'=>$this->id_solicitacao_anuncio,
+                             'id_anuncio'=>$this->id_anuncio,
+                             'id_cliente'=>$this->id_cliente,
+                             'data_inicio'=>$this->data_inicio,
+                             'data_final'=>$this->data_final,
+                             'hora_inicial'=>$this->hora_inicial,
+                             'hora_final'=>$this->hora_final,
+                             'status_solicitacao'=>$this->status_solicitacao,
+                             'valor_total'=>$this->valor_total,
+                             'cliente'=>$cliente,
+                             'anuncio'=>$anuncio);
         }
 
 }
-
-
 
 ?>

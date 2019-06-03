@@ -294,6 +294,11 @@
                             $controller_locacao->listar();
                             
                             break;
+                       case "CONFIRMAR":
+                            
+                            $controller_locacao->confirmar();
+
+                            break;
                     }
                 
                 break;

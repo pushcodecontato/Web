@@ -13,6 +13,8 @@ class Locacao{
     private $solicitacao;
     private $locador;
 
+    public $confirmado;
+
     public function setId($id_locacao){
         $this->id_locacao = $id_locacao;
         return $this;
@@ -82,6 +84,28 @@ class Locacao{
     public function getLocador(){
         return $this->locador;
     }
+    public function to_json(){
+        
+        $anuncio     = $this->anuncio->to_json();
+        $solicitacao = $this->solicitacao->to_json();
+        $locador     = $this->locador->to_json();
+
+        /// KKK isso foi estralho 
+        
+        return array('id_locacao'=>$this->id_locacao,
+                     'id_anuncio'=>$this->id_anuncio,
+                     'id_cliente_locador'=>$this->id_cliente_locador,
+                     'valor_locacao'=>$this->valor_locacao,
+                     'data_hora_final'=>$this->data_hora_final,
+                     'horario_termino'=>$this->horario_termino,
+                     'id_percentual'=>$this->id_percentual,
+                     'locador'=>$locador,
+                     'anuncio'=>$anuncio,
+                     'solicitacao'=>$solicitacao);
+    }
+   
+   
+
 }
 
 ?>

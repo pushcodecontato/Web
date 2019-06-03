@@ -42,7 +42,11 @@
                             <td><?=@$item->getSolicitacao()->getData_final()?></td>
                             <td>
                                 <a onclick=""><i class="far fa-comments"></i></a>
-                                <a href="javascript:chamaModalConfirmacao(<?=@$item->getId()?>)"><i class="fas fa-user-check"></i></a>
+                                <?php if(!$item->confirmado){ ?>
+                                    <a href="javascript:chamaModalConfirmacao(<?=@$item->getId()?>)"><i class="fas fa-user-check"></i></a>
+                                <?php }else{ ?>
+                                    <a style="color:#2d2;"><i class="fas fa-user-check"></i></a>
+                                <?php } ?>
                             </td>
                           </tr>
                     <?php } ?>

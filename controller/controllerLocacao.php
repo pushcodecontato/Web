@@ -59,6 +59,11 @@ class ControllerLocacao{
         return $locacao;
     
     }
+    public function confirmar(){
+      echo "OI gil!";
+      $this->locacaoDAO->confirmar($_GET['id_locacao'],$_POST['tipo']);
+    
+    }
 }
 
 ?>
