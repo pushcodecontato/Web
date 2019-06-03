@@ -68,6 +68,7 @@
             </header>
             <!--MENU-->
             <nav>
+                <i id="menu_icone_reposnsivo" class="fas fa-align-justify"></i>
                 <div class="menu_lateral">
                     <div class="item_menu" onclick="abrir_menu('120px', '#gerenciar_anuncios')">
                         <img src="view/cms/imagem/icones/paginas.png" alt="Gerenciar paginas"> 

@@ -53,8 +53,8 @@
                 </div>
             </div>
             <h3 class="tituloAcessorio">Acessórios</h3>
-            <div class="row_veiculo select_acessorio" style="padding-left:60px; margin-top:10px; height:80px;">
-                <select style="display:none; width:900px;" id="selectAcessorios" multiple name="sltAcessorios[]">
+            <div class="row_veiculo select_acessorio" style="padding-left:60px; margin-top:10px; height:136px;">
+                <select style="display:none; width:100%;" id="selectAcessorios" multiple name="sltAcessorios[]">
             
                 </select>
             </div>

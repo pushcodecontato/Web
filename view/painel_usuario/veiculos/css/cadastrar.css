@@ -7,7 +7,7 @@
     font-size: 27px;
     font-family: "OpenSans-bold";
     margin-top: 20px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 .tabela{
     width: 1000px;
@@ -103,4 +103,35 @@
 #row_fotos input{
     margin-left: 40px;
     margin-top: 40px;
+}
+@media only and (min-device-width: 350px) and (max-device-width:1268px), (min-width:350px) and (max-width:1268px){
+    .colunaSelect{
+
+    }
+    .colunaSelect select{
+
+    }
+    .row_veiculo{width: 100%;height: auto;overflow: hidden;overflow-y: hidden;}
+    #row_fotos{width: 100%;height: auto;}
+    .btnPadrao{
+
+    }
+    .row_veiculo .coluna-2{
+
+    }
+    .coluna-2 input, select{
+        
+    }
+    #segura_table{
+        width: 100%;
+        height: auto;
+    }
+    .tabela{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
+}
+@media only and (min-device-width: 1268px),(min-width:1268px){
+
 }

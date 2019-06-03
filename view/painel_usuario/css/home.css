@@ -59,7 +59,7 @@ header{
 /*imagem do logo*/
 .img_logo{
     width: 200px;
-    height: 150px;
+    height: 155px;
     margin-left: 25px;
     margin-top: 15px;
     float: left;
@@ -272,6 +272,7 @@ a{
     background-color: #fff;
     display: inline-flex;
     border-bottom-right-radius: 20px;
+    min-height: 1112px;
 }
 .btnPadrao{
     width:auto;
@@ -318,7 +319,7 @@ table.desktop{
     border: solid #ddd;
     margin-top: 10px;
     border-width: 1px 0.2px 0px 0.2px;
-    min-width: 550px;
+    min-width: 286px;
     width: 91%;
     margin-left:auto;
     margin-right:auto;
@@ -331,13 +332,14 @@ table.desktop thead tr th,table.desktop tbody tr td{
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
     padding: 7px;
-    vertical-align: initial;
+    vertical-align: bottom;
     line-height: 1.42857143;
     text-align: left;
     trasition:all cubic-bezier(0, 0, 0.1, 1.17) 3s;
 }
 table.desktop thead tr th{
   font-size: 1.2em;
+  vertical-align: middle;
 }
 table.desktop tbody tr td{height: auto;font-size: 1.2em;vertical-align: middle;word-break: break-all;}
 tbody tr:nth-child(even) {
@@ -378,7 +380,9 @@ table.desktop tbody tr td:hover{
     /*background-color:black;
     color: #0ce8c6;*/
 }
-
+#menu_icone_reposnsivo{
+  display:none;
+}
 /*Animação */
 @-webkit-keyframes fadeInRight {
   from {
@@ -423,12 +427,11 @@ table.desktop tbody tr td:hover{
     margin-top: 22px;
     padding: 9px 0px 9px 0px;
     border-radius: 5px;
-    display: inline-block;
     background-color: #eee;
     animation: bounceInRight 3s;
     text-align: center;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
+    display: block;
+    float: left;
 }
 #conteudo .itemmenu .img{
     font-size: 3.7em;
@@ -470,4 +473,174 @@ table.desktop tbody tr td:hover{
     color: #fff;
     text-align: center;
     transition: background 2s;
+}
+
+/* Menu e Footer mobile */
+@media only and (min-device-width: 350px) and (max-device-width:960px), (min-width:350px) and (max-width:960px){
+ #principal{
+      width: 100%;
+      height: auto;
+      overflow: auto;
+      border: unset;
+      border-radius: unset;
+      margin: 0px;
+  }
+   header{
+       width: 100%;
+       border-top-left-radius: 0px;
+       border-top-right-radius: 0px;
+       height: auto;
+       overflow: auto;
+   }
+   #conteudo_header{height: auto;width: 100%;overflow: auto;}
+   #conteudo_header .img_logo{height: 100px;width: 100px;}
+   #conteudo_header .img_logo img{
+     width: 91px;
+     height: auto;
+   }
+   #conteudo_header .boasVindas{
+     margin: auto;
+     height: auto;
+     float: right;
+     border: unset;
+     position: fixed;
+     background-color: #00984a;
+     bottom: 0;
+     right: 0;
+     width: auto;
+     z-index: 999;
+     padding: 5px;
+   }
+   .boasVindas .img_cliente{width: 100px;height: 100px;margin-top: 8px;}
+   #bemVindo{
+      width: auto;
+      height: auto;
+      padding: unset;
+  }
+   #bemVindo h3{
+      font-size: 1em;
+  }
+   #bemVindo p{
+      font-size: 0.8em;
+  }
+  .editarPerfil{
+  margin-top: 55px;
+  }
+  .img_cliente img{width: 100px;height: 100px;}
+   #segura_icones{width: auto;height: auto;text-align: center;margin-left: 0px;padding: 0px;}
+   #segura_icones .icone{display: inline-block;float: none;}
+   #segura_icones .icone .img_icone{
+     
+   }
+   nav{
+     width: 100%;
+     height: 50px;
+     border-bottom-left-radius: unset;
+     background-color: rgb(244, 244, 244);
+   }
+   nav .menu_lateral{
+     display: none;
+     position: fixed;
+     top: 0;
+     left:0;
+     height:100vh;
+     background-color: #f8f8f8;
+     z-index: 995;
+   }
+   #menu_icone_reposnsivo{
+     display:block;
+     font-size: 1.8em;
+     margin: 10px 16px 0px 0px;
+     float: right;
+     color: #333;
+   }
+   #conteudo{width: 100%;border-bottom-right-radius: unset;min-height: 716px;height: auto;overflow: auto;float: none;display: block;}
+   table.desktop{}
+   table.desktop thead{
+     display:none;
+   }
+   table.desktop  tr{
+      border-bottom: 1px solid #dddddd;
+   }
+   table.desktop td{
+     border: 0;
+   }
+   table.desktop td:not(:first-child){
+     display:block;
+   }
+   #modal{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    min-width: 100px;
+    padding: 0px;
+    margin-top: 15px;
+  }
+}
+/* Menu e Footer table */
+@media only and (min-device-width: 961px) and (max-device-width:1268px), (min-width:961px) and (max-width:1268px){
+   #principal{
+      width: 100%;
+      height: auto;
+      overflow: auto;
+      border: unset;
+      border-radius: unset;
+      margin: 0px;
+  }
+   header{
+       width: 100%;
+       border-top-left-radius: 0px;
+       border-top-right-radius: 0px;
+       height: auto;
+       overflow: auto;
+   }
+   #conteudo_header{height: auto;width: 100%;overflow: auto;}
+   #conteudo_header .img_logo{
+
+   }
+   #conteudo_header .boasVindas{margin: auto;height: auto;float: right;border: unset;}
+   .boasVindas .img_cliente{
+
+   }
+   #bemVindo{
+
+   }
+
+   nav{
+     width: 100%;
+     height: 50px;
+     border-bottom-left-radius: unset;
+     background-color: rgb(244, 244, 244);
+   }
+   nav .menu_lateral{
+     display: none;
+     position: fixed;
+     top: 0;
+     left:0;
+     height:100vh;
+     background-color: #f8f8f8;
+     z-index: 995;
+   }
+   #menu_icone_reposnsivo{
+     display:block;
+     font-size: 1.8em;
+     margin: 10px 16px 0px 0px;
+     float: right;
+     color: #333;
+   }
+   #conteudo{width: 100%;border-bottom-right-radius: unset;height: auto;}
+   #modal{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    min-width: 100px;
+    padding: 0px;
+    margin-top: 15px;
+  }
+}
+/* Menu e Footer normal */
+@media only and (min-device-width: 1268px),(min-width:1268px){
+   header{
+     
+   } 
 }

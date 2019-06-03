@@ -175,7 +175,7 @@
      width: 244px;
      height: 296px;
      border: solid 1px;
-     float: left;
+     /* float: left; */
      /* margin-left: 53px; */
      box-shadow: 4px 4px 20px 0 rgba(120,135,182,.1);
      border-radius: 3px;
@@ -184,8 +184,9 @@
      transition: all .3s ease;
      padding: 2px 11px 7px 11px;
      display: inline-block;
-     float: left;
+     /* float: left; */
      cursor: pointer;
+     text-align: initial;
 }
 .caixa_veiculo:hover{
     transform: translateY(2px);
@@ -245,10 +246,10 @@
     background-color: black;
 }
 .modal_anuncios .imagem .principalImagem{
-    max-height:153px;
+    max-height: 178px;
 }
 .modal_anuncios .imagem .lista_imagens{
-    height: 54px;
+    height: 62px;
     overflow-x: scroll;
  }
 .modal_anuncios .imagem .lista_imagens .item_imagem{
@@ -368,4 +369,42 @@
 .modal_anuncios .caixa_aprovacao button:hover{
     border-color:black;
     color:#002334;
+}
+
+@media only and (min-device-width: 350px) and (max-device-width:1268px), (min-width:350px) and (max-width:1268px){
+    .conteudo_direita{width: 100%;height: auto;margin-left: 0px;}
+    .segura_caixas{height: auto;overflow: hidden;margin: auto;text-align: center;padding: 13px 1px 13px 1px;}
+    .segura_caixas .caixa_veiculo{
+    }
+    #conteudo_anuncio{
+        height: auto;
+        overflow: auto;
+    }
+    #h2Border{
+        margin-top: auto;
+    }
+    .modal_anuncios .imagem{
+        display: block;
+        width: 100%;
+    }
+    .modal_anuncios .descricao{
+        display: block;
+        float: left;
+    }
+    .modal_anuncios .descricao_veiculo_anuncios{height: auto;overflow: auto;max-height: 223px;}
+    .modal_anuncios .descricao_veiculo_anuncios .caixas_veiculo_anuncios{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        text-align: center;
+    }
+    .modal_anuncios .caixas_veiculo_anuncios .item_caixa_veiculo{
+        display: block;
+    }
+    .modal_anuncios{
+        width: auto;
+    }
+}
+@media only and (min-device-width: 1268px),(min-width:1268px){
+
 }

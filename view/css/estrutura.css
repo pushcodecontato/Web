@@ -868,6 +868,6 @@ footer{
     }
 }
 /* Menu e Footer normal */
-@media only and (min-device-width: 1352px),only and (min-width:1352px){
+@media only and (min-device-width: 1352px),(min-width:1352px){
     
 }

@@ -52,3 +52,30 @@ function conteudo_subMenu(nome_pagina){
 
     
 }
+
+$(document).ready(function(){
+
+	$('#menu_icone_reposnsivo').on('click',function(){
+		console.log("Hellow");
+		$('.menu_lateral').off('click');
+		$('.menu_lateral').slideDown(360,function(){
+			$('.menu_lateral').click(function(e){
+				if($(e.target).hasClass('menu_lateral')){
+					$('.menu_lateral').fadeOut();
+				}else if($(e.target).hasClass('item_sub_menu')){
+				   $('.menu_lateral').fadeOut();
+				}else{
+                    
+                    if($(e.target).parent().hasClass('item_sub_menu')){
+                        $('.menu_lateral').fadeOut();
+                    }
+
+				}
+			})
+
+
+		});
+
+	})
+
+})

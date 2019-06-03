@@ -43,8 +43,7 @@
                         <td><?=@$item->getSolicitacao()->getData_final()?></td>
                         <td>R$<?=@$item->getSolicitacao()->getValorTotal($item->getAnuncio()->getValor())?></td>
                         <td>
-                            <img class="icones"src="view/painel_usuario/imagem/editar.png" title="icone de editar" alt="icone de editar">
-                            <a><i class="far fa-comments" style="font-size: 2em;"></i></a>
+                            <a style="font-size: 2em;"><i class="far fa-comments"></i></a>
                             <a style="font-size: 2em;" href='javascript:mapa_ver(<?=json_encode($item->getAnuncio()->to_json())?>)'><i class='fas fa-map-marked-alt'></i></a>
                         </td>
                     </tr>
