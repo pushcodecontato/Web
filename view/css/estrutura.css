@@ -48,7 +48,7 @@ html{
     position: absolute;
     left: 50%;
     top: 30%;
-    margin-left: -520px;
+    margin-left: -307px;
     margin-top: 100px;
     padding-top: 30px;
     padding-left: 40px;
@@ -777,7 +777,7 @@ footer{
         right: 0;
         background-color: #03b85b;
         border-radius: 12px;
-        margin: 0px 5px 5px 0px;
+        margin: 0px 290px 5px 0px;
         padding-bottom: 8px;
         z-index: 99;
     }
