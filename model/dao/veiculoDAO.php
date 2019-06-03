@@ -127,7 +127,7 @@ class  VeiculoDAO{
         $select = $PDO_conex->query($sql);
 
         if($rs_veiculo = $select->fetch(PDO::FETCH_ASSOC)){
-
+            
             $veiculo = new Veiculo();
 
             $veiculo->setId($rs_veiculo['id_veiculo'])
