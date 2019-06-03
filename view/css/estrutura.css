@@ -61,12 +61,11 @@ html{
     background-color: rgba(0, 0, 0, 0.501);
 }
 .caixa_texto_pages_all{
-    width: 700px;
+    width: 100%;
     height: 140px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
-
 }
 .texto_primario_h1{
     color:#ffffff;
@@ -602,27 +601,17 @@ footer{
         min-width: 152px;
     }
     #segura_nav .segura_menu ul li{
-
-        float: unset;
-
-        margin: unset;
-
-        border-bottom: solid 1px;
-
-        font-size: 1.5em;
-
-        background-color: #2bb52b;
-
-        border-color: #ccc;
-
-        height: 17vh;
-
-        overflow: hidden;
-
-        padding-top: 5vh;
-
-        text-indent: 24px;
-    }
+float: unset;
+margin: unset;
+border-bottom: solid 1px;
+font-size: 112%;
+background-color: #2bb52b;
+border-color: #ccc;
+height: 17vh;
+overflow: hidden;
+padding-top: 5vh;
+text-indent: 24px;
+}
     #segura_nav .modoLogin{
         position: fixed;
         bottom: 0;
