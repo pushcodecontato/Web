@@ -219,7 +219,7 @@
         public function aprovar($id_anuncio, $mensagem, $id_usuario_cms){
 
             $sql = "INSERT INTO tbl_aprovacao_anuncio (status_aprovacao,mensagem,id_usuario_cms,id_anuncio)".
-                   " VALUES(1,'". $mensagem ."',". $id_usuario_cms .",". $id_veiculo .")";
+                   " VALUES(1,'". $mensagem ."',". $id_usuario_cms .",". $id_anuncio .")";
 
             echo "SQL : $sql ";
 
