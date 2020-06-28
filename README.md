@@ -9,5 +9,5 @@ para ajudar a gerir a empresa e o dilheiro.
 ## Bibliotecas
 
 * [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php) - Linguagem de preogramação para desenvolvimento web e muitas outras coisas!
-* [Jquery](https://www.thymeleaf.org) - Biblioteca JS para agilizar a codificação em JS
+* [Jquery](https://jquery.com) - Biblioteca JS para agilizar a codificação em JS
 * [Notify.js](http://notifyjs.com/) - Biblioteca de notificações
