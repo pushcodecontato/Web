@@ -35,7 +35,8 @@
 			
 			require_once('view/' . substr($nome_pagina, 0 , -5).'.html');
 		
-		//Seria bom se eu  implementa se pelo menos mais 1 
+		//Seria bom se eu  implementa se pelo menos mais 1 e 
+		// também uma implementação que evite vunerabilidades como o ../
 		} else {
 
 			echo "<pre> Pagina não Encontrada!! </pre>";
