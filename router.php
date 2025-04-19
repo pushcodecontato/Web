@@ -1,4 +1,7 @@
 <?php
+    
+    require("env.php");
+
     $controller = null;
     $modo = null;
 
