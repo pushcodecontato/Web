@@ -11,7 +11,7 @@
 <img align="right" src="./assets/jquery.svg" alt="JQuery" width="64px"/>
 
 Sistema de alugel de carros, basicamente um sitema web para
-criar e gerenciar locações de veiculos.
+criar e gerenciar locações de veiculos. Usando **PHP**, **Docker**, **MariaDB** e **JQuery**.
 
 ## How Run:
 
