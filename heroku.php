@@ -41,9 +41,10 @@ try {
     echo "Banco e views inicializados com sucesso.\n";
 } catch (PDOException $e) {
     echo 'Erro ao conectar ou executar SQL: \n
-          Linhas: '.$erro->getLine().'<br>
-          Mensagem: '. $erro->getMessage(). '<br>
+          Linhas: '.$e->getLine().'<br>
+          Mensagem: '. $e->getMessage(). '<br>
           String: '. ('mysql:host='.$host.';dbname='.$db). '<br>
           User and Pass: '. $user .' & '. $pass;
+    throw $e;
 }
 
