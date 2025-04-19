@@ -4,7 +4,11 @@
 
 <img src="./mobshare.png" width="256px" alt="Tela inicial"><img src="./login_cms.png" width="256px" alt="login cms" align="left">
 
-<br/>
+
+<img align="right" src="./assets/php.svg" alt="PHP" width="64px"/>
+<img align="right" src="./assets/docker16x16.svg" alt="Docker" width="64px"/>
+<img align="right" src="./assets/mariadb.svg" alt="MariaDB" width="64px"/>
+<img align="right" src="./assets/jquery.svg" alt="JQuery" width="64px"/>
 
 Sistema de alugel de carros, basicamente um sitema web para
 criar e gerenciar locações de veiculos.
