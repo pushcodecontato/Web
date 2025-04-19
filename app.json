@@ -1,7 +1,6 @@
 {
     "name": "App PHP 7.2 com MySQL",
     "description": "Aplicação PHP com MySQL (JawsDB) no Heroku",
-    "stack": "heroku-20",
     "buildpacks": [
       {
         "url": "heroku/php"
