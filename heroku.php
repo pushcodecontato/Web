@@ -29,13 +29,9 @@ try {
 
         echo "Executando: $arquivo\n";
         $sql = file_get_contents($arquivo);
-        $statements = array_filter(array_map('trim', explode(';', $sql)));
 
-        foreach ($statements as $statement) {
-            if (!empty($statement)) {
-                $pdo->exec($statement);
-            }
-        }
+        $pdo->exec($sql);
+
     }
 
     echo "Banco e views inicializados com sucesso.\n";
