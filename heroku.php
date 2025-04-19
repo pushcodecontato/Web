@@ -7,7 +7,7 @@ $user = getenv('DB_USER');
 $pass = getenv('DB_PASSWORD');
 $db   = getenv('DB_NAME');
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$dsn = "mysql:host=$host;dbname=$db;charset=utf8";
 
 try {
     $pdo = new PDO($dsn, $user, $pass, [
@@ -40,6 +40,10 @@ try {
 
     echo "Banco e views inicializados com sucesso.\n";
 } catch (PDOException $e) {
-    echo "Erro ao conectar ou executar SQL: " . $e->getMessage() . "\n";
+    echo 'Erro ao conectar ou executar SQL: \n
+          Linhas: '.$erro->getLine().'<br>
+          Mensagem: '. $erro->getMessage(). '<br>
+          String: '. ('mysql:host='.$host.';dbname='.$db). '<br>
+          User and Pass: '. $user .' & '. $pass;
 }
 
