@@ -138,7 +138,6 @@
                         ->setEmail($rs_usuario['email_usuario_cms'])
                         ->setSenha($rs_usuario['senha'])
                         ->setNivel($rs_usuario['id_niveis']);
-                 echo "sdasdasdasd";
 
                 return $usuario;
 

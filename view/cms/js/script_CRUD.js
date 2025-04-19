@@ -23,6 +23,8 @@ function enviar(){
 			}
 		}
 	})
+
+	return false;
 }
 function conteudo_subMenu(nome_pagina){
 		
@@ -72,6 +74,8 @@ function inserir_nivel(){
             fecharModal();
         }
     });
+
+	return false;
 }
 function atualizar_nivel(){
 	
@@ -98,6 +102,7 @@ function atualizar_nivel(){
         }
     });
    
+	return false;
 }
 
 function excluir_niveis(controller, modo, id_item){
@@ -136,6 +141,8 @@ function usuario_getById(id){
 			modal(dados);
 		}
 	})
+
+	return false;
 }
 
 function usuario_getDados(){
@@ -163,6 +170,8 @@ function usuario_insert(form){
 			}
 		}
 	})
+
+	return false;
 }
 function usuario_update(form){
 
@@ -187,6 +196,8 @@ function usuario_update(form){
 			}
 		}
 	})
+
+	return false;
 }
 
 function usuario_delete(id){
@@ -235,6 +246,8 @@ function logar(formulario){
 			$.notify(resposta.toString(), "error");
 		}
 	})
+
+	return false;
 }
 
 /* Crud de Tipo de veiculo */
@@ -254,7 +267,7 @@ function tipo_veiculo_cadastro(form){
 			}
 		}
 	})
-
+	return false;
 }
 
 function tipo_veiculo_atualizar(form){
@@ -273,6 +286,7 @@ function tipo_veiculo_atualizar(form){
 			}
 		}
 	})
+	return false;
 }
 
 function tipo_veiculo_excluir(id){
@@ -290,6 +304,7 @@ function tipo_veiculo_excluir(id){
 			}
 		}
 	})
+	
 }
 
 function tipo_veiculo_getById(id){
@@ -302,6 +317,7 @@ function tipo_veiculo_getById(id){
 			$('.conteudo').html(dados);
 		}
 	})
+	return false;
 }
 
 
@@ -405,6 +421,7 @@ function faq_getById(id){
 			modal(dados);
 		}
 	})
+	return false;
 }
 
 function faq_getDados(){
@@ -432,6 +449,8 @@ function faq_insert(form){
 			}
 		}
 	});
+
+	return false;
 }
 function chamaModalVeiculosAprova(id){
 	$.get('?cms/veiculos/modal_veiculos_pendentes.php&id_veiculo='+id)
@@ -459,6 +478,8 @@ function como_ganhar_dinheiro_getById(sessao){
 			modal(dados);
 		}
 	})
+
+	return false;
 }
 
 function como_ganhar_dinheiro_getDados(){
@@ -485,6 +506,8 @@ function como_ganhar_dinheiro_insert(form){
 			}
 		}
 	})
+
+	return false;
 }
 function como_ganhar_dinheiro_update(form){
 
@@ -534,6 +557,9 @@ function como_ganhar_dinheiro_update(form){
          }
        },
    }).submit();
+
+
+   return false;
 }
 
 function como_ganhar_dinheiro_delete(id){
@@ -553,6 +579,8 @@ function como_ganhar_dinheiro_delete(id){
 			}
 		}
 	});
+
+	return false;
 }
 // SEJA PARCEIRO
 
@@ -600,6 +628,8 @@ function termos_uso_update(form){
 			}
 		}
 	})
+
+	return false;
 }
 function termos_uso_status(status_atual){
 	
@@ -707,6 +737,8 @@ function faq_inserir(form){
 			}
 		}
 	})
+
+	return false;
 }
 function faq_atualizar(form){
 	event.preventDefault();
@@ -724,6 +756,8 @@ function faq_atualizar(form){
 			}
 		}
 	})
+
+	return false;
 }
 
 function faq_getById(id){
@@ -737,6 +771,8 @@ function faq_getById(id){
 			modal(dados);
 		}
 	})
+
+	return false;
 }
 
 function faq_getDados(){
@@ -762,6 +798,9 @@ function faq_delete(id){
 			}
 		}
 	});
+
+
+	return false;
 }
 function faq_status(id,status_atual){
 	// Redefinindo status_atual
